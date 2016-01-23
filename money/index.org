@@ -1,5 +1,5 @@
 [[../index.org][Main Index]]
 
 * Money Things
-[[./bills.org.gpg][Bills]]
-[[./loan-rates.org.gpg][Loan Rates]]
++ [[./bills.org.gpg][Bills]]
++ [[./loan-rates.org.gpg][Loan Rates]]
