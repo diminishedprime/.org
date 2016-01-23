@@ -1,0 +1,138 @@
+[[./index.org][Main Index]]
+
++ BYOK[eyboard]
+  + [ ] key controller thing
+  + [ ] key switches
+  + [ ] key caps (reuse ones I already have to start)
+  + [ ] print out model. 
+
+12 pins. 
+modifier
+
+|-------------+-------+------+------+-------+--------+-------+-----------+-----------|
+|             | 0     | 1    | 2    | 3     | 4      | 5     | 6         | 7         |
+|-------------+-------+------+------+-------+--------+-------+-----------+-----------|
+| 0 (ADC)     | 0     | 1    | 2    | 3     | 4      | 5     | 6         | 7         | 
+| 1 (ADC)     | 8     | 9    | a    | b     | c      | d     | e         | f         |
+| 2 (ADC)     | g     | h    | i    | j     | k      | l     | m         | n         |
+| 3 (ADC)     | o     | p    | q    | r     | s      | t     | u         | v         |
+| 4 0&1 (ADC) | w     | x    | y    | z     | `      | [     | ]         | '         |
+| 5 0&2 (ADC) | ,     | .    | /    | =     | \      | ;     | -         | tab       |
+| 6 0&3 (ADC) | f1    | f2   | f3   | f4    | f5     | f6    | f7        | f8        |
+| 7 1&2 (ADC) | up    | down | left | right | space  | home  | end       | page up   |
+| 8 1&3 (ADC) | enter |      |      |       | delete | power | backspace | page down |
+|-------------+-------+------+------+-------+--------+-------+-----------+-----------|
+| Modifiers   |       |      |      |       |        |       |           |           |
+|-------------+-------+------+------+-------+--------+-------+-----------+-----------|
+| 2&3 (ADC)   |       |      |      |       |        |       |           |           |
+| 8 (OS Key)  |       |      |      |       |        |       |           |           |
+| 9 (shift)   |       |      |      |       |        |       |           |           |
+| 10 (ctrl)   |       |      |      |       |        |       |           |           |
+| 11 (meta)   |       |      |      |       |        |       |           |           |
+| 12 (hyper)  |       |      |      |       |        |       |           |           |
+|-------------+-------+------+------+-------+--------+-------+-----------+-----------|
+
+Do I care about media keys? I'm thinking probably not.
+
++ I have this set up where 8 bits are used for column and 9 bits are
+  used for selecting the row. 
+#+BEGIN_SRC clojure
+  (ns temp)
+
+  ;; first 8 bits is used for the column
+
+  ;; second 10 bits is used for the row
+
+  (defn key-by-index [index]
+    (let [keymap {7 "6", 20 "j", 27 "q", 1 "0", 24 "n", 39 "[", 46 "/", 4 "3", 15 "e",
+                  48 "\\", 50 "CONTROL", 21 "k", 31 "u", 32 "v", 40 "]", 33 "w", 13 "c",
+                  22 "l", 36 "z", 41 "DELETE", 43 "'", 29 "s", 44 ",", 6 "5", 28 "r", 
+                  51 "META", 25 "o", 34 "x", 17 "g", 3 "2", 12 "b", 2 "1", 23 "m",
+                  47 "=", 35 "y", 19 "i", 11 "a", 9 "8", 5 "4", 14 "d", 45 ".", 
+                  53 ";", 26 "p", 16 "f", 38 "`", 30 "t", 10 "9", 18 "h",
+                  52 "OS", 42 "TAB", 37 "ENTER", 8 "7", 49 "SHIFT"}]
+      (get keymap (inc index))))
+
+  ["0" "1" "2" "3" "4" "5" "6" "7" "8" "9" "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z" "ENTER" "`" "[" "]" "DELETE" "TAB" "'" "," "." "/" "=" "\\" "SHIFT" "CONTROL" "META" "OS" ";"]
+
+  (take 20 (repeatedly tick))
+
+  ;; I'll need to generate some c-code to have the keys do what I want
+  ;; to based on pin state. In order to get this really figured out,
+  ;; I'll need to figure out how the pin state works and ensure that the
+  ;; ADC pins can also be used for IO.
+#+END_SRC
+
+#+BEGIN_SRC c
+  int pins[12];
+  int os_key  = 8;
+  int shift   = 9;
+  int control = 10;
+  int meta    = 11;
+  int hyper   = 12;
+  int num_pins = 12;
+
+  void setup() {
+    for (int i = 0; i < num_pins; i++) {
+      pinMode(i, INPUT);
+    }
+  }
+
+  void loop() {
+
+    // Reset all pins to -1.
+    for (int i = 0; i < num_pins; i++) {
+      pins[i] = -1;
+    }
+  
+    // Get the digital input 0-7 that is used to determine column
+    int digital_input = -1;
+    for (int i = 0; i < 8; i++) {
+      if (digitalRead(i) == 0) {
+        digital_index = i;
+        break;
+      }
+    }
+
+
+    // Get the analog input that is used to determine row
+    int rows[9];
+    int rows[0] = (analogRead(A0) > 256) ? 1 : 0;
+    int rows[1] = (analogRead(A1) > 256) ? 1 : 0;
+    int rows[2] = (analogRead(A2) > 256) ? 1 : 0;
+    int rows[3] = (analogRead(A3) > 256) ? 1 : 0;
+    int rows[4] = rows[0] & rows[1];
+    int rows[5] = rows[0] & rows[2];
+    int rows[6] = rows[0] & rows[3];
+    int rows[7] = rows[1] & rows[2];
+    int rows[8] = rows[1] & rows[3];
+    // analog modifier key...
+    int rows[9] = rows[2] & rows[3];
+
+    int analog_input = -1;
+    for (int = 8; i >= 0; i++) {
+      if (rows[i] == 1) {
+        analog_input = i;}}
+
+    // Get the index by * the row by 8, and adding the column.
+    int key_index = -1;
+    if (digital_index != -1 && analog_index != -1) {
+      key_index = analog_input * 8 + digital_index;
+    }
+    // Look up this character
+    if (key_index != -1) {
+      // Look up key... Probably through an array.
+    }
+
+    // Check for shift
+
+    // Check for other modifiers
+
+    // Send the correct key signal
+
+    if (digitalRead(buttonPin) == 0) {  // if the button goes low
+      Keyboard.write('z');  // send a 'z' to the computer via Keyboard HID
+      delay(1000);  // delay so there aren't a kajillion z's
+    }
+  }
+#+END_SRC

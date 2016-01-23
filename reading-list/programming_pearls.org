@@ -1,0 +1,39 @@
+[[../index.org][Main Index]]
+[[./index.org][Reading List]]
+
+* Programming Pearls
+  1) Cracking The Oyster
+  2) Aha! Algorithms
+     1)
+	#+BEGIN_SRC clojure
+          (defn anagrams-of [word-list word]
+                   (letfn [(normalize [word]
+                             (sort word))
+                           (anagrams-of [[current-word & remaining-words] word matches]
+                             (if current-word
+                               (if (= (normalize word)
+                                      (normalize current-word))
+                                 (recur remaining-words word (conj matches current-word))
+                                 (recur remaining-words word matches))
+                               matches))]
+                     (anagrams-of word-list word [])))
+
+                 (def word-list
+                   (vec  (.split (slurp "/Users/mjhamrick/Desktop/word-list.txt") "\n")))
+                 (def processed-list
+                   (letfn [(normalize [word]
+                             (keyword (apply str (sort word))))
+                           (process [[current-word & remaining-words] maps]
+                             (if current-word
+                               (recur remaining-words (conj maps {(normalize current-word)
+                                                                  [current-word]}))
+                               maps))]
+                     (apply (partial merge-with concat) (process word-list []))))
+
+                 (defn anagrams-of-preproccessing [word]
+                   ((keyword (apply str (sort word))) processed-list ))
+
+                 (time (anagrams-of word-list "mat"))
+                 (time (anagrams-of-preproccessing "mat"))        
+	#+END_SRC
+

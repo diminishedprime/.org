@@ -1,0 +1,56 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Reading List]]
+
+[[./books/org_guide.pdf][Compact guide]]
+[[./books/org.pdf][Full Guide]]
+
+Yes I do appreciate how meta this is.
+
+* Todo Compact Guide [53%]                                 :orgmode:org:book:
+- [X] 1 - Introduction
+- [X] 2 - Document Structure
+- [X] 3 - Tables
+  #+BEGIN_SRC org
+    To make this table, type
+    |Name|Phone|Age
+    Then type C-c Ret
+
+    M-up and M-down move rows while
+    M-left and M-right move columns.
+
+    | Name          |        Phone | Age |
+    |---------------+--------------+-----|
+    | Robert Waldow |            2 |  24 |
+    | John Hopkins  | 123-456-7890 |  13 |
+  #+END_SRC
+- [X] 4 - Hyperlinksl lets you edit the location parts of links.
+  #+BEGIN_SRC org
+    [[./books/org_guide.pdf][Compact guide]]
+
+    C-o l - stores a link. You can then put in a buffer with C-c C-l
+    C-c C-o - opens the link at poi
+  #+END_SRC
+- [X] 5 - TODO items
+- [X] 6 - Tags
+- [X] 7 - Properties
+- [X] 8 - Dates and Time
+  #+BEGIN_SRC org
+    C-c . - 
+
+    <2015-12-02 Wed>--<2015-12-10 Thu>
+
+    ,* thing C-c C-d - insert deadline into headline
+    DEADLINE: <2015-10-29 Thu>
+
+    ,* thing 2 C-c C-s - insert with scheduled thing
+    SCHEDULED: <2015-10-29 Thu>
+
+  #+END_SRC
+- [ ] 9 - Capture, Refile, Archive
+  
+- [ ] 10
+- [ ] 11
+- [ ] 12
+- [ ] 13
+- [ ] 14
+- [ ] 15

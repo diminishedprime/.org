@@ -1,0 +1,6 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Reading List]] 
+
+* CIS194
+** Homeworks
+   1. [[./cis194/HW01.hs][Homework 01]]

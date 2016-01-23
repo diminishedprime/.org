@@ -1,0 +1,611 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Reading List]]
+
+
+https://youtu.be/amf5lTZ0UTc?list=PLE18841CABEA24090&t=3
+
+*  [[./books/sicp.pdf][Structure and Intrepretation of Computer Programs]]
+by Harold Abelson and Gerald Jay Sussman with Julie Sussman
++ [-] Book Completed [73%]
+  1. [-] Building Abstractions With Procedures
+     1. [X] The Elements Of Programming
+        1. [X] Expressions
+           #+BEGIN_SRC scheme
+             (+ 137 349)
+
+             ;; Prefix notation is very nice, and allows for more flexibility in
+             ;; the number of arguments passed to a function. For exapmle, with the
+             ;; * function
+             (* 1 2 3 4 5)
+           #+END_SRC
+        2. [X] Naming and The Environment
+           #+BEGIN_SRC scheme
+             (define size 2)
+             (* 5 size)
+           #+END_SRC
+        3. [X] Evaluating Combinations
+           + Define is the first special form we meet. It is an
+             exception to the the general evaluation rule.
+           + "Syntactic sugar causes cancer of the semicolon." - Alan Perlis
+        4. [X] Compound Procedures
+           #+BEGIN_SRC scheme
+             (define (square x) (* x x))
+
+             ;; The general form of a procedure definition is as follows
+             ;; (define (⟨name⟩ ⟨formal parameters⟩) ⟨body⟩)
+
+             ;; Using the procedure
+             (square 21)
+             ;; => 441
+             (square (square 3))
+             ;; => 81
+
+             ;;Using square as a building block
+             (define (sum-of-squares x y)
+               ( + (square x)
+                   (square y)))
+             (sum-of-squares 3 4)
+             ;; => 25
+           #+END_SRC
+        5. [X] The Substitution Model for Procedure Application
+           #+BEGIN_SRC scheme
+             ;;evaluation of a function. 
+             (define (f a)
+               (sum-of-squares (+ a 1) (* a 2)))
+             (f 5)
+             ;; first we retrieve the body of of f:
+             ;; (sum-of-squares (+ a 1) (* a 2))
+             ;; then we replace the formal parameter a by the argument 5
+             (sum-of-squares (+ 5 1) (* 5 2))
+             (sum-of-squares 6 10)
+             (+ (square 6) (square 10))
+             (+ (* 6 6) (* 10 10))
+             (+ 36 100)
+             136
+             ;; This process is called the /substitution model/ for procedure
+             ;; application.
+
+             ;; Alternatively the applicative order could be taken
+             (sum-of-squares (+ 5 1) (* 5 2))
+             (+ (square (+ 5 1)) (square (* 5 2)))
+             (+ (* (+ 5 1) (+ 5 1)) (* (* 5 2) (* 5 2)))
+             (+ (* 6 6) (* 10 10))
+             (+ 36 100)
+             136
+           #+END_SRC
+        6. [X] Conditional Expressions and Predicates
+        7. [X] Example: Square Roots by Newton’s Method
+           #+BEGIN_SRC scheme
+             (define sqrt-iter
+               (lambda (guess x)
+                 (if (good-enough? guess x)
+                     guess
+                     (sqrt-iter (improve guess x) x))))
+             (define improve
+               (lambda (guess x)
+                 (average guess (/ x guess))))
+             (define average
+               (lambda (x y)
+                 (/ (+ x y) 2)))
+             (define good-enough?
+               (lambda (guess x)
+                 (< (abs (- (square guess) x)) 0.001)))
+             (define sqrt
+               (lambda (x)
+                 (sqrt-iter 1.0 x)))
+             (define square
+               (lambda (x)
+                 (* x x)))
+             (sqrt 9)
+           #+END_SRC
+        8. [X] Procedures as Black-Box Abstractions
+     2. [X] Procedures and the Processes They Generate
+        1. [X] Linear Recursion and Iteration
+           #+BEGIN_SRC scheme
+             ;; naive factorial procedure
+             (define (factorial n)
+               (if (= n 1)
+                   1
+                   (* n (factorial (- n 1)))))
+             (factorial 6)
+
+             ;; better version of factorial that uses an accumulator which will use
+             ;; less memory.
+             (define (factorial n)
+               (fact-iter 1 1 n))
+             (define (fact-iter product counter max-count)
+               (if (> counter max-count)
+                   (fact-iter (* counter product)
+                              (+ counter 1)
+                              max-count)))
+             (factorial 6)
+           #+END_SRC
+        2. [X] Tree Recursion
+           #+BEGIN_SRC scheme
+             (define (fib n)
+               (cond ((< n 2) n)
+                     (else (+ (fib (- n 1))
+                              (fib (- n 2))))))
+
+             (define (fib n)
+               (fib-iter 1 0 n))
+             (define (fib-iter a b count)
+               (if (= count 0)
+                   b
+                   (fib-iter (+ a b)
+                             a
+                             (- count 1))))
+
+             (define (count-change amount) (cc amount 5))
+             (define (cc amount kinds-of-coins)
+               (cond ((= amount 0) 1)
+                     ((or (< amount 0) (= kinds-of-coins 0)) 0)
+                     (else (+ (cc amount
+                                  (- kinds-of-coins 1))
+                              (cc (- amount
+                                     (first-denomination
+                                      kinds-of-coins))
+                                  kinds-of-coins)))))
+             (define (first-denomination kinds-of-coins)
+               (cond ((= kinds-of-coins 1) 1)
+                     ((= kinds-of-coins 2) 5)
+                     ((= kinds-of-coins 3) 10)
+                     ((= kinds-of-coins 4) 25)
+                     ((= kinds-of-coins 5) 50)))
+
+             (count-change 100)
+           #+END_SRC
+        3. [X] Orders of Growth
+        4. [X] Exponentiation
+           #+BEGIN_SRC scheme
+             ;; linear recursion
+             (define (exp b n)
+               (if (= n 0)
+                   1
+                   (* b
+                      (exp b (- n 1)))))
+             (exp 3 3)
+
+
+             ;; Iterative recursion
+             (define (exp b n)
+               (define (exp-iter b counter product)
+                 (if (= counter 0)
+                     product
+                     (exp-iter b
+                               (- counter 1)
+                               (* B product))))
+               (exp-iter b n 1))
+             (exp 3 3)
+
+             ;; Better performance because decreases number of multiplications.
+             (define (fast-exp b n)
+               (cond ((= n 0) 1)
+                     ((even? n) (square (fast-exp b (/ n 2))))
+                     (else (* b (fast-exp b (- n 1))))))
+             (fast-exp 3 3)
+           #+END_SRC
+        5. [X] Greatest Common Divisors. 
+           #+BEGIN_SRC scheme
+             ;; GCD via Euclid's algorithm.
+             (define (gcd a b)
+               (if (= b 0)
+                   a
+                   (gcd b (remainder a b))))
+             (gcd 12 6)
+           #+END_SRC
+        6. [X] Example: Testing for Primality
+           #+BEGIN_SRC scheme
+             ;;
+             (define (smallest-divisor n)
+               (define (divides? a b)
+                 (= (remainder b a) 0))
+               (define (find-divisor n test-divisor)
+                 (cond ((> (square test-divisor) n) n)
+                       ((divides? test-divisor n) test-divisor)
+                       (else (find-divisor n (+ test-divisor 1)))))
+               (find-divisor n 2))
+
+             (define (prime? n)
+               (= (smallest-divisor n) n))
+
+             (prime? 13)
+             (prime? 12)
+
+             ;; Fermat's Test for primality
+             (define (expmod base exp m)
+               (cond ((= exp 0) 1)
+                     ((even? exp) (remainder (square (expmod base (/ exp 2) m))
+                                             m))
+                     (else (remainder (* base (expmod base (- exp 1) m))
+                                      m))))
+
+             (define (fermat-test n)
+               (define (try-it a)
+                 (= (expmod a n n) a))
+               (try-it (+ 1 (random (- n 1)))))
+
+             (define (fast-prime n times)
+               (cond ((= times 0) true)
+                     ((fermat-test n) (fast-prime n (- times 1)))
+                     (else false)))
+
+             (fast-prime 12 3)
+             (fast-prime 13 3)
+           #+END_SRC
+     3. [-] 1.3 Formulating Abstractions with Higher-Order Procedures
+        1. [X] Procedures as Arguments
+           #+BEGIN_SRC scheme
+             (define (sum-integers a b)
+               (if (> a b)
+                   0
+                   (+ a (sum-integers (+ a 1) b))))
+
+             (define (sum-cubes a b)
+               (define (cube a)
+                 (* a a a))
+               (if (> a b)
+                   0
+                   (+ (cube a)
+                      (sum-cubes (+ a 1) b))))
+
+             (define (pi-sum a b)
+               (if (> a b)
+                   0
+                   (+ (/ 1.0 (* a (+ a 2)))
+                      (pi-sum (+ a 4) b))))
+
+             ;; There is a lot of repeating. All of these methods share
+             ;; commonality, the only difference is the details of what is done to
+             ;; a, and the incrementation procedure.
+
+             (define (sum term a next b)
+               (if (> a b)
+                   0
+                   (+ (term a)
+                      (sum term (next a) next b))))
+
+             (define (sum-cubes a b)
+               (define (cube a)
+                 (* a a a))
+               (define (inc a)
+                 (+ a 1))
+               (sum cube a inc b))
+             (sum-cubes 1 10)
+
+             (define (sum-integers a b)
+               (define (identity x)
+                 x)
+               (define (inc a)
+                 (+ a 1))
+               (sum identity a inc b))
+             (sum-integers 1 4)
+
+             (define (pi-sum a b)
+               (define (pi-term x)
+                 (/ 1.0 (* x (+ x 2))))
+               (define (pi-next x)
+                 (+ x 4))
+               (sum pi-term a pi-next b))
+
+
+               (define (integral f a b dx)
+               (define (add-dx x)
+                 (+ x dx))
+               (* (sum f
+                       (+ a (/ dx 2.0))
+                       add-dx
+                       b)
+                  dx))
+
+             (integral (lambda (x) (* x x x))
+                       0 1 .001)
+           #+END_SRC
+        2. [X] Constructing Procedures Using lambda
+           #+BEGIN_SRC scheme
+             (lambda (x) (+ x 4))
+             (lambda (x) (/ 1.0 (* x (+ x 2))))
+
+             (define (sum term a next b)
+               (if (> a b)
+                   0
+                   (+ (term a)
+                      (sum term (next a) next b))))
+             (define (pi-sum a b)
+               (sum (lambda (x)
+                      (/ 1.0 (* x (+ x 2))))
+                    a
+                    (lambda (x)
+                      (+ x 4))
+                    b))
+
+             (pi-sum 1 100)
+
+
+             (define (integral f a b dx)
+               (* (sum f
+                       (+ a (/ dx 2.0))
+                       (lambda (x)
+                         (+ x dx))
+                       b)
+                  dx))
+             (integral (lambda (x) (* x x x))
+                       0
+                       1
+                       .001)
+           #+END_SRC
+        3. [ ] Procedures as General Methods
+           #+BEGIN_SRC scheme
+             (define (search f neg-point pos-point)
+               (define (close-enough? x y)
+                 (< (abs (- x y)) .001))
+               (define (average x y)
+                 (/ (+ x y) 2))
+               (let ((midpoint (average neg-point pos-point)))
+                 (if (close-enough? neg-point pos-point)
+                     midpoint
+                     (let ((test-value (f midpoint)))
+                       (cond ((positive? test-value)
+                              (search f neg-point midpoint))
+                             ((negative? test-value)
+                              (search f midpoint pos-point))
+                             (else midpoint))))))
+
+             (define (half-interval-method f a b)
+               (let (())))
+           #+END_SRC
+        4. [ ] Procedures as Returned Values
+  2. [-] Building Abstractions With Data
+     1. [-] Introduction to data abstraction
+        1. [X] Example: Arithmetic Operations for rational numbers
+           #+BEGIN_SRC scheme
+             (define (make-rat n d)
+               (let ((g (gcd n d)))
+                 (cons (/ n g)
+                       (/ d g))))
+             (define (numer x) (car x))
+             (define (denom x) (cdr x))
+
+             (define (add-rat x y)
+               (make-rat (+ (* (numer x) (denom y))
+                            (* (numer y) (denom x)))
+                         (* (denom x) (denom y))))
+
+             (define (sub-rat x y)
+               (make-rat (- (* (numer x) (denom y))
+                            (* (numer y) (denom x)))
+                         (* (denom x) (denom y))))
+             (define (mul-rat x y)
+               (make-rat (* (numer x) (numer y))
+                         (* (denom x) (denom y))))
+
+             (define (div-rat x y)
+               (make-rat (* (numer x) (denom y))
+                         (* (denom x) (numer y))))
+             (define (equal-rat? x y)
+               (= (* (numer x) (denom y))
+                  (* (denom x) (numer y))))
+             (define (print-rat x)
+               (newline)
+               (display (numer x))
+               (display "/")
+               (display (denom x)))
+
+             ;; Some examples...
+             (define one-half (make-rat 1 2))
+             (print-rat one-half)
+
+             (define one-third (make-rat 1 3))
+
+             (print-rat (add-rat one-half one-third))
+             (print-rat (mul-rat one-third one-half))
+             (print-rat (add-rat one-third one-third))
+
+           #+END_SRC
+        2. [ ] Abstraction Barriers (pg 118)
+	   #+BEGIN_SRC scheme
+	   
+	   #+END_SRC
+    
++ [-] Exercises. Solutions can be found [[http://community.schemewiki.org/?SICP-Solutions][here]]
+  1. [-] [35%]
+     1. [ ]
+     2. [ ]
+     3. [ ]
+     4. [ ]
+     5. [ ]
+     6. [ ]
+     7. [ ]
+     8. [ ]
+     9. [ ]
+     10. [ ]
+     11. [X] Random function
+         #+BEGIN_SRC scheme
+           ;;       / n if n < 3
+           ;; f(n) |
+           ;;       \ f(n-1) + 2f(n-2)+3f(n-3) if n >=3
+
+           ;; Recursive Process
+           (define (f n)
+             (cond ((< n 3) n)
+                   (else (+ (f (- n 1))
+                            (* 2 (f (- n 2)))
+                            (* 3 (f (- n 3)))))))
+           (f 4)
+
+           ;; Iterative Process
+           (define (f n)
+             (define (iter a b c count)
+               (if (= 0 count)
+                   a
+                   (iter b c (+ c
+                                (* 2 b)
+                                (* 3 a))
+                         (- count 1))))
+             (iter 0 1 2 n))
+           (f 4)
+         #+END_SRC
+     12. [X] Pascal Triangle
+         #+BEGIN_SRC scheme
+           (define (pascal-triangle row col)
+             (cond ((> col row) 0)
+                   ((< col 0) 0)
+                   ((= col 1) 1)
+                   (else (+ (pascal-triangle (- row 1) (- col 1))
+                            (pascal-triangle (- row 1) col)))))
+           (pascal-triangle 5 3)
+         #+END_SRC
+     13. [ ] Proofs are hard.
+     14. [X] Tree suck to type out.
+         + Just look at the solution via the link above.
+     15. [X] Recursive Sin(x)
+         #+BEGIN_SRC scheme
+           (define (cube x) (* x x x))
+           (define (p x)
+             (- (* 3 x)
+                (* 4 (cube x))))
+           (define (sine angle)
+             (if (not (> (abs angle) .1))
+                 angle
+                 (p (sine (/ angle 3.0)))))
+
+           (sine 12.15)
+           (p (sine (/ 12.15 3)))
+           (p (p (sine (/ 4.05 3))))
+           (p (p (p (sine (/ 1.3499999999999999 3)))))
+           (p (p (p (p (sine (/ .44999999999999996 3))))))
+           (p (p (p (p (p (sine (/ .15 3)))))))
+           (p (p (p (p (p (sine .05))))))
+
+           ;; p is applied 5 times. the order of growth is O(log 3) since the
+           ;; number is decreased by a constant factor of 3 each time it is
+           ;; evaluated.
+         #+END_SRC
+     16. [X] Iterative log(n) fast-exp
+         #+BEGIN_SRC scheme
+           (define (fast-exp b n)
+             (define (iter a b n)
+               (cond ((= n 0) a)
+                     ((even? n) (iter a (square b) (/ n 2)))
+                     (else (iter (* a b) b (- n 1)))))
+             (iter 1 b n))
+           (fast-exp 2 1000)
+         #+END_SRC
+     17. [X] Fast multiplication through recursive adding
+         #+BEGIN_SRC scheme
+           (define (fast-mult b n)
+             (define (halve x)
+               (/ x 2))
+             (define (double x)
+               (+ x x))
+             (cond ((= n 0) 0)
+                   ((even? b) (double (* n (halve b))))
+                   (else (+ n (* n (- b 1))))))
+           (fast-mult 100 100)
+         #+END_SRC
+     18. [X] Fast multiplication through iterative adding
+         #+BEGIN_SRC scheme
+           (define (* a b)
+             (define (double x) (+ x x))
+             (define (halve x) (floor (/ x 2)))
+             (define (iter accumulator a b)
+               (cond ((= b 0) accumulator) 
+                     ((even? b) (iter accumulator (double a) (halve b))) 
+                     (else (iter (+ accumulator a) a (- b 1)))))
+             (iter 0 a b))
+           (* 100 100)
+         #+END_SRC
+     19. [X] Fib in log steps using some linear algebra magic.
+         #+BEGIN_SRC scheme
+           (define (fib n)
+             (define (even? x)
+               (= (remainder x 2) 0))
+             (define (fib-iter p-acc q-acc p q n)
+               (cond ((= n 0) q-acc)
+                     ((even? n) (fib-iter
+                                 p-acc
+                                 q-acc
+                                 (+ (* p p) (* q q))
+                                 (+ (* 2 p q) (* q q))
+                                 (/ n 2)))
+                     (else (fib-iter
+                            (+ (* p p-acc) (* q q-acc))
+                            (+ (* p q-acc) (* q p-acc) (* q q-acc))
+                            p
+                            q
+                            (- n 1)))))
+             (fib-iter 1 0 0 1 n))
+
+           (fib 0)
+           (fib 1)
+           (fib 2)
+           (fib 5)
+           (fib 6)
+           (fib 19)
+           (fib 20)
+           (fib 100)
+         #+END_SRC
+     20. [X] Normal v. applicative order for euclid's gcd.
+         + I don't want to actually do the exercise, but from looking
+           at the solution I can see that the applicative order
+           evaluation does far fewer remainder operations because it
+           doesn't have to unnecessarily substitute down.
+     21. [X] Smallest divisor of some numbers
+         #+BEGIN_SRC scheme
+           (define (smallest-divisor n)
+             (define (divides? a b)
+               (= (remainder b a) 0))
+             (define (find-divisor n test-divisor)
+               (cond ((> (square test-divisor) n) n)
+                     ((divides? test-divisor n) test-divisor)
+                     (else (find-divisor n (+ test-divisor 1)))))
+             (find-divisor n 2))
+
+           (smallest-divisor 199) ;; => 199
+           (smallest-divisor 1999) ;; => 1999
+           (smallest-divisor 19999) ;; => 7
+         #+END_SRC
+     22. [ ] Time of algos
+         + It seems like I can't do this because my scheme
+           implementation doesn't have a runtime procedure. :(
+     23. [ ] 
+     24. [ ] 
+     25. [ ] 
+     26. [ ] 
+     27. [ ] Carmichael Numbers
+     28. [ ] 
+     29. [X] Simpson's Rule for Integrals
+         #+BEGIN_SRC scheme
+           (define (sum term a next b)
+             (if (> a b)
+                 0
+                 (+ (term a)
+                    (sum term (next a) next b))))
+
+           (define (simpson f a b n)
+             (define (inc a) (+ a 1))
+             (define h (/ (- b a) n)) 
+             (define (yk k) (f (+ a (* h k)))) 
+             (define (simpson-term k) 
+               (* (cond ((or (= k 0) (= k n)) 1) 
+                        ((odd? k) 4) 
+                        (else 2)) 
+                  (yk k))) 
+             (* (/ h 3) (sum simpson-term 0 inc n)))
+
+           (simpson (lambda(x)(* x x x)) 0 1 2)
+         #+END_SRC
+     30. [ ] Sum as an iterative recursion
+     31. [ ] product as iterative and linear recursions.
+     32. [ ] Sum and product are even more general!
+     33. [ ] Filtering on the more general idea.
+     34. [X] Perverse evaluator questions
+         #+BEGIN_SRC scheme
+           (define (f g) (g 2))
+           ;; If we try apply to f to f, the following will happen.
+           ;; (f f)
+           ;; (f 2)
+           ;; (2 2) which is an error.
+         #+END_SRC
+  2. [ ]
+     1. [ ] 

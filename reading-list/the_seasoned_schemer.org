@@ -1,0 +1,2693 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Reading List]]
+
+* The Seasoned Schemer [100%]
+by Daniel P. Friedman and Matthias Felleisen
+** Done 11. Welcome Back to the Show
+#+BEGIN_SRC scheme
+  (load "the_seasoned_schemer/ss.scm")
+
+  (define member?
+    (lambda (a lat)
+      (cond
+       ((null? lat) #f)
+       (else (or (eq? a (car lat))
+                 (member? a (cdr lat)))))))
+
+  (member? 'sardines '(Italian sardines spaghetti parsley)))
+  ;; -> #t
+
+  (define is-first?
+    (lambda (a lat)
+      (cond
+       ((null? lat) #f)
+       (else (eq? (car lat) a)))))
+
+  (define two-in-a-row?
+    (lambda (lat)
+      (cond
+       ((null? lat) #f)
+       (else
+        (or (is-first? (car lat) (cdr lat))
+            (two-in-a-row? (cdr lat)))))))
+
+  (two-in-a-row? '(Italian sardines spaghetti parsley))
+  (two-in-a-row? '(Italian sardines sardines spaghetti parsley))
+  (two-in-a-row? '(Italian sardines more sardines spaghetti))
+
+  (define is-first-b?
+    (lambda (a lat)
+      (cond
+       ((null? lat) #f)
+       (else (or (eq? (car lat) a)
+                 (two-in-a-row? lat))))))
+  (define two-in-a-row?
+    (lambda (lat)
+      (cond
+       ((null? lat) #f)
+       (else (is-first-b? (car lat) (cdr lat))))))
+
+  (define two-in-a-row-b?
+    (lambda (preceding lat)
+      (cond
+       ((null? lat) #f)
+       (else (or
+              (eq? (car lat) preceding)
+              (two-in-a-row-b? (car lat) (cdr lat)))))))
+
+  (define two-in-a-row?
+    (lambda (lat)
+      (cond
+       ((null? lat) #f)
+       (else (two-in-a-row-b? (car lat) (cdr lat))))))
+
+  (two-in-a-row? '(b d e i i a g))
+
+  (define sum-of-prefixes-b
+    (lambda (sonssf tup)
+      (cond
+       ((null? tup) '())
+       (else (cons
+              (+ sonssf (car tup))
+              (sum-of-prefixes-b
+               (+ sonssf (car tup))
+               (cdr tup)))))))
+
+  (sum-of-prefixes-b 0 '(1 1 1))
+
+  (define sum-of-prefixes
+    (lambda (tup)
+      (sum-of-prefixes-b 0 tup)))
+
+  (sum-of-prefixes '(2 1 9 17 0))
+  (sum-of-prefixes '(1 1 1 1 1))
+
+  (define pick
+    (lambda (n lat)
+      (cond
+       ((one? n) (car lat))
+       (else (pick (sub1 n) (cdr lat))))))
+
+  (pick 4 '(4 3 1 1 1))
+  (pick 2 '(2 4 3 1 1 1))
+
+  (define scramble-b
+    (lambda (tup rev-pre)
+      (cond
+       ((null? tup) '())
+       (else
+        (cons (pick (car tup) (cons (car tup) rev-pre))
+              (scramble-b (cdr tup) (cons (car tup) rev-pre)))))))
+
+  (define scramble
+    (lambda (tup)
+      (scramble-b tup '())))
+
+  (scramble '(1 1 1 3 4 2 1 1 9 2))
+  (scramble '(1 2 3 4 5 6 7 8 9))
+  (scramble '(1 2 3 1 2 3 4 1 8 2 10))
+
+#+END_SRC
+** Done 12. Take Cover
+#+BEGIN_SRC scheme
+  (load "the_seasoned_schemer/ss.scm")
+
+  (define multirember
+    (lambda (a lat)
+      ((Y (lambda (mr)
+            (lambda (lat)
+              (cond
+               ((null? lat) '())
+               ((eq? a (car lat)) (mr (cdr lat)))
+               (else
+                (cons (car lat) (mr (cdr lat))))))))
+       lat)))
+
+  (multirember 'tuna '(shrimp salad tuna salad and tuna))
+
+  (define length
+    ((lambda (le)
+       ((lambda (f) (f f))
+        (lambda (f)
+          (le (lambda (x) ((f f) x))))))
+     (lambda (length)
+       (lambda (l)
+         (cond
+          ((null? l) 0)
+          (else (add1 (length (cdr l)))))))))
+
+  (define length
+    (Y (lambda (length)
+         (lambda (l)
+           (cond
+            ((null? l) 0)
+            (else (add1 (length (cdr l)))))))))
+
+  (length '(1 2 3 4))
+
+  (define multirember
+    (lambda (a lat)
+      ((letrec
+           ((mr (lambda (lat)
+                  (cond
+                   ((null? lat) '())
+                   ((eq? a (car lat)) (mr (cdr lat)))
+                   (else (cons (car lat) (mr (cdr lat))))))))
+         mr)
+       lat)))
+  ;; Note that the letrec block is returning mr defined with the lambda.
+  ;; The result of the letrec block (mr) is then applied to lat. That's
+  ;; why there is the double (( in front of letrec instead of just a
+  ;; single (
+
+  (multirember 'tuna '(shrimp salad tuna salad and tuna))
+  (multirember 'pie '(apple custard pie liszer pie torte))
+
+  (define multirember
+    (lambda (a lat)
+      (letrec
+          ((mr (lambda (lat)
+                 (cond
+                  ((null? lat) '())
+                  ((eq? a (car lat)) (mr (cdr lat)))
+                  (else
+                   (cons (car lat) (mr (cdr lat))))))))
+        (mr lat))))
+  ;; In this letrec, however. It is returning the value of mr (which is
+  ;; bound through the letrec) applied with lat. This gives
+  ;; approximately the same benefit as before, but in this scenerio, if
+  ;; you were to define multiple functions, they could all be used
+  ;; inside the letrec, whereas otherwise you could only use the last
+  ;; one defined.
+
+  (multirember 'tuna '(shrimp salad tuna salad and tuna))
+  (multirember 'pie '(apple custard pie liszer pie torte))
+
+  (define rember-f
+    (lambda (test?)
+      (lambda (a l)
+        (cond
+         ((null? l) '())
+         ((test? (car l) a) (cdr l))
+         (else (cons (car l)
+                     ((rember-f test?) a (cdr l))))))))
+
+  (define rember-eq? (rember-f eq?))
+
+  (define multirember-f
+    (lambda (test?)
+      (lambda (a lat)
+        (cond
+         ((null? lat) '())
+         ((test? (car lat) a)
+          ((multirember-f test?) a (cdr lat)))
+         (else (cons
+                (car lat)
+                ((multi-rember-f test?) a (cdr lat))))))))
+
+  (define multirember-f
+    (lambda (test?)
+      (letrec
+          ((m-f (lambda (a lat)
+                  (cond
+                   ((null? lat) '())
+                   ((test? (car lat) a) (m-f a (cdr lat)))
+                   (else
+                    (cons
+                     (car lat)
+                     (m-f a (cdr lat))))))))
+        m-f)))
+
+  (multirember-f eq?)
+
+  (define member?
+    (lambda (a lat)
+      (cond
+       ((null? lat) #f)
+       ((eq? (car lat) a) #t)
+       (else (member? a (cdr lat))))))
+
+  (member? 'ice '(salad greens with pears brie cheese frozen yogurt))
+
+  (define member?
+    (lambda (a lat)
+      ((letrec
+           ((yes? (lambda (l)
+                    (cond
+                     ((null? l) #f)
+                     ((eq? (car lat) a) #t)
+                     (else (yes? (cdr l)))))))
+         yes?)
+       lat)))
+
+  (member? 'ice '(salad greens with pears brie cheese frozen yogurt))
+
+  (define member?
+    (lambda (a lat)
+      (letrec
+          ((yes? (lambda (l)
+                   (cond
+                    ((null? l) #f)
+                    ((eq? (car l) a) #t)
+                    (else (yes? (cdr l)))))))
+        (yes? lat))))
+
+  (member? 'ice '(salad greens with pears brie cheese frozen yogurt))
+  (member? 'ice '(ice ice baby))
+
+  ;; These two have the same difference as before. One returns the
+  ;; recursive function it defines and then applies it to the arguments,
+  ;; where the other one returns the value of applying the recursive
+  ;; function to the list
+
+  (define union
+    (lambda (set1 set2)
+      (cond
+       ((null? set1) set2)
+       ((member? (car set1) set2)
+        (union (cdr set1) set2))
+       (else (cons
+              (car set1)
+              (union (cdr set1) set2))))))
+
+  (union '(tomatoes and macaroni casserole)
+         '(macaroni and cheese))
+
+  (define union
+    (lambda (set1 set2)
+      (letrec
+          ((U (lambda (set)
+                (cond
+                 ((null? set) set2)
+                 ((member? (car set) set2)
+                  (U (cdr set)))
+                 (else (cons
+                        (car set)
+                        (U (cdr set))))))))
+        (U set1))))
+
+  (union '(tomatoes and macaroni casserole)
+         '(macaroni and cheese))
+
+  (define union
+    (lambda (set1 set2)
+      (letrec
+          ((A (lambda (set)
+                (cond
+                 ((null? set) set2)
+                 ((member? (car set) set2)
+                  (A (cdr set)))
+                 (else (cons
+                        (car set)
+                        (A (cdr set))))))))
+        (A set1))))
+
+  (union '(tomatoes and macaroni casserole)
+         '(macaroni and cheese))
+
+  ;; The name of the functions defined in the letrec don't matter as
+  ;; long as thy are consistent. The only difference between this union
+  ;; and the one before is naming the inner function A instead of U.
+
+  (define union
+    (lambda (set1 set2)
+      (letrec
+          ((A (lambda (set)
+                (cond
+                 ((null? set) set2)
+                 ((M? (car set) set2)
+                  (A (cdr set)))
+                 (else (cons
+                        (car set)
+                        (A (cdr set)))))))
+           (M? (lambda (a lat)
+                 (cond
+                  ((null? lat) #f)
+                  ((eq? (car lat) a) #t)
+                  (else
+                   (M? a (cdr lat)))))))
+        (A set1))))
+
+  (union '(tomatoes and macaroni casserole)
+         '(macaroni and cheese))
+
+  ;; You can define more than one function inside of a letrec. It's
+  ;; really just like a let, but it works much nicer for recursive
+  ;; functions. I'm not sure if we've learned about lets yet, though. I
+  ;; think we probably haven't.
+
+  (define union
+    (lambda (set1 set2)
+      (letrec
+          ((A (lambda (set)
+                (cond
+                 ((null? set) set2)
+                 ((M? (car set) set2)
+                  (A (cdr set)))
+                 (else (cons
+                        (car set)
+                        (A (cdr set)))))))
+           (M? (lambda (a lat)
+                 (letrec
+                     ((N? (lambda (lat)
+                            (cond
+                             ((null? lat) #f)
+                             ((eq? (car lat) a) #t)
+                             (else (N? (cdr lat)))))))
+                   (N? lat)))))
+        (A set1))))
+
+  (union '(tomatoes and macaroni casserole)
+         '(macaroni and cheese))
+
+  ;; You can also neest letrecs, though it seems like that can actually
+  ;; cause more confusion than it solves.
+
+  (define two-in-a-row?
+    (lambda (lat)
+      (letrec
+          ((W (lambda (a lat)
+                (cond
+                 ((null? lat) #f)
+                 (else (or (eq? (car lat) a)
+                           (W (car lat) (cdr lat))))))))
+        (cond
+         ((null? lat) #f)
+         (else (W (car lat) (cdr lat)))))))
+
+  (two-in-a-row? '(a a b c d))
+  (two-in-a-row? '(a b c a d))
+
+  (define two-in-a-row?
+    (letrec
+        ((W (lambda (a lat)
+              (cond
+               ((null? lat) #f)
+               (else (or (eq? (car lat) a)
+                         (W (car lat) (cdr lat))))))))
+      (lambda (lat)
+        (cond
+         ((null? lat) #f)
+         (else (W (car lat) (cdr lat)))))))
+
+  (two-in-a-row? '(a a b c d))
+  (two-in-a-row? '(a b c a d))
+
+  ;; Notice that this define is still perfectly happy because the letrec
+  ;; ends up returning the (lambda (lat) ...). As far as the defined is
+  ;; concerned, it got passed an anonymous function like usual.
+
+  (define sum-of-prefixes
+    (lambda (tup)
+      (letrec
+          ((S (lambda (sss tup)
+                (cond
+                 ((null? tup) '())
+                 (else (cons
+                        (+ sss (car tup))
+                        (S (+ sss (car tup)) (cdr tup))))))))
+        (S 0 tup))))
+
+  (sum-of-prefixes '(1 1 1 1 1))
+
+  (define pick
+    (lambda (n lat)
+      (cond
+       ((one? n) (car lat))
+       (else (pick (sub1 n) (cdr lat))))))
+
+  (define scramble
+    (lambda (tup)
+      (letrec
+          ((P (lambda (tup rp)
+                (cond
+                 ((null? tup) '())
+                 (else (cons (pick (car tup)
+                                   (cons (car tup) rp))
+                             (P (cdr tup)
+                                (cons (car tup) rp))))))))
+        (P tup '()))))
+
+  (scramble '(1 1 1 1 4 2))
+
+  (define scramble
+    (letrec
+        ((P (lambda (tup rp)
+              (cond
+               ((null? tup) '())
+               (else (cons (pick (car tup)
+                                 (cons (car tup) rp))
+                           (P (cdr tup)
+                              (cons (car tup) rp))))))))
+      (lambda (tup)
+        (P tup '()))))
+
+  (scramble '(1 1 1 1 4 2))
+
+  ;;Pick should probably also be defined via the letrec, but that's
+  ;;something I'm just not going to bother with since I understand the
+  ;;fact that it should be done in the first place.
+#+END_SRC
+** Done 13. Hop, Skip, and Jump
+#+BEGIN_SRC scheme
+  (load "the_seasoned_schemer/ss.scm")
+
+  (define intersect
+    (lambda (set1 set2)
+      (cond
+       ((null? set1) '())
+       ((member? (car set1) set2)
+        (cons (car set1) (intersect (cdr set1) set2)))
+       (else (intersect (cdr set1) set2)))))
+
+  (intersect '(tomatoes and macaroni) '(macaroni and cheese))
+
+  (define intersect
+    (lambda (set1 set2)
+      (letrec
+          ((I (lambda (set)
+                (cond
+                 ((null? set) '())
+                 ((member? (car set) set2)
+                  (cons (car set) (I (cdr set))))
+                 (else (I (cdr set)))))))
+        (I set1))))
+
+  (intersect '(tomatoes and macaroni) '(macaroni and cheese))
+
+  (define intersectall
+    (lambda (lset)
+      (cond
+       ((null? (cdr lset)) (car lset))
+       (else (intersect (car lset)
+                        (intersectall (cdr lset)))))))
+
+  ;; intersectall that doesn't assume lset isn't null
+  (define intersectall
+    (lambda (lset)
+      (cond
+       ((null? lset) '())
+       ((null? (cdr lset)) (car lset))
+       (else (intersect (car lset)
+                        (intersectall (cdr lset)))))))
+
+  ;; but we ask if it's null every time which is unnecessary since after
+  ;; the initial call, intersectall does not recur when it knows that
+  ;; the cdr of the list is empty. Better to use letrec to clean it up.
+
+  (define intersectall
+    (lambda (lset)
+      (letrec
+          ((intersectall (lambda (lset)
+                           (cond
+                            ((null? (cdr lset)) (car lset))
+                            (else (intersect (car lset)
+                                             (intersectall (cdr lset))))))))
+        (cond
+         ((null? lset) '())
+         (else (intersectall lset))))))
+
+  (intersectall '((3 mangos and ) (3 kiwis and) (3 hamburgers)))
+  (intersectall '((3 mangoes and) () (3 diet hamburgers)))
+
+  ;; but this still isn't completly ideal. As show in the previous
+  ;; example, if the empty list is one of the arguments, the result will
+  ;; always be the empty list. So if the empty list is somewhere in the
+  ;; middle, it would be best if we could stop the calculation and
+  ;; return '().
+
+  ;; And that is where letcc comes in...
+
+  (define intersectall
+    (lambda (lset)
+      (call-with-current-continuation
+       (lambda (hop)
+         (letrec
+             ((A (lambda (lset)
+                   (cond
+                    ((null? (car lset)) (hop '(for teh proofz)))
+                    ((null? (cdr lset)) (car lset))
+                    (else (intersect (car lset)
+                                     (A (cdr lset))))))))
+           (cond
+            ((null? lset) '())
+            (else (A lset))))))))
+
+  (intersectall '((3 mangos and ) (3 kiwis and) (3 hamburgers)))
+  (intersectall '((3 mangoes and) () (3 diet hamburgers)))
+
+  ;; This new version is better. When it sees an empty set as one of the
+  ;; arguments, it skips the rest of the argument and returns '(for teh
+  ;; proofz) which is just something I put in there to prove that it's
+  ;; actually working
+
+  (intersectall '((3 steaks and)
+                  (no food and)
+                  (three baked potatoes)
+                  (3 diet hamburgers)))
+
+  ;; It's still not ideal, though. As we go through, we find ourselves
+  ;; trying to intersect on the empty set again...
+
+  (define intersect
+    (lambda (set1 set2)
+      (letrec
+          ((I (lambda (set)
+                (cond
+                 ((null? set) '())
+                 ((member? (car set) set2)
+                  (cons (car set) (I (cdr set))))
+                 (else (I (cdr set)))))))
+        (cond
+         ((null? set2) '())
+         (else (I set1))))))
+
+  ;; this slightly improves the situation, at least it returns
+  ;; immedietly when the second argument is the empty list now. We still
+  ;; have a problem, though, because as soon as one of the intersects
+  ;; returns the empty list, we know our answer. When end up duplicating
+  ;; the question
+
+
+  (define intersectall
+    (lambda (lset)
+      (call-with-current-continuation
+       (lambda (hop)
+         (letrec
+             ((A (lambda (lset)
+                   (cond
+                    ((null? (car lset)) (hop '(don't you go givin me a null)))
+                    ((null? (cdr lset)) (car lset))
+                    (else (I (car lset)
+                             (A (cdr lset)))))))
+              (I (lambda (s1 s2)
+                   (letrec
+                       ((I (lambda (s1)
+                             (cond
+                              ((null? s1) '())
+                              ((member? (car s1) s2)
+                               (cons (car s1) (I (cdr s1))))
+                              (else (I (cdr s1)))))))
+                     (cond
+                      ((null? s2) (hop '(aww yiss you have me a null)))
+                      (else (I s1)))))))
+           (cond
+            ((null? lset) '())
+            (else (A lset))))))))
+
+  (intersectall '((3 steaks and)
+                  (no food and)
+                  (three baked potatoes)
+                  (3 diet hamburgers)))
+
+  ;; It mights seem weird that I used the function name I twice, both in
+  ;; letrecs, but the names don't matter when it comes to shadowing.
+  ;; Also, this version is pretty cool, it returns promptly as soon as
+  ;; s2 is null.
+
+  (define rember
+    (lambda (a lat)
+      (letrec
+          ((R (lambda (lat)
+                (cond
+                 ((null? lat) '())
+                 ((eq? (car lat) a) (cdr lat))
+                 (else (cons (car lat) (R (cdr lat))))))))
+        (R lat))))
+
+  (define rember-beyond-first
+    (lambda (a lat)
+      (letrec
+          ((R (lambda (lat)
+                (cond
+                 ((null? lat) '())
+                 ((eq? (car lat) a) '())
+                 (else (cons (car lat) (R (cdr lat))))))))
+        (R lat))))
+
+  (rember-beyond-first 'roots '(noodles spaghetti spatzle bean-thread roots potatoes yam others rice))
+  (rember-beyond-first 'others '(noodles spaghetti spatzle bean-thread roots potatoes yam others rice))
+  (rember-beyond-first 'sweetthing '(noodles spaghetti spatzle bean-thread roots potatoes yam others rice))
+  (rember-beyond-first 'desserts '(cookies chocolate minths caramel delight ginger snaps desserts chocolate
+                                           mousse vanilla ice cream German chocolate cake more desserts
+                                           gingerbreadman chocolate chip brownies))
+
+  ;; This method simple returns the list passed in up-to the first
+  ;; occurance of a, or the entire list if a is not present
+
+  (define rember-upto-last
+    (lambda (a lat)
+      (call-with-current-continuation
+       (lambda (skip)
+         (letrec
+             ((R (lambda (lat)
+                (cond
+                 ((null? lat) '())
+                 ((eq? (car lat) a) (skip (R (cdr lat))))
+                 (else (cons (car lat) (R (cdr lat))))))))
+           (R lat))))))
+
+  (rember-upto-last 'roots '(noodles spaghetti spatzle bean-thread roots potatoes yam others rice))
+  (rember-upto-last 'sweetthing '(noodles spaghetti spatzle bean-thread roots potatoes yam others rice))
+  (rember-upto-last 'desserts '(cookies chocolate minths caramel delight ginger snaps desserts chocolate
+                                           mousse vanilla ice cream German chocolate cake more desserts
+                                           gingerbreadman chocolate chip brownies))
+
+  ;; This version, returns the list passed in after the first occurance
+  ;; of a, or the entire list if a is not present. It uses the magic of
+  ;; call/cc or call-with-current-continuation
+#+END_SRC
+** Done 14. Let There Be Names
+#+BEGIN_SRC scheme
+  (load "the_seasoned_schemer/ss.scm")
+
+  (define leftmost
+    (lambda (l)
+      (cond
+       ((atom? (car l)) (car l))
+       (else (leftmost (car l))))))
+
+  (leftmost '(((a) b) (c d)))
+  (leftmost '(((a ()) () (e))))
+  ;; This blows up our normal definition
+  ;; (leftmost '(((() a))))
+
+  (define leftmost
+    (lambda (l)
+      (cond
+       ((null? l) '())
+       ((atom? (car l)) (car l))
+       (else (cond
+              ((atom? (leftmost (car l)))
+               (leftmost (car l)))
+              (else (leftmost (cdr l))))))))
+
+  (leftmost '(((() a))))
+
+  ;; This is good, but it calculates the leftmost of the car of l too
+  ;; much... LET TO THE RESCUE
+
+  (define leftmost
+    (lambda (l)
+      (cond
+       ((null? l) '())
+       ((atom? (car l)) (car l))
+       (else (let ((a (leftmost (car l))))
+               (cond
+                ((atom? a) a)
+                (else (leftmost (cdr l)))))))))
+
+  (leftmost '(((() a))))
+  ;; Still a happy camper...
+
+  ;; Just for my own amusement, I'm going to try to do let via the good
+  ;; ole fashioned lambda.
+
+  (define leftmost
+    (lambda (l)
+      (cond
+       ((null? l) '())
+       ((atom? (car l)) (car l))
+       (else ((lambda (a)
+                (cond
+                 ((atom? a) a)
+                 (else (leftmost (cdr l)))))
+              (leftmost (car l)))))))
+  ;; I did it!
+  (leftmost '(((() a))))
+
+  (define rember1*
+    (lambda (a l)
+      (cond
+       ((null? l) '())
+       ((atom? (car l)) (cond
+                         ((eq? (car l) a) (cdr l))
+                         (else (cons (car l)
+                                     (rember1* a (cdr l))))))
+       (else (cond
+              ((eqlist? (rember1* a (car l))
+                        (car l))
+               (cons (car l) (rember1* a (cdr l))))
+              (else (cons (rember1* a (car l)) (cdr l))))))))
+
+  (rember1* 'salad '((Swedish rye) (French (mustard salad turkey)) salad))
+  (rember1* 'meat '((pasta meat) pasta (noodles meat sauce) meat tomatoes))
+
+  ;; Fixing rember1* using the Twelth Commandment
+
+  (define rember1*
+    (lambda (a l)
+      (letrec
+          ((R (lambda (l)
+                (cond
+                 ((null? l) '())
+                 ((atom? (car l)) (cond
+                                   ((eq? (car l) a) (cdr l))
+                                   (else (cons (car l) (R (cdr l))))))
+                 (else (cond
+                        ((eqlist? (R (car l))
+                                  (car l))
+                         (cons (car l) (R (cdr l))))
+                        (else (cons (R (car l)) (cdr l)))))))))
+        (R l))))
+
+  (rember1* 'salad '((Swedish rye) (French (mustard salad turkey)) salad))
+  (rember1* 'meat '((pasta meat) pasta (noodles meat sauce) meat tomatoes))
+
+  ;; That's a little better, but we still have some things that are
+  ;; repeating.
+
+  (define rember1*
+    (lambda (a l)
+      (letrec
+          ((R (lambda (l)
+                (cond
+                 ((null? l) '())
+                 ((atom? (car l)) (cond
+                                   ((eq? (car l) a) (cdr l))
+                                   (else (cons (car l) (R (cdr l))))))
+                 (else (let ((av (R (car l))))
+                         (cond
+                          ((eqlist? av (car l))
+                           (cons (car l) av))
+                          (else (cons (R (car l)) (cdr l))))))))))
+        (R l))))
+
+  (rember1* 'salad '((Swedish rye) (French (mustard salad turkey)) salad))
+  (rember1* 'meat '((pasta meat) pasta (noodles meat sauce) meat tomatoes))
+
+  (define depth*
+    (lambda (l)
+      (cond
+       ((null? l) 1)
+       ((atom? (car l))
+        (depth* (cdr l)))
+       (else (cond
+              ((> (depth* (cdr l))
+                  (add1 (depth* (car l))))
+               (depth* (cdr l)))
+              (else (add1 (depth* (car l)))))))))
+
+  (depth* '((pickled) peppers (peppers pickled)))
+  (depth* '(margarine ((bitter butter) (makes) (batter (bitter))) butter))
+  (depth* '(c (b (a b) a) a))
+
+  ;; Let's get rid of the repeats
+
+  (define depth*
+    (lambda (l)
+      (cond
+       ((null? l) 1)
+       ((atom? (car l))
+        (depth* (cdr l)))
+       (else (let ((a (add1 (depth* (car l))))
+                   (d (depth* (cdr l))))
+               (cond
+                ((> d a) d)
+                (else a)))))))
+
+  (depth* '((pickled) peppers (peppers pickled)))
+  (depth* '(margarine ((bitter butter) (makes) (batter (bitter))) butter))
+  (depth* '(c (b (a b) a) a))
+
+  ;; Yay, that was much cleaner than before. :) We can still do better,
+  ;; though.
+
+  (define depth*
+    (lambda (l)
+      (cond
+       ((null? l) 1)
+       (else (let ((d (depth* (cdr l))))
+               (cond
+                ((atom? (car l)) d)
+                (else (let ((a (add1 (depth* (car l)))))
+                        (cond
+                         ((> d a) d)
+                         (else a))))))))))
+
+  (depth* '((pickled) peppers (peppers pickled)))
+  (depth* '(margarine ((bitter butter) (makes) (batter (bitter))) butter))
+  (depth* '(c (b (a b) a) a))
+
+  ;; This version saves us one more extra calculation, sorta... It
+  ;; actually only sometimes saves us a calculation, when the car of l
+  ;; isn't an atom. Because of this, it is okay to leave it as it was
+  ;; before. This is probably preferred, actually, since it is easier to
+  ;; read.
+
+  (define depth*
+    (lambda (l)
+      (cond
+       ((null? l) 1)
+       (else (let ((d (depth* (cdr l))))
+               (cond
+                ((atom? (car l)) d)
+                (else (let ((a (add1 (depth* (car l)))))
+                        (if (> d a) d a)))))))))
+
+  (depth* '((pickled) peppers (peppers pickled)))
+  (depth* '(margarine ((bitter butter) (makes) (batter (bitter))) butter))
+  (depth* '(c (b (a b) a) a))
+
+  ;; Even shorter. Ifs can be really great.
+
+  (define depth*
+    (lambda (l)
+      (cond
+       ((null? l) 1)
+       ((atom? (car l)) (depth* (cdr l)))
+       (else (max (add1 (depth* (car l)))
+                  (depth* (cdr l)))))))
+
+  (depth* '((pickled) peppers (peppers pickled)))
+  (depth* '(margarine ((bitter butter) (makes) (batter (bitter))) butter))
+  (depth* '(c (b (a b) a) a))
+
+  ;; Max is nice and already ruterns the greater of two values. :)
+
+  (define leftmost
+    (lambda (l)
+      (call/cc
+       (lambda (skip)
+         (lm l skip)))))
+  (define lm
+    (lambda (l out)
+      (cond
+       ((null? l) '())
+       ((atom? (car l)) (out (car l)))
+       (else (begin
+               (lm (car l) out)
+               (lm (cdr l) out))))))
+
+  (leftmost '(((a)) b (c)))
+
+  ;; But don't forget the 13th commandment
+
+  (define leftmost
+    (letrec
+        ((lm (lambda (l outu)
+               (cond
+                ((null? l) '())
+                ((atom? (car l)) (out (car l)))
+                (else (begin
+                        (lm (car l) out)
+                        (lm (cdr l) out)))))))
+      (lambda (l)
+        (call/cc
+         (lambda (skip)
+           (lm l skip))))))
+
+  (leftmost '(((a)) b (c)))
+
+  ;; Whew. That was a close one. We could hide it a different way too,
+  ;; though. And while we are at it, we could put the letrec inside of
+  ;; the call/cc too. Oh, and now we see that we don't need out and skip
+  ;; seperately. They both refer to the same function, so let's make
+  ;; them the same, too.
+
+  (define leftmost
+    (lambda (l)
+      (call/cc
+       (lambda (skip)
+         (letrec
+             ((lm (lambda (l)
+                    (cond
+                     ((null? l) '())
+                     ((atom? (car l)) (skip (car l)))
+                     (else (begin
+                             (lm (car l))
+                             (lm (cdr l))))))))
+           (lm l))))))
+
+  (leftmost '(((a)) b (c)))
+
+  (define rember1*
+    (lambda (a l)
+      (letrec
+          ((rm (lambda (a l oh)
+                 (cond
+                  ((null? l) (oh 'no))
+                  ((atom? (car l))
+                   (if (eq? (car l) a)
+                       (cdr l)
+                       (cons (car l) (rm a (cdr l) oh))))
+                  (else
+                   (let ((new-car
+                          (call/cc
+                           (lambda (oh)
+                             (rm a (car l) oh)))))
+                     (if (atom? new-car)
+                         (cons (car l) (rm a (cdr l) oh))
+                         (cons new-car (cdr l)))))))))
+        (let ((new-l
+               (call/cc
+                (lambda (oh)
+                  (rm a l oh)))))
+          (if (atom? new-l)
+              l
+              new-l)))))
+
+  (rember1* 'noodles
+            '((food) more (food)))
+  (rember1* 'noodles
+            '(noodles noodles ((noodles))))
+#+END_SRC
+** Done 15. The Difference between Men and Boys
+#+BEGIN_SRC scheme
+  (load "the_seasoned_schemer/ss.scm")
+
+  (define x
+    (cons 'chicago
+          (cons 'pizza
+                '())))
+  x
+  ;; x is original (chicage pizza)
+  (set! x 'gone)
+  x
+  ;; after we set bang x, it is now gone.
+  (set! x 'skins)
+  x
+  ;; now it's skins
+
+  (define gourmet
+    (lambda (food)
+      (cons food
+            (cons x '()))))
+
+  (gourmet 'onion)
+  ;; this is onion skins at this point in the code.
+
+  (set! x 'rings)
+  (gourmet 'onion)
+  ;; this is now onion rings.
+
+  (define gourmand
+    (lambda (food)
+      (set! x food)
+      (cons food
+            (cons x '()))))
+  (gourmand 'potato)
+  ;; this is potato potato...
+  (gourmand 'rice)
+  ;; this is rice rice
+
+  (define diner
+    (lambda (food)
+      (cons 'milkshake
+            (cons food
+                  '()))))
+  (define dinerR
+    (lambda (food)
+      (set! x food)
+      (cons 'milkshake
+            (cons food
+                  '()))))
+  (dinerR 'onion)
+  ;; milkshake onion. Eww.
+  x
+  ;; x is now onion
+  (dinerR 'pecanpie)
+  ;;milkshake pecanpieq
+  x
+  ;; x is now pecanpie
+
+  (gourmand 'onion)
+  x
+  ;; onion onion, then it sets x to onion.
+
+  (define omnivore
+    (let ((x 'minestrone))
+      (lambda (food)
+        (set! x food)
+        (cons food
+              (cons x
+                    '())))))
+  (omnivore 'bouillabaisse)
+  ;; bouillabaisse bouillabaisse
+  x
+  ;; still onion. woo
+
+  (define gobbler
+    (let ((x 'minestrone))
+      (lambda (food)
+        (set! x food)
+        (cons food
+              (cons x '())))))
+  (gobbler 'gumbo)
+  ;; gumbo gumbo
+  x
+  ;; x is still onion.
+
+  (define food 'none)
+  (define glutton
+    (lambda (x)
+      (set! food x)
+      (cons 'more
+            (cons x
+                  (cons 'more
+                        (cons x '()))))))
+  (glutton 'garlic)
+  ;; more garlic more garlic
+  x
+  ;; still happily an onion.
+
+  (define chez-nous
+    (lambda ()
+      (set! food x)
+      (set! x food)))
+
+  ;;this version blows up the original value of food. We can ue a let to
+  ;;fix this problem, however.
+
+  (define cheznous
+    (lambda ()
+      (let ((a food))
+        (set! food x)
+        (set! x a))))
+
+  (glutton 'garlic)
+  ;; more garlic more garlic
+  food
+  ;; garlic
+
+  (gourmand 'potato)
+  ;; potato potato
+  x
+  ;; potato
+  (cheznous)
+  food
+  ;; now potato
+  x
+  ;; now garlic
+
+#+END_SRC
+** Done 16. Read, Set, Bang!
+#+BEGIN_SRC scheme
+  (load "the_seasoned_schemer/ss.scm")
+
+  (define sweet-tooth
+    (lambda (food)
+      (cons food
+            (cons 'cake '()))))
+
+  (define last 'angelfood)
+
+  (sweet-tooth 'chocolate)
+  (sweet-tooth 'fruit)
+
+  (define sweet-toothL
+    (lambda (food)
+      (set! last food)
+      (cons food
+            (cons 'cake '()))))
+
+  (sweet-toothL 'chocolate)
+  last
+
+  (sweet-toothL 'fruit)
+  last
+
+  (sweet-toothL 'cheese)
+  last
+
+  (define ingredients '())
+
+  (define sweet-toothR
+    (lambda (food)
+      (set! ingredients
+            (cons food ingredients))
+      (cons food
+            (cons 'cake '()))))
+
+  (sweet-toothR 'chocolate)
+  ingredients
+
+  (sweet-toothR 'fruit)
+  ingredients
+
+  (sweet-toothR 'cheese)
+  ingredients
+
+  (sweet-toothR 'carrot)
+  ingredients
+
+  (define deep
+    (lambda (m)
+      (cond
+       ((zero? m) 'pizza)
+       (else (cons (deep (sub1 m))
+                   '())))))
+  ;; I defined test in the ss.scm file to help actually make sure everything is working.
+  (test (and (same? '(((pizza)))
+                    (deep 3))
+             (same? '(((((((pizza)))))))
+                    (deep 7))
+             (same? 'pizza
+                    (deep 0))))
+
+  (define Ns '())
+  (define deepR
+    (lambda (n)
+      (set! Ns (cons n Ns))
+      (deep n)))
+
+  (define Rs '())
+  (define Ns '())
+  (define deepR
+    (lambda (n)
+      (set! Rs (cons (deep n) Rs))
+      (set! Ns (cons n Ns))
+      (deep n)))
+
+  ;; We broke a commandment. Oops, let's fix that now.
+  (define deepR
+    (lambda (n)
+      (let ((result (deep n)))
+        (set! Rs (cons result Rs))
+        (set! Ns (cons n Ns))
+        result)))
+
+  (test (and (same? '(((pizza)))
+                    (deepR 3))))
+  Ns
+  Rs
+
+  (test (and (same? '(((((pizza)))))
+                    (deepR 5))))
+
+  Ns
+  Rs
+
+  ;; Yay, we're sneakily being taught about memoization.
+
+  (test (and (same? '(((pizza)))
+                    (deepR 3))))
+  Ns
+  Rs
+
+  (define find
+    (lambda (n Ns Rs)
+      (letrec
+          ((A (lambda (ns rs)
+                (cond
+                 ((= (car ns) n) (car rs))
+                 (else (A (cdr ns) (cdr rs)))))))
+        (A Ns Rs))))
+
+  (test (and (same? '(((pizza)))
+                    (find 3 Ns Rs))
+             (same? '(((((pizza)))))
+                    (find 5 Ns Rs))))
+
+  (define deepM
+    (lambda (n)
+      (if (member? n Ns)
+          (find n Ns Rs)
+          (deepR n))))
+  Ns
+  Rs
+
+  (set! Ns (cdr Ns))
+  (set! Rs (cdr Rs))
+
+  Ns
+  Rs
+
+  (define deepM
+    (lambda (n)
+      (if (member? n Ns)
+          (find n Ns Rs)
+          (let ((result (deep n)))
+            (set! Rs (cons result Rs))
+            (set! Ns (cons n Ns))
+            result))))
+
+  (test (and (same? '((((((pizza))))))
+                    (deepM 6))))
+
+  ;; This is pretty good, but in order to determine deep 6 we also
+  ;; determine the value of deep 5. We can fix this by changing the
+  ;; recursion
+
+  )
+
+  (define deep
+    (lambda (m)
+      (cond
+       ((zero? m) 'pizza)
+       (else (cons (deepM (sub1 m))
+                   '())))))
+
+  (test (and (same? '(((((((((pizza)))))))))
+                    (deepM 9))
+             (same? '(9 8 7 6 5 3)
+                    Ns)))
+
+  ;; Where did the 7 and 8 come from? They came when deep asks for deepM
+  ;; 8 during the recursion
+
+  (define deepM
+    (let ((Rs '())
+          (Ns '()))
+      (lambda (n)
+        (if (member? n Ns)
+            (find n Ns Rs)
+            (let ((result (deep n)))
+              (set! Rs (cons result Rs))
+              (set! Ns (cons n Ns))
+              result)))))
+
+  (test (and (same? '((((((((((((((((pizza))))))))))))))))
+                    (deepM 16))))
+
+  (define find
+    (lambda (n Ns Rs)
+      (letrec
+          ((A (lambda (ns rs)
+                (cond
+                 ((null? ns) #f)
+                 ((= (car ns) n) (car rs))
+                 (else (A (cdr ns) (cdr rs)))))))
+        (A Ns Rs))))
+
+  (test (and (same? #f
+                    (find 3 '() '()))))
+
+  (define deepM
+    (let ((Rs '())
+          (Ns '()))
+      (lambda (n)
+        (if (atom? (find n Ns Rs))
+            (let ((result (deep n)))
+              (set! Rs (cons result Rs))
+              (set! Ns (cons n Ns))
+              result)
+            (find n Ns Rs)))))
+
+  ;; Let's try again with the 15th commandment.
+
+  (define deepM
+    (let ((Rs '())
+          (Ns '()))
+      (lambda (n)
+        (let ((exists (find n Rs Rs)))
+          (if (atom? exists)
+              (let ((result (deep n)))
+                (set! Rs (cons result Rs))
+                (set! Ns (cons n Ns))
+                result)
+              exists)))))
+
+  (test (and (same? '((((((((((((((((pizza))))))))))))))))
+                    (deepM 16))))
+
+  (define length
+    (lambda (l)
+      (cond
+       ((null? l) 0)
+       (else (add1 (length (cdr l)))))))
+
+  (define length
+    (lambda (l)
+      0))
+  (set! length
+        (lambda (l)
+          (cond
+           ((null? l) 0)
+           (else (add1 (length (cdr l)))))))
+
+  (define length
+    (let ((h (lambda (l) 0)))
+      (set! h
+            (lambda (l)
+              (cond
+               ((null? l) 0)
+               (else (add1 (h (cdr l)))))))
+      h))
+
+  (define L
+    (lambda (length)
+      (lambda (l)
+        (cond
+         ((null? l) 0)
+         (else (add1 (length (cdr l))))))))
+
+  (define length
+    (let ((h (lambda (l) 0)))
+      (set! h
+            (L (lambda (arg) (h arg))))
+      h))
+
+  (test (same? 3
+               (length '(1 2 3))))
+
+  (define Y!
+    (lambda (L)
+      (let ((h (lambda (l) '())))
+        (set! h
+              (L (lambda (arg) (h arg))))
+        h)))
+
+  ;; Peter J. Landin. I think this is a fancy Y-combinator.
+  (define Y-bang!
+    (lambda (f)
+      (letrec
+          ((h (f (lambda (arg) (h arg)))))
+        h)))
+
+  ;; You can think of a letrec as an abbreviation for an expression
+  ;; consisting of (let ...) and (set! ...). So this (Y-bang!) is just
+  ;; another way of writing Y!
+
+  (define length (Y! L))
+
+  (test (same? 3
+               (length '(1 2 3))))
+
+  ;; Woo-hoo. It is a fancy Y-combinator. This one is called "the
+  ;; applicative-order, imperative Y combinator." This one is p-cool
+  ;; because it produces recursive definitions without requiring that
+  ;; the functions be named by (define ...)
+
+  (define depth*
+    (Y! (lambda (depth*)
+          (lambda (s)
+            (cond
+             ((null? s) 1)
+             ((atom? (car s))
+              (depth* (cdr s)))
+             (else
+              (max
+               (add1 (depth* (car s)))
+               (depth* (cdr s)))))))))
+
+  (test (and (same? 3
+                    (depth* '(((4)))))
+             (same? 3
+                    (depth* '((a) ((4)))))))
+
+  ;; Just to see if I really get this, I'm going to try to do the equivalent of calling depth* without defining anything at all
+
+  (test (same? 3
+               (((lambda (L)
+                   (let ((h (lambda (l) '())))
+                     (set! h
+                           (L (lambda (arg) (h arg))))
+                     h)) (lambda (depth*)
+                           (lambda (s)
+                             (cond
+                              ((null? s) 1)
+                              ((atom? (car s))
+                               (depth* (cdr s)))
+                              (else
+                               (max
+                                (add1 (depth* (car s)))
+                                (depth* (cdr s))))))))
+                '((a) ((4))))))
+
+  ;; What's the difference between using Y! and Y
+  (define biz
+    (let ((x 0))
+      (lambda (f)
+        (set! x (add1 x))
+        (lambda (a)
+          (if (= a x)
+              0
+              (f a))))))
+
+  (test (same? 0
+               ((Y biz) 5)))
+
+  ;; ((Y! biz) 5)
+  ;; This on the other hand, recurs forever.
+#+END_SRC
+** Done 17. We Change, Therefore We Are!
+#+BEGIN_SRC scheme
+  (load "the_seasoned_schemer/ss.scm")
+
+  (define deep
+    (lambda (m)
+      (if (zero? m)
+          'pizza
+          (cons (deep (sub1 m)) '()))))
+
+  (define deepM
+    (let ((Rs '())
+          (Ns '()))
+      (letrec
+          ((D (lambda (m)
+                (if (zero? m)
+                    'pizza
+                    (cons (D (sub1 m)) '())))))
+        (lambda (n)
+          (let ((exists (find n Ns Rs)))
+            (if (atom? exists)
+                (let ((result (D n)))
+                  (set! Rs (cons result Rs))
+                  (set! Ns (cons n Ns))
+                  result)
+                exists))))))
+
+  (test (same? '(((pizza)))
+               (deepM 3)))
+
+  (define deepM
+    (let ((Rs '())
+          (Ns '()))
+      (letrec
+          ((D (lambda (m)
+                (if (zero? m)
+                    'pizza
+                    (cons (deepM (sub1 m)) '())))))
+        (lambda (n)
+          (let ((exists (find n Ns Rs)))
+            (if (atom? exists)
+                (let ((result (D n)))
+                  (set! Rs (cons result Rs))
+                  (set! Ns (cons n Ns))
+                  result)
+                exists))))))
+
+  (test (same? '(((pizza)))
+               (deepM 3)))
+
+  (define deepM
+    (let ((Rs '())
+          (Ns '()))
+      (let ((D (lambda (m)
+                 (if (zero? m)
+                     'pizza
+                     (cons (deepM (sub1 m)) '())))))
+        (lambda (n)
+          (let ((exists (find n Ns Rs)))
+            (if (atom? exists)
+                (let ((result (D n)))
+                  (set! Rs (cons result Rs))
+                  (set! Ns (cons n Ns))
+                  result)
+                exists))))))
+
+  (test (same? '(((pizza)))
+               (deepM 3)))
+
+  (define deepM
+    (let ((Rs '())
+          (Ns '())
+          (D (lambda (m)
+               (if (zero? m)
+                   'pizza
+                   (cons (deepM (sub1 m)) '())))))
+      (lambda (n)
+        (let ((exists (find n Ns Rs)))
+          (if (atom? exists)
+              (let ((result (D n)))
+                (set! Rs (cons result Rs))
+                (set! Ns (cons n Ns))
+                result)
+              exists)))))
+
+  (test (same? '(((pizza)))
+               (deepM 3)))
+
+  (define deepM
+    (let ((Rs '())
+          (Ns '()))
+      (lambda (n)
+        (let ((exists (find n Ns Rs)))
+          (if (atom? exists)
+              (let ((result ((lambda (m)
+                               (if (zero? m)
+                                   'pizza
+                                   (cons (deepM (sub1 m)) '())))
+                             n)))
+                (set! Rs (cons result Rs))
+                (set! Ns (cons n Ns))
+                result)
+              exists)))))
+
+  (test (same? '(((pizza)))
+               (deepM 3)))
+
+  (define deepM
+    (let ((Rs '())
+          (Ns '()))
+      (lambda (n)
+        (let ((exists (find n Ns Rs)))
+          (if (atom? exists)
+              (let ((result (let ((m n))
+                              (if (zero? m)
+                                  'pizza
+                                  (cons (deepM (sub1 m)) '())))))
+                (set! Rs (cons result Rs))
+                (set! Ns (cons n Ns))
+                result)
+              exists)))))
+
+  (test (same? '(((pizza)))
+               (deepM 3)))
+
+  (define deepM
+    (let ((Rs '())
+          (Ns '()))
+      (lambda (n)
+        (let ((exists (find n Ns Rs)))
+          (if (atom? exists)
+              (let ((result (if (zero? n)
+                                'pizza
+                                (cons (deepM (sub1 n)) '()))))
+                (set! Rs (cons result Rs))
+                (set! Ns (cons n Ns))
+                result)
+              exists)))))
+
+  (test (same? '(((pizza)))
+               (deepM 3)))
+
+  (define consC
+    (let ((N 0))
+      (lambda (x y)
+        (set! N (add1 N))
+        (cons x y))))
+
+  (define deep
+    (lambda (m)
+      (if (zero? m)
+          'pizza
+          (consC (deep (sub1 m)) '()))))
+
+  (test (and (same? '(((((pizza)))))
+                    (deep 5))))
+
+  (define counter)
+
+  (define consC
+    (let ((N 0))
+      (set! counter
+            (lambda ()
+              N))
+      (lambda (x y)
+        (set! N (add1 N))
+        (cons x y))))
+
+  (test (and (same? '(((((pizza)))))
+                    (deep 5))
+             (same? 5
+                    (counter))
+             (same? '(((((((pizza)))))))
+                    (deep 7))
+             (same? 12
+                    (counter))))
+
+  (define supercounter
+    (lambda (f)
+      (letrec
+          ((S (lambda (n)
+                (if (zero? n)
+                    (f n)
+                    (let ()
+                      (f n)
+                      (S (sub1 n)))))))
+        (S 1000))))
+
+  (define supercounter
+    (lambda (f)
+      (letrec
+          ((S (lambda (n)
+                (if (zero? n)
+                    (f n)
+                    (let ()
+                      (f n)
+                      (S (sub1 n)))))))
+        (S 1000)
+        (counter))))
+
+  (test (and (same? 500512
+                    (supercounter deep))))
+
+  (define counter)
+  (define set-counter)
+  (define consC
+    (let ((N 0))
+      (set! counter
+            (lambda ()
+              N))
+      (set! set-counter
+            (lambda (x)
+              (set! N x)))
+      (lambda (x y)
+        (set! N (add1 N))
+        (cons x y))))
+
+  (set-counter 0)
+
+  (test (and (same? 500500
+                    (supercounter deep))))
+
+  (define deepM
+    (let ((Rs '())
+          (Ns '()))
+      (lambda (n)
+        (let ((exists (find n Ns Rs)))
+          (if (atom? exists)
+              (let ((result (if (zero? n)
+                                'pizza
+                                (consC (deepM (sub1 n)) '()))))
+                (set! Rs (cons result Rs))
+                (set! Ns (cons n Ns))
+                result)
+              exists)))))
+
+  (test (and
+         (same? '(((((pizza)))))
+                (deepM 5))
+         (same? 500505
+                (counter))))
+
+  (set-counter 0)
+
+  (define deepM
+    (let ((Rs '())
+          (Ns '()))
+      (lambda (n)
+        (let ((exists (find n Ns Rs)))
+          (if (atom? exists)
+              (let ((result (if (zero? n)
+                                'pizza
+                                (consC (deepM (sub1 n)) '()))))
+                (set! Rs (cons result Rs))
+                (set! Ns (cons n Ns))
+                result)
+              exists)))))
+
+  ;; I noticed something pretty strange here, it appears that the act of
+  ;; defining deepM has a side effect because of how the interning
+  ;; works. Not sure exactly what's goin on, but I had to re-define
+  ;; deepM to get this test underneath to work
+
+  (test (and
+         (same? '(((((pizza)))))
+                (deepM 5))
+         (same? 5
+                (counter))))
+
+  (test (and (same? '(((((((pizza)))))))
+                    (deepM 7))
+             (same? 7
+                    (counter))))
+
+  (test (same? 1000
+               (supercounter deepM)))
+
+  (define rember1*
+    (lambda (a l)
+      (letrec
+          ((R (lambda (l oh)
+                (cond
+                 ((null? l)
+                  (oh 'no))
+                 ((atom? (car l))
+                  (if (eq? (car l) a)
+                      (cdr l)
+                      (cons (car l) (R (cdr l) oh))))
+                 (else
+                  (let ((new-car (call/cc
+                                  (lambda (oh)
+                                    (R (car l) oh)))))
+                    (if (atom? new-car)
+                        (cons (car l)
+                              (R (cdr l) oh))
+                        (cons new-car
+                              (cdr l)))))))))
+        (let ((new-l (call/cc
+                      (lambda (oh)
+                        (R l oh)))))
+          (if (atom? new-l)
+              l
+              new-l)))))
+
+  (define rember1*C
+    (lambda (a l)
+      (letrec
+          ((R (lambda (l oh)
+                (cond
+                 ((null? l)
+                  (oh 'no))
+                 ((atom? (car l))
+                  (if (eq? (car l) a)
+                      (cdr l)
+                      (consC (car l) (R (cdr l) oh))))
+                 (else
+                  (let ((new-car (call/cc
+                                  (lambda (oh)
+                                    (R (car l) oh)))))
+                    (if (atom? new-car)
+                        (consC (car l)
+                               (R (cdr l) oh))
+                        (consC new-car
+                               (cdr l)))))))))
+        (let ((new-l (call/cc
+                      (lambda (oh)
+                        (R l oh)))))
+          (if (atom? new-l)
+              l
+              new-l)))))
+
+  (set-counter 0)
+
+  (test (and (same? '((food) more (food))
+                    (rember1*C 'noodles '((food) more (food))))
+             (same? 0
+                    (counter))))
+
+  (define rember1*
+    (lambda (a l)
+      (letrec
+          ((R (lambda (l)
+                (cond
+                 ((null? l) '())
+                 ((atom? (car l))
+                  (if (eq? (car l) a)
+                      (cdr l)
+                      (cons (car l) (R (cdr l)))))
+                 (else
+                  (let ((av (R (car l))))
+                    (if (eqlist? (car l) av)
+                        (cons (car l) (R (cdr l)))
+                        (cons av (cdr l)))))))))
+        (R l))))
+
+  (define rember1*C2
+    (lambda (a l)
+      (letrec
+          ((R (lambda (l)
+                (cond
+                 ((null? l) '())
+                 ((atom? (car l))
+                  (if (eq? (car l) a)
+                      (cdr l)
+                      (consC (car l) (R (cdr l)))))
+                 (else
+                  (let ((av (R (car l))))
+                    (if (eqlist? (car l) av)
+                        (consC (car l) (R (cdr l)))
+                        (consC av (cdr l)))))))))
+        (R l))))
+
+  (set-counter 0)
+
+  (test (and (same? '((food) more (food))
+               (consC (consC 'food '())
+                      (consC 'more
+                             (consC (ConsC 'food '())
+                                    '()))))
+             (same? 5
+                    (counter))))
+
+  (set-counter 0)
+  (let ((a 'noodles)
+        (l '((food) more (food))))
+    (test (and (same? l (rember1*C2 a l))
+               (same? 5 (counter)))))
+
+#+END_SRC
+** Done 18. We Change, Therefore We Are The Same!
+#+BEGIN_SRC scheme
+  (load "the_seasoned_schemer/ss.scm")
+
+  (define counter) ;; Setting up counter.
+  (define set-counter) ;; Setting up set-counter
+
+  (define consC
+    (let ((N 0))
+      (set! counter
+            (lambda ()
+              N))
+      (set! set-counter
+            (lambda (x)
+              (set! N x)))
+      (lambda (x y)
+        (set! N (add1 N))
+        (cons x y))))
+
+  (define kons cons)
+  (define kdr cdr)
+  (define kar car)
+  (define konsC consC)
+  (define kounter counter)
+  (define set-kounter set-counter)
+  (define set-kdr set-cdr!)
+
+  (define lots
+    (lambda (m)
+      (cond
+       ((zero? m) '())
+       (else (kons 'egg
+                   (lots (sub1 m)))))))
+
+  (test (and
+         (same? '(egg egg egg)
+                (lots 3))
+         (same? '(egg egg egg egg egg)
+                (lots 5))
+         (same? '(egg egg egg egg
+                      egg egg egg egg
+                      egg egg egg egg)
+                (lots 12))))
+
+  (define lenkth
+    (lambda (l)
+      (cond
+       ((null? l) 0)
+       (else (add1 (lenkth (kdr l)))))))
+
+  (test (and
+         (same? 3
+                (lenkth (lots 3)))
+         (same? 5
+                (lenkth (lots 5)))
+         (same? 15
+                (lenkth (lots 15)))))
+
+  (define add-at-end
+    (lambda (l)
+      (cond
+       ((null? (kdr l))
+        (konsC (kar l)
+               (kons 'egg '())))
+       (else (konsC (kar l) (add-at-end (kdr l)))))))
+
+  (test (and
+         (same? '(egg egg egg egg)
+                (add-at-end (lots 3)))
+         (same? 3
+                (kounter))))
+
+  (define add-at-end-too
+    (lambda (l)
+      (letrec
+          ((A (lambda (ls)
+                (cond
+                 ((null? (kdr ls))
+                  (set-kdr ls
+                           (kons 'egg '())))
+                 (else (A (kdr ls)))))))
+        (A l)
+        l)))
+
+  (set-kounter 0)
+  (kounter)
+
+  (test (and
+         (same? '(egg egg egg egg)
+                (add-at-end-too (lots 3)))
+         (same? 0
+                (kounter))))
+  (define kons
+    (lambda (kar kdr)
+      (lambda (selector)
+        (selector kar kdr))))
+  (define kar
+    (lambda (c)
+      (c (lambda (a d) a))))
+  (define kdr
+    (lambda (c)
+      (c (lambda (a d) d))))
+
+  (test (and
+         (same? 'a
+                (kar (kons 'a '())))
+         (same? '()
+                (kdr (kons 'a '())))))
+
+  (define bons
+    (lambda (kar)
+      (let ((kdr '()))
+        (lambda (selector)
+          (selector (lambda (x) (set! kdr x))
+                    kar
+                    kdr)))))
+
+  (define kar
+    (lambda (c)
+      (c (lambda (s a d) a))))
+
+  (define kdr
+    (lambda (c)
+      (c (lambda (s a d) d))))
+
+  (bons 'egg)
+
+  (define set-kdr
+    (lambda (c x)
+      ((c (lambda (s a d) s)) x)))
+
+  (define kons
+    (lambda (a d)
+      (let ((c (bons a)))
+        (set-kdr c d)
+        c)))
+
+  (kar (kons 'a '(1 2 3)))
+  (kdr (kons 'a '(1 2 3)))
+
+  ;; Need to redefine a few things to make sure they are using the new kons and kdr etc...
+
+  (define lots
+    (lambda (m)
+      (cond
+       ((zero? m) '())
+       (else (kons 'egg
+                   (lots (sub1 m)))))))
+
+  (define konsC
+    (let ((N 0))
+      (set! kounter
+            (lambda ()
+              N))
+      (set! set-kounter
+            (lambda (x)
+              (set! N x)))
+      (lambda (x y)
+        (set! N (add1 N))
+        (kons x y))))
+
+  (define add-at-end
+    (lambda (l)
+      (cond
+       ((null? (kdr l))
+        (konsC (kar l)
+               (kons 'egg '())))
+       (else (konsC (kar l) (add-at-end (kdr l)))))))
+
+  (define add-at-end-too
+    (lambda (l)
+      (letrec
+          ((A (lambda (ls)
+                (cond
+                 ((null? (kdr ls))
+                  (set-kdr ls
+                           (kons 'egg '())))
+                 (else (A (kdr ls)))))))
+        (A l)
+        l)))
+
+  (define dozen (lots 12))
+  (define bakers-dozen (add-at-end dozen))
+  (define bakers-dozen-too (add-at-end-too dozen))
+  (define bakers-dozen-again (add-at-end dozen))
+
+  (define eklist?
+    (lambda (ls1 ls2)
+      (cond
+       ((null? ls1) (null? ls2))
+       ((null? ls2) #f)
+       (else
+        (and (eq? (kar ls1) (kar ls2))
+             (eklist? (kdr ls1) (kdr ls2)))))))
+
+  ;; Make sure you redefine all the previous functions to use the new
+  ;; definitions of kar, kdr, kons, etc
+  (test (and (same? #t
+                    (eklist? bakers-dozen bakers-dozen-too))))
+
+  (define same??
+    (lambda (c1 c2)
+      (let ((t1 (kdr c1))
+            (t2 (kdr c2)))
+        (set-kdr c1 1)
+        (set-kdr c2 2)
+        (let ((v (= (kdr c1) (kdr c2))))
+          (set-kdr c1 t1)
+          (set-kdr c2 t2)
+          v))))
+
+  (define dozen (lots 12))
+  (define bakers-dozen (add-at-end dozen))
+  (define bakers-dozen-too (add-at-end-too dozen))
+  (define bakers-dozen-again (add-at-end dozen))
+
+  (test (and (same? #f (same?? dozen bakers-dozen))
+             (same? #t (same?? dozen bakers-dozen-too))))
+
+  (define last-kons
+    (lambda (ls)
+      (cond
+       ((null? (kdr ls)) ls)
+       (else (last-kons (kdr ls))))))
+
+  ;; It seems like I'm making a lazy scheme?
+  (define long (lots 12))
+
+  (test (and
+         (same? 'egg
+                (kar (last-kons long)))
+         (same? '()
+                (kdr (last-kons long)))
+         (same? 12
+                (lenkth long))))
+
+  (set-kdr (last-kons long) long)
+  ;; doesn't work anymore?
+  ;; (lenkth long)
+  ;; This  has to do with the fact that the kdr is now recursive.
+
+  ;;(set-kdr (last-kons long) (kdr (kdr long)))
+  ;;(lenkth long)
+
+  (define finite-lenkth
+    (lambda (p)
+      (call/cc
+       (lambda (infinite)
+         (letrec
+             ((C (lambda (p q)
+                   (cond
+                    ((same? p q) (infinite #f))
+                    ((null? q) 0)
+                    ((null? (kdr q)) 1)
+                    (else
+                     (+ (C (sl p) (qk q)) 2)))))
+              (qk (lambda (x) (kdr (kdr x))))
+              (sl (lambda (x) (kdr x))))
+           (cond
+            ((null? p) 0)
+            (else
+             (add1 (C p (kdr p))))))))))
+
+  (define not-so-long (lots 5))
+  (finite-lenkth long)
+
+  (define de-lazy
+    (lambda (ls)
+      (cond
+       ((procedure? ls) (cons (kar ls) (de-lazy (kdr ls))))
+       (else '()))))
+
+  (define mongo
+    (kons 'pie
+          (kons 'a
+                (kons 'la
+                      (kons 'mode '())))))
+  (de-lazy mongo)
+  (set-kdr (kdr (kdr (kdr mongo))) (kdr mongo))
+#+END_SRC
+** Done 19. Absconding with the Jewels
+#+BEGIN_SRC scheme
+  (load "the_seasoned_schemer/ss.scm")
+
+  (define deep
+    (lambda (m)
+      (cond
+       ((zero? m) 'pizza)
+       (else (cons (deep (sub1 m)) '())))))
+
+  (test (and
+         (same? '((((((pizza))))))
+                (deep 6))))
+
+  (define toppings)
+  (define deepB
+    (lambda (m)
+      (cond
+       ((zero? m)
+        (call/cc
+         (lambda (jump)
+           (set! toppings jump)
+           'pizza)))
+       (else (cons (deepB (sub1 m)) '())))))
+
+  (test (and
+         (same? '((((((pizza))))))
+                (deepB 6))))
+  (deepB 6)
+  (toppings 'cake)
+  (toppings 'pizza)
+
+  (cons (toppings 'cake) '())
+  ;; This immedietly returns the six layer cake and ignores the cons.
+  ;; Because it's a continuation--that's sorta the whole point.
+
+  (deepB 4)
+  (toppings 'cake)
+  toppings
+  ;; toppings is a continuation here
+
+  (define deep&co
+    (lambda (m k)
+      (cond
+       ((zero? m) (k 'pizza))
+       (else
+        (deep&co (sub1 m)
+                 (lambda (x)
+                   (k (cons x '()))))))))
+  (deep&co 0 (lambda (x) x))
+  (deep&co 6 (lambda (x) x))
+  (deep&co 2 (lambda (x) x))
+
+  (define deep&coB
+    (lambda (m k)
+      (cond
+       ((zero? m)
+        (begin
+          (set! toppings k)
+          (k 'pizza)))
+       (else
+        (deep&coB (sub1 m) (lambda (x)
+                             (k (cons x '()))))))))
+
+  (deep&coB 2 (lambda (x) x))
+  (deep&coB 4 (lambda (x) x))
+  toppings
+  ;; this time toppings is a compound procedure instead of a continuation.
+  (cons (toppings 'cake)
+        (toppings 'cake))
+  ;; This version of toppings doesn't forget everything (because it
+  ;; isn't a continuation, instead it is a already setup collector)
+  (cons (toppings 'cake)
+        (cons (toppings 'mozzarella)
+              (cons (toppings 'pizza) '())))
+
+  (define two-in-a-row-b?
+    (lambda (a lat)
+      (cond
+       ((null? lat) #f)
+       (else (or (eq? (car lat) a)
+                 (two-in-a-row-b? (car lat) (cdr lat)))))))
+  (define two-in-a-row?
+    (lambda (lat)
+      (cond
+       ((null? lat) #f)
+       (else (two-in-a-row-b? (car lat) (cdr lat))))))
+
+  (define two-in-a-row?
+    (letrec
+        ((W (lambda (a lat)
+              (cond
+               ((null? lat) #f)
+               (else
+                (let ((next (car lat)))
+                  (or (eq? next a)
+                      (W next (cdr lat)))))))))
+      (lambda (lat)
+        (cond
+         ((null? lat) #f)
+         (else (W (car lat) (cdr lat)))))))
+
+
+  (test (and
+         (same? #f (two-in-a-row? '(mozzarella cake mozzarella)))
+         (same? #t (two-in-a-row? '(mozzarella mozzarella pizza)))))
+
+  (define leave)
+  (define walk
+    (lambda (l)
+      (cond
+       ((null? l) '())
+       ((atom? (car l)) (leave (car l)))
+       (else (begin
+               (walk (car l))
+               (walk (cdr l)))))))
+
+  (define start-it
+    (lambda (l)
+      (call/cc
+       (lambda (here)
+         (set! leave here)
+         (walk l)))))
+
+  (start-it '((potato) (chips (chips (with))) fish))
+
+  (define fill)
+  (define waddle
+    (lambda (l)
+      (cond
+       ((null? l) '())
+       ((atom? (car l))
+        (begin
+          (call/cc
+           (lambda (rest)
+             (set! fill rest)
+             (leave (car l))))
+          (waddle (cdr l))))
+       (else
+        (begin
+          (waddle (car l))
+          (waddle (cdr l)))))))
+
+  (define start-it2
+    (lambda (l)
+      (call/cc
+       (lambda (here)
+         (set! leave here)
+         (waddle l)))))
+
+  (test (same? 'donuts (start-it2 '((donuts) (cherrios (cheerios (spaghettios))) donuts))))
+
+  (define get-next
+    (lambda (x)
+      (call/cc
+       (lambda (here-again)
+         (set! leave here-again)
+         (fill 'go)))))
+  (get-next 'go)
+
+  (define rest2
+    (lambda (x)
+      (waddle '(((cherrios (spaghettios))) donuts))))
+  (get-next 'go)
+  (get-next 'go)
+  (get-next 'go)
+  ;; If we call this a last time, a test fails for some reason...
+  ;; (get-next 'go)
+
+  (define get-first
+    (lambda (l)
+      (call/cc
+       (lambda (here)
+         (set! leave here)
+         (waddle l)
+         (leave '())))))
+
+  (get-first '())
+  (get-first '(donut))
+  (get-next 'go)
+  (get-first '(fish (chips)))
+  (get-next 'go)
+  (get-next 'go)
+  (get-first '(fish (chips) chips))
+  (get-next 'go)
+  (get-next 'go)
+
+  (define two-in-a-row-b*?
+    (lambda (a)
+      (let ((n (get-next 'go)))
+        (if (atom? n)
+            (or (eq? n a)
+                (two-in-a-row-b*? n))
+            #f))))
+  (define two-in-a-row*?
+    (lambda (l)
+      (let ((first (get-first l)))
+        (if (atom? first)
+            (two-in-a-row-b*? first)
+            #f))))
+
+  (define two-in-a-row*?
+    (letrec
+        ((T? (lambda (a)
+              (let ((n (get-next 0)))
+                (if (atom? n)
+                    (or (eq? n a)
+                        (T? n))
+                    #f))))
+         (get-next (lambda (x)
+                     (call/cc
+                      (lambda (here-again)
+                        (set! leave here-again)
+                        (fill 'go)))))
+         (fill (lambda (x) x))
+         (waddle (lambda (l)
+                   (cond
+                    ((null? l) '())
+                    ((atom? (car l))
+                     (begin
+                       (call/cc
+                        (lambda (rest)
+                          (set! fill rest)
+                          (leave (car l))))
+                       (waddle (cdr l))))
+                    (else (begin
+                            (waddle (car l))
+                            (waddle (cdr l)))))))
+         (leave (lambda (x) x)))
+      (lambda (l)
+        (let ((first (call/cc
+                      (lambda (here)
+                        (set! leave here)
+                        (waddle l)
+                        (leave '())))))
+          (if (atom? first)
+              (T? first)
+              #f)))))
+
+  (test (and
+         (same? #f (two-in-a-row*? '((mozzarella) (cake) mozzarella)))
+         (same? #t (two-in-a-row*? '((potato) (chips ((with) fish) fish))))
+         (same? #f (two-in-a-row*? '((potato) (chips ((with) fish) (chips)))))
+         (same? #t (two-in-a-row*? '(((food) () (((food)))))))))
+#+END_SRC
+** Done 20. What's in Store?
+#+BEGIN_SRC scheme
+  (load "the_seasoned_schemer/ss.scm")
+
+  ;; (define the-empty-table
+  ;;   (lambda (name)
+  ;;     ...))
+
+  (define lookup
+    (lambda (table name)
+      (table name)))
+
+  (define extend
+    (lambda (name1 value table)
+      (lambda (name2)
+        (cond
+         ((eq? name2 name1) value)
+         (else (table name2))))))
+
+  (define x 3)
+
+  ;; (define value
+  ;;   (lambda (e)
+  ;;     ...
+  ;;     (cond
+  ;;      ((define? e) (*define e))
+  ;;      (else (the-meaning e))) ... ))
+
+  (define define?
+    (lambda (e)
+      (cond
+       ((atom? e) #f)
+       ((atom? (car e))
+        (eq? (car e) 'define))
+       (else #f))))
+
+  ;; (define global-table
+  ;;   ... the-empty-table ...)
+
+  (define *define
+    (lambda (e)
+      (set! global-table
+            (extend
+             (name-of e)
+             (box
+              (the-meaning
+               (right-side-of e)))
+             global-table))))
+
+  (define box
+    (lambda (it)
+      (lambda (sel)
+        (sel it (lambda (ne)
+                  (set! it ne))))))
+
+  (define setbox
+    (lambda (box new)
+      (box (lambda (it set) (set new)))))
+
+  (define unbox
+    (lambda (box)
+      (box (lambda (it set) it))))
+
+  x
+
+  (define the-meaning
+    (lambda (e)
+      (meaning e lookup-in-global-table)))
+
+  (define lookup-in-global-table
+    (lambda (name)
+      (lookup global-table name)))
+
+  (define meaning
+    (lambda (e table)
+      ((expression-to-action e)
+       e table)))
+
+  (define *quote
+    (lambda (e table)
+      (text-of e)))
+
+  (define *identifier
+    (lambda (e table)
+      (unbox (lookup table e))))
+
+  (set! x 5)
+  x
+
+  (define *set
+    (lambda (e table)
+      (setbox
+       (lookup table (name-of e))
+       (meaning (right-side-of e) table))))
+
+  ((lambda (y)
+     (set! x 7)
+     y)
+   0)
+
+  x
+
+  (define *lambda
+    (lambda (e table)
+      (lambda (args)
+        (beglis (body-of e)
+                (multi-extend
+                 (formals-of e)
+                 (box-all args)
+                 table)))))
+
+  (define beglis
+    (lambda (es table)
+      (cond
+       ((null? (cdr es))
+        (meaning (car es) table))
+       (else ((lambda (val)
+                (beglis (cdr es) table))
+              (meaning (car es) table))))))
+
+  (define box-all
+    (lambda (vals)
+      (cond
+       ((null? vals) '())
+       (else (cons (box (car vals))
+                   (box-all (cdr vals)))))))
+
+  (define multi-extend
+    (lambda (names values table)
+      (cond
+       ((null? names) table)
+       (else
+        (extend (car names) (car values)
+                (multi-extend
+                 (cdr names)
+                 (cdr values)
+                 table))))))
+
+  (define odd?
+    (lambda (n)
+      (cond
+       ((zero? n) #f)
+       (else (even? (sub1 n))))))
+  (define even?
+    (lambda (n)
+      (cond
+       ((zero? n) #t)
+       (else (odd? (sub1 n))))))
+
+  (define *application
+    (lambda (e table)
+      ((meaning (function-of e) table)
+       (evlis (arguments-of e) table))))
+
+  (define evlis
+    (lambda (args table)
+      (cond
+       ((null? args) '())
+       (else
+        ((lambda (val)
+           (cons val
+                 (evlis (cdr args) table)))
+         (meaning (car args) table))))))
+
+  (define :car
+    (lambda (args-in-a-list)
+      (car (car args-in-a-list))))
+
+  (define a-prim
+    (lambda (p)
+      (lambda (args-in-a-list)
+        (p (car args-in-a-list)))))
+  (define b-prim
+    (lambda (p)
+      (lambda (args-in-a-list)
+        (p (car args-in-a-list)
+           (car (cdr args-in-a-list))))))
+
+  (define *const
+    (lambda (e table)
+      (cond
+       ((number? e) e)
+       ((eq? e #t) #t)
+       ((eq? e #f) #f)
+       ((eq? e 'cons) (b-prim cons))
+       ((eq? e 'car) (a-prim car))
+       ((eq? e 'cdr) (a-prim cdr))
+       ((eq? e 'eq?) (b-prim eq?))
+       ((eq? e 'atom?) (a-prim atom?))
+       ((eq? e 'null?) (a-prim null?))
+       ((eq? e 'zero?) (a-prim zero?))
+       ((eq? e 'add1) (a-prim add1))
+       ((eq? e 'sub1) (a-prim sub1))
+       ((eq? e 'number?) (a-prim number?)))))
+
+  (define *const
+    (let ((:cons (b-prim cons))
+          (:car (a-prim car))
+          (:cdr (a-prim cdr))
+          (:null? (a-prim null?))
+          (:eq? (b-prim eq?))
+          (:atom? (a-prim atom?))
+          (:zero? (a-prim zero?))
+          (:add1 (a-prim add1))
+          (:sub1 (a-prim sub1))
+          (:number? (a-prim number?)))
+      (lambda (e table)
+        (cond
+         ((number? e) e)
+         ((eq? e #t) #t)
+         ((eq? e #f) #f)
+         ((eq? e 'cons) :cons)
+         ((eq? e 'car) :car)
+         ((eq? e 'cdr) :cdr)
+         ((eq? e 'eq?) :eq?)
+         ((eq? e 'atom?) :atom?)
+         ((eq? e 'null?) :null?)
+         ((eq? e 'zero?) :zero?)
+         ((eq? e 'add1) :add1)
+         ((eq? e 'sub1) :sub1)
+         ((eq? e 'number?) :number?)))))
+
+  (define *cond
+    (lambda (e table)
+      (evcon (cond-lines-of e) table)))
+
+  (define evcon
+    (lambda (lines table)
+      (cond
+       ((else? (question-of (car lines)))
+        (meaning (answer-of (car lines))
+                 table))
+       ((meaning (question-of (car lines))
+                 table)
+        (meaning (answer-of (car lines))
+                 table))
+       (else (evcon (cdr lines) table)))))
+
+  (define *letcc
+    (lambda (e table)
+      (call/cc
+       (lambda (skip)
+         (beglis (ccbody-of e)
+                 (extend
+                  (name-of e)
+                  (box (a-prim skip))
+                  table))))))
+  (define abort)
+
+  (define value
+    (lambda (e)
+      (call/cc
+       (lambda (the-end)
+         (set! abort the-end)
+         (cond
+          ((define? e) (*define e))
+          (else (the-meaning e)))))))
+
+  (define the-empty-table
+    (lambda (name)
+      (abort
+       (cons 'no-answer
+             (cons name '())))))
+
+  (define expression-to-action
+    (lambda (e)
+      (cond
+       ((atom? e) (atom-to-action e))
+       (else (list-to-action e)))))
+  (define atom-to-action
+    (lambda (e)
+      (cond
+       ((number? e) *const)
+       ((eq? e #t) *const)
+       ((eq? e #f) *const)
+       ((eq? e 'cons) *const)
+       ((eq? e 'car) *const)
+       ((eq? e 'cdr) *const)
+       ((eq? e 'null?) *const)
+       ((eq? e 'eq?) *const)
+       ((eq? e 'atom?) *const)
+       ((eq? e 'zero?) *const)
+       ((eq? e 'add1) *const)
+       ((eq? e 'sub1) *const)
+       ((eq? e 'number?) *const)
+       (else *identifier))))
+
+  (define list-to-action
+    (lambda (e)
+      (cond
+       ((atom? (car e))
+        (cond
+         ((eq? (car e) 'quote) *quote)
+         ((eq? (car e) 'lambda) *lambda)
+         ((eq? (car e) 'letcc) *letcc)
+         ((eq? (car e) 'set!) *set)
+         ((eq? (car e) 'cond) *cond)
+         (else *application)))
+       (else *application))))
+
+  (define text-of
+    (lambda (x)
+      (car (cdr x))))
+  (define formals-of
+    (lambda (x)
+      (car (cdr x))))
+  (define body-of
+    (lambda (x)
+      (cdr (cdr x))))
+  (define ccbody-of
+    (lambda (x)
+      (cdr (cdr x))))
+  (define name-of
+    (lambda (x)
+      (car (cdr x))))
+  (define right-side-of
+    (lambda (x)
+      (cond
+       ((null? (cdr (cdr x))) 0)
+       (else (car (cdr (cdr x)))))))
+  (define cond-lines-of
+    (lambda (x)
+      (cdr x)))
+  (define else?
+    (lambda (x)
+      (cond
+       ((atom? x) (eq? x 'else))
+       (else #f))))
+  (define question-of
+    (lambda (x)
+      (car x)))
+  (define answer-of
+    (lambda (x)
+      (car (cdr x))))
+  (define function-of
+    (lambda (x)
+      (car x)))
+  (define arguments-of
+    (lambda (x)
+      (cdr x)))
+
+
+
+  (test
+   (and
+    (same? 0 (cond (else 0)))
+    (same? 1 (cond
+              ((null? (cons 0 (quote ()))) 0)
+              (else 1)))
+    (same? '(no-answer value)
+          (value 1))))
+
+
+
+#+END_SRC
+** I tried on 20, but I just couldn't quite get it. Maybe next time...

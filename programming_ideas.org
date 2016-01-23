@@ -1,0 +1,124 @@
++ [[./index.org][Main Index]]
+
+* Programming Ideas
+1) Text completion using a custom dictionary.
+2) Foobar3k, clojure flac player that's customizable like emacs
+3) annotate properties on your code, perhaps checked as you are
+   programming to give you that mega degrees of certainty.
+   + Ability to limit the domain that you care about.
+   + Arities?
+     + How to accept multiple arities?
+   + let a property be a keyword or a fn with jack-ins for the generators?
+   + How do we make this something that's actually useful? 
+     + I.E how are properties composable. 
+   + hacked out idea?
+   #+BEGIN_SRC clojure
+     (defn 
+       ^{:doc "add1 takes a number and outputs that number plus 1"
+         :spec {:domain [:R]
+                :properties [{:property :output-number
+                              :domain :N
+                              :arity [:integer :integerB]
+                              }]}}
+       add-nums [x y]
+       (+ x y))
+
+     (defn check-spec [fn-var]
+       (let [my-meta (meta fn-var)
+             spec (:spec my-meta)
+             properties (:properties spec)]
+         ))
+
+     (defn resolve-gen [gen-kw]
+       (condp = gen-kw
+         :integer 'gen-integer
+         :integerB 'ayy
+         ))
+
+     (defn gen-for-arity [arity-vec]
+       (map resolve-gen arity-vec))
+     (gen-for-arity [:integer :integerB])
+
+     (require '[clojure.test.check :as tc])
+     (require '[clojure.test.check.generators :as gen])
+
+     (defn resolve-test [kw]
+       (condp = kw 
+         :output-number 'ayy
+         ))
+
+     ;;test that output is greater than input
+     ;; input 
+
+     (check-spec
+      #'add-nums)
+
+   #+END_SRC
+4) Codenames Clojure App
+   #+BEGIN_SRC clojure
+     (ns mjh.cn.core)
+
+     (defn gen-board []
+       (let [board-size 25
+             assassian-count 1
+             team-1-operative-count 9
+             team-2-operative-count 8
+             bystander-count (- board-size
+                                assassian-count team-1-operative-count team-2-operative-count)
+             board-vec (shuffle (take board-size (iterate inc 0)))
+             assassians (subvec board-vec 0 assassian-count)
+
+             team-1-codenames (subvec board-vec
+                                       assassian-count
+                                       (+ assassian-count team-1-operative-count))
+             team-2-codenames (subvec board-vec
+                                       (+ assassian-count team-1-operative-count)
+                                       (+ assassian-count team-1-operative-count team-2-operative-count))
+             bystanders-codenames (subvec board-vec
+                                          (+ assassian-count team-1-operative-count team-2-operative-count)
+                                          (+ assassian-count team-1-operative-count team-2-operative-count bystander-count))]
+         {:team-1-codenames team-1-codenames
+          :team-2-codenames team-2-codenames
+          :assassians assassians
+          :bystanders bystanders-codenames}))
+
+     (def temp-board  (gen-board))
+     temp-board
+     temp-words
+
+     (defn assoc-words-with-board [board words]
+       (letfn [(assoc-by-kw [kw]
+                 (zipmap (kw board) (map (partial nth words) (kw board)))
+                 )]
+         {:team-1-codenames (assoc-by-kw :team-1-codenames)
+          :team-2-codenames (assoc-by-kw :team-2-codenames)
+          :assassians (assoc-by-kw :assassians)
+          :bystanders (assoc-by-kw :bystanders)}))
+
+
+
+
+
+
+
+     (assoc-words-with-board temp-board temp-words)
+     (def temp-words (with-open [rdr (clojure.java.io/reader "/Users/mjhamrick/Desktop/nounlist.txt")]
+                       (take 25 (shuffle (line-seq rdr)))))
+   #+END_SRC
+5) Datomic based YNAB
+   #+BEGIN_SRC clojure
+     ;; account.name string
+     ;; account.type [on-budget | off-budget]
+     ;; account.transaction-groups ref
+
+     ;; transaction-group.transactions ref
+     ;; transaction-group.date instant
+
+     ;; transaction.payee    ref
+     ;; transaction.amount   bigdec
+     ;; transaction.category ref
+
+     ;; payee.name string
+
+
+   #+END_SRC

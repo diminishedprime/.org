@@ -1,0 +1,4 @@
+(define caro
+        (lambda (p a)
+          (fresh (d)
+                 (== (cons a d) p))))

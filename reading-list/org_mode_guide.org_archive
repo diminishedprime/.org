@@ -1,0 +1,23 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file /Users/mjhamrick/Desktop/mjh-org/book-status/org_mode_guide.org
+
+
+* Todo 3 - Tables
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2015-10-11 Sun 12:47
+  :ARCHIVE_FILE: ~/Desktop/mjh-org/book-status/org_mode_guide.org
+  :ARCHIVE_OLPATH: Compact Guide
+  :ARCHIVE_CATEGORY: org_mode_guide
+  :ARCHIVE_TODO: Todo
+  :END:
+
+To make this table, type
+|Name|Phone|Age
+Then type C-c Ret
+
+| Name         |        Phone | Age |
+|--------------+--------------+-----|
+| John Hopkins | 123-456-7890 |     |
+

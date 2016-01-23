@@ -1,0 +1,282 @@
++ [[./index.org][Main Index]]
+
+* Books to read
+** Done Ultra Marathon Man by Dan Karnazes
+** Eat and Run by someone Jurek
+* Some Advice
+Google Mid-west Ultra-marathons
+Mark Twain 100-miler maybe a 50?
+Burning River Ohio/Indianian
+
+Probably do a road full or maybe a 50k.
+12 week training plan or maybe a 16 week training plan.
+Max out at like 35-40 miles a week.
+
+You'll probably want to walk uphills that are steep or steepish.
+around 100-200 calories an hour when you do a longer run.
+
+Half Full, Half Full, then 2 or 3 50ks, then a 50 miler, then another 50, then 100. 
+
+Ultra-runner podcast.
+Trail-runner nation.
+Marathon Training Academy.
+
+TheGingerRunner
+BO2MaxProductions
+
+Ultrarunning magazine.
+Runners World.
+
+Add in some resistance training if you can
+
+* Schedule for 1st Marathon
+Saturday, April 30th. http://www.illinoismarathon.com/faq.php
+* Todo Train for Marathon [13%]
++ [X] October [100%]
+  + [X] October 4 [100%]
+    - [X] Sun - Rest
+    - [X] Mon - 1.5 m run
+    - [X] Tue - 3 m run
+    - [X] Wed - 1.5 m run
+    - [X] Thu - Rest
+    - [X] Fri - 3 m run
+    - [X] Sat - 30 min walk
+  + [X] October 11 [100%]
+    - [X] Sun - Rest
+    - [X] Mon - 1.5 m run
+    - [X] Tue - 3 m run
+    - [X] Wed - 1.5 m run
+    - [X] Thu - Rest
+    - [X] Fri - 3.5 m run
+    - [X] Sat - 35 min walk
+  + [X] October 18 [100%]
+    - [X] Sun - Rest
+    - [X] Mon - 1.5 m run
+    - [X] Tue - 3 m run
+    - [X] Wed - 1.5 m run
+    - [X] Thu - Rest
+    - [X] Fri - 3 m run - skipped because of the flu.
+    - [X] Sat - 40 min walk
+  + [X] October 25 [100%]
+    - [X] Sun - Rest
+    - [X] Mon - 2 m run
+    - [X] Tue - 3 m run -skipped because of cold
+    - [X] Wed - 1.5 m run - skipped because of cold
+    - [X] Thu - Rest 
+    - [X] Fri - 4 m run - skipped because still feelikng sick... Hopefully feeling up to it again soon.
+    - [X] Sat - 30 min walk - so I took the whole week off. I'm ready to go next week, though!
++ [-] November [2%]
+  + [-] November 1 [14%]
+    - [X] Sun - Rest
+    - [ ] Mon - 2 m run
+    - [ ] Tue - 3 m run
+    - [ ] Wed - 2 m run
+    - [ ] Thu - Rest
+    - [ ] Fri - 3 m run
+    - [ ] Sat - 45 min walk
+  + [ ] November 8 [0%]
+    - [ ] Sun - Rest
+    - [ ] Mon - 2 m run
+    - [ ] Tue - 3 m run
+    - [ ] Wed - 2 m run
+    - [ ] Thu - Rest
+    - [ ] Fri - 4.5 m run
+    - [ ] Sat - 30 min walk
+  + [ ] November 15 [0%]
+    - [ ] Sun - Rest
+    - [ ] Mon - 2 m run
+    - [ ] Tue - 3 m run
+    - [ ] Wed - 2 m run
+    - [ ] Thu - Rest
+    - [ ] Fri - 3 m run
+    - [ ] Sat - 50 min walk
+  + [ ] November 22 [0%]
+    - [ ] Sun - Rest
+    - [ ] Mon - 2 m run
+    - [ ] Tue - 3 m run
+    - [ ] Wed - 2 m run
+    - [ ] Thu - Rest
+    - [ ] Fri - 5 m run
+    - [ ] Sat - 30 min walk
+  + [ ] November 29 [0%]
+    - [ ] Sun - Rest
+    - [ ] Mon - 2 m run
+    - [ ] Tue - 3 m run
+    - [ ] Wed - 2.5 m run
+    - [ ] Thu - Rest
+    - [ ] Fri - 3 m run
+    - [ ] Sat - 55 min walk
++ [ ] December [0%]
+  + [ ] December 6 [0%]
+    - [ ] Sun - Rest
+    - [ ] Mon - 2 m run
+    - [ ] Tue - 3 m run
+    - [ ] Wed - 2.5 m run
+    - [ ] Thu - Rest
+    - [ ] Fri - 5.5 m run
+    - [ ] Sat - 30 min walk
+  + [ ] December 13 [0%]
+    - [ ] Sun - Rest
+    - [ ] Mon - 3 m run
+    - [ ] Tue - 3 m run
+    - [ ] Wed - 3 m run
+    - [ ] Thu - Rest
+    - [ ] Fri - 3 m run
+    - [ ] Sat - 60 min walk
+  + [ ] December 20 [0%]
+    - [ ] Sun - Rest
+    - [ ] Mon - 3 m run
+    - [ ] Tue - 3 m run
+    - [ ] Wed - 3 m run
+    - [ ] Thu - Rest
+    - [ ] Fri - 6 m run
+    - [ ] Sat - 30 min walk
+  + [ ] December 27 [0%]
+    - [ ] Sun - Rest
+    - [ ] Mon - 3 m run
+    - [ ] Tue - 5 m pace
+    - [ ] Wed - 3 m run
+    - [ ] Thu - Rest
+    - [ ] Fri - 8
+    - [ ] Sat - Cross
++ [ ] Janurary [0%]
+  + [ ] Janurary 3 [0%]
+    - [ ] Sun - Rest
+    - [ ] Mon - 3 m run
+    - [ ] Tue - 5 m run
+    - [ ] Wed - 3 m run
+    - [ ] Thu - Rest
+    - [ ] Fri - 9
+    - [ ] Sat - Cross
+  + [ ] Janurary 10 [0%]
+    - [ ] Sun - Rest
+    - [ ] Mon - 3 m run
+    - [ ] Tue - 5 m pace
+    - [ ] Wed - 3 m run
+    - [ ] Thu - Rest
+    - [ ] Fri - 6
+    - [ ] Sat - Cross
+  + [ ] Janurary 17 [0%]
+    - [ ] Sun - Rest
+    - [ ] Mon - 3 m run
+    - [ ] Tue - 6 m pace
+    - [ ] Wed - 3 m run
+    - [ ] Thu - Rest
+    - [ ] Fri - 11
+    - [ ] Sat - Cross
+  + [ ] January 24 [0%]
+    - [ ] Sun - Rest
+    - [ ] Mon - 3 m run
+    - [ ] Tue - 6 m run
+    - [ ] Wed - 3 m run
+    - [ ] Thu - Rest
+    - [ ] Fri - 12
+    - [ ] Sat - Cross
+  + [ ] January 31 [0%]
+    - [ ] Sun - Rest
+    - [ ] Mon - 3 m run
+    - [ ] Tue - 6 m pace
+    - [ ] Wed - 3 m run
+    - [ ] Thu - Rest
+    - [ ] Fri - 9
+    - [ ] Sat - Cross
++ [ ] Feburary [0%]
+  + [ ] Feburary 7 [0%]
+    - [ ] Sun - Rest
+    - [ ] Mon - 4 m run
+    - [ ] Tue - 7 m pace
+    - [ ] Wed - 4 m run
+    - [ ] Thu - Rest
+    - [ ] Fri - 14
+    - [ ] Sat - Cross
+  + [ ] Fuburary 14 [0%]
+    - [ ] Sun - Rest
+    - [ ] Mon - 4 m run
+    - [ ] Tue - 7 m run
+    - [ ] Wed - 4 m run
+    - [ ] Thu - Rest
+    - [ ] Fri - 15
+    - [ ] Sat - Cross
+  + [ ] Feburary 21 [0%]
+    - [ ] Sun - Rest
+    - [ ] Mon - 4 m run
+    - [ ] Tue - 7 m pace
+    - [ ] Wed - 4 m run
+    - [ ] Thu - Rest
+    - [ ] Fri - Rest
+    - [ ] Sat - Half Marathon
+  + [ ] Feburary 28 [0%]
+    - [ ] Sun - Rest
+    - [ ] Mon - 4 m run
+    - [ ] Tue - 8 m pace
+    - [ ] Wed - 4 m run
+    - [ ] Thu - Rest
+    - [ ] Fri - 17
+    - [ ] Sat - Cross
++ [ ] March [0%]
+  + [ ] March 6 [0%]
+    - [ ] Sun - Rest
+    - [ ] Mon - 5 m run
+    - [ ] Tue - 8 m run
+    - [ ] Wed - 5 m run
+    - [ ] Thu - Rest
+    - [ ] Fri - 18
+    - [ ] Sat - Cross
+  + [ ] March 13 [0%]
+    - [ ] Sun - Rest
+    - [ ] Mon - 5 m run
+    - [ ] Tue - 8 m pace
+    - [ ] Wed - 5 m run
+    - [ ] Thu - Rest
+    - [ ] Fri - 13
+    - [ ] Sat - Cross
+  + [ ] March 20 [0%]
+    - [ ] Sun - Rest
+    - [ ] Mon - 5 m run
+    - [ ] Tue - 5 m pace
+    - [ ] Wed - 5 m run
+    - [ ] Thu - Rest
+    - [ ] Fri - 19
+    - [ ] Sat - Cross
+  + [ ] March 27 [0%]
+    - [ ] Sun - Rest
+    - [ ] Mon - 5 m run
+    - [ ] Tue - 8 m run
+    - [ ] Wed - 5 m run
+    - [ ] Thu - Rest
+    - [ ] Fri - 12
+    - [ ] Sat - Cross
++ [ ] April
+  + [ ] April 3 [0%]
+    - [ ] Sun - Rest
+    - [ ] Mon - 5 m run
+    - [ ] Tue - 5 m pace
+    - [ ] Wed - 5 m run
+    - [ ] Thu - Rest
+    - [ ] Fri - 20
+    - [ ] Sat - Cross
+  + [ ] April 10 [0%]
+    - [ ] Sun - Rest
+    - [ ] Mon - 5 m run
+    - [ ] Tue - 4 m pace
+    - [ ] Wed - 5 m run
+    - [ ] Thu - Rest
+    - [ ] Fri - 12
+    - [ ] Sat - Cross
+  + [ ] April 17 [0%]
+    - [ ] Sun - Rest
+    - [ ] Mon - 4 m run
+    - [ ] Tue - 3 m run
+    - [ ] Wed - 4 m run
+    - [ ] Thu - Rest
+    - [ ] Fri - 8
+    - [ ] Sat - Cross
+  + [ ] April 24 [0%]
+    - [ ] Sun - Rest
+    - [ ] Mon - 3 m run
+    - [ ] Tue - 2 m run
+    - [ ] Wed - Rest
+    - [ ] Thu - Rest
+    - [ ] Fri - 2 m run
+    - [ ] Sat - Marathon
+      

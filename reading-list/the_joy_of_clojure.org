@@ -1,0 +1,1259 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Reading List]]
+
+* DONE [[http://search.safaribooksonline.com/book/programming/clojure/9781617291418][The Joy of Clojure]] [100%] [127/127]
+** DONE Part 1. Foundations [100%]
+*** DONE Chapter 1. Clojure philosophy [100%]
+    CLOSED: [2015-09-24 Thu 08:23]
+**** DONE 1.1. The Clojure way
+      CLOSED: [2015-09-23 Wed 08:42]
+#+BEGIN_SRC clojure
+  ;; consistent use of syntax, even for different forms
+  (for [x [:a :b]
+        y (range 5)
+        :when (odd? y)]
+    [x y])
+
+  (doseq [x [:a :b]
+        y (range 5)
+        :when (odd? y)]
+    (prn x y))
+#+END_SRC
+**** DONE 1.2. Why a(nother) Lisp?
+      CLOSED: [2015-09-23 Wed 08:53]
+#+BEGIN_SRC clojure
+  (def numbers [1 2 3 4 5 6 7 8 9 10])
+  (apply + numbers)
+  (apply < numbers)
+  (apply * numbers)
+#+END_SRC
+**** DONE 1.3. Functional programming
+     CLOSED: [2015-09-23 Wed 09:03]
+**** DONE 1.4. Why Clojure isn't especially object-oriented
+      CLOSED: [2015-09-23 Wed 09:52]
+#+BEGIN_SRC clojure
+  (ns joy.chess)
+  
+  (defn initial-board []
+    [\r \n \b \q \k \b \n \r
+     \p \p \p \p \p \p \p \p
+     \- \- \- \- \- \- \- \-
+     \- \- \- \- \- \- \- \-
+     \- \- \- \- \- \- \- \-
+     \- \- \- \- \- \- \- \-
+     \P \P \P \P \P \P \P \P
+     \R \N \B \Q \K \B \N \R])
+  
+  (letfn [(index [file rank]
+            (let [f (- (int file) (int \a))
+                  r (* 8 (- 8 (- (int rank) (int \0))))]
+              (+ f r)))]
+    (defn lookup2 [board pos]
+      (let [[file rank] pos]
+        (board (index file rank)))))
+  
+  (defn lookup3 [board pos]
+    (let [[file rank] (map int pos)
+          [fc rc] (map int [\a \0])
+          f (- file fc)
+          r (* 8 (- 8 (- rank rc)))
+          index (+ f r)]
+      (board index)))
+  
+  
+  (lookup2 (initial-board) "d8")
+  (lookup3 (initial-board) "d8")
+  ((initial-board) 3)
+#+END_SRC
+**** DONE 1.5. Summary
+     CLOSED: [2015-09-21 Mon 09:53]
+*** DONE Chapter 2. Drinking from the Clojure fire hose [100%]
+**** DONE 2.1. Scalars: the base data types
+     CLOSED: [2015-09-24 Thu 08:11]
+**** DONE 2.2. Putting things together: collections
+     CLOSED: [2015-09-24 Thu 08:13]
+**** DONE 2.3. Making things happen: calling functions
+     CLOSED: [2015-09-24 Thu 08:14]
+**** DONE 2.4. Vars are not variables
+     CLOSED: [2015-09-24 Thu 08:16]
+**** DONE 2.5. Functions
+     CLOSED: [2015-09-24 Thu 08:21]
+**** DONE 2.6. Locals, loops, and blocks
+      CLOSED: [2015-09-24 Thu 08:38]
+#+BEGIN_SRC clojure
+  (defn sum-down-from [sum x]
+    (if (pos? x)
+      (recur (+ sum x) (dec x))
+      sum))
+  (defn sum-down-from-2 [initial-x]
+    (loop [sum 0
+           x initial-x]
+      (if (pos? x)
+        (recur (+ sum x) (dec x))
+        sum)))
+  (sum-down-from-2 30)
+#+END_SRC
+**** DONE 2.7. Preventing things from happening: quoting
+     CLOSED: [2015-09-24 Thu 08:45]
+**** DONE 2.8. Using host libraries via interop
+     CLOSED: [2015-09-24 Thu 08:50]
+**** DONE 2.9. Exceptional circumstances
+     CLOSED: [2015-09-24 Thu 08:51]
+**** DONE 2.10. Modularizing code with namespaces
+     CLOSED: [2015-09-24 Thu 08:58]
+**** DONE 2.11. Summary
+     CLOSED: [2015-09-24 Thu 08:58]
+*** DONE Chapter 3. Dipping your toes in the pool [100%]
+**** DONE 3.1. Truthiness
+     CLOSED: [2015-09-24 Thu 09:04]
+**** DONE 3.2. Nil pun with care
+     CLOSED: [2015-09-24 Thu 09:07]
+**** DONE 3.3. Destructuring
+      CLOSED: [2015-09-24 Thu 09:29]
+#+BEGIN_SRC clojure
+  ;; without destructuring
+  (def whole-name ["Guy" "Lewis" "Steele"])
+  
+  (str (nth whole-name 2) ", "
+       (nth whole-name 0) " "
+       (nth whole-name 1))
+  
+  ;; with destructuring
+  (def whole-name ["Guy" "Lewis" "Steele"])
+  
+  (let [[f-name m-name l-name] whole-name]
+    (str l-name ", "
+         f-name " "
+         m-name))
+  
+  ;; using destructuring with a regex
+  (def date-regex #"(\d{1,2})\/(\d{1,2})\/(\d{4})")
+  
+  (let [rem (re-matcher date-regex "12/02/1975")]
+    (when (.find rem)
+      (let [[_ m d] rem]
+        {:month m :day d})))
+  
+  ;;using destructuring with a map
+  
+  (def whole-name {:f-name "Guy"
+                   :m-name "Lewis"
+                   :l-name "Steele"})
+  (let [{f-name :f-name
+         m-name :m-name
+         l-name :l-name} whole-name]
+    (str l-name ", " f-name " " m-name))
+  
+  ;; better solution using :keys
+  (let [{:keys [f-name m-name l-name]} whole-name]
+    (str l-name ", " f-name " " m-name))
+  
+  (let [{f-name :f-name :as entire-name} whole-name]
+    (println "First name is " f-name)
+    (println "Whole name is bolew:")
+    whole-name)
+  
+  ;; handling the case where a key might not be in the source map
+  (let [{:keys [title f-name m-name l-name]
+         :or {title "Mr."}} whole-name]
+    (apply str (interpose " " [title f-name m-name l-name])))
+  
+  ;; Destructuring in function parameters
+  (defn print-last-name [{:keys [l-name]}]
+    (str l-name))
+  (print-last-name whole-name)
+  
+#+END_SRC
+**** DONE 3.4. Using the REPL to experiment
+     CLOSED: [2015-09-24 Thu 09:44]
+**** DONE 3.5. Summary
+     CLOSED: [2015-09-24 Thu 09:46]
+** DONE Part 2. Data types [100%]
+*** DONE Chapter 4. On scalars [100%]
+**** DONE 4.1. Understanding precision
+     CLOSED: [2015-09-25 Fri 07:53]
+**** DONE 4.2. Trying to be rational
+     CLOSED: [2015-09-25 Fri 08:02]
+**** DONE 4.3. When to use keywords
+     CLOSED: [2015-09-25 Fri 08:02]
+**** DONE 4.4. Symbolic resolution
+     CLOSED: [2015-09-25 Fri 08:07]
+**** DONE 4.5. Regular expressions-the second problem
+     CLOSED: [2015-09-25 Fri 08:12]
+**** DONE 4.6. Summary
+     CLOSED: [2015-09-25 Fri 08:13]
+*** DONE Chapter 5. Collection types [100%]
+**** DONE 5.1. Persistence, sequences, and complexity
+     CLOSED: [2015-09-25 Fri 08:26]
+**** DONE 5.2. Vectors: creating and using them in all their varieties
+     CLOSED: [2015-09-25 Fri 08:52]
+**** DONE 5.3. Lists: Clojure's code-form data structure
+     CLOSED: [2015-09-25 Fri 09:00]
+**** DONE 5.4. How to use persistent queues
+     CLOSED: [2015-09-25 Fri 09:05]
+**** DONE 5.5. Persistent sets
+     CLOSED: [2015-09-25 Fri 09:19]
+**** DONE 5.6. Thinking in maps
+     CLOSED: [2015-09-25 Fri 09:26]
+**** DONE 5.7. Putting it all together: finding the position of items in a sequence
+     CLOSED: [2015-09-28 Mon 07:22]
+**** DONE 5.8. Summary
+     CLOSED: [2015-09-28 Mon 07:23]
+** DONE Part 3. Functional programming techniques [100%]
+*** DONE Chapter 6. Being lazy and set in your ways [100%]
+**** DONE 6.1. On immutability: being set in your ways
+     CLOSED: [2015-09-28 Mon 09:17]
+**** DONE 6.2. Structural sharing: a persistent toy
+     CLOSED: [2015-09-28 Mon 07:45]
+**** DONE 6.3. Laziness
+      CLOSED: [2015-09-28 Mon 08:53]
+#+BEGIN_SRC clojure
+  ;; an example of laziness through the fibonacci sequence. Also the
+  ;; solution to project euler #3.
+  
+  (defn fib [n]
+    (letfn [(fib-memo [n results]
+              (if (< (count results) n)
+                (let [size (count results)
+                      current-num (nth results (- size 1))
+                      last-num (nth results (- size 2))]
+                  (recur n (conj results (+' current-num last-num))))
+                (nth results (- n 1))))]
+      (fib-memo n [1 1])))
+  (def fib-nums (map fib (iterate inc 1)))
+  
+  (time (reduce + (take-while #(< % 4000000) (filter even? fib-nums))))
+  
+#+END_SRC
+**** DONE 6.4. Putting it all together: a lazy quicksort
+      CLOSED: [2015-09-28 Mon 09:16]
+#+BEGIN_SRC clojure
+  (defn rand-ints [n]
+    (take n (repeatedly #(rand-int n))))
+  
+  (defn sort-parts [work]
+    (lazy-seq
+     (loop [[part & parts] work]
+       (if-let [[pivot & xs] (seq part)]
+         (let [smaller? #(< % pivot)]
+           (recur (list*
+                   (filter smaller? xs)
+                   pivot
+                   (remove smaller? xs)
+                   parts)))
+         (when-let [[x & parts] parts]
+           (cons x (sort-parts parts)))))))
+  (defn qsort [xs]
+    (sort-parts (list xs)))
+  
+  
+#+END_SRC
+**** DONE 6.5. Summary
+     CLOSED: [2015-09-28 Mon 09:16]
+*** DONE Chapter 7. Functional programming [100%]
+**** DONE 7.1. Functions in all their forms
+      CLOSED: [2015-09-29 Tue 07:23]
+#+BEGIN_SRC clojure
+  (map [:thing :thing2 :thing3 :thing4] #{0 3})
+  
+  (use '[clojure.test :as t])
+  
+  (defn join
+    {:test (fn []
+             (assert
+              (= (join "," [1 2 3]) "1,3,3")))}
+    [sep s])
+  
+  (t/run-tests)
+  
+  
+  ;; Interesting application of partial.
+  (def plays [{:band "Burial",     :plays 979,  :loved 9}
+              {:band "Eno",        :plays 2333, :loved 15}
+              {:band "Bill Evans", :plays 979,  :loved 9}
+              {:band "Magma",      :plays 2665, :loved 31}])
+  
+  (def sort-by-loved-ratio (partial sort-by #(/ (:plays %) (:loved %))))
+  
+  (sort-by-loved-ratio plays)
+  
+  ;; What if we wanted to do something akin to spreadsheet sorting?
+  (sort-by (columns [:plays :loved :band]) plays)
+  
+  (defn columns [column-names]
+    (fn [row]
+      (vec (map row column-names))))
+  
+  (defmacro def-thing [-name- & forms]
+    {:pre [(symbol? -name-)]}
+    `(defn ~-name- [] 
+       ~@forms))
+  
+  (def-thing 3)
+  
+  
+#+END_SRC
+**** DONE 7.2. On closures
+      CLOSED: [2015-09-29 Tue 07:46]
+#+BEGIN_SRC clojure
+  (defn %= [d]
+    (fn [n]
+      (zero? (rem n d))))
+  
+  ;; Some of the power of closures...
+  (filter (%= 4) (range 10))
+  
+  
+  (defn filter-divisible [denom s]
+    (filter #(zero? (rem % denom)) s))
+  
+  (filter-divisible 5 (range 20))
+  
+  ;; Robot object example
+  (def bearings [{:x  0, :y  1}    ; north
+                 {:x  1, :y  0}    ; east
+                 {:x  0, :y -1}    ; south
+                 {:x -1, :y  0}])  ; west
+  
+  (defn bot [x y bearing-num]
+    {:coords [x y]
+     :bearing ([:north :east :south :west] bearing-num)
+     :forward (fn [] (bot (+ x (:x (bearings bearing-num)))
+                          (+ y (:y (bearings bearing-num)))
+                          bearing-num))
+     :turn-right (fn [] (bot x y (mod (+ 1 bearing-num) 4)))
+     :turn-left (fn [] (bot x y (mod (- 1 bearing-num) 4)))})
+  
+  (:coords (bot 5 5 0))
+  (:bearing ((:forward ((:forward ((:turn-right (bot 5 5 0))))))))
+  (:coords ((:forward ((:forward ((:turn-right (bot 5 5 0))))))))
+#+END_SRC
+**** DONE 7.3. Thinking recursively
+     CLOSED: [2015-09-29 Tue 08:57]
+**** DONE 7.4. Putting it all together: A* pathfinding
+      CLOSED: [2015-09-29 Tue 09:18]
+#+BEGIN_SRC clojure
+  
+  (def world [[  1   1   1   1    1]
+              [999 999 999 999    1]
+              [  1   1   1   1    1]
+              [  1 999 999 999  999]
+              [  1   1   1   1    1]])
+  (def shrubbery-world [[  1   1   1   2    1]
+                        [  1   1   1   999  1]
+                        [  1   1   1   999  1]
+                        [  1   1   1   999  1]
+                        [  1   1   1   1    1]])
+  
+  
+  (defn neighbors
+    ([size yx] (neighbors [[-1 0] [1 0] [0 -1] [0 1]]
+                          size
+                          yx))
+    ([deltas size yx]
+     (filter (fn [new-yx]
+               (every? #(< -1 % size) new-yx))
+             (map #(vec (map + yx %))
+                  deltas))))
+  
+  (neighbors 5 [0 0])
+  
+  (defn estimate-cost [step-cost-est size y x]
+    (* step-cost-est
+       (- (+ size size) y x 2)))
+  
+  (estimate-cost 900 5 0 0)
+  (estimate-cost 900 5 4 4)
+  
+  (defn path-cost [node-cost cheapest-nbr]
+    (+ node-cost
+       (or (:cost cheapest-nbr) 0)))
+  
+  (path-cost 900 {:cost 1})
+  
+  (defn total-cost [newcost step-cost-est size y x]
+    (+ newcost
+       (estimate-cost step-cost-est size y x)))
+  
+  (total-cost 0 900 5 0 0)
+  
+  (total-cost 1000 900 5 3 4)
+  
+  (total-cost (path-cost 900 {:cost 1}) 900 5 3 4)
+  
+  (defn min-by [f coll]
+    (when (seq coll)
+      (reduce (fn [min other]
+                (if (> (f min) (f other))
+                  other
+                  min))
+              coll)))
+  
+  (min-by :cost [{:cost 100} {:cost 36} {:cost 9}])
+  
+  (defn a* [start-yx step-est cell-costs]
+    (let [size (count cell-costs)]
+      (loop [steps 0
+             routes (vec (replicate size (vec (replicate size nil))))
+             work-todo (sorted-set [0 start-yx])]
+        (if (empty? work-todo)
+          [(peek (peek routes)) :steps steps]
+          (let [[_ yx :as work-item] (first work-todo)
+                rest-work-todo (disj work-todo work-item)
+                nbr-yxs (neighbors size yx)
+                cheapest-nbr (min-by :cost
+                                     (keep #(get-in routes %)
+                                           nbr-yxs))
+                newcost (path-cost (get-in cell-costs yx)
+                                   cheapest-nbr)
+                oldcost (:cost (get-in routes yx))]
+            (if (and oldcost (>= newcost oldcost))
+              (recur (inc steps) routes rest-work-todo)
+              (recur (inc steps)
+                     (assoc-in routes yx
+                               {:cost newcost
+                                :yxs (conj (:yxs cheapest-nbr [])
+                                           yx)})
+                     (into rest-work-todo
+                           (map
+                            (fn [w]
+                              (let [[y x] w]
+                                [(total-cost newcost step-est size y x) w]))
+                            nbr-yxs)))))))))
+  
+  (a* [0 0]
+      900
+      world)
+  
+  (a* [0 0]
+      900
+      shrubbery-world)
+#+END_SRC
+**** DONE 7.5. Summary
+     CLOSED: [2015-09-29 Tue 09:19]
+** DONE Part 4. Large-scale design [100%]
+*** DONE Chapter 8. Macros [100%]
+**** DONE 8.1. Data is code is data
+      CLOSED: [2015-09-30 Wed 07:08]
+#+BEGIN_SRC clojure
+  (let [x 9, y '(- x)]
+    (println
+     (str `y) "\n"
+     (str ``y) "\n"
+     (str ``~y) "\n"
+     (str ``~~y)))
+#+END_SRC
+**** DONE 8.2. Defining control structures
+     CLOSED: [2015-09-30 Wed 07:18]
+**** DONE 8.3. Macros combining forms
+     CLOSED: [2015-09-30 Wed 07:18]
+**** DONE 8.4. Using macros to change forms
+     CLOSED: [2015-09-30 Wed 08:01]
+**** DONE 8.5. Using macros to control symbolic resolution time
+     CLOSED: [2015-09-30 Wed 08:08]
+**** DONE 8.6. Using macros to manage resources
+     CLOSED: [2015-09-30 Wed 08:11]
+**** DONE 8.7. Putting it all together: macros returning functions
+     CLOSED: [2015-09-30 Wed 08:15]
+**** DONE 8.8. Summary
+     CLOSED: [2015-09-30 Wed 08:15]
+*** DONE Chapter 9. Combining data and code [100%]
+**** DONE 9.1. Namespaces
+     CLOSED: [2015-10-01 Thu 06:42]
+**** DONE 9.2. Exploring Clojure multimethods with the Universal Design Pattern
+      CLOSED: [2015-10-01 Thu 07:08]
+#+BEGIN_SRC clojure
+  (ns joy.udp
+    (:refer-clojure :exclude [get]))
+
+  (defn beget [this proto]
+    (assoc this ::prototype proto))
+
+  (defn get [m k]
+    (when m
+      (if-let [[_ v] (find m k)]
+        v
+        (recur (::prototype m) k))))
+
+  (def put assoc)
+
+  (def cat {:likes-dogs true, :ocd-bathing true})
+  (def morris (beget {:likes-9lives true} cat))
+  (def post-traumatic-morris (beget {:likes-dogs nil} morris))
+
+  (get cat :likes-dogs)
+  (get morris :likes-dogs)
+  (get post-traumatic-morris :likes-dogs)
+  (get post-traumatic-morris :likes-9lives)
+
+  ;; 9.2.3
+  (defmulti compiler :os)
+  (defmethod compiler ::unix [m] (get m :c-compiler))
+  (defmethod compiler ::osx [m] (get m :llvm-compiler))
+
+  (def clone (partial beget {}))
+  (def unix {:os ::unix :c-compiler "cc" :home "/home" :dev "/dev"})
+  (def osx (-> (clone unix)
+              (put :os ::osx)
+              (put :llvm-compiler "clang")
+              (put :home "/Users")))
+
+  (compiler unix)
+  (compiler osx)
+
+  ;; 9.2.4
+  (defmulti home :os)
+  (defmethod home ::unix [m] (get m :home))
+
+  (home unix)
+  (derive ::osx ::unix)
+  (home osx)
+
+  (parents ::osx)
+  (ancestors ::osx)
+  (descendants ::unix)
+  (isa? ::osx ::unix)
+  (isa? ::unix ::osx)
+
+  (derive ::osx ::bsd)
+  (defmethod home ::bsd [m] "/home")
+
+  (prefer-method home ::unix ::bsd)
+  (home osx)
+
+  (remove-method home ::bsd)
+  (home osx)
+
+  ;; 9.2.6
+  (defmulti compile-cmd (juxt :os compiler))
+  (defmethod compile-cmd [::osx "gcc"] [m]
+    (str "/usr/bin" (get m :c-compiler)))
+  (defmethod compile-cmd :default [m]
+    (str "Unsere where to locate " (get m :c-compiler)))
+
+  (compile-cmd osx)
+  (compile-cmd unix)
+#+END_SRC
+**** DONE 9.3. Types, protocols, and records
+      CLOSED: [2015-10-01 Thu 07:47]
+#+BEGIN_SRC clojure
+  (ns what-ev)
+
+  (defrecord TreeNode [val l r])
+
+  (defn xconj [t v]
+    (cond
+      (nil? t) (TreeNode. v nil nil)
+      (< v (:val t)) (TreeNode. (:val t) (xconj (:l t) v) (:r t))
+      :else (TreeNode. (:val t) (:l t) (xconj (:r t) v))))
+  (defn xseq [t]
+    (when t
+      (concat (xseq (:l t)) [(:val t)] (xseq (:r t)))))
+
+  (def sample-tree (reduce xconj nil [3 5 2 4 6]))
+  (xseq sample-tree)
+
+  (dissoc (TreeNode. 5 nil nil) :l)
+
+  (defprotocol FIXO
+    (fixo-push [fixo value])
+    (fixo-pop [fixo])
+    (fixo-peek [fixo]))
+
+  (extend-type TreeNode
+    FIXO
+    (fixo-push [node value]
+      (xconj node value)))
+
+  (xseq (fixo-push sample-tree 5/2))
+
+  (extend-type clojure.lang.IPersistentVector
+    FIXO
+    (fixo-push [vector value]
+      (conj vector value)))
+  (fixo-push [2 3 4 5 6] 5/2)
+
+  (extend-type nil
+    FIXO
+    (fixo-push [t v]
+      (TreeNode. v nil nil)))
+
+  (xseq (reduce fixo-push nil [3 5 2 4 6 0]))
+#+END_SRC
+**** DONE 9.4. Putting it all together: a fluent builder for chess moves
+     CLOSED: [2015-10-01 Thu 07:56]
+**** DONE 9.5. Summary
+     CLOSED: [2015-10-01 Thu 07:57]
+*** DONE Chapter 10. Mutation and concurrency [100%]
+**** DONE 10.1. When to use refs
+      CLOSED: [2015-10-05 Mon 07:28]
+#+BEGIN_SRC clojure
+  (ns joy.mutation
+    (:import java.util.concurrent.Executors))
+  (def thread-pool
+    (Executors/newFixedThreadPool
+     (+ 2 (.availableProcessors (Runtime/getRuntime)))))
+  (defn dothreads!
+    [f & {thread-count :threads
+          exec-count :times
+          :or {thread-count 1 exec-count 1}}]
+    (dotimes [t thread-count]
+      (.submit thread-pool
+               #(dotimes [_ exec-count] (f)))))
+  (def initial-board
+    [[:- :k :-]
+     [:- :- :-]
+     [:- :K :-]])
+  (defn board-map [f board]
+    (vec (map #(vec (for [s %] (f s)))
+              board)))
+  (defn reset-board!
+    "Resets the board state. Generally these types of function are a bad
+    idea, but matters of page count force our hand."
+    []
+    (def board (board-map ref initial-board))
+    (def to-move (ref [[:K [2 1]] [:k [0 1]]]))
+    (def num-moves (ref 0)))
+
+  (defn neighbors
+    ([size yx] (neighbors [[-1 0] [1 0] [0 -1] [0 1]]
+                          size
+                          yx))
+    ([deltas size yx]
+     (filter (fn [new-yx]
+               (every? #(< -1 % size) new-yx))
+             (map #(vec (map + yx %))
+                  deltas))))
+
+  (def king-moves
+    (partial neighbors
+             [[-1 -1] [-1 0] [-1 1] [0 -1] [0 1] [1 -1] [1 0] [1 1]] 3))
+
+  (defn good-move?
+    [to enemy-sq]
+    (when (not= to enemy-sq)
+      to))
+
+  (defn choose-move
+    "Randomly choose a legal move"
+    [[[mover mpos] [_ enemy-pos]]]
+    [mover (some #(good-move? % enemy-pos)
+                 (shuffle (king-moves mpos)))])
+
+  (defn place [from to] to)
+  (defn move-piece [[piece dest] [[_ src] _]]
+    (alter (get-in board dest) place piece)
+    (alter (get-in board src) place :-)
+    (alter num-moves inc))
+  (defn update-to-move [move]
+    (alter to-move #(vector (second %) move)))
+  (defn make-move []
+    (let [move (choose-move @to-move)]
+      (dosync (move-piece move @to-move))
+      (dosync (update-to-move move))))
+
+  (reset-board!)
+  (make-move)
+  (board-map deref board)
+  (make-move)
+  (board-map deref board)
+
+  (dothreads! make-move :threads 100 :times 100)
+  (board-map deref board)
+
+  (defn make-move-v2 []
+    (dosync
+     (let [move (choose-move @to-move)]
+       (move-piece move @to-move)
+       (update-to-move move))))
+
+
+  (reset-board!)
+  (make-move)
+  (board-map deref board)
+  @num-moves
+
+  (dothreads! make-move-v2 :threads 100 :times 100)
+  (board-map #(dosync (deref %)) board)
+  @to-move
+  @num-moves
+#+END_SRC
+**** DONE 10.2. Refactoring with refs
+     CLOSED: [2015-10-05 Mon 07:29]
+**** DONE 10.3. When to use agents
+      CLOSED: [2015-10-05 Mon 09:02]
+#+BEGIN_SRC clojure
+  (ns joy.mutation
+    (:import java.util.concurrent.Executors))
+
+  (def thread-pool
+    (Executors/newFixedThreadPool
+     (+ 2 (.availableProcessors (Runtime/getRuntime)))))
+
+  (defn dothreads!
+    [f & {thread-count :threads
+          exec-count :times
+          :or {thread-count 1 exec-count 1}}]
+    (dotimes [t thread-count]
+      (.submit thread-pool
+               #(dotimes [_ exec-count] (f)))))
+
+  (def joy (agent []))
+
+  (send joy conj "first edition")
+  @joy
+  (defn slow-conj [coll item]
+    (Thread/sleep 1000)
+    (conj coll item))
+  (send joy slow-conj "Second Edition")
+  ;; wait a second, then it will be updated with the additional value
+  @joy
+
+  (def log-agent (agent 0))
+
+  (defn do-log [msg-id message]
+    (println (str msg-id ":" message))
+    (inc msg-id))
+
+  (defn do-step [channel message]
+    (Thread/sleep 1)
+    (send-off log-agent do-log (str channel message)))
+
+  (defn three-step [channel]
+    (do-step channel " ready to begin (step 0)")
+    (do-step channel " warming up (step 1)")
+    (do-step channel " really getting going now (step 2)")
+    (do-step channel " done! (step 3)"))
+
+  (defn all-together-now []
+    (dothreads! #(three-step "alpha"))
+    (dothreads! #(three-step "beta"))
+    (dothreads! #(three-step "omega")))
+  (all-together-now)
+
+
+  ;; An attempt at first merge sort, then a parallel merge-sort
+
+  (defn ms-merge [left right]
+    (loop [head [] l left r right]
+      (if (empty? l) (concat head r)
+          (if (empty? r) (concat head l)
+              (if (> (first l) (first r))
+                (recur (conj head (first r)) l (rest r))
+                (recur (conj head (first l)) (rest l) r))))))
+
+  (defn single-core-merge-sort [l]
+    (if (< (count l) 2) l
+        (apply ms-merge (map single-core-merge-sort (split-at (/ (count l) 2) l)))))
+
+  (defn parallel-merge-sort [l]
+    (if (> 33 (count l))
+      (apply ms-merge (pmap parallel-merge-sort (split-at (/ (count l) 2) l)))
+      (apply ms-merge (pmap single-core-merge-sort (split-at (/ (count l) 2) l)))))
+
+  ;; TODO - maybe look into actually implementing this later...
+  (defn parallel-merge-with-qs [l]
+    (if (> 33 (count l))
+      (apply ms-merge (pmap parallel-merge-sort (split-at (/ (count l) 2) l)))
+      (apply ms-merge (pmap single-core-merge-sort (split-at (/ (count l) 2) l)))))
+
+  (defn sort-wrapper []
+    (let [n 1000000
+          random-set (take n (repeatedly #(rand-int n)))]
+      (println "\n\n\n***************")
+      (do
+        (println "\nSorting using parallel-merge-sort...")
+        (time (parallel-merge-sort random-set)))
+      (do
+        (println "\nSorting using clojure.core\\sort")
+        (time (sort random-set)))
+      "done"))
+
+  (sort-wrapper)
+#+END_SRC
+**** DONE 10.4. When to use atoms
+     CLOSED: [2015-10-06 Tue 07:05]
+**** DONE 10.5. When to use locks
+     CLOSED: [2015-10-06 Tue 07:05]
+**** DONE 10.6. Vars and dynamic binding
+     CLOSED: [2015-10-06 Tue 07:05]
+**** DONE 10.7. Summary
+     CLOSED: [2015-10-06 Tue 07:05]
+*** DONE Chapter 11. Parallelism [100%]
+**** DONE 11.1. When to use futures
+     CLOSED: [2015-10-06 Tue 07:33]
+**** DONE 11.2. When to use promises
+     CLOSED: [2015-10-06 Tue 07:33]
+**** DONE 11.3. Parallel operations
+     CLOSED: [2015-10-06 Tue 12:29]
+**** DONE 11.4. A brief introduction to reducer/fold
+      CLOSED: [2015-10-07 Wed 06:41]
+#+BEGIN_SRC clojure
+  (require '[clojure.core.reducers :as r])
+  (def big-vec (vec (range (* 1000 1000))))
+
+  (time (reduce + big-vec))
+  (time (r/fold + big-vec))
+
+  ;; Ideally, r/fold would be faster since it should be able to be parallel better.
+#+END_SRC
+**** DONE 11.5. Summary
+     CLOSED: [2015-10-07 Wed 06:42]
+** DONE Part 5. Host symbiosis [100%]
+*** DONE Chapter 12. Java.next [100%]
+**** DONE 12.1. Generating objects on the fly with proxy
+     CLOSED: [2015-10-07 Wed 09:54]
+**** DONE 12.2. Clojure gen-class and GUI programming
+      CLOSED: [2015-10-07 Wed 08:46]
+#+BEGIN_SRC clojure
+  (ns me.DynaFrame
+    (:gen-class
+     :name me.DynaFrame
+     :extends javax.swing.JFrame
+     :implements [clojure.lang.IMeta]
+     :prefix df-
+     :state state
+     :init init
+     :constructors {[String] [String]
+                    [] [String]}
+     :methods [[display [java.awt.Container] void]
+               ^{:static true} [version [] String]])
+    (:import (javax.swing JFrame JPanel JComponent)
+             (java.awt BorderLayout Container)))
+
+  (me.DynaFrame. "First Try")
+  ;; The rest of the code is hanging out in the ~/play/joy-11 directory
+
+#+END_SRC
+**** DONE 12.3. Clojure's relationship to Java arrays
+     CLOSED: [2015-10-07 Wed 09:05]
+**** DONE 12.4. All Clojure functions implement ...
+     CLOSED: [2015-10-07 Wed 09:12]
+**** DONE 12.5. Using Clojure data structures in Java APIs
+     CLOSED: [2015-10-07 Wed 09:17]
+**** DONE 12.6. The definterface macro
+     CLOSED: [2015-10-07 Wed 09:27]
+**** DONE 12.7. Be wary of exceptions
+     CLOSED: [2015-10-07 Wed 09:52]
+**** DONE 12.8. Summary
+     CLOSED: [2015-10-07 Wed 09:53]
+*** DONE Chapter 13. Why ClojureScript? [100%]
+**** DONE 13.1. Implementation vs. interface
+     CLOSED: [2015-10-08 Thu 06:50]
+**** DONE 13.2. Compiler internals: analysis vs. emission
+     CLOSED: [2015-10-08 Thu 06:50]
+**** DONE 13.3. Compile vs. run
+     CLOSED: [2015-10-08 Thu 06:59]
+**** DONE 13.4. Summary
+     CLOSED: [2015-10-08 Thu 07:00]
+** DONE Part 6. Tangential consideration [100%]
+*** DONE Chapter 14. Data-oriented programming [100%]
+**** DONE 14.1. Code as code, and data as data
+     CLOSED: [2015-10-08 Thu 07:52]
+**** DONE 14.2. Data as data
+     CLOSED: [2015-10-08 Thu 07:52]
+**** DONE 14.3. Data as code
+     CLOSED: [2015-10-12 Mon 06:33]
+**** DONE 14.4. Code as data as code
+     CLOSED: [2015-10-12 Mon 06:43]
+**** DONE 14.5. Summary
+     CLOSED: [2015-10-12 Mon 06:44]
+*** DONE Chapter 15. Performance [100%]
+**** DONE 15.1. Type hints
+     CLOSED: [2015-10-12 Mon 06:49]
+**** DONE 15.2. Transients
+     CLOSED: [2015-10-12 Mon 06:56]
+**** DONE 15.3. Chunked sequences
+     CLOSED: [2015-10-12 Mon 06:56]
+**** DONE 15.4. Memoization
+     CLOSED: [2015-10-12 Mon 07:04]
+**** DONE 15.5. Understanding coercion
+     CLOSED: [2015-10-12 Mon 07:11]
+**** DONE 15.6. Reducibles
+     CLOSED: [2015-10-12 Mon 07:39]
+**** DONE 15.7. Summary
+     CLOSED: [2015-10-12 Mon 07:39]
+*** DONE Chapter 16. Thinking programs [100%]
+**** DONE 16.1. A problem of search
+CLOSED: [2015-10-15 Thu 07:57]
+#+BEGIN_SRC clojure
+
+  (require '[clojure.set :as set])
+  (def b1 '[3 - - - - 5 - 1 -
+            - 7 - - - 6 - 3 -
+            1 - - - 9 - - - -
+            7 - 8 - - - - 9 -
+            9 - - 4 - 8 - - 2
+            - 6 - - - - 5 - 1
+            - - - - 4 - - - 6
+            - 4 - 7 - - - 2 -
+            - 2 - 6 - - - - 3])
+
+  (defn prep [board]
+    (map #(partition 3 %) (partition 9 board)))
+
+  (prep b1)
+
+  (defn print-board [board]
+    (let [row-sep (apply str (repeat 25 "-"))]
+      (println row-sep)
+      (dotimes [row (count board)]
+        (print "| ")
+        (doseq [subrow (nth board row)]
+          (doseq [cell (butlast subrow)]
+            (print (str cell " ")))
+          (print (str (last subrow) " | ")))
+        (println)
+        (when (zero? (mod (inc row) 3))
+          (println row-sep)))))
+
+  (-> b1 prep print-board)
+
+  (defn rows [board sz]
+    (partition sz board))
+  (defn row-for [board index sz]
+    (nth (rows board sz) (/ index 9)))
+
+  (row-for b1 1 9)
+
+  (defn column-for [board index sz]
+    (let [col (mod index sz)]
+      (map #(nth % col)
+           (rows board sz))))
+
+  (column-for b1 2 9)
+
+  (defn subgrid-for [board i]
+    (let [rows (rows board 9)
+          sgcol (/ (mod i 9) 3)
+          sgrow (/ (/ i 9) 3)
+          grp-col (column-for (mapcat #(partition 3 %) rows) sgcol 3)
+          grp (take 3 (drop (* 3 (int sgrow)) grp-col))]
+      (flatten grp)))
+
+  (subgrid-for b1 0)
+
+  (defn numbers-present-for [board i]
+    (set
+     (concat (row-for board i 9)
+             (column-for board i 9)
+             (subgrid-for board i))))
+  (numbers-present-for b1 1)
+  (numbers-present-for (assoc b1 1 8) 1)
+  (set/difference #{1 2 3 4 5 6 7 8 9}
+                  (numbers-present-for b1 1))
+
+  (defn possible-placements [board index]
+    (set/difference #{1 2 3 4 5 6 7 8 9}
+                    (numbers-present-for board index)))
+  (defn index [coll]
+    (cond
+      (map? coll) (seq coll)
+      (set? coll) (map vector coll coll)
+      :else (map vector (iterate inc 0) coll)))
+  (defn pos [pred coll]
+    (for [[i v] (index coll) :when (pred v)] i))
+
+  (defn solve [board]
+    (if-let [[i & _]
+             (and (some '#{-} board)
+                  (pos '#{-} board))]
+      (flatten (map #(solve (assoc board i %))
+                    (possible-placements board i)))
+      board))
+  (-> b1
+     solve
+     prep
+     print-board)
+#+END_SRC
+**** DONE 16.2. Thinking data via unification
+CLOSED: [2015-10-19 Mon 06:54]
+#+BEGIN_SRC clojure
+  (defn lvar?
+    "Determines if a value represents a logic variable."
+    [x]
+    (boolean
+     (when (symbol? x)
+       (re-matches #"^\?.*" (name x)))))
+
+  (lvar? '?x)
+  (lvar? 'a)
+
+  (defn satisfy1 [l r knowledge]
+    (let [L (get knowledge l l)
+          R (get knowledge r r)]
+      (cond
+        (= L R) knowledge
+        (lvar? L) (assoc knowledge L R)
+        (lvar? R) (assoc knowledge R L)
+        :default nil)))
+
+  (satisfy1 '?something 2 {})
+  (satisfy1 2 '?something {})
+  (->> {}
+       (satisfy '?x '?y)
+       (satisfy '?x 1))
+
+  (defn satisfy [l r knowledge]
+    (let [L (get knowledge l l)
+          R (get knowledge r r)]
+      (cond
+        (not knowledge) nil
+        (= L R) knowledge
+        (lvar? L) (assoc knowledge L R)
+        (lvar? R) (assoc knowledge R L)
+        (every? seq? [L R]) (satisfy (rest L)
+                                     (rest R)
+                                     (satisfy (first L)
+                                              (first R)
+                                              knowledge))
+        :default nil)))
+
+  (satisfy '(1 2 3) '(1 ?something 3) {})
+  (satisfy '((((?something)))) '((((2)))) {})
+  (satisfy '(?x 2 3 (4 5 ?z)) '(1 2 ?y (4 5 6)) {})
+  (satisfy '?x '(?y) {})
+  (satisfy '(?x 10000 3) '(1 2 ?y) {})
+
+  (require '[clojure.walk :as walk])
+  (defn subst [term binds]
+    (walk/prewalk (fn [expr]
+                  (if (lvar? expr)
+                    (or (binds expr) expr) expr))
+                  term))
+
+  (subst '(1 ?x 3) '{?x 2})
+  (subst '((((?x)))) '{x 2})
+  (subst '[1 ?x 3] '{?x 2})
+  (subst '{:a ?x :b [1 ?x 3]} '{?x 2})
+
+  (subst '(1 ?x 3) '{})
+  (subst '(1 ?x 3) '{?x ?y})
+
+  (defn meld [term1 term2]
+    (->> {}
+         (satisfy term1 term2)
+         (subst term1)))
+
+  (meld '(1 ?x 3) '(1 2 ?y))
+  (meld '(1 ?x) '(?y (?y 2)))
+
+
+#+END_SRC
+**** DONE 16.3. An introduction to core.logic
+CLOSED: [2015-10-19 Mon 07:36]
+#+BEGIN_SRC clojure
+  (ns joy.logic.cl
+    (require [clojure.core.logic :as logic]))
+
+  (logic/run* [answer]
+    (logic/== answer 5))
+
+  (logic/run* [val1 val2]
+    (logic/== {:a val1, :b 2}
+              {:a 1, :b val2}))
+
+  (logic/run* [x y]
+    (logic/== x y))
+
+  (logic/run* [q]
+    (logic/== q 1)
+    (logic/== q 2))
+
+  (logic/run* [george]
+    (logic/conde
+     [(logic/== george :born)]
+     [(logic/== george :unborn)]))
+
+  (ns joy.logic.planets
+    (require [clojure.core.logic :as logic]))
+
+  (logic/defrel orbits orbital body)
+  (do
+    (logic/fact orbits :mecury :sun)
+    (logic/fact orbits :venus :sun)
+    (logic/fact orbits :earth :sun)
+    (logic/fact orbits :mars :sun)
+    (logic/fact orbits :jupiter :sun)
+    (logic/fact orbits :saturn :sun)
+    (logic/fact orbits :uranus :sun)
+    (logic/fact orbits :neptune :sun))
+
+  (logic/run* [q]
+    (logic/fresh [orbital body]
+      (orbits orbital body)
+      (logic/== q (into '[] [orbital body]))))
+
+  (logic/defrel stars star)
+  (logic/fact stars :sun)
+  (defn planeto [body]
+    (logic/fresh [star]
+      (stars star)
+      (orbits body star)))
+
+  (logic/run* [q]
+    (planeto :earth)
+    (logic/== q true))
+
+  (logic/run* [q]
+    (planeto :sun)
+    (logic/== q true))
+
+  (logic/run* [q]
+    (logic/fresh [orbital]
+      (planeto orbital)
+      (logic/== q orbital)))
+
+  (logic/fact stars :alpha-centauri)
+  (logic/fact orbits :Bb :alpha-centauri)
+
+  (logic/run* [q]
+    (planeto :Bb))
+
+  (logic/run* [q]
+    (logic/fresh [orbital]
+      (planeto orbital)
+      (logic/== q orbital)))
+
+  (defn satelliteo [body]
+    (logic/fresh [p]
+      (orbits body p)
+      (planeto p)))
+
+  (logic/run* [q]
+    (satelliteo :sun))
+
+  (logic/run* [q]
+    (satelliteo :earth))
+
+  (logic/fact orbits :moon :earth)
+
+  (logic/run* [q]
+    (satelliteo :moon))
+  (do
+    (logic/fact orbits :phobos :mars)
+    (logic/fact orbits :deimos :mars)
+    (logic/fact orbits :io :jupiter)
+    (logic/fact orbits :europa :jupiter)
+    (logic/fact orbits :ganymede :jupiter)
+    (logic/fact orbits :callisto :jupiter))
+
+  (logic/run* [q]
+    (satelliteo :io))
+#+END_SRC
+**** DONE 16.4. Constraints
+CLOSED: [2015-10-19 Mon 07:59]
+#+BEGIN_SRC clojure
+  (ns joy.logic.cl
+    (require [clojure.core.logic :as logic]))
+
+  (require '[clojure.core.logic.fd :as fd])
+
+  (defn rowify [board]
+    (->> board
+         (partition 9)
+         (map vec)
+         vec))
+  (def b1 '[3 - - - - 5 - 1 -
+            - 7 - - - 6 - 3 -
+            1 - - - 9 - - - -
+            7 - 8 - - - - 9 -
+            9 - - 4 - 8 - - 2
+            - 6 - - - - 5 - 1
+            - - - - 4 - - - 6
+            - 4 - 7 - - - 2 -
+            - 2 - 6 - - - - 3])
+  (rowify b1)
+
+  (defn colify [rows]
+    (apply map vector rows))
+
+  (colify (rowify b1))
+
+  (defn subgrid [rows]
+    (partition 9
+               (for [row (range 0 9 3)
+                     col (range 0 9 3)
+                     x (range row (+ row 3))
+                     y (range col (+ col 3))]
+                 (get-in rows [x y]))))
+
+  (subgrid (rowify b1))
+
+  (def logic-board #(repeatedly 81 logic/lvar))
+
+  (defn init [[lv & lvs] [cell & cells]]
+    (if lv
+      (logic/fresh []
+        (if (= '- cell)
+          logic/succeed
+          (logic/== lv cell))
+        (init lvs cells))
+      logic/succeed))
+
+  (defn solve-logically [board]
+    (let [legal-nums (fd/interval 1 9)
+          lvars (logic-board)
+          rows (rowify lvars)
+          cols (colify rows)
+          grids (subgrid rows)]
+      (logic/run 1 [q]
+        (init lvars board)
+        (logic/everyg #(fd/in % legal-nums) lvars)
+        (logic/everyg fd/distinct rows)
+        (logic/everyg fd/distinct cols)
+        (logic/everyg fd/distinct grids)
+        (logic/== q lvars))))
+
+  (solve-logically b1)
+
+  (defn print-board [board]
+    (let [row-sep (apply str (repeat 25 "-"))]
+      (println row-sep)
+      (dotimes [row (count board)]
+        (print "| ")
+        (doseq [subrow (nth board row)]
+          (doseq [cell (butlast subrow)]
+            (print (str cell " ")))
+          (print (str (last subrow) " | ")))
+        (println)
+        (when (zero? (mod (inc row) 3))
+          (println row-sep)))))
+  (defn prep [board]
+      (map #(partition 3 %) (partition 9 board)))
+
+  (-> b1
+     solve-logically
+     first
+     prep
+     print-board)
+#+END_SRC
+**** DONE 16.5. Summary
+CLOSED: [2015-10-19 Mon 08:00]
+*** DONE Chapter 17. Clojure changes the way you think [100%]
+**** DONE 17.1. Thinking in the domain
+CLOSED: [2015-10-19 Mon 12:37]
+**** DONE 17.2. Testing
+CLOSED: [2015-10-19 Mon 12:38]
+**** DONE 17.3. Invisible design patterns
+CLOSED: [2015-10-19 Mon 12:38]
+**** DONE 17.4. Error handling and debugging
+CLOSED: [2015-10-19 Mon 12:38]
+**** DONE 17.5. Fare thee well
+CLOSED: [2015-10-19 Mon 12:38]
+
+Change the code below to print out your home directory.
+#+BEGIN_SRC sh
+  echo $HOME
+#+END_SRC
+
+#+RESULTS:
+: /Users/mjhamrick
+
+#+BEGIN_SRC clojure
+  (map inc '(1 2 3))
+#+END_SRC
+
+#+RESULTS:
+| 2 | 3 | 4 |
+

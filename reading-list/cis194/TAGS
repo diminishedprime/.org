@@ -1,0 +1,394 @@
+
+./ExprT.hs,100
+data ExprT ExprT2,3
+data ExprT = Lit Lit2,3
+           | Add Add3,4
+           | Mul Mul4,5
+
+./homework_01.hs,195
+toDigits toDigits1,2
+toDigits toDigits2,3
+toDigitsRev toDigitsRev5,6
+toDigitsRev toDigitsRev6,7
+doubleEveryOther doubleEveryOther10,11
+reverse' reverse'13,14
+reverse' reverse'14,15
+
+./HW01.hs,454
+module HW01 HW011,2
+lastDigit lastDigit6,7
+lastDigit lastDigit7,8
+dropLastDigit dropLastDigit10,11
+dropLastDigit dropLastDigit11,12
+toRevDigits toRevDigits15,16
+toRevDigits toRevDigits16,17
+doubleEveryOther doubleEveryOther22,23
+doubleEveryOther doubleEveryOther23,24
+sumDigits sumDigits30,31
+sumDigits sumDigits31,32
+luhn luhn39,40
+luhn luhn40,41
+type Peg Peg45,46
+type Move Move46,47
+hanoi hanoi48,49
+hanoi hanoi49,50
+
+./HW01Tests.hs,538
+module HW01Tests HW01Tests4,5
+testLastDigit testLastDigit11,12
+testLastDigit testLastDigit12,13
+testDropLastDigit testDropLastDigit14,15
+testDropLastDigit testDropLastDigit15,16
+ex1Tests ex1Tests17,18
+ex1Tests ex1Tests18,19
+ex2Tests ex2Tests26,27
+ex2Tests ex2Tests27,28
+ex3Tests ex3Tests31,32
+ex3Tests ex3Tests32,33
+ex4Tests ex4Tests36,37
+ex4Tests ex4Tests37,38
+ex5Tests ex5Tests41,42
+ex5Tests ex5Tests42,43
+ex6Tests ex6Tests46,47
+ex6Tests ex6Tests47,48
+allTests allTests51,52
+allTests allTests52,53
+
+./HW02.hs,390
+module LogAnalysis LogAnalysis1,2
+parseMessage parseMessage4,5
+parseMessage parseMessage5,6
+parseHelper parseHelper7,8
+parseHelper parseHelper8,9
+parse parse13,14
+parse parse14,15
+insert insert18,19
+insert insert19,20
+build build30,31
+build build31,32
+inOrder inOrder34,35
+inOrder inOrder35,36
+whatWentWrong whatWentWrong39,40
+whatWentWrong whatWentWrong40,41
+
+./HW03.hs,190
+skips skips10,11
+p p11,12
+localMaxima localMaxima21,22
+localMaxima localMaxima22,23
+histogram histogram33,34
+histogram histogram34,35
+g g40,41
+g g41,42
+r r42,43
+r r43,44
+
+./HW04.hs,502
+fun1 fun11,2
+fun1 fun12,3
+fun1' fun1'7,8
+fun1' fun1'8,9
+fun2 fun210,11
+fun2 fun211,12
+fun2' fun2'16,17
+fun2' fun2'17,18
+step step19,20
+step step20,21
+data Tree Tree25,26
+data Tree a = LeafLeaf25,26
+            | Node Node26,27
+foldTree foldTree32,33
+foldTree foldTree33,34
+insertTree insertTree35,36
+insertTree insertTree36,37
+heightTree heightTree47,48
+heightTree heightTree48,49
+xor xor55,56
+xor xor56,57
+--xor --xor63,64
+map' map'66,67
+map' map'67,68
+
+./HW05.hs,508
+data ExprT ExprT3,4
+data ExprT = Lit Lit3,4
+           | Add Add4,5
+           | Mul Mul5,6
+eval eval10,11
+eval eval11,12
+--For --For14,15
+evalString evalString18,19
+evalString evalString19,20
+class Expr Expr26,27
+class Expr Expr26,27
+  lit lit27,28
+  add, mul mul28,29
+  add,add28,29
+instance instance30,31
+newtype MinMax MinMax47,48
+newtype MinMax = MinMax MinMax47,48
+newtype Mod7 Mod754,55
+newtype Mod7 = Mod7 Mod754,55
+testExp testExp61,62
+testExp testExp62,63
+
+./HW06.hs,89
+fib fib1,2
+fib fib2,3
+fibs fibs6,7
+fibs fibs7,8
+fib2 fib29,10
+fib2 fib210,11
+
+./HW07/Buffer.hs,206
+class Buffer Buffer5,6
+class Buffer Buffer5,6
+  toString toString8,9
+  fromString fromString11,12
+  line line15,16
+  replaceLine replaceLine20,21
+  numLines numLines23,24
+  value value27,28
+
+./HW07/Editor.hs,1142
+data Command Command20,21
+data Command = ViewView20,21
+             | EditEdit21,22
+             | Load Load22,23
+             | Line Line23,24
+             | NextNext24,25
+             | PrevPrev25,26
+             | QuitQuit26,27
+             | HelpHelp27,28
+             | NoopNoop28,29
+commands commands31,32
+commands commands32,33
+newtype Editor Editor36,37
+newtype Editor b a = Editor Editor36,37
+runEditor runEditor39,40
+runEditor runEditor40,41
+getCurLine getCurLine42,43
+getCurLine getCurLine43,44
+setCurLine setCurLine45,46
+setCurLine setCurLine46,47
+onBuffer onBuffer48,49
+onBuffer onBuffer49,50
+getBuffer getBuffer51,52
+getBuffer getBuffer52,53
+modBuffer modBuffer54,55
+modBuffer modBuffer55,56
+io io57,58
+io io58,59
+readMay readMay62,63
+readMay readMay63,64
+editor editor69,70
+editor editor70,71
+prompt prompt75,76
+prompt prompt76,77
+getCommand getCommand80,81
+getCommand getCommand81,82
+doCommand doCommand90,91
+doCommand doCommand91,92
+inBuffer inBuffer136,137
+inBuffer inBuffer137,138
+modCurLine modCurLine141,142
+modCurLine modCurLine142,143
+
+./HW07/JoinList.hs,238
+data JoinList JoinList3,4
+data JoinList m a = EmptyEmpty3,4
+                  | Single Single4,5
+                  | Append Append5,6
+(+++)+++8,9
+(+(9,10
+tag tag11,12
+tag tag12,13
+indexJ indexJ16,17
+indexJ indexJ17,18
+
+./HW07/Scrabble.hs,0
+
+./HW07/Sized.hs,190
+newtype Size Size5,6
+newtype Size = Size Size5,6
+getSize getSize8,9
+getSize getSize9,10
+class Sized Sized11,12
+class Sized Sized11,12
+  size size12,13
+instance instance14,15
+
+./HW07/StringBufEditor.hs,37
+module Main Main0,1
+main main5,6
+
+./HW07/StringBuffer.hs,115
+module StringBuffer StringBuffer1,2
+instance instance7,8
+safeIndex safeIndex17,18
+safeIndex safeIndex18,19
+
+./Log.hs,563
+module Log Log2,3
+data MessageType MessageType6,7
+data MessageType = InfoInfo6,7
+                 | WarningWarning7,8
+                 | Error Error8,9
+type TimeStamp TimeStamp11,12
+data LogMessage LogMessage13,14
+data LogMessage = LogMessage LogMessage13,14
+                | Unknown Unknown14,15
+data MessageTree MessageTree17,18
+data MessageTree = LeafLeaf17,18
+                 | Node Node18,19
+testParse testParse23,24
+testParse testParse27,28
+testWhatWentWrong testWhatWentWrong32,33
+testWhatWentWrong testWhatWentWrong36,37
+
+./Parser.hs,717
+newtype State State13,14
+newtype State s r = State State13,14
+data Expr Expr16,17
+data Expr = Const Const16,17
+          | Add Add17,18
+          | Mul Mul18,19
+instance instance21,22
+type Parser Parser37,38
+type Parser a a37,38
+digit digit40,41
+digit digit41,42
+num num48,49
+num num49,50
+space space53,54
+space space54,55
+eatSpace eatSpace61,62
+eatSpace eatSpace62,63
+char char65,66
+char char66,67
+op op72,73
+op op73,74
+eof eof76,77
+eof eof77,78
+parseExpr parseExpr83,84
+parseExpr parseExpr84,85
+execParser execParser91,92
+execParser execParser92,93
+evalParser evalParser95,96
+evalParser evalParser96,97
+parseExp parseExp100,101
+parseExp parseExp101,102
+
+./scheme.hs,2136
+module Main Main0,1
+main main7,8
+main main8,9
+symbol symbol13,14
+symbol symbol14,15
+spaces spaces16,17
+spaces spaces17,18
+parseNumber parseNumber19,20
+parseNumber parseNumber20,21
+parseString parseString22,23
+parseString parseString23,24
+parseAtom parseAtom28,29
+parseAtom parseAtom29,30
+parseList parseList37,38
+parseList parseList38,39
+parseDottedList parseDottedList40,41
+parseDottedList parseDottedList41,42
+parseQuoted parseQuoted45,46
+parseQuoted parseQuoted46,47
+parseExpr parseExpr50,51
+parseExpr parseExpr51,52
+readExpr readExpr60,61
+readExpr readExpr61,62
+data LispVal LispVal65,66
+data LispVal = Atom Atom65,66
+             | List List66,67
+             | DottedList DottedList67,68
+             | Number Number68,69
+             | String String69,70
+             | Bool Bool70,71
+data LispError LispError72,73
+data LispError = NumArgs NumArgs72,73
+               | TypeMismatch TypeMismatch73,74
+               | Parser Parser74,75
+               | BadSpecialForm BadSpecialForm75,76
+               | NotFunction NotFunction76,77
+               | UnboundVar UnboundVar77,78
+               | Default Default78,79
+showVal showVal80,81
+showVal showVal81,82
+unwordsList unwordsList89,90
+unwordsList unwordsList90,91
+instance instance92,93
+eval eval95,96
+eval eval96,97
+apply apply104,105
+apply apply105,106
+primitives primitives110,111
+primitives primitives111,112
+symbolToString symbolToString125,126
+symbolToString symbolToString126,127
+stringToSymbol stringToSymbol129,130
+stringToSymbol stringToSymbol130,131
+stringPred stringPred133,134
+stringPred stringPred134,135
+numberPred numberPred137,138
+numberPred numberPred138,139
+symbolPred symbolPred141,142
+symbolPred symbolPred142,143
+numericBinop numericBinop145,146
+numericBinop numericBinop146,147
+unpackNum unpackNum150,151
+unpackNum unpackNum151,152
+showError showError162,163
+showError showError163,164
+type ThrowsError ThrowsError180,181
+trapError trapError182,183
+extractValue extractValue184,185
+extractValue extractValue185,186
+
+./StackVM.hs,675
+module StackVM StackVM0,1
+data StackVal StackVal4,5
+data StackVal = IVal IVal4,5
+data StackVal = IVal Integer | BVal BVal4,5
+data StackVal = IVal Integer | BVal Bool | Void Void4,5
+data StackExp StackExp7,8
+data StackExp = PushI PushI7,8
+              | PushB PushB8,9
+              | AddAdd9,10
+              | MulMul10,11
+              | AndAnd11,12
+              | OrOr12,13
+type Stack Stack15,16
+type Program Program16,17
+stackVM stackVM20,21
+stackVM stackVM21,22
+errType errType23,24
+errType errType24,25
+errUnderflow errUnderflow26,27
+errUnderflow errUnderflow27,28
+execute execute30,31
+execute execute31,32
+test test57,58
+
+./Testing.hs,389
+module Testing Testing2,3
+data Test Test7,8
+data Test    = forall forall7,8
+data Failure Failure8,9
+data Failure = forall forall8,9
+instance instance10,11
+runTest runTest14,15
+runTest runTest15,16
+runTests runTests19,20
+runTests runTests20,21
+testF1 testF124,25
+testF1 testF125,26
+testF2 testF227,28
+testF2 testF229,30
+testF3 testF331,32
+testF3 testF333,34

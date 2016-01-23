@@ -1,0 +1,75 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file /Users/mjhamrick/.org/reading-list/clojurescript_up_and_running.org
+
+
+* [[http://search.safaribooksonline.com/book/programming/clojure/9781449327422][ClojureScript: Up And Running]] [50%]
+:PROPERTIES:
+:ARCHIVE_TIME: 2015-11-17 Tue 09:57
+:ARCHIVE_FILE: ~/.org/reading-list/clojurescript_up_and_running.org
+:ARCHIVE_CATEGORY: clojurescript_up_and_running
+:END:
+1) [X] Introduction: Why ClojureScript?
+   - [X] The Rise of Browser Applications
+   - [X] The Rise of JavaScript
+   - [X] The Need for a Better Language
+   - [X] Introducing ClojureScript
+2) [X] Hello World
+   - [X] Leiningen
+   - [X] Using lein-cljsbuild
+3) [X] The Compilation Process
+   - [X] Architecture
+   - [X] How to Compile
+   - [X] Compilation in Depth
+   - [X] Summary
+4) [X] ClojureScript Basics
+   - [X] ClojureScript versus Clojure
+   - [X] Expressions and Side Effects
+   - [X] Syntax and Data Structures
+   - [X] Special Forms and Definitions
+   - [X] Functions
+   - [X] Local Bindings
+   - [X] Closures
+   - [X] Flow Control
+   - [X] JavaScript Interop
+   - [X] Summary
+5) [X] Data and State
+   - [X] Primitives
+   - [X] Data Structures
+   - [X] Identity and State
+6) [X] Sequences
+   - [X] The Sequence Abstraction
+   - [X] Lazy Sequences
+   - [X] The Sequence API
+7) [ ] Namespaces, Libraries, and Google Closure
+   - [ ] Namespaces
+   - [ ] Advanced Compilation Mode
+   - [ ] Consuming Libraries
+   - [ ] Creating Libraries
+8) [ ] Macros
+   - [ ] Code as Data
+   - [ ] Writing Macros
+   - [ ] Using Macros
+   - [ ] When to Write Macros
+   - [ ] Summary
+9) [ ] Development Process and Workflow
+   - [ ] Installing ClojureScript
+   - [ ] The Built-In Tools
+   - [ ] The Browser REPL
+   - [ ] Additional lein-cljsbuild Features
+10) [ ] Integration with Clojure
+    - [ ] AJAX
+    - [ ] The Reader and Printer
+    - [ ] Example Client-Server Application
+    - [ ] Extending the Reader
+    - [ ] Sharing Code
+    - [ ] Summary
+11) [ ]  Libraries
+    - [ ] ClojureScript’s Standard Library
+    - [ ] Google Closure Library
+    - [ ] Domina
+    - [ ] Enfocus
+    - [ ] Jayq
+    - [ ] C2
+    - [ ] core.logic

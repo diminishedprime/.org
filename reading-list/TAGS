@@ -1,0 +1,178 @@
+
+./cis194/homework_01.hs,195
+toDigits toDigits1,2
+toDigits toDigits2,3
+toDigitsRev toDigitsRev5,6
+toDigitsRev toDigitsRev6,7
+doubleEveryOther doubleEveryOther10,11
+reverse' reverse'13,14
+reverse' reverse'14,15
+
+./cis194/HW01.hs,454
+module HW01 HW011,2
+lastDigit lastDigit6,7
+lastDigit lastDigit7,8
+dropLastDigit dropLastDigit10,11
+dropLastDigit dropLastDigit11,12
+toRevDigits toRevDigits15,16
+toRevDigits toRevDigits16,17
+doubleEveryOther doubleEveryOther21,22
+doubleEveryOther doubleEveryOther22,23
+sumDigits sumDigits27,28
+sumDigits sumDigits28,29
+luhn luhn34,35
+luhn luhn35,36
+type Peg Peg40,41
+type Move Move41,42
+hanoi hanoi43,44
+hanoi hanoi44,45
+
+./cis194/HW01Tests.hs,538
+module HW01Tests HW01Tests4,5
+testLastDigit testLastDigit11,12
+testLastDigit testLastDigit12,13
+testDropLastDigit testDropLastDigit14,15
+testDropLastDigit testDropLastDigit15,16
+ex1Tests ex1Tests17,18
+ex1Tests ex1Tests18,19
+ex2Tests ex2Tests26,27
+ex2Tests ex2Tests27,28
+ex3Tests ex3Tests31,32
+ex3Tests ex3Tests32,33
+ex4Tests ex4Tests36,37
+ex4Tests ex4Tests37,38
+ex5Tests ex5Tests41,42
+ex5Tests ex5Tests42,43
+ex6Tests ex6Tests46,47
+ex6Tests ex6Tests47,48
+allTests allTests51,52
+allTests allTests52,53
+
+./cis194/Testing.hs,389
+module Testing Testing2,3
+data Test Test7,8
+data Test    = forall forall7,8
+data Failure Failure8,9
+data Failure = forall forall8,9
+instance instance10,11
+runTest runTest14,15
+runTest runTest15,16
+runTests runTests19,20
+runTests runTests20,21
+testF1 testF124,25
+testF1 testF125,26
+testF2 testF227,28
+testF2 testF229,30
+testF3 testF331,32
+testF3 testF333,34
+
+./learn_you_a_haskell/Geometry.hs,38
+module GeometryGeometry0,1
+(s(1,2
+
+./learn_you_a_haskell/helloworld.hs,15
+main main0,1
+
+./learn_you_a_haskell/higher_order_functions.hs,525
+compareWithHundred compareWithHundred0,1
+compareWithHundred compareWithHundred1,2
+divideBy10 divideBy103,4
+divideBy10 divideBy104,5
+applyTwice applyTwice6,7
+applyTwice applyTwice7,8
+zipWith' zipWith'9,10
+zipWith' zipWith'10,11
+flip' flip'14,15
+flip' flip'15,16
+quicksort quicksort17,18
+quicksort quicksort18,19
+largestDivisible largestDivisible23,24
+largestDivisible largestDivisible24,25
+chain chain27,28
+chain chain28,29
+numLongChains numLongChains33,34
+numLongChains numLongChains34,35
+
+./learn_you_a_haskell/modules.hs,54
+numUniques numUniques2,3
+numUniques numUniques3,4
+
+./learn_you_a_haskell/own_types.hs,688
+data Point Point0,1
+data Point = Point Point0,1
+data Shape Shape1,2
+data Shape = Circle Circle1,2
+data Shape = Circle Point Float | Rectangle Rectangle1,2
+surface surface3,4
+surface surface4,5
+nudge nudge7,8
+nudge nudge8,9
+baseCircle baseCircle12,13
+baseCircle baseCircle13,14
+baseRect baseRect15,16
+baseRect baseRect16,17
+data Person Person18,19
+data Person = Person Person18,19
+data Person = Person { firstName firstName18,19
+                       lastName lastName19,20
+                       age age20,21
+                       height height21,22
+                       phoneNumber phoneNumber22,23
+                       flavor flavor23,24
+
+./learn_you_a_haskell/recursion.hs,361
+maximum' maximum'0,1
+maximum' maximum'1,2
+replicate' replicate'8,9
+replicate' replicate'9,10
+take' take'14,15
+take' take'15,16
+reverse' reverse'20,21
+reverse' reverse'21,22
+repeat' repeat'24,25
+repeat' repeat'25,26
+zip' zip'27,28
+zip' zip'28,29
+elem' elem'32,33
+elem' elem'33,34
+quicksort quicksort38,39
+quicksort quicksort39,40
+
+./learn_you_a_haskell/starting_out.hs,229
+doubleMe doubleMe0,1
+doubleUs doubleUs1,2
+doubleSmallNumber doubleSmallNumber3,4
+ayy'o ayy'o6,7
+naturalNumsTo naturalNumsTo8,9
+naturalNumsHelper naturalNumsHelper9,10
+boomBangs boomBangs12,13
+length' length'17,18
+
+./learn_you_a_haskell/syntax_in_functions.hs,356
+lucky lucky0,1
+lucky lucky1,2
+factorial factorial4,5
+factorial factorial5,6
+addVectors addVectors8,9
+addVectors addVectors9,10
+tell tell11,12
+tell tell12,13
+length' length'18,19
+length' length'19,20
+sum' sum'22,23
+sum' sum'23,24
+myCompare myCompare26,27
+a `myCompare`myCompare27,28
+bmiTell bmiTell32,33
+bmiTell bmiTell33,34
+
+./learn_you_a_haskell/types_and_typeclasses.hs,236
+main main0,1
+main main1,2
+removeNonUppercase removeNonUppercase3,4
+removeNonUppercase removeNonUppercase4,5
+addThree addThree6,7
+addThree addThree7,8
+addTwo addTwo9,10
+factorial factorial11,12
+factorial factorial12,13

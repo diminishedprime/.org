@@ -1,0 +1,6 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Reading List]]
+
+* [[./papers/worst_case_efficient_priority_queues.pdf][Brodal Queues]]
+** Thoughts
+** Implementation

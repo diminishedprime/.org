@@ -1,0 +1,4 @@
+* Tasks
+** TODO example tast
+  [2015-11-07 Sat]
+  [[file:~/.emacs.d/mjh/mjh-org-settings.el::(define-key%20global-map%20"\C-cc"%20'org-capture)))]]

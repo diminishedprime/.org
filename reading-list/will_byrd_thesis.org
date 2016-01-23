@@ -1,0 +1,6 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Reading List]]
+
+* [[./papers/will_byrd_thesis.pdf][Relational Programming in miniKanren]]
++ Techniques, Applications, and Implementations
+

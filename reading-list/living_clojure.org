@@ -1,0 +1,345 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Reading List]]
+
+* DONE [[http://search.safaribooksonline.com/book/programming/clojure/9781491909270][Living Clojure]] [100%]
+** DONE 1. The Structure of Clojure
+CLOSED: [2015-10-15 Thu 08:18]
+** DONE 2. Flow and Functional Transformations
+   CLOSED: [2015-09-11 Fri 10:32]
+*** Currying through partial
+*** Combining functions through comb
+*** Example of partial 
+#+BEGIN_SRC clojure
+  (defn adder [x y]
+    (+ x y))
+  
+  (adder 3 4)
+  ;; -> 7
+  
+  (def adder-5 (partial adder 5))
+  
+  (adder-5 10)
+  ;; -> 15
+#+END_SRC
+
+*** Destructuring is pretty neat
+**** It's happy to work with nesting...
+#+BEGIN_SRC clojure
+  (let [[color [size]] ["blue" ["very small"]]]
+    (str "The " color " door is " size))
+  
+  ;; -> "The blue door is very small"
+#+END_SRC
+**** It's also happy to keep the original value
+#+BEGIN_SRC clojure
+  (let [[color [size] :as original] ["blue" ["small"]]]
+    {:color color :size size :original original})
+  ;; -> {:color "blue", :size "small", :original ["blue ["small]]}
+#+END_SRC
+*** Lazy stuffs
+**** Repeat vs Repeatedly
+#+BEGIN_SRC clojure
+  (repeat 5 (rand-int 10))
+  ;; -> 7 7 7 7 7
+  
+  (repeatedly 5 #(rand-int 10))
+  ;; ->5 6 6 6 7
+#+END_SRC
+*** Recursion
+**** Without Loop
+#+BEGIN_SRC clojure
+  (def adjs ["normal" "too small" "too big" "is swimming"])
+  (defn allice-is [in out]
+    (if (empty? in) out
+      (alice-is (rest in) (conj out (str "Alice is " (first in))))))
+#+END_SRC
+**** With loop
+#+BEGIN_SRC clojure
+  (defn alice-is [input]
+    (loop [in input
+           out []]
+      (if (empty? in) out
+          (recur (rest in) (conj out (str "Alice is " (first in)))))))
+#+END_SRC
+**** Stack issues
+#+BEGIN_SRC clojure
+  ;; without recur
+  (defn countdown [n]
+    (if (= n 0)
+      n
+      (countdown (- n 1))))
+  (countdown 3)
+  ;; -> 0
+  (countdown 100000)
+  ;; -> StackOverflowError
+  
+  ;; with recur
+  (defn countdown [n]
+    (if (= n 0)
+      n
+      (recur (- n 1))))
+  (countdown 100000)
+  ;; -> 0
+#+END_SRC
+*** Map/Reduce
+**** Map the ultimate (lel)
+#+BEGIN_SRC clojure
+  (def animals [:mouse :duck :dodo :lory :eaglet])
+  (map #(str %) animals)
+#+END_SRC
+**** Reduce the ultimete (also lel)
+#+BEGIN_SRC clojure
+  ;; normal reduce
+  (reduce + [1 2 3 4 5])
+  ;; -> 15
+  
+  ;; fancy reduce that takes the result (%1) and the current element (%2)
+  (reduce #(+ %1 (* %2 %2)) [1 2 3])
+  ;; -> 14
+#+END_SRC
+** DONE 3. State and Concurrency
+   CLOSED: [2015-09-14 Mon 07:28]
+*** A bit of state with concurrency
+#+BEGIN_SRC clojure
+  ;; with one thread...
+  (def counter (atom 0))
+  (dotimes [_ 5] (swap! counter inc))
+  
+  @counter
+  ;; -> 5
+  
+  ;; with multiple threads
+  (def counter (atom 0))
+  @counter
+  ;; -> 0
+  
+  (let [n 5]
+    (future (dotimes [_ n] (swap! counter inc)))
+    (future (dotimes [_ n] (swap! counter inc)))
+    (future (dotimes [_ n] (swap! counter inc))))
+  
+  @counter
+  ;; -> 15
+  
+  
+  ;; with multiple threads, but also side effecs on the swap!
+  (def counter (atom 0))
+  (defn inc-print [val]
+    (println val)
+    (inc val))
+  (let [n 5]
+    (future (dotimes [_ n] (swap! counter inc-print)))
+    (future (dotimes [_ n] (swap! counter inc-print)))
+    (future (dotimes [_ n] (swap! counter inc-print))))
+    
+#+END_SRC
+*** Transactions
+#+BEGIN_SRC clojure
+  (def alice-height (ref 3))
+  (def right-hand-bites (ref 10))
+  @alice-height
+  ;; -> 3
+  @right-hand-bites
+  ;; -> 10
+  (defn eat-from-right-hand []
+    (when (pos? @right-hand-bites)
+      (alter right-hand-bites dec)
+      (alter alice-height #(+ % 24))))
+  
+  ;;let's move the necessary dosync into the transaction function. Let's
+  ;;also get some concurrency going on.
+  (def alice-height (ref 3))
+  (def right-hand-bites (ref 10))
+  (defn eat-from-right-hand[]
+    (dosync (when (pos? @right-hand-bites)
+              (alter right-hand-bites dec)
+              (alter alice-height #(+ % 24)))))
+  (let [n 2]
+    (future (dotimes [_ n] (eat-from-right-hand)))
+    (future (dotimes [_ n] (eat-from-right-hand)))
+    (future (dotimes [_ n] (eat-from-right-hand))))
+#+END_SRC
+*** Agent
+** DONE 4. Java Interop and Polymorphism
+   CLOSED: [2015-09-14 Mon 08:28]
+*** Java Interop General
+#+BEGIN_SRC clojure
+  (class "caterpillar")
+  ;; -> java.lang.String
+  
+  (.toUpperCase "caterpillar")
+  ;; -> "CATERPILLAR"
+  
+  (.indexOf "caterpillar" "pillar")
+  ;; -> 5
+  
+  (new String "Hi!!")
+  ;; -> "Hi!!"
+  
+  (def sb (doto (StringBuffer. "Who ")
+            (.append "are ")
+            (.append "you?")))
+  (.toString sb)
+  ;; -> "Who are you?"
+  
+  
+#+END_SRC
+*** Practical Polymorphism
+#+BEGIN_SRC clojure
+  (defn who-are-you [input]
+    (cond
+      (= java.lang.String (class input)) "String - Who are you?"
+      (= clojure.lang.Keyword (class input)) "Keyword - Who are you?"
+      (= java.lang.Long (class input)) "Number - Who are you?"))
+  
+  (who-are-you :alice)
+  ;; -> "Keyword - Who are you?"
+  (who-are-you "alice")
+  ;; -> "String - Who are you?"
+  (who-are-you 123)
+  ;; -> "Number - Who are you?"
+  (who-are-you true)
+  ;; -> nil
+  
+  ;; A way to do the above with multimethods (a better way?)
+  
+  (defmulti who-are-you class)
+  (defmethod who-are-you java.lang.String [input]
+    (str "String - who are you? " input))
+  (defmethod who-are-you java.lang.Keyword [input]
+    (str "Keyword - who are you? " input))
+  (defmethod who-are-you java.lang.Long [input]
+    (str "Number - who are you? " input))
+  
+  (who-are-you :alice)
+  ;; -> "Keyword - who are you? :alice"
+  (who-are-you "Alice")
+  ;; -> "String - who are you? Alice"
+  (who-are-you 123)
+  ;; -> "Number - who are you? 123"
+  (who-are-you true)
+  ;; -> IllegalArgumentException No method in multimethod
+  ;;'who-are-you' for dispath value: class java.lang.Boolean
+  
+  ;; I see how this works, but I'm not seeing a good reason to use this
+  ;; as of now. Hoping inspiration strikes soon.
+  
+  (defmethod who-are-you :default [input]
+    (str "I don't know - who are you? " input))
+  (who-are-you true)
+  ;; -> "I don't know - who are you? true"
+  
+  
+  (defmulti eat-mushroom (fn [height]
+                           (if (< height 3) :grow
+                               :shrink)))
+  (defmethod eat-mushroom :grow [_]
+    "Eat the right side to grow.")
+  (defmethod eat-mushroom :shrink [_]
+    "Eat the left side to shrink.")
+  
+  (defprotocol BigMushroom
+    (eat-mushroom [this]))
+  
+  (extend-protocol BigMushroom
+    java.lang.String
+    (eat-mushroom [this]
+      (str (.toUpperCase this) " mmm tasty!"))
+    clojure.lang.Keyword
+    (eat-mushroom [this]
+      (case this
+        :grow "Eat the right side!"
+        :shrink "Eat the left side!"))
+    java.lang.Long
+    (eat-mushroom [this]
+      (if (< this 3)
+        "Eat the right side to grow"
+        "Eat the left side to shrink")))
+  
+  
+  (defrecord Mushroom [color height])
+  ;; -> caterpillar.network.Mushroom
+  (def regular-mushroom (Mushroom. "white and blue ploka dots" "2 inches"))
+  ;; -> #'caterpillar.network/regular-mushroom
+  (class regular-mushroom)
+  ;; -> caterpillar.network.Mushroom
+  (.-color regular-mushroom)
+  ;; -> "white and blue ploka dots"
+  (.-height regular-mushroom)
+  ;; -> "2 inches"
+  
+  
+  (defprotocol Edible
+    (bite-right-side [this])
+    (bite-left-side [this]))
+  (defrecord WonderlandMushroom [color height]
+    Edible
+    (bite-right-side [this]
+      (str "The " color " bite makes you grow bigger"))
+    (bite-left-side [this]
+      (str "The " color " bite makes you grow smaller")))
+  (defrecord RegularMushroom [color height]
+    Edible
+    (bite-right-side [this]
+      (str "The " color " bite tastes bad"))
+    (bite-left-side [this]
+      (str "The " color " bite tastse bad too")))
+  
+  (def alice-mushroom (WonderlandMushroom. "blue dots" "3 inches"))
+  (def reg-mushroom (RegularMushroom. "brown" "1 inches"))
+  (bite-right-side alice-mushroom)
+  ;; -> "The blue dots bite makes you grow bigger"
+  (bite-left-side alice-mushroom)
+  ;; -> "The blue dots bite makes you grow smaller"
+  (bite-right-side reg-mushroom)
+  ;; -> "The brow bite tastes bad"
+  (bite-left-side reg-mushroom)
+  ;; -> "The brown bite tastse bad too"
+  
+  (deftype WonderlandMushroom []
+    Edible
+    (bite-right-side [this]
+      (str "The bite makes you grow bigger"))
+    (bite-left-side [this]
+      (str "The bite makes you grow smaller")))
+  
+  ;; takeaway here is that if you want structured data, use
+  ;; defrecord. Otherwise, use deftype.
+#+END_SRC
+** DONE 5. How to Use Clojure Projects and Libraries
+   CLOSED: [2015-09-15 Tue 07:37]
+** DONE 6. Communication with core.async
+   CLOSED: [2015-09-23 Wed 07:17]
+*** [[./the-joy-of-clojure/async-tea-party/src/async_tea_party/core.clj][core.clj]]
+** DONE 7. Creating Web Applications with Clojure
+   CLOSED: [2015-09-23 Wed 07:24]
+** DONE 8. The Power of Macros
+   CLOSED: [2015-09-23 Wed 08:02]
+#+BEGIN_SRC clojure
+  (defn hi-queen [phrase]
+    (str phrase ", so please your Majesty."))
+  
+  (defmacro def-hi-queen-old [name phrase]
+    (list 'defn
+          (symbol name)
+          []
+          (list 'hi-queen phrase)))
+  (defmacro def-hi-queen [name phrase]
+    `(defn ~(symbol name) []
+       (hi-queen ~phrase)))
+  
+  (macroexpand '(def-hi-queen alice-hi-queen "my name is alice"))
+  
+  ((def-hi-queen alice-hi-queen "my name is alice"))
+  
+  (let [x 5]
+    `(first [x 2 3]))
+  (let [x 5]
+    `(first [~x 2 3]))
+  
+  
+#+END_SRC
+** DONE 9. Joining the Clojure Community
+   CLOSED: [2015-09-23 Wed 08:05]
+** DONE 10. Weekly Living Clojure Training Plan
+   CLOSED: [2015-09-23 Wed 08:05]

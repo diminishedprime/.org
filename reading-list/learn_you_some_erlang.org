@@ -1,0 +1,249 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Reading List]]
+
+[[http://learnyousomeerlang.com/content][Online Book]]
+
+* Book... [6%]
+** DONE Starting Out
+*** DONE The Shell
+*** DONE Shell Commands
+** DONE Starting Out (for real)
+*** DONE Numbers
+*** DONE Invariable Variables
+*** DONE Atoms
+*** DONE Boolean Algebra and Comparison Operators
+*** DONE Tuples
+*** DONE Lists
+*** DONE List Comprehensions
+*** DONE Bit Syntax
+*** DONE Binary Comprehensions
+** TODO Modules
+*** TODO What are modules
+*** TODO Module Declaration
+*** TODO Compiling the Code
+*** TODO More About Modules
+** TODO Syntax in Functions
+*** TODO Pattern Matching
+*** TODO Guards, Guards!
+*** TODO What the If!?
+*** TODO In Case ... of
+*** TODO Which to use?
+** TODO Types (or lack thereof)
+*** TODO Dynamite-strong Typing
+*** TODO Type Conversions
+*** TODO To Guard a Data Type
+*** TODO For Type Junkies
+** TODO Recursion
+*** TODO Hello recursion!
+*** TODO Length
+*** TODO Length of Tail Recursion
+*** TODO More recursive functions
+*** TODO Quick, Sort!
+*** TODO More than lists
+*** TODO Thinking recursively
+** TODO Higher Order Functions
+*** TODO Let's get functional
+*** TODO Anonymous functions
+*** TODO Maps, filters, folds and more
+** TODO Errors and Exceptions
+*** TODO Not so fast!
+*** TODO A Compilation of Errors
+*** TODO No, YOUR logic is wrong!
+*** TODO Run-time Errors
+*** TODO Raising Exceptions
+*** TODO Dealing with Exceptions
+*** TODO Wait, there's more!
+*** TODO Try a try in a tree
+*** TODO F** unctionally Solving Problems
+*** TODO Reverse Polish Notation Calculator
+*** TODO Heathrow to London
+** TODO A Short Visit to Common Data Structures
+*** TODO Won't be too long, promised!
+*** TODO Records
+*** TODO Key-Value Stores
+*** TODO Arrays
+*** TODO A Set of Sets
+*** TODO Directed Graphs
+*** TODO Queues
+*** TODO End of the short visit
+** TODO The Hitchhiker's Guide to Concurrency
+*** TODO Don't Panic
+*** TODO Concepts of Concurrency
+*** TODO Not Entirely Unlike Linear Scaling
+*** TODO So long and thanks for all the fish!
+** TODO More On Multiprocessing
+*** TODO State Your State
+*** TODO We love messages, but we keep them secret
+*** TODO Time Out
+*** TODO Selective Receives
+** TODO Errors and Processes
+*** TODO Links
+*** TODO It's a Trap!
+*** TODO Monitors
+*** TODO Naming Processes
+*** TODO D** esigning a Concurrent Application
+*** TODO Understanding the Problem
+*** TODO Defining the Protocol
+*** TODO Lay Them Foundations
+*** TODO An Event Module
+*** TODO The Event Server
+*** TODO Hot Code Loving
+*** TODO I Said, Hide Your Messages
+*** TODO A Test Drive
+*** TODO Adding Supervision
+*** TODO Namespaces (or lack thereof)
+** TODO What is OTP?
+*** TODO It's The Open Telecom Platform!
+*** TODO The Common Process, Abstracted
+*** TODO The Basic Server
+*** TODO Specific Vs. Generic
+** TODO Clients and Servers
+*** TODO Callback to the Future
+*** TODO .BEAM me up, Scotty!
+** TODO Rage Against The Finite-State Machines
+*** TODO What Are They?
+*** TODO Generic Finite-State Machines
+*** TODO A Trading System Specification
+*** TODO Game trading between two players
+*** TODO That Was Quite Something
+*** TODO Fit for the Real World?
+** TODO Event Handlers
+*** TODO Handle This! **pumps shotgun**
+*** TODO Generic Event Handlers
+*** TODO It's Curling Time!
+*** TODO Alert The Press!
+** TODO Who Supervises The Supervisors?
+*** TODO From Bad to Good
+*** TODO Supervisor Concepts
+*** TODO Using Supervisors
+*** TODO Child Specifications
+*** TODO Testing it Out
+*** TODO Dynamic Supervision
+** TODO Building an Application With OTP
+*** TODO A Pool of Processes
+*** TODO The Onion Layer Theory
+*** TODO A Pool's Tree
+*** TODO Implementing the Supervisors
+*** TODO Working on the Workers
+*** TODO Writing a Worker
+*** TODO Run Pool Run
+*** TODO Cleaning the Pool
+** TODO Building OTP Applications
+*** TODO Why Would I Want That?
+*** TODO My Other Car is a Pool
+*** TODO The Application Resource File
+*** TODO The Application Behaviour
+*** TODO From Chaos to Application
+*** TODO Library Applications
+*** TODO T** he Count of Applications
+*** TODO From OTP Application to Real Application
+*** TODO Run App Run
+*** TODO Included Applications
+*** TODO Complex Terminations
+** TODO Release is the Word
+*** TODO Am I an Executable Yet?
+*** TODO Fixing The Leaky Pipes
+*** TODO Releases With Systools
+*** TODO Releases With Reltool
+*** TODO Recipes
+*** TODO Released From Releases
+** TODO Leveling Up in The Process Quest
+*** TODO The Hiccups of Appups and Relups
+*** TODO The 9th Circle of Erl
+*** TODO Progress Quest
+*** TODO Making Process Quest Better
+*** TODO Appup Files
+*** TODO Upgrading the Release
+** TODO Buckets Of Sockets
+*** TODO IO Lists
+*** TODO TCP and UDP: Bro-tocols
+*** TODO UDP Sockets
+*** TODO TCP Sockets
+*** TODO More Control With Inet
+*** TODO Sockserv, Revisited
+*** TODO Where to go From Now?
+*** TODO E** United Nations Council
+*** TODO The Need for Tests
+*** TODO EUnit, What's a EUnit?
+*** TODO Test Generators
+*** TODO Fixtures
+*** TODO Testing Regis
+*** TODO He Who Knits Eunits
+** TODO Bears, ETS, Beets
+*** TODO The Concepts of ETS
+*** TODO ETS Phone Home
+*** TODO Meeting Your Match
+*** TODO You Have Been Selected
+*** TODO DETS
+*** TODO A Little Less Conversation, A Little More Action Please
+** TODO Distribunomicon
+*** TODO Alone in the Dark
+*** TODO This is my Boomstick
+*** TODO Fallacies of Distributed Computing
+*** TODO Dead or Dead Alive
+*** TODO My Other CAP is a Theorem
+*** TODO Setting up an Erlang Cluster
+*** TODO Cookies
+*** TODO Remote Shells
+*** TODO Hidden Nodes
+*** TODO The Walls are Made of Fire and the Goggles do Nothing
+*** TODO The Calls from Beyond
+*** TODO Burying the Distribunomicon
+** TODO Distributed OTP Applications
+*** TODO Adding More to OTP
+*** TODO Taking and Failing Over
+*** TODO The Magic 8-Ball
+*** TODO Making the Application Distributed
+** TODO Common Test for Uncommon Tests
+*** TODO What is Common Test
+*** TODO Common Test Cases
+*** TODO Testing With State
+*** TODO Test Groups
+*** TODO The Meeting Room
+*** TODO Test Suites
+*** TODO Test Specifications
+*** TODO Large Scale Testing
+*** TODO Integrating EUnit within Common Test
+*** TODO Is There More?
+** TODO Mnesia And The Art of Remembering
+*** TODO What's Mnesia
+*** TODO What Should the Store Store
+*** TODO From Record to Table
+*** TODO Of Schemas and Mnesia
+*** TODO Creating Tables for Real
+*** TODO Access and Context
+*** TODO Reads, Writes, and More
+*** TODO Implementing The First Requests
+*** TODO Accounts And New Needs
+*** TODO Meet The Boss
+*** TODO Deleting Stuff, Demonstrated
+*** TODO Query List Comprehensions
+*** TODO Remember Mnesia
+*** TODO T** ype Specifications and Erlang
+*** TODO PLT Are The Best Sandwiches
+*** TODO Success Typing
+*** TODO Type Inference and Discrepancies
+*** TODO Typing About Types of Types
+*** TODO Typing Functions
+*** TODO Typing Practice
+*** TODO Exporting Types
+*** TODO Typed Behaviours
+*** TODO Polymorphic Types
+*** TODO You're my Type
+** TODO Conclusion
+*** TODO A Few Words
+*** TODO Other Topics
+*** TODO LYSE as a book
+** TODO Postscript: Maps
+*** TODO About This Chapter
+*** TODO EEP, EEP!
+*** TODO What Maps Shall Be
+*** TODO Stubby Legs for Early Releases
+*** TODO Mexican Standoff
+*** TODO How This Book Would Be Revised For Maps
+** TODO Postscript: Time Goes On
+*** TODO On Time for Time
+*** TODO How Things Were
+*** TODO How Things Are (18.0+)
+*** TODO Time Warp
+*** TODO How to Survive Time Warps

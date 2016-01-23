@@ -1,0 +1,18 @@
+module JoinList where
+import Sized
+
+data JoinList m a = Empty
+                  | Single m a
+                  | Append m (JoinList m a) (JoinList m a)
+                  deriving (Eq, Show)
+
+(+++) :: Monoid m => JoinList m a -> JoinList m a -> JoinList m a
+(+++) l r = Append (tag l `mappend` tag r) l r
+
+tag :: Monoid m => JoinList m a -> m
+tag Empty = mempty
+tag (Single m _) = m
+tag (Append m l r) = m `mappend` tag l `mappend` tag r
+
+indexJ :: (Sized b, Monoid b) => Int -> JoinList b a -> Maybe a
+indexJ a b = Nothing

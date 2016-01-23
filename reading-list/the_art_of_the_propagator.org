@@ -1,0 +1,5 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Reading List]]
+
+* [[./papers/the_art_of_the_propagator.pdf][The Art Of The Propagator]]
++ Alexey Radul and Gerald Jay Sussman

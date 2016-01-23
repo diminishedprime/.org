@@ -1,0 +1,245 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Reading List]]
+
+* [[http://search.safaribooksonline.com/book/programming/clojure/9781680501476/clojure-applied/f_0013_html][Clojure Applied]] [9%]
+- [-] Part 1: Foundations [31%]
+  - [X] Chapter 1: Model Your Domain [100%]
+    - [X] Modeling Entities
+    - [X] Constructing Entities
+    - [X] Modeling Relationships
+      + The stateful reference technique is close to the oo practice
+        of creating a graph of objects.
+    - [X] Validating Entities
+      #+BEGIN_SRC clojure
+        ;; This is the way to do this without a Schema...
+
+        (defrecord Recipe
+            [name        ;; string
+             description ;; string
+             ingredients ;; sequence of Ingredient
+             steps       ;; sequence of string
+             servings    ;; number of servings
+             ])
+        (defrecord Ingredient
+            [name     ;; string
+             quantity ;; amount
+             unit     ;;keyword
+             ])
+        (def spaghetti-tacos
+          (map->Recipe
+           {:name "Spaghetti tacos"
+            :ingredients [(->Ingredient "Spaghetti" 1 :lb)
+                          (->Ingredient "Spaghetti sauce" 16 :oz)
+                          (->Ingredient "Taco shell" 12 :shell)]
+            :steps ["Cook spaghetti according to box."
+                    "Heat spaghetti sauce until warm."
+                    "Mix spaghetti and sauce"
+                    "Put spaghetti in taco shells and serve"]
+            :servings 4}))
+
+        ;; This is with Schema
+        (ns ch1.validate
+          (:require [schema.core :as s]))
+        (s/defrecord Ingredient
+            [name      :- s/Str
+             quantitiy :- s/Int
+             unit      :- s/Keyword])
+        (s/defrecord Recipe
+            [name        :- s/Str
+             description :- s/Str
+             ingredients :- [Ingredient]
+             steps       :- [s/Str]
+             servings    :- s/Int])
+
+        (clojure.pprint/pprint (schema.core/explain Recipe))
+        (def spaghetti-tacos
+          (map->Recipe
+           {:name "Spaghetti tacos"
+            :description "It's spaghetti... in a taco."
+            :ingredients [(->Ingredient "Spaghetti" 1 :lb)
+                          (->Ingredient "Spaghetti sauce" 16 :oz)
+                          (->Ingredient "Taco shell" 12 :shell)]
+            :steps ["Cook spaghetti according to box."
+                    "Heat spaghetti sauce until warm."
+                    "Mix spaghetti and sauce."
+                    "Put spaghetti in taco shells and serve."]
+            :servings 4}))
+        ;; Returns nil because spgahetti-tacos match the schema
+        (s/check Recipe spaghetti-tacos)
+
+        ;; Returns an error message that explains what doesn't match up
+        (s/check Recipe
+                 (map->Recipe
+                  {:name "Spaghetti tacos"
+                   :ingredients [(->Ingredient "Spaghetti" 1 :lb)
+                                 (->Ingredient "Spaghetti sauce" 16 :oz)
+                                 (->Ingredient "Taco" 12 :taco)]
+                   :steps ["Cook spaghetti according to box."
+                           "Heat spaghetti sauce until warm."
+                           "Mix spaghetti and sauce."
+                           "Put spaghetti in tacos and serve."]
+                   :servings "lots!"}))
+
+        (s/defn add-ingredients :- Recipe
+          [recipe :- Recipe & ingredients :- [Ingredient]]
+          (update-in recipe [:ingredients] into ingredients))
+        (clojure.repl/doc add-ingredients)
+        ;; It's worth noting that schema can verify runtime inputs and report
+        ;; schema mismatch errors by using the with-fn-validation function.
+      #+END_SRC
+    - [X] Domain Operations
+      #+BEGIN_SRC clojure
+        ;; Example with multi-methods
+        (defrecord Store [,,,])
+        (defn cost-of [store ingredient] ,,,)
+
+        ;; note that the (class entitiy) part makes this be a dispatch on type
+        (defmulti cost (fn [entity store] (class entity)))
+        (defmethod cost Recipe [recipe store]
+          (reduce +$ zero-dollars
+                  (map #(cost % store) (:ingredients recipe))))
+        (defmethod cost Ingredient [ingredient store]
+          (cost-of store ingredient))
+
+        ;;Now with protocols.
+        (defprotocol Cost
+          (cost [entity store]))
+        (extend-protocol Cost
+          Recipe
+          (cost [recipe store]
+            (reduce +$ zero-dollars
+                    (map #(cost % store) (ingredients recipe))))
+          Ingredient
+          (cost [ingredient store]
+            (cost-of store ingredient)))
+
+        ;; There are some tradeoffs with the decision of which one you use. If
+        ;; you are only doing type-based dispatch, protocols are preferred
+        ;; since they leverage the underlying JVM runtime optimizations for
+        ;; this type of dispatch. However, protocols can only dispatch on
+        ;; type. Multimethods, on the other hand, can dispatch on any value
+        ;; and delegate depending on the value. Usually, you'll want to
+        ;; dispatch on type, but if you do want to dispatch on values other
+        ;; than type, multimethods would be a better choice
+
+        ;; Here is an example of value-based dispatch
+        (defmulti convert
+          "Convert quantity from unit1 to unit2, matching on [unit1 unit2]"
+          (fn [unit1 unit2 quantity] [unit1 unit2]))
+        (defmethod convert [:lb :oz] [_ _ lb] (* lb 16))
+        (defmethod convert [:oz :lb] [_ _ oz] (/ oz 16))
+        (defmethod convert :default [u1 u2 q]
+          (if (= u1 u2)
+            q
+            (assert false (str "Unknown unit conversion from" u1 " to " u2))))
+        (defn ingredient+
+          "Add two ingredients into a single ingredient, combining their
+          quantities with unit conversion if necessary."
+          [{q1 :quantity u1 :unit :as i1} {q2 :quantity u2 :unit}]
+          (assoc i1 :quantity (+ q1 (convert u2 u1 q2))))
+
+        (defrecord Ingredient
+            [name     ;; string
+             quantity ;; amount
+             unit     ;;keyword
+             ])
+
+        (ingredient+ (->Ingredient "Spaghetti" 1/2 :lb)
+                     (->Ingredient "Spaghetti" 4 :oz))
+
+        ;; Extending Protocols to Protocols
+        (defprotocol TaxedCost
+          (taxed-cost [entity store]))
+        (defn tax-rate [store]
+          1)
+
+        (extend-protocol TaxedCost
+          Object
+          (taxed-cost [entity store]
+            (if (satisfies? Cost entity)
+              (do (extend-protocol TaxedCost
+                    (class entity)
+                    (taxed-cost [entity store]
+                      (* (cost entity store) (+ 1 (tax-rate store)))))
+                  (taxed-cost entity store))
+              (assert false (str "Unhandled entity: " entity)))))
+      #+END_SRC
+    - [X] Wrapping Up
+  - [ ] Chapter 2: Collect and Organize Your Data [0%]
+    - [ ] Choosing the Right Collection
+    - [ ] Updating Collections
+    - [ ] Accessing Collections
+    - [ ] Building Custom Collections
+    - [ ] Wrapping Up
+  - [ ] Chapter 3: Processing Sequential Data [0%]
+    - [ ] Mapping Values
+    - [ ] Reducing to a Value
+    - [ ] Filtering and Removing Values
+    - [ ] Take and Drop
+    - [ ] Sorting and Duplicate Removal
+    - [ ] Grouping Values
+    - [ ] Putting It All Together
+    - [ ] Wrapping Up
+- [-] Part 2: Applications [4%]
+  - [ ] Chapter 4: State, Identity, and Change [0%]
+    - [ ] Modeling a Changep
+    - [ ] Tools for Managing Change
+    - [ ] Living with Change
+    - [ ] Wrapping Up
+  - [ ] Chapter 5: Use Your Cores [0%]
+    - [ ] Push Waiting to the Background
+    - [ ] Queues and Workers
+    - [ ] Parallelism with Reducers
+    - [ ] Thinking in Processes
+    - [ ] Wrapping Up
+  - [ ] Chapter 6: Creating Components [0%]
+    - [ ] Organizing with Namespaces
+    - [ ] Designing Component APIs
+    - [ ] Connecting Components with Channels
+    - [ ] Implementing Components
+    - [ ] Wrapping Up
+  - [-] Chapter 7: Compose Your Application [20%]
+    - [X] Taking Things Apart
+    - [ ] Implementing with Component
+    - [ ] Putting Things Together
+    - [ ] System Configuration
+    - [ ] Wrapping Up
+- [ ] Part 3: Practices [0%]
+  - [ ] Chapter 8: Testing Clojure [0%]
+    - [ ] Interactive REPL Tests
+    - [ ] Example-Based Tests with clojure.test
+    - [ ] Organizing and Running Your Tests
+    - [ ] Example-Based Tests with expectations
+    - [ ] Property-Based Tests with test.check
+    - [ ] Wrapping Up
+  - [ ] Chapter 9: Formatting Data [0%]
+    - [ ] Data Serialization Formats
+    - [ ] Extensible Data Notation
+    - [ ] JSON
+    - [ ] Transit
+    - [ ] Wrapping Up
+  - [ ] Chapter 10: Getting out the Door [0%]
+    - [ ] Publish Your Code
+    - [ ] Choose a Deployment Environment
+    - [ ] Deploy to a Platform
+    - [ ] Provision Your Own Servers
+    - [ ] Wrapping Up
+- [ ] Appendix 1: Roots [0%]
+  - [ ] Reasonability
+  - [ ] Lisp
+  - [ ] Macros and Metaprogramming
+  - [ ] Persistent Data Structures
+  - [ ] Lazy and Delayed Evaluation
+  - [ ] Futures and Promises
+  - [ ] Concurrent Channels
+  - [ ] Multiversion Concurrency Control
+  - [ ] Wrapping Up
+- [ ] Appendix 2: Thinking in Clojure [0%]
+  - [ ] Make Reasoned Choices
+  - [ ] Be Reasonable
+  - [ ] Keep It Simple
+  - [ ] Build Just Enough
+  - [ ] Compose
+  - [ ] Be Precise
+  - [ ] Use What Works
+  - [ ] Wrapping Up

@@ -1,0 +1,7 @@
+* This is matt's personal org-mode wiki.
++ [[./reading-list/index.org][Reading List]]
++ [[./running.org][Running Log]]
++ [[./money/index.org][Money Things]]
++ [[./diary.org.gpg][Diary]]
++ [[./programming_ideas.org][Programming Ideas]]
++ [[./conferences/index.org][Conferences]]

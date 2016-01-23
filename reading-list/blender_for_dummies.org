@@ -1,0 +1,28 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Reading List]]
+
+[[./books/blender_for_dummies.pdf][book]]
+
+* In Progress Part I: Wrapping Your Brain Around Blender [25%]
+** Done Chapter 1: Discovering Blender
+** In Progress Chapter 2: Understnading How Blender Thinks
+Left off on page 27
+** Todo Chapter 3: Getting Your Hands Dirty Working in Blender
+** Todo Chapter 4: Working in Edit Mode and Object Mode
+* Todo Part II: Creating Detailed 3D Scenes [%]
+** Todo Chapter 5: Creating Anything You Can Imagine with Meshes
+** Todo Chapter 6: Using Blender’s Non-Mesh Primitives
+** Todo Chapter 7: Changing that Boring Gray Default Material
+** Todo Chapter 8: Giving Models Texture
+** Todo Chapter 9: Lighting and Environment
+* Todo Part III: Get Animated! [%]
+** Todo Chapter 10: Animating Objects
+** Todo Chapter 11: Rigging: The Art of Building an Animatable Puppet
+** Todo Chapter 12: Animating Object Deformations
+** Todo Chapter 13: Letting Blender Do the Work for You
+* Todo Part IV: Sharing Your Work with the World [%]
+** Todo Chapter 14: Exporting and Rendering Scenes
+** Todo Chapter 15: Compositing and Editing
+* Todo Part V: The Part of Tens [%]
+** Todo Chapter 16: Ten Problems for New Users in Blender (and Ways around Them)
+** Todo Chapter 17: Ten Tips for Working More Effectively in Blender

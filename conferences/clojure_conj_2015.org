@@ -1,0 +1,419 @@
+[[../index.org][Main Index]]
+[[./index.org][Conferences]]
+
+* Sunday
+** Stuart Halloway Presentation
+1. Architecture
+   + Datoms
+     + Databases that forget
+       |--------+-----------+----------|
+       | entity | attribute | value    |
+       |--------+-----------+----------|
+       | jane   | likes     | broccoli |
+
+       We forget that jane used to like broccoli.
+       |--------+-----------+-------|
+       | entity | attribute | value |
+       |--------+-----------+-------|
+       | jane   | likes     | pizza |
+       
+       Why do we let our databases forget things, if we aren't willing
+       to forget things ourselves.
+     + 5-tuple is a better approach
+       |--------+-----------+----------+-------------+-------|
+       | entity | attribute | value    | transaction | op    |
+       |--------+-----------+----------+-------------+-------|
+       | jane   | likes     | broccoli |        1108 | true  |
+       | jane   | likes     | broccoli |        1148 | false |
+       | jane   | likes     | pizza    |        1148 | true  |
+       
+       + This allows for time travel. We can look at the database
+         .asOf a certain point in time, or .since to look in the other
+         direction.
+       + This also allows for .with which would let us see what would
+         happen if we did x.
+       + Also can use .history too see how things have changed over
+         time.
+     + Inflexible Model
+       + RDBMS writes data in one shape (rectangles)
+       + NoSQL got better. Get a choince of N write shapes by running
+         N different NoSQL systems with ETL jobs
+       + Datomic: shape your data at /read/ time.
+     + One Database, many shapes
+       |--------------------+------------------------------------------|
+       | desired read shape | datomic supports via                     |
+       |--------------------+------------------------------------------|
+       | k/v                | A(ttribute)V(alue)E(ntitiy)T(ransaction) |
+       | row                | EAVT                                     |
+       | column             | AEVT                                     |
+       | document           | EAVT, partitions, components             |
+       | graph              | VAET                                     |
+       |--------------------+------------------------------------------|
+     + Schema
+       + Schemas /add power/ (A schema-less database is a powerless
+         database)
+       + Datomic schema is plain data
+       + Make history-compatible changes at any time.
+       |----------------+---------+--------------------|
+       | attribute      | type    | use                |
+       |----------------+---------+--------------------|
+       | db/ident       | keyword | programmatic name  |
+       | db/valueType   | ref     | attribute type     |
+       | db/cardinality | ref     | one or many valued |
+       | db/index       | ref     | creates AVET       |
+       | db/unique      | ref     | unique, "upsert"   |
+       | db/isComponent | ref     | ownership          |
+       |----------------+---------+--------------------|
+     + "Types"
+       | attribute     | type   | cardinality |
+       | story/title   | string |           1 |
+       | story/url     | string |           1 |
+       | story/slug    | string |           1 |
+       | news/comments | ref    |        many |
+       + Attrs not owned by "types"
+   + Database
+     + Set of datoms
+     + Effcicient storage
+     + Many sort orders
+     + Accumulate-only (not append-only)
+   + Classic separation of concerns
+     + Peers do queries
+     + I/O is separate
+     + Transactions are separate
+   + Peers
+     + Embedded JM lib
+       directly in application servers (most common)
+       introduce a serice tier
+     + Query load does not bother the transactor
+     + Answer queries in-memory via automatic cache.
+   + Transactors
+     + ACID (single writer thread)
+     + Stream change to peers
+     + Background indexing
+     + Dead-simple High Availibility
+       + conditional puts on storage
+   + Many Storage Options
+     + DynamoDB, SQL, Cassandra, Riak, couchbase, Infinispan, Dev
+       (local disk)
+   + Choosing Storage
+     + Importart
+       + reliability
+       + manageability
+       + familiarity
+     + Less important
+       + read load
+       + latency
+2. Transactions
+   + ACID
+     |------------+-------------------------------------------------------------------------------|
+     | atomic     | transaction is a set of datoms. Transaction entirely in single write          |
+     | consistent | all processes see same global ordering of transactions                        |
+     | isolated   | single writer system (nobody to be isolated from)                             |
+     | durable    | always flush through to durable storage before reporting transaction complete |
+     |------------+-------------------------------------------------------------------------------|
+   + Assertion and retraction
+     #+BEGIN_SRC clojure
+       [:db/add entity-id attribute value]
+       [:db/retract entity-id attribute value]
+     #+END_SRC
+   + Entitiy maps
+     + Concise form for multiple assertions about an entity
+     + Equivalent to corresponding list of asserts
+     #+BEGIN_SRC clojure
+       [:db/add 42 :likes "pizza"]
+       [:db/add 42 :firstName "John"]
+       [:db/add 42 :lastName "Doe"]
+
+       {:db/id 42
+        :likes "pizza"
+        :firstName "John"
+        :lastName "Doe"} ;; -> Entity Map
+
+       [{:db/id order-id
+         :order/lineItems [{:lineItem/product chocolate
+                            :lineItem/quantity 1}
+                           {:lineItem/product whisky
+                            :lineItem/quontity 2}]}]
+     #+END_SRC
+   + uniqueness
+     + Identity
+       |-----------------------+------------------------------+-------------------|
+       | requirement           | model with                   | value types       |
+       |-----------------------+------------------------------+-------------------|
+       | db-relative opaque id | entitiy id                   | paque (long)      |
+       | external id           | :db.unque/identity attribute | string, uuid, uri |
+       | global opaque id      | :db.unique/identity squuid   | uuid              |
+       | programmatic name     | :db/ident                    | keyword           |
+       |-----------------------+------------------------------+-------------------|
+   + transaction functions
+     #+BEGIN_SRC clojure
+       [[:db/add john :likes pizza]
+        [:db/add john :likes iceCream]]
+
+       [[:db/add john :likes pizza]
+        [:db/add john :likes iceCream]
+        [:db/add john :balance 100?]] ;; This would be a race condition.
+
+       [[:db/add john :likes pizza]
+        [:db/add john :likes iceCream]
+        [:inc john :account 10]] ;; this is a transactor function.
+     #+END_SRC
+     + Transaction Fns
+       + Stored as Data
+       + Run inside transactions
+       + Have acces to in-tx value of database
+         + as first argument
+3. Query
+   + Datalog
+     + Why Datalog?
+       + Equivalent to relation model + recursion
+       + Better fit than prolog for query
+         + no clause order dependency
+         + guaranteed termination
+       + Pattern-matching style easy to learn
+     + Example DB
+      | entity | attribute | value          |
+      |     42 | :email    | jdoe@email.com |
+      |     43 | :email    | jane@email.com |
+      |     42 | :orders   | 107            |
+      |     42 | :orders   | 109            |
+       + constants limit results.
+         + [?customer :email ?email]
+       + constants can be anywhere
+         + [42 :email ?email]
+       + variables anywhere
+         + [42 ?attribute]
+         + [42 ?attribute ?value]
+       + find clause    
+         + [:find ?customer
+            :where [?customer :email]]
+       + Implicit Join.
+         "Find all the customers who have placed orders"
+         + [:find ?customer
+            :where [?customer :email]
+                   [?customer :orders]]
+   + Predicates & Functions
+     + Functional constraints that can appear in a :where clause
+       + [(< 50 ?price)]
+     + "Find the expensie items"
+       [:find ?item
+        :where [?item :item/price ?price]
+               [(< 50 ?price)]]
+     + Function 
+       + [(shipping ?zip ?weight) ?cost]
+         + zip and weight are what are passed into the shipping
+           function
+         + cost is where the function to binds to
+   + Aggregates
+     #+BEGIN_SRC clojure
+       (d/q '[:find (count ?eid)
+              :where [?eid :artist/name]]
+            db)
+       ;; Grouping
+       ;; non aggregates in :find control grouping
+       (d/q '[:find (count ?eid) ?name
+              :where [?eid :artist/name]]
+            db)
+       ;; Statistics
+       (d/q '[:find ?year
+              (median ?namelen)
+              (avg ?namelen)
+              (stdev ?namelen)
+              :with ?track
+              :where [?track :track/name ?name]
+              [(count ?name) ?namelen]
+              [?medium :medium/tracks ?track]
+              [?release :release/media ?medium]
+              [?release :release/year ?year]]
+            db)
+       (d/q '[:find (sum ?heads)
+              :in [[_ ?heads]]]
+            [["Cerberus" 3]
+             ["Medusa" 1]
+             ["Cyclops" 1]
+             ["Chimera" 1]])
+       ;; This returns 4 because the results are stored in the set #{3 1}
+     #+END_SRC     
+   + Pull
+   + Disjunction and Negation
+     #+BEGIN_SRC clojure
+
+       ;; Negation
+       (d/q '[:find (count ?eid)
+              :whene (?eid :artist/name]
+              (not
+               [?eid :artist/country :country/CA])]
+            db)
+
+       (d/q '[:find (count ?eid)
+              :whene (?eid :artist/name]
+              (not-join [?artist]
+                        [?release :release/artists ?artists]
+                        [?release :release/year 1970])]
+            db)
+
+       ;; Disjunction
+       ;; (or-join
+       ;; (and 
+     #+END_SRC
++ Logic is Power
+   + Start with datalog
+     pattern syntax (implict joins)
+     + granular datoms
+     + negation & disjunction
+   + Functional Transformation
+     + functions and predicates
+     + aggregates
++ Robust and Agile
+  + Minimal up-front choice
+  + ACID protection
+  + Remember where you have been
++ Poor fit for
+  + Write scale
+  + Media storage (unstructered docs, audio, video)
+  + Churn (e.g. hit counter)
++ Good fit for
+  + Robust systems
+  + Data of record
+  + dev and ops flexibility
+  + History
+  + Read Scale
+  + Transactional data, business records, medical records, financial
+    records, scientific records, inentory, configuration, web apps,
+    departmental data, cloud apps.
+** Lightening Talks
+** Understanding and Using Reified Transactions
+:by Tim Ewald
++ Reified transactions.
+  + All datoms referes to the tx entity of the tx that wrote it.
+  + Transactions can be used for auditing. 
+    + Can annotate tx entity to track source changes.
+    + What data file did imported info come from?
+    + Who/what updated db state?
+    + User, application, git commit, servec process, UX, etc.
+  + Reified txs can be used for multi-step processes and also for
+    "reverting" multi-step processes
+** David Nolan Datomic talk
++ Two Desirable simple properties of a simple system
+  1) Clients can request the precise total response that they need.
+  2) Clients can make atomic commits of data trees without sacrificing
+     relation queries server side
+     + Relay addresses this problem in js land.
+     + Falcor also addresses this problem in js land.
++ Datomic
+  + address #2 through datomic pull.
+** Things related to our problem
+*** cross-db queries might be a good solution for our analysis question.
+Does it make sense to group each tgf as its own datamic db?
+*** The basic queries that were shown are easier syntax that our current match criteria and also more flexible
++ Maybe we want to try the in-memory thing that was shown. 
++ We want to have predicates for matching to tables, but I think our
+  tables should be facts that are all matched together. If we also
+  switch our data envelop to fit the structure that we need, then
+  matching could be unified and we only have one match syntax. 
+  + less complex.
+
+* Monday [60%]
+- [X] 8:00-9:00 am
+  + [X] Registration
+- [X] 9:00-9:10 am
+  + [X] Welcome
+- [-] 9:10-9:50 am
+  + [X] Solving Problems with Automata
+  + [ ] Look into loco for a sudoku solver as an alternate approach
+    to core logic.
+  + [ ] M-x shirt-mode
+- [-] 10:00-10:40 am
+  + [X] Improving Clojure's Error Messages with Grammars
+  + [ ] This could have direct application into our dsl. If we could
+    utilize cursive, or have someone in house write a plugin for
+    sts/eclipse, we could have a much less error-prone experience.
+- [X] 10:50-11:30 am
+  + [X] Onyx: Distributed Computing for Clojure
+- [X] 11:30-1:00 pm
+  + [X] Lunch
+- [-] 1:00-1:40 pm
+  + [ ] Super-fun with First-class Shapes in Quil
+  + [X] Scientific Computing with Clojure
+- [-] 1:50-2:30 pm
+  + [X] ClojureScript for Skeptics
+  + [ ] Clojure for Business Teams - Decomplecting Data Analysis
+- [X] 2:30-3:00 pm
+  + [X] Break
+- [-] 3:00-3:40 pm
+  + [X] Mobile Apps with ClojureScript
+  + [ ] Using Clojure+Spark to Find All the Topics on the Interwebs
+- [-] 3:50-4:30 pm
+  + [ ] Dagobah, a Data-centric Meta-scheduler
+  + [X] Bottom Up vs. Top Down Design in Clojure
+- [X] 4:45-5:30 pm
+  + [X] Debugging with the Scientific Method
+- [X] 7:00-10:00 pm
+  + [X] Unsessions
+* Tuesday 11-18 [39%] [11/28]
+- [X] 9:00-9:10 am
+  + [X] Welcome
+- [X] 9:10-9:50 am
+  + [X] Condition Systems in an Exceptional Language
+- [X] 10:00-10:40 am
+  + [X] Om Next
+    + This looks really cool. I'm interesting in trying this out.
+- [X] 10:50-11:30 am
+  + [X] Genetic Programming in Clojure
+- [X] 11:30-1:00 pm
+  + [X] Lunch
+- [-] 1:00-1:40 pm
+  + [ ] Serverless Microservices
+  + [X] I did the API wrong - Tales of a Library Maintainer
+- [ ] 1:50-2:30 pm
+  + [ ] Teaching Clojure at IBM
+  + [ ] Climate Data, Scientific Data Visualization and Clojure
+- [ ] 2:30-3:00 pm
+  + [ ] Break
+- [ ] 3:00-3:40 pm
+  + [ ] Optimizing ClojureScript Apps For Speed
+  + [ ] Wrapping Clojure Tooling in Containers
+- [ ] 3:50-4:30 pm
+  + [ ] clojure.core/typing
+  + [ ] The ClojureScript Compiler - A Look Behind the Curtains
+- [ ] 4:45-5:30 pm
+  + [ ] A Deep Specification for Dropbox
+- [ ] 7:00-10:00 pm
+  + [ ] Party
+* Wednesday 11-19
+- [ ] 9:00-9:50 am   | Lightning Talks                                  |
+- [ ] 10:00-10:40 am | From REST to CQRS with Clojure, Kafka, & Datomic |
+- [ ] 10:50-11:30 am | Clojure Versus the Botnets                       |
+- [ ] 11:40-12:20 pm | Game Development Development                     |
+
+* Idea on Test/Check, perhaps for Business?
+There has to be an application for putting properties into the
+metadata of a function. This could allow 'tests' to live with the
+code, and developers might be more convinced to keep their code
+up-to-date with this meta-physical (but could be physical) spec.
+
+#+BEGIN_SRC clojure
+  (defn 
+    ^{:doc "add1 takes a number and outputs that number plus 1"
+      :properties [:output-greater-than-input
+                   :output-same-type
+                   :output-number]}
+    add1 [n]
+    (+ 1 n))
+
+  (defn check-spec [fn-var]
+    (let [my-meta (meta fn-var)
+          properties (:properties my-meta)]
+      properties))
+
+  (defn resolve-test [kw]
+    (condp = kw
+      :output-greater-than-input (fn )
+      ))
+
+  test that output is greater than input
+  input 
+
+  (check-spec
+  #'add1)
+#+END_SRC
