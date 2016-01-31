@@ -27,3 +27,7 @@
   (lambda (p)
     (fresh (a d)
            (conso a d p))))
+
+(define eq-car?
+  (lambda (l x)
+    (eq? (car l) x)))

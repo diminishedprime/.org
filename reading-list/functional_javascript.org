@@ -1,0 +1,5 @@
+[[../index.org][Main Index]]
+[[./index.org][Reading List]]
+
+* [[http://search.safaribooksonline.com/book/programming/javascript/9781449360757][Functional JavaScript]]
+1. [ ] Introducing Functional JavaScript

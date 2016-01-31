@@ -56,9 +56,9 @@
    #+END_SRC
 4) Codenames Clojure App
    #+BEGIN_SRC clojure
-     (ns mjh.cn.core)
+   (ns mjh.cn.core)
 
-     (defn gen-board []
+   (defn gen-board []
        (let [board-size 25
              assassian-count 1
              team-1-operative-count 9

@@ -1,5 +1,5 @@
-(load "/Users/mjhamrick/Desktop/mjh-org/book-status/the_reasoned_schemer/mk.scm")
-(load "/Users/mjhamrick/Desktop/mjh-org/book-status/the_reasoned_schemer/mkextraforms.scm")
+(load "mk.scm")
+(load "mkextraforms.scm")
 
 (define U fail)
 (define S succeed)
@@ -270,7 +270,3 @@
 ;; interesting.
 
 ;; JAMS STAINS AND STUFF!!!
-
-
-
-
