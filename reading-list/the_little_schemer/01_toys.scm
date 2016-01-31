@@ -69,8 +69,6 @@
 (cons '(banana and) '(peanut butter and jelly)) ;; => ((banana and) peanut butter and jelly)
 (cons '((help) this) '(is very ((hard) to learn))) ;; => (((help) this) is very ((hard) to learn))
 
-;; STOPPED ON PAGE 8
-
 ;; The Law of Cons
 
 ;; The primitive cons takes two arguments. The second argument to cons must be a
@@ -83,3 +81,28 @@
 (null? '(a b c)) ;; => #f
 (null? 'spaghetti) ;; => #f but really this question doesn't make any sense.
 
+;; The Law of Null?
+
+;; The primitive null? is defined only for lists.
+
+(atom? 'Harry) ;; => #t
+(atom? '(Harry had a heaf of apples)) ;; => #f
+(atom? (car '(Harry had a heap of apples))) ;; => #t
+(atom? (cdr '(Harry))) ;; => #f
+(atom? (car (cdr '(swing low sweet cheery oat)))) ;; => #t
+(atom? (car (cdr '(swing (low sweet) cheery oat))));; => #f
+(eq? 'Harry 'Harry) ;; => #t
+(eq? 'margarine 'butter) ;; => #f
+(eq? '() '(strawberry)) ;; => #f
+(eq? 6 7) ;; => #f
+
+;; The Law of Eq?
+
+;; The primitive eq? takes two arguments. Each must be a non-numeric atom.
+
+(eq? (car '(Mary had a little lamb chop)) 'Mary) ;; => #t
+(eq? (cdr '(soured milk)) 'milk) ;; => #f
+(eq? (car '(beans beans we need jelly beans))
+     (car (cdr '(beans beans we need jelly beans)))) ;; => #t
+
+;; This space is reserved for JELLY STAINS!!!
