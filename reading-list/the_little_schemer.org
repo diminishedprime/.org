@@ -4,7 +4,7 @@
 * [[./books/the_little_schemer.pdf][The Little Schemer]]
 1) [X] [[./the_little_schemer/01_toys.scm][Toys]]
 2) [X] [[./the_little_schemer/02_do_it_do_it_again_and_again_and_again.scm][Do It, Do It Again, and Again, and Again]]
-3) [ ] [[./the_little_schemer/03_cons_the_magnificent.scm][Cons the Magnificent]]
+3) [X] [[./the_little_schemer/03_cons_the_magnificent.scm][Cons the Magnificent]]
 4) [ ] [[./the_little_schemer/04_numbers_games.scm][Numbers Games]]
 5) [ ] [[./the_little_schemer/05_oh_my_god_its_full_of_stars.scm][*Oh My Gawd*: It's Full of Stars]]
 6) [ ] [[./the_little_schemer/06_shadows.scm][Shadows]]
