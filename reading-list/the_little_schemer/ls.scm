@@ -73,3 +73,31 @@
      ((or (number? a1)
           (number? a2)) #f)
      (else (eq? a1 a2)))))
+
+(define oequal?
+  (lambda (s1 s2)
+    (cond
+     ((and (atom? s1) (atom? s2)) (equan? s1 s2))
+     ((or (atom? s1) (atom? s2)) #f)
+     (else (eqlist? s1 s2)))))
+
+(define member?
+  (lambda (a lat)
+    (cond
+     ((null? lat) #f)
+     (else (or (oequal? (car lat) a)
+               (member? a (cdr lat)))))))
+
+(define multirember
+  (lambda (a lat)
+    (cond
+     ((null? lat) '())
+     ((eq? a (car lat)) (multirember a (cdr lat)))
+     (else (cons (car lat) (multirember a (cdr lat)))))))
+
+(define firsts
+  (lambda (l)
+    (cond
+     ((null? l) '())
+     (else (cons (car (car l))
+                 (firsts (cdr l)))))))

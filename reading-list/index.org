@@ -20,6 +20,7 @@
   + [ ] [[./clojure_applied.org][Clojure Applied]]
   + [X] [[./living_clojure.org][Living Clojure]]
   + [X] [[./the_joy_of_clojure.org][The Joy of Clojure]]
+  + [ ] [[./clojure_cookbook.org][Clojure Cookbook]]
 + Scheme
   + [ ] [[./the_little_schemer.org][The Little Schemer]]
   + [X] [[./the_seasoned_schemer.org][The Seasoned Schemer]]

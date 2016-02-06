@@ -223,7 +223,7 @@
   (lambda (s l)
     (cond
      ((null? l) '())
-     ((equal? (car l) s) (cdr l))
+     ((oequal? (car l) s) (cdr l))
      (else (cons (car l)
                  (rember s
                          (cdr l))))))) ;; => #<unspecified>
