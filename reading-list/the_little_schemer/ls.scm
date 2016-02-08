@@ -74,6 +74,21 @@
           (number? a2)) #f)
      (else (eq? a1 a2)))))
 
+(define eqlist?
+  (lambda (l1 l2)
+    (cond
+     ((and (null? l1)
+           (null? l2) #t))
+     ((or (null? l1)
+          (null? l2) #f))
+     ((and (atom? (car l1))
+           (atom? (car l2))) (and (equan? (car l1) (car l2))
+                                  (eqlist? (cdr l1) (cdr l2))))
+     ((or (atom? (car l1))
+          (atom? (car l2))) #f)
+     (else (and (eqlist? (car l1) (car l2))
+                (eqlist? (cdr l1) (cdr l2)))))))
+
 (define oequal?
   (lambda (s1 s2)
     (cond
@@ -101,3 +116,15 @@
      ((null? l) '())
      (else (cons (car (car l))
                  (firsts (cdr l)))))))
+
+(define 1st-sub-exp
+  (lambda (aexp)
+    (car (cdr aexp))))
+
+(define 2nd-sub-exp
+  (lambda (aexp)
+    (car (cdr (cdr aexp)))))
+
+(define operator
+  (lambda (aexp)
+    (car aexp)))
