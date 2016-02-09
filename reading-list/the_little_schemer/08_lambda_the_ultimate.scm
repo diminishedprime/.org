@@ -179,3 +179,82 @@
      (else (cons (car lat) (multiremberT test? (cdr lat))))))) ;; => #<unspecified>
 
 (multiremberT eq?-tuna '(shrimp salad tuna salad and tuna)) ;; => (shrimp salad salad and)
+
+(define multirember&co
+  (lambda (a lat col)
+    (cond
+     ((null? lat) (col '() '()))
+     ((eq? (car lat) a) (multirember&co a (cdr lat)
+                                        (lambda (newlat seen)
+                                          (col newlat
+                                               (cons (car lat) seen)))))
+     (else (multirember&co a
+                           (cdr lat)
+                           (lambda (newlat seen)
+                             (col (cons (car lat) newlat) seen))))))) ;; => #<unspecified>
+
+;;???
+
+(define a-friend
+  (lambda (x y)
+    (null? y))) ;; => #<unspecified>
+
+(multirember&co 'tuna '(strawberries tuna and swordfish) a-friend) ;; => #f
+
+(define new-friend
+  (lambda (newlat seen)
+    (a-friend newlat
+              (cons 'tuna seen)))) ;; => #<unspecified>
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; The Tenth Commandment ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Build functions to collect more than one value at a time.
+
+(define even?
+  (lambda (n)
+    (o= (o* (o/ n 2) 2) n))) ;; => #<unspecified>
+
+(define evens-only*
+  (lambda (l)
+    (cond
+     ((null? l) '())
+     ((atom? (car l)) (cond
+                       ((even? (car l)) (cons (car l)
+                                              (evens-only* (cdr l))))
+                       (else (evens-only* (cdr l)))))
+     (else (cons (evens-only* (car l))
+                 (evens-only* (cdr l))))))) ;; => #<unspecified>
+
+(evens-only* '(1 2 3 (4 5 6 (7 8 9)))) ;; => (2 (4 6 (8)))
+
+(define evens-only*&co
+  (lambda (l col)
+    (cond
+     ((null? l) (col '() 1 0))
+     ((atom? (car l)) (cond
+                       ((even? (car l)) (evens-only*&co (cdr l)
+                                                        (lambda (newl p s)
+                                                          (col (cons (car l) newl)
+                                                               (o* (car l) p) s))))
+                       (else (evens-only*&co (cdr l)
+                                             (lambda (newl p s)
+                                               (col newl
+                                                    p (o+ (car l) s)))))))
+     (else (evens-only*&co (car l)
+                           (lambda (al ap as)
+                             (evens-only*&co (cdr l)
+                                             (lambda (dl dp ds)
+                                               (col (cons al dl)
+                                                    (o* ap dp)
+                                                    (o+ as ds)))))))))) ;; => #<unspecified>
+
+
+(define the-last-friend
+  (lambda (newl product sum)
+    (cons sum
+          (cons product
+                newl)))) ;; => #<unspecified>
+
+(evens-only*&co '((9 1 2 8) 3 10 ((9 9) 7 6) 2) the-last-friend) ;; => (38 1920 (2 8) 10 (() 6) 2)
