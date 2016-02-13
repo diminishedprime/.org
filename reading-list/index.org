@@ -1,6 +1,13 @@
 [[../index.org][Main Index]]
   
 * Reading List/Digital Bookshelf
+** Reference
+*** Programming Books
++ Clojure
+  + [X] [[./living_clojure.org][Living Clojure]]
+  + [X] [[./the_joy_of_clojure.org][The Joy of Clojure]]
++ Scheme
+  + [X] [[./the_seasoned_schemer.org][The Seasoned Schemer]]
 ** To Read
 *** Programming Books
 + General
@@ -73,28 +80,7 @@
 + Propositions as Types
 *** Web Posts
 + http://danluu.com/empirical-pl/
-** Reference
-*** Programming Books
-+ General
-+ Haskell
-+ Clojure
-  + [X] [[./living_clojure.org][Living Clojure]]
-  + [X] [[./the_joy_of_clojure.org][The Joy of Clojure]]
-+ Scheme
-  + [X] [[./the_seasoned_schemer.org][The Seasoned Schemer]]
-+ Erlang
-+ RegExps
-+ Emacs
-+ JavaScript
-+ C++
-+ Java
-*** Science Books
-+ DSP
-+ Physics
-*** Maths Books
-*** Other?
-*** Academic Papers
-*** Web Posts
+
 * Purchase/Find
   1. [[http://www.amazon.com/Lisp-Small-Pieces-Christian-Queinnec/dp/0521545668/ref=sr_1_1?s=books&ie=UTF8&qid=1454204111&sr=1-1&keywords=lisp+in+small+pieces][Lisp in Small Pieces]]
   2. [[http://www.amazon.com/Little-MLer-Matthias-Felleisen/dp/026256114X/ref=sr_1_1?s=books&ie=UTF8&qid=1454204233&sr=1-1&keywords=the+little+mler][The Little MLer]]
