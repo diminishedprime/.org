@@ -65,6 +65,10 @@
      ((o< n m) 0)
      (else (add1 (o/ (o- n m) m))))))
 
+(define one?
+  (lambda (n)
+    (o= n 1)))
+
 (define equan?
   (lambda (a1 a2)
     (cond
@@ -128,3 +132,39 @@
 (define operator
   (lambda (aexp)
     (car aexp)))
+
+(define pick
+  (lambda (n lat)
+    (cond
+     ((zero? (sub1 n)) (car lat))
+     (else (pick (sub1 n) (cdr lat))))))
+
+(define first
+  (lambda (p)
+    (car p)))
+
+(define second
+  (lambda (p)
+    (car (cdr p))))
+
+(define build
+  (lambda (s1 s2)
+    (cons s1 (cons s2 '()))))
+
+(define third
+  (lambda (p)
+    (car (cdr (cdr p)))))
+
+(define a-pair?
+  (lambda (x)
+    (cond
+     ((atom? x) #f)
+     ((null? x) #f)
+     ((null? (cdr x)) #f)
+     ((null? (cdr (cdr x))) #t)
+     (else #f))))
+
+(define revpair
+  (lambda (pair)
+    (build (second pair)
+           (first pair))))

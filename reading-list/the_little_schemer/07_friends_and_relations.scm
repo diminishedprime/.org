@@ -142,11 +142,11 @@
 (a-pair? '(full (house))) ;; => #t
 
 
-(define ofirst
+(define first
   (lambda (p)
     (car p))) ;; => #<unspecified>
 
-(define osecond
+(define second
   (lambda (p)
     (car (cdr p)))) ;; => #<unspecified>
 
@@ -154,7 +154,7 @@
   (lambda (s1 s2)
     (cons s1 (cons s2 '())))) ;; => #<unspecified>
 
-(define othird
+(define third
   (lambda (p)
     (car (cdr (cdr p))))) ;; => #<unspecified>
 
@@ -191,7 +191,7 @@
   (lambda (l)
     (cond
      ((null? l) '())
-     (else (cons (osecond (car l))
+     (else (cons (second (car l))
                  (seconds (cdr l))))))) ;; => #<unspecified>
 
 (define fullfun?
