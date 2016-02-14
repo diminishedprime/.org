@@ -7,6 +7,7 @@
   + [X] [[./living_clojure.org][Living Clojure]]
   + [X] [[./the_joy_of_clojure.org][The Joy of Clojure]]
 + Scheme
+  + [X] [[./the_little_schemer.org][The Little Schemer]]
   + [X] [[./the_seasoned_schemer.org][The Seasoned Schemer]]
 ** To Read
 *** Programming Books
@@ -30,8 +31,6 @@
   + [X] [[./the_joy_of_clojure.org][The Joy of Clojure]]
   + [ ] [[./clojure_cookbook.org][Clojure Cookbook]]
 + Scheme
-  + [ ] [[./the_little_schemer.org][The Little Schemer]]
-  + [X] [[./the_seasoned_schemer.org][The Seasoned Schemer]]
   + [ ] [[./the_reasoned_schemer.org][The Reasoned Schemer]]
 + Erlang
   + [ ] [[./learn_you_some_erlang.org][Learn You Some Erlang]]

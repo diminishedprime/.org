@@ -168,3 +168,5 @@
   (lambda (pair)
     (build (second pair)
            (first pair))))
+
+(define rest cdr)
