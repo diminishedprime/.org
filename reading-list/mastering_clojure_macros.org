@@ -2,40 +2,11 @@
 + [[./index.org][Reading List]]
 
 * [[http://search.safaribooksonline.com/book/programming/clojure/9781941222768][Mastering Clojure Macros]]
-- [X] Chapter 1: Build a Solid Foundation
-  #+BEGIN_SRC clojure
-    (eval (read-string "(+ 1 2 3 4)"))
-    (class (eval (read-string "(+ 1 2 3 4)")))
-
-    (let [expression (read-string "(+ 1 2 3 4)")]
-      (cons (read-string "*")
-            (rest expression)))
-    (eval *1)
-
-    (let [expression '(+ 1 2 3 4)]
-      (cons '*
-            (rest expression)))
-
-    (macroexpand-1 '(when (= 1 2) (println "math is broken")))
-
-    (defmacro broken-when [test & body]
-      (list test (cons 'do body)))
-    (macroexpand-1 '(broken-when (= 1 1)
-                                 (println "math works")))
-
-    (defmacro when-falsy [test & body]
-      (list 'when (list 'not test)
-            (cons 'do body)))
-    (macroexpand-1 '(when-falsy (= 1 2) (println "hi!")))
-    (macroexpand '(when-falsy (= 1 2) (println "hi!")))
-  #+END_SRC
-- [ ] Chapter 2: Advance Your Macro Techniques
-  #+BEGIN_SRC clojure
-    (gensym)
-  #+END_SRC
-- [ ] Chapter 3: Use Your Powers Wisely
-- [ ] Chapter 4: Evaluate Code in Context
-- [ ] Chapter 5: Speed Up Your Systems
-- [ ] Chapter 6: Build APIs That Say Just What They Mean
-- [ ] Chapter 7: Bend Control Flow to Your Will
-- [ ] Chapter 8: Implement New Language Features
+1) [X] [[./mastering_clojure_macros/01_build_a_solid_foundation.clj][Build A Solid Foundation]]
+2) [ ] [[./mastering_clojure_macros/02_advance_your_macro_techniques.clj][Advance your Macro Techniques]]
+3) [ ] [[./mastering_clojure_macros/03_use_your_powers_wisely.clj][Use Your Powers Wisely]]
+4) [ ] [[./mastering_clojure_macros/04_evaluate_code_in_context.clj][Evaluate Code in Contex]]
+5) [ ] [[./mastering_clojure_macros/05_speed_up_your_systems.clj][Speed Up Your Systems]]
+6) [ ] [[./mastering_clojure_macros/06_build_apis_that_say_just_what_they_mean.clj][Build APIs that Say Just What They Mean]]
+7) [ ] [[./mastering_clojure_macros/07_bend_control_flow_to_your_will.clj][Bend Control Flow to Your Will]]
+8) [ ] [[./mastering_clojure_macros/08_implement_new_language_features.clj][Implement New Language Features]]
