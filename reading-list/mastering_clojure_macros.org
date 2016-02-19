@@ -4,7 +4,7 @@
 * [[http://search.safaribooksonline.com/book/programming/clojure/9781941222768][Mastering Clojure Macros]]
 1) [X] [[./mastering_clojure_macros/01_build_a_solid_foundation.clj][Build A Solid Foundation]]
 2) [X] [[./mastering_clojure_macros/02_advance_your_macro_techniques.clj][Advance your Macro Techniques]]
-3) [ ] [[./mastering_clojure_macros/03_use_your_powers_wisely.clj][Use Your Powers Wisely]]
+3) [X] [[./mastering_clojure_macros/03_use_your_powers_wisely.clj][Use Your Powers Wisely]]
 4) [ ] [[./mastering_clojure_macros/04_evaluate_code_in_context.clj][Evaluate Code in Contex]]
 5) [ ] [[./mastering_clojure_macros/05_speed_up_your_systems.clj][Speed Up Your Systems]]
 6) [ ] [[./mastering_clojure_macros/06_build_apis_that_say_just_what_they_mean.clj][Build APIs that Say Just What They Mean]]
