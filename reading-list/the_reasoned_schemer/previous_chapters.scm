@@ -31,3 +31,7 @@
 (define eq-car?
   (lambda (l x)
     (eq? (car l) x)))
+
+(define eq-caro
+  (lambda (l x)
+    (caro l x)))

@@ -1,5 +1,5 @@
 [[../index.org][Main Index]]
-  
+
 * Reading List/Digital Bookshelf
 ** Reference
 *** Programming Books
@@ -51,7 +51,7 @@
    - Feynman Lectures
 *** Maths Books
 *** Other?
-+ [ ] [[./blender_for_dummies.org][Blender For Dummies]] 
++ [ ] [[./blender_for_dummies.org][Blender For Dummies]]
 *** Academic Papers
 + [[./worst_case_efficient_priority_queues.org][Brodal Queues]]
 + [[./will_byrd_thesis.org][Will Byrd Thesis]]
@@ -65,16 +65,17 @@
   2. [[http://www.amazon.com/Little-MLer-Matthias-Felleisen/dp/026256114X/ref=sr_1_1?s=books&ie=UTF8&qid=1454204233&sr=1-1&keywords=the+little+mler][The Little MLer]]
   3. [[http://www.amazon.com/Little-Java-Few-Patterns/dp/0262561158/ref=sr_1_1?s=books&ie=UTF8&qid=1454204257&sr=1-1&keywords=a+little+java%2C+a+few+patterns][A Little Java, A Few Patterns]]
   4. [[http://www.amazon.com/Purely-Functional-Structures-Chris-Okasaki/dp/0521663504/ref=sr_1_1?s=books&ie=UTF8&qid=1454204145&sr=1-1&keywords=purely+functional][Purely Functional Data Structures]]
-  5. [[http://www.amazon.com/Selected-Papers-Computer-Science-Lecture/dp/1881526917/ref=sr_1_1?s=books&ie=UTF8&qid=1454204201&sr=1-1&keywords=selected+papers+on+computer+science][Selected Papers on Computer Science]]
-  6. [[http://www.amazon.com/Concrete-Mathematics-Foundation-Computer-Science/dp/0201558025][Concrete Mathematics]]
-  7. [[http://www.amazon.com/Why-Programs-Fail-Second-Systematic/dp/0123745152/ref=sr_1_1?s=books&ie=UTF8&qid=1454203975&sr=1-1&keywords=Why+Programs+Fail][Why Programs Fail (Andreas Zeller)]]
+  5. [[http://haskellbook.com/][Haskell Book]]
+  6. [[http://www.amazon.com/Selected-Papers-Computer-Science-Lecture/dp/1881526917/ref=sr_1_1?s=books&ie=UTF8&qid=1454204201&sr=1-1&keywords=selected+papers+on+computer+science][Selected Papers on Computer Science]]
+  7. [[http://www.amazon.com/Concrete-Mathematics-Foundation-Computer-Science/dp/0201558025][Concrete Mathematics]]
+  8. [[http://www.amazon.com/Why-Programs-Fail-Second-Systematic/dp/0123745152/ref=sr_1_1?s=books&ie=UTF8&qid=1454203975&sr=1-1&keywords=Why+Programs+Fail][Why Programs Fail (Andreas Zeller)]]
      + Chapters 6-7 11-14
-  8. [[http://www.amazon.com/New-Turing-Omnibus-Sixty-Six-Excursions/dp/0805071660/ref=sr_1_1?s=books&ie=UTF8&qid=1454204177&sr=1-1&keywords=the+new+turing+omnibus][The New Turing Omnibus]]
-  9. The Art of Computer Programming
-     + [[http://www.amazon.com/Art-Computer-Programming-Sorting-Searching/dp/0201896850/ref=sr_1_1?s=books&ie=UTF8&qid=1454203998&sr=1-1&keywords=Sorting+and+Searching][Book 2: Sorting and Searching]]
-  10. [[http://www.amazon.com/Literate-Programming-Center-Language-Information/dp/0937073806/ref=sr_1_1?s=books&ie=UTF8&qid=1454204274&sr=1-1&keywords=literate+programming][Literate Programming]]
-  11. [[http://www.amazon.com/Artificial-Intelligence-Modern-Approach-3rd/dp/0136042597/ref=sr_1_1?s=books&ie=UTF8&qid=1454204293&sr=1-1&keywords=artificial+intelligence+a+modern+approach][Artificial Intelligence - A modern approach Russel and Norvig]]
-  12. [[http://www.catonmat.net/blog/awk-book/][Awk One Liners Explained]]
-  13. [[http://www.catonmat.net/blog/sed-book/][Sed One Liners Explained]]
-  14. [[http://www.catonmat.net/blog/perl-book/][Pearl One Liners Explained]]
-  15. [[https://www.nostarch.com/perloneliners][Pearl One-Liners]]
+  9. [[http://www.amazon.com/New-Turing-Omnibus-Sixty-Six-Excursions/dp/0805071660/ref=sr_1_1?s=books&ie=UTF8&qid=1454204177&sr=1-1&keywords=the+new+turing+omnibus][The New Turing Omnibus]]
+  10. The Art of Computer Programming
+      + [[http://www.amazon.com/Art-Computer-Programming-Sorting-Searching/dp/0201896850/ref=sr_1_1?s=books&ie=UTF8&qid=1454203998&sr=1-1&keywords=Sorting+and+Searching][Book 2: Sorting and Searching]]
+  11. [[http://www.amazon.com/Literate-Programming-Center-Language-Information/dp/0937073806/ref=sr_1_1?s=books&ie=UTF8&qid=1454204274&sr=1-1&keywords=literate+programming][Literate Programming]]
+  12. [[http://www.amazon.com/Artificial-Intelligence-Modern-Approach-3rd/dp/0136042597/ref=sr_1_1?s=books&ie=UTF8&qid=1454204293&sr=1-1&keywords=artificial+intelligence+a+modern+approach][Artificial Intelligence - A modern approach Russel and Norvig]]
+  13. [[http://www.catonmat.net/blog/awk-book/][Awk One Liners Explained]]
+  14. [[http://www.catonmat.net/blog/sed-book/][Sed One Liners Explained]]
+  15. [[http://www.catonmat.net/blog/perl-book/][Pearl One Liners Explained]]
+  16. [[https://www.nostarch.com/perloneliners][Pearl One-Liners]]

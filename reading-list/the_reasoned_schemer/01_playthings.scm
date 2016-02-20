@@ -6,7 +6,8 @@
 
 (run* (q) U) ;; => ()
 
-(run* (q) (== #t q)) ;; => (#t)
+(run* (q)
+      (== #t q)) ;; => (#t)
 
 (run* (q)
       U
@@ -28,8 +29,11 @@
       S
       (== #f q))
 
-(let ((x #t))
-  (== #f x)) ;; => #<procedure (? s)>
+((let ((x #t))
+   (== #f x)) 'temp) ;; => #f
+
+((let ((x #f))
+   (== #f x)) 'temp) ;; => temp
 
 (run* (x)
       (let ((x #t))
@@ -40,10 +44,22 @@
              (== #t x)
              (== #t q))) ;; => (#t)
 
+;;;;;;;;;;;;;;;;;;;;;;
+;; The Law Of Fresh ;;
+;;;;;;;;;;;;;;;;;;;;;;
+
+;; If x is fresh, then (== v x) suceeds and associates x with v.
+
 (run* (q)
       (fresh (x)
              (== x #t)
              (== #t q))) ;; => (#t)
+
+;;;;;;;;;;;;;;;;;;;
+;; The Law of == ;;
+;;;;;;;;;;;;;;;;;;;
+
+;; (== v w) is the same as (== w v)
 
 (run* (x)
       S) ;; => (_.0)
@@ -155,6 +171,13 @@
 ;; association of x to oil. We then pretend that (== oild x) failes,
 ;; which once again refreshes x. Since no more goals suceed, we are
 ;; done.
+
+;;;;;;;;;;;;;;;;;;;;;;
+;; The Law of Conde ;;
+;;;;;;;;;;;;;;;;;;;;;;
+
+;; To get more values from conde, pretend that the successful conde line has
+;; failed, refreshing all variables that got an association from that line.
 
 (run 1 (x)
      (conde

@@ -24,6 +24,14 @@
                        (listo d)))
      (else U)))) ;; => #<unspecified>
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; The First Commandment ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; To transform a function whose value is a Boolean into a function whose value
+;; is a goal, replace cond with conde and un-nest each question and answer.
+;; Un-nest the answer #t (or #f) by replacing it with #s (or #u)
+
 (run* (x)
       (listo `(a b ,x d))) ;; => (_.0)
 
@@ -189,7 +197,7 @@
 
 (define loto
   (lambda (l)
-    (listofo twino l))) ;; => #<unspecified>
+    (listofo twinso l))) ;; => #<unspecified>
 
 (define eq-car?
   (lambda (l x)
@@ -395,4 +403,6 @@
 (define reverse-list
   (lambda (l)
     (run* (y)
-          (memberorevo y l)))) ;; => #<unspecified>
+          (memberrevo y l)))) ;; => #<unspecified>
+
+(reverse-list '(a b c)) ;; => (c b a)
