@@ -35,3 +35,10 @@
 (define eq-caro
   (lambda (l x)
     (caro l x)))
+
+(define teacupo
+  (lambda (x)
+    (conde
+     ((== 'tea x) S)
+     ((== 'cup x) S)
+     (else U))))
