@@ -1,7 +1,7 @@
 + [[../index.org][Main Index]]
 + [[./index.org][Reading List]]
 
-* Reasoned Schemer [70%]
+* Reasoned Schemer [100%]
 1. [X] [[./the_reasoned_schemer/01_playthings.scm][Playthings]]
 2. [X] [[./the_reasoned_schemer/02_teaching_old_toys_new_tricks.scm][Teaching Old Toys New Tricks]]
 3. [X] [[./the_reasoned_schemer/03_seeing_old_friends_in_new_ways.scm][Seeing Old Friends in New Ways]]
@@ -9,6 +9,6 @@
 5. [X] [[./the_reasoned_schemer/05_double_your_fun.scm][Double Your Fun]]
 6. [X] [[./the_reasoned_schemer/06_the_fun_never_ends.scm][The Fun Never Ends]]
 7. [X] [[./the_reasoned_schemer/07_a_bit_too_much.scm][A Bit Too Much]]
-8. [ ] [[./the_reasoned_schemer/08_just_a_bit_more.scm][Just a Bit More]]
-9. [ ] [[./the_reasoned_schemer/09_under_the_hood.scm][Under the Hood]]
-10. [ ] [[./the_reasoned_schemer/10_thin_ice.scm][Thin Ice]]
+8. [X] [[./the_reasoned_schemer/08_just_a_bit_more.scm][Just a Bit More]]
+9. [X] [[./the_reasoned_schemer/09_under_the_hood.scm][Under the Hood]] (This could probably use some work...)
+10. [X] [[./the_reasoned_schemer/10_thin_ice.scm][Thin Ice]]

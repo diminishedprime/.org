@@ -2,3 +2,4 @@
 + [[./index.org][Reading List]]
 
 * [[http://search.safaribooksonline.com/book/programming/clojure/9781449366384][Clojure Cookbook]]
+1. [ ] [[./clojure_cookbook/01_primative_data.clj][Primative Data]]
