@@ -1,22 +1,22 @@
 + [[../index.org][Main Index]]
 + [[./index.org][Reading List]]
 
-* Code Complete [11%]
-  Laying the Foundation 
+* Code Complete [20%]
+  Laying the Foundation
   1. [X]  Welcome to Software Construction
-  2. [X]  Metaphors for a Richer Understanding of Software Development 
-  3. [X]  Measure Twice, Cut Once: Upstream Prerequisites 
+  2. [X]  Metaphors for a Richer Understanding of Software Development
+  3. [X]  Measure Twice, Cut Once: Upstream Prerequisites
   4. [X]  Key Construction Decisions
   Creating High Quality Code
-  5. [ ]  Design in Construction 
-  6. [ ]  Working Classes 
-  7. [ ]  High-Quality Routines 
-  8. [ ]  Defensive Programming 
-  9. [ ]  The Pseudocode Programming Process
+  1. [X]  Design in Construction
+  2. [X]  Working Classes
+  3. [X]  High-Quality Routines
+  4. [ ]  Defensive Programming
+  5. [ ]  The Pseudocode Programming Process
   Variables
-  10. [ ]  General Issues in Using Variables 
-  11. [ ]  The Power of Variable Names 
-  12. [ ]  Fundamental Data Types 
+  10. [ ]  General Issues in Using Variables
+  11. [ ]  The Power of Variable Names
+  12. [ ]  Fundamental Data Types
   13. [ ]  Unusual Data Types
   Statements
   14. [ ]  Organizing Straight-Line Code

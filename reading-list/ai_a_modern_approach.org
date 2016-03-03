@@ -1,0 +1,197 @@
+*
+** I Artificial Intelligence
+1. [X] Introduction 1
+   1. [X] What Is AI?
+   2. [X] The Foundations of Artificial Intelligence
+   3. [X] The History of Artificial Intelligence
+   4. [X] The State of the Art
+   5. [X] Summary, Bibliographical and Historical Notes, Exercises
+2. [-] Intelligent Agents 34
+   1. [X] Agents and Environments
+   2. [X] Good Behavior: The Concept of Rationality
+   3. [X] The Nature of Environments
+   4. [ ] The Structure of Agents
+   5. [ ] Summary, Bibliographical and Historical Notes, Exercises
+** Problem-solving
+3. [@3] [ ] Solving Problems by Searching
+   1. [ ] Problem-Solving Agents .
+   2. [ ] Example Problems . . . .
+   3. [ ] Searching for Solutions .
+   4. [ ] Uninformed Search Strategies . . . . .
+   5. [ ] Informed (Heuristic) Search Strategies
+   6. [ ] HeuristicFunctions ............................. 102
+   7. [ ] Summary, Bibliographical and Historical Notes, Exercises . . . . . . . . . 108
+....... ....... .......
+4 Beyond Classical Search 120
+   1. [ ] Local Search Algorithms and Optimization Problems . . . . . . . . . . . 120
+   2. [ ] LocalSearchinContinuousSpaces . . . . . . . . .
+   3. [ ] Searching with Nondeterministic Actions . . . . . .
+   4. [ ] Searching with Partial Observations . . . . . . . . .
+   5. [ ] Online Search Agents and Unknown Environments
+   6. [ ] Summary, Bibliographical and Historical Notes, Exercises . . . . . . . . . 153
+5 Adversarial Search 161
+   1. [ ] Games.................................... 161
+   2. [ ] OptimalDecisionsinGames ........................ 163
+   3. [ ] Alpha–BetaPruning............................. 167
+   4. [ ] ImperfectReal-TimeDecisions ....................... 171
+   5. [ ] StochasticGames .............................. 177
+   6. [ ] PartiallyObservableGames......................... 180
+   7. [ ] State-of-the-ArtGamePrograms ...................... 185
+   8. [ ] AlternativeApproaches ........................... 187
+   9. [ ] Summary, Bibliographical and Historical Notes, Exercises . . . . . . . . . 189
+Constraint Satisfaction Problems 202
+   1. [ ] DefiningConstraintSatisfactionProblems . . . . . . . . . . . . . . . . . 202
+   2. [ ] ConstraintPropagation:InferenceinCSPs . . . . . . . . . . . . . . . . . 208
+   3. [ ] BacktrackingSearchforCSPs........................ 214
+   4. [ ] LocalSearchforCSPs............................ 220
+   5. [ ] TheStructureofProblems.......................... 222
+   6. [ ] Summary, Bibliographical and Historical Notes, Exercises . . . . . . . . . 227
+Knowledge, reasoning, and planning
+Logical Agents 234
+   1. [ ] Knowledge-BasedAgents.......................... 235
+   2. [ ] TheWumpusWorld ............................. 236
+   3. [ ] Logic..................................... 240
+   4. [ ] PropositionalLogic:AVerySimpleLogic . . . . . . . . . . . . . . . . . 243
+   5. [ ] PropositionalTheoremProving....................... 249
+   6. [ ] EffectivePropositionalModelChecking .................. 259
+   7. [ ] AgentsBasedonPropositionalLogic.................... 265
+   8. [ ] Summary, Bibliographical and Historical Notes, Exercises . . . . . . . . . 274
+First-Order Logic 285
+8.1 RepresentationRevisited .......................... 285
+8.2 SyntaxandSemanticsofFirst-OrderLogic . . . . . . . . . . . . . . . . . 290
+8.3 UsingFirst-OrderLogic........................... 300
+8.4 KnowledgeEngineeringinFirst-OrderLogic. . . . . . . . . . . . . . . . 307
+8.5 Summary, Bibliographical and Historical Notes, Exercises . . . . . . . . . 313
+Inference in First-Order Logic 322
+9.1 Propositionalvs.First-OrderInference ................... 322
+9.2 UnificationandLifting ........................... 325
+9.3 ForwardChaining .............................. 330
+9.4 BackwardChaining ............................. 337
+9.5 Resolution.................................. 345
+9.6 Summary, Bibliographical and Historical Notes, Exercises . . . . . . . . . 357
+8
+9
+10 Classical Planning 366
+10.1 DefinitionofClassicalPlanning....................... 366 10.2 AlgorithmsforPlanningasState-SpaceSearch . . . . . . . . . . . . . . . 373 10.3 PlanningGraphs............................... 379
+11
+12
+10.4 OtherClassicalPlanningApproaches.................... 387
+10.5 AnalysisofPlanningApproaches...................... 392
+10.6 Summary, Bibliographical and Historical Notes, Exercises . . . . . . . . . 393
+Planning and Acting in the Real World 401
+11.1 Time,Schedules,andResources....................... 401
+11.2 HierarchicalPlanning ............................ 406
+11.3 Planning and Acting in Nondeterministic Domains . . . . . . . . . . . . . 415
+11.4 MultiagentPlanning............................. 425
+11.5 Summary, Bibliographical and Historical Notes, Exercises . . . . . . . . . 430
+Knowledge Representation 437
+12.1 OntologicalEngineering........................... 437
+12.2 CategoriesandObjects ........................... 440
+12.3 Events .................................... 446
+12.4 MentalEventsandMentalObjects ..................... 450
+12.5 ReasoningSystemsforCategories ..................... 453
+12.6 ReasoningwithDefaultInformation .................... 458
+12.7 TheInternetShoppingWorld ........................ 462
+12.8 Summary, Bibliographical and Historical Notes, Exercises . . . . . . . . . 467
+Uncertain knowledge and reasoning
+Quantifying Uncertainty 480
+13.1 ActingunderUncertainty .......................... 480
+13.2 BasicProbabilityNotation.......................... 483
+13.3 InferenceUsingFullJointDistributions. . . . . . . . . . . . . . . . . . . 490
+13.4 Independence ................................ 494
+13.5 Bayes’RuleandItsUse........................... 495
+13.6 TheWumpusWorldRevisited........................ 499
+13.7 Summary, Bibliographical and Historical Notes, Exercises . . . . . . . . . 503
+Probabilistic Reasoning 510
+14.1 RepresentingKnowledgeinanUncertainDomain . . . . . . . . . . . . . 510
+14.2 TheSemanticsofBayesianNetworks.................... 513
+14.3 Efficient Representation of Conditional Distributions . . . . . . . . . . . . 518
+14.4 ExactInferenceinBayesianNetworks ................... 522
+14.5 ApproximateInferenceinBayesianNetworks . . . . . . . . . . . . . . . 530
+14.6 RelationalandFirst-OrderProbabilityModels . . . . . . . . . . . . . . . 539
+14.7 OtherApproachestoUncertainReasoning . . . . . . . . . . . . . . . . . 546
+14.8 Summary, Bibliographical and Historical Notes, Exercises . . . . . . . . . 551
+Probabilistic Reasoning over Time 566
+15.1 TimeandUncertainty ............................ 566
+IV 13
+14
+15
+xvi
+Contents
+￼15.2 15.3 15.4 15.5 15.6 15.7
+InferenceinTemporalModels........................ 570 HiddenMarkovModels ........................... 578 KalmanFilters................................ 584 DynamicBayesianNetworks ........................ 590 KeepingTrackofManyObjects....................... 599 Summary, Bibliographical and Historical Notes, Exercises . . . . . . . . . 603
+16 Making Simple Decisions 610
+16.1 Combining Beliefs and Desires under Uncertainty . . . . . . . . . . . . . 610
+16.2 TheBasisofUtilityTheory ......................... 611
+16.3 UtilityFunctions............................... 615
+16.4 MultiattributeUtilityFunctions ....................... 622
+16.5 DecisionNetworks.............................. 626
+16.6 TheValueofInformation .......................... 628
+16.7 Decision-TheoreticExpertSystems..................... 633
+16.8 Summary, Bibliographical and Historical Notes, Exercises . . . . . . . . . 636
+17 Making Complex Decisions 645
+17.1 SequentialDecisionProblems........................ 645
+17.2 ValueIteration................................ 652
+17.3 PolicyIteration................................ 656
+17.4 PartiallyObservableMDPs ......................... 658
+17.5 DecisionswithMultipleAgents:GameTheory. . . . . . . . . . . . . . . 666
+17.6 MechanismDesign ............................. 679
+17.7 Summary, Bibliographical and Historical Notes, Exercises . . . . . . . . . 684
+V Learning
+18 Learning from Examples 693
+18.1 FormsofLearning.............................. 693 18.2 SupervisedLearning............................. 695 18.3 LearningDecisionTrees........................... 697 18.4 EvaluatingandChoosingtheBestHypothesis . . . . . . . . . . . . . . . 708 18.5 TheTheoryofLearning........................... 713 18.6 Regression and Classification with Linear Models . . . . . . . . . . . . . 717 18.7 ArtificialNeuralNetworks ......................... 727 18.8 NonparametricModels ........................... 737 18.9 SupportVectorMachines .......................... 744 18.10EnsembleLearning ............................. 748 18.11PracticalMachineLearning......................... 753 18.12 Summary, Bibliographical and Historical Notes, Exercises . . . . . . . . . 757
+19 Knowledge in Learning 768
+19.1 ALogicalFormulationofLearning..................... 768
+20
+21
+19.2 KnowledgeinLearning ........................... 777
+19.3 Explanation-BasedLearning ........................ 780
+19.4 LearningUsingRelevanceInformation................... 784
+19.5 InductiveLogicProgramming........................ 788
+19.6 Summary, Bibliographical and Historical Notes, Exercises . . . . . . . . . 797
+Learning Probabilistic Models 802
+20.1 StatisticalLearning ............................. 802
+20.2 LearningwithCompleteData........................ 806
+20.3 LearningwithHiddenVariables:TheEMAlgorithm. . . . . . . . . . . . 816
+20.4 Summary, Bibliographical and Historical Notes, Exercises . . . . . . . . . 825
+Reinforcement Learning 830
+21.1 Introduction ................................. 830
+21.2 PassiveReinforcementLearning ...................... 832
+21.3 ActiveReinforcementLearning....................... 839
+21.4 GeneralizationinReinforcementLearning . . . . . . . . . . . . . . . . . 845
+21.5 PolicySearch ................................ 848
+21.6 ApplicationsofReinforcementLearning .................. 850
+21.7 Summary, Bibliographical and Historical Notes, Exercises . . . . . . . . . 853
+Communicating, perceiving, and acting
+Natural Language Processing 860
+22.1 LanguageModels .............................. 860
+22.2 TextClassification.............................. 865
+22.3 InformationRetrieval ............................ 867
+22.4 InformationExtraction............................ 873
+22.5 Summary, Bibliographical and Historical Notes, Exercises . . . . . . . . . 882
+Natural Language for Communication 888
+23.1 PhraseStructureGrammars......................... 888
+23.2 SyntacticAnalysis(Parsing)......................... 892
+23.3 Augmented Grammars and Semantic Interpretation . . . . . . . . . . . . 897
+23.4 MachineTranslation............................. 907
+23.5 SpeechRecognition ............................. 912
+23.6 Summary, Bibliographical and Historical Notes, Exercises . . . . . . . . . 918
+Perception 928
+24.1 ImageFormation............................... 929 24.2 EarlyImage-ProcessingOperations..................... 935 24.3 ObjectRecognitionbyAppearance ..................... 942 24.4 Reconstructingthe3DWorld ........................ 947 24.5 Object Recognition from Structural Information . . . . . . . . . . . . . . 957
+VI 22
+23
+24
+xviii
+Contents
+￼24.6 UsingVision................................. 961 24.7 Summary, Bibliographical and Historical Notes, Exercises . . . . . . . . . 965
+25 Robotics 971
+25.1 Introduction ................................. 971 25.2 RobotHardware............................... 973 25.3 RoboticPerception.............................. 978 25.4 PlanningtoMove .............................. 986 25.5 PlanningUncertainMovements....................... 993 25.6 Moving.................................... 997 25.7 RoboticSoftwareArchitectures....................... 1003 25.8 ApplicationDomains ............................ 1006 25.9 Summary, Bibliographical and Historical Notes, Exercises . . . . . . . . . 1010
+VII Conclusions
+26 Philosophical Foundations 1020
+26.1 WeakAI:CanMachinesActIntelligently? . . . . . . . . . . . . . . . . . 1020 26.2 StrongAI:CanMachinesReallyThink? .................. 1026 26.3 The Ethics and Risks of Developing Artificial Intelligence . . . . . . . . . 1034 26.4 Summary, Bibliographical and Historical Notes, Exercises . . . . . . . . . 1040
+27 AI: The Present and Future 1044
+27.1 AgentComponents ............................. 1044 27.2 AgentArchitectures ............................. 1047 27.3 AreWeGoingintheRightDirection? ................... 1049 27.4 WhatIfAIDoesSucceed? ......................... 1051
+A Mathematical background 1053
+A.1 ComplexityAnalysisandO()Notation ................... 1053 A.2 Vectors,Matrices,andLinearAlgebra ................... 1055 A.3 ProbabilityDistributions........................... 1057
+B Notes on Languages and Algorithms 1060
+B.1 Defining Languages with Backus–Naur Form (BNF) . . . . . . . . . . . . 1060 B.2 DescribingAlgorithmswithPseudocode .................. 1061 B.3 OnlineHelp ................................. 1062

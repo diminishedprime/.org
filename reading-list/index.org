@@ -17,6 +17,7 @@
   + [ ] [[./mythical_man_month.org][Mythical Man Month]]
   + [ ] [[./to_mock_a_mockingbird.org][To Mock A MockingBird]]
   + [ ] [[./mit_sicp.org][MIT SICP]]
+  + [ ] [[./ai_a_modern_approach.org][AI A Modern Approach]]
   + Beautiful Code
   + [ ] [[./programming_pearls.org][Programming Pearls]]
   + More Programming Pearls
