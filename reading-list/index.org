@@ -53,6 +53,7 @@
 *** Maths Books
 *** Other?
 + [ ] [[./blender_for_dummies.org][Blender For Dummies]]
++ [ ] enchiridion by Epic Taetus
 *** Academic Papers
 + [[./worst_case_efficient_priority_queues.org][Brodal Queues]]
 + [[./will_byrd_thesis.org][Will Byrd Thesis]]

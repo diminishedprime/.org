@@ -1,7 +1,7 @@
 + [[../index.org][Main Index]]
 + [[./index.org][Reading List]]
 
-* Haskell Book [100%]
+* Haskell Book [33%]
 1. [X] All You Need Is Lambda [100%]
    1. [X] All You Need Is Lambda
    2. [X] What's A Function
@@ -25,4 +25,85 @@
    4. [X] Functions - [[./haskell_programming_from_first_principles/02_04.lhs][Exercises]]
    5. [X] Infix Operators - [[./haskell_programming_from_first_principles/02_05.lhs][Exercises]]
    6. [X] Declaring Values [[./haskell_programming_from_first_principles/02_06.lhs][Exercises]]
+   7. [X] Arithmetic functions in Haskell
+   8. [X] Negative Numbers
+   9. [X] Parenthesizing infix functions
+   10. [X] Laws for quotients and remainders
+   11. [X] Evaluation
+   12. [X] Let and Where [[./haskell_programming_from_first_principles/02_12.hs][Exercises]]
+   13. [X] [[./haskell_programming_from_first_principles/02_13.hs][Exercises]]
+   14. [X] Definitions
+   15. [X] Follow-up resources.
+3. [X] Strings [100%]
+   1. [X] Printing Strings
+   2. [X] A first look at types
+   3. [X] Printing simple strings [[./haskell_programming_from_first_principles/03_03.hs][Exercises]]
+   4. [X] Types of concatenation functions [[./haskell_programming_from_first_principles/03_04.hs][Exercises]]
+   5. [X] Concatenation and scoping
+   6. [X] More List Functions
+   7. [X] [[./haskell_programming_from_first_principles/03_07.hs][Chapter Exercises]]
+   8. [X] Definitions
+4. [ ] Basic Datatypes
+   1. [ ]
+   2. [ ]
+   3. [ ]
+   4. [ ]
+   5. [ ]
+   6. [ ]
    7. [ ]
+   8. [ ]
+   9. [ ]
+5. [ ] Types
+   1. [ ]
+   2. [ ]
+   3. [ ]
+   4. [ ]
+   5. [ ]
+   6. [ ]
+   7. [ ]
+   8. [ ]
+   9. [ ]
+   10. [ ]
+   11. [ ]
+6. [ ] Typeclasses
+   1. [ ] Typeclasses ...........................164
+   2. [ ] Whataretypeclasses?.....................164
+   3. [ ] BacktoBool...........................165
+   4. [ ] Eq .................................166
+   5. [ ] Num................................168
+   6. [ ] Type-defaultingtypeclasses................. 171
+   7. [ ] Ord ................................174
+   8. [ ] Enum...............................177
+   9. [ ] Show ...............................178
+   10. [ ] Read................................182
+   11. [ ] Instancesaredispatchedbytype . . . . . . . . . . . . . 183
+   12. [ ] Writingtypeclassinstances .................186
+   13. [ ] Gimmemoreoperations ..................196
+   14. [ ] ChapterExercises .......................199
+   15. [ ] ChapterDefinitions...................... 204
+   16. [ ] Typeclassinheritance,partial................ 206
+   17. [ ] Follow-upresources...................... 206
+7. [ ] More functional patterns 207
+   1. [ ] Makeitfunc-y .........................208
+   2. [ ] Arguments............................208
+   3. [ ] Bindingvariablestovalues .................210
+   4. [ ] Anonymousfunctions ....................213
+   5. [ ] Patternmatching........................215
+   6. [ ] Caseexpressions........................223
+   7. [ ] Higher-orderfunctions ...................226
+   8. [ ] Guards ..............................232
+   9. [ ] Functioncomposition ....................237
+   10. [ ] Pointfreestyle .........................240
+   11. [ ] Demonstratingcomposition ................242
+   12. [ ] ChapterExercises .......................244
+   13. [ ] ChapterDefinitions...................... 248
+   14. [ ] Follow-upresources...................... 252
+8. [ ] Recursion 254
+   1. [ ]
+   2. [ ]
+   3. [ ]
+   4. [ ]
+   5. [ ]
+   6. [ ]
+   7. [ ]
+9. [ ] Lists
