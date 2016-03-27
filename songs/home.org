@@ -1,8 +1,9 @@
 + [[../index.org][Home]]
 + [[./index.org][Songs]]
 
-Home
-The Dear Hunter
+* Home
+** The Dear Hunter
+
 C                                                   F
   With the good chance that we crash, let's say our grace (our grace)
 C                                            F
