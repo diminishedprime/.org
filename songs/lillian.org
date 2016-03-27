@@ -3,7 +3,7 @@
 
 * Lillian
 ** The Dear Hunter
-
+#+BEGIN_SRC elisp
 Verse:
 
 Em      D        Am       B(bass)
@@ -123,3 +123,4 @@ Outro:
 B(bass), D#(bass), E(bass)
 
 End on Gm
+#+END_SRC

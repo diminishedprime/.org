@@ -4,6 +4,7 @@
 * What It Means to Be Alone
 ** The Dear Hunter
 
+#+BEGIN_SRC elisp
 Capo 1
 
 
@@ -96,3 +97,4 @@ Looking up, never offered you too much
 
         F#m           Am
 Now the only one you have is...
+#+END_SRC

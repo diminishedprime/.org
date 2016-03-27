@@ -3,7 +3,7 @@
 
 * I Will Follow You Into The Dark
 ** Death Cab For Cutie
-
+#+BEGIN_SRC elisp
 [Intro]
 
 Am  C  F  C  G/B
@@ -109,3 +109,4 @@ If there's no one beside you when your soul embarks
 Then I'll follow you into the dark
      F           Fm           C
 Then I'll follow you into the dark
+#+END_SRC

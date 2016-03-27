@@ -4,6 +4,7 @@
 * The Things that Hide Away
 ** The Dear Hunter
 
+#+BEGIN_SRC elisp
 The Things that Hide Away
 C - Em - G - Am7 - G/Am7
 
@@ -65,3 +66,4 @@ Oohs
 C - Em - G - Am - G
 
 C
+#+END_SRC
