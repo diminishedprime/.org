@@ -3,6 +3,7 @@
 
 * Home
 ** The Dear Hunter
+#+BEGIN_SRC elisp
 
 C                                                   F
   With the good chance that we crash, let's say our grace (our grace)
@@ -57,3 +58,4 @@ Yeah you can come back home. (You can come back home yeah)
 Yeah you can come back home. (You can come back home)
              C
 So come back home
+#+END_SRC
