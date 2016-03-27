@@ -41,7 +41,7 @@
    4. [X] Types of concatenation functions [[./haskell_programming_from_first_principles/03_04.hs][Exercises]]
    5. [X] Concatenation and scoping
    6. [X] More List Functions
-   7. [X] [[./haskell_programming_from_first_principles/03_07.hs][Chapter Exercises]
+   7. [X] [[./haskell_programming_from_first_principles/03_07.hs][Chapter Exercises]]
    8. [X] Definitions
 4. [X] Basic Datatypes[100%]
    1. [X] Basic Datatypes
@@ -53,14 +53,14 @@
    7. [X] [[./haskell_programming_from_first_principles/04_07.hs][Chapter Exercises]]
    8. [X] Definitions
    9. [X] Answers
-5. [ ] Types [0%]
-   1. [ ]
-   2. [ ]
-   3. [ ]
-   4. [ ]
-   5. [ ]
-   6. [ ]
-   7. [ ]
+5. [-] Types [54%]
+   1. [X] Types
+   2. [X] What are Types?
+   3. [X] Querying and Reading Types
+   4. [X] Typeclass constrained type variables [[./haskell_programming_from_first_principles/05_04.hs][Intermission: Exercises]]
+   5. [X] Currying [[./haskell_programming_from_first_principles/05_05.hs][Intermission: Exercises]]
+   6. [X] Polymorphism [[./haskell_programming_from_first_principles/05_06.hs][Intermission: Exercises]]
+   7. [ ] [[./haskell_programming_from_first_principles/05_07.hs][Type Inference]]
    8. [ ]
    9. [ ]
    10. [ ]

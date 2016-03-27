@@ -1,0 +1,32 @@
+* Two Week plan
+
+|-------+-------+-----------+-----------+-----------+-----------+-------+-------|
+|       | Sun   | Mon       | Tue       | Wed       | Thu       | Fri   | Sat   |
+|-------+-------+-----------+-----------+-----------+-----------+-------+-------|
+|  0:00 | Sleep | Sleep     | Sleep     | Sleep     | Sleep     | Sleep | Sleep |
+|  1:00 | Sleep | Sleep     | Sleep     | Sleep     | Sleep     | Sleep | Sleep |
+|  2:00 | Sleep | Sleep     | Sleep     | Sleep     | Sleep     | Sleep | Sleep |
+|  3:00 | Sleep | Sleep     | Sleep     | Sleep     | Sleep     | Sleep | Sleep |
+|  4:00 | Sleep | Sleep     | Sleep     | Sleep     | Sleep     | Sleep | Sleep |
+|  5:00 | Sleep | Get Ready | Get Ready | Get Ready | Get Ready | Sleep | Sleep |
+|  6:00 | Sleep | Work      | Work      | Work      | Work      | Sleep | Sleep |
+|  7:00 | Sleep | Work      | Work      | Work      | Work      | Sleep | Sleep |
+|  8:00 | Sleep | Work      | Work      | Work      | Work      | Sleep | Sleep |
+|  9:00 | Sleep | Work      | Work      | Work      | Work      | Sleep | Sleep |
+| 10:00 |       | Work      | Work      | Work      | Work      |       |       |
+| 11:00 |       | Lunch     | Lunch     | Lunch     | Lunch     |       |       |
+| 12:00 |       | Work      | Work      | Work      | Work      |       |       |
+| 13:00 |       | Work      | Work      | Work      | Work      |       |       |
+| 14:00 |       | Work      | Work      | Work      | Work      |       |       |
+| 15:00 |       | Work      | Work      | Work      | Work      |       |       |
+| 16:00 |       | Work      | Work      | Work      | Work      |       |       |
+| 17:00 |       | Dinner    | Dinner    | Dinner    | Dinner    |       |       |
+| 18:00 |       |           |           |           |           |       |       |
+| 19:00 |       |           |           |           |           |       |       |
+| 20:00 |       |           |           |           |           |       |       |
+| 21:00 |       |           |           |           |           |       |       |
+| 22:00 | Sleep | Sleep     | Sleep     | Sleep     |           |       |       |
+| 23:00 | Sleep | Sleep     | Sleep     | Sleep     |           |       |       |
+|-------+-------+-----------+-----------+-----------+-----------+-------+-------|
+
+58 available hours a week.
