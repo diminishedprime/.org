@@ -27,9 +27,12 @@ myMult :: (Fractional a) => a -> a
 
 -- 3. take :: Int -> [a] -> [a]
 myTake x = take x "hey you"
-myTake ::
+myTake :: Int -> [Char]
 
 -- 4. (>) :: Ord a => a -> a -> Bool
 myCom x = x > (length [1..10])
+myCom :: Int -> Bool
+
 -- 5. (<) :: Ord a => a -> a -> Bool
 myAlph x = x < 'z'
+myAlph :: Char -> Bool
