@@ -49,4 +49,15 @@
    #+END_SRC
 2) [X] Abstraction Barriers
 3) [ ] What is meant by data?
+   #+BEGIN_SRC scheme
+     (define (cons x y)
+       (define (dispatch m)
+         (cond
+          ((= m 0) x) ((= m 1) y)
+          (else (error "Argument not 0 or 1: CONS" m))))
+       dispatch)
+     (define (car z)
+       (z 0))
+     (define (cdr z) (z 1))
+   #+END_SRC
 4) [ ] Extended Exercise: other stuff...
