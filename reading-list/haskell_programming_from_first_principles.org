@@ -65,19 +65,19 @@
    9. [X] [[./haskell_programming_from_first_principles/05_09.hs][Chapter Exercises]]
    10. [X] Definitions
    11. [X] Follow-up resources
-6. [ ] Typeclasses
-   1. [ ] Typeclasses
-   2. [ ] What are type classes?
-   3. [ ] Back to Bool
-   4. [ ] Eq
-   5. [ ] Num
-   6. [ ] Type-defaulting typeclasses
-   7. [ ] Ord
-   8. [ ] Enum
-   9. [ ] Show
-   10. [ ] Read................................182
-   11. [ ] Instancesaredispatchedbytype . . . . . . . . . . . . . 183
-   12. [ ] Writingtypeclassinstances .................186
+6. [-] Typeclasses
+   1. [X] Typeclasses
+   2. [X] What are type classes?
+   3. [X] Back to Bool
+   4. [X] Eq
+   5. [X] Num
+   6. [X] Type-defaulting typeclasses
+   7. [X] [[./haskell_programming_from_first_principles/06_07.hs][Ord]]
+   8. [X] Enum
+   9. [X] Show
+   10. [X] Read
+   11. [X] Instances are dispatched by type
+   12. [ ] Writing typeclass instances
    13. [ ] Gimmemoreoperations ..................196
    14. [ ] ChapterExercises .......................199
    15. [ ] ChapterDefinitions...................... 204
