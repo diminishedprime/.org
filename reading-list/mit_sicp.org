@@ -1,9 +1,6 @@
 + [[../index.org][Main Index]]
 + [[./index.org][Reading List]]
 
-
-https://youtu.be/amf5lTZ0UTc?list=PLE18841CABEA24090&t=3
-
 *  [[./books/sicp.pdf][Structure and Intrepretation of Computer Programs]]
 by Harold Abelson and Gerald Jay Sussman with Julie Sussman
 + [-] Book Completed [73%]
@@ -49,7 +46,7 @@ by Harold Abelson and Gerald Jay Sussman with Julie Sussman
            #+END_SRC
         5. [X] The Substitution Model for Procedure Application
            #+BEGIN_SRC scheme
-             ;;evaluation of a function. 
+             ;;evaluation of a function.
              (define (f a)
                (sum-of-squares (+ a 1) (* a 2)))
              (f 5)
@@ -185,7 +182,7 @@ by Harold Abelson and Gerald Jay Sussman with Julie Sussman
                      (else (* b (fast-exp b (- n 1))))))
              (fast-exp 3 3)
            #+END_SRC
-        5. [X] Greatest Common Divisors. 
+        5. [X] Greatest Common Divisors.
            #+BEGIN_SRC scheme
              ;; GCD via Euclid's algorithm.
              (define (gcd a b)
@@ -356,57 +353,8 @@ by Harold Abelson and Gerald Jay Sussman with Julie Sussman
            #+END_SRC
         4. [ ] Procedures as Returned Values
   2. [-] Building Abstractions With Data
-     1. [-] Introduction to data abstraction
-        1. [X] Example: Arithmetic Operations for rational numbers
-           #+BEGIN_SRC scheme
-             (define (make-rat n d)
-               (let ((g (gcd n d)))
-                 (cons (/ n g)
-                       (/ d g))))
-             (define (numer x) (car x))
-             (define (denom x) (cdr x))
+     1. [-] [[./sicp/02_01_introduction_to_data_abstraction.org][Introduction to data Abstraction]]
 
-             (define (add-rat x y)
-               (make-rat (+ (* (numer x) (denom y))
-                            (* (numer y) (denom x)))
-                         (* (denom x) (denom y))))
-
-             (define (sub-rat x y)
-               (make-rat (- (* (numer x) (denom y))
-                            (* (numer y) (denom x)))
-                         (* (denom x) (denom y))))
-             (define (mul-rat x y)
-               (make-rat (* (numer x) (numer y))
-                         (* (denom x) (denom y))))
-
-             (define (div-rat x y)
-               (make-rat (* (numer x) (denom y))
-                         (* (denom x) (numer y))))
-             (define (equal-rat? x y)
-               (= (* (numer x) (denom y))
-                  (* (denom x) (numer y))))
-             (define (print-rat x)
-               (newline)
-               (display (numer x))
-               (display "/")
-               (display (denom x)))
-
-             ;; Some examples...
-             (define one-half (make-rat 1 2))
-             (print-rat one-half)
-
-             (define one-third (make-rat 1 3))
-
-             (print-rat (add-rat one-half one-third))
-             (print-rat (mul-rat one-third one-half))
-             (print-rat (add-rat one-third one-third))
-
-           #+END_SRC
-        2. [ ] Abstraction Barriers (pg 118)
-	   #+BEGIN_SRC scheme
-	   
-	   #+END_SRC
-    
 + [-] Exercises. Solutions can be found [[http://community.schemewiki.org/?SICP-Solutions][here]]
   1. [-] [35%]
      1. [ ]
@@ -509,8 +457,8 @@ by Harold Abelson and Gerald Jay Sussman with Julie Sussman
              (define (double x) (+ x x))
              (define (halve x) (floor (/ x 2)))
              (define (iter accumulator a b)
-               (cond ((= b 0) accumulator) 
-                     ((even? b) (iter accumulator (double a) (halve b))) 
+               (cond ((= b 0) accumulator)
+                     ((even? b) (iter accumulator (double a) (halve b)))
                      (else (iter (+ accumulator a) a (- b 1)))))
              (iter 0 a b))
            (* 100 100)
@@ -568,12 +516,12 @@ by Harold Abelson and Gerald Jay Sussman with Julie Sussman
      22. [ ] Time of algos
          + It seems like I can't do this because my scheme
            implementation doesn't have a runtime procedure. :(
-     23. [ ] 
-     24. [ ] 
-     25. [ ] 
-     26. [ ] 
+     23. [ ]
+     24. [ ]
+     25. [ ]
+     26. [ ]
      27. [ ] Carmichael Numbers
-     28. [ ] 
+     28. [ ]
      29. [X] Simpson's Rule for Integrals
          #+BEGIN_SRC scheme
            (define (sum term a next b)
@@ -584,13 +532,13 @@ by Harold Abelson and Gerald Jay Sussman with Julie Sussman
 
            (define (simpson f a b n)
              (define (inc a) (+ a 1))
-             (define h (/ (- b a) n)) 
-             (define (yk k) (f (+ a (* h k)))) 
-             (define (simpson-term k) 
-               (* (cond ((or (= k 0) (= k n)) 1) 
-                        ((odd? k) 4) 
-                        (else 2)) 
-                  (yk k))) 
+             (define h (/ (- b a) n))
+             (define (yk k) (f (+ a (* h k))))
+             (define (simpson-term k)
+               (* (cond ((or (= k 0) (= k n)) 1)
+                        ((odd? k) 4)
+                        (else 2))
+                  (yk k)))
              (* (/ h 3) (sum simpson-term 0 inc n)))
 
            (simpson (lambda(x)(* x x x)) 0 1 2)
@@ -607,5 +555,4 @@ by Harold Abelson and Gerald Jay Sussman with Julie Sussman
            ;; (f 2)
            ;; (2 2) which is an error.
          #+END_SRC
-  2. [ ]
-     1. [ ] 
+  2. [ ] [[./sicp/02_exercises.org][Exercises]]

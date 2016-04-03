@@ -5,89 +5,89 @@
 ** The Antlers
 #+BEGIN_SRC elisp
 Intro:
-G  Bm  C  G F# Em  Am  C  D C#Maj11
+1  3-  4  1  6-  2-  4  5
 Verse:
-G  Bm  C  G(the root slide-down is G, F#)  Em  Am  C  D
+1  3-  4  1  6-  2-  4  5
 
-          G               Bm
+          1               3-
 There's a bear inside your stomach
-               C                  G F#
+               4                  1
 The cub's been kicking from within.
-Em                        Am
+6-                        2-
 He's loud, though without vocal chords
-C                   D
+4                   5
 We'll put an end to him
 
-           G             Bm
+           1             3-
 We'll make all the right appointments
-       C               G F#
+       4               1
 No one ever has to know.
-Em                          Am
+6-                          2-
 And then tomorrow I'll turn 21
-C                    D
+4                    5
 We'll script another show
 
-           G                  Bm
+           1                  3-
 We'll play charades up in the Chelsea
-      C                                  G F#
-Drink champagne although you shouldn't be.
-Em                      Am                  C   D
+      4                                  1
+5rink champagne although you shouldn't be.
+6-                      2-                  4   5
 We'll be blind and dumb until we fall asleep
 
-            G
+            1
 None of our friends will come
-     Bm
+     3-
 They dodge our calls.
-         C                G     F#
+         4                1
 And they have for quite a while now
-           Em
+           6-
 It's not a shock
-          Am               C                D
+          2-               4                5
 You don't seem to mind and I just can't see how.
 
 
 Chorus:
-          C     Bm
+          4     3-
 We're too old
-          Am          D
+          2-          5
 We're not old, old at all
-     C      Bm
+     4      3-
 Just too old
-          Am          D
+          2-          5
 We're not old, old at all
 
 Verse 2:
-          G                Bm
+          1                3-
 There's a bear inside your stomach
-               C                    G F#
+               4                    1
 The cub's been kicking you for weeks
-Em                      Am
+6-                      2-
 And if this isn't all a dream
-                C            D
+                4            5
 Well then we'll cut him from beneath
 
-               G                Bm
+               1                3-
 Well we're not scared of making caves
-           C                   G F#
+           4                   1
 Or finding food for him to eat
-      Em               Am
+      6-               2-
 We're terrified of one another
-         C                 D
+         4                 5
 And terrified of what that means
 
-               G          Bm
+               1          3-
 But we'll make only quick decisions
-                C                          G F#
+                4                          1
 And you'll just keep my in the waiting room
-            Em                    Am
+            6-                    2-
 And all the while I'll know we're fucked
-        C                D
+        4                5
 And not getting unfucked soon
 
-            G                 Bm
+            1                 3-
 When we get home we're bigger strangers
-           C                G F#
+           4                1
 than we've ever been before
-           Em             Am          C               D
+           6-             2-          4               5
 You sit in front of snowy television, suitcase on the floor
 #+END_SRC

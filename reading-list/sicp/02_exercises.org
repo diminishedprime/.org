@@ -1,0 +1,144 @@
+* Chapter 2 Exercises
+1. [ ]
+2. [X] Exercise 2.2
+   + Consider the problem of representing line segments in a plane. Each segment
+     is represented as a pair of points: a starting point and an ending point.
+     Define a constructor make-segment and selectors start-segment and
+     end-segment that define the representation of segments in terms of points.
+     Furthermore, a point can be represented as a pair of numbers: the x
+     coordinate and the y coordinate. Accordingly, specify a constructor
+     make-point and selectors x-point and y-point that define this
+     representation. Finally, using your selectors and constructors, define a
+     procedure midpoint-segment that takes a line segment as argument and
+     returns its midpoint (the point whose coordinates are the average of the
+     coordinates of the endpoints). To try your procedures, you’ll need a way to
+     print points:
+     #+BEGIN_SRC scheme
+       (define make-point
+         (lambda (x y)
+           (list x y)))
+
+       (define x-point
+         (lambda (point)
+           (car point)))
+
+       (define y-point
+         (lambda (point)
+           (car (cdr point))))
+
+       (define make-segment
+         (lambda (point-1 point-2)
+           (list point-1 point-2)))
+
+       (define start-segment
+         (lambda (segment)
+           (car segment)))
+
+       (define end-segment
+         (lambda (segment)
+           (car (cdr segment))))
+
+       (define (print-point p)
+         (newline)
+         (display "(")
+         (display (x-point p))
+         (display ",")
+         (display (y-point p))
+         (display ")"))
+
+       (define average
+         (lambda (a b)
+           (/ (+ a b) 2)))
+
+       (define midpoint-segment
+         (lambda (segment)
+           (let ((point-1 (start-segment segment))
+                 (point-2 (end-segment segment)))
+             (let ((x1 (x-point point-1))
+                   (x2 (x-point point-2))
+                   (y1 (y-point point-1))
+                   (y2 (y-point point-2)))
+               (make-point (average x1 x2)
+                           (average y1 y2))))))
+
+
+       (make-point 1 2)
+
+       (x-point (make-point 1 2))
+
+       (y-point (make-point 1 2))
+
+       (make-segment (make-point 1 2)
+                     (make-point 2 3))
+
+       (start-segment (make-segment (make-point 1 2)
+                                    (make-point 2 3)))
+
+       (end-segment (make-segment (make-point 1 2)
+                                  (make-point 2 3)))
+
+       (midpoint-segment (make-segment (make-point 1 2)
+                                       (make-point 2 3)))
+     #+END_SRC
+3. [X] Exercise 2.3
+   + Implement a representation for rectangles in a plane. (Hint: You may want
+     to make use of Exercise 2.2.) In terms of your constructors and selectors,
+     create procedures that compute the perimeter and the area of a given
+     rectangle. Now implement a different representation for rectangles. Can you
+     design your system with suitable abstraction barriers, so that the same
+     perimeter and area procedures will work using either representation?
+     #+BEGIN_SRC scheme
+       (define make-rectangle
+         (lambda (top-left bottom-right)
+           (list top-left bottom-right)))
+
+       (define top-left
+         (lambda (rect)
+           (car rect)))
+
+       (define bottom-right
+         (lambda (rect)
+           (car (cdr rect))))
+
+       (define perimeter-rect
+         (lambda (rect)
+           (let ((top-left (top-left rect))
+                 (bottom-right (bottom-right rect)))
+             (let ((x-left (x-point top-left))
+                   (x-right (x-point bottom-right))
+                   (y-top (y-point top-left))
+                   (y-bottom (y-point bottom-right)))
+               (let ((height (- y-top y-bottom))
+                     (width (- x-right x-left)))
+                 (+ (* 2 height)
+                    (* 2 width)))))))
+
+       (define area-rect
+         (lambda (rect)
+           (let ((top-left (top-left rect))
+                 (bottom-right (bottom-right rect)))
+             (let ((x-left (x-point top-left))
+                   (x-right (x-point bottom-right))
+                   (y-top (y-point top-left))
+                   (y-bottom (y-point bottom-right)))
+               (let ((height (- y-top y-bottom))
+                     (width (- x-right x-left)))
+                 (* height width))))))
+
+
+       (make-rectangle (make-point 2 2)
+                       (make-point 1 1))
+
+       (top-left (make-rectangle (make-point 2 2)
+                                 (make-point 1 1)))
+
+       (bottom-right (make-rectangle (make-point 2 2)
+                                     (make-point 1 1)))
+
+
+       (perimeter-rect (make-rectangle (make-point -3 2)
+                                       (make-point 3 -8)))
+
+       (area-rect (make-rectangle (make-point -3 2)
+                                  (make-point 3 -8)))
+     #+END_SRC

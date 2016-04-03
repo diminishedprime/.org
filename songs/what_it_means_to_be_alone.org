@@ -7,94 +7,65 @@
 #+BEGIN_SRC elisp
 Capo 1
 
-
 E            F#m
 Oh, you were born with the sun
-
     E            F#m
 And oh, you will die with the moon
-
     E                                  F#m
 And everything you thought you had you lost
-
     E                                   F#m
 But now you'd never lose what you don't have
 
-
 *Pre-Chorus*
-
 A           B            E        G#     A
 Prayers from above, never answered quite enough
-
         F#m           Am     E
 Now the only one you have is you
 
-
 *Chorus*
-
 E         Bm
 With this cruel and bitter heart
-
          A
 You were cold and in love
-
           G
 Left here naked in the sun
-
 E                    Bm
 Run scared from this cruel and bitter world
-
          A                G
 This has only begun as the bombs are busting off
-
 
 *Verse*
 
 Am            Em
 Smoke arose on azimuth glares
-
 Am                Em           D
 Bodies brewed and frigid winter air
-
       Am                Em     D            C
 Where families son's are robbed beneath their feet
-
-    Em     D       Am          Em    D
+    Em     D       Am          Em    D           Am
 And hearts concede "Ab Ovo," the angel sings "Ad astra"
-
     Em          D      Am
 Our eyes to the sea, we thought that we had
-
   Em        D             Em
 A cause for suffering, and reason not to die alone
-
 D
 Oh but
 
-
 *Repeat Chorus*
-
 Em                            Am
 With our feet beneath us, and our hands to the sky
-
    C                        A#        A#     A#/C
 We extend our limbs begging "why, oh, why?"
-
            Am    Em    Am   Em  D
 Don't turn away
 
-
 G   C   Em  D  C  C/B
 
-
 *Repeat Pre-Chorus*
-
 A           B           E        G#     A
 Prayers from above never answered quite enough
-
 F#m      B         E       G#       A
 Looking up, never offered you too much
-
         F#m           Am
 Now the only one you have is...
 #+END_SRC

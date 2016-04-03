@@ -1,13 +1,13 @@
 + [[../index.org][Home]]
-
-* The Dear Hunter
+* Songs
+** The Dear Hunter
 + [[./home.org][Home]]
 + [[./what_it_means_to_be_alone.org][What It Means to Be Alone]]
 + [[./the_things_that_hide_away.org][The Things That Hide Away]]
-+ [[./lillian.org][Lillian]]
++ [[./lillian.org][Lillan]]
 + [[./red_hands.org][Red Hands]]
-* The Antlers
+** The Antlers
 + [[./two.org][Two]]
 + [[./bear.org][Bear]]
-* Death Cab For Cutie
+** Death Cab For Cutie
 + [[./i_will_follow_you_into_the_dark.org][I Will Follow You Into The Dark]]

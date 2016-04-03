@@ -66,15 +66,15 @@
    10. [X] Definitions
    11. [X] Follow-up resources
 6. [ ] Typeclasses
-   1. [ ] Typeclasses ...........................164
-   2. [ ] Whataretypeclasses?.....................164
-   3. [ ] BacktoBool...........................165
-   4. [ ] Eq .................................166
-   5. [ ] Num................................168
-   6. [ ] Type-defaultingtypeclasses................. 171
-   7. [ ] Ord ................................174
-   8. [ ] Enum...............................177
-   9. [ ] Show ...............................178
+   1. [ ] Typeclasses
+   2. [ ] What are type classes?
+   3. [ ] Back to Bool
+   4. [ ] Eq
+   5. [ ] Num
+   6. [ ] Type-defaulting typeclasses
+   7. [ ] Ord
+   8. [ ] Enum
+   9. [ ] Show
    10. [ ] Read................................182
    11. [ ] Instancesaredispatchedbytype . . . . . . . . . . . . . 183
    12. [ ] Writingtypeclassinstances .................186
