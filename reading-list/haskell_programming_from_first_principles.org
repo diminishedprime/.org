@@ -83,10 +83,10 @@
    15. [X] Chapter Definitions
    16. [X] Typeclass inheritance, partial
    17. [X] Follow-up resources
-7. [ ] More functional patterns 207
-   1. [ ] Makeitfunc-y .........................208
-   2. [ ] Arguments............................208
-   3. [ ] Bindingvariablestovalues .................210
+7. [-] More functional patterns 207
+   1. [X] Make it func-y
+   2. [X] Arguments
+   3. [ ] Binding variables to values
    4. [ ] Anonymousfunctions ....................213
    5. [ ] Patternmatching........................215
    6. [ ] Caseexpressions........................223
