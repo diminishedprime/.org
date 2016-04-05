@@ -48,7 +48,7 @@
      (print-rat (add-rat one-third one-third))
    #+END_SRC
 2) [X] Abstraction Barriers
-3) [ ] What is meant by data?
+3) [X] What is meant by data?
    #+BEGIN_SRC scheme
      (define (cons x y)
        (define (dispatch m)
