@@ -1,0 +1,90 @@
+        1. [X] Expressions
+           #+BEGIN_SRC scheme
+             (+ 137 349)
+
+             ;; Prefix notation is very nice, and allows for more flexibility in
+             ;; the number of arguments passed to a function. For exapmle, with the
+             ;; * function
+             (* 1 2 3 4 5)
+           #+END_SRC
+        2. [X] Naming and The Environment
+           #+BEGIN_SRC scheme
+             (define size 2)
+             (* 5 size)
+           #+END_SRC
+        3. [X] Evaluating Combinations
+           + Define is the first special form we meet. It is an
+             exception to the the general evaluation rule.
+           + "Syntactic sugar causes cancer of the semicolon." - Alan Perlis
+        4. [X] Compound Procedures
+           #+BEGIN_SRC scheme
+             (define (square x) (* x x))
+
+             ;; The general form of a procedure definition is as follows
+             ;; (define (⟨name⟩ ⟨formal parameters⟩) ⟨body⟩)
+
+             ;; Using the procedure
+             (square 21)
+             ;; => 441
+             (square (square 3))
+             ;; => 81
+
+             ;;Using square as a building block
+             (define (sum-of-squares x y)
+               ( + (square x)
+                   (square y)))
+             (sum-of-squares 3 4)
+             ;; => 25
+           #+END_SRC
+        5. [X] The Substitution Model for Procedure Application
+           #+BEGIN_SRC scheme
+             ;;evaluation of a function.
+             (define (f a)
+               (sum-of-squares (+ a 1) (* a 2)))
+             (f 5)
+             ;; first we retrieve the body of of f:
+             ;; (sum-of-squares (+ a 1) (* a 2))
+             ;; then we replace the formal parameter a by the argument 5
+             (sum-of-squares (+ 5 1) (* 5 2))
+             (sum-of-squares 6 10)
+             (+ (square 6) (square 10))
+             (+ (* 6 6) (* 10 10))
+             (+ 36 100)
+             136
+             ;; This process is called the /substitution model/ for procedure
+             ;; application.
+
+             ;; Alternatively the applicative order could be taken
+             (sum-of-squares (+ 5 1) (* 5 2))
+             (+ (square (+ 5 1)) (square (* 5 2)))
+             (+ (* (+ 5 1) (+ 5 1)) (* (* 5 2) (* 5 2)))
+             (+ (* 6 6) (* 10 10))
+             (+ 36 100)
+             136
+           #+END_SRC
+        6. [X] Conditional Expressions and Predicates
+        7. [X] Example: Square Roots by Newton’s Method
+           #+BEGIN_SRC scheme
+             (define sqrt-iter
+               (lambda (guess x)
+                 (if (good-enough? guess x)
+                     guess
+                     (sqrt-iter (improve guess x) x))))
+             (define improve
+               (lambda (guess x)
+                 (average guess (/ x guess))))
+             (define average
+               (lambda (x y)
+                 (/ (+ x y) 2)))
+             (define good-enough?
+               (lambda (guess x)
+                 (< (abs (- (square guess) x)) 0.001)))
+             (define sqrt
+               (lambda (x)
+                 (sqrt-iter 1.0 x)))
+             (define square
+               (lambda (x)
+                 (* x x)))
+             (sqrt 9)
+           #+END_SRC
+        8. [X] Procedures as Black-Box Abstractions
