@@ -1,4 +1,4 @@
-* Chapter 2 Exercises [78%]
+* TODO Chapter 2 Exercises [81%]
 1. [ ] Exercise 2.1
 2. [X] Exercise 2.2
     #+BEGIN_SRC scheme
@@ -427,7 +427,7 @@
       ;; interval. Engineers usually specify percentage tolerances on the parameters
       ;; of devices, as in the resistor specifications given earlier.
     #+END_SRC
-12. [X] Exercise 2.12
+12. [ ] Exercise 2.12
     #+BEGIN_SRC scheme
       ;; Define a constructor make-center-percent that takes a center and a percentage
       ;; tolerance and produces the desired interval. You must also define a selector
@@ -683,4 +683,411 @@
 
       ;; The value returned by the call to for-each (not illustrated above) can be
       ;; something arbitrary, such as true. Give an implementation of for-each.
+    #+END_SRC
+24. [X] Exercise 2.24
+    #+BEGIN_SRC scheme
+      ;; Suppose we evaluate the expression (list 1 (list 2 (list 3 4))). Give the
+      ;; result printed by the interpreter, the corresponding box-and-pointer
+      ;; structure, and the interpretation of this as a tree (as in figure 2.6).
+
+      ;; I can't really draw since this is only text, but I'll do my best
+
+      '(1 (2 (3 4)))
+
+      [*] [*] ---> [*] [/]
+       |            |
+       v            v
+      [1]          [*] [*] ---> [*] [/]
+                    |            |
+                    v            v
+                   [2]          [*] [*] ---> [*] [/]
+                                 |            |
+                                 v            v
+                                [3]          [4]
+
+                        (list 1 (list 2 (list 3 4)))
+                            /          \
+                           1       (list 2 (list 3 4))
+                                     /         \
+                                    2        (list 3 4)
+                                                /   \
+                                               3     4
+    #+END_SRC
+25. [X] Exercise 2.25
+    #+BEGIN_SRC scheme
+      ;; Give combinations of cars and cdrs that will pick 7 from each of the
+      ;; following lists:
+      (car
+       (cdr
+        (car
+         (cdr
+          (cdr
+           '(1 3 (5 7) 9)
+           ) ;; (3 (5 7) 9)
+          ) ;; ((5 7) 9)
+         ) ;; (5 7)
+        ) ;; (7)
+       ) ;; 7
+
+      (car
+       (car
+        '((7))
+        ) ;; (7)
+       ) ;; 7
+
+      (car (cdr (car (cdr (car (cdr (car (cdr (car (cdr (car (cdr '(1 (2 (3 (4 (5 (6 7))))))))))))))))))
+    #+END_SRC
+26. [X] Exercise 2.26
+    #+BEGIN_SRC scheme
+      ;; Suppose we define x and y to be two lists:
+
+      (define x (list 1 2 3))
+      (define y (list 4 5 6))
+
+      ;; What result is printed by the interpreter in response to evaluating each of
+      ;; the following expressions:
+
+      (append x y) ;; => (1 2 3 4 5 6)
+
+      (cons x y) ;; => ((1 2 3) 4 5 6)
+
+      (list x y) ;; => ((1 2 3) (4 5 6))
+    #+END_SRC
+27. [X] Exercise 2.27
+    #+BEGIN_SRC scheme
+      ;; Modify your reverse procedure of exercise 2.18 to produce a deep-reverse
+      ;; procedure that takes a list as argument and returns as its value the list
+      ;; with its elements reversed and with all sublists deep-reversed as well. For
+      ;; example,
+
+      (define reverse
+        (lambda (l)
+          (cond
+           ((null? l) l)
+           (else (append (reverse (cdr l))
+                         (list (car l)))))))
+
+      (define (deep-reverse items)
+        (define (iter items acc)
+          (cond
+           ((null? items) acc)
+           ((list? (car items)) (iter (cdr items)
+                                      (append (list (deep-reverse (car items))) acc)))
+           (else (iter (cdr items)
+                       (append (list (car items)) acc)))))
+        (iter items '()))
+
+      (define x (list (list 1 2) (list 3 4)))
+
+      x ;; => ((1 2) (3 4))
+
+      (reverse x) ;; => ((3 4) (1 2))
+
+      (deep-reverse x) ;; => ((4 3) (2 1))
+
+    #+END_SRC
+28. [X] Exercise 2.28
+    #+BEGIN_SRC scheme
+      ;; Write a procedure fringe that takes as argument a tree (represented as a
+      ;; list) and returns a list whose elements are all the leaves of the tree
+      ;; arranged in left-to-right order. For example,
+
+      (define fringe
+        (lambda (tree)
+          (cond
+           ((null? tree) tree)
+
+           ((list? (car tree)) (append (fringe (car tree))
+                                       (fringe (cdr tree))))
+
+           (else (cons (car tree)
+                       (fringe (cdr tree)))))))
+
+      (define x (list (list 1 2) (list 3 4)))
+
+      (fringe x) ;; => (1 2 3 4)
+
+      (fringe (list x x)) ;; => (1 2 3 4 1 2 3 4)
+    #+END_SRC
+29. [X] Exercise 2.29
+    #+BEGIN_SRC scheme
+      ;; A binary mobile consists of two branches, a left branch and a right branch.
+      ;; Each branch is a rod of a certain length, from which hangs either a weight or
+      ;; another binary mobile. We can represent a binary mobile using compound data
+      ;; by constructing it from two branches (for example, using list):
+
+      (define (make-mobile left right)
+        (list left right))
+
+      ;; A branch is constructed from a length (which must be a number) together with
+      ;; a structure, which may be either a number (representing a simple weight) or
+      ;; another mobile:
+
+      (define (make-branch length structure)
+        (list length structure))
+
+      ;; a. Write the corresponding selectors left-branch and right-branch, which
+      ;; return the branches of a mobile, and branch-length and branch-structure,
+      ;; which return the components of a branch.
+
+      (define first
+        (lambda (l)
+          (car l)))
+
+      (define second
+        (lambda (l)
+          (first (cdr l))))
+
+      (define left-branch
+        (lambda (mobile)
+          (first mobile)))
+
+      (define right-branch
+        (lambda (mobile)
+          (second mobile)))
+
+      (define branch-length
+        (lambda (branch)
+          (first branch)))
+
+      (define branch-structure
+        (lambda (branch)
+          (second branch)))
+
+      ;; b. Using your selectors, define a procedure total-weight that returns the
+      ;; total weight of a mobile.
+
+      (define total-weight
+        (lambda (structure)
+          (cond
+           ((number? structure) structure)
+           (else (let ((l-branch (left-branch structure))
+                       (r-branch (right-branch structure)))
+                   (let ((r-struct (branch-structure r-branch))
+                         (l-struct (branch-structure l-branch)))
+                     (+ (total-weight l-struct)
+                        (total-weight r-struct))))))))
+
+      ;; c. A mobile is said to be balanced if the torque applied by its top-left
+      ;; branch is equal to that applied by its top-right branch (that is, if the
+      ;; length of the left rod multiplied by the weight hanging from that rod is
+      ;; equal to the corresponding product for the right side) and if each of the
+      ;; submobiles hanging off its branches is balanced. Design a predicate that
+      ;; tests whether a binary mobile is balanced.
+
+      (define balanced-simple
+        (make-mobile
+         (make-branch 2 3)
+         (make-branch 3 2)))
+
+      (define balanced-complex
+        (make-mobile
+         (make-branch 2 (make-mobile
+                         (make-branch 6 2)
+                         (make-branch 3 4)))
+         (make-branch 2 6)))
+
+      (define unbalanced-simple
+        (make-mobile
+         (make-branch 2 3)
+         (make-branch 3 200)))
+
+      (define unbalanced-complex
+        (make-mobile
+         (make-branch 2 (make-mobile
+                         (make-branch 6 2)
+                         (make-branch 3 4)))
+         (make-branch 2 60)))
+
+      (define structure-mobile?
+        (lambda (structure)
+          (not (number? structure))))
+
+      (define torque
+        (lambda (branch)
+          (* (total-weight (branch-structure branch))
+             (branch-length branch))))
+
+      (define mobile-balanced?
+        (lambda (mobile)
+          (let ((l-branch (left-branch mobile))
+                (r-branch (right-branch mobile)))
+            (let ((r-struct (branch-structure r-branch))
+                  (l-struct (branch-structure l-branch)))
+              (and (if (structure-mobile? r-struct) (mobile-balanced? r-struct) #t)
+                   (if (structure-mobile? l-struct) (mobile-balanced? l-struct) #t)
+                   (eq? (torque l-branch)
+                        (torque r-branch)))))))
+
+      ;; d. Suppose we change the representation of mobiles so that the constructors
+      ;; are
+
+      (define (make-mobile left right)
+        (cons left right))
+      (define (make-branch length structure)
+        (cons length structure))
+
+      ;; How much do you need to change your programs to convert to the new
+      ;; representation?
+
+      ;; All I need to change is the selectors.
+
+      (define left-branch
+        (lambda (mobile)
+          (car mobile)))
+
+      (define right-branch
+        (lambda (mobile)
+          (cdr mobile)))
+
+      (define branch-length
+        (lambda (branch)
+          (car branch)))
+
+      (define branch-structure
+        (lambda (branch)
+          (cdr branch)))
+
+
+      ;; Mapping over trees
+
+      ;; Just as map is a powerful abstraction for dealing with sequences, map
+      ;; together with recursion is a powerful abstraction for dealing with trees. For
+      ;; instance, the scale-tree procedure, analogous to scale-list of section 2.2.1,
+      ;; takes as arguments a numeric factor and a tree whose leaves are numbers. It
+      ;; returns a tree of the same shape, where each number is multiplied by the
+      ;; factor. The recursive plan for scale-tree is similar to the one for
+      ;; count-leaves:
+
+      (define (scale-tree tree factor)
+        (cond ((null? tree) nil)
+              ((not (pair? tree)) (* tree factor))
+              (else (cons (scale-tree (car tree) factor)
+                          (scale-tree (cdr tree) factor)))))
+
+      (scale-tree (list 1 (list 2 (list 3 4) 5) (list 6 7))
+                  10) ;; => (10 (20 (30 40) 50) (60 70))
+
+      ;; Another way to implement scale-tree is to regard the tree as a sequence of
+      ;; sub-trees and use map. We map over the sequence, scaling each sub-tree in
+      ;; turn, and return the list of results. In the base case, where the tree is a
+      ;; leaf, we simply multiply by the factor:
+
+      (define (scale-tree tree factor)
+        (map (lambda (sub-tree)
+               (if (pair? sub-tree)
+                   (scale-tree sub-tree factor)
+                   (* sub-tree factor)))
+             tree))
+
+      ;; Many tree operations can be implemented by similar combinations of sequence
+      ;; operations and recursion.
+    #+END_SRC
+30. [X] Exercise 2.30
+    #+BEGIN_SRC scheme
+      ;; Define a procedure square-tree analogous to the square-list procedure of
+      ;; exercise 2.21. That is, square-list should behave as follows:
+
+      ;; Define square-tree both directly (i.e., without using any higher-order
+      ;; procedures) and also by using map and recursion.
+
+      (define square
+        (lambda (num)
+          (* num num)))
+
+      (define (square-tree-1 tree)
+        (cond ((null? tree) '())
+              ((not (pair? tree)) (square tree))
+              (else (cons (square-tree-1 (car tree))
+                          (square-tree-1 (cdr tree))))))
+
+      (square-tree-1
+       (list 1
+             (list 2 (list 3 4) 5)
+             (list 6 7))) ;; => (1 (4 (9 16) 25) (36 49))
+
+      (define (square-tree-2 tree)
+        (map (lambda (sub-tree)
+               (if (pair? sub-tree)
+                   (square-tree-2 sub-tree)
+                   (square sub-tree)))
+             tree))
+
+      (square-tree-2
+       (list 1
+             (list 2 (list 3 4) 5)
+             (list 6 7))) ;; => (1 (4 (9 16) 25) (36 49))
+
+
+    #+END_SRC
+31. [X] Exercise 2.31
+    #+BEGIN_SRC scheme
+      ;; Abstract your answer to exercise 2.30 to produce a procedure tree-map with
+      ;; the property that square-tree could be defined as
+
+      (define (tree-map fn tree)
+        (map (lambda (sub-tree)
+               (if (pair? sub-tree)
+                   (tree-map fn sub-tree)
+                   (fn sub-tree)))
+             tree))
+
+      (define square
+        (lambda (n)
+          (* n n)))
+
+      (define (square-tree tree) (tree-map square tree))
+    #+END_SRC
+32. [X] Exercise 2.32
+    #+BEGIN_SRC scheme
+      ;; We can represent a set as a list of distinct elements, and we can represent
+      ;; the set of all subsets of the set as a list of lists. For example, if the set
+      ;; is (1 2 3), then the set of all subsets is (() (3) (2) (2 3) (1) (1 3) (1 2)
+      ;; (1 2 3)). Complete the following definition of a procedure that generates the
+      ;; set of subsets of a set and give a clear explanation of why it works:
+
+      (define (subsets s)
+        (if (null? s)
+            (list '())
+            (let ((rest (subsets (cdr s))))
+              (append rest (map
+                            (lambda (x)
+                              (append (list (car s)) x))
+                            rest)))))
+
+      ;; 1. Let's think about what rest will be the first time it's called with '(1 2
+      ;; 3). rest will be the subsets of '(2 3). Now lets see what that will be.
+
+      ;; 2. Let's think about what rest will be ... '(2 3). rest will be the subsets
+      ;; of '(3). Now let's see what that will be.
+
+      ;; 3. Let's think about what rest will be ... '(3). rest will be the subsets of
+      ;; '(). We know the answer to this. It's '(()).
+
+      ;; 4. Now we can go back to step 2 and continue with the second half. With rest
+      ;; being '(()), we will fill in the code as follows.
+      (append '(()) (map
+                     (lambda (x)
+                       (append (list (car '(3))) x))
+                     '(())))
+      ;; Since we're only mapping over one piece of data, let's go ahead and replace
+      ;; into this one.
+      (lambda ( '(3) )
+        (append (list (car '(3))) '()))
+
+      (append (list (car '(3))) '())
+
+      (append (list 3) '())
+      (append '(3) '())
+      ;; And now that map is done, we append rest with '(3)
+      (append '(()) '(3)) ;; => '(() (3))
+      ;; This gives us '(() (3)) which are the subsets of '(3).
+
+      ;; If you follow this same line of logic, you can see why mapping over (() (3))
+      ;; and then appending that will give us the subsets of '(2 3). Following this
+      ;; logic further leads up to getting the subsets of '(1 2 3)
+
+      (subsets '(1 2 3))
+
+
     #+END_SRC
