@@ -1,0 +1,61 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Smallest multiple
+*** Problem 5
+2520 is the smallest number that can be divided by each of the numbers from 1 to
+10 without any remainder.
+
+What is the smallest positive number that is evenly divisible by all of the
+numbers from 1 to 20?
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (defn gen-primes "Generates an infinite, lazy sequence of prime numbers"
+    []
+    (let [reinsert (fn [table x prime]
+                     (update-in table [(+ prime x)] conj prime))]
+      (defn primes-step [table d]
+        (if-let [factors (get table d)]
+          (recur (reduce #(reinsert %1 d %2) (dissoc table d) factors)
+                 (inc d))
+          (lazy-seq (cons d (primes-step (assoc table (* d d) (list d))
+                                         (inc d))))))
+      (primes-step {} 2)))
+
+  (defn add-factor-to-map
+    [acc factor]
+    (merge-with + acc {factor 1}))
+
+  (defn prime-factors-helper
+    [my-num possible-factors acc]
+    (let [[current-factor & other-factors] possible-factors]
+      (if current-factor
+        (cond
+          (< my-num current-factor) acc
+          (zero? (mod my-num current-factor)) (recur (/ my-num current-factor)
+                                                     possible-factors
+                                                     (add-factor-to-map acc current-factor))
+          :else (recur my-num other-factors acc))
+        (if (not= my-num 1)
+          (add-factor-to-map acc my-num)
+          acc))))
+
+  (defn prime-factors
+    [my-num]
+    (let [primes (gen-primes)
+          possible-factors (take-while
+                            #(<= (* % %) my-num) primes)]
+      (prime-factors-helper my-num possible-factors {})))
+
+  (defn multiply-factor-map
+    [factor-map]
+    (reduce *
+            (map (fn [[k v]]
+                   (bigint (Math/pow k v))) factor-map)))
+
+  (multiply-factor-map
+   (apply merge-with max
+
+          (map prime-factors (rest (range 20))))) ;; => 232792560N
+#+END_SRC

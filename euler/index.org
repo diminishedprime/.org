@@ -7,3 +7,4 @@ username: mjhclojure
 2. [[./002.org][Even Fibonacci Numbers]]
 3. [[./003.org][Largest Prime Factor]]
 4. [[./004.org][Largest Palindrome Product]]
+5. [[./005.org][Smallest Multiple]]
