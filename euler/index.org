@@ -3,8 +3,9 @@
 username: mjhclojure
 
 * Project Euler
-1. [[./001.org][Multiples of 3 and 5]]
-2. [[./002.org][Even Fibonacci Numbers]]
-3. [[./003.org][Largest Prime Factor]]
-4. [[./004.org][Largest Palindrome Product]]
-5. [[./005.org][Smallest Multiple]]
+1. [X] [[./001.org][Multiples of 3 and 5]]
+2. [X] [[./002.org][Even Fibonacci Numbers]]
+3. [X] [[./003.org][Largest Prime Factor]]
+4. [X] [[./004.org][Largest Palindrome Product]]
+5. [X] [[./005.org][Smallest Multiple]]
+6. [X] [[./006.org][Sum Square Difference]]
