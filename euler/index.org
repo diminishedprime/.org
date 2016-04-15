@@ -6,3 +6,4 @@ username: mjhclojure
 1. [[./001.org][Multiples of 3 and 5]]
 2. [[./002.org][Even Fibonacci Numbers]]
 3. [[./003.org][Largest Prime Factor]]
+4. [[./004.org][Largest Palindrome Product]]

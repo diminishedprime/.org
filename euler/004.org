@@ -1,0 +1,49 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Largest palindrome product
+*** Problem 4
+A palindromic number reads the same both ways. The largest palindrome made from
+the product of two 2-digit numbers is 9009 = 91 × 99.
+
+Find the largest palindrome made from the product of two 3-digit numbers.
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (defn palindrome?
+    [my-seq]
+    (= (seq my-seq)
+       (reverse my-seq)))
+
+  (def num-palindrome? (comp palindrome? str))
+
+  (defn nums-from-n-to-m
+    [n m]
+    (filter #(<= n %) (range (+ 1 m))))
+
+  (defn m-product-of-n-digit-numbers?
+    [n number]
+    (let [lower-bound (Math/pow 10 (dec n))
+          upper-bound (dec (Math/pow 10 n))
+          options (reverse (nums-from-n-to-m
+                            (+ 1 lower-bound)
+                            upper-bound))
+          divisible-and-within-bounds (fn [div]
+                                        (when (and (zero? (mod number div))
+                                                   (< lower-bound (/ number div ) upper-bound))
+                                          true))]
+      (->> options
+           (map divisible-and-within-bounds)
+           (some identity))))
+
+  (let [num-digits 3
+        lower-bound (Math/pow 10 (dec num-digits))
+        upper-bound (dec (Math/pow 10 num-digits))
+        ]
+    (->> (nums-from-n-to-m (* lower-bound lower-bound)
+                           (* upper-bound upper-bound))
+         reverse
+         (filter num-palindrome?)
+         (filter (partial m-product-of-n-digit-numbers? num-digits))
+         first)) ;; => 906609
+#+END_SRC
