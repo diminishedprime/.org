@@ -1,0 +1,41 @@
+* Largest prime factor
+*** Problem 3
+The prime factors of 13195 are 5, 7, 13 and 29.
+
+What is the largest prime factor of the number 600851475143 ?
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (defn gen-primes "Generates an infinite, lazy sequence of prime numbers"
+    []
+    (let [reinsert (fn [table x prime]
+                     (update-in table [(+ prime x)] conj prime))]
+      (defn primes-step [table d]
+        (if-let [factors (get table d)]
+          (recur (reduce #(reinsert %1 d %2) (dissoc table d) factors)
+                 (inc d))
+          (lazy-seq (cons d (primes-step (assoc table (* d d) (list d))
+                                         (inc d))))))
+      (primes-step {} 2)))
+
+  (defn prime-factors-helper
+    [my-num possible-factors acc]
+    (let [[current-factor & other-factors] possible-factors]
+      (if current-factor
+        (cond
+          (< my-num current-factor) acc
+          (zero? (mod my-num current-factor)) (recur (/ my-num current-factor)
+                                                     possible-factors
+                                                     (conj acc current-factor))
+          :else (recur my-num other-factors acc))
+        acc)))
+
+  (defn prime-factors
+    [my-num]
+    (let [primes (gen-primes)
+          possible-factors (take-while
+                            #(<= (* % %) my-num) primes)]
+      (prime-factors-helper my-num possible-factors [])))
+
+  (apply max (prime-factors 600851475143)) ;; => 6857
+#+END_SRC
