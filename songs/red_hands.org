@@ -59,10 +59,9 @@ Take off your sweater your shoes and your shirt and get to work
 BAHHHH BAHHHH's: Same
 Bridge:
 
-1        3-                     5
-
+4                     1      3-
 Oh my god what have I done
-1                                 5                   3-
+4                       1            3-
 Now my darling put your clothes back on
 1         3-                   5
 Oh my god what have I done
@@ -76,7 +75,7 @@ cause you cant be caught red handed
 If you're not red handed
          4                                  1             3-
 My darling if I ever said those words to you
-               4                                      1                  3-
+               4     5          6                  2 7
 I was pulling out my heart so I could pin it to my sleeve
             4                               1            3-
 A display for you to see Im on display
