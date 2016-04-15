@@ -9,3 +9,4 @@ username: mjhclojure
 4. [X] [[./004.org][Largest Palindrome Product]]
 5. [X] [[./005.org][Smallest Multiple]]
 6. [X] [[./006.org][Sum Square Difference]]
+7. [X] [[./007.org][10001st Prime]]
