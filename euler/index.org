@@ -10,3 +10,4 @@ username: mjhclojure
 5. [X] [[./005.org][Smallest Multiple]]
 6. [X] [[./006.org][Sum Square Difference]]
 7. [X] [[./007.org][10001st Prime]]
+8. [X] [[./008.org][Largest Product in a Series]]
