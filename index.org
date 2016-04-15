@@ -3,6 +3,7 @@
 + [[./running.org][Running Log]]
 + [[./money/index.org][Money Things]]
 + [[./diary.org.gpg][Diary]]
++ [[./euler/index.org][Project Euler]]
 + [[./programming_ideas.org][Programming Ideas]]
 + [[./conferences/index.org][Conferences]]
 + [[./songs/index.org][Songs]]
