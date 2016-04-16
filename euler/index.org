@@ -20,3 +20,4 @@ username: mjhclojure
 15. [X] [[./015.org][Lattice Paths]]
 16. [X] [[./016.org][Power Digit Sum]]
 17. [X] [[./017.org][Number Letter Counts]]
+18. [X] [[./018.org][Maximum Path Sum I]]
