@@ -1,0 +1,48 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Amicable numbers
+*** Problem 21
+Let d(n) be defined as the sum of proper divisors of n (numbers less than n
+which divide evenly into n). If d(a) = b and d(b) = a, where a ≠ b, then a and b
+are an amicable pair and each of a and b are called amicable numbers.
+
+For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55
+and 110; therefore d(220) = 284. The proper divisors of 284 are 1, 2, 4, 71 and
+142; so d(284) = 220.
+
+Evaluate the sum of all the amicable numbers under 10000.
+
+#+BEGIN_SRC clojure
+  (require '[clojure.set :as set])
+
+  (defn factor [n]
+    (->> n
+         Math/sqrt
+         inc
+         (range 1)
+         (filter #(zero? (rem n %)))
+         (mapcat (fn [x] [x (/ n x)]))
+         (into (sorted-set))))
+
+  (defn proper-divisors-of
+    [n]
+    (let [all-factors (factor n)]
+      (set/difference all-factors #{n})))
+
+  (defn amicable-candidate
+    [n]
+    (let [proper-divisors (proper-divisors-of n)
+          candidate (reduce + proper-divisors)]
+      candidate))
+
+  (defn amicable?
+    [n]
+    (let [once (amicable-candidate n)]
+      (and (not= n once)
+           (= n (amicable-candidate once)))))
+
+  (->> (range 1 10000)
+       (filter amicable?)
+       (reduce +)) ;; => 31626
+#+END_SRC
