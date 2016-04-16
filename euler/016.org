@@ -1,0 +1,21 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Power digit sum
+*** Problem 16
+2^15 = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
+
+What is the sum of the digits of the number 2^1000?
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (defn pow [a b]
+    (reduce * (repeat b a)))
+
+  (->> 1000
+       (pow 2N)
+       str
+       (map str)
+       (map #(Integer/parseInt %))
+       (reduce +)) ;; => 1366
+#+END_SRC
