@@ -17,3 +17,4 @@ username: mjhclojure
 12. [X] [[./012.org][Highly Divisible Triangle Number]]
 13. [X] [[./013.org][Large Sum]]
 14. [X] [[./014.org][Longest Collatz Sequence]]
+15. [X] [[./015.org][Lattice Paths]]

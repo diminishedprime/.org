@@ -1,0 +1,29 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Lattice paths
+*** Problem 15
+Starting in the top left corner of a 2×2 grid, and only being able to move to
+the right and down, there are exactly 6 routes to the bottom right corner.
+
+[[./resources/p015.gif]]
+
+How many such routes are there through a 20×20 grid?
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (def f!
+    #(reduce * 1N (rest (range (inc %)))))
+
+  (def memo-f! (memoize f!))
+
+  (defn combination [n k]
+    (cond (zero? n) 0
+          (zero? k) 1
+          :else (/ (memo-f! n)
+                   (* (memo-f! (- n k))
+                      (memo-f! k)))))
+
+  (combination (* 2 20)
+               20) ;; => 137846528820N
+#+END_SRC
