@@ -22,3 +22,4 @@ username: mjhclojure
 17. [X] [[./017.org][Number Letter Counts]]
 18. [X] [[./018.org][Maximum Path Sum I]]
 19. [X] [[./019.org][Counting Sundays]]
+20. [X] [[./020.org][Factorial Digit Sum]]
