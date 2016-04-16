@@ -26,3 +26,4 @@ username: mjhclojure
 21. [X] [[./021.org][Amicable Numbers]]
 22. [X] [[./022.org][Names scores]]
 23. [X] [[./023.org][Non-abundant Sums]]
+24. [X] [[./024.org][Lexicographic Permutations]]
