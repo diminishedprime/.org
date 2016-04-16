@@ -1,0 +1,59 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Longest Collatz sequence
+*** Problem 14
+The following iterative sequence is defined for the set of positive integers:
+
+n -> n/2 (n is even)
+n -> 3n + 1 (n is odd)
+
+Using the rule above and starting with 13, we generate the following sequence:
+
+13 -> 40 -> 20 -> 10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1
+
+It can be seen that this sequence (starting at 13 and finishing at 1) contains
+10 terms. Although it has not been proved yet (Collatz Problem), it is thought
+that all starting numbers finish at 1.
+
+Which starting number, under one million, produces the longest chain?
+
+NOTE: Once the chain starts the terms are allowed to go above one million.
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (defn next-colatz
+    [n]
+    (if (even? n)
+      (/ n 2)
+      (inc (* n 3))))
+
+  (defn collatz-chain-for
+    [n]
+    (take-while #(> % 1) (iterate next-colatz n)))
+
+  (def collatz-map (atom {1 '(1)
+                          2 '(2 1)}))
+
+  (defn memoized-collatz
+    [n]
+    (if-let [answer (get @collatz-map n)]
+      answer
+      (let [next-seq (memoized-collatz (next-colatz n))]
+        (swap! collatz-map
+               (fn [old-map]
+                 (assoc old-map
+                        n (conj next-seq n))))
+        (memoized-collatz n))))
+
+  (defn max-count
+    [seq-1 seq-2]
+    (if (< (count seq-1)
+           (count seq-2)) seq-2 seq-1))
+
+  (->> (range 1000000)
+       rest
+       (map memoized-collatz)
+       (reduce max-count)
+       first) ;; => 837799
+#+END_SRC
