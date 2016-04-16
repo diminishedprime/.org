@@ -15,3 +15,4 @@ username: mjhclojure
 10. [X] [[./010.org][Summation of Primes]]
 11. [X] [[./011.org][Largest Product in a Grid]]
 12. [X] [[./012.org][Highly Divisible Triangle Number]]
+13. [X] [[./013.org][Large Sum]]
