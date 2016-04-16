@@ -12,3 +12,4 @@ username: mjhclojure
 7. [X] [[./007.org][10001st Prime]]
 8. [X] [[./008.org][Largest Product in a Series]]
 9. [X] [[./009.org][Special Pythagorean Triplet]]
+10. [X] [[./010.org][Summation of Primes]]
