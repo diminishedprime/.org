@@ -24,3 +24,4 @@ username: mjhclojure
 19. [X] [[./019.org][Counting Sundays]]
 20. [X] [[./020.org][Factorial Digit Sum]]
 21. [X] [[./021.org][Amicable Numbers]]
+22. [X] [[./022.org][Names scores]]
