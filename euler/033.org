@@ -1,0 +1,67 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Digit cancelling fractions
+*** Problem 33
+The fraction 49/98 is a curious fraction, as an inexperienced mathematician in
+attempting to simplify it may incorrectly believe that 49/98 = 4/8, which is
+correct, is obtained by cancelling the 9s.
+
+We shall consider fractions like, 30/50 = 3/5, to be trivial examples.
+
+There are exactly four non-trivial examples of this type of fraction, less than
+one in value, and containing two digits in the numerator and denominator.
+
+If the product of these four fractions is given in its lowest common terms, find
+the value of the denominator.
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (defn digit-seq [number] (map #(Integer/parseInt (str %)) (str number)))
+
+  (defn in-seq? [element my-seq]
+    (boolean (some #{element} my-seq)))
+
+  (defn has-digit? [digit n]
+    (in-seq? digit (digit-seq n)))
+
+  (defn remove-digit [n digit]
+    (let [str-digit (str digit)
+          str-n (str n)
+          index-of (.indexOf str-n str-digit)]
+      (Integer/parseInt
+       (str (.substring str-n 0 index-of)
+            (.substring str-n (inc index-of))))))
+
+  (defn cancel-same [n d]
+    (let [digits-in-both (filter (fn [i]
+                                   (when (and (has-digit? i n)
+                                              (has-digit? i d))
+                                     [n d])) (range 1 10))]
+      (cond
+        (not (seq digits-in-both)) [n d]
+        (and (> n 9)
+             (> d 9)) (cancel-same (remove-digit n (first digits-in-both))
+                                   (remove-digit d (first digits-in-both)))
+        :else [:nope :nope])))
+
+  (def two-digit-options (filter #(not (zero? (mod % 10)))
+                                 (range 10 100)))
+
+  (defn matches-property [n d]
+    (let [[n-2 d-2] (cancel-same n d)]
+      (if (and (not (keyword n-2))
+               (not= n-2 n)
+               (not= d-2 d))
+        (= (/ n d)
+           (/ n-2 d-2))
+        false)))
+
+  (->> (for [n two-digit-options
+             d two-digit-options
+             :when (and (< n d)
+                        (matches-property n d))]
+         (/ n d))
+       (reduce *)
+       (denominator)) ;; => 100
+#+END_SRC

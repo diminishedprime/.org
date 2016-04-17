@@ -35,3 +35,4 @@ username: mjhclojure
 30. [X] [[./030.org][Digit Fifth Powers]]
 31. [X] [[./031.org][Coin Sums]]
 32. [X] [[./032.org][Pandigital Products]]
+33. [X] [[./033.org][Digit Cancelling Fractions]]
