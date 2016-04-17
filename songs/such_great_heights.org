@@ -1,4 +1,9 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Song Index]]
+
 * Such Great Heights
+** Iron and Wine
+   Standard tuning, capo on 6th fret.
 
 MAIN RIFF...
 E|-------6----------------------9-------------9----------------------------------6----------9------|
@@ -8,64 +13,49 @@ D|-----8-----8-----8-----8----6------6------6------6---6-----6-----6-----6-----8
 A|--9-----9-----9-----9----------6h8--------------------9-----9-----9-----9-9-----9----------6h8---|
 E|--------------------------9------------9------9----7-----7-----7-----7---------------6-----------|
 
-** The Postal Service
-C                    G
-I am thinking it's a sign that the freckles
-       F5                         C
-in our eyes are mirror images and when
-                G
+High-pitched thing at the end but maybe down a few octaves...
+E|--6-7-6---6-9-11-9---9-7-7-6---6-6-7-6---9-9-6-6-|
+G|--7-----7---9------9---7-----7---7-----7-9-----7-|
+B|--6---------6----------8---------6-------6-----6-|
+D|--8---------6----------9---------8-------6-----8-|
+A|--9---------8----------9---------9-------8-----9-|
+E|------------9----------7-----------------9-------|
+
+The first riff composes pretty much the whole song, with some hammer ons added to the
+second and last chord shapes.
+Lyrics, for added convenience, are as follows, and are organized per riff(So for
+each line written, you play the riff once.) You should be able
+to pick up the tempo fairly quickly, it's pretty straightforward.
+
+--
+(Riff x2)
+
+I'm thinking it's a sign that the freckles in our eyes are mirror images and when
 we kiss they're perfectly aligned
-    C              G
-And I have to speculate that God himself
-    F5                         C
-did make us into corresponding shapes like
-       G
+and I have to speculate that god himself did make us into corresponding shapes like
 puzzle pieces from the clay
-C                       G
-True it may seem like a stretch, but
-                            F5
-its thoughts like this that catch my troubled
-                 C              G
-head when you're away when I am missing you to death
-C                             G
-When you are out there on the road for
-                 F5
-several weeks of shows, and when you scan
-        C             G
-the radio I hope this song will guide you home
+and true, it may seeem like a stretch, but it's thoughts like this that catch my
+troubled head when you're away when I am missing you to death
+when you're there on the road for several weeks of shows and when you scan the
+radio I hope this song will guide you home
 
-Chorus:
-C                            G
-They will see us waving from such great
-                F5                C    G
-heights, "come down now" they'll say
-    C                             G
-but everything looks perfect from far away,
-       F5                    C    G
-"come down now", but we'll stay
+(CHORUS)
+They will see us waving from such great heights, come down now, they'll say
+but everything looks perfect from far away, come down now, but we'll stay
 
-C                  G
-I tried my best to leave this song on your
-   F5                              C
-machine but the persistent beat it sounded
-     G
-thin upon listening
-C                     G
-That frankly will not fly. you will hear
-              F5
-the shrillest highs and lowest lows with
-       C                   G
-the windows down when this is guiding you home
+I try my best to leave this all on your machine but the persistent beat it
+sounded thin upon listening
+and that frankly will not fly, you will hear the shrillest highs and lowest
+lows with the windows down when this is guiding you home
 
-Chorus:
-C                            G
-They will see us waving from such great
-                F5                C    G
-heights, "come down now" they'll say
-    C                             G
-but everything looks perfect from far away,
-       F5                    C    G
-"come down now", but we'll stay
+(CHORUS)
+they will see us waving from such great heights, come down now they'll say
+but everything looks perfect from far away, come down now, but we'll stay
 
-Outro
-C,G,F5,C,G X2
+(Riff x1 as everything fades out. I've more or less transcribed the mandolin part if you
+like playing that, but I won't really call it an outro or whatever.)
+--
+
+Great song. Very soft, very mellow.
+I think my tab's fairly accurate, please rate away. When I feel even MORE proactive I'll
+it up relative to the capo.

@@ -1,4 +1,5 @@
 + [[../index.org][Home]]
+
 * Songs
 ** The Dear Hunter
 + [[./home.org][Home]]
@@ -11,3 +12,5 @@
 + [[./bear.org][Bear]]
 ** Death Cab For Cutie
 + [[./i_will_follow_you_into_the_dark.org][I Will Follow You Into The Dark]]
+** Death Cab For Cutie
++ [[./such_great_heights.org][Such Great Heights]]
