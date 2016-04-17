@@ -28,3 +28,4 @@ username: mjhclojure
 23. [X] [[./023.org][Non-abundant Sums]]
 24. [X] [[./024.org][Lexicographic Permutations]]
 25. [X] [[./025.org][1000-digit Fibonacci Number]]
+26. [X] [[./026.org][Reciprocal Cycles]]
