@@ -32,3 +32,4 @@ username: mjhclojure
 27. [X] [[./027.org][Quadratic Primes]]
 28. [X] [[./028.org][Number Spiral Diagonals]]
 29. [X] [[./029.org][Distinct Powers]]
+30. [X] [[./030.org][Digit Fifth Powers]]
