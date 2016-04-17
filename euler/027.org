@@ -1,0 +1,85 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Quadratic primes
+*** Problem 27
+Euler discovered the remarkable quadratic formula:
+
+n² + n + 41
+
+It turns out that the formula will produce 40 primes for the consecutive values
+n = 0 to 39. However, when n = 40, 402 + 40 + 41 = 40(40 + 1) + 41 is divisible
+by 41, and certainly when n = 41, 41² + 41 + 41 is clearly divisible by 41.
+
+The incredible formula n² − 79n + 1601 was discovered, which produces 80 primes
+for the consecutive values n = 0 to 79. The product of the coefficients, −79 and
+1601, is −126479.
+
+Considering quadratics of the form:
+
+n² + an + b, where |a| < 1000 and |b| < 1000
+
+where |n| is the modulus/absolute value of n
+
+e.g. |11| = 11 and |−4| = 4
+
+Find the product of the coefficients, a and b, for the quadratic expression that
+produces the maximum number of primes for consecutive values of n, starting with
+n = 0.
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (defn gen-primes "Generates an infinite, lazy sequence of prime numbers"
+    []
+    (let [reinsert (fn [table x prime]
+                     (update-in table [(+ prime x)] conj prime))]
+      (defn primes-step [table d]
+        (if-let [factors (get table d)]
+          (recur (reduce #(reinsert %1 d %2) (dissoc table d) factors)
+                 (inc d))
+          (lazy-seq (cons d (primes-step (assoc table (* d d) (list d))
+                                         (inc d))))))
+      (primes-step {} 2)))
+
+  (def primes (gen-primes))
+
+  (defn prime?
+    [n]
+    (if (< n 2)
+      false
+      (boolean
+       (some (fn [prime]
+               (= prime n))
+             (take-while #(<= % n) primes)))))
+
+  (def fast-prime? (memoize prime?))
+
+  (defn quadratic-for [a b]
+    (fn [n]
+      (+ (* n n)
+         (* a n)
+         b)))
+
+  (defn consecutive-primes [quadratic]
+    (take-while fast-prime?
+                (map quadratic (range))))
+
+  (defn custom-product [[a b _]]
+    (* a b))
+
+  (defn also-negative [seq]
+    (concat seq
+            (map - seq)))
+
+  (->> (for [a (range -999 1000)
+             b (also-negative (take-while #(< % 1000) primes))]
+         [a b (quadratic-for a b)])
+       (map (fn [[a b quadratic]]
+              [a b (consecutive-primes quadratic)]))
+       (reduce (fn [[a-1 b-1 consequtive-primes-1 :as one]
+                    [a-2 b-2 consequtive-primes-2 :as two]]
+                 (if (> (count consequtive-primes-1)
+                        (count consequtive-primes-2))
+                   one two)))
+       custom-product) ;; => -59231
+#+END_SRC
