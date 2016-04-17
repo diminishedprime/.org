@@ -39,3 +39,4 @@ username: mjhclojure
 34. [X] [[./034.org][Digit Factorials]]
 35. [X] [[./035.org][Circular Primes]]
 36. [X] [[./036.org][Double-base Palindromes]]
+37. [X] [[./037.org][Truncatable Primes]]

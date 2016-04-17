@@ -1,0 +1,73 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Truncatable primes
+*** Problem 37
+The number 3797 has an interesting property. Being prime itself, it is possible
+to continuously remove digits from left to right, and remain prime at each
+stage: 3797, 797, 97, and 7. Similarly we can work from right to left: 3797,
+379, 37, and 3.
+
+Find the sum of the only eleven primes that are both truncatable from left to
+right and right to left.
+
+NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (defn gen-primes "Generates an infinite, lazy sequence of prime numbers"
+    []
+    (let [reinsert (fn [table x prime]
+                     (update-in table [(+ prime x)] conj prime))]
+      (defn primes-step [table d]
+        (if-let [factors (get table d)]
+          (recur (reduce #(reinsert %1 d %2) (dissoc table d) factors)
+                 (inc d))
+          (lazy-seq (cons d (primes-step (assoc table (* d d) (list d))
+                                         (inc d))))))
+      (primes-step {} 2)))
+
+  (def primes (gen-primes))
+
+  (defn prime?
+    [n]
+    (if (< n 2)
+      false
+      (boolean
+       (some (fn [prime]
+               (= prime n))
+             (take-while #(<= % n) primes)))))
+
+  (def fast-prime? (memoize prime?))
+
+  (defn num-rest [n]
+    (Integer/parseInt (.substring (str n) 1)))
+
+  (defn num-but-rest [n]
+    (Integer/parseInt (.substring (str n) 0
+                                  (dec (.length (str n))))))
+
+  (defn left-truncatable?
+    [p]
+    (cond
+      (< p 10) (fast-prime? p)
+      :else (and (fast-prime? (num-rest p))
+                 (left-truncatable? (num-rest p)))))
+
+  (defn right-truncatable?
+    [p]
+    (cond
+      (< p 10) (fast-prime? p)
+      :else (and (fast-prime? (num-but-rest p))
+                 (right-truncatable? (num-but-rest p)))))
+
+  (def memo-left? (memoize left-truncatable?))
+  (def memo-right? (memoize right-truncatable?))
+
+  (->> primes
+       (filter (complement #{2 3 5 7}))
+       (filter memo-left?)
+       (filter memo-right?)
+       (take 11)
+       (reduce +)) ;; => 748317
+#+END_SRC
