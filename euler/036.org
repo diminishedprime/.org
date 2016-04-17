@@ -1,0 +1,33 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Double-base palindromes
+*** Problem 36
+The decimal number, 585 = 10010010012 (binary), is palindromic in both bases.
+
+Find the sum of all numbers, less than one million, which are palindromic in
+base 10 and base 2.
+
+(Please note that the palindromic number, in either base, may not include
+leading zeros.)
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (def palindrome? #(= (seq (str %))
+                       (reverse (str %))))
+
+  (defn to-radix
+    [r int]
+    (.toString (biginteger int) r))
+
+  (defn from-radix
+    [r str]
+    (BigInteger. str r))
+
+  (->> (range 1 1000000)
+       (filter palindrome?)
+       (map (partial to-radix 2))
+       (filter palindrome?)
+       (map (partial from-radix 2))
+       (reduce +)) ;; => 872187
+#+END_SRC
