@@ -37,3 +37,4 @@ username: mjhclojure
 32. [X] [[./032.org][Pandigital Products]]
 33. [X] [[./033.org][Digit Cancelling Fractions]]
 34. [X] [[./034.org][Digit Factorials]]
+35. [X] [[./035.org][Circular Primes]]

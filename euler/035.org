@@ -1,0 +1,62 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Circular primes
+*** Problem 35
+The number, 197, is called a circular prime because all rotations of the digits:
+197, 971, and 719, are themselves prime.
+
+There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71,
+73, 79, and 97.
+
+How many circular primes are there below one million?
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (defn gen-primes "Generates an infinite, lazy sequence of prime numbers"
+    []
+    (let [reinsert (fn [table x prime]
+                     (update-in table [(+ prime x)] conj prime))]
+      (defn primes-step [table d]
+        (if-let [factors (get table d)]
+          (recur (reduce #(reinsert %1 d %2) (dissoc table d) factors)
+                 (inc d))
+          (lazy-seq (cons d (primes-step (assoc table (* d d) (list d))
+                                         (inc d))))))
+      (primes-step {} 2)))
+
+  (def primes (gen-primes))
+
+  (defn rotations
+    [my-seq]
+    (let [size (count my-seq)]
+      (take size (partition size 1 (cycle my-seq)))))
+
+  (defn seq->num [my-seq]
+    (Integer/parseInt (apply str (map str my-seq))))
+
+  (defn num->seq [num]
+    (map #(Integer/parseInt (str %)) (str num)))
+
+  (def primes-under-a-million (->> primes (take-while #(< % 1000000))))
+  (def primes-under-a-million-set (set primes-under-a-million))
+
+  (defn all-prime? [my-seq]
+    (every? primes-under-a-million-set my-seq))
+
+  (defn bad-number-for-cycle [n]
+    (not-any? #{\2 \4 \5 \6 \8} (str n)))
+
+  (defn invalid-candidate? [n]
+    (when (or (#{2 4 5 6 8} n)
+              (bad-number-for-cycle n))
+      true))
+
+  (->> primes-under-a-million
+       (filter invalid-candidate?)
+       (map num->seq)
+       (map rotations)
+       (map #(map seq->num %))
+       (filter all-prime?)
+       count) ;; => 55
+#+END_SRC
