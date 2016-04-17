@@ -30,3 +30,4 @@ username: mjhclojure
 25. [X] [[./025.org][1000-digit Fibonacci Number]]
 26. [X] [[./026.org][Reciprocal Cycles]]
 27. [X] [[./027.org][Quadratic Primes]]
+28. [X] [[./028.org][Number Spiral Diagonals]]
