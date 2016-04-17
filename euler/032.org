@@ -1,0 +1,52 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Pandigital products
+*** Problem 32
+We shall say that an n-digit number is pandigital if it makes use of all the
+digits 1 to n exactly once; for example, the 5-digit number, 15234, is 1 through
+5 pandigital.
+
+The product 7254 is unusual, as the identity, 39 × 186 = 7254, containing
+multiplicand, multiplier, and product is 1 through 9 pandigital.
+
+Find the sum of all products whose multiplicand/multiplier/product identity can
+be written as a 1 through 9 pandigital.
+
+HINT: Some products can be obtained in more than one way so be sure to only
+include it once in your sum.
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (defn different-digits? [a b c]
+    (= (count (str a b c))
+       (count (set (str a b c)))))
+
+  (defn unique-digits? [a]
+    (apply distinct? (str a)))
+
+  (defn no-zero? [num]
+    (every? #(not= % \0) (str num)))
+
+  (def one-digit-numbers (range 1 10))
+  (def two-digit-numbers (filter unique-digits? (filter no-zero? (range 10 100))))
+  (def three-digit-numbers (filter unique-digits? (filter no-zero? (range 100 1000))))
+  (def four-digit-numbers (filter unique-digits? (filter no-zero? (range 1000 10000))))
+
+  (->> (concat
+        (for [one-digit one-digit-numbers
+              four-digit four-digit-numbers
+              :when (and (< (* one-digit four-digit) 9999)
+                         (no-zero? (* one-digit four-digit))
+                         (different-digits? one-digit four-digit (* one-digit four-digit)))]
+          [one-digit four-digit (* one-digit four-digit)])
+        (for [two-digit two-digit-numbers
+              three-digit three-digit-numbers
+              :when (and (< (* two-digit three-digit) 9999)
+                         (no-zero? (* two-digit three-digit))
+                         (different-digits? two-digit three-digit (* two-digit three-digit)))]
+          [two-digit three-digit (* two-digit three-digit)]))
+       (map (fn [[ _ _ product]] product))
+       distinct
+       (reduce +)) ;; => 45228
+#+END_SRC
