@@ -1,0 +1,32 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Problem 40
+*** Champernowne's Constant
+ An irrational decimal fraction is created by concatenating the positive integers:
+
+0.123456789101112131415161718192021...
+
+It can be seen that the 12th digit of the fractional part is 1.
+
+If dn represents the nth digit of the fractional part, find the value of the
+following expression.
+
+d1 × d10 × d100 × d1000 × d10000 × d100000 × d1000000
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (defn digits-of [n]
+    (map #(Integer/parseInt (str %)) (str n)))
+
+
+  (def champ (mapcat digits-of (rest (range))))
+
+  (* (nth champ 999999)
+     (nth champ 99999)
+     (nth champ 9999)
+     (nth champ 999)
+     (nth champ 99)
+     (nth champ 9)
+     (nth champ 0)) ;; => 210
+#+END_SRC

@@ -42,3 +42,4 @@ username: mjhclojure
 37. [X] [[./037.org][Truncatable Primes]]
 38. [X] [[./038.org][Pandigital Multiples]]
 39. [X] [[./039.org][Integer Right Triangles]]
+40. [X] [[./040.org][Champernowne's Constant]]
