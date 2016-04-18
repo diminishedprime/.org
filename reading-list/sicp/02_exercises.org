@@ -1,4 +1,4 @@
-i* TODO Chapter 2 Exercises [74%]
+* TODO Chapter 2 Exercises [79%]
 1. [ ] Exercise 2.1
 2. [X] Exercise 2.2
     #+BEGIN_SRC scheme
@@ -1287,7 +1287,7 @@ i* TODO Chapter 2 Exercises [74%]
 
       ;; the associative property
     #+END_SRC
-39. [ ] Exercise 2.39.
+39. [X] Exercise 2.39.
     #+BEGIN_SRC scheme
       ;; Complete the following definitions of reverse (exercise 2.18) in terms of
       ;; fold-right and fold-left from exercise 2.38:
@@ -1313,6 +1313,13 @@ i* TODO Chapter 2 Exercises [74%]
       ;; positive integer n, find all ordered pairs of distinct positive integers i
       ;; and j, where 1< j< i< n, such that i + j is prime. For example, if n is 6,
       ;; then the pairs are the following:
+
+      ;; |-----+---+---+---+---+---+---+----|
+      ;; | i   | 2 | 3 | 4 | 4 | 5 | 6 |  6 |
+      ;; | j   | 1 | 2 | 1 | 3 | 2 | 1 |  5 |
+      ;; |-----+---+---+---+---+---+---+----|
+      ;; | i+j | 3 | 5 | 5 | 7 | 7 | 7 | 11 |
+      ;; |-----+---+---+---+---+---+---+----|
 
       ;; A natural way to organize this computation is to generate the sequence of all
       ;; ordered pairs of positive integers less than or equal to n, filter to select
@@ -1397,14 +1404,55 @@ i* TODO Chapter 2 Exercises [74%]
         (filter (lambda (x) (not (= x item)))
                 sequence))
     #+END_SRC
-
-40. [ ] Exercise 2.40
+40. [X] Exercise 2.40
     #+BEGIN_SRC scheme
-    Define a procedure unique-pairs that, given an integer n, generates the sequence of pairs (i,j) with 1< j< i< n. Use unique-pairs to simplify the definition of prime-sum-pairs given above.
+      ;; Define a procedure unique-pairs that, given an integer n, generates the
+      ;; sequence of pairs (i,j) with 1< j< i< n. Use unique-pairs to simplify the
+      ;; definition of prime-sum-pairs given above.
+
+      (define (accumulate op initial sequence)
+        (if (null? sequence)
+            initial
+            (op (car sequence)
+                (accumulate op initial (cdr sequence)))))
+
+      (define (flatmap proc seq)
+        (accumulate append '() (map proc seq)))
+
+      (define enumerate-interval
+        (lambda (from to)
+          (cond
+           ((>= from to) '())
+           (else (cons from (enumerate-interval (+ from 1) to))))))
+
+      (define unique-pairs
+        (lambda (n)
+          (flatmap (lambda (i)
+                     (map (lambda (j)
+                            (list i j))
+                          (enumerate-interval 1 i)))
+                   (enumerate-interval 1 n))))
     #+END_SRC
 41. [ ] Exercise 2.41
     #+BEGIN_SRC scheme
-    Write a procedure to find all ordered triples of distinct positive integers i, j, and k less than or equal to a given integer n that sum to a given integer s.
+      ;; Write a procedure to find all ordered triples of distinct positive integers
+      ;; i, j, and k less than or equal to a given integer n that sum to a given
+      ;; integer s.
+
+      (define (accumulate op initial sequence)
+        (if (null? sequence)
+            initial
+            (op (car sequence)
+                (accumulate op initial (cdr sequence)))))
+
+      (define (flatmap proc seq)
+        (accumulate append '() (map proc seq)))
+
+      (define enumerate-interval
+        (lambda (from to)
+          (cond
+           ((>= from to) '())
+           (else (cons from (enumerate-interval (+ from 1) to))))))
     #+END_SRC
 42. [ ] Exercise 2.42.
     #+BEGIN_SRC scheme
