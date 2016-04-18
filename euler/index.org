@@ -41,3 +41,4 @@ username: mjhclojure
 36. [X] [[./036.org][Double-base Palindromes]]
 37. [X] [[./037.org][Truncatable Primes]]
 38. [X] [[./038.org][Pandigital Multiples]]
+39. [X] [[./039.org][Integer Right Triangles]]
