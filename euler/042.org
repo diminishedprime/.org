@@ -1,0 +1,47 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Coded triangle numbers
+*** Problem 42
+The nth term of the sequence of triangle numbers is given by, tn = ½n(n+1); so
+the first ten triangle numbers are:
+
+1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ...
+
+By converting each letter in a word to a number corresponding to its
+alphabetical position and adding these values we form a word value. For example,
+the word value for SKY is 19 + 11 + 25 = 55 = t10. If the word value is a
+triangle number then we shall call the word a triangle word.
+
+Using words.txt (right click and 'Save Link/Target As...'), a 16K text file
+containing nearly two-thousand common English words, how many are triangle
+words?
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (defn tri-for
+    [n]
+    (* (/ 1 2) n (inc n)))
+
+  (def triangle-numbers (map tri-for (rest (range))))
+
+  (defn word-score [word]
+    (reduce +
+            (map #(- (int %) 64) word)))
+  (let [data (->>  (str "["(slurp "/Users/mjhamrick/.org/euler/resources/p042_words.txt")"]")
+                   (read-string)
+                   (map #(.toUpperCase %)))
+        longest-count (->> data
+                           (map count)
+                           (apply max))
+        triangle-set (->> triangle-numbers
+                          (take-while #(< % (* longest-count 26)))
+                          set)
+        ]
+    (->> data
+         (map word-score)
+         (filter triangle-set)
+         count)) ;; => 162
+
+
+#+END_SRC
