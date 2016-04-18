@@ -1,0 +1,42 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Pandigital prime
+*** Problem 41
+We shall say that an n-digit number is pandigital if it makes use of all the
+digits 1 to n exactly once. For example, 2143 is a 4-digit pandigital and is
+also prime.
+
+What is the largest n-digit pandigital prime that exists?
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (defn gen-primes "Generates an infinite, lazy sequence of prime numbers"
+    []
+    (let [reinsert (fn [table x prime]
+                     (update-in table [(+ prime x)] conj prime))]
+      (defn primes-step [table d]
+        (if-let [factors (get table d)]
+          (recur (reduce #(reinsert %1 d %2) (dissoc table d) factors)
+                 (inc d))
+          (lazy-seq (cons d (primes-step (assoc table (* d d) (list d))
+                                         (inc d))))))
+      (primes-step {} 2)))
+
+  (def primes (gen-primes))
+
+  (defn num-seq [n]
+    (map #(Integer/parseInt (str %)) (str n)))
+
+  (defn loose-pandigital? [n]
+    (let [as-str (str n)
+          len (count as-str)]
+      (= (set (range 1 (inc len)))
+         (set  (num-seq n)))))
+
+  ;; 8 and 9 digit pandigital numbers are always divisible by 3.
+  (->> primes
+       (take-while #(< % 9999999))
+       (filter loose-pandigital?)
+       last) ;; => 7652413
+#+END_SRC

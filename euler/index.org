@@ -43,3 +43,4 @@ username: mjhclojure
 38. [X] [[./038.org][Pandigital Multiples]]
 39. [X] [[./039.org][Integer Right Triangles]]
 40. [X] [[./040.org][Champernowne's Constant]]
+41. [X] [[./041.org][Pandigital Prime]]
