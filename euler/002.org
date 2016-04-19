@@ -14,14 +14,12 @@ four million, find the sum of the even-valued terms.
 *** Clojure
 #+BEGIN_SRC clojure
   (def fibonacci-numbers
-    (concat [1 1]
-            (lazy-seq
-             (map + fibonacci-numbers (rest fibonacci-numbers)))))
-
-  (def less-than-n (fn [n m] (< m n)))
+    ((fn fib [a b]
+       (lazy-seq (cons a (fib b (+' a b)))))
+     0 1))
 
   (->> fibonacci-numbers
-       (take-while (partial less-than-n 4000000))
+       (take-while #(< % 4000000))
        (filter even?)
        (reduce +)) ;; => 4613732
 #+END_SRC
