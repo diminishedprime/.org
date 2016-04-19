@@ -1,5 +1,5 @@
 * Hierarchical Data and the Closure Property
 1. [X] Representing Sequences
 2. [X] Hierarchical Structures
-3. [ ] Sequences as Conventional Interfaces
+3. [X] Sequences as Conventional Interfaces
 4. [ ] Example: A Picture Language
