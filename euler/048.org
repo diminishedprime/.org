@@ -1,0 +1,23 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Self powers
+*** Problem 48
+The series, 1^1 + 2^2 + 3^3 + ... + 10^10 = 10405071317.
+
+Find the last ten digits of the series, 1^1 + 2^2 + 3^3 + ... + 1000^1000.
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (def self-powers (map #(.pow (biginteger %) %) (rest (range))))
+
+  (->> self-powers
+       (take 1000)
+       (reduce +)
+       str
+       reverse
+       (take 10)
+       reverse
+       (apply str)) ;; => "9110846700"
+
+#+END_SRC

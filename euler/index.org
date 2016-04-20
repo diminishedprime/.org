@@ -50,3 +50,4 @@ username: mjhclojure
 45. [X] [[./045.org][Triangular, Pentagonal, and Hexagonal]]
 46. [X] [[./046.org][Golbach's Other Conjecture]]
 47. [X] [[./047.org][Distinct Prime Factors]]
+48. [X] [[./048.org][Self Powers]]
