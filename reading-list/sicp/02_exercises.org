@@ -1,4 +1,4 @@
-* TODO Chapter 2 Exercises [86%]
+* TODO Chapter 2 Exercises [88%]
 1. [ ] Exercise 2.1
 2. [X] Exercise 2.2
     #+BEGIN_SRC scheme
@@ -1634,4 +1634,259 @@
 
       (define right-split (split beside below))
       (define up-split (split below beside))
+    #+END_SRC
+46. [X] Exercise 2.46
+    #+BEGIN_SRC scheme
+      ;; A two-dimensional vector v running from the origin to a point can be
+      ;; represented as a pair consisting of an x-coordinate and a y-coordinate.
+      ;; Implement a data abstraction for vectors by giving a constructor make-vect
+      ;; and corresponding selectors xcor-vect and ycor-vect. In terms of your
+      ;; selectors and constructor, implement procedures add-vect, sub-vect, and
+      ;; scale-vect that perform the operations vector addition, vector subtraction,
+      ;; and multiplying a vector by a scalar:
+
+      (define make-vect
+        (lambda (x-coord y-coord)
+          (cons x-coord y-coord)))
+
+      (define xcor-vect
+        (lambda (vector)
+          (car vector)))
+
+      (define ycor-vect
+        (lambda (vector)
+          (cdr vector)))
+
+      (define add-vect
+        (lambda (vector-1 vector-2)
+          (make-vect (+ (xcor-vect vector-1)
+                        (xcor-vect vector-2))
+                     (+ (ycor-vect vector-1)
+                        (ycor-vect vector-2)))))
+
+      (define sub-vect
+        (lambda (vector-1 vector-2)
+          (make-vect (- (xcor-vect vector-1)
+                        (xcor-vect vector-2))
+                     (- (ycor-vect vector-1)
+                        (ycor-vect vector-2)))))
+
+      (define scale-vec
+        (lambda (vector scaling-factor)
+          (make-vect (* (xcor-vect vector)
+                        scaling-factor)
+                     (* (ycor-vect vector)
+                        scaling-factor))))
+
+      (list
+
+       (add-vect (make-vect 0 0)
+                 (make-vect 2 -10))
+
+       (sub-vect (make-vect 1 1)
+                 (make-vect 2 -10))
+
+       (scale-vec (make-vect 2 -3)
+                  7.5)
+
+       )
+    #+END_SRC
+47. [X] Exercise 2.47
+    #+BEGIN_SRC scheme
+      ;; Here are two possible constructors for frames:
+
+      (define (make-frame origin edge1 edge2)
+        (list origin edge1 edge2))
+
+      (define select-origin
+        (lambda (frame)
+          (car frame)))
+
+      (define select-edge-1
+        (lambda (frame)
+          (cadr frame)))
+
+      (define select-edge-2
+        (lambda (frame)
+          (caddr frame)))
+
+      ;; 2
+
+      (define (make-frame origin edge1 edge2)
+        (cons origin (cons edge1 edge2)))
+
+      (define select-origin
+        (lambda (frame)
+          (car frame)))
+
+      (define select-edge-1
+        (lambda (frame)
+          (cadr frame)))
+
+      (define select-edge-2
+        (lambda (frame)
+          (cdadr frame)))
+
+      ;; For each constructor supply the appropriate selectors to produce an
+      ;; implementation for frames.
+    #+END_SRC
+48. [X] Exercise 2.48
+    #+BEGIN_SRC scheme
+      ;; A directed line segment in the plane can be represented as a pair of vectors
+      ;; -- the vector running from the origin to the start-point of the segment, and
+      ;; the vector running from the origin to the end-point of the segment. Use your
+      ;; vector representation from exercise 2.46 to define a representation for
+      ;; segments with a constructor make-segment and selectors start-segment and
+      ;; end-segment.
+
+      (define make-vect
+        (lambda (x-coord y-coord)
+          (cons x-coord y-coord)))
+
+      (define xcor-vect
+        (lambda (vector)
+          (car vector)))
+
+      (define ycor-vect
+        (lambda (vector)
+          (cdr vector)))
+
+      (define make-segment
+        (lambda (start end)
+          (cons start end)))
+
+      (define start-segment
+        (lambda (segment)
+          (car segment)))
+
+      (define end-segment
+        (lambda (segment)
+          (cdr segment)))
+
+      (make-segment (make-vec 1 1)
+                    (make-vec 2 2))
+    #+END_SRC
+49. [X] Exercise 2.49
+    #+BEGIN_SRC scheme
+      (define make-vect
+        (lambda (x-coord y-coord)
+          (cons x-coord y-coord)))
+
+      (define xcor-vect
+        (lambda (vector)
+          (car vector)))
+
+      (define ycor-vect
+        (lambda (vector)
+          (cdr vector)))
+
+      (define make-segment
+        (lambda (start end)
+          (cons start end)))
+
+      (define start-segment
+        (lambda (segment)
+          (car segment)))
+
+      (define end-segment
+        (lambda (segment)
+          (cdr segment)))
+
+      (define tl (make-vect 0 1))
+      (define tr (make-vect 1 1))
+      (define bl (make-vect 0 0))
+      (define br (make-vect 1 0))
+
+      ;; Use segments->painter to define the following primitive painters:
+
+      ;; a. The painter that draws the outline of the designated frame.
+      (segments->painter (list
+                          (make-segment bl tl)
+                          (make-segment tl tr)
+                          (make-segment tr br)
+                          (make-segment br bl)))
+
+      ;; b. The painter that draws an ``X'' by connecting opposite corners of the
+      ;; frame.
+      (segments->painter (list
+                          (make-segment bl tr)
+                          (make-segment br tl)))
+
+      ;; c. The painter that draws a diamond shape by connecting the midpoints of the
+      ;; sides of the frame.
+      (define l (make-vect 0 0.5))
+      (define t (make-vect 0.5 1))
+      (define r (make-vect 1 0.5))
+      (define b (make-vect 0.5 0))
+      (segments->painter (list
+                          (make-segment l t)
+                          (make-segment t r)
+                          (make-segment r b)
+                          (make-segment b l)))
+    #+END_SRC
+50. [X] Exercise 2.50
+    #+BEGIN_SRC scheme
+      ;; Define the transformation flip-horiz, which flips painters horizontally, and
+      ;; transformations that rotate painters counterclockwise by 180 degrees and 270
+      ;; degrees.
+
+      (define (transform-painter painter origin corner1 corner2)
+        (lambda (frame)
+          (let ((m (frame-coord-map frame)))
+            (let ((new-origin (m origin)))
+              (painter
+               (make-frame new-origin
+                           (sub-vect (m corner1) new-origin)
+                           (sub-vect (m corner2) new-origin)))))))
+
+      (define flip-horiz
+        (lambda (painter)
+          (transform-painter painter
+                             (make-vect 1.0 0.0)
+                             (make-vect 0.0 0.0)
+                             (make-vect 1.0 1.0))))
+
+      (define rotate180
+        (lambda (painter)
+          (transform-painter painter
+                             (make-vect 1.0 1.0)
+                             (make-vect 0.0 1.0)
+                             (make-vect 1.0 0.0))))
+
+      (define rotate270
+        (lambda (painter)
+          (transform-painter painter
+                             (make-vect 0.0 1.0)
+                             (make-vect 0.0 0.0)
+                             (make-vect 1.0 1.0))))
+    #+END_SRC
+51. [X] Exercise 2.50
+    #+BEGIN_SRC scheme
+      ;; Define the below operation for painters. Below takes two painters as
+      ;; arguments. The resulting painter, given a frame, draws with the first painter
+      ;; in the bottom of the frame and with the second painter in the top. Define
+      ;; below in two different ways -- first by writing a procedure that is analogous
+      ;; to the beside procedure given above, and again in terms of beside and
+      ;; suitable rotation operations (from exercise 2.50).
+
+      (define below
+        (lambda (painter1 painter2)
+          (let ((split-point (make-vect 0.0 0.5)))
+            (let ((paint-bottom
+                   (transform-painter painter1
+                                      (make-vect 0.0 0.0)
+                                      (make-vect 1.0 0.0)
+                                      split-point))
+                  (paint-top
+                   (transform-painter painter2
+                                      split-point
+                                      (make-vect 1.0 0.5)
+                                      (make-vect 0.0 1.0))))
+              (lambda (frame)
+                (paint-bottom frame)
+                (paint-top frame))))))
+
+      (define below-2
+        (lambda (painter1 painter2)
+          (rotate90 (beside (rotate270 painter1) (rotate270 painter2)))))
     #+END_SRC
