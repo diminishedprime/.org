@@ -47,3 +47,4 @@ username: mjhclojure
 42. [X] [[./042.org][Coded Triangle Numbers]]
 43. [X] [[./043.org][Sub-string Divisibility]]
 44. [X] [[./044.org][Pentagon Numbers]]
+45. [X] [[./045.org][Triangular, Pentagonal, and Hexagonal]]
