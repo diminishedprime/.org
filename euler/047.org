@@ -1,0 +1,71 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Distinct primes factors
+*** Problem 47
+The first two consecutive numbers to have two distinct prime factors are:
+
+14 = 2 × 7
+15 = 3 × 5
+
+The first three consecutive numbers to have three distinct prime factors are:
+
+644 = 2² × 7 × 23
+645 = 3 × 5 × 43
+646 = 2 × 17 × 19.
+
+Find the first four consecutive integers to have four distinct prime factors.
+What is the first of these numbers?
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (defn gen-primes "Generates an infinite, lazy sequence of prime numbers"
+    []
+    (let [reinsert (fn [table x prime]
+                     (update-in table [(+ prime x)] conj prime))]
+      (defn primes-step [table d]
+        (if-let [factors (get table d)]
+          (recur (reduce #(reinsert %1 d %2) (dissoc table d) factors)
+                 (inc d))
+          (lazy-seq (cons d (primes-step (assoc table (* d d) (list d))
+                                         (inc d))))))
+      (primes-step {} 2)))
+
+  (def primes (gen-primes))
+
+  (defn prime-factors-helper
+    [my-num possible-factors acc]
+    (let [[current-factor & other-factors] possible-factors]
+      (if current-factor
+        (cond
+          (< my-num current-factor) acc
+          (zero? (mod my-num current-factor)) (recur (/ my-num current-factor)
+                                                     possible-factors
+                                                     (conj acc current-factor))
+          :else (recur my-num other-factors acc))
+        acc)))
+
+  (defn prime-factors
+    [my-num]
+    (let [possible-factors (take-while
+                            #(<= % (/ my-num 2)) primes)]
+      (prime-factors-helper my-num possible-factors [])))
+
+  (defn distinct-prime-factors
+    [my-num]
+    (set (prime-factors my-num)))
+
+  (def distinct-prime-factors-memo (memoize distinct-prime-factors))
+
+  (let [num-consecutive 4]
+    (->> (range)
+         (map (partial + (* 2 3 5 7)))
+         (filter (fn [num]
+                   (>= (count (distinct-prime-factors-memo num)) num-consecutive)))
+         (map (fn [num]
+                (range num (+ num num-consecutive))))
+         (filter (fn [grouping]
+                   (every? #(>= (count %) num-consecutive)
+                           (map distinct-prime-factors grouping))))
+         first)) ;; => (134043 134044 134045 134046)
+#+END_SRC

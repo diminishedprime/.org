@@ -49,3 +49,4 @@ username: mjhclojure
 44. [X] [[./044.org][Pentagon Numbers]]
 45. [X] [[./045.org][Triangular, Pentagonal, and Hexagonal]]
 46. [X] [[./046.org][Golbach's Other Conjecture]]
+47. [X] [[./047.org][Distinct Prime Factors]]
