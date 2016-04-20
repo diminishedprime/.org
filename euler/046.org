@@ -1,0 +1,81 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Goldbach's other conjecture
+*** Problem 46
+It was proposed by Christian Goldbach that every odd composite number can be
+written as the sum of a prime and twice a square.
+
+9 = 7 + 2×12
+15 = 7 + 2×22
+21 = 3 + 2×32
+25 = 7 + 2×32
+27 = 19 + 2×22
+33 = 31 + 2×12
+
+It turns out that the conjecture was false.
+
+What is the smallest odd composite that cannot be written as the sum of a prime
+and twice a square?
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (defn gen-primes "Generates an infinite, lazy sequence of prime numbers"
+    []
+    (let [reinsert (fn [table x prime]
+                     (update-in table [(+ prime x)] conj prime))]
+      (defn primes-step [table d]
+        (if-let [factors (get table d)]
+          (recur (reduce #(reinsert %1 d %2) (dissoc table d) factors)
+                 (inc d))
+          (lazy-seq (cons d (primes-step (assoc table (* d d) (list d))
+                                         (inc d))))))
+      (primes-step {} 2)))
+
+  (def primes (gen-primes))
+
+  (defn primes-under-n
+    [n]
+    (take-while #(< % n) primes))
+
+  (def odds (map #(dec (* 2 %)) (rest (range))))
+
+  (defn gen-composites
+    [odd-primes-list]
+    (let [mutable-primes (atom odd-primes-list)]
+      (filter (fn [odd-number]
+                (if (= (first @mutable-primes)
+                       odd-number)
+                  (do (swap! mutable-primes
+                             (fn [old-value]
+                               (rest old-value)))
+                      false)
+                  true)) (rest odds))))
+
+  (def twice-squares (map #(* 2 % %) (rest (range))))
+
+  (defn squares-under-n
+    [n]
+    (take-while #(< % n) twice-squares))
+
+  (defn any-work?
+    [options]
+    (some (fn [[square prime composite]]
+            (= composite
+               (+ square prime))) options))
+
+  (def third #(nth % 2))
+
+  (->> (for [composite (gen-composites (rest primes))]
+         (let [potential-squares (squares-under-n composite)
+               potenetial-primes (primes-under-n composite)]
+           (for [square potential-squares
+                 prime potenetial-primes
+                 :while (<= (+ square prime)
+                            composite)]
+             [square prime composite])))
+       (filter (complement any-work?))
+       first
+       first
+       third) ;; => 5777
+#+END_SRC
