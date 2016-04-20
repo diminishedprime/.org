@@ -51,3 +51,4 @@ username: mjhclojure
 46. [X] [[./046.org][Golbach's Other Conjecture]]
 47. [X] [[./047.org][Distinct Prime Factors]]
 48. [X] [[./048.org][Self Powers]]
+49. [X] [[./049.org][Prime Permutations]]
