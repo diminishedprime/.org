@@ -45,3 +45,4 @@ username: mjhclojure
 40. [X] [[./040.org][Champernowne's Constant]]
 41. [X] [[./041.org][Pandigital Prime]]
 42. [X] [[./042.org][Coded Triangle Numbers]]
+43. [X] [[./043.org][Sub-string Divisibility]]
