@@ -52,3 +52,4 @@ username: mjhclojure
 47. [X] [[./047.org][Distinct Prime Factors]]
 48. [X] [[./048.org][Self Powers]]
 49. [X] [[./049.org][Prime Permutations]]
+50. [ ] [[./050.org][Consecutive Prime Sum]]

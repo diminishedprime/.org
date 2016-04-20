@@ -1,0 +1,92 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Consecutive prime sum
+*** Problem 50
+The prime 41, can be written as the sum of six consecutive primes:
+
+41 = 2 + 3 + 5 + 7 + 11 + 13
+
+This is the longest sum of consecutive primes that adds to a prime below
+one-hundred.
+
+The longest sum of consecutive primes below one-thousand that adds to a prime,
+contains 21 terms, and is equal to 953.
+
+Which prime, below one-million, can be written as the sum of the most
+consecutive primes?
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (defn prime-sieve-to-n
+    ([^long n]
+     (let [not-prime (doto (boolean-array (inc n))
+                       (aset 0 true)
+                       (aset 1 true))
+           primes (long-array (inc n))]
+       (loop [p (int 0), i (int 2)]
+         (if (<= i n)
+           (if (aget ^booleans not-prime i)
+             (recur p (inc i))
+             (do
+               (aset ^longs primes p i)
+               (loop [j (* 2 i)]
+                 (when (<= j n)
+                   (aset ^booleans not-prime j true)
+                   (recur (+ j i))))
+               (recur (inc p) (inc i))))
+           (take p primes))))))
+
+  (defn make-bidi []
+    (with-meta {} {}))
+
+  (defn assoc-bidi [h k v]
+    (vary-meta (assoc h k v)
+               assoc v k))
+
+  (defn dissoc-bidi [h k]
+    (let [v (h k)]
+      (vary-meta (dissoc h k)
+                 dissoc v)))
+
+  (defn getkey [h v]
+    ((meta h) v))
+
+
+
+  (->> (let [biggest 100
+             primes-under-1-mil (vec (prime-sieve-to-n biggest))
+             primes-set (set primes-under-1-mil)
+             highest-index (dec (count primes-under-1-mil))
+             cummulative-sum-primes (vec (reductions + primes-under-1-mil))
+             primes-sums->index (apply merge (map-indexed (fn [i j]
+                                                            {j (get primes-under-1-mil i)})
+                                                          cummulative-sum-primes))]
+         (for [i (range highest-index)]
+           (for [j (range i)]
+             (let [prime-i (get primes-under-1-mil i)
+                   prime-j (get primes-under-1-mil j)]
+               [prime-i prime-j]
+               )
+             )))
+       (mapcat identity)
+
+       )
+
+  (take 10 (reductions +' (prime-sieve-to-n 15)))
+
+  ;; In order to search for the prime with the given property I used two nested
+  ;; loops. The outer loop (i) counted upwards through the cumulative sum, and the
+  ;; inner loop (j) counted downwards starting from the current index of the outer
+  ;; loop. This is still a lot of candidates to go through so I used two things to
+  ;; speed the search up a bit.
+
+  ;; First of all a large part of the cumulative sum is greater than 1.000.000 and
+  ;; subtracting something from it might also be also be larger than the limit. By
+  ;; the construction of the loops I know that as soon as f(i) – f(j) > 1.000.000
+  ;; I can break out of the inner loop.
+
+  ;; One further thing is that I mentioned I started with j = i -1, but that isn’t
+  ;; necessary. If we have already found a prime which consists of n consecutive
+  ;; primes we might as well start from j = i-n-1.
+#+END_SRC
