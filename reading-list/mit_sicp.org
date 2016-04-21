@@ -3,14 +3,15 @@
 
 *  [[./books/sicp.pdf][Structure and Intrepretation of Computer Programs]]
 by Harold Abelson and Gerald Jay Sussman with Julie Sussman
-+ [ ] Book Completed [0%]
++ [-] Book Completed [0%]
   1. [ ] Building Abstractions With Procedures
      1. [ ] [[./sicp/01_01_the_elements_of_programming.org][The Elements of Programming]]
      2. [ ] [[./sicp/01_02_procedures_and_the_processes_they_generate.org][Procedures and the Processes They Generate]]
      3. [ ] [[./sicp/01_03_formulating_abstractions_with_higher_order_procedures.org][Formulating Abstractions with Higher-Order Procedures]]
-  2. [ ] Building Abstractions With Data
+  2. [-] Building Abstractions With Data
      1. [ ] [[./sicp/02_01_introduction_to_data_abstraction.org][Introduction to Data Abstraction]]
-     2. [ ] [[./sicp/02_02_hierarchical_data_and_the_closure_property.org][Hierarchical Data and the Closure Property]]
+     2. [X] [[./sicp/02_02_hierarchical_data_and_the_closure_property.org][Hierarchical Data and the Closure Property]]
+     3. [ ] [[./sicp/02_03_symbolic_data.org][Symbolic Data]]
 
 + [ ] Exercises. Solutions can be found [[http://community.schemewiki.org/?SICP-Solutions][here]]
   1. [ ] [[./sicp/01_exercises.org][Exercises]]
