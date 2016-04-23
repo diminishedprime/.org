@@ -10,7 +10,8 @@ by Harold Abelson and Gerald Jay Sussman with Julie Sussman
      3. [X] [[./sicp/01_03_formulating_abstractions_with_higher_order_procedures.org][Formulating Abstractions with Higher-Order Procedures]]
   2. [ ] Building Abstractions With Data
      1. [ ] [[./sicp/02_01_introduction_to_data_abstraction.org][Introduction to Data Abstraction]]
-     2. [ ] [[./sicp/02_02_hierarchical_data_and_the_closure_property.org][Hierarchical Data and the Closure Property]]
+     2. [X] [[./sicp/02_02_hierarchical_data_and_the_closure_property.org][Hierarchical Data and the Closure Property]]
+     3. [ ] [[./sicp/02_03_symbolic_data.org][Symbolic Data]]
 
 + [-] Exercises. Solutions can be found [[http://community.schemewiki.org/?SICP-Solutions][here]]
   1. [X] [[./sicp/01_exercises.org][Exercises]]

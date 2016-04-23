@@ -1,3 +1,6 @@
++ [[../../index.org][Main Index]]
++ [[../mit_sicp.org][Book Index]]
+
 1) [X] Example: Arithmetic Operations for rational numbers
    #+BEGIN_SRC scheme
      (define (make-rat n d)

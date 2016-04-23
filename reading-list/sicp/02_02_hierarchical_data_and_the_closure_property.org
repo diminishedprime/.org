@@ -5,4 +5,4 @@
 1. [X] Representing Sequences
 2. [X] Hierarchical Structures
 3. [X] Sequences as Conventional Interfaces
-4. [ ] Example: A Picture Language
+4. [X] Example: A Picture Language

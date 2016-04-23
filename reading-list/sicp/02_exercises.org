@@ -1,7 +1,7 @@
 + [[../index.org][Reading Index]]
 + [[../mit_sicp.org][SICP]]
 
-* TODO Chapter 2 Exercises [88%]
+* TODO Chapter 2 Exercises [89%]
 1. [ ] Exercise 2.1
 2. [X] Exercise 2.2
     #+BEGIN_SRC scheme
@@ -1863,7 +1863,7 @@
                              (make-vect 0.0 0.0)
                              (make-vect 1.0 1.0))))
     #+END_SRC
-51. [X] Exercise 2.50
+51. [X] Exercise 2.51
     #+BEGIN_SRC scheme
       ;; Define the below operation for painters. Below takes two painters as
       ;; arguments. The resulting painter, given a frame, draws with the first painter
@@ -1892,4 +1892,348 @@
       (define below-2
         (lambda (painter1 painter2)
           (rotate90 (beside (rotate270 painter1) (rotate270 painter2)))))
+    #+END_SRC
+52. [X] Exercise 2.51
+    #+BEGIN_SRC scheme
+      ;; Make changes to the square limit of wave shown in figure 2.9 by working at
+      ;; each of the levels described above. In particular:
+
+      ;; a. Add some segments to the primitive wave painter of exercise 2.49 (to add a
+      ;; smile, for example).
+      (define wave
+        (segments->painter (list
+                            ;; Nah...
+                            (make-segment (make-vect 0.44 0.7) (make-vect 0.51 0.7)))))
+
+      ;; b. Change the pattern constructed by corner-split (for example, by using only
+      ;; one copy of the up-split and right-split images instead of two).
+      (define (corner-split painter n)
+        (if (= n 0)
+            painter
+            (beside (below painter (up-split painter (- n 1)))
+                    (below (right-split painter (- n 1)) (corner-split painter (- n 1))))))
+
+      ;; c. Modify the version of square-limit that uses square-of-four so as to
+      ;; assemble the corners in a different pattern. (For example, you might make the
+      ;; big Mr. Rogers look outward from each corner of the square.)
+      (define (square-limit painter n)
+        (let ((combine4 (square-of-four flip-vert rotate180
+                                        identity flip-horiz)))
+          (combine4 (corner-split painter n))))
+    #+END_SRC
+53. [X] Exercise 2.53
+    #+BEGIN_SRC scheme
+      ;; What would the interpreter print in response to evaluating each of the
+      ;; following expressions?
+
+      (list 'a 'b 'c) ;; => (a b c)
+
+      (list (list 'george)) ;; => ((george))
+
+      (cdr '((x1 x2) (y1 y2))) ;; => ((y1 y2))
+
+      (cadr '((x1 x2) (y1 y2))) ;; => (y1 y2)
+
+      (pair? (car '(a short list))) ;; => #f
+
+      (memq 'red '((red shoes) (blue socks))) ;; => #f
+
+      (memq 'red '(red shoes blue socks)) ;; => (red shoes blue socks)
+    #+END_SRC
+54. [X] Exercise 2.54
+    #+BEGIN_SRC scheme
+      ;; Two lists are said to be equal? if they contain equal elements arranged in
+      ;; the same order. For example,
+
+      (equal? '(this is a list) '(this is a list))
+
+      ;; is true, but
+
+      (equal? '(this is a list) '(this (is a) list))
+
+      ;; is false. To be more precise, we can define equal? recursively in terms of
+      ;; the basic eq? equality of symbols by saying that a and b are equal? if they
+      ;; are both symbols and the symbols are eq?, or if they are both lists such that
+      ;; (car a) is equal? to (car b) and (cdr a) is equal? to (cdr b). Using this
+      ;; idea, implement equal? as a procedure.
+
+      (define equal?
+        (lambda (l1 l2)
+          (cond
+           ((null? l1) (null? l2))
+           ((and (symbol? (car l1))
+                 (symbol? (car l2))) (and (eq? (car l1)
+                                               (car l2))
+                                          (equal? (cdr l1)
+                                                  (cdr l2))))
+           ((and (pair? (car l1))
+                 (pair? (car l2))) (and (equal? (car l1)
+                                                (car l2))
+                                        (equal? (cdr l1)
+                                                (cdr l2))))
+           (else #f))))
+
+      (list (equal? '(this is a list) '(this is a list))
+            (equal? '(this is a list) '(this (is a) list)))
+    #+END_SRC
+55. [X] Exercise 2.55
+    #+BEGIN_SRC scheme
+      ;; Eva Lu Ator types to the interpreter the expression
+
+      (car ''abracadabra)
+
+      ;; To her surprise, the interpreter prints back quote. Explain.
+
+      ;; If you get rid of one of the quotes and evaluate 'abacadabra, you get back
+      ;; the symbol abacadabra, if you quote this, you get back (quote abracadabra).
+      ;; Therefore, the first will be quote.
+    #+END_SRC
+56. [X] Exercise 2.56
+    #+BEGIN_SRC scheme
+      ;; Show how to extend the basic differentiator to handle more kinds of
+      ;; expressions. For instance, implement the differentiation rule
+
+      ;; d (u ^ n)                     du
+      ;; --------- = n (u ^ (n - 1)) -------
+      ;;    dx                         dx
+
+      ;; by adding a new clause to the deriv program and defining appropriate
+      ;; procedures exponentiation?, base, exponent, and make-exponentiation. (You may
+      ;; use the symbol ** to denote exponentiation.) Build in the rules that anything
+      ;; raised to the power 0 is 1 and anything raised to the power 1 is the thing
+      ;; itself.
+
+      (define (exponentiation? x)
+        (and (pair? x) (eq? (car x) '**)))
+
+      (define (base e) (cadr e))
+
+      (define (exponent e) (caddr e))
+
+      (define (make-exponentiation base exp)
+        (cond ((=number? base 1) 1)
+              ((=number? exp 1) base)
+              ((=number? exp 0) 1)
+              (else (list '** base exp))))
+
+      (define (variable? x) (symbol? x))
+
+      (define (same-variable? v1 v2)
+        (and (variable? v1) (variable? v2) (eq? v1 v2)))
+
+      (define (=number? exp num)
+        (and (number? exp) (= exp num)))
+
+      (define (make-sum a1 a2)
+        (cond
+         ((=number? a1 0) a2)
+         ((=number? a2 0) a1)
+         ((and (number? a1) (number? a2)) (+ a1 a2))
+         (else (list '+ a1 a2))))
+
+      (define (make-product m1 m2)
+        (cond
+         ((or (=number? m1 0) (=number? m2 0)) 0)
+         ((=number? m1 1) m2)
+         ((=number? m2 1) m1)
+         ((and (number? m1) (number? m2)) (* m1 m2))
+         (else (list '* m1 m2))))
+
+      (define (sum? x)
+        (and (pair? x) (eq? (car x) '+)))
+
+      (define (addend s) (cadr s))
+
+      (define (augend s) (caddr s))
+
+      (define (product? x)
+        (and (pair? x) (eq? (car x) '*)))
+
+      (define (multiplier p) (cadr p))
+
+      (define (multiplicand p) (caddr p))
+
+      (define (deriv exp var)
+        (cond ((number? exp) 0)
+              ((variable? exp)
+               (if (same-variable? exp var) 1 0))
+              ((sum? exp)
+               (make-sum (deriv (addend exp) var)
+                         (deriv (augend exp) var)))
+              ((product? exp)
+               (make-sum
+                (make-product (multiplier exp)
+                              (deriv (multiplicand exp) var))
+                (make-product (deriv (multiplier exp) var)
+                              (multiplicand exp))))
+              ((exponentiation? exp)
+               (make-product
+                (make-product
+                 (exponent exp)
+                 (make-exponentiation (base exp)
+                                      (make-sum (exponent exp) -1)))
+                (deriv (base exp) var)))
+              (else
+               (error "unknown expression type -- DERIV" exp))))
+    #+END_SRC
+57. [X] Exercise 2.57
+    #+BEGIN_SRC scheme
+      ;; Extend the differentiation program to handle sums and products of arbitrary
+      ;; numbers of (two or more) terms. Then the last example above could be
+      ;; expressed as
+
+      ;; (deriv '(* x y (+ x 3)) 'x)
+
+      ;; Try to do this by changing only the representation for sums and products,
+      ;; without changing the deriv procedure at all. For example, the addend of a sum
+      ;; would be the first term, and the augend would be the sum of the rest of the
+      ;; terms.
+
+      (define (accumulate op initial sequence)
+        (if (null? sequence)
+            initial
+            (op (car sequence)
+                (accumulate op initial (cdr sequence)))))
+
+      (define (variable? x) (symbol? x))
+
+      (define (same-variable? v1 v2)
+        (and (variable? v1) (variable? v2) (eq? v1 v2)))
+
+      (define (=number? exp num)
+        (and (number? exp) (= exp num)))
+
+      (define (make-sum a1 a2)
+        (cond
+         ((=number? a1 0) a2)
+         ((=number? a2 0) a1)
+         ((and (number? a1) (number? a2)) (+ a1 a2))
+         (else (list '+ a1 a2))))
+
+      (define (make-product m1 m2)
+        (cond
+         ((or (=number? m1 0) (=number? m2 0)) 0)
+         ((=number? m1 1) m2)
+         ((=number? m2 1) m1)
+         ((and (number? m1) (number? m2)) (* m1 m2))
+         (else (list '* m1 m2))))
+
+      (define (sum? x)
+        (and (pair? x) (eq? (car x) '+)))
+
+      (define (addend s) (cadr s))
+
+      (define (augend s)
+        (accumulate make-sum 0 (cddr s)))
+
+      (define (product? x)
+        (and (pair? x) (eq? (car x) '*)))
+
+      (define (multiplier p) (cadr p))
+
+      (define (multiplicand p)
+        (accumulate make-product 1 (cddr  p)))
+
+      (define (deriv exp var)
+        (cond ((number? exp) 0)
+              ((variable? exp)
+               (if (same-variable? exp var) 1 0))
+              ((sum? exp)
+               (make-sum (deriv (addend exp) var)
+                         (deriv (augend exp) var)))
+              ((product? exp)
+               (make-sum
+                (make-product (multiplier exp)
+                              (deriv (multiplicand exp) var))
+                (make-product (deriv (multiplier exp) var)
+                              (multiplicand exp))))
+              (else
+               (error "unknown expression type -- DERIV" exp))))
+
+      (deriv '(* x y (+ x 3)) 'x)
+    #+END_SRC
+58. [X] Exercise 2.58
+    #+BEGIN_SRC scheme
+      ;; Suppose we want to modify the differentiation program so that it works with
+      ;; ordinary mathematical notation, in which + and * are infix rather than prefix
+      ;; operators. Since the differentiation program is defined in terms of abstract
+      ;; data, we can modify it to work with different representations of expressions
+      ;; solely by changing the predicates, selectors, and constructors that define
+      ;; the representation of the algebraic expressions on which the differentiator
+      ;; is to operate.
+
+      (define (variable? x) (symbol? x))
+      (define (same-variable? v1 v2)
+        (and (variable? v1) (variable? v2) (eq? v1 v2)))
+      (define (=number? exp num)
+        (and (number? exp) (= exp num)))
+
+      (define (make-sum a1 a2)
+        (cond
+         ((=number? a1 0) a2)
+         ((=number? a2 0) a1)
+         ((and (number? a1) (number? a2)) (+ a1 a2))
+         (else (list '+ a1 a2))))
+      (define (make-product m1 m2)
+        (cond
+         ((or (=number? m1 0) (=number? m2 0)) 0)
+         ((=number? m1 1) m2)
+         ((=number? m2 1) m1)
+         ((and (number? m1) (number? m2)) (* m1 m2))
+         (else (list '* m1 m2))))
+      (define (sum? x)
+        (and (pair? x) (eq? (car x) '+)))
+      (define (addend s) (cadr s))
+      (define (augend s) (caddr s))
+      (define (product? x)
+        (and (pair? x) (eq? (car x) '*)))
+      (define (multiplier p) (cadr p))
+      (define (multiplicand p) (caddr p))
+      (define (deriv exp var)
+        (cond ((number? exp) 0)
+              ((variable? exp)
+               (if (same-variable? exp var) 1 0))
+              ((sum? exp)
+               (make-sum (deriv (addend exp) var)
+                         (deriv (augend exp) var)))
+              ((product? exp)
+               (make-sum
+                (make-product (multiplier exp)
+                              (deriv (multiplicand exp) var))
+                (make-product (deriv (multiplier exp) var)
+                              (multiplicand exp))))
+              (else
+               (error "unknown expression type -- DERIV" exp))))
+
+      ;; a. Show how to do this in order to differentiate algebraic expressions
+      ;; presented in infix form, such as (x + (3 * (x + (y + 2)))). To simplify the
+      ;; task, assume that + and * always take two arguments and that expressions are
+      ;; fully parenthesized.
+
+      (define (make-sum a1 a2)
+        (cond ((=number? a1 0) a2)
+              ((=number? a2 0) a1)
+              (else (list a1 '+ a2))))
+
+      (define (sum? x) (and (pair? x) (eq? (cadr x) '+)))
+      (define (addend s) (car s))
+      (define (augend s) (caddr s))
+
+      (define (make-product m1 m2)
+        (cond ((=number? m1 1) m2)
+              ((=number? m2 1) m1)
+              ((or (=number? m1 0) (=number? m2 0)) 0)
+              (else (list m1 '* m2))))
+
+      (define (product? x) (and (pair? x) (eq? (cadr x) '*)))
+      (define (multiplier x) (car x))
+      (define (multiplicand x) (caddr x))
+
+      ;; b. The problem becomes substantially harder if we allow standard algebraic
+      ;; notation, such as (x + 3 * (x + y + 2)), which drops unnecessary parentheses
+      ;; and assumes that multiplication is done before addition. Can you design
+      ;; appropriate predicates, selectors, and constructors for this notation such
+      ;; that our derivative program still works?
+
+      ;; I'm just not going to do b...
     #+END_SRC
