@@ -1,0 +1,7 @@
++ [[../index.org][Reading Index]]
++ [[../mit_sicp.org][SICP]]
+
+* Variations on a Scheme -- Lazy Evaluation
+1. [ ] Normal Order and Applicative Order
+2. [ ] An Interpreter with Lazy Evaluation
+3. [ ] Streams as Lazy Lists

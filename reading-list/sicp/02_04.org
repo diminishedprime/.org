@@ -1,0 +1,7 @@
++ [[../index.org][Reading Index]]
++ [[../mit_sicp.org][SICP]]
+
+* Multiple Representations for Abstract Data
+1. [ ] Representations for Complex Numbers
+2. [ ] Tagged data
+3. [ ] Data-Directed Programming and Additivity

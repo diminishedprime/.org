@@ -1,0 +1,7 @@
++ [[../index.org][Reading Index]]
++ [[../mit_sicp.org][SICP]]
+
+* Assignment and Local State
+1. [ ] Local State Variables
+2. [ ] The Benefits of Introducing Assignment
+3. [ ] The Costs of Introducing Assignment

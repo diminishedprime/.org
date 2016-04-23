@@ -1,0 +1,11 @@
++ [[../index.org][Reading Index]]
++ [[../mit_sicp.org][SICP]]
+
+* The Metacircular Evaluator
+1. [ ] The Core of the Evaluator
+2. [ ] Representing Expressions
+3. [ ] Evaluator Data Structures
+4. [ ] Running the Evaluator as a Program
+5. [ ] Data as Programs
+6. [ ] Internal Definitions
+7. [ ] Separating Syntactic Analysis from Execution

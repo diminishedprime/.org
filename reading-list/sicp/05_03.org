@@ -1,0 +1,6 @@
++ [[../index.org][Reading Index]]
++ [[../mit_sicp.org][SICP]]
+
+* Storage Allocation and Garbage Collection
+1. [ ] Memory as Vectors
+2. [ ] Maintaining the Illusion of Infinite Memorxoy

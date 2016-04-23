@@ -1,5 +1,5 @@
-+ [[../../index.org][Main Index]]
-+ [[../mit_sicp.org][Book Index]]
++ [[../index.org][Reading Index]]
++ [[../mit_sicp.org][SICP]]
 
 * Symbolic Data
 1. [X] Quotation

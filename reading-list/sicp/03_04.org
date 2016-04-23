@@ -1,0 +1,6 @@
++ [[../index.org][Reading Index]]
++ [[../mit_sicp.org][SICP]]
+
+* Concurrency: Time Is of the Essence
+1. [ ] The Nature of Time in Concurrent Systems
+2. [ ] Mechanisms for Controlling Concurrency

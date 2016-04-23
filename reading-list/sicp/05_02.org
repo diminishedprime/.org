@@ -1,0 +1,8 @@
++ [[../index.org][Reading Index]]
++ [[../mit_sicp.org][SICP]]
+
+* Designing Register Machines
+1. [ ] The Machine Model
+2. [ ] The Assembler
+3. [ ] Generating Execution Procedures for Instructions
+4. [ ] Monitoring Machine Performance

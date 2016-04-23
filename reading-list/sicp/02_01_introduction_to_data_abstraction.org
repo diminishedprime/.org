@@ -1,6 +1,7 @@
-+ [[../../index.org][Main Index]]
-+ [[../mit_sicp.org][Book Index]]
++ [[../index.org][Reading Index]]
++ [[../mit_sicp.org][SICP]]
 
+* Introduction To Data Abstraction
 1) [X] Example: Arithmetic Operations for rational numbers
    #+BEGIN_SRC scheme
      (define (make-rat n d)

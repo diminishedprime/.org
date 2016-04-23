@@ -1,0 +1,8 @@
++ [[../index.org][Reading Index]]
++ [[../mit_sicp.org][SICP]]
+
+* The Explicit Control Evaluator
+1. [ ] The Core of the Explicit-Control Evaluator
+2. [ ] Sequence Evaluation and Tail Recursion
+3. [ ] Conditionals, Assignments, and Definitions
+4. [ ] Running the Evaluatoxor

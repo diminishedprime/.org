@@ -1,0 +1,7 @@
++ [[../index.org][Reading Index]]
++ [[../mit_sicp.org][SICP]]
+
+* Variations on a Scheme -- Nondeterministic Computing
+1. [ ] Amb and Search
+2. [ ] Examples of Nondeterministic Programs
+3. [ ] Implementing the Amb Evaluator

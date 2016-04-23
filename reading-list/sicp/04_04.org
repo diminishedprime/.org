@@ -1,0 +1,8 @@
++ [[../index.org][Reading Index]]
++ [[../mit_sicp.org][SICP]]
+
+* Logic Programming
+1. [ ] Deductive Information Retrieval
+2. [ ] How the Query System Works
+3. [ ] Is Logic Programming Mathematical Logic?
+4. [ ] Implementing the Query Systexom

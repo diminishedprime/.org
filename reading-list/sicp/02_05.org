@@ -1,0 +1,7 @@
++ [[../index.org][Reading Index]]
++ [[../mit_sicp.org][SICP]]
+
+* Systems With Generic Operations
+1. [ ] Generic Arithmetic Operations
+2. [ ] Combining Data of Different Types
+3. [ ] Example: Symbolic Algebra
