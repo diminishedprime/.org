@@ -57,3 +57,4 @@ username: mjhclojure
 52. [X] [[./052.org][Permuted Multiples]]
 53. [X] [[./053.org][Combinatoric Selections]]
 54. [X] [[./054.org][Poker Hands]]
+55. [X] [[./055.org][Lychrel Numbers]]
