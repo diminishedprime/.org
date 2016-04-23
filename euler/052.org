@@ -1,0 +1,31 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Permuted multiples
+*** Problem 52
+It can be seen that the number, 125874, and its double, 251748, contain exactly
+the same digits, but in a different order.
+
+Find the smallest positive integer, x, such that 2x, 3x, 4x, 5x, and 6x, contain
+the same digits.
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (defn same-number-of-digits? [& options]
+    (every? (partial = (.length (str (first options))))
+            (map #(.length (str %)) (rest options))))
+
+  (defn same-digits? [options]
+    (every? (partial = (sort (str (first options))))
+            (map #(sort (str %)) options)))
+
+  (defn multiples-through-n [n x]
+    (map (partial * x) (rest (range (inc n)))))
+
+  (time (->> (rest (range))
+             (map (partial multiples-through-n 6))
+             (filter same-number-of-digits?)
+             (filter same-digits?)
+             first
+             first)) ;; => 142857
+#+END_SRC
