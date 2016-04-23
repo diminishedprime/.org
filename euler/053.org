@@ -1,0 +1,44 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Combinatoric selections
+*** Problem 53
+There are exactly ten ways of selecting three from five, 12345:
+
+123, 124, 125, 134, 135, 145, 234, 235, 245, and 345
+
+In combinatorics, we use the notation, 5C3 = 10.
+
+In general,
+#+BEGIN_SRC sh
+  #           n!
+  # nCr = ----------  where r ≤ n
+  #        r!(n−r)!
+#+END_SRC
+
+
+It is not until n = 23, that a value exceeds one-million: 23C10 = 1144066.
+
+How many, not necessarily distinct, values of nCr, for 1 ≤ n ≤ 100, are greater
+than one-million?
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (defn n! [n]
+    (reduce *' (rest (range (inc n)))))
+
+  (def memoized-n! (memoize n!))
+
+  (defn nCr [n r]
+    (/ (memoized-n! n)
+       (*' (memoized-n! r)
+           (memoized-n! (- n r)))))
+
+  (defn nCr-r-<=n [n]
+    (map (partial nCr n) (range (inc n))))
+
+  (->> (rest (range (inc 100)))
+       (mapcat nCr-r-<=n)
+       (filter #(> % 1000000))
+       count) ;; => 4075
+#+END_SRC

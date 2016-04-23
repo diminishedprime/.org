@@ -55,3 +55,4 @@ username: mjhclojure
 50. [X] [[./050.org][Consecutive Prime Sum]]
 51. [ ] [[./051.org][Prime Digit Replacements]]
 52. [X] [[./052.org][Permuted Multiples]]
+53. [X] [[./053.org][Combinatoric Selections]]
