@@ -1,3 +1,6 @@
++ [[../index.org][Reading Index]]
++ [[../mit_sicp.org][SICP]]
+
 * TODO Chapter 2 Exercises [88%]
 1. [ ] Exercise 2.1
 2. [X] Exercise 2.2

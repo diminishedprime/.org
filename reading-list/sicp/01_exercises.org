@@ -1,197 +1,1425 @@
-     1. [ ]
-     2. [ ]
-     3. [ ]
-     4. [ ]
-     5. [ ]
-     6. [ ]
-     7. [ ]
-     8. [ ]
-     9. [ ]
-     10. [X] Random function
-         #+BEGIN_SRC scheme
-           ;;       / n if n < 3
-           ;; f(n) |
-           ;;       \ f(n-1) + 2f(n-2)+3f(n-3) if n >=3
++ [[../index.org][Reading Index]]
++ [[../mit_sicp.org][SICP]]
 
-           ;; Recursive Process
-           (define (f n)
-             (cond ((< n 3) n)
-                   (else (+ (f (- n 1))
-                            (* 2 (f (- n 2)))
-                            (* 3 (f (- n 3)))))))
-           (f 4)
+* Chapter 1 Exercises
+1. [X] Exercise 1.1
+   #+BEGIN_SRC scheme
+     10 ;; => 10
 
-           ;; Iterative Process
-           (define (f n)
-             (define (iter a b c count)
-               (if (= 0 count)
-                   a
-                   (iter b c (+ c
-                                (* 2 b)
-                                (* 3 a))
-                         (- count 1))))
-             (iter 0 1 2 n))
-           (f 4)
-         #+END_SRC
-     11. [X] Pascal Triangle
-         #+BEGIN_SRC scheme
-           (define (pascal-triangle row col)
-             (cond ((> col row) 0)
-                   ((< col 0) 0)
-                   ((= col 1) 1)
-                   (else (+ (pascal-triangle (- row 1) (- col 1))
-                            (pascal-triangle (- row 1) col)))))
-           (pascal-triangle 5 3)
-         #+END_SRC
-     12. [ ] Proofs are hard.
-     13. [X] Tree suck to type out.
-         + Just look at the solution via the link above.
-     14. [X] Recursive Sin(x)
-         #+BEGIN_SRC scheme
-           (define (cube x) (* x x x))
-           (define (p x)
-             (- (* 3 x)
-                (* 4 (cube x))))
-           (define (sine angle)
-             (if (not (> (abs angle) .1))
-                 angle
-                 (p (sine (/ angle 3.0)))))
+     (+ 5 3 4) ;; => 12
 
-           (sine 12.15)
-           (p (sine (/ 12.15 3)))
-           (p (p (sine (/ 4.05 3))))
-           (p (p (p (sine (/ 1.3499999999999999 3)))))
-           (p (p (p (p (sine (/ .44999999999999996 3))))))
-           (p (p (p (p (p (sine (/ .15 3)))))))
-           (p (p (p (p (p (sine .05))))))
+     (- 9 1) ;; => 8
 
-           ;; p is applied 5 times. the order of growth is O(log 3) since the
-           ;; number is decreased by a constant factor of 3 each time it is
-           ;; evaluated.
-         #+END_SRC
-     15. [X] Iterative log(n) fast-exp
-         #+BEGIN_SRC scheme
-           (define (fast-exp b n)
-             (define (iter a b n)
-               (cond ((= n 0) a)
-                     ((even? n) (iter a (square b) (/ n 2)))
-                     (else (iter (* a b) b (- n 1)))))
-             (iter 1 b n))
-           (fast-exp 2 1000)
-         #+END_SRC
-     16. [X] Fast multiplication through recursive adding
-         #+BEGIN_SRC scheme
-           (define (fast-mult b n)
-             (define (halve x)
-               (/ x 2))
-             (define (double x)
-               (+ x x))
-             (cond ((= n 0) 0)
-                   ((even? b) (double (* n (halve b))))
-                   (else (+ n (* n (- b 1))))))
-           (fast-mult 100 100)
-         #+END_SRC
-     17. [X] Fast multiplication through iterative adding
-         #+BEGIN_SRC scheme
-           (define (* a b)
-             (define (double x) (+ x x))
-             (define (halve x) (floor (/ x 2)))
-             (define (iter accumulator a b)
-               (cond ((= b 0) accumulator)
-                     ((even? b) (iter accumulator (double a) (halve b)))
-                     (else (iter (+ accumulator a) a (- b 1)))))
-             (iter 0 a b))
-           (* 100 100)
-         #+END_SRC
-     18. [X] Fib in log steps using some linear algebra magic.
-         #+BEGIN_SRC scheme
-           (define (fib n)
-             (define (even? x)
-               (= (remainder x 2) 0))
-             (define (fib-iter p-acc q-acc p q n)
-               (cond ((= n 0) q-acc)
-                     ((even? n) (fib-iter
-                                 p-acc
-                                 q-acc
-                                 (+ (* p p) (* q q))
-                                 (+ (* 2 p q) (* q q))
-                                 (/ n 2)))
-                     (else (fib-iter
-                            (+ (* p p-acc) (* q q-acc))
-                            (+ (* p q-acc) (* q p-acc) (* q q-acc))
-                            p
-                            q
-                            (- n 1)))))
-             (fib-iter 1 0 0 1 n))
+     (/ 6 2) ;; => 3
 
-           (fib 0)
-           (fib 1)
-           (fib 2)
-           (fib 5)
-           (fib 6)
-           (fib 19)
-           (fib 20)
-           (fib 100)
-         #+END_SRC
-     19. [X] Normal v. applicative order for euclid's gcd.
-         + I don't want to actually do the exercise, but from looking
-           at the solution I can see that the applicative order
-           evaluation does far fewer remainder operations because it
-           doesn't have to unnecessarily substitute down.
-     20. [X] Smallest divisor of some numbers
-         #+BEGIN_SRC scheme
-           (define (smallest-divisor n)
-             (define (divides? a b)
-               (= (remainder b a) 0))
-             (define (find-divisor n test-divisor)
-               (cond ((> (square test-divisor) n) n)
-                     ((divides? test-divisor n) test-divisor)
-                     (else (find-divisor n (+ test-divisor 1)))))
-             (find-divisor n 2))
+     (+ (* 2 4) (- 4 6)) ;; => 6
 
-           (smallest-divisor 199) ;; => 199
-           (smallest-divisor 1999) ;; => 1999
-           (smallest-divisor 19999) ;; => 7
-         #+END_SRC
-     21. [ ] Time of algos
-         + It seems like I can't do this because my scheme
-           implementation doesn't have a runtime procedure. :(
-     22. [ ]
-     23. [ ]
-     24. [ ]
-     25. [ ]
-     26. [ ] Carmichael Numbers
-     27. [ ]
-     28. [X] Simpson's Rule for Integrals
-         #+BEGIN_SRC scheme
-           (define (sum term a next b)
-             (if (> a b)
-                 0
-                 (+ (term a)
-                    (sum term (next a) next b))))
+     (define a 3) ;; => #<unspecified>
 
-           (define (simpson f a b n)
-             (define (inc a) (+ a 1))
-             (define h (/ (- b a) n))
-             (define (yk k) (f (+ a (* h k))))
-             (define (simpson-term k)
-               (* (cond ((or (= k 0) (= k n)) 1)
-                        ((odd? k) 4)
-                        (else 2))
-                  (yk k)))
-             (* (/ h 3) (sum simpson-term 0 inc n)))
+     (define b (+ a 1)) ;; => #<unspecified>
 
-           (simpson (lambda(x)(* x x x)) 0 1 2)
-         #+END_SRC
-     29. [ ] Sum as an iterative recursion
-     30. [ ] product as iterative and linear recursions.
-     31. [ ] Sum and product are even more general!
-     32. [ ] Filtering on the more general idea.
-     33. [X] Perverse evaluator questions
-         #+BEGIN_SRC scheme
-           (define (f g) (g 2))
-           ;; If we try apply to f to f, the following will happen.
-           ;; (f f)
-           ;; (f 2)
-           ;; (2 2) which is an error.
-         #+END_SRC
+     (+ a b (* a b)) ;; => 19
+
+     (= a b) ;; => #f
+
+     (if (and (> b a) (< b (* a b)))
+         b
+         a) ;; => 4
+
+     (cond ((= a 4) 6)
+           ((= b 4) (+ 6 7 a))
+           (else 25)) ;; => 16
+
+     (+ 2 (if (> b a) b a)) ;; => 6
+
+     (* (cond ((> a b) a)
+              ((< a b) b)
+              (else -1))
+        (+ a 1)) ;; => 16
+
+
+
+   #+END_SRC
+2. [X] Exercise 1.2
+   #+BEGIN_SRC scheme
+     (/ (+ 5
+           4
+           (- 2 (- 3 (+ 6 (/ 4 5)))))
+        (* 3
+           (- 6 2)
+           (- 2 7))) ;; => -37/150
+   #+END_SRC
+3. [X] Exercise 1.3
+   #+BEGIN_SRC scheme
+     ;; Define a procedure that takes three numbers as arguments and returns the sum
+     ;; of the squares of the two larger numbers.
+
+     (define (square x) (* x x))
+
+     (define (max a b) (if (< a b) b a))
+
+     (max 3 4) ;; => 4
+     (max 4 3) ;; => 4
+
+     (define sum-of-squares-of-largest
+       (lambda (a b c)
+         (cond
+          ((and (> a b)
+                (> a c)) (+ (square a)
+                            (square (max b c))))
+          ((and (> b a)
+                (> b c)) (+ (square b)
+                            (square (max a c))))
+          (else (+ (square c)
+                   (square (max a b)))))))
+
+     (sum-of-squares-of-largest 1 2 3) ;; => 13
+     (sum-of-squares-of-largest 2 3 1) ;; => 13
+     (sum-of-squares-of-largest 3 1 2) ;; => 13
+   #+END_SRC
+4. [X] Exercise 1.4
+   #+BEGIN_SRC scheme
+     ;; Observe that our model of evaluation allows for combinations whose operators
+     ;; are compound expressions. Use this observation to describe the behavior of
+     ;; the following procedure:
+
+     (define (a-plus-abs-b a b)
+       ((if (> b 0) + -) a b))
+
+     ;; for the if, either the procedure + or the procedure - is returned. This
+     ;; procedure is then applied with arguments of a and b.
+
+     (a-plus-abs-b 3 -8) ;; => 11
+
+     ;; For this invocation, since b is negative, the first if returns the procedure
+     ;; -, this is then applied to 3 and -8 to give 11.
+
+     ((if (> -8 0) + -) 3 -8) ;; => 11
+     (- 3 -8) ;; => 11
+   #+END_SRC
+5. [X] Exercise 1.5
+   #+BEGIN_SRC scheme
+     ;; Ben Bitdiddle has invented a test to determine whether the interpreter he is
+     ;; faced with is using applicative-order evaluation or normal-order evaluation.
+     ;; He defines the following two procedures:
+
+     (define (p) (p))
+
+     (define (test x y)
+       (if (= x 0)
+           0
+           y))
+
+     ;; Then he evaluates the expression
+
+     (test 0 (p))
+
+     ;; What behavior will Ben observe with an interpreter that uses
+     ;; applicative-order evaluation? What behavior will he observe with an
+     ;; interpreter that uses normal-order evaluation? Explain your answer. (Assume
+     ;; that the evaluation rule for the special form if is the same whether the
+     ;; interpreter is using normal or applicative order: The predicate expression is
+     ;; evaluated first, and the result determines whether to evaluate the consequent
+     ;; or the alternative expression.)
+
+     ;; For one it will never terminate, because it gets stuck trying to expand an
+     ;; invocation of p, for the other it will simply return 0.
+   #+END_SRC
+6. [X] Exercise 1.6
+   #+BEGIN_SRC scheme
+     ;; Alyssa P. Hacker doesn't see why if needs to be provided as a special form.
+     ;; ``Why can't I just define it as an ordinary procedure in terms of cond?'' she
+     ;; asks. Alyssa's friend Eva Lu Ator claims this can indeed be done, and she
+     ;; defines a new version of if:
+
+     (define (new-if predicate then-clause else-clause)
+       (cond (predicate then-clause)
+             (else else-clause))) ;; #<unspecified>
+
+     ;; Eva demonstrates the program for Alyssa:
+
+     (new-if (= 2 3) 0 5) ;; => 5
+
+     (new-if (= 1 1) 0 5) ;; => 0
+
+     ;; Delighted, Alyssa uses new-if to rewrite the square-root program:
+
+     (define (sqrt-iter guess x)
+       (new-if (good-enough? guess x)
+               guess
+               (sqrt-iter (improve guess x)
+                          x))) ;; #<unspecified>
+
+     ;; What happens when Alyssa attempts to use this to compute square roots?
+     ;; Explain.
+
+     ;; It will never be able to stop because it always has to expand (improve-guess)
+     ;; regardless of whether or not good-enough? returned true.
+   #+END_SRC
+7. [X] Exercise 1.7
+   #+BEGIN_SRC scheme
+     ;; The good-enough? test used in computing square roots will not be very
+     ;; effective for finding the square roots of very small numbers. Also, in real
+     ;; computers, arithmetic operations are almost always performed with limited
+     ;; precision. This makes our test inadequate for very large numbers. Explain
+     ;; these statements, with examples showing how the test fails for small and
+     ;; large numbers. An alternative strategy for implementing good-enough? is to
+     ;; watch how guess changes from one iteration to the next and to stop when the
+     ;; change is a very small fraction of the guess. Design a square-root procedure
+     ;; that uses this kind of end test. Does this work better for small and large
+     ;; numbers?
+
+     (define average
+       (lambda (x y)
+         (/ (+ x y) 2)))
+
+     (define improve
+       (lambda (guess x)
+         (average guess (/ x guess))))
+
+     (define square
+       (lambda (x)
+         (* x x)))
+
+     (define (good-enough? guess x)
+       (< (abs (- (improve guess x) guess))
+          (* guess .001)))
+
+     (define sqrt-iter
+       (lambda (guess x)
+         (if (good-enough? guess x)
+             guess
+             (sqrt-iter (improve guess x) x))))
+
+     (define sqrt
+       (lambda (x)
+         (sqrt-iter 1.0 x)))
+
+     (sqrt 2.0) ;; => 1.41421568627451
+
+     (sqrt 1000) ;; => 31.6420158686508
+   #+END_SRC
+8. [X] Exercise 1.8
+   #+BEGIN_SRC scheme
+     ;; Newton's method for cube roots is based on the fact that if y is an
+     ;; approximation to the cube root of x, then a better approximation is given by
+     ;; the value
+
+     ;; Use this formula to implement a cube-root procedure analogous to the
+     ;; square-root procedure. (In section 1.3.4 we will see how to implement
+     ;; Newton's method in general as an abstraction of these square-root and
+     ;; cube-root procedures.)
+
+     (define square
+       (lambda (x)
+         (* x x)))
+
+     (define improve
+       (lambda (guess x)
+         (/ (+ (/ x (square guess))
+               (* 2 guess))
+            3)))
+
+     (define (good-enough? guess x)
+       (< (abs (- (improve guess x) guess))
+          (* guess .001)))
+
+     (define cube-root-iter
+       (lambda (guess x)
+         (if (good-enough? guess x)
+             guess
+             (cube-root-iter (improve guess x) x))))
+
+     (define cube-root
+       (lambda (x)
+         (cube-root-iter 1.0 x)))
+
+     (cube-root 8) ;; => 2.0000049116755
+   #+END_SRC
+9. [X] Exercise 1.9
+   #+BEGIN_SRC scheme
+     ;; Each of the following two procedures defines a method for adding two positive
+     ;; integers in terms of the procedures inc, which increments its argument by 1,
+     ;; and dec, which decrements its argument by 1.
+
+     ;; Using the substitution model, illustrate the process generated by each
+     ;; procedure in evaluating (+ 4 5). Are these processes iterative or recursive?
+
+     (define (+ a b)
+       (if (= a 0)
+           b
+           (inc (+ (dec a) b))))
+
+     ;; This one is recursive. It stores up a series of incs to do once a reaches 0.
+
+     (+ 4 5)
+     (inc (+ 3 5))
+     (inc (inc (+ 2 5)))
+     (inc (inc (inc (+ 1 5))))
+     (inc (inc (inc (inc (+ 0 5)))))
+     (inc (inc (inc (inc 5))))
+     (inc (inc (inc 6)))
+     (inc (inc 7))
+     (inc 8)
+     9
+
+     (define (+ a b)
+       (if (= a 0)
+           b
+           (+ (dec a) (inc b))))
+
+     ;; This one is iterative, it takes constant space, and it finished all
+     ;; calculations before recurring.
+
+     (+ 4 5)
+     (+ 3 6)
+     (+ 2 7)
+     (+ 1 8)
+     (+ 0 9)
+     9
+   #+END_SRC
+10. [X] Exercise 1.10
+    #+BEGIN_SRC scheme
+      ;;       / n if n < 3
+      ;; f(n) |
+      ;;       \ f(n-1) + 2f(n-2)+3f(n-3) if n >=3
+       ;; Recursive Process
+      (define (f n)
+        (cond ((< n 3) n)
+              (else (+ (f (- n 1))
+                       (* 2 (f (- n 2)))
+                       (* 3 (f (- n 3)))))))
+      (f 4)
+       ;; Iterative Process
+      (define (f n)
+        (define (iter a b c count)
+          (if (= 0 count)
+              a
+              (iter b c (+ c
+                           (* 2 b)
+                           (* 3 a))
+                    (- count 1))))
+        (iter 0 1 2 n))
+      (f 4)
+    #+END_SRC
+11. [X] Exercise 1.11
+    #+BEGIN_SRC scheme
+      ;; Recursive
+      (define (f n)
+        (cond ((< n 3) n)
+              (else (+ (f (- n 1))
+                       (* 2 (f (- n 2)))
+                       (* 3 (f (- n 3)))))))
+
+      ;; Iterative
+      (define (f n)
+        (define (iter a b c count)
+          (if (= count 0)
+              a
+              (iter b c (+ c (* 2 b) (* 3 a)) (- count 1))))
+        (iter 0 1 2 n))
+    #+END_SRC
+12. [X] Exercise 1.12
+    #+BEGIN_SRC scheme
+      (define (pascal-triangle row col)
+        (cond ((> col row) 0)
+              ((< col 0) 0)
+              ((= col 1) 1)
+              ((+ (pascal-triangle (- row 1) (- col 1))
+                  (pascal-triangle (- row 1) col)))))
+
+      (pascal-triangle 1 1) ;; => 1
+      (pascal-triangle 2 2) ;; => 1
+      (pascal-triangle 3 2) ;; => 2
+      (pascal-triangle 4 2) ;; => 3
+      (pascal-triangle 5 2) ;; => 4
+      (pascal-triangle 5 3) ;; => 6
+    #+END_SRC
+13. [X] Exercise 1.13
+    http://www.billthelizard.com/2009/12/sicp-exercise-113-fibonacci-and-golden.html
+14. [X] Exercise 1.14
+    #+BEGIN_SRC scheme
+      (define (cube x) (* x x x))
+      (define (p x)
+        (- (* 3 x)
+           (* 4 (cube x))))
+      (define (sine angle)
+        (if (not (> (abs angle) .1))
+            angle
+            (p (sine (/ angle 3.0)))))
+       (sine 12.15)
+      (p (sine (/ 12.15 3)))
+      (p (p (sine (/ 4.05 3))))
+      (p (p (p (sine (/ 1.3499999999999999 3)))))
+      (p (p (p (p (sine (/ .44999999999999996 3))))))
+      (p (p (p (p (p (sine (/ .15 3)))))))
+      (p (p (p (p (p (sine .05))))))
+       ;; p is applied 5 times. the order of growth is O(log 3) since the
+      ;; number is decreased by a constant factor of 3 each time it is
+      ;; evaluated.
+    #+END_SRC
+15. [X] Exercise 1.15
+    #+BEGIN_SRC scheme
+      (define (fast-exp b n)
+        (define (iter a b n)
+          (cond ((= n 0) a)
+                ((even? n) (iter a (square b) (/ n 2)))
+                (else (iter (* a b) b (- n 1)))))
+        (iter 1 b n))
+      (fast-exp 2 1000)
+    #+END_SRC
+1. [X] Exercise 1.16
+   #+BEGIN_SRC scheme
+     (define (fast-mult b n)
+       (define (halve x)
+         (/ x 2))
+       (define (double x)
+         (+ x x))
+       (cond ((= n 0) 0)
+             ((even? b) (double (* n (halve b))))
+             (else (+ n (* n (- b 1))))))
+     (fast-mult 100 100)
+   #+END_SRC
+2. [X] Exercise 1.17
+   #+BEGIN_SRC scheme
+     (define (* a b)
+       (define (double x) (+ x x))
+       (define (halve x) (floor (/ x 2)))
+       (define (iter accumulator a b)
+         (cond ((= b 0) accumulator)
+               ((even? b) (iter accumulator (double a) (halve b)))
+               (else (iter (+ accumulator a) a (- b 1)))))
+       (iter 0 a b))
+     (* 100 100)
+   #+END_SRC
+3. [X] Exercise 1.18
+   #+BEGIN_SRC scheme
+     ;; Using the results of exercises 1.16 and 1.17, devise a procedure that
+     ;; generates an iterative process for multiplying two integers in terms of
+     ;; adding, doubling, and halving and uses a logarithmic number of steps.40
+
+     (define (double x) (+ x x))
+     (define (halve x) (/ x 2))
+
+     (define (* a b)
+       (define (iter accumulator a b)
+         (cond ((= b 0) accumulator)
+               ((even? b) (iter accumulator (double a) (halve b)))
+               (else (iter (+ accumulator a) (double a) (halve (- b 1))))))
+       (iter 0 a b))
+
+     ;; Testing
+     (* 2 4) ;; => 8
+     (* 4 0) ;; => 0
+     (* 5 1) ;; => 5
+     (* 7 10) ;; => 70
+   #+END_SRC
+4. [X] Exercise 1.19
+   #+BEGIN_SRC scheme
+     (define (fib n)
+       (fib-iter 1 0 0 1 n))
+     (define (fib-iter a b p q count)
+       (cond ((= count 0) b)
+             ((even? count)
+              (fib-iter a
+                        b
+                        (+ (square p) (square q))
+                        (+ (* 2 p q) (square q))
+                        (/ count 2)))
+             (else (fib-iter (+ (* b q) (* a q) (* a p))
+                             (+ (* b p) (* a q))
+                             p
+                             q
+                             (- count 1)))))
+
+     (define (square x) (* x x))
+
+     ;; Testing
+     (fib 0) ;; => 0
+     (fib 1) ;; => 1
+     (fib 2) ;; => 1
+     (fib 3) ;; => 2
+     (fib 4) ;; => 3
+     (fib 5) ;; => 5
+     (fib 6) ;; => 8
+     (fib 7) ;; => 13
+     (fib 8) ;; => 21
+     (fib 9) ;; => 34
+     (fib 10) ;; => 55
+     (fib 1000) ;; => 4.34665576869374e+208
+   #+END_SRC
+5. [X] Exercise 1.20
+
+   I don't want to actually do the exercise, but from looking at the solution I
+   can see that the applicative order evaluation does far fewer remainder
+   operations because it doesn't have to unnecessarily substitute down.
+6. [X] Exercise 1.21
+   #+BEGIN_SRC scheme
+     (define (smallest-divisor n)
+       (define (divides? a b)
+         (= (remainder b a) 0))
+       (define (find-divisor n test-divisor)
+         (cond ((> (square test-divisor) n) n)
+               ((divides? test-divisor n) test-divisor)
+               (else (find-divisor n (+ test-divisor 1)))))
+       (find-divisor n 2))
+
+     (smallest-divisor 199) ;; => 199
+     (smallest-divisor 1999) ;; => 1999
+     (smallest-divisor 19999) ;; => 7
+   #+END_SRC
+7. [X] Exercise 1.22
+   #+BEGIN_SRC scheme
+     (define (square x) (* x x))
+
+      (define (smallest-divisor n)
+        (find-divisor n 2))
+
+      (define (find-divisor n test-divisor)
+        (cond ((> (square test-divisor) n) n)
+              ((divides? test-divisor n) test-divisor)
+              (else (find-divisor n (+ test-divisor 1)))))
+
+      (define (divides? a b)
+        (= (remainder b a) 0))
+
+      (define (prime? n)
+        (= n (smallest-divisor n)))
+
+      (define (timed-prime-test n)
+        (start-prime-test n (runtime)))
+
+      (define (start-prime-test n start-time)
+        (if (prime? n)
+            (report-prime n (- (runtime) start-time))))
+
+      (define (report-prime n elapsed-time)
+        (newline)
+        (display n)
+        (display " *** ")
+        (display elapsed-time))
+
+      (define (search-for-primes first last)
+        (define (search-iter cur last)
+          (if (<= cur last) (timed-prime-test cur))
+          (if (<= cur last) (search-iter (+ cur 2) last)))
+        (search-iter (if (even? first) (+ first 1) first)
+                     (if (even? last) (- last 1) last)))
+
+      (search-for-primes 1000 1019)       ; 1e3
+      (search-for-primes 10000 10037)     ; 1e4
+      (search-for-primes 100000 100043)   ; 1e5
+      (search-for-primes 1000000 1000037) ; 1e6
+
+      ; As of 2008, computers have become too fast to appreciate the time
+      ; required to test the primality of such small numbers.
+      ; To get meaningful results, we should perform the test with numbers
+      ; greater by, say, a factor 1e6.
+      (newline)
+      (search-for-primes 1000000000 1000000021)       ; 1e9
+      (search-for-primes 10000000000 10000000061)     ; 1e10
+      (search-for-primes 100000000000 100000000057)   ; 1e11
+      (search-for-primes 1000000000000 1000000000063) ; 1e12
+   #+END_SRC
+   It seems like I can't do this because my scheme implementation doesn't have
+   a runtime procedure. :(
+8. [X] Exercise 1.23
+   #+BEGIN_SRC scheme
+     ;; The smallest-divisor procedure shown at the start of this section does lots
+     ;; of needless testing: After it checks to see if the number is divisible by 2
+     ;; there is no point in checking to see if it is divisible by any larger even
+     ;; numbers. This suggests that the values used for test-divisor should not be 2,
+     ;; 3, 4, 5, 6, ..., but rather 2, 3, 5, 7, 9, .... To implement this change,
+     ;; define a procedure next that returns 3 if its input is equal to 2 and
+     ;; otherwise returns its input plus 2. Modify the smallest-divisor procedure to
+     ;; use (next test-divisor) instead of (+ test-divisor 1). With timed-prime-test
+     ;; incorporating this modified version of smallest-divisor, run the test for
+     ;; each of the 12 primes found in exercise 1.22. Since this modification halves
+     ;; the number of test steps, you should expect it to run about twice as fast. Is
+     ;; this expectation confirmed? If not, what is the observed ratio of the speeds
+     ;; of the two algorithms, and how do you explain the fact that it is different
+     ;; from 2?
+
+     (define (smallest-divisor n)
+       (define (next a)
+         (if (even? a)
+             (+ a 1)
+             (+ a 2)))
+       (define (divides? a b)
+         (= (remainder b a) 0))
+       (define (square n) (* n n))
+       (define (find-divisor n test-divisor)
+         (cond ((>= (square test-divisor) n) n)
+               ((divides? test-divisor n) test-divisor)
+               (else (find-divisor n (next test-divisor)))))
+       (find-divisor n 2))
+
+     (smallest-divisor 13) ;; => 13
+     (smallest-divisor (* 17 13)) ;; => 13
+
+   #+END_SRC
+9. [X] Exercise 1.24
+   #+BEGIN_SRC scheme
+     ;; Modify the timed-prime-test procedure of exercise 1.22 to use fast-prime?
+     ;; (the Fermat method), and test each of the 12 primes you found in that
+     ;; exercise. Since the Fermat test has (log n) growth, how would you expect the
+     ;; time to test primes near 1,000,000 to compare with the time needed to test
+     ;; primes near 1000? Do your data bear this out? Can you explain any discrepancy
+     ;; you find?
+
+     (define (square x) (* x x))
+
+     (define (expmod base exp m)
+       (cond ((= exp 0) 1)
+             ((even? exp)
+              (remainder (square (expmod base (/ exp 2) m))
+                         m))
+             (else
+              (remainder (* base (expmod base (- exp 1) m))
+                         m))))
+
+     (define (fermat-test n)
+       (define (try-it a)
+         (= (expmod a n n) a))
+       (try-it (+ 1 (random (- n 1)))))
+
+     (define (fast-prime? n times)
+       (cond ((= times 0) true)
+             ((fermat-test n) (fast-prime? n (- times 1)))
+             (else false)))
+
+     (define (prime? n)
+       ;; Perform the test how many times?
+       ;; Use 100 as an arbitrary value.
+       (fast-prime? n 100))
+
+     (define (timed-prime-test n)
+       (start-prime-test n (runtime)))
+
+     (define (start-prime-test n start-time)
+       (if (prime? n)
+           (report-prime n (- (runtime) start-time))))
+
+     (define (report-prime n elapsed-time)
+       (newline)
+       (display n)
+       (display " *** ")
+       (display elapsed-time))
+
+     (timed-prime-test 1009)
+     (timed-prime-test 1013)
+     (timed-prime-test 1019)
+     (timed-prime-test 10007)
+     (timed-prime-test 10009)
+     (timed-prime-test 10037)
+     (timed-prime-test 100003)
+     (timed-prime-test 100019)
+     (timed-prime-test 100043)
+     (timed-prime-test 1000003)
+     (timed-prime-test 1000033)
+     (timed-prime-test 1000037)
+
+     ;; See comments in exercise 1.22
+     (newline)
+     (timed-prime-test 1000000007)
+     (timed-prime-test 1000000009)
+     (timed-prime-test 1000000021)
+     (timed-prime-test 10000000019)
+     (timed-prime-test 10000000033)
+     (timed-prime-test 10000000061)
+     (timed-prime-test 100000000003)
+     (timed-prime-test 100000000019)
+     (timed-prime-test 100000000057)
+     (timed-prime-test 1000000000039)
+     (timed-prime-test 1000000000061)
+     (timed-prime-test 1000000000063)
+   #+END_SRC
+10. [X] Exercise 1.25
+    #+BEGIN_SRC scheme
+      ;; Alyssa P. Hacker complains that we went to a lot of extra work in writing
+      ;; expmod. After all, she says, since we already know how to compute
+      ;; exponentials, we could have simply written
+
+      (define (expmod base exp m)
+        (remainder (fast-expt base exp) m))
+
+      ;; Is she correct? Would this procedure serve as well for our fast prime tester?
+      ;; Explain.
+
+
+      ;; The modified version of expmod computes huge intermediate results.
+
+      ;; Scheme is able to handle arbitrary-precision arithmetic, but arithmetic with
+      ;; arbitrarily long numbers is computationally expensive. This means that we get
+      ;; the same (correct) results, but it takes considerably longer.
+
+      ;; For example:
+
+      (define (square m)
+        (display "square ")(display m)(newline)
+        (* m m))
+
+      ;; (expmod 5 101 101)
+      ;; square 5
+      ;; square 24
+      ;; square 71
+      ;; square 92
+      ;; square 1
+      ;; square 1
+      ;; 5
+      ;; => (remainder (fast-expt 5 101) 101)
+      ;; square 5
+      ;; square 25
+      ;; square 625
+      ;; square 390625
+      ;; square 152587890625
+      ;; square 23283064365386962890625
+
+      ;; The remainder operation inside the original expmod implementation, keeps the
+      ;; numbers being squared less than the number tested for primality m. fast-expt
+      ;; however squares huge numbers of a^m size.
+    #+END_SRC
+11. [X] Exercise 1.26
+    #+BEGIN_SRC scheme
+      ;; Louis Reasoner is having great difficulty doing exercise 1.24. His
+      ;; fast-prime? test seems to run more slowly than his prime? test. Louis calls
+      ;; his friend Eva Lu Ator over to help. When they examine Louis's code, they
+      ;; find that he has rewritten the expmod procedure to use an explicit
+      ;; multiplication, rather than calling square:
+
+      (define (expmod base exp m)
+        (cond ((= exp 0) 1)
+              ((even? exp)
+               (remainder (* (expmod base (/ exp 2) m)
+                             (expmod base (/ exp 2) m))
+                          m))
+              (else
+               (remainder (* base (expmod base (- exp 1) m))
+                          m))))
+
+      ;; "I don't see what difference that could make," says Louis. "I do." says Eva.
+      ;; "By writing the procedure like that, you have transformed the (log n) process
+      ;; into a (n) process." Explain.
+
+      ;; With square, you only calculate the (expmod base (/ exp 2) m) calculation
+      ;; once, since it calculates it and then passes in the value to square. With
+      ;; Louis' new version, it calculates it twice and the part that makes it shorter
+      ;; is now gone. Now this has a tree recursion instead of a linear recursion.
+
+
+
+    #+END_SRC
+12. [X] Exercise 1.27
+    #+BEGIN_SRC scheme
+      ;; Demonstrate that the Carmichael numbers listed in footnote 47 really do fool
+      ;; the Fermat test. That is, write a procedure that takes an integer n and tests
+      ;; whether an is congruent to a modulo n for every a<n, and try your procedure
+      ;; on the given Carmichael numbers.
+
+      (define true #t)
+      (define false #f)
+
+      (define (square x) (* x x))
+
+      (define (expmod base exp m)
+        (cond ((= exp 0) 1)
+              ((even? exp)
+               (remainder (square (expmod base (/ exp 2) m))
+                          m))
+              (else
+               (remainder (* base (expmod base (- exp 1) m))
+                          m))))
+
+      (define (full-fermat-prime? n)
+        (define (iter a n)
+          (if (= a n) true
+              (if (= (expmod a n n) a) (iter (+ a 1) n) false)))
+        (iter 1 n))
+
+      (define (test-fermat-prime n expected)
+        (define (report-result n result expected)
+          (if (eq? result expected) "OK" "FOOLED"))
+        (report-result n (full-fermat-prime? n) expected))
+
+      (test-fermat-prime 2 true) ;; => "OK"
+      (test-fermat-prime 13 true) ;; => "OK"
+      (test-fermat-prime 14 false) ;; => "OK"
+
+      ;; Carmichael numbers
+      (test-fermat-prime 561 false) ;; => "FOOLED"
+      (test-fermat-prime 1105 false) ;; => "FOOLED"
+      (test-fermat-prime 1729 false) ;; => "FOOLED"
+      (test-fermat-prime 2465 false) ;; => "FOOLED"
+      (test-fermat-prime 2821 false) ;; => "FOOLED"
+      (test-fermat-prime 6601 false) ;; => "FOOLED"
+    #+END_SRC
+13. [X] Exercise 1.28
+    #+BEGIN_SRC scheme
+      (define (square x) (* x x))
+
+      (define (miller-rabin-expmod base exp m)
+        (define (squaremod-with-check x)
+          (define (check-nontrivial-sqrt1 x square)
+            (if (and (= square 1)
+                     (not (= x 1))
+                     (not (= x (- m 1))))
+                0
+                square))
+          (check-nontrivial-sqrt1 x (remainder (square x) m)))
+        (cond ((= exp 0) 1)
+              ((even? exp) (squaremod-with-check
+                            (miller-rabin-expmod base (/ exp 2) m)))
+              (else
+               (remainder (* base (miller-rabin-expmod base (- exp 1) m))
+                          m))))
+
+      (define (miller-rabin-test n)
+        (define (try-it a)
+          (define (check-it x)
+            (and (not (= x 0)) (= x 1)))
+          (check-it (miller-rabin-expmod a (- n 1) n)))
+        (try-it (+ 1 (random (- n 1)))))
+
+      (define (fast-prime? n times)
+        (cond ((= times 0) true)
+              ((miller-rabin-test n) (fast-prime? n (- times 1)))
+              (else false)))
+
+      (define (prime? n)
+        ;; Perform the test how many times?
+        ;; Use 100 as an arbitrary value.
+        (fast-prime? n 100))
+
+      (define (report-prime n expected)
+        (define (report-result n result expected)
+          (if (eq? result expected) "OK" "FOOLED"))
+        (report-result n (prime? n) expected))
+
+      (report-prime 2 true) ;; => "OK"
+      (report-prime 7 true) ;; => "OK"
+      (report-prime 13 true) ;; => "OK"
+      (report-prime 15 false) ;; => "OK"
+      (report-prime 37 true) ;; => "OK"
+      (report-prime 39 false) ;; => "OK"
+
+      ;; Carmichael number
+      (report-prime 561 false) ;; => "OK"
+      (report-prime 1105 false) ;; => "OK"
+      (report-prime 1729 false) ;; => "OK"
+      (report-prime 2465 false) ;; => "OK"
+      (report-prime 2821 false) ;; => "OK"
+      (report-prime 6601 false) ;; => "OK"
+    #+END_SRC
+14. [X] Exercise 1.29
+    #+BEGIN_SRC scheme
+      ;; Simpson's Rule is a more accurate method of numerical integration than the
+      ;; method illustrated above. Using Simpson's Rule, the integral of a function f
+      ;; between a and b is approximated as
+
+
+      ;; where h = (b - a)/n, for some even integer n, and yk = f(a + kh). (Increasing
+      ;; n increases the accuracy of the approximation.) Define a procedure that takes
+      ;; as arguments f, a, b, and n and returns the value of the integral, computed
+      ;; using Simpson's Rule. Use your procedure to integrate cube between 0 and 1
+      ;; (with n = 100 and n = 1000), and compare the results to those of the integral
+      ;; procedure shown above.
+
+      (define (round-to-next-even x)
+        (+ x (remainder x 2)))
+      (define (simpson f a b n)
+        (define fixed-n (round-to-next-even n))
+        (define h (/ (- b a) fixed-n))
+        (define (simpson-term k)
+          (define y (f (+ a (* k h))))
+          (if (or (= k 0) (= k fixed-n))
+              (* 1 y)
+              (if (even? k)
+                  (* 2 y)
+                  (* 4 y))))
+        (* (/ h 3) (sum simpson-term 0 inc fixed-n)))
+    #+END_SRC
+15. [X] Exercise 1.30
+    #+BEGIN_SRC scheme
+      ;; The sum procedure above generates a linear recursion. The procedure can be
+      ;; rewritten so that the sum is performed iteratively. Show how to do this by
+      ;; filling in the missing expressions in the following definition:
+
+      (define (sum term a next b)
+        (define (iter a result)
+          (if (> a b)
+              result
+              (iter (next a) (+ result (term a)))))
+        (iter a 0))
+
+      (define (pi-sum a b)
+        (define (pi-term x)
+          (/ 1.0 (* x (+ x 2))))
+        (define (pi-next x)
+          (+ x 4))
+        (sum pi-term a pi-next b))
+
+      (* 8 (pi-sum 1 1000)) ;; => 3.13959265558978
+    #+END_SRC
+16. [X] Exercise 1.31
+    #+BEGIN_SRC scheme
+      ;; a. The sum procedure is only the simplest of a vast number of similar
+      ;; abstractions that can be captured as higher-order procedures. Write an
+      ;; analogous procedure called product that returns the product of the values of
+      ;; a function at points over a given range. Show how to define factorial in
+      ;; terms of product. Also use product to compute approximations to using the
+      ;; formula52
+
+      (define (product term a next b)
+        (define (iter a result)
+          (if (> a b)
+              result
+              (iter (next a) (* result (term a)))))
+        (iter a 1))
+
+      (define (next x) (+ x 1))
+
+      (define (factorial n)
+        (product identity 1 next n))
+
+      (factorial 10) ;; => 3628800
+      (factorial 5) ;; => 120
+
+
+      ;; b. If your product procedure generates a recursive process, write one that
+      ;; generates an iterative process. If it generates an iterative process, write
+      ;; one that generates a recursive process.
+
+      (define (product term a next b)
+        (if (> a b) 1
+            (* (term a) (product term (next a) next b))))
+
+      (define (next x) (+ x 1))
+
+      (define (factorial n)
+        (product identity 1 next n))
+
+      (factorial 10) ;; => 3628800
+      (factorial 5) ;; => 120
+    #+END_SRC
+17. [X] Exercise 1.32
+    #+BEGIN_SRC scheme
+      ;; a. Show that sum and product (exercise 1.31) are both special cases of a
+      ;; still more general notion called accumulate that combines a collection of
+      ;; terms, using some general accumulation function:
+
+      (accumulate combiner null-value term a next b)
+
+      ;; Accumulate takes as arguments the same term and range specifications as sum
+      ;; and product, together with a combiner procedure (of two arguments) that
+      ;; specifies how the current term is to be combined with the accumulation of the
+      ;; preceding terms and a null-value that specifies what base value to use when
+      ;; the terms run out. Write accumulate and show how sum and product can both be
+      ;; defined as simple calls to accumulate.
+
+      (define (accumulate combiner null-value term a next b)
+        (if (> a b) null-value
+            (combiner (term a) (accumulate combiner null-value term (next a) next b))))
+
+      (define (sum term a next b)
+        (accumulate + 0 term a next b))
+
+      (define (product term a next b)
+        (accumulate * 1 term a next b))
+
+      ;; b. If your accumulate procedure generates a recursive process, write one that
+      ;; generates an iterative process. If it generates an iterative process, write
+      ;; one that generates a recursive process.
+
+      (define (accumulate combiner null-value term a next b)
+        (define (iter a res)
+          (if (> a b) res
+              (iter (next a) (combiner res (term a)))))
+        (iter a null-value))
+    #+END_SRC
+18. [X] Exercise 1.33
+    #+BEGIN_SRC scheme
+      ;; You can obtain an even more general version of accumulate (exercise 1.32) by
+      ;; introducing the notion of a filter on the terms to be combined. That is,
+      ;; combine only those terms derived from values in the range that satisfy a
+      ;; specified condition. The resulting filtered-accumulate abstraction takes the
+      ;; same arguments as accumulate, together with an additional predicate of one
+      ;; argument that specifies the filter. Write filtered-accumulate as a procedure.
+      ;; Show how to express the following using filtered-accumulate:
+
+      ;; a. the sum of the squares of the prime numbers in the interval a to b
+      ;; (assuming that you have a prime? predicate already written)
+
+      (define (sq x) (* x x))
+
+      (define (inc x) (+ 1 x))
+
+      (define (smallest-div n)
+        (define (divides? a b)
+          (= 0 (remainder b a)))
+        (define (find-div n test)
+          (cond ((> (sq test) n) n) ((divides? test n) test)
+                (else (find-div n (+ test 1)))))
+        (find-div n 2))
+
+      (define (prime? n)
+        (if (= n 1) false (= n (smallest-div n))))
+
+      (define (filtered-accumulate combiner null-value term a next b filter)
+        (if (> a b) null-value
+            (if (filter a)
+                (combiner (term a)
+                          (filtered-accumulate combiner null-value term (next a) next b filter))
+                (combiner null-value
+                          (filtered-accumulate combiner null-value term (next a) next b filter)))))
+
+      (define (sum-of-prime-squares a b)
+        (filtered-accumulate + 0 sq a inc b prime?))
+
+      (sum-of-prime-squares 0 3) ;; =>13
+
+      ;; b. the product of all the positive integers less than n that are relatively
+      ;; prime to n (i.e., all positive integers i < n such that GCD(i,n) = 1).
+
+      (define (gcd m n)
+        (cond ((< m n) (gcd n m))
+              ((= n 0) m)
+              (else (gcd n (remainder m n)))))
+
+      (define (relative-prime? m n)
+        (= (gcd m n) 1))
+
+      (define (product-of-relative-primes n)
+        (define (filter x)
+          (relative-prime? x n))
+        (filtered-accumulate filter * 1 identity 1 inc n))
+
+      (product-of-relative-primes 10) ;; => 189
+    #+END_SRC
+19. [X] Exercise 1.34
+    #+BEGIN_SRC scheme
+      ;; Suppose we define the procedure
+
+      (define (f g)
+        (g 2))
+
+      ;; Then we have
+
+      (f square) ;; => 4
+
+      (f (lambda (z) (* z (+ z 1)))) ;; => 6
+
+      ;; What happens if we (perversely) ask the interpreter to evaluate the
+      ;; combination (f f)? Explain.
+
+      ;; (f f) ->
+      ;; (f (f 2)) ->
+      ;; (f (f (2))) this throws an error because you can't call 2 as a function.
+    #+END_SRC
+20. [X] Exercise 1.35
+    #+BEGIN_SRC scheme
+      ;; Show that the golden ratio (section 1.2.2) is a fixed point of the
+      ;; transformation
+
+      ;; x -> 1 + 1/x
+
+      ;; , and use this fact to compute by means of the fixed-point procedure.
+
+      ;; x = 1 + 1/x
+      ;; x^2 = x + 1
+      ;; x^2 - x - 1 = 0
+      ;; x = ( 1 + sqrt(5)) / 2
+
+      ;; This is the definition of phi.
+
+      (define tolerance 0.00001)
+
+      (define (fixed-point f first-guess)
+        (define (close-enough? v1 v2)
+          (< (abs (- v1 v2)) tolerance))
+        (define (try guess)
+          (let ((next (f guess)))
+            (if (close-enough? guess next)
+                next
+                (try next))))
+        (try first-guess))
+
+      (fixed-point (lambda (x) (+ 1 (/ 1 x))) 1.0) ;; => 1.61803278688525
+    #+END_SRC
+21. [X] Exercise 1.36
+    #+BEGIN_SRC scheme
+      ;; Modify fixed-point so that it prints the sequence of approximations it
+      ;; generates, using the newline and display primitives shown in exercise 1.22.
+      ;; Then find a solution to x^x = 1000 by finding a fixed point of x ->
+      ;; log(1000)/log(x). (Use Scheme's primitive log procedure, which computes
+      ;; natural logarithms.) Compare the number of steps this takes with and without
+      ;; average damping. (Note that you cannot start fixed-point with a guess of 1,
+      ;; as this would cause division by log(1) = 0.)
+
+      (define tolerance 0.000001)
+
+      (define (fixed-point f first-guess)
+        (define (close-enough? v1 v2)
+          (< (abs (- v1 v2)) tolerance))
+        (define (try guess)
+          (display guess)
+          (newline)
+          (let ((next (f guess)))
+            (if (close-enough? guess next)
+                next
+                (try next))))
+        (try first-guess))
+
+      (define (x-to-the-x y)
+        (fixed-point (lambda (x) (/ (log y) (log x)))
+                     10.0))
+    #+END_SRC
+22. [X] Exercise 1.37
+    #+BEGIN_SRC scheme
+      ;; a. An infinite continued fraction is an expression of the form
+
+      ;; As an example, one can show that the infinite continued fraction expansion
+      ;; with the Ni and the Di all equal to 1 produces 1/, where is the golden ratio
+      ;; (described in section 1.2.2). One way to approximate an infinite continued
+      ;; fraction is to truncate the expansion after a given number of terms. Such a
+      ;; truncation -- a so-called k-term finite continued fraction -- has the form
+
+      ;; Suppose that n and d are procedures of one argument (the term index i) that
+      ;; return the Ni and Di of the terms of the continued fraction. Define a
+      ;; procedure cont-frac such that evaluating (cont-frac n d k) computes the value
+      ;; of the k-term finite continued fraction. Check your procedure by
+      ;; approximating 1/ using
+
+      ;; for successive values of k. How large must you make k in order to get an
+      ;; approximation that is accurate to 4 decimal places?
+
+      (define (cont-frac n d k)
+        (define (loop result term)
+          (if (= term 0)
+              result
+              (loop (/ (n term)
+                       (+ (d term) result))
+                    (- term 1))))
+        (loop 0 k))
+
+      (cont-frac (lambda (i) 1.0)
+                 (lambda (i) 1.0)
+                 300) ;; => 0.618033988749895
+
+      ;; b. If your cont-frac procedure generates a recursive process, write one that
+      ;; generates an iterative process. If it generates an iterative process, write
+      ;; one that generates a recursive process.
+
+      (define (cont-frac n d k)
+        (define (frac-rec i)
+          (/ (n i)
+             (+ (d i)
+                (if (= i k)
+                    0
+                    (frac-rec (+ i 1))))))
+        (frac-rec 1))
+
+      (cont-frac (lambda (i) 1.0)
+                 (lambda (i) 1.0)
+                 300) ;; => 0.618033988749895
+    #+END_SRC
+23. [X] Exercise 1.38
+    #+BEGIN_SRC scheme
+      ;; In 1737, the Swiss mathematician Leonhard Euler published a memoir De
+      ;; Fractionibus Continuis, which included a continued fraction expansion for e -
+      ;; 2, where e is the base of the natural logarithms. In this fraction, the Ni
+      ;; are all 1, and the Di are successively 1, 2, 1, 1, 4, 1, 1, 6, 1, 1, 8, ....
+      ;; Write a program that uses your cont-frac procedure from exercise 1.37 to
+      ;; approximate e, based on Euler's expansion.
+
+      (define (cont-frac n d k)
+        (define (loop result term)
+          (if (= term 0)
+              result
+              (loop (/ (n term)
+                       (+ (d term) result))
+                    (- term 1))))
+        (loop 0 k))
+
+      (+ 2 (cont-frac (lambda (i) 1.0)
+                      (lambda (i)
+                        (if (= (remainder i 3) 2)
+                            (/ (+ i 1) 1.5)
+                            1))
+                      300)) ;; => 2.71828182845905
+    #+END_SRC
+24. [X] Exercise 1.39
+    #+BEGIN_SRC scheme
+      ;; A continued fraction representation of the tangent function was published in
+      ;; 1770 by the German mathematician J.H. Lambert:
+
+      ;; tan x =    x
+      ;;         --------
+      ;;         1 - x^2
+      ;;            -----
+      ;;             3 - x^2
+      ;;                ----
+      ;;                 ....
+
+
+      ;; where x is in radians. Define a procedure (tan-cf x k) that computes an
+      ;; approximation to the tangent function based on Lambert's formula. K specifies
+      ;; the number of terms to compute, as in exercise 1.37.
+
+      (define (cont-frac n d k)
+        (define (loop result term)
+          (if (= term 0)
+              result
+              (loop (/ (n term)
+                       (+ (d term) result))
+                    (- term 1))))
+        (loop 0 k))
+
+      (define (tan-cf x k)
+        (cont-frac (lambda (i)
+                     (if (= i 1) x (- (* x x))))
+                   (lambda (i)
+                     (- (* i 2) 1))
+                   k))
+
+      (tan-cf 3.14159 300) ;; => -2.65358979331384e-06
+    #+END_SRC
+25. [X] Exercise 1.40
+    #+BEGIN_SRC scheme
+      ;; Define a procedure cubic that can be used together with the newtons-method
+      ;; procedure in expressions of the form
+
+      ;; (newtons-method (cubic a b c) 1)
+
+      ;; to approximate zeros of the cubic x3 + ax2 + bx + c
+
+      (define tolerance 0.00001)
+
+      (define (fixed-point f first-guess)
+        (define (close-enough? v1 v2)
+          (< (abs (- v1 v2)) tolerance))
+        (define (try guess)
+          (let ((next (f guess)))
+            (if (close-enough? guess next)
+                next
+                (try next))))
+        (try first-guess))
+
+      (define dx 0.00001)
+
+      (define (deriv g)
+        (lambda (x)
+          (/ (- (g (+ x dx)) (g x))
+             dx)))
+
+      (define (newton-transform g)
+        (lambda (x)
+          (- x (/ (g x) ((deriv g) x)))))
+
+      (define (newtons-method g guess)
+        (fixed-point (newton-transform g) guess))
+
+      (define (cubic a b c)
+        (define (square x)(* x x))
+        (define (cube x)(* x x x))
+        (lambda (x)
+          (+ (cube x)
+             (* a (square x))
+             (* b x)
+             c)))
+
+      (newtons-method (cubic 1 1 1) 1) ;; => -0.99999999999978
+    #+END_SRC
+26. [X] Exercise 1.41
+    #+BEGIN_SRC scheme
+      ;; Define a procedure double that takes a procedure of one argument as argument
+      ;; and returns a procedure that applies the original procedure twice. For
+      ;; example, if inc is a procedure that adds 1 to its argument, then (double inc)
+      ;; should be a procedure that adds 2. What value is returned by
+
+      (define (inc x) (+ 1 x))
+
+      (define (double f)
+        (lambda (x)
+          (f (f x))))
+
+      (((double (double double)) inc) 5) ;; => 21c'
+    #+END_SRC
+27. [X] Exercise 1.42
+    #+BEGIN_SRC scheme
+      ;; Let f and g be two one-argument functions. The composition f after g is
+      ;; defined to be the function x f(g(x)). Define a procedure compose that
+      ;; implements composition. For example, if inc is a procedure that adds 1 to its
+      ;; argument,
+
+      (define (compose f g)
+        (lambda (x)
+          (f (g x))))
+
+      (define (inc x) (+ x 1))
+      (define (square x) (* x x))
+
+      ((compose square inc) 6) ;; => 49
+    #+END_SRC
+28. [X] Exercise 1.43
+    #+BEGIN_SRC scheme
+      ;; If f is a numerical function and n is a positive integer, then we can form
+      ;; the nth repeated application of f, which is defined to be the function whose
+      ;; value at x is f(f(...(f(x))...)). For example, if f is the function x x + 1,
+      ;; then the nth repeated application of f is the function x x + n. If f is the
+      ;; operation of squaring a number, then the nth repeated application of f is the
+      ;; function that raises its argument to the 2nth power. Write a procedure that
+      ;; takes as inputs a procedure that computes f and a positive integer n and
+      ;; returns the procedure that computes the nth repeated application of f. Your
+      ;; procedure should be able to be used as follows:
+
+      (define (compose f g)
+        (lambda (x)
+          (f (g x))))
+
+      (define (repeated f n)
+        (cond
+         ((= n 1) f)
+         (else (compose f (repeated f (- n 1))))))
+
+      ((repeated square 2) 5) ;; => 625
+    #+END_SRC
+29. [X] Exercise 1.44
+    #+BEGIN_SRC scheme
+      ;; The idea of smoothing a function is an important concept in signal
+      ;; processing. If f is a function and dx is some small number, then the smoothed
+      ;; version of f is the function whose value at a point x is the average of f(x -
+      ;; dx), f(x), and f(x + dx). Write a procedure smooth that takes as input a
+      ;; procedure that computes f and returns a procedure that computes the smoothed
+      ;; f. It is sometimes valuable to repeatedly smooth a function (that is, smooth
+      ;; the smoothed function, and so on) to obtained the n-fold smoothed function.
+      ;; Show how to generate the n-fold smoothed function of any given function using
+      ;; smooth and repeated from exercise 1.43.
+
+      (define (compose f g)
+        (lambda (x)
+          (f (g x))))
+
+      (define (repeated f n)
+        (cond
+         ((= n 1) f)
+         (else (compose f (repeated f (- n 1))))))
+
+      (define (smooth f dx)
+        (define (average a b c)
+          (/ (+ a b c)
+             3))
+        (lambda (x)
+          (average (f (- x dx))
+                   (f x)
+                   (f (+ x dx)))))
+
+      (define (n-fold-smooth f n)
+        ((repeated (smooth f) n) f))
+    #+END_SRC
+30. [X] Exercise 1.45
+    #+BEGIN_SRC scheme
+      ;; We saw in section 1.3.3 that attempting to compute square roots by naively
+      ;; finding a fixed point of y x/y does not converge, and that this can be fixed
+      ;; by average damping. The same method works for finding cube roots as fixed
+      ;; points of the average-damped y x/y2. Unfortunately, the process does not work
+      ;; for fourth roots -- a single average damp is not enough to make a fixed-point
+      ;; search for y x/y3 converge. On the other hand, if we average damp twice
+      ;; (i.e., use the average damp of the average damp of y x/y3) the fixed-point
+      ;; search does converge. Do some experiments to determine how many average damps
+      ;; are required to compute nth roots as a fixed-point search based upon repeated
+      ;; average damping of y x/yn-1. Use this to implement a simple procedure for
+      ;; computing nth roots using fixed-point, average-damp, and the repeated
+      ;; procedure of exercise 1.43. Assume that any arithmetic operations you need
+      ;; are available as primitives.
+
+      (define (average x y)
+        (/ (+ x y) 2.0))
+
+      (define (average-damp f)
+        (lambda (x) (average x (f x))))
+
+      (define tolerance 0.00001)
+
+      (define (fixed-point f first-guess)
+        (define (close-enough? v1 v2)
+          (< (abs (- v1 v2)) tolerance))
+        (define (try guess)
+          (let ((next (f guess)))
+            (if (close-enough? guess next)
+                next
+                (try next))))
+        (try first-guess))
+
+      (define (repeated f n)
+        (if (= n 1)
+            f
+            (lambda (x) (f ((repeated f (- n 1)) x)))))
+
+      (define (get-max-pow n)
+        (define (iter p r)
+          (if (< (- n r) 0)
+              (- p 1)
+              (iter (+ p 1) (* r 2))))
+        (iter 1 2))
+
+      (define (pow b p)
+        (define (even? x)
+          (= (remainder x 2) 0))
+        (define (sqr x)
+          (* x x))
+        (define (iter res a n)
+          (if (= n 0)
+              res
+              (if (even? n)
+                  (iter res (sqr a) (/ n 2))
+                  (iter (* res a) a (- n 1)))))
+        (iter 1 b p))
+
+      (define (nth-root n x)
+        (fixed-point ((repeated average-damp (get-max-pow n))
+                      (lambda (y) (/ x (pow y (- n 1)))))
+                     1.0))
+
+      (nth-root 5 32) ;; => 2.00000151299576
+    #+END_SRC
+31. [X] Exercise 1.46
+    #+BEGIN_SRC scheme
+      ;; Several of the numerical methods described in this chapter are instances of
+      ;; an extremely general computational strategy known as iterative improvement.
+      ;; Iterative improvement says that, to compute something, we start with an
+      ;; initial guess for the answer, test if the guess is good enough, and otherwise
+      ;; improve the guess and continue the process using the improved guess as the
+      ;; new guess. Write a procedure iterative-improve that takes two procedures as
+      ;; arguments: a method for telling whether a guess is good enough and a method
+      ;; for improving a guess. Iterative-improve should return as its value a
+      ;; procedure that takes a guess as argument and keeps improving the guess until
+      ;; it is good enough. Rewrite the sqrt procedure of section 1.1.7 and the
+      ;; fixed-point procedure of section 1.3.3 in terms of iterative-improve.
+
+      (define (iterative-improve good-enough? improve-guess)
+        (lambda (guess)
+          (let ((guess-improved (improve-guess guess)))
+            (if (good-enough? guess guess-improved)
+                guess-improved
+                ((iterative-improve good-enough? improve-guess) guess-improved)))))
+
+
+      (define (close-enough? v1 v2)
+        (define tolerance 0.000006)
+        (< (/ (abs (- v1 v2)) v2)  tolerance))
+
+      ;; (a) rewrite sqrt using iterative-improve
+      (define (sqrt x)
+        ((iterative-improve
+          close-enough?
+          (lambda (y)
+            (/ (+ (/ x y) y) 2))) 1.0))
+
+      ;; (b) rewrite fixed-point using iterative-improve
+      (define (fixed-point f first-guess)
+        ((iterative-improve
+          ;; improve function is nothing but the
+          ;; function f whose fixed point is to be found!
+          f
+          close-enough?) first-guess))
+    #+END_SRC

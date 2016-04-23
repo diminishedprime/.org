@@ -1,0 +1,66 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Prime digit replacements
+*** Problem 51
+By replacing the 1st digit of the 2-digit number *3, it turns out that six of
+the nine possible values: 13, 23, 43, 53, 73, and 83, are all prime.
+
+By replacing the 3rd and 4th digits of 56**3 with the same digit, this 5-digit
+number is the first example having seven primes among the ten generated numbers,
+yielding the family: 56003, 56113, 56333, 56443, 56663, 56773, and 56993.
+Consequently 56003, being the first member of this family, is the smallest prime
+with this property.
+
+Find the smallest prime which, by replacing part of the number (not necessarily
+adjacent digits) with the same digit, is part of an eight prime value family.
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (defn gen-primes "Generates an infinite, lazy sequence of prime numbers"
+    []
+    (let [reinsert (fn [table x prime]
+                     (update-in table [(+ prime x)] conj prime))]
+      (defn primes-step [table d]
+        (if-let [factors (get table d)]
+          (recur (reduce #(reinsert %1 d %2) (dissoc table d) factors)
+                 (inc d))
+          (lazy-seq (cons d (primes-step (assoc table (* d d) (list d))
+                                         (inc d))))))
+      (primes-step {} 2)))
+
+  (def primes-set-helper (atom (rest (gen-primes))))
+  (def primes-set (atom (into (sorted-set) [2])))
+
+  (defn prime? [n]
+    (if (<= (first @primes-set-helper) n)
+      (let [next-100-primes (take 100 @primes-set-helper)]
+        (do
+          (swap! primes-set-helper (fn [old]
+                                     (drop 100 old)))
+          (swap! primes-set (fn [old]
+                              (into old next-100-primes)))
+          (recur n)))
+      (boolean (get @primes-set n))))
+
+  (require '[clojure.math.combinatorics :as combo])
+
+  (defn apply-mask [original mask n]
+    (apply str (map (fn [o-char m-char]
+                      (if (= m-char 1) n o-char)) (str original) mask)))
+
+  (defn masked-n [original mask]
+    (= 1 (count (set (remove nil?
+                             (map (fn [o-char m-char]
+                                    (when (= m-char 1) o-char)) (str original) mask))))))
+
+  (defn any-mask? [original]
+    (some (partial masked-n original) (combo/permutations [0 0 0 1 1 1])))
+
+  (->> (gen-primes)
+       (drop-while #(< % 100000))
+       (take-while #(< % 1000000))
+       (filter any-mask?)
+       )
+
+#+END_SRC
