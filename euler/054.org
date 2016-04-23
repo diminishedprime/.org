@@ -1,0 +1,243 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Poker hands
+*** Problem 54
+In the card game poker, a hand consists of five cards and are ranked, from
+lowest to highest, in the following way:
+
+High Card: Highest value card.
+One Pair: Two cards of the same value.
+Two Pairs: Two different pairs.
+Three of a Kind: Three cards of the same value.
+Straight: All cards are consecutive values.
+Flush: All cards of the same suit.
+Full House: Three of a kind and a pair.
+Four of a Kind: Four cards of the same value.
+Straight Flush: All cards are consecutive values of same suit.
+Royal Flush: Ten, Jack, Queen, King, Ace, in same suit.
+The cards are valued in the order:
+2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, Ace.
+
+If two players have the same ranked hands then the rank made up of the highest
+value wins; for example, a pair of eights beats a pair of fives (see example 1
+below). But if two ranks tie, for example, both players have a pair of queens,
+then highest cards in each hand are compared (see example 4 below); if the
+highest cards tie then the next highest cards are compared, and so on.
+
+Consider the following five hands dealt to two players:
+
+|------+-------------------------------------------------+--------------------------------------------------+----------|
+| Hand | Player 1                                        | Player 2                                         | Winner   |
+|------+-------------------------------------------------+--------------------------------------------------+----------|
+|    1 | 5H 5C 6S 7S KD (Pair Of Fives)                  | 2C 3S 8S 8D TD (Pair of Eights)                  | Player 2 |
+|    2 | 5D 8C 9S JS AC Highest card Ace                 | 2C 5C 7D 8S QH Highest card Queen                | Player 1 |
+|    3 | 2D 9C AS AH AC Three Aces                       | 3D 6D 7D TD QD Flush with Diamonds               | Player 2 |
+|    4 | 4D 6S 9H QH QC Pair of Queens Highest card Nine | 3D 6D 7H QD QS Pair of Queens Highest card Seven | Player 1 |
+|    5 | 2H 2D 4C 4D 4S Full House With Three Fours      | 3C 3D 3S 9S 9D Full House with Three Threes      | Player 1 |
+|------+-------------------------------------------------+--------------------------------------------------+----------|
+
+The file, poker.txt, contains one-thousand random hands dealt to two players.
+Each line of the file contains ten cards (separated by a single space): the
+first five are Player 1's cards and the last five are Player 2's cards. You can
+assume that all hands are valid (no invalid characters or repeated cards), each
+player's hand is in no specific order, and in each hand there is a clear winner.
+
+How many hands does Player 1 win?
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (require '[clojure.edn :as edn])
+  (require '[clojure.string :as str])
+
+  (defn rank-to-int [card]
+    (let [rank (subs card 0 1)]
+      (cond
+        (= rank "A") 14
+        (= rank "K") 13
+        (= rank "Q") 12
+        (= rank "J") 11
+        (= rank "T") 10
+        :else (Integer/parseInt rank))))
+
+  (defn suit-to-kw [card]
+    (let [rank (subs card 1)]
+      (cond
+        (= rank "C") :clubs
+        (= rank "S") :spades
+        (= rank "D") :diamonds
+        (= rank "H") :hearts)))
+
+  (defn parse-card [card]
+    [(rank-to-int card) (suit-to-kw card)])
+
+  (defn parse-hand [hand-strs]
+    (mapv parse-card hand-strs))
+
+  (defn to-poker-hands [cards-string]
+    (let [cards (str/split cards-string #" ")]
+      [(take 5 cards) (drop 5 cards)]))
+
+  ;;;;;;;;;;;
+  ;; Hands ;;
+  ;;;;;;;;;;;
+
+  (defn high-card [hand]
+    (vec (reverse (sort (map first hand)))))
+
+  (defn one-pair [hand]
+    (let [pair (->> hand
+                    (map first)
+                    frequencies
+                    (map (fn [[k v]] [v k]))
+                    (filter (fn [[grouping card]]
+                              (= grouping 2)))
+                    (map (fn [[grouping card]] card))
+                    (take 1)
+                    vec)]
+      (if (seq pair)
+        [pair (vec (reverse (sort (remove (set pair) (map first hand)))))]
+        [])))
+
+  (defn two-pair [hand]
+    (let [pairs (->> hand
+                     (map first)
+                     frequencies
+                     (map (fn [[k v]] [v k]))
+                     (filter (fn [[grouping card]]
+                               (= grouping 2)))
+                     (map (fn [[grouping card]] card))
+                     (take 2)
+                     sort
+                     reverse
+                     vec)]
+      (if (seq pairs)
+        [pairs (vec (remove (set pairs) (map first hand)))]
+        [])))
+
+
+  (defn three-of-a-kind [hand]
+    (let [t-o-a-k (->> hand
+                       (map first)
+                       frequencies
+                       (map (fn [[k v]] [v k]))
+                       (filter (fn [[grouping card]]
+                                 (= grouping 3)))
+                       (map (fn [[grouping card]] card))
+                       (take 1)
+                       vec)]
+      (if (seq t-o-a-k)
+        [t-o-a-k (vec (remove (set t-o-a-k) (map first hand)))]
+        [])))
+
+  (defn increasing? [my-seq]
+    (let [size (count my-seq)]
+      (cond
+        (= size 1) true
+        :else (and (= (inc (first my-seq))
+                      (second my-seq))
+                   (increasing? (rest my-seq))))))
+
+  (defn straight [hand]
+    (let [sorted-cards (->> hand
+                            (map first)
+                            sort)]
+      (if (increasing? sorted-cards)
+        [(vec (take 1 (reverse sorted-cards)))
+         (vec (rest (reverse sorted-cards)))]
+        [])))
+
+  (defn flush [hand]
+    (let [suits (->> hand
+                     (map second))]
+      (if (apply = suits)
+        [(vec (take 1 (reverse (sort (map first hand)))))
+         (vec (rest (reverse (sort (map first hand)))))]
+        [])))
+
+  (defn full-house [hand]
+    (let [t-o-a-k (first (three-of-a-kind hand))
+          o-p (first (one-pair hand))]
+      (if (and (seq t-o-a-k)
+               (seq o-p))
+        [t-o-a-k o-p]
+        [])))
+
+  (defn four-of-a-kind [hand]
+    (let [f-o-a-k (->> hand
+                       (map first)
+                       frequencies
+                       (map (fn [[k v]] [v k]))
+                       (filter (fn [[grouping card]]
+                                 (= grouping 4)))
+                       (map (fn [[grouping card]] card))
+                       (take 1)
+                       vec)]
+      (if (seq f-o-a-k)
+        [f-o-a-k (vec (remove (set f-o-a-k) (map first hand)))]
+        [])))
+
+  (defn straight-flush [hand]
+    (let [str (first (straight hand))
+          flu (first (flush hand))]
+      (if (and (seq str)
+               (seq flu))
+        (straight hand)
+        [])))
+
+  (defn royal-flush [hand]
+    (let [str-flu (straight-flush hand)]
+      (if (= (first (first str-flu))
+             14)
+        str-flu
+        [])))
+
+  (def hand-fns [royal-flush
+                 straight-flush
+                 four-of-a-kind
+                 full-house
+                 flush
+                 straight
+                 three-of-a-kind
+                 two-pair
+                 one-pair
+                 high-card])
+
+  (defn score-hand [hand]
+    (mapv (fn [my-fn hand]
+            (my-fn hand)) hand-fns (repeat hand)))
+
+  (defn compare-hands [[hand-1 hand-2]]
+    (compare (score-hand hand-1)
+             (score-hand hand-2)))
+
+  (->> (str "\"" (slurp "/Users/mjhamrick/.org/euler/resources/p054_poker.txt") "\"")
+       edn/read-string
+       str/split-lines
+       (map to-poker-hands)
+       (map #(map parse-hand %))
+       (map compare-hands)
+       (filter (partial < 0))
+       (reduce +)) ;; => 376
+
+  (royal-flush '([14 :clubs] [13 :clubs] [12 :clubs] [10 :clubs] [11 :clubs]))
+  (royal-flush '([3 :clubs] [4 :clubs] [5 :clubs] [6 :clubs] [7 :clubs]))
+  (one-pair '([8 :clubs] [10 :spades] [13 :clubs] [8 :hearts] [4 :spades]))
+  (one-pair '([8 :clubs] [10 :spades] [13 :clubs] [2 :hearts] [4 :spades]))
+  (high-card '([8 :clubs] [10 :spades] [13 :clubs] [8 :hearts] [4 :spades]))
+  (two-pair '([8 :clubs] [13 :spades] [13 :clubs] [8 :hearts] [4 :spades]))
+  (two-pair '([8 :clubs] [10 :spades] [13 :clubs] [9 :hearts] [4 :spades]))
+  (straight-flush '([3 :clubs] [4 :clubs] [5 :clubs] [6 :clubs] [7 :clubs]))
+  (straight-flush '([1 :clubs] [4 :clubs] [5 :clubs] [6 :clubs] [7 :clubs]))
+  (four-of-a-kind '([8 :clubs] [8 :spades] [8 :clubs] [8 :hearts] [10 :spades]))
+  (four-of-a-kind '([8 :clubs] [8 :spades] [8 :clubs] [7 :hearts] [10 :spades]))
+  (full-house '([8 :clubs] [8 :spades] [8 :clubs] [10 :hearts] [10 :spades]))
+  (full-house '([8 :clubs] [10 :spades] [13 :clubs] [9 :hearts] [4 :spades]))
+  (flush '([8 :clubs] [10 :spades] [13 :clubs] [9 :hearts] [4 :spades]))
+  (flush '([8 :clubs] [10 :clubs] [13 :clubs] [9 :clubs] [4 :clubs]))
+  (straight '([2 :clubs] [3 :spades] [4 :clubs] [5 :hearts] [6 :spades]))
+  (straight '([2 :clubs] [3 :spades] [4 :clubs] [2 :hearts] [6 :spades]))
+  (three-of-a-kind '([8 :clubs] [8 :spades] [13 :clubs] [8 :hearts] [4 :spades]))
+  (three-of-a-kind '([8 :clubs] [8 :spades] [13 :clubs] [7 :hearts] [4 :spades]))
+  (to-poker-hands "8C TS KC 9H 4S 7D 2S 5D 3S AC")
+#+END_SRC
