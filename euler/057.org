@@ -37,9 +37,20 @@ with more digits than denominator?
   (defn continued-fraction [n d k]
     (my-loop n d 0 k))
 
-  (sq)
+  (defn sqrt-2-continued-fraction [iteration]
+    (+ 1 (continued-fraction (fn [i] 1)
+                             (fn [i] 2)
+                             iteration)))
 
-  (inc (inc (continued-fraction (fn [i] 1.0)
-                                (fn [i] 1.0)
-                                300)))
+  (defn more-digits-in-numerator-than-denominator [fraction]
+    (let [num (numerator fraction)
+          den (denominator fraction)]
+      (> (.length (str num))
+         (.length (str den)))))
+
+  (->> (rest (range (inc 1000)))
+       (map sqrt-2-continued-fraction)
+       (filter more-digits-in-numerator-than-denominator)
+       count) ;; => 153
+
 #+END_SRC

@@ -59,4 +59,6 @@ username: mjhclojure
 54. [X] [[./054.org][Poker Hands]]
 55. [X] [[./055.org][Lychrel Numbers]]
 56. [X] [[./056.org][Powerful Digit Sum]]
-57. [ ] [[./057.org][Square Root Convergents]]
+57. [X] [[./057.org][Square Root Convergents]]
+58. [X] [[./058.org][Spiral Primes]]
+59. [X] [[./059.org][XOR Decryption]]
