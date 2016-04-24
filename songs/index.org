@@ -10,9 +10,15 @@
 ** The Antlers
 + [[./two.org][Two]]
 + [[./bear.org][Bear]]
+** Norah Jones
++ [[./shoot_the_moon.org][Shoot The Moon]]
 ** Death Cab For Cutie
 + [[./i_will_follow_you_into_the_dark.org][I Will Follow You Into The Dark]]
 ** Death Cab For Cutie
 + [[./such_great_heights.org][Such Great Heights]]
 ** Keaton Henson
 + [[./small_hands.org][Small Hands]]
+** Ingrid Michaelson
++ [[./you_and_i.org][You And I]]
+** Ke$ha
++ [[./dancing_with_tears_in_my_eyes.org][Dancing With Tears In My Eyes]]

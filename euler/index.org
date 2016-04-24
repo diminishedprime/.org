@@ -58,3 +58,5 @@ username: mjhclojure
 53. [X] [[./053.org][Combinatoric Selections]]
 54. [X] [[./054.org][Poker Hands]]
 55. [X] [[./055.org][Lychrel Numbers]]
+56. [X] [[./056.org][Powerful Digit Sum]]
+57. [ ] [[./057.org][Square Root Convergents]]

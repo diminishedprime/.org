@@ -1,0 +1,160 @@
++ [[../index.org][Home]]
++ [[./index.org][Songs]]
+
+
+* Dancing With The Tears On My Eye
+** Ke$ha
+#+BEGIN_SRC elisp
+  Intro: Em--G-D-
+
+
+  Verse 1:
+  Em
+  Here we go
+  C
+  welcome to my funeral
+  G             D
+  without you i don't
+  even have a pulse
+  Em               C
+  all alone it's dark and cold
+  G            D
+  with every move i die
+  Em          C
+  here I go this is
+  my confession oh
+  G              D
+  a lost cause nobody
+  can save my soul
+  Em          C
+  i am so delusional with
+  G            D
+  every move i die
+
+
+  Refrain:
+  C
+  I have destroyed our life
+  D               C
+  It's gone payback is sick
+  D(hold)
+  it's all my fault
+
+
+  Chorus 1:
+  Em
+  I'm dancing
+  C
+  with tears in my eyes
+  G
+  Just fighting
+  D
+  To get through
+
+  the night
+  Em
+  I'm losing it
+
+  (Losing it)
+  C
+  (Losing it)
+  G            D
+  With every move I die
+  Em
+  I'm faded
+  C
+  I'm broken inside
+  G
+  I've wasted the
+  D
+  love of my life
+  Em
+  I'm losing it
+  (Losing it)
+  C
+  (Losing it)
+  G            D
+  With every move I die
+
+
+  Verse 2:
+  Em(hold)        C
+  When did I become
+  such a hypocrite
+  G
+  double life
+  D
+  lies that you caught me in
+  Em             C
+  trust me I'm paying for it
+  G            D
+  with every move i die
+  Em
+  On the floor
+  C
+  I'm just a zombie
+  G             D
+  who I am is not
+  who I wanna be
+  Em           C
+  I'm such a tragedy
+  G            D
+  with every move i die
+
+
+  (Repeat Refrain)
+
+
+  Chorus 2:
+  Em
+  I'm dancing
+  C
+  with tears in my eyes
+  G
+  Just fighting
+  D
+  To get through
+
+  the night
+  Em
+  I'm losing it
+
+  (Losing it)
+  C
+  (Losing it)
+  G            D
+  With every move I die
+  Em
+  I'm faded
+  C
+  I'm broken inside
+  G
+  I've wasted the
+  D
+  love of my life
+  Em
+  I'm losing it
+  (Losing it)
+  C
+  (Losing it)
+  G            Bm
+  With every move I die
+
+
+  Bridge:
+  C         G
+  Whoa This is it and now
+  Bm
+  your really gone this time
+  C       G
+  never once thought
+  Bm
+  I'd be in pieces left behind
+
+
+  Interlude: Em-C-G-D(hold)
+
+
+  (Repeat Chorus 1)
+
+#+END_SRC
