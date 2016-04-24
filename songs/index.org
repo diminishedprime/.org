@@ -22,3 +22,4 @@
 + [[./you_and_i.org][You And I]]
 ** Ke$ha
 + [[./dancing_with_tears_in_my_eyes.org][Dancing With Tears In My Eyes]]
++ [[./your_love_is_my_drug.org][You Love Is My Drug]]

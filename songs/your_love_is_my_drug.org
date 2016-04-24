@@ -1,0 +1,98 @@
++ [[../index.org][Home]]
++ [[./index.org][Songs]]
+
+* Your Love Is My Drug
+** Kesha
+
+#+BEGIN_SRC elisp
+  C                      G           Am
+  Maybe I need some rehab, or maybe just need some sleep
+  Em         F              Em            F
+  I've got a sick obsession, I'm seeing it in my dreams
+  C                           G         Am
+  I'm looking down every alley, I'm making those desperate calls
+  Em            F                Em           F
+  Im staying up all night hoping, Hit my head against the walls
+
+  C                    G      Am
+  What you've got boy is hard to find
+  Em      F                     Em       F
+  I Think about it all about it, all the time
+  C                G          Am
+  I'm all strung up, my heart is fried
+  Em          F       Em
+  I just cant get you off my mind
+
+  F            C                          G      Am
+  Because your love, your love, your love, is my drug
+  Em                             F
+  Your love your love your love
+  C                                       G      Am
+  Because your love, your love, your love, is my drug
+  Em                 F           Em       F
+  Your love your love your love
+
+  C                         G                 Am
+  Won't listen to any advice, mamma's telling me i should think twice
+  Em             F           Em               F
+  But left to my own devices, i'm addicted its a crisis!
+  C                               G                     Am
+  My friends think I've gone crazy, my judgment is getting kinda hazy
+  Em          F                  Em
+  My sneeze is gonna be affected, if I keep it up like a love sick crackhead
+
+  C                    G      Am
+  What you've got boy is hard to find
+  Em      F                     Em       F
+  I Think about it all about it, all the time
+  C                G          Am
+  I'm all strung up, my heart is fried
+  Em          F       Em
+  I just cant get you off my mind
+
+  C                           G         Am
+  Because your love, your love, your love, is my drug
+  Em                 F          Em       F
+  Your love your love your love
+  C                           G         Am
+  Because your love, your love, your love, is my drug
+  Em                 F           Em       F
+  Your love your love your love
+
+  F                 G
+  I don't care what people say
+  Am
+  The rush is worth the price I pay
+  F                        G
+  I get so high when you're with me
+  Am
+  But crash and crave you when you when you leave
+  F                   G
+  So I got a question; Do you want to have a slumber party in my basement?
+  Am
+  Do I make your heart beat like an 808 drum? Is my love, your drug?
+  F                G               Am
+  (huh) Your drug? (huh) your drug? (huh) your drug?
+  Is my love, your drug?
+
+  C                           G         Am
+  Because your love, your love, your love, is my drug
+  Em                 F          Em       F
+  Your love your love your love
+  C                           G         Am
+  Because your love, your love, your love, is my drug
+  Em                 F           Em       F
+  Your love your love your love
+
+  C                           G         Am
+  Because your love, your love, your love, is my drug
+  Em                 F          Em       F
+  Your love your love your love
+  C                           G         Am
+  Because your love, your love, your love, is my drug
+  Em                 F           Em       F
+  Your love your love your love
+
+  End on F#
+
+#+END_SRC

@@ -7,25 +7,19 @@
 #+BEGIN_SRC elisp
   Intro: Em--G-D-
 
-
   Verse 1:
-  Em
-  Here we go
-  C
-  welcome to my funeral
+  Em          C
+  Here we go  welcome to my funeral
   G             D
-  without you i don't
-  even have a pulse
+  without you i don't even have a pulse
   Em               C
   all alone it's dark and cold
-  G            D
+       G               D
   with every move i die
   Em          C
-  here I go this is
-  my confession oh
+  here I go this is  my confession oh
   G              D
-  a lost cause nobody
-  can save my soul
+  a lost cause nobody can save my soul
   Em          C
   i am so delusional with
   G            D
@@ -33,113 +27,29 @@
 
 
   Refrain:
-  C
+            C
   I have destroyed our life
-  D               C
+       D               C
   It's gone payback is sick
-  D(hold)
+              D
   it's all my fault
 
 
   Chorus 1:
-  Em
-  I'm dancing
-  C
-  with tears in my eyes
-  G
-  Just fighting
-  D
-  To get through
-
-  the night
-  Em
-  I'm losing it
-
-  (Losing it)
-  C
-  (Losing it)
-  G            D
-  With every move I die
-  Em
-  I'm faded
-  C
-  I'm broken inside
-  G
-  I've wasted the
-  D
-  love of my life
-  Em
-  I'm losing it
-  (Losing it)
-  C
-  (Losing it)
-  G            D
-  With every move I die
-
-
-  Verse 2:
-  Em(hold)        C
-  When did I become
-  such a hypocrite
-  G
-  double life
-  D
-  lies that you caught me in
+  Em               C
+  I'm dancing with tears in my eyes
+        G          D
+  Just fighting To get through the night
+  Em             C   G            D
+  I'm losing it With every move I die
   Em             C
-  trust me I'm paying for it
-  G            D
-  with every move i die
-  Em
-  On the floor
-  C
-  I'm just a zombie
-  G             D
-  who I am is not
-  who I wanna be
-  Em           C
-  I'm such a tragedy
-  G            D
-  with every move i die
-
-
-  (Repeat Refrain)
-
-
-  Chorus 2:
-  Em
-  I'm dancing
-  C
-  with tears in my eyes
-  G
-  Just fighting
-  D
-  To get through
-
-  the night
-  Em
-  I'm losing it
-
-  (Losing it)
-  C
-  (Losing it)
+  I'm faded I'm broken inside
+        G         D
+  I've wasted the love of my life
+  Em             C   G            D
+  I'm losing it With every move I die
   G            D
   With every move I die
-  Em
-  I'm faded
-  C
-  I'm broken inside
-  G
-  I've wasted the
-  D
-  love of my life
-  Em
-  I'm losing it
-  (Losing it)
-  C
-  (Losing it)
-  G            Bm
-  With every move I die
-
 
   Bridge:
   C         G
@@ -151,10 +61,55 @@
   Bm
   I'd be in pieces left behind
 
+  Verse 1:
+  Here we go  welcome to my funeral
+  without you i don't even have a pulse
+  all alone it's dark and cold
+  with every move i die
+  here I go this is  my confession oh
+  a lost cause nobody can save my soul
+  i am so delusional with
+  every move i die
+
+  Verse 2:
+  When did I become such a hypocrite
+  double life lies that you caught me in
+  trust me I'm paying for it
+  with every move i die
+
+  On the floor I'm just a zombie
+  who I am is not who I wanna be
+  I'm such a tragedy
+  with every move i die
+
+  I have destroyed our life
+  It's gone payback is sick
+  it's all my fault
+
+  I'm dancing with tears in my eyes
+  Just fighting To get through the night
+  I'm losing it
+  With every move I die
+  I'm faded I'm broken inside
+  I've wasted the love of my life
+  I'm losing it
+  With every move I die
+
+  Bridge:
+  Whoa This is it and now
+  your really gone this time
+  never once thought
+  I'd be in pieces left behind
 
   Interlude: Em-C-G-D(hold)
 
-
-  (Repeat Chorus 1)
-
+  Chorus:
+  I'm dancing with tears in my eyes
+  Just fighting To get through the night
+  I'm losing it
+  With every move I die
+  I'm faded I'm broken inside
+  I've wasted the love of my life
+  I'm losing it
+  With every move I die
 #+END_SRC
