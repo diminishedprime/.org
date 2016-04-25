@@ -5,50 +5,33 @@
 ** Keaton Henson
 #+BEGIN_SRC elisp
   Capo 3
-  Am - x02210
-  F - 133211
-  C - x32010
-  E - 022100
+  Intro - Am F C E x2
+          Am E F x2
 
-  Intro - Am  F  C  E  x2
-  Am  E  F   x2
+  Verse - Am F C E
+  Chorus - C Am F
+           C Em F
+           C Em F
 
-  Am
   Miss you terribly already,
-  F
   Miss the space between your eyelids,
-  C
   where I'd stare through awkward sentences
-  E
   and avoid through awkward silence
 
-  Am
   Miss your teeth when they chatter,
-  F
   when we smoked out in my garden
-  C
   When we couldn't sleep for all the heat,
-  E
   soft talk began to harden.
 
-  Am
   Miss your small hands in the palm of mine
-  F
   The fact they're good at making,
-  C
   Miss your sitting up incessantly,
-  E                                Am      F
   And the fact you're always waking in the ni------ght,
-  Am     E      F
   Ni---------ght.
 
-  C
   And I,
-  Am
   I hope for your life
-  F
   You forget about mine
-  Am    E    F
   Forget about mi-----------ne
 
   Miss your teeth dug in my shoulder,
@@ -70,26 +53,13 @@
   Close my eyelids, hide my eyes,
   I'll be idle in my ideals,
   think of nothing else but I.
-
-  Am    F        Am  E   F
   I,         and I
 
-  C
   And I,
-
-  Am
   I hope for your life
-
-  F
   You can forget about mine
-
-  Am    E     F
-  Just forget about mi----------ne
-
-  Am    E     F
+ Just forget about mi----------ne
   Oh, mi----------ne.
-
-  Am    E    F
   Mi----------ne
 
   [End on A C]

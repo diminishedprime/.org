@@ -1,0 +1,25 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Cubic permutations
+*** Problem 62
+The cube, 41063625 (3453), can be permuted to produce two other cubes: 56623104
+(3843) and 66430125 (4053). In fact, 41063625 is the smallest cube which has
+exactly three permutations of its digits which are also cube.
+
+Find the smallest cube for which exactly five permutations of its digits are
+cube.
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (->> (map #(* % % %) (rest (range)))
+       (take 10000)
+       (map (fn [cube]
+              {(apply str (sort (str cube)))
+               [cube]}))
+       (apply merge-with concat)
+       vals
+       (filter #(= 5 (count %)))
+       (map #(apply min %))
+       (apply min)) ;; => 127035954683
+#+END_SRC
