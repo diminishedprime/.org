@@ -1,0 +1,66 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Prime pair sets
+*** Problem 60
+The primes 3, 7, 109, and 673, are quite remarkable. By taking any two primes
+and concatenating them in any order the result will always be prime. For
+example, taking 7 and 109, both 7109 and 1097 are prime. The sum of these four
+primes, 792, represents the lowest sum for a set of four primes with this
+property.
+
+Find the lowest sum for a set of five primes for which any two primes
+concatenate to produce another prime.
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (defn gen-primes "Generates an infinite, lazy sequence of prime numbers"
+    []
+    (let [reinsert (fn [table x prime]
+                     (update-in table [(+ prime x)] conj prime))]
+      (defn primes-step [table d]
+        (if-let [factors (get table d)]
+          (recur (reduce #(reinsert %1 d %2) (dissoc table d) factors)
+                 (inc d))
+          (lazy-seq (cons d (primes-step (assoc table (* d d) (list d))
+                                         (inc d))))))
+      (primes-step {} 2)))
+
+  (def primes (gen-primes))
+
+  (defn concats-to-prime? [a b]
+    (and (.isProbablePrime (BigInteger. (str a b)) 100)
+         (.isProbablePrime (BigInteger. (str b a)) 100)))
+
+  (def concats-to-prime?-memo (memoize concats-to-prime?))
+
+  (let [primes (take-while #(< % 30000) primes)]
+    (->> (for [a primes]
+           (for [b primes
+                 :when (and (< a b)
+                            (concats-to-prime?-memo a b))]
+             (for [c primes
+                   :when (and (< b c)
+                              (concats-to-prime?-memo a c)
+                              (concats-to-prime?-memo b c))]
+               (for [d primes
+                     :when (and (< c d)
+                                (concats-to-prime?-memo a d)
+                                (concats-to-prime?-memo b d)
+                                (concats-to-prime?-memo c d))]
+                 (for [e primes
+                       :when (and (< d e)
+                                  (concats-to-prime?-memo a e)
+                                  (concats-to-prime?-memo b e)
+                                  (concats-to-prime?-memo c e)
+                                  (concats-to-prime?-memo d e))]
+                   [a b c d e])))))
+         (mapcat identity)
+         (mapcat identity)
+         (mapcat identity)
+         (mapcat identity)
+         (filter (partial not= '()))
+         (take 2)
+         (map #(reduce + %))
+         (apply min))) ;; => 26033
+#+END_SRC

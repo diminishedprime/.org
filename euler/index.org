@@ -62,3 +62,4 @@ username: mjhclojure
 57. [X] [[./057.org][Square Root Convergents]]
 58. [X] [[./058.org][Spiral Primes]]
 59. [X] [[./059.org][XOR Decryption]]
+60. [X] [[./060.org][Prime Pair Sets]]
