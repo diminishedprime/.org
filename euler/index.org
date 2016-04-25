@@ -63,3 +63,4 @@ username: mjhclojure
 58. [X] [[./058.org][Spiral Primes]]
 59. [X] [[./059.org][XOR Decryption]]
 60. [X] [[./060.org][Prime Pair Sets]]
+61. [X] [[./061.org][Cyclical Figurate Numbers]]
