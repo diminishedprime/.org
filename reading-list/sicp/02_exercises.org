@@ -2489,7 +2489,7 @@
                         ((< x1 x2) (cons x1 (union-set (cdr set1) set2)))
                         (else (cons x2 (union-set set1 (cdr set2)))))))))
     #+END_SRC
-63. [ ] Exercise 2.63
+63. [X] Exercise 2.63
     #+BEGIN_SRC scheme
       ;; Each of the following two procedures converts a binary tree to a list.
 
@@ -2520,7 +2520,168 @@
       ;; do the results differ? What lists do the two procedures produce for the trees
       ;; in figure 2.16?
 
+      (define fig2-16-1 '(7 (3 (1 () ()) (5 () ())) (9 () (11 () ()))))
+      (define fig2-16-2 '(3 (1 () ()) (7 (5 () ()) (9 () (11 () ())))))
+      (define fig2-16-3 '(5 (3 (1 () ()) ()) (9 (7 () ()) (11 () ()))))
+
+      (tree->list-1 fig2-16-1)
+
+      ;; They produce the same result for the three trees from the figure.
+
       ;; b. Do the two procedures have the same order of growth in the number of steps
       ;; required to convert a balanced tree with n elements to a list? If not, which
       ;; one grows more slowly?
+
+      ;; tree->list-2 grows more slowly, because the append operation is O(n) whereas
+      ;; cons is O(1)
+    #+END_SRC
+64. [X] Exercise 2.64
+    #+BEGIN_SRC scheme
+      ;; The following procedure list->tree converts an ordered list to a balanced
+      ;; binary tree. The helper procedure partial-tree takes as arguments an integer
+      ;; n and list of at least n elements and constructs a balanced tree containing
+      ;; the first n elements of the list. The result returned by partial-tree is a
+      ;; pair (formed with cons) whose car is the constructed tree and whose cdr is
+      ;; the list of elements not included in the tree.
+
+      (define (entry tree) (car tree))
+      (define (left-branch tree) (cadr tree))
+      (define (right-branch tree) (caddr tree))
+      (define (make-tree entry left right)
+        (list entry left right))
+
+      (define (list->tree elements)
+        (car (partial-tree elements (length elements))))
+
+      (define (partial-tree elts n)
+        (if (= n 0)
+            (cons '() elts)
+            (let ((left-size (quotient (- n 1) 2)))
+              (let ((left-result (partial-tree elts left-size)))
+                (let ((left-tree (car left-result))
+                      (non-left-elts (cdr left-result))
+                      (right-size (- n (+ left-size 1))))
+                  (let ((this-entry (car non-left-elts))
+                        (right-result (partial-tree (cdr non-left-elts)
+                                                    right-size)))
+                    (let ((right-tree (car right-result))
+                          (remaining-elts (cdr right-result)))
+                      (cons (make-tree this-entry left-tree right-tree)
+                            remaining-elts))))))))
+
+      ;; a. Write a short paragraph explaining as clearly as you can how partial-tree
+      ;; works. Draw the tree produced by list->tree for the list (1 3 5 7 9 11).
+
+      ;; Partial tree splits the elements into three parts, the median item, the list
+      ;; of items less than the median and the list of items greater than the median.
+      ;; It creates a binary tree whose root node is the media, the left tree being
+      ;; those less called with a recursion, and the right being those that are
+      ;; greater called with a recursion.
+
+
+      ;;    5
+      ;;  /   \
+      ;; 1     9
+      ;;  \   / \
+      ;;   3 7  11
+
+      ;; b. What is the order of growth in the number of steps required by list->tree
+      ;; to convert a list of n elements?
+
+      ;; O(n)
+    #+END_SRC
+65. [X] Exercise 2.65
+    #+BEGIN_SRC scheme
+      ;; Use the results of exercises 2.63 and 2.64 to give (n) implementations of
+      ;; union-set and intersection-set for sets implemented as (balanced) binary
+      ;; trees.41
+
+      (define remainder mod)
+      (define quotient div)
+
+      (define (entry tree) (car tree))
+      (define (left-branch tree) (cadr tree))
+      (define (right-branch tree) (caddr tree))
+      (define (make-tree entry left right)
+        (list entry left right))
+
+      (define (tree->list tree)
+        (define (copy-to-list tree result-list)
+          (if (null? tree)
+              result-list
+              (copy-to-list (left-branch tree)
+                            (cons (entry tree)
+                                  (copy-to-list (right-branch tree)
+                                                result-list)))))
+        (copy-to-list tree '()))
+
+      (define (list->tree elements)
+        (car (partial-tree elements (length elements))))
+
+      (define (partial-tree elts n)
+        (if (= n 0)
+            (cons '() elts)
+            (let ((left-size (quotient (- n 1) 2)))
+              (let ((left-result (partial-tree elts left-size)))
+                (let ((left-tree (car left-result))
+                      (non-left-elts (cdr left-result))
+                      (right-size (- n (+ left-size 1))))
+                  (let ((this-entry (car non-left-elts))
+                        (right-result (partial-tree (cdr non-left-elts)
+                                                    right-size)))
+                    (let ((right-tree (car right-result))
+                          (remaining-elts (cdr right-result)))
+                      (cons (make-tree this-entry left-tree right-tree)
+                            remaining-elts))))))))
+
+      (define (intersection-set-list set1 set2)
+        (if (or (null? set1) (null? set2))
+            '()
+            (let ((x1 (car set1)) (x2 (car set2)))
+              (cond ((= x1 x2)
+                     (cons x1
+                           (intersection-set-list (cdr set1)
+                                                  (cdr set2))))
+                    ((< x1 x2)
+                     (intersection-set-list (cdr set1) set2))
+                    ((< x2 x1)
+                     (intersection-set-list set1 (cdr set2)))))))
+
+      (define (union-set-list set1 set2)
+        (cond  ((null? set1) set2)
+               ((null? set2) set1)
+               (else
+                (let ((x1 (car set1))
+                      (x2 (car set2)))
+                  (cond ((= x1 x2) (cons x1 (union-set-list (cdr set1) (cdr set2))))
+                        ((< x1 x2) (cons x1 (union-set-list (cdr set1) set2)))
+                        (else (cons x2 (union-set-list set1 (cdr set2)))))))))
+
+      (define (union-set tree1 tree2)
+        (list->tree (union-set-list (tree->list tree1)
+                                    (tree->list tree2))))
+
+      (define (intersection-set tree1 tree2)
+        (list->tree (intersection-set-list (tree->list tree1)
+                                           (tree->list tree2))))
+    #+END_SRC
+66. [X] Exercise 2.66
+    #+BEGIN_SRC scheme
+      ;; Exercise 2.66. Implement the lookup procedure for the case where the set of
+      ;; records is structured as a binary tree, ordered by the numerical values of
+      ;; the keys.
+
+      (define (entry tree) (car tree))
+      (define (left-branch tree) (cadr tree))
+      (define (right-branch tree) (caddr tree))
+      (define (make-tree entry left right)
+        (list entry left right))
+
+      (define (lookup given-key set-of-records)
+        (cond ((null? set-of-records) #f)
+              ((= given-key (key (entry set-of-records)))
+               (entry set-of-records))
+              ((< given-key (key (entry set-of-records)))
+               (lookup given-key (left-branch set-of-records)))
+              (else (lookup given-key (right-branch set-of-records)))))
     #+END_SRC

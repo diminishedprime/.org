@@ -62,7 +62,7 @@
 
      (deriv '(* (* x y) (+ x 3)) 'x)
    #+END_SRC
-3. [ ] Example: Representing Sets
+3. [X] Example: Representing Sets
    #+BEGIN_SRC scheme
      (define (element-of-set? x set)
        (cond ((null? set) false)
