@@ -65,3 +65,5 @@ username: mjhclojure
 60. [X] [[./060.org][Prime Pair Sets]]
 61. [X] [[./061.org][Cyclical Figurate Numbers]]
 62. [X] [[./062.org][Cubic Permutations]]
+63. [X] [[./063.org][Powerful Digit Counts]]
+64. [X] [[./064.org][Odd Period Square Roots]]

@@ -1,0 +1,25 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Powerful digit counts
+*** Problem 63
+The 5-digit number, 16807=7^5, is also a fifth power. Similarly, the 9-digit
+number, 134217728=8^9, is a ninth power.
+
+How many n-digit positive integers exist which are also an nth power?
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (defn num-digits [n] (count (str n)))
+
+  (defn same-digits-as-power [power]
+    (filter #(= (num-digits %) power)
+            (take-while #(<= (num-digits %) power)
+                        (map #(.pow (BigDecimal. (str %)) power)
+                             (range)))))
+
+  (->> (range 100)
+       (mapcat same-digits-as-power)
+       (filter pos?)
+       count) ;; => 49
+#+END_SRC
