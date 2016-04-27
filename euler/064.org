@@ -76,15 +76,7 @@ How many continued fractions for N ≤ 10000 have an odd period?
           last-num (last (distinct options))]
       (let [repeat (concat (take-while (partial not= last-num) options)
                            [last-num])]
-        #_(println (str "Original: " (vec (partition (count repeat)
-                                                     (count repeat)
-                                                     nil
-                                                     options)) "\n"
-                        "Period  : " (vec repeat)
-                        "\n \n"))
         repeat)))
-
-  (find-period (magic 23))
 
   (defn is-square? [n]
     (let [result (Math/sqrt n)]
