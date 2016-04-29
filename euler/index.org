@@ -67,3 +67,4 @@ username: mjhclojure
 62. [X] [[./062.org][Cubic Permutations]]
 63. [X] [[./063.org][Powerful Digit Counts]]
 64. [X] [[./064.org][Odd Period Square Roots]]
+65. [X] [[./065.org][Convergents of e]]

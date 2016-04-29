@@ -10,6 +10,8 @@
 ** The Antlers
 + [[./two.org][Two]]
 + [[./bear.org][Bear]]
++ [[./kettering.org][Kettering]]
++ [[./sylvia.org][Sylvia]]
 ** Norah Jones
 + [[./shoot_the_moon.org][Shoot The Moon]]
 ** Death Cab For Cutie

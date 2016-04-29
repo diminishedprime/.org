@@ -1,0 +1,70 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Problems]]
+
+* Diophantine equation
+*** Problem 66
+Consider quadratic Diophantine equations of the form:
+
+x2 – Dy2 = 1
+
+For example, when D=13, the minimal solution in x is 6492 – 13×1802 = 1.
+
+It can be assumed that there are no solutions in positive integers when D is
+square.
+
+By finding minimal solutions in x for D = {2, 3, 5, 6, 7}, we obtain the
+following:
+
+32 – 2×22 = 1
+22 – 3×12 = 1
+92 – 5×42 = 1
+52 – 6×22 = 1
+82 – 7×32 = 1
+
+Hence, by considering minimal solutions in x for D ≤ 7, the largest x is
+obtained when D=5.
+
+Find the value of D ≤ 1000 in minimal solutions of x for which the largest value
+of x is obtained.
+
+*** Clojure
+#+BEGIN_SRC clojure
+  (defn square [n] (* n n))
+
+
+
+  (defn diophantine-for-D-of [d]
+    (->> (for [x (map (fn [x]
+                        (+ x (dec (int (Math/sqrt 10))))) (rest (range))) ]
+           (for [y (take-while (fn [cur-y]
+                                 (<= (+ 1 (* d (square cur-y)))
+                                     (square x)))
+                               (rest (range)))
+                 :when (= 1
+                          (- (square x)
+                             (* d (square y))))]
+             {:x x
+              :y y
+              :d d}))
+         (mapcat identity)
+         (remove (partial = '()))
+         first))
+
+  (defn square? [n]
+    (let [sqrt (Math/sqrt n)]
+      (== sqrt (int sqrt))))
+
+  (->> (rest (range))
+       (take 1000)
+       (remove (partial = 1))
+       (remove square?)
+       (map diophantine-for-D-of)
+       (map :x)
+       (apply max))
+
+  (= (- (square 3)
+        (* 2 (square 2)))
+     1)
+
+  x^2 - d*y^2 = 1
+#+END_SRC

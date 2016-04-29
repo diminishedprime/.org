@@ -86,8 +86,8 @@
 7. [-] More functional patterns 207
    1. [X] Make it func-y
    2. [X] Arguments and parameters
-   3. [ ] [[./haskell_programming_from_first_principles/07_03.hs][Anonymous functions]]
-   4. [ ] Pattern matching
+   3. [X] [[./haskell_programming_from_first_principles/07_03.hs][Anonymous functions]]
+   4. [X] [[./haskell_programming_from_first_principles/07_04.hs][Pattern matching]]
    5. [ ] Case expressions
    6. [ ] Higher-order functions
    7. [ ] Guards

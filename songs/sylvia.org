@@ -1,0 +1,96 @@
+* Syliva
+** The Antlers
+#+BEGIN_SRC elisp
+  Capo 2 (chords relative to the capo)
+
+  Intro:
+  1 2 3 4  1 2 3 4  1 2 3 4  1 2 3 4  1 2 3 4  1 2 3 4  1 2 3 4  1 2 3 4
+  Bm                D                 G        D        Asus4    A
+
+  Verse:
+   Bm               D/A
+  "Please, curtains in.
+           G      D/A           Asus4   A
+  Start us off... You swing first.
+  Bm                             D/A
+  Sorry. I don't know what I said,
+                             G           D                Asus4  A
+  but you're crying now again, and that only makes it worse.
+
+
+  Pre-chorus:
+  G        D/F#  Em
+   Let me do my job.
+  G        D/F#  Em   A
+   Let me do my job.
+
+
+  Chorus:
+   D                                Bm
+  "Sylvia, get your head out of the oven.
+             Em
+  Go back to screaming and cursing, remind me again how everyone betrayed you.
+  D                                Bm
+  Sylvia, get your head out of the covers.
+                   Em
+  Let me take your temperature, you can throw the thermometer
+     G                       A
+  right back at me, if that's what you want to do, okay?
+
+
+  Post-chorus:
+  1 2 3 4  1 2 3 4  1 2 3 4  1 2 3 4  1 2 3 4  1 2 3 4  1 2 3 4  1 2 3 4
+  D                 Bm                Em                G        A
+
+  1 2 3 4  1 2 3 4  1 2 3 4  1 2 3 4  1 2 3 4  1 2 3 4  1 2 3 4  1 2 3 4
+  D                 Bm/F#             Em                G        A
+
+
+  Verse:
+   Bm                  D/A
+  "Please, please calm down.
+         G        D/A     Asus   A
+  Steady out, I'm terrified.
+  Bm                       D/A
+  Sorry. I want us to ally,
+                                G                 D/A          Asus   A
+  But you swing on little knives. They're only sharp on one side.
+
+
+  Pre-chorus:
+  G        D/F#  Em
+   Let me do my job.
+  G        D/F#  Em   A
+   Let me do my job.
+
+
+  Chorus:
+   D                                Bm
+  "Sylvia, get your head out of the oven.
+             Em
+  Go back to screaming and cursing, remind me again how everyone betrayed you.
+  D                                Bm
+  Sylvia, get your head out of the covers.
+                   Em
+  Let me take your temperature, you can throw the thermometer
+     G                       A
+  right back at me, if that's what you want to do, okay?
+
+  Post-chorus:
+  1 2 3 4  1 2 3 4  1 2 3 4  1 2 3 4  1 2 3 4  1 2 3 4  1 2 3 4  1 2 3 4
+  D                 Bm                Em                G        A
+  1 2 3 4  1 2 3 4  1 2 3 4  1 2 3 4  1 2 3 4  1 2 3 4  1 2 3 4  1 2 3 4
+  D                 Bm/F#             Em                G        A        D
+
+
+  Outro:
+   D                                  Bm
+  "Sylvia, can't you see what you are doing?
+                    Em
+  Can't you see I'm scared to speak, and I hate my voice 'cause it only makes you angry.
+  D                                Bm
+  Sylvia, I only talk when you are sleeping.
+                         Em                                 G                            A
+  That's when I tell you everything, and I imagine that somehow you're going to hear me..."
+
+#+END_SRC
