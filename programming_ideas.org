@@ -9,11 +9,11 @@
    + Arities?
      + How to accept multiple arities?
    + let a property be a keyword or a fn with jack-ins for the generators?
-   + How do we make this something that's actually useful? 
-     + I.E how are properties composable. 
+   + How do we make this something that's actually useful?
+     + I.E how are properties composable.
    + hacked out idea?
    #+BEGIN_SRC clojure
-     (defn 
+     (defn
        ^{:doc "add1 takes a number and outputs that number plus 1"
          :spec {:domain [:R]
                 :properties [{:property :output-number
@@ -43,12 +43,12 @@
      (require '[clojure.test.check.generators :as gen])
 
      (defn resolve-test [kw]
-       (condp = kw 
+       (condp = kw
          :output-number 'ayy
          ))
 
      ;;test that output is greater than input
-     ;; input 
+     ;; input
 
      (check-spec
       #'add-nums)
@@ -120,5 +120,216 @@
 
      ;; payee.name string
 
+
+   #+END_SRC
+6) Guitar Utilities
+   #+BEGIN_SRC clojure
+     (require '[clojure.string :as str])
+
+     (def base-fret-board {:e []
+                           :b []
+                           :g []
+                           :d []
+                           :a []
+                           :E []})
+
+     (defn fret->string
+       [pressed?]
+       (if pressed?
+         "|-O-"
+         "|---"))
+
+     (defn guitar-string->string [length depressed-strings]
+       (str (apply str (mapcat #(fret->string (some (set depressed-strings) [%]))
+                               (range length))) "|"))
+
+     (guitar-string->string 3 [1])
+
+     (defn add-dots [length string-seq]
+       (concat string-seq
+               [(str/trimr (str "  "
+                                (apply str (map (fn [i]
+                                                  (if (#{3 5 7 12} i)
+                                                    (str "  * ")
+                                                    (str "    "))) (range length)))))]))
+
+     (defn add-string-numbers [length string-seq]
+       (cons (str/trimr (str "  "
+                             (apply str (map (fn [i]
+                                               (str (format "%3d" i) " ")) (range length)))))
+             string-seq))
+
+     (defn fret-seq->stacked-string [fret-seq]
+       (apply str (interpose \newline fret-seq)))
+
+     (defn fret-board->string
+       ([fret-board]
+        (let [depressed-strings? (filter seq (vals fret-board))
+              length (inc (if (seq depressed-strings?)
+                            (apply max
+                                   (map (partial apply max)
+                                        depressed-strings?))
+                            0))]
+          (fret-board->string fret-board length)))
+       ([fret-board base-length]
+        (fret-seq->stacked-string
+         (add-dots
+          base-length
+          (add-string-numbers
+           base-length
+           (map (fn [[k v]]
+                  (str k (guitar-string->string base-length v))) fret-board))))))
+
+     (fret-board->string base-fret-board)
+
+     (fret-board->string {:e [3]
+                          :b [0]
+                          :g [0]
+                          :d [0]
+                          :a [2]
+                          :E [3]})
+
+     (def natural-notes {9  :a
+                         :a  9
+                         11 :b
+                         :b 11
+                         0  :c
+                         :c  0
+                         2  :d
+                         :d  2
+                         4  :e
+                         :e  4
+                         5  :f
+                         :f  5
+                         7  :g
+                         :g  7})
+
+
+     (defn note-from-num [my-num]
+       (if-let [natural-note (get natural-notes (mod my-num 12))]
+         [natural-note]
+         [(get natural-notes (mod (dec my-num) 12)) :sharp]))
+
+
+     (defn note-from-string [string-base fret]
+       (let [string-base (keyword (subs (.toLowerCase (str string-base)) 1))]
+         (if-let [thing (get natural-notes string-base)]
+           (note-from-num (+ thing fret)))))
+
+     (def natural-sign "♮")
+     (def sharp-sign "♯")
+     (def flat-sign "♭")
+
+     (def pretty-sign-map {:natural natural-sign
+                           natural-sign :natural
+
+                           :sharp sharp-sign
+                           sharp-sign :sharp
+
+                           :flat flat-sign
+                           flat-sign :flat})
+
+     (defn pretty-up-letter [letter-kw]
+       (subs (.toUpperCase (str letter-kw)) 1))
+
+     (defn pretty-up-note [note]
+       (if (= 2 (count note))
+         (str (pretty-up-letter (first note)) (get pretty-sign-map (second note)))
+         (str (pretty-up-letter (first note)))))
+
+
+     (defn stack-string-seq [string-seq]
+       (apply str (interpose "\n" string-seq)))
+
+     (defn notes-for-fret-board [fret-board]
+       (let [fret-board (into {} (filter (fn [[k v]]
+                                           (seq v)) fret-board))]
+         (stack-string-seq
+          (map (fn [[k v]]
+                 (pretty-up-note
+                  (note-from-string k (first v)))) fret-board))))
+
+     (notes-for-fret-board {:e [3]
+                            :b []
+                            :g [0]
+                            :d [0]
+                            :a [2]
+                            :E [3]})
+
+     (defn pad-stacked-string [stacked-string pad-string]
+       (stack-string-seq
+        (map (fn [my-str]
+               (str pad-string my-str)) (.split stacked-string "\n"))))
+
+     (pad-stacked-string (notes-for-fret-board {:e [3]
+                                                :b []
+                                                :g [0]
+                                                :d [0]
+                                                :a [2]
+                                                :E [3]}) "     Note: ")
+
+     (defn pretty-print-fretted-chord
+       ([fret-board]
+        (str (fret-board->string fret-board)
+             "\n\n"
+             (pad-stacked-string (notes-for-fret-board fret-board)
+                                 "      ")))
+       ([fret-board min-length]
+        (str (fret-board->string fret-board min-length)
+             "\n\n"
+             (pad-stacked-string (notes-for-fret-board fret-board)
+                                 "      "))))
+
+     (pretty-print-fretted-chord {:e [2]
+                                  :b [3]
+                                  :g [2]
+                                  :d [0]
+                                  :a []
+                                  :E []} 20)
+
+     (pretty-print-fretted-chord {:e []
+                                  :b [10]
+                                  :g [11]
+                                  :d [11]
+                                  :a [0]
+                                  :E []})
+
+     (pretty-print-fretted-chord {:e []
+                                  :b [9]
+                                  :g [9]
+                                  :d [9]
+                                  :a [0]
+                                  :E []})
+
+     (pretty-print-fretted-chord {:e []
+                                  :b [5]
+                                  :g [5]
+                                  :d [4]
+                                  :a []
+                                  :E [3]})
+
+     (pretty-print-fretted-chord {:e []
+                                  :b [3]
+                                  :g [4]
+                                  :d [5]
+                                  :a []
+                                  :E []})
+
+     (pretty-print-fretted-chord {:e [5]
+                                  :b [3]
+                                  :g [4]
+                                  :d [4]
+                                  :a []
+                                  :E []})
+
+     (let [random-string (rand-nth [:e :b :g :d :a])
+           random-fret [(rand-int 5)]
+           random-note {random-string random-fret}]
+       (str (fret-board->string (merge base-fret-board
+                                       random-note)
+                                10)
+            "\n\n      "
+            (pretty-up-note
+             (note-from-string random-string (first random-fret)))))
 
    #+END_SRC
