@@ -1,7 +1,7 @@
 + [[../index.org][Main Index]]
 + [[./index.org][Reading List]]
 
-* Haskell Book [66%]
+* Haskell Book [77%]
 1. [X] All You Need Is Lambda [100%]
    1. [X] All You Need Is Lambda
    2. [X] What's A Function
@@ -65,7 +65,7 @@
    9. [X] [[./haskell_programming_from_first_principles/05_09.hs][Chapter Exercises]]
    10. [X] Definitions
    11. [X] Follow-up resources
-6. [X] Typeclasses
+6. [X] Typeclasses [100%]
    1. [X] Typeclasses
    2. [X] What are type classes?
    3. [X] Back to Bool
@@ -83,21 +83,21 @@
    15. [X] Chapter Definitions
    16. [X] Typeclass inheritance, partial
    17. [X] Follow-up resources
-7. [-] More functional patterns 207
+7. [X] More functional patterns [100%]
    1. [X] Make it func-y
    2. [X] Arguments and parameters
    3. [X] [[./haskell_programming_from_first_principles/07_03.hs][Anonymous functions]]
-   4. [X] [[./haskell_programming_from_first_principles/07_04.hs][Pattern matchiing]]
-   5. [ ] Case expressions
-   6. [ ] Higher-order functions
-   7. [ ] Guards
-   8. [ ] Function composition
-   9. [ ] Point-free style
-   10. [ ] Demonstrating composition
-   11. [ ] Chapter Exercises
-   12. [ ] Chapter Definitions
-   13. [ ] Follow-up resources
-8. [ ] Recursion
+   4. [X] [[./haskell_programming_from_first_principles/07_04.hs][Pattern matching]]
+   5. [X] [[./haskell_programming_from_first_principles/07_05.hs][Case expressions]]
+   6. [X] [[./haskell_programming_from_first_principles/07_06.hs][Higher-order functions]]
+   7. [X] [[./haskell_programming_from_first_principles/07_07.hs][Guards]
+   8. [X] Function composition
+   9. [X] Point-free style
+   10. [X] Demonstrating composition
+   11. [X] [[./haskell_programming_from_first_principles/07_11.hs][Chapter Exercises]]
+   12. [X] Chapter Definitions
+   13. [X] Follow-up resources
+8. [ ] Recursion [0%]
    1. [ ]
    2. [ ]
    3. [ ]
@@ -105,4 +105,4 @@
    5. [ ]
    6. [ ]
    7. [ ]
-9. [ ] Lists
+9. [ ] Lists [0%]
