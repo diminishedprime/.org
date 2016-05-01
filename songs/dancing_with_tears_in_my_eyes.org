@@ -5,6 +5,8 @@
 * Dancing With The Tears On My Eye
 ** Ke$ha
 #+BEGIN_SRC elisp
+  Capo 2 in C
+
   Intro: Em--G-D-
 
   Verse 1:

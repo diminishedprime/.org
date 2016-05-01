@@ -26,13 +26,8 @@ divisors?
 
 *** Clojure
 #+BEGIN_SRC clojure
-  (defn nums-from [n]
-    (nth (iterate rest (range)) n))
-
   (def triangle-numbers
-    (concat [1]
-            (lazy-seq
-             (map + triangle-numbers (nums-from 2)))))
+    (reductions + (rest (range))))
 
   (defn factor [n]
     (->> n

@@ -5,57 +5,57 @@
 ** The Dear Hunter
 #+BEGIN_SRC elisp
 
-C                                                   F
+1                                                   4
   With the good chance that we crash, let's say our grace (our grace)
-C                                            F
+1                                            4
   In your final breath believe, you're not alone.
 
 
 
-G
+5
 Help will come,
-             F
+             4
 Yeah you can come back home.
-       G
+       5
 'Cause help is on the way,
-             F
+             4
 Yeah you can come back home.
-             C
+             1
 So come back home
 
-C                                            F
+1                                            4
   As your eyes begin to fade, your mind will wander (will wander)
-     C                                 Am
+     1                                 6-
 This life is just a game we play, that we can never win.
-               F
+               4
 But don't give up, no don't give up.
 
-G
+5
 Help will come,
-             F
+             4
 Yeah you can come back home.
-       G
+       5
 'Cause help is on the way,
-             F
+             4
 Yeah you can come back home.
-             C
+             1
 So come back home
 
-C                                            F
+1                                            4
   Now in the end it's coming clear, you're not alone
-       C                             Am
+       1                             6-
 'Cause everyone you've ever loved is waiting here for you
-              F                 G
+              4                 5
 So don't give up, no don't give up.
 
-             G
+             5
 Yeah, 'cause help will come,
-                       F
+                       4
 Yeah you can come back home. (You can come back home yeah)
-       G
+       5
 'Cause help is on the way,
-                         F
+                         4
 Yeah you can come back home. (You can come back home)
-             C
+             1
 So come back home
 #+END_SRC

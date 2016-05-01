@@ -1,7 +1,7 @@
 + [[../index.org][Main Index]]
 + [[./index.org][Reading List]]
 
-* Haskell Book [77%]
+* Haskell Book [100%]
 1. [X] All You Need Is Lambda [100%]
    1. [X] All You Need Is Lambda
    2. [X] What's A Function
@@ -90,19 +90,29 @@
    4. [X] [[./haskell_programming_from_first_principles/07_04.hs][Pattern matching]]
    5. [X] [[./haskell_programming_from_first_principles/07_05.hs][Case expressions]]
    6. [X] [[./haskell_programming_from_first_principles/07_06.hs][Higher-order functions]]
-   7. [X] [[./haskell_programming_from_first_principles/07_07.hs][Guards]
+   7. [X] [[./haskell_programming_from_first_principles/07_07.hs][Guards]]
    8. [X] Function composition
    9. [X] Point-free style
    10. [X] Demonstrating composition
    11. [X] [[./haskell_programming_from_first_principles/07_11.hs][Chapter Exercises]]
    12. [X] Chapter Definitions
    13. [X] Follow-up resources
-8. [ ] Recursion [0%]
-   1. [ ]
-   2. [ ]
-   3. [ ]
-   4. [ ]
-   5. [ ]
-   6. [ ]
-   7. [ ]
-9. [ ] Lists [0%]
+8. [X] Recursion [100%]
+   1. [X] Recursion
+   2. [X] Factorial
+   3. [X] Bottom
+   4. [X] Fibonacci Numbers
+   5. [X] Integral division from scratch
+   6. [X] [[./haskell_programming_from_first_principles/08_06.hs][Exercises]
+   7. [X] Definitions
+9. [X] Lists [100%]
+   1. [X] Lists
+   2. [X] The List Datatype
+   3. [X] Pattern Matching on Lists
+   4. [X] List's syntatic sugar
+   5. [X] [[./haskell_programming_from_first_principles/09_05.hs][Using ranges to construct Lists]]
+   6. [X] [[./haskell_programming_from_first_principles/09_06.hs][Extractating portions of lists]]
+   7. [X] [[./haskell_programming_from_first_principles/09_07.hs][List Comprehensions]]
+   8. [X] [[./haskell_programming_from_first_principles/09_08.hs][Spines and non-strict evaluation]]
+   9. [X] [[./haskell_programming_from_first_principles/09_09.hs][Transforming lists of values]]
+   10. [X] [[./haskell_programming_from_first_principles/09_10.hs][Filtering Lists of Values]]
