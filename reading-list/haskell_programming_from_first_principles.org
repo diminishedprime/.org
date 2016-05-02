@@ -1,7 +1,7 @@
 + [[../index.org][Main Index]]
 + [[./index.org][Reading List]]
 
-* Haskell Book [100%]
+* Haskell Book [90%]
 1. [X] All You Need Is Lambda [100%]
    1. [X] All You Need Is Lambda
    2. [X] What's A Function
@@ -103,7 +103,7 @@
    3. [X] Bottom
    4. [X] Fibonacci Numbers
    5. [X] Integral division from scratch
-   6. [X] [[./haskell_programming_from_first_principles/08_06.hs][Exercises]
+   6. [X] [[./haskell_programming_from_first_principles/08_06.hs][Exercises]]
    7. [X] Definitions
 9. [X] Lists [100%]
    1. [X] Lists
@@ -116,3 +116,10 @@
    8. [X] [[./haskell_programming_from_first_principles/09_08.hs][Spines and non-strict evaluation]]
    9. [X] [[./haskell_programming_from_first_principles/09_09.hs][Transforming lists of values]]
    10. [X] [[./haskell_programming_from_first_principles/09_10.hs][Filtering Lists of Values]]
+   11. [X] [[./haskell_programming_from_first_principles/09_11.hs][Zipping Lists]]
+   12. [X] [[./haskell_programming_from_first_principles/09_12.hs][Chapter Exercises]]
+   13. [X] Definitions
+   14. [X] Follow-up Resources
+10. [ ] Folding Lists
+    1. [ ] Folds
+    2. [ ] Bringing you into the fold
