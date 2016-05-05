@@ -134,14 +134,14 @@
     11. [X] Definitions
     12. [X] Answers
     13. [X] Follow-up Resources
-11. [ ] Algebraic Datatypes [0%]
-    1. [ ] Algebraic Datatypes
-    2. [ ] Data declarations review
-    3. [ ] Data and type constructors
-    4. [ ] Data constructors and values
-    5. [ ] What's a type and what's data?
-    6. [ ] Data constructor arities
-    7. [ ] What makes these datatypes algebraic?
+11. [-] Algebraic Datatypes [53%]
+    1. [X] Algebraic Datatypes
+    2. [X] Data declarations review
+    3. [X] Data and type constructors
+    4. [X] [[./haskell_programming_from_first_principles/11_04.hs][Data constructors and values]]
+    5. [X] [[./haskell_programming_from_first_principles/11_05.hs][What's a type and what's data?]]
+    6. [X] Data constructor arities
+    7. [X] [[./haskell_programming_from_first_principles/11_07.hs][What makes these datatypes algebraic?]]
     8. [ ] Sum types
     9. [ ] Product types
     10. [ ] Normal form
