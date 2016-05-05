@@ -26,7 +26,8 @@
 
 -- a
 
--- 5. The following are simple folds very similar to what you’ve already seen, but each has at least one error. Please fix them and test in your REPL:
+-- 5. The following are simple folds very similar to what you’ve already seen,
+-- but each has at least one error. Please fix them and test in your REPL:
 
 -- a) foldr (++) ["woot", "WOOT", "woot"]
 -- foldr (++) "" ["woot", "WOOT", "woot"]
@@ -37,7 +38,9 @@
 -- c) foldr and True [False, True]
 -- foldr (&&) True [False, True]
 
--- d) This one is more subtle than the previous. Can it ever return a different answer? foldr (||) True [False, True]
+-- d) This one is more subtle than the previous. Can it ever return a different
+-- answer? foldr (||) True [False, True]
+
 -- foldr (||) False [False, True]
 
 -- e) foldl (++) "" $ map show [1..5]
