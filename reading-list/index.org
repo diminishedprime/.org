@@ -51,6 +51,9 @@
 + Physics
    - Feynman Lectures
 *** Maths Books
++ [[http://www.maths.ed.ac.uk/~aar/papers/maclanecat.pdf][Categories for The Working Mathematician]]
++ [[http://fef.ogu.edu.tr/matbil/eilgaz/kategori.pdf][Conceptual Mathematics: A First Introduction to Categories]]
++ [[http://math.mit.edu/~dspivak/teaching/sp13/CT4S--static.pdf][Category Theory For Scientists]]
 *** Machine Learning
 1. Learning From Data
    + Lectures for this are available online.

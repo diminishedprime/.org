@@ -12,6 +12,8 @@
 + [[./bear.org][Bear]]
 + [[./kettering.org][Kettering]]
 + [[./sylvia.org][Sylvia]]
+** Coldplay
++ [[./sparks.org][Sparks]]
 ** Norah Jones
 + [[./shoot_the_moon.org][Shoot The Moon]]
 ** Death Cab For Cutie
