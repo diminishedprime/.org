@@ -134,7 +134,7 @@
     11. [X] Definitions
     12. [X] Answers
     13. [X] Follow-up Resources
-11. [-] Algebraic Datatypes [53%]
+11. [-] Algebraic Datatypes [93%]
     1. [X] Algebraic Datatypes
     2. [X] Data declarations review
     3. [X] Data and type constructors
@@ -142,9 +142,12 @@
     5. [X] [[./haskell_programming_from_first_principles/11_05.hs][What's a type and what's data?]]
     6. [X] Data constructor arities
     7. [X] [[./haskell_programming_from_first_principles/11_07.hs][What makes these datatypes algebraic?]]
-    8. [ ] Sum types
-    9. [ ] Product types
-    10. [ ] Normal form
-    11. [ ] Constructing and deconstructing values
-    12. [ ] Function type is exponential
-    13. [ ] Higher-kinded data types
+    8. [X] [[./haskell_programming_from_first_principles/11_08.hs][Sum types]]
+    9. [X] [[./haskell_programming_from_first_principles/11_09.hs][Product types]]
+    10. [X] [[./haskell_programming_from_first_principles/11_10.hs][Normal form]]
+    11. [X] [[./haskell_programming_from_first_principles/11_11.hs][Constructing and deconstructing values]]
+    12. [X] [[./haskell_programming_from_first_principles/11_12.hs][Function type is exponential]]
+    13. [X] Higher-kinded data types
+    14. [X] Lists are Polymorphic
+    15. [X] [[./haskell_programming_from_first_principles/11_15.hs][Binary Tree]]
+    16. [ ] [[./haskell_programming_from_first_principles/11_16.hs][Chapter Exercises]]
