@@ -186,23 +186,23 @@
     6. [ ]
     7. [ ]
     8. [ ]
-15. [ ] Monoid, Semigroup 558 [0%]
-    1. [ ]  Monoidsandsemigroups ..................559
-    2. [ ]  What we talk about when we talk about algebras . . . 559
-    3. [ ]  Monoid..............................560
-    4. [ ]  HowMonoidisdefinedinHaskell. . . . . . . . . . . . . 561
-    5. [ ]  ExamplesofusingMonoid .................562
-    6. [ ]  WhyIntegerdoesn’thaveaMonoid . . . . . . . . . . . 563
-    7. [ ]  Whybother? ..........................566
-    8. [ ]  Laws.............................. ..568
-    9. [ ]  Different typeclass instance, same representation ..570
-    10. [ ]  Reusing algebras by asking for algebras . . . . . . . ..572
-    11. [ ]  Madness .............................579
-    12. [ ]  BetterlivingthroughQuickCheck . . . . . . . . . . . . 580
-    13. [ ]  Semigroup............................586
-    14. [ ]  Chapterexercises .......................591
-    15. [ ]  Definitions............................ 598
-    16. [ ]  Follow-upresources...................... 598
+15. [-] Monoid, Semigroup 558 [93%]
+    1. [X]  Monoids and semigroups
+    2. [X]  What we talk about when we talk about algebras
+    3. [X]  Monoid
+    4. [X]  How Monoid is defined in Haskell
+    5. [X]  Examples of using Monoid
+    6. [X]  Why Integer doesn’t have a Monoid
+    7. [X]  Why bother?
+    8. [X]  Laws
+    9. [X]  Different typeclass instance, same representation
+    10. [X]  [[./haskell_programming_from_first_principles/15_10.hs][Reusing algebras by asking for algebras]]
+    11. [X]  [[./haskell_programming_from_first_principles/15_11.hs][Madness]]
+    12. [X]  [[./haskell_programming_from_first_principles/15_12.hs][Better living through QuickCheck]]
+    13. [X]  Semigroup
+    14. [ ]  [[./haskell_programming_from_first_principles/15_14.hs][Chapter exercises]]
+    15. [X]  Definitions
+    16. [X]  Follow-up resources
 16. [ ] Functor 599 [0%]
     1. [ ] Functor.............................. 600
     2. [ ] What’safunctor?........................ 601
