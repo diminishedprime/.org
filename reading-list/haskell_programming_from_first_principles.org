@@ -150,16 +150,16 @@
     13. [X] Higher-kinded data types
     14. [X] Lists are Polymorphic
     15. [X] [[./haskell_programming_from_first_principles/11_15.hs][Binary Tree]]
-    16. [X] [[./haskell_programming_from_first_principles/11_16.hs][Chapter Exercises]]
+    16. [X] [[./haskell_programming_from_first_principles/11_16.hs][Chapter Exercises]
     17. [X] Definitions
     18. [X] Answers
-12. [ ] Signaling adversity [0%]
-    1. [ ] Signalingadversity ......................449
-    2. [ ] How I learned to stop worrying and love Nothing . . 449
-    3. [ ] Bleatingeither .........................451
-    4. [ ] Kinds,athousandstarsinyourtypes. . . . . . . . . . . 457
-    5. [ ] ChapterExercises .......................464
-    6. [ ] Definitions............................474
+12. [-] Signaling adversity [50%]
+    1. [X] Signaling adversity
+    2. [X] How I learned to stop worrying and love Nothing
+    3. [X] Bleating either
+    4. [ ] Kinds, a thousand stars in your types
+    5. [ ] [[./haskell_programming_from_first_principles/12_06.hs][Chapter Exercises]]
+    6. [ ] Definitions
 13. [ ] Building projects 475 [0%]
     1. [ ]
     2. [ ]
