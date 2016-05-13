@@ -1,0 +1,1007 @@
+
+./01.12.hs,0
+
+./01_12.lhs,0
+
+./02_04.lhs,16
+ half half2,3
+
+./02_05.lhs,0
+
+./02_06.lhs,10
+ x x4,5
+
+./02_12.hs,17
+mult1 mult15,6
+
+./02_13.hs,0
+
+./03_03.hs,443
+module Print1 Print10,1
+main1 main12,3
+main1 main13,4
+main2 main25,6
+main2 main26,7
+myGreeting myGreeting12,13
+myGreeting myGreeting14,15
+hello hello17,18
+hello hello18,19
+world world20,21
+world world21,22
+main3 main323,24
+main3 main324,25
+putStrLn putStrLn26,27
+topLevelFunction topLevelFunction29,30
+topLevelFunction topLevelFunction30,31
+topLevelValue topLevelValue34,35
+topLevelValue topLevelValue35,36
+
+./03_03.lhs,0
+
+./03_04.hs,0
+
+./03_07.hs,316
+makeExciting makeExciting94,95
+fifthChar fifthChar96,97
+afterNine afterNine98,99
+thirdLetter thirdLetter106,107
+thirdLetter thirdLetter107,108
+letterIndex letterIndex124,125
+letterIndex letterIndex125,126
+rvrs rvrs138,139
+rvrs rvrs148,149
+rvrs' rvrs'149,150
+main main150,151
+main main151,152
+
+./04_02.hs,110
+data Mood Mood4,5
+data Mood = Blah Blah4,5
+data Mood = Blah | Woot Woot4,5
+changeMood changeMood25,26
+
+./04_04.hs,0
+
+./04_07.hs,275
+awesome awesome0,1
+alsoAwesome alsoAwesome1,2
+allAwesome allAwesome2,3
+isPalindrome isPalindrome72,73
+isPalindrome isPalindrome73,74
+myAbs myAbs77,78
+myAbs myAbs78,79
+f f83,84
+f f84,85
+x x89,90
+f1 f190,91
+id' id'94,95
+fst' fst'99,100
+f' f'102,103
+
+./05_04.hs,0
+
+./05_05.hs,0
+
+./05_06.hs,102
+id' id'10,11
+id' id'11,12
+name name19,20
+name name21,22
+name2 name227,28
+name2 name228,29
+
+./05_07.hs,283
+module TypeInference1 TypeInference10,1
+f f2,3
+f f3,4
+g g5,6
+myConcat myConcat18,19
+myConcat myConcat19,20
+myMult myMult24,25
+myMult myMult25,26
+myTake myTake28,29
+myTake myTake29,30
+myCom myCom32,33
+myCom myCom33,34
+myAlph myAlph36,37
+myAlph myAlph37,38
+
+./05_09.hs,1072
+functionH functionH131,132
+functionH functionH132,133
+functionC functionC135,136
+functionC functionC136,137
+functionS functionS138,139
+functionS functionS139,140
+i i150,151
+i i151,152
+c c154,155
+c c155,156
+c'' c''158,159
+c'' c''159,160
+c' c'163,164
+c' c'164,165
+r r169,170
+r r170,171
+--co --co173,174
+a a179,180
+a a180,181
+a' a'183,184
+a' a'184,185
+fstString fstString192,193
+fstString fstString193,194
+sndString sndString195,196
+sndString sndString196,197
+sing sing198,199
+main main211,212
+main main212,213
+data WootWoot236,237
+data BlahBlah237,238
+f f238,239
+f f239,240
+g g240,241
+g g241,242
+f' f'254,255
+f' f'255,256
+g' g'256,257
+g' g'257,258
+h h258,259
+h h259,260
+data AA262,263
+data BB263,264
+data CC264,265
+q q266,267
+q q267,268
+w w269,270
+w w270,271
+e e272,273
+e e273,274
+data XX276,277
+data YY277,278
+data ZZ278,279
+xz xz280,281
+xz xz281,282
+yz yz283,284
+yz yz284,285
+xform xform286,287
+xform xform287,288
+munge munge290,291
+munge munge291,292
+
+./06_07.hs,0
+
+./06_12.hs,652
+data TisAnInteger TisAnInteger1,2
+data TisAnInteger = TisAn TisAn1,2
+instance instance2,3
+data TwoIntegers TwoIntegers5,6
+data TwoIntegers = Two Two5,6
+data StringOrInt StringOrInt10,11
+data StringOrInt = TisAnInt TisAnInt10,11
+data StringOrInt = TisAnInt Int | TisAString TisAString10,11
+data Pair Pair16,17
+data Pair a = Pair Pair16,17
+data Tuple Tuple20,21
+data Tuple a b = Tuple Tuple20,21
+data Which Which24,25
+data Which a = ThisOne ThisOne24,25
+data Which a = ThisOne a | ThatOne ThatOne24,25
+data EitherOr EitherOr30,31
+data EitherOr a b = Hello Hello30,31
+data EitherOr a b = Hello a | Goodbye Goodbye30,31
+
+./06_14.hs,503
+type Subject Subject75,76
+type Verb Verb76,77
+type Object Object77,78
+data Sentence Sentence79,80
+data Sentence = Sentence Sentence79,80
+s1 s180,81
+s2 s281,82
+data Rocks Rocks86,87
+data Rocks = Rocks Rocks86,87
+data Yeah Yeah87,88
+data Yeah = Yeah Yeah87,88
+data Papu Papu88,89
+data Papu = Papu Papu88,89
+truth truth96,97
+equalityForall equalityForall99,100
+equalityForall equalityForall100,101
+chk chk121,122
+chk chk122,123
+arith arith125,126
+arith arith126,127
+
+./07_03.hs,100
+addOneIfOdd addOneIfOdd35,36
+--addFive --addFive41,42
+addFive addFive43,44
+mflip mflip46,47
+
+./07_04.hs,65
+k k3,4
+k1 k15,6
+k2 k27,8
+k3 k39,10
+f f27,28
+f f28,29
+
+./07_05.hs,73
+functionC functionC14,15
+ifEvenAdd2 ifEvenAdd221,22
+nums nums30,31
+
+./07_06.hs,64
+dodgy dodgy7,8
+oneIsOne oneIsOne8,9
+oneIsTwo oneIsTwo9,10
+
+./07_07.hs,76
+pal pal12,13
+pal pal27,28
+numbers numbers30,31
+numbers numbers47,48
+
+./07_11.hs,589
+f f36,37
+f f37,38
+tensDigit tensDigit48,49
+tensDigit tensDigit49,50
+tensDigit' tensDigit'54,55
+tensDigit' tensDigit'55,56
+hunsD hunsD64,65
+foldBool1 foldBool168,69
+foldBool1 foldBool169,70
+foldBool2 foldBool273,74
+foldBool2 foldBool274,75
+foldBool3 foldBool382,83
+foldBool3 foldBool383,84
+g g89,90
+g g90,91
+id' id'115,116
+id' id'116,117
+roundTrip roundTrip118,119
+roundTrip roundTrip119,120
+main main121,122
+roundTripPF roundTripPF127,128
+roundTripPF roundTripPF128,129
+roundTrip3 roundTrip3150,151
+roundTrip3 roundTrip3151,152
+y y153,154
+
+./08_06.hs,785
+module WordNumber WordNumber0,1
+func func22,23
+func func23,24
+cattyConny cattyConny45,46
+cattyConny cattyConny46,47
+flippy flippy50,51
+flippy flippy51,52
+appedCatty appedCatty53,54
+appedCatty appedCatty54,55
+frappe frappe56,57
+frappe frappe57,58
+triangleNum triangleNum95,96
+triangleNum triangleNum96,97
+multi multi105,106
+multi multi106,107
+data DividedResult DividedResult134,135
+data DividedResult = Result Result134,135
+data DividedResult = Result Integer |  DividedByZero DividedByZero134,135
+dividedBy dividedBy136,137
+dividedBy dividedBy137,138
+mc91 mc91158,159
+digitToWord digitToWord173,174
+digitToWord digitToWord174,175
+digits digits187,188
+digits digits188,189
+wordNumber wordNumber190,191
+wordNumber wordNumber191,192
+
+./09_05.hs,176
+eftBool eftBool23,24
+eftBool eftBool24,25
+eftOrd eftOrd25,26
+eftOrd eftOrd26,27
+eftInt eftInt27,28
+eftInt eftInt28,29
+eftChar eftChar29,30
+eftChar eftChar30,31
+
+./09_06.hs,347
+--myWords --myWords8,9
+myWords myWords9,10
+firstSen firstSen23,24
+secondSen secondSen24,25
+thirdSen thirdSen25,26
+fourthSen fourthSen26,27
+sentences sentences28,29
+myLines myLines36,37
+myLines myLines37,38
+shouldEqual shouldEqual45,46
+main main51,52
+main main52,53
+myLinesPar myLinesPar58,59
+myLinesPar myLinesPar59,60
+
+./09_07.hs,115
+mySqr mySqr0,1
+myCube myCube1,2
+myTuples myTuples5,6
+myTuples2 myTuples210,11
+nMyTuples2 nMyTuples215,16
+
+./09_08.hs,0
+
+./09_09.hs,126
+module Thing Thing0,1
+itIsMystery itIsMystery25,26
+itIsMystery itIsMystery26,27
+myFun myFun53,54
+myFun' myFun'55,56
+
+./09_10.hs,82
+num1 num15,6
+num2 num211,12
+myFilter myFilter17,18
+myFilter myFilter18,19
+
+./09_11.hs,122
+zip' zip'3,4
+zip' zip'4,5
+zipWith' zipWith'11,12
+zipWith' zipWith'12,13
+myZip' myZip'17,18
+myZip' myZip'18,19
+
+./09_12.hs,1069
+onlyUppercase onlyUppercase12,13
+onlyUppercase onlyUppercase13,14
+capFirst capFirst17,18
+capFirst capFirst18,19
+capAll capAll23,24
+capAll capAll24,25
+firstAsCap firstAsCap29,30
+firstAsCap firstAsCap30,31
+firstAsCapComp firstAsCapComp34,35
+firstAsCapComp firstAsCapComp35,36
+firstAsCapPF firstAsCapPF37,38
+firstAsCapPF firstAsCapPF38,39
+myAnd myAnd50,51
+myAnd myAnd51,52
+myAnd' myAnd'57,58
+myAnd' myAnd'58,59
+myOr myOr64,65
+myOr myOr65,66
+myAny myAny69,70
+myAny myAny70,71
+myElem myElem75,76
+myElem myElem76,77
+myElemAny myElemAny79,80
+myElemAny myElemAny80,81
+myReverse myReverse83,84
+myReverse myReverse84,85
+squish squish88,89
+squish squish89,90
+squishMap squishMap93,94
+squishMap squishMap94,95
+squishAgain squishAgain98,99
+squishAgain squishAgain99,100
+myMaximumBy myMaximumBy109,110
+myMaximumBy myMaximumBy110,111
+myMinimumBy myMinimumBy119,120
+myMinimumBy myMinimumBy120,121
+myMaximum myMaximum127,128
+myMaximum myMaximum128,129
+myMinimum myMinimum129,130
+myMinimum myMinimum130,131
+
+./10_05.hs,0
+
+./10_06.hs,461
+data DatabaseItem DatabaseItem2,3
+data DatabaseItem = DbString DbString2,3
+  | DbNumber DbNumber3,4
+  | DbDate DbDate4,5
+theDatabase theDatabase7,8
+theDatabase theDatabase8,9
+filterDbDate filterDbDate14,15
+filterDbDate filterDbDate15,16
+filterDbNumber filterDbNumber21,22
+filterDbNumber filterDbNumber22,23
+mostRecent mostRecent28,29
+mostRecent mostRecent29,30
+sumDb sumDb35,36
+sumDb sumDb36,37
+avgDb avgDb39,40
+avgDb avgDb40,41
+
+./10_09.hs,73
+fibsFirst20 fibsFirst202,3
+fibsLT100 fibsLT1006,7
+facts facts13,14
+
+./10_10.hs,1026
+stops stops7,8
+vowels vowels8,9
+combos combos14,15
+combos2 combos221,22
+combos3 combos330,31
+seekritFunc seekritFunc39,40
+seekritFuncDouble seekritFuncDouble46,47
+myOr myOr60,61
+myOr myOr61,62
+myOrFold myOrFold64,65
+myOrFold myOrFold65,66
+myAny myAny69,70
+myAny myAny70,71
+myAnyFold myAnyFold73,74
+myAnyFold myAnyFold74,75
+myElem myElem78,79
+myElem myElem79,80
+myElemFold myElemFold82,83
+myElemFold myElemFold83,84
+myElemAny myElemAny85,86
+myElemAny myElemAny86,87
+myReverse myReverse89,90
+myReverse myReverse90,91
+myReverseFold myReverseFold93,94
+myReverseFold myReverseFold94,95
+myMap myMap98,99
+myMap myMap99,100
+myFilter myFilter103,104
+myFilter myFilter104,105
+squish squish109,110
+squish squish110,111
+squishMap squishMap113,114
+squishMap squishMap114,115
+squishAgain squishAgain118,119
+squishAgain squishAgain119,120
+myMaximumBy myMaximumBy124,125
+myMaximumBy myMaximumBy125,126
+myMinimumBy myMinimumBy131,132
+myMinimumBy myMinimumBy132,133
+
+./11_04.hs,310
+data PugType PugType4,5
+data PugType = PugDataPugData4,5
+data HuskyType HuskyType5,6
+data HuskyType a = HuskyDataHuskyData5,6
+data DogueDeBordeaux DogueDeBordeaux6,7
+data DogueDeBordeaux doge = DogueDeBordeaux DogueDeBordeaux6,7
+data Doggies Doggies7,8
+  Husky Husky8,9
+  Mastiff Mastiff9,10
+
+./11_05.hs,641
+data Size Size0,1
+  Size Size1,2
+data Price Price4,5
+  Price Price5,6
+data Manufacturer Manufacturer8,9
+  MiniMini9,10
+  | MazdaMazda10,11
+  | TataTata11,12
+data Airline Airline14,15
+  PapuAirPapuAir15,16
+  | CatapultsR'UsCatapultsR'Us16,17
+  | TakeYourChancesUnitedTakeYourChancesUnited17,18
+data Vehicle Vehicle20,21
+  Car Car21,22
+  | Plane Plane22,23
+myCar myCar30,31
+urCar urCar31,32
+clownCar clownCar32,33
+doge doge33,34
+isCar isCar41,42
+isCar isCar42,43
+isPlane isPlane45,46
+isPlane isPlane46,47
+areCars areCars49,50
+areCars areCars50,51
+getManu getManu54,55
+getManu getManu55,56
+
+./11_07.hs,401
+data Airline Airline15,16
+  PapuAirPapuAir16,17
+  | CatapultsR'UsCatapultsR'Us17,18
+  | TakeYourChancesUnitedTakeYourChancesUnited18,19
+data Example Example39,40
+data Example = MakeExample MakeExample39,40
+data ExampleTwo ExampleTwo55,56
+data ExampleTwo = MakeTwo MakeTwo55,56
+class TooMany TooMany59,60
+class TooMany TooMany59,60
+  tooMany tooMany60,61
+instance instance66,67
+
+./11_08.hs,177
+data BigSmall BigSmall5,6
+  Big Big6,7
+  | Small Small7,8
+data NumberOrBool NumberOrBool16,17
+  Numba Numba17,18
+  | BoolyBool BoolyBool18,19
+myNumba myNumba23,24
+
+./11_09.hs,644
+module Jammin Jammin0,1
+data Fruit Fruit7,8
+  PeachPeach8,9
+  | PlumPlum9,10
+  | AppleApple10,11
+  | BlackberryBlackberry11,12
+data JamJars JamJars14,15
+  Jam Jam15,16
+data JamJars2 JamJars221,22
+  JamJars2 JamJars222,23
+  JamJars2 {fruit fruit22,23
+           , numberOfJars numberOfJars23,24
+  (JamJars2 _ a) `compare`compare33,34
+row1 row139,40
+row2 row240,41
+row3 row341,42
+row4 row442,43
+row5 row543,44
+row6 row644,45
+allJam allJam45,46
+totalJarsOfJam totalJarsOfJam52,53
+mostRow mostRow58,59
+mostRow mostRow59,60
+sortJam sortJam73,74
+compareKind compareKind75,76
+groupJam groupJam82,83
+
+./11_10.hs,141
+type Gardener Gardener2,3
+data Garden Garden6,7
+  Gardenia Gardenia7,8
+  | Daisy Daisy8,9
+  | Rose Rose9,10
+  | Lilac Lilac10,11
+
+./11_11.hs,731
+data OperatingSystem OperatingSystem2,3
+  GnuPlusLinuxGnuPlusLinux3,4
+  | OpenBSDPlusNevermindJustBSDStill OpenBSDPlusNevermindJustBSDStill4,5
+  | OpenBSDPlusNevermindJustBSDStill | MacMac4,5
+  | WindowsWindows5,6
+data ProgrammingLanguage ProgrammingLanguage8,9
+  HaskellHaskell9,10
+  | AgdaAgda10,11
+  | IdrisIdris11,12
+  | PureScript PureScript12,13
+data Programmer Programmer14,15
+  Programmer Programmer15,16
+  Programmer { os os15,16
+             , lang lang16,17
+allOperatingSystems allOperatingSystems24,25
+allOperatingSystems allOperatingSystems25,26
+allLanguages allLanguages31,32
+allLanguages allLanguages32,33
+allProgrammers allProgrammers38,39
+allProgrammers allProgrammers39,40
+
+./11_12.hs,575
+data Quad Quad8,9
+data Quad = OneOne8,9
+          | TwoTwo9,10
+          | ThreeThree10,11
+          | FourFour11,12
+quadOptions quadOptions14,15
+eitherDataConstructors eitherDataConstructors19,20
+eQuad eQuad22,23
+eQuad eQuad23,24
+eQuads eQuads27,28
+prodQuad prodQuad32,33
+prodQuad prodQuad33,34
+prodQuads prodQuads36,37
+funcQuad funcQuad41,42
+funcQuad funcQuad42,43
+funcQuads funcQuads44,45
+prodTBool prodTBool51,52
+prodTBool prodTBool52,53
+prodTBools prodTBools54,55
+gTwo gTwo60,61
+gTwo gTwo61,62
+fTwo fTwo66,67
+fTwo fTwo67,68
+
+./11_15.hs,829
+data BinaryTree BinaryTree0,1
+data BinaryTree a = LeafLeaf0,1
+                  | Node Node1,2
+insert' insert'4,5
+insert' insert'5,6
+mapTree mapTree12,13
+mapTree mapTree13,14
+testTree' testTree'16,17
+testTree' testTree'17,18
+mapExpected mapExpected19,20
+mapOkay mapOkay21,22
+preorder preorder25,26
+preorder preorder26,27
+inorder inorder29,30
+inorder inorder30,31
+postorder postorder33,34
+postorder postorder34,35
+testTree testTree37,38
+testTree testTree38,39
+testPreorder testPreorder40,41
+testPreorder testPreorder41,42
+testInorder testInorder44,45
+testInorder testInorder45,46
+testPostorder testPostorder48,49
+testPostorder testPostorder49,50
+main main52,53
+main main53,54
+foldTree foldTree59,60
+foldTree foldTree60,61
+mapTree' mapTree'63,64
+mapTree' mapTree'64,65
+
+./11_16.hs,1994
+data Weekday Weekday6,7
+data Weekday = MondayMonday6,7
+             | TuesdayTuesday7,8
+             | WednesdayWednesday8,9
+             | ThursdayThursday9,10
+             | FridayFriday10,11
+f f21,22
+caeser caeser79,80
+caeser caeser80,81
+unCaeser unCaeser82,83
+unCaeser unCaeser83,84
+shiftLetter shiftLetter85,86
+shiftLetter shiftLetter86,87
+offSet offSet89,90
+vigenereCipher vigenereCipher91,92
+vigenereCipher vigenereCipher92,93
+subLetter subLetter98,99
+subLetter subLetter99,100
+isIn isIn111,112
+isIn isIn112,113
+isSubsequenceOf' isSubsequenceOf'114,115
+isSubsequenceOf' isSubsequenceOf'115,116
+capitalizeWords capitalizeWords121,122
+capitalizeWords capitalizeWords122,123
+capitalizeWord capitalizeWord129,130
+capitalizeWord capitalizeWord130,131
+--capitalizeParagraph --capitalizeParagraph137,138
+capitalizeParagraph capitalizeParagraph138,139
+fixWords fixWords141,142
+rollingGroup rollingGroup147,148
+type Digit Digit189,190
+type Presses Presses190,191
+data Button Button191,192
+data Button = Button Button191,192
+data DaPhone DaPhone193,194
+data DaPhone = DaPhone DaPhone193,194
+phoneLayout phoneLayout196,197
+defaultButton defaultButton201,202
+convo convo208,209
+convo convo209,210
+getButton getButton219,220
+getButton getButton220,221
+presses presses227,228
+presses presses228,229
+reverseTaps reverseTaps236,237
+reverseTaps reverseTaps237,238
+cellPhonesDead cellPhonesDead240,241
+cellPhonesDead cellPhonesDead241,242
+--fingerTaps --fingerTaps244,245
+fingerTaps fingerTaps245,246
+mostPopularLetter mostPopularLetter252,253
+mostPopularLetter mostPopularLetter253,254
+--coolestLtr --coolestLtr257,258
+coolestLtr coolestLtr258,259
+longestLength longestLength260,261
+coolestWord coolestWord266,267
+data Expr Expr283,284
+data Expr = Lit Lit283,284
+          | Add Add284,285
+eval eval286,287
+eval eval287,288
+printExpr printExpr291,292
+printExpr printExpr292,293
+
+./12_05.hs,220
+id' id'2,3
+id' id'3,4
+notThe notThe21,22
+notThe notThe22,23
+replaceThe replaceThe26,27
+replaceThe replaceThe27,28
+countTheBeforeVowel countTheBeforeVowel37,38
+countTheBeforeVowel countTheBeforeVowel38,39
+
+./12_06.hs,2241
+notThe notThe22,23
+notThe notThe23,24
+--replaceThe --replaceThe28,29
+replaceThe replaceThe29,30
+--countTheBeforeVowel --countTheBeforeVowel39,40
+isVowel isVowel41,42
+startsWithVowel startsWithVowel43,44
+countTheBeforeVowel countTheBeforeVowel45,46
+countVowels countVowels55,56
+countVowels countVowels56,57
+newtype Word' Word'67,68
+  Word' Word'68,69
+vowels vowels71,72
+--mkWord --mkWord73,74
+mkWord mkWord74,75
+data Nat Nat91,92
+  ZeroZero92,93
+  | Succ Succ93,94
+natToInteger natToInteger96,97
+natToInteger natToInteger97,98
+integerToNat integerToNat101,102
+integerToNat integerToNat102,103
+isJust isJust114,115
+isJust isJust115,116
+isNothing isNothing119,120
+isNothing isNothing120,121
+mayybee mayybee124,125
+mayybee mayybee125,126
+fromMaybe fromMaybe130,131
+fromMaybe fromMaybe131,132
+listToMaybe listToMaybe135,136
+listToMaybe listToMaybe136,137
+maybeToList maybeToList140,141
+maybeToList maybeToList141,142
+catMaybes catMaybes146,147
+catMaybes catMaybes147,148
+flipMaybe flipMaybe150,151
+flipMaybe flipMaybe151,152
+lefts' lefts'168,169
+lefts' lefts'169,170
+rights' rights'174,175
+rights' rights'175,176
+partitionEithers' partitionEithers'180,181
+partitionEithers' partitionEithers'181,182
+eitherMaybe' eitherMaybe'186,187
+eitherMaybe' eitherMaybe'187,188
+either' either'192,193
+either' either'193,194
+eitherMaybe'' eitherMaybe''198,199
+eitherMaybe'' eitherMaybe''199,200
+mehSum mehSum212,213
+mehSum mehSum213,214
+niceSum niceSum218,219
+niceSum niceSum219,220
+mehProduct mehProduct221,222
+mehProduct mehProduct222,223
+niceProduct niceProduct227,228
+niceProduct niceProduct228,229
+mehConcat mehConcat232,233
+mehConcat mehConcat233,234
+niceConcat niceConcat238,239
+niceConcat niceConcat239,240
+myIterate myIterate250,251
+myIterate myIterate251,252
+myUnfoldr myUnfoldr257,258
+myUnfoldr myUnfoldr258,259
+--myUnfoldr --myUnfoldr267,268
+betterIterate betterIterate268,269
+betterIterate betterIterate269,270
+data BinaryTree BinaryTree279,280
+data BinaryTree a = LeafLeaf279,280
+                  | Node Node280,281
+unfold unfold285,286
+--treeBuild --treeBuild292,293
+treeBuild treeBuild293,294
+
+./13_15.hs,539
+palindrome palindrome16,17
+palindrome palindrome17,18
+palindrome' palindrome'30,31
+palindrome' palindrome'31,32
+type Name Name41,42
+type Age Age42,43
+data Person Person43,44
+data Person = Person Person43,44
+data PersonInvalid PersonInvalid45,46
+data PersonInvalid = NameEmptyNameEmpty45,46
+                   | AgeTooLowAgeTooLow46,47
+                   | PersonInvalidUnknown PersonInvalidUnknown47,48
+mkPerson mkPerson49,50
+mkPerson mkPerson52,53
+gimmePerson gimmePerson61,62
+gimmePerson gimmePerson62,63
+
+./15_10.hs,86
+data Optional Optional2,3
+  NadaNada3,4
+  | Only Only4,5
+instance instance7,8
+
+./15_11.hs,184
+type Verb Verb1,2
+type Adjective Adjective2,3
+type Adverb Adverb3,4
+type Noun Noun4,5
+type Exclamation Exclamation5,6
+madlibbin' madlibbin'7,8
+madlibbin' madlibbin'12,13
+
+./15_12.hs,296
+data Optional Optional4,5
+  NadaNada5,6
+newtype First' First'9,10
+  First' First'10,11
+  First' { getFirst' getFirst'10,11
+instance instance13,14
+firstMappend firstMappend19,20
+firstMappend firstMappend20,21
+type FirstMappend FirstMappend22,23
+main main24,25
+main main24,25
+
+./15_14.hs,0
+
+./Cipher.hs,182
+module Cipher Cipher22,23
+caeser caeser25,26
+caeser caeser26,27
+unCaeser unCaeser28,29
+unCaeser unCaeser29,30
+shiftLetter shiftLetter31,32
+shiftLetter shiftLetter32,33
+
+./hangman/.stack-work/dist/x86_64-osx/Cabal-1.22.5.0/build/autogen/Paths_hangman.hs,964
+module Paths_hangman Paths_hangman0,1
+catchIO catchIO11,12
+catchIO catchIO12,13
+version version14,15
+version version15,16
+bindir, libdir, datadir, libexecdir, sysconfdir sysconfdir16,17
+bindir, libdir, datadir, libexecdir,libexecdir16,17
+bindir, libdir, datadir,datadir16,17
+bindir, libdir,libdir16,17
+bindir,bindir16,17
+bindir bindir18,19
+libdir libdir19,20
+datadir datadir20,21
+libexecdir libexecdir21,22
+sysconfdir sysconfdir22,23
+getBinDir, getLibDir, getDataDir, getLibexecDir, getSysconfDir getSysconfDir24,25
+getBinDir, getLibDir, getDataDir, getLibexecDir,getLibexecDir24,25
+getBinDir, getLibDir, getDataDir,getDataDir24,25
+getBinDir, getLibDir,getLibDir24,25
+getBinDir,getBinDir24,25
+getBinDir getBinDir25,26
+getLibDir getLibDir26,27
+getDataDir getDataDir27,28
+getLibexecDir getLibexecDir28,29
+getSysconfDir getSysconfDir29,30
+getDataFileName getDataFileName31,32
+getDataFileName getDataFileName32,33
+
+./hangman/Setup.hs,15
+main main1,2
+
+./hangman/src/Main.hs,1147
+module Main Main0,1
+newtype WordList WordList9,10
+newtype WordList = WordList WordList9,10
+allWords allWords12,13
+allWords allWords13,14
+minWordLength minWordLength17,18
+minWordLength minWordLength18,19
+maxWordLength maxWordLength20,21
+maxWordLength maxWordLength21,22
+gameWords gameWords23,24
+gameWords gameWords24,25
+randomWord randomWord31,32
+randomWord randomWord32,33
+randomWord' randomWord'36,37
+randomWord' randomWord'37,38
+data Puzzle Puzzle39,40
+data Puzzle = Puzzle Puzzle39,40
+instance instance41,42
+renderPuzzleChar renderPuzzleChar46,47
+renderPuzzleChar renderPuzzleChar47,48
+freshPuzzle freshPuzzle51,52
+freshPuzzle freshPuzzle52,53
+charInWord charInWord55,56
+charInWord charInWord56,57
+alreadyGuessed alreadyGuessed58,59
+alreadyGuessed alreadyGuessed59,60
+fillInCharacter fillInCharacter61,62
+fillInCharacter fillInCharacter62,63
+handleGuess handleGuess70,71
+handleGuess handleGuess71,72
+gameOver gameOver87,88
+gameOver gameOver88,89
+gameWin gameWin97,98
+gameWin gameWin98,99
+runGame runGame105,106
+runGame runGame106,107
+main main117,118
+main main118,119
+
+./hello/.stack-work/dist/x86_64-osx/Cabal-1.22.5.0/build/autogen/Paths_hello.hs,960
+module Paths_hello Paths_hello0,1
+catchIO catchIO11,12
+catchIO catchIO12,13
+version version14,15
+version version15,16
+bindir, libdir, datadir, libexecdir, sysconfdir sysconfdir16,17
+bindir, libdir, datadir, libexecdir,libexecdir16,17
+bindir, libdir, datadir,datadir16,17
+bindir, libdir,libdir16,17
+bindir,bindir16,17
+bindir bindir18,19
+libdir libdir19,20
+datadir datadir20,21
+libexecdir libexecdir21,22
+sysconfdir sysconfdir22,23
+getBinDir, getLibDir, getDataDir, getLibexecDir, getSysconfDir getSysconfDir24,25
+getBinDir, getLibDir, getDataDir, getLibexecDir,getLibexecDir24,25
+getBinDir, getLibDir, getDataDir,getDataDir24,25
+getBinDir, getLibDir,getLibDir24,25
+getBinDir,getBinDir24,25
+getBinDir getBinDir25,26
+getLibDir getLibDir26,27
+getDataDir getDataDir27,28
+getLibexecDir getLibexecDir28,29
+getSysconfDir getSysconfDir29,30
+getDataFileName getDataFileName31,32
+getDataFileName getDataFileName32,33
+
+./hello/dist/build/autogen/Paths_hello.hs,960
+module Paths_hello Paths_hello0,1
+catchIO catchIO11,12
+catchIO catchIO12,13
+version version14,15
+version version15,16
+bindir, libdir, datadir, libexecdir, sysconfdir sysconfdir16,17
+bindir, libdir, datadir, libexecdir,libexecdir16,17
+bindir, libdir, datadir,datadir16,17
+bindir, libdir,libdir16,17
+bindir,bindir16,17
+bindir bindir18,19
+libdir libdir19,20
+datadir datadir20,21
+libexecdir libexecdir21,22
+sysconfdir sysconfdir22,23
+getBinDir, getLibDir, getDataDir, getLibexecDir, getSysconfDir getSysconfDir24,25
+getBinDir, getLibDir, getDataDir, getLibexecDir,getLibexecDir24,25
+getBinDir, getLibDir, getDataDir,getDataDir24,25
+getBinDir, getLibDir,getLibDir24,25
+getBinDir,getBinDir24,25
+getBinDir getBinDir25,26
+getLibDir getLibDir26,27
+getDataDir getDataDir27,28
+getLibexecDir getLibexecDir28,29
+getSysconfDir getSysconfDir29,30
+getDataFileName getDataFileName31,32
+getDataFileName getDataFileName32,33
+
+./hello/Setup.hs,15
+main main1,2
+
+./hello/src/DogsRule.hs,59
+module DogsRuleDogsRule0,1
+dogs dogs4,5
+dogs dogs5,6
+
+./hello/src/Hello.hs,69
+module HelloHello0,1
+sayHello sayHello4,5
+sayHello sayHello5,6
+
+./hello/src/Main.hs,52
+module Main Main0,1
+main main6,7
+main main7,8
+
+./orphan-instance/Listy.hs,44
+newtype Listy Listy2,3
+  Listy Listy3,4
+
+./orphan-instance/ListyInstances.hs,65
+module ListyInstances ListyInstances0,1
+instance instance4,5

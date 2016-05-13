@@ -284,14 +284,13 @@ data BinaryTree a = Leaf
 -- 1. Write unfold for BinaryTree.
 -- unfold :: (a -> Maybe (a,b,a)) -> a -> BinaryTree b
 unfold f a = case f a of
-               (Just (a', b', a'')) -> Node a' b' a''
-               Nothing -> undefined
+               Nothing -> Leaf
+               (Just (a', b', a'')) -> Node (unfold f a') b' (unfold f a'')
+
 
 -- 2. Make a tree builder. Using the unfold function you’ve just made for
 -- BinaryTree, write the following function:
-treeBuild :: Integer -> BinaryTree Integer
-treeBuild n = undefined
-
--- You should be producing results that look like the following:
--- Prelude> treeBuild 0
--- Leaf
+--treeBuild :: Integer -> BinaryTree Integer
+treeBuild n = unfold (\x -> case x <= n of
+                              False -> Nothing
+                              True -> Just (x+1, x, x+1)) 0

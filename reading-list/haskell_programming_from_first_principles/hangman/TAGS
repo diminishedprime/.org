@@ -1,0 +1,43 @@
+
+./Setup.hs,15
+main main1,2
+
+./src/Main.hs,1147
+module Main Main0,1
+newtype WordList WordList9,10
+newtype WordList = WordList WordList9,10
+allWords allWords12,13
+allWords allWords13,14
+minWordLength minWordLength17,18
+minWordLength minWordLength18,19
+maxWordLength maxWordLength20,21
+maxWordLength maxWordLength21,22
+gameWords gameWords23,24
+gameWords gameWords24,25
+randomWord randomWord31,32
+randomWord randomWord32,33
+randomWord' randomWord'36,37
+randomWord' randomWord'37,38
+data Puzzle Puzzle39,40
+data Puzzle = Puzzle Puzzle39,40
+instance instance41,42
+renderPuzzleChar renderPuzzleChar46,47
+renderPuzzleChar renderPuzzleChar47,48
+freshPuzzle freshPuzzle51,52
+freshPuzzle freshPuzzle52,53
+charInWord charInWord55,56
+charInWord charInWord56,57
+alreadyGuessed alreadyGuessed58,59
+alreadyGuessed alreadyGuessed59,60
+fillInCharacter fillInCharacter61,62
+fillInCharacter fillInCharacter62,63
+handleGuess handleGuess70,71
+handleGuess handleGuess71,72
+gameOver gameOver87,88
+gameOver gameOver88,89
+gameWin gameWin97,98
+gameWin gameWin98,99
+runGame runGame105,106
+runGame runGame106,107
+main main117,118
+main main118,119
