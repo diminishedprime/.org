@@ -876,70 +876,71 @@ data Four' a b = Four' Four'69,70
 data Trivial Trivial76,77
 data Trivial = TrivialTrivial76,77
 
-./addition/.stack-work/dist/x86_64-osx/Cabal-1.22.5.0/build/autogen/Paths_Addition.hs,966
-module Paths_Addition Paths_Addition0,1
-catchIO catchIO11,12
-catchIO catchIO12,13
-version version14,15
-version version15,16
-bindir, libdir, datadir, libexecdir, sysconfdir sysconfdir16,17
-bindir, libdir, datadir, libexecdir,libexecdir16,17
-bindir, libdir, datadir,datadir16,17
-bindir, libdir,libdir16,17
-bindir,bindir16,17
-bindir bindir18,19
-libdir libdir19,20
-datadir datadir20,21
-libexecdir libexecdir21,22
-sysconfdir sysconfdir22,23
-getBinDir, getLibDir, getDataDir, getLibexecDir, getSysconfDir getSysconfDir24,25
-getBinDir, getLibDir, getDataDir, getLibexecDir,getLibexecDir24,25
-getBinDir, getLibDir, getDataDir,getDataDir24,25
-getBinDir, getLibDir,getLibDir24,25
-getBinDir,getBinDir24,25
-getBinDir getBinDir25,26
-getLibDir getLibDir26,27
-getDataDir getDataDir27,28
-getLibexecDir getLibexecDir28,29
-getSysconfDir getSysconfDir29,30
-getDataFileName getDataFileName31,32
-getDataFileName getDataFileName32,33
+./16_11.hs,218
+data Possibly Possibly4,5
+data Possibly a = LolNopeLolNope4,5
+                | Yeppers Yeppers5,6
+instance instance7,8
+data Sum Sum15,16
+data Sum a b = First First15,16
+             | Second Second16,17
 
-./addition/Addition.hs,114
-module Addition Addition0,1
-main main4,5
-main main5,6
-dividedBy dividedBy15,16
-dividedBy dividedBy16,17
-
-./addition/dist/build/autogen/Paths_Addition.hs,966
-module Paths_Addition Paths_Addition0,1
-catchIO catchIO11,12
-catchIO catchIO12,13
-version version14,15
-version version15,16
-bindir, libdir, datadir, libexecdir, sysconfdir sysconfdir16,17
-bindir, libdir, datadir, libexecdir,libexecdir16,17
-bindir, libdir, datadir,datadir16,17
-bindir, libdir,libdir16,17
-bindir,bindir16,17
-bindir bindir18,19
-libdir libdir19,20
-datadir datadir20,21
-libexecdir libexecdir21,22
-sysconfdir sysconfdir22,23
-getBinDir, getLibDir, getDataDir, getLibexecDir, getSysconfDir getSysconfDir24,25
-getBinDir, getLibDir, getDataDir, getLibexecDir,getLibexecDir24,25
-getBinDir, getLibDir, getDataDir,getDataDir24,25
-getBinDir, getLibDir,getLibDir24,25
-getBinDir,getBinDir24,25
-getBinDir getBinDir25,26
-getLibDir getLibDir26,27
-getDataDir getDataDir27,28
-getLibexecDir getLibexecDir28,29
-getSysconfDir getSysconfDir29,30
-getDataFileName getDataFileName31,32
-getDataFileName getDataFileName32,33
+./16_17.hs,1864
+data Bool Bool8,9
+  False False9,10
+  False | TrueTrue9,10
+data BoolAndSomethingElse BoolAndSomethingElse13,14
+  False' False'14,15
+  False' a | True' True'14,15
+data BoolAndMaybeSomethingElse BoolAndMaybeSomethingElse19,20
+  Falsish Falsish20,21
+  Falsish | Truish Truish20,21
+newtype Mu Mu25,26
+newtype Mu f = InF InF25,26
+newtype Mu f = InF { outF outF25,26
+data D D30,31
+data D = D D30,31
+data Sum Sum37,38
+data Sum a b = First First37,38
+             | Second Second38,39
+instance instance40,41
+data Company Company45,46
+data Company a b c = DeepBlue DeepBlue45,46
+                   | Something Something46,47
+data More More53,54
+data More b a = L L53,54
+              | R R54,55
+data Quant Quant63,64
+data Quant a b = FinanceFinance63,64
+               | Desk Desk64,65
+               | Bloor Bloor65,66
+data K K73,74
+data K a b = K K73,74
+newtype Flip Flip79,80
+newtype Flip f a b = Flip Flip79,80
+newtype K' K'82,83
+newtype K' a b = K' K'82,83
+data EvilGoateeConst EvilGoateeConst88,89
+data EvilGoateeConst a b = GoatyConst GoatyConst88,89
+data LiftItOut LiftItOut95,96
+data LiftItOut f a = LiftItOut LiftItOut95,96
+data Parappa Parappa102,103
+data Parappa f g a = DaWrappa DaWrappa102,103
+data IgnoreOne IgnoreOne108,109
+data IgnoreOne f g a b = IgnoringSomething IgnoringSomething108,109
+data Notorious Notorious114,115
+data Notorious g o a t = Notorious Notorious114,115
+data List List120,121
+data List a = NilNil120,121
+            | Cons Cons121,122
+data GoatLord GoatLord129,130
+data GoatLord a = NoGoatNoGoat129,130
+                | OneGoat OneGoat130,131
+                | MoreGoats MoreGoats131,132
+data TalkToMe TalkToMe140,141
+data TalkToMe a = HaltHalt140,141
+                | Print Print141,142
+                | Read Read142,143
 
 ./Cipher.hs,182
 module Cipher Cipher22,23

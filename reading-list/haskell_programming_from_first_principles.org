@@ -1,7 +1,7 @@
 + [[../index.org][Main Index]]
 + [[./index.org][Reading List]]
 
-* Haskell Book [41%]
+* Haskell Book [45%]
 1. [X] All You Need Is Lambda [100%]
    1. [X] All You Need Is Lambda
    2. [X] What's A Function
@@ -203,7 +203,7 @@
     14. [ ]  [[./haskell_programming_from_first_principles/15_14.hs][Chapter exercises]]
     15. [X]  Definitions
     16. [X]  Follow-up resources
-16. [-] Functor 599 [52%]
+16. [X] Functor 599 [100%]
     1. [X] Functor
     2. [X] What’s a functor?
     3. [X] There’s a whole lot of fmap going round
@@ -214,15 +214,15 @@
     8. [X] Mapping over the structure to transform the unapplied type argument
     9. [X] QuickChecking Functor instances
     10. [X] [[./haskell_programming_from_first_principles/16_10.hs][Intermission: Exercises]]
-    11. [ ] Ignoring possibilities
-    12. [ ] Asomewhatsurprisingfunctor ..............634
-    13. [ ] Morestructure,morefunctors...............636
-    14. [ ] IOFunctor............................637
-    15. [ ] What if we want to do something different? . . . . . . 639
-    16. [ ] Functors in Haskell are unique for a given datatype . 642
-    17. [ ] Chapterexercises .......................643
-    18. [ ] Definitions............................ 646
-    19. [ ] Follow-upresources...................... 648
+    11. [X] [[./haskell_programming_from_first_principles/16_11.hs][Ignoring possibilities]]
+    12. [X] A somewhat surprising functor
+    13. [X] More structure, more functors
+    14. [X] IO Functor
+    15. [X] What if we want to do something different?
+    16. [X] Functors in Haskell are unique for a given datatype
+    17. [X] [[./haskell_programming_from_first_principles/16_17.hs][Chapter exercises]]
+    18. [X] Definitions
+    19. [X] Follow-up resources
 17. [ ] Applicative 649 [0%]
     1. [ ] Applicative . . . . . . . . . . . . . . . . . . . . . . . . . . . . 650
     2. [ ] DefiningApplicative .....................650
