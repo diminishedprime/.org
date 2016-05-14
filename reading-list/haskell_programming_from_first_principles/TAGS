@@ -841,6 +841,106 @@ main main24,25
 
 ./15_14.hs,0
 
+./16_04.hs,0
+
+./16_07.hs,64
+a a8,9
+b b14,15
+c c20,21
+d d23,24
+e e26,27
+e e27,28
+
+./16_10.hs,742
+functorIdentity functorIdentity3,4
+functorIdentity functorIdentity6,7
+functorCompose functorCompose8,9
+functorCompose functorCompose13,14
+functorCompose' functorCompose'15,16
+functorCompose' functorCompose'20,21
+newtype Identity Identity27,28
+newtype Identity a = Identity Identity27,28
+instance instance30,31
+data Pair Pair34,35
+data Pair a = Pair Pair34,35
+data Two Two41,42
+data Two a b = Two Two41,42
+data Three Three48,49
+data Three a b c = Three Three48,49
+data Three' Three'55,56
+data Three' a b = Three' Three'55,56
+data Four Four62,63
+data Four a b c d = Four Four62,63
+data Four' Four'69,70
+data Four' a b = Four' Four'69,70
+data Trivial Trivial76,77
+data Trivial = TrivialTrivial76,77
+
+./addition/.stack-work/dist/x86_64-osx/Cabal-1.22.5.0/build/autogen/Paths_Addition.hs,966
+module Paths_Addition Paths_Addition0,1
+catchIO catchIO11,12
+catchIO catchIO12,13
+version version14,15
+version version15,16
+bindir, libdir, datadir, libexecdir, sysconfdir sysconfdir16,17
+bindir, libdir, datadir, libexecdir,libexecdir16,17
+bindir, libdir, datadir,datadir16,17
+bindir, libdir,libdir16,17
+bindir,bindir16,17
+bindir bindir18,19
+libdir libdir19,20
+datadir datadir20,21
+libexecdir libexecdir21,22
+sysconfdir sysconfdir22,23
+getBinDir, getLibDir, getDataDir, getLibexecDir, getSysconfDir getSysconfDir24,25
+getBinDir, getLibDir, getDataDir, getLibexecDir,getLibexecDir24,25
+getBinDir, getLibDir, getDataDir,getDataDir24,25
+getBinDir, getLibDir,getLibDir24,25
+getBinDir,getBinDir24,25
+getBinDir getBinDir25,26
+getLibDir getLibDir26,27
+getDataDir getDataDir27,28
+getLibexecDir getLibexecDir28,29
+getSysconfDir getSysconfDir29,30
+getDataFileName getDataFileName31,32
+getDataFileName getDataFileName32,33
+
+./addition/Addition.hs,114
+module Addition Addition0,1
+main main4,5
+main main5,6
+dividedBy dividedBy15,16
+dividedBy dividedBy16,17
+
+./addition/dist/build/autogen/Paths_Addition.hs,966
+module Paths_Addition Paths_Addition0,1
+catchIO catchIO11,12
+catchIO catchIO12,13
+version version14,15
+version version15,16
+bindir, libdir, datadir, libexecdir, sysconfdir sysconfdir16,17
+bindir, libdir, datadir, libexecdir,libexecdir16,17
+bindir, libdir, datadir,datadir16,17
+bindir, libdir,libdir16,17
+bindir,bindir16,17
+bindir bindir18,19
+libdir libdir19,20
+datadir datadir20,21
+libexecdir libexecdir21,22
+sysconfdir sysconfdir22,23
+getBinDir, getLibDir, getDataDir, getLibexecDir, getSysconfDir getSysconfDir24,25
+getBinDir, getLibDir, getDataDir, getLibexecDir,getLibexecDir24,25
+getBinDir, getLibDir, getDataDir,getDataDir24,25
+getBinDir, getLibDir,getLibDir24,25
+getBinDir,getBinDir24,25
+getBinDir getBinDir25,26
+getLibDir getLibDir26,27
+getDataDir getDataDir27,28
+getLibexecDir getLibexecDir28,29
+getSysconfDir getSysconfDir29,30
+getDataFileName getDataFileName31,32
+getDataFileName getDataFileName32,33
+
 ./Cipher.hs,182
 module Cipher Cipher22,23
 caeser caeser25,26

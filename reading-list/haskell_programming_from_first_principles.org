@@ -177,11 +177,11 @@
     14. [X] Adding a Newtype
     15. [X] [[./haskell_programming_from_first_principles/13_15.hs][Chapter Exercises]]
     16. [X] Follow-up Resources
-14. [ ] Testing [0%]
-    1. [ ]
-    2. [ ]
-    3. [ ]
-    4. [ ]
+14. [-] Testing [37%]
+    1. [X] Testing
+    2. [X] A quick tour of testing for the uninitiated
+    3. [X] Conventional Testing
+    4. [ ] Enter QuickCheck
     5. [ ]
     6. [ ]
     7. [ ]
@@ -203,18 +203,18 @@
     14. [ ]  [[./haskell_programming_from_first_principles/15_14.hs][Chapter exercises]]
     15. [X]  Definitions
     16. [X]  Follow-up resources
-16. [ ] Functor 599 [0%]
-    1. [ ] Functor.............................. 600
-    2. [ ] What’safunctor?........................ 601
-    3. [ ] There’sawholelotoffmapgoinground . . . . . . . . 602
-    4. [ ] Let’stalkabout𝑓,baby.................... 603
-    5. [ ] FunctorLaws ..........................610
-    6. [ ] TheGood,theBad,andtheUgly .............612
-    7. [ ] Commonlyusedfunctors ..................615
-    8. [ ] Mapping over the structure to transform the unappliedtypeargument .....................625
-    9. [ ] QuickCheckingFunctorinstances. . . . . . . . . . . . . 627
-    10. [ ] Intermission:Exercises....................629
-    11. [ ] Ignoringpossibilities .....................630
+16. [-] Functor 599 [52%]
+    1. [X] Functor
+    2. [X] What’s a functor?
+    3. [X] There’s a whole lot of fmap going round
+    4. [X] [[./haskell_programming_from_first_principles/16_04.hs][Let’s talk about f, baby]]
+    5. [X] Functor Laws
+    6. [X] The Good, the Bad, and the Ugly
+    7. [X] [[./haskell_programming_from_first_principles/16_07.hs][Commonly used functors]]
+    8. [X] Mapping over the structure to transform the unapplied type argument
+    9. [X] QuickChecking Functor instances
+    10. [X] [[./haskell_programming_from_first_principles/16_10.hs][Intermission: Exercises]]
+    11. [ ] Ignoring possibilities
     12. [ ] Asomewhatsurprisingfunctor ..............634
     13. [ ] Morestructure,morefunctors...............636
     14. [ ] IOFunctor............................637
