@@ -1,7 +1,7 @@
 + [[../index.org][Main Index]]
 + [[./index.org][Reading List]]
 
-* Haskell Book [45%]
+* Haskell Book [48%]
 1. [X] All You Need Is Lambda [100%]
    1. [X] All You Need Is Lambda
    2. [X] What's A Function
@@ -186,7 +186,7 @@
     6. [ ]
     7. [ ]
     8. [ ]
-15. [-] Monoid, Semigroup 558 [93%]
+15. [-] Monoid, Semigroup [93%]
     1. [X]  Monoids and semigroups
     2. [X]  What we talk about when we talk about algebras
     3. [X]  Monoid
@@ -203,7 +203,7 @@
     14. [ ]  [[./haskell_programming_from_first_principles/15_14.hs][Chapter exercises]]
     15. [X]  Definitions
     16. [X]  Follow-up resources
-16. [X] Functor 599 [100%]
+16. [X] Functor [100%]
     1. [X] Functor
     2. [X] What’s a functor?
     3. [X] There’s a whole lot of fmap going round
@@ -223,19 +223,19 @@
     17. [X] [[./haskell_programming_from_first_principles/16_17.hs][Chapter exercises]]
     18. [X] Definitions
     19. [X] Follow-up resources
-17. [ ] Applicative 649 [0%]
-    1. [ ] Applicative . . . . . . . . . . . . . . . . . . . . . . . . . . . . 650
-    2. [ ] DefiningApplicative .....................650
-    3. [ ] Functor vs. Applicative . . . . . . . . . . . . . . . . . . . . 652
-    4. [ ] Applicative functors are monoidal functors . . . . . . 653
-    5. [ ]
-    6. [ ]
-    7. [ ]
-    8. [ ]
-    9. [ ]
-    10. [ ]
-    11. [ ]
-    12. [ ]
+17. [X] Applicative [100%]
+    1. [X] Applicative
+    2. [X] Defining Applicative
+    3. [X] Functor vs. Applicative
+    4. [X] Applicative functors are monoidal functors
+    5. [X] [[./haskell_programming_from_first_principles/17_05.hs][Applicative in Use]]
+    6. [X] Applicative Laws
+    7. [X] You Knew This Was Coming
+    8. [X] [[./haskell_programming_from_first_principles/17_08.hs][ZipList Monoid]]
+    9. [X] [[./haskell_programming_from_first_principles/17_09.hs][Chapter Exercises]]
+    10. [X] Definitions
+    11. [X] Follow-up Resources
+    12. [X] Answers
 18. [ ] Monad [0%]
     1. [ ]
     2. [ ]
@@ -391,4 +391,4 @@
     2. [ ]  fingerd ..............................1095
     3. [ ]  Exploringfinger ........................1096
     4. [ ]  Slightlymodernizedfingerd ................1101
-    5. [ ]  ChapterExercises .......................1108
+    5. [ ]  Chapter-Exercises .......................1108

@@ -942,6 +942,99 @@ data TalkToMe a = HaltHalt140,141
                 | Print Print141,142
                 | Read Read142,143
 
+./17_05.hs,590
+added added13,14
+added added14,15
+y y17,18
+y y18,19
+z z20,21
+z z21,22
+tupled tupled23,24
+tupled tupled24,25
+x x27,28
+x x28,29
+y' y'30,31
+y' y'31,32
+max' max'33,34
+max' max'34,35
+maxed maxed36,37
+maxed maxed37,38
+xs xs41,42
+ys ys42,43
+x' x'43,44
+y'' y''44,45
+summed summed46,47
+summed summed47,48
+newtype Identity Identity50,51
+newtype Identity a = Identity Identity50,51
+instance instance53,54
+newtype Constant Constant60,61
+newtype Constant a b = Constant Constant60,61
+newtype Constant a b = Constant { getConstant getConstant60,61
+
+./17_08.hs,1083
+instance instance16,17
+takeList takeList20,21
+takeList takeList21,22
+data List List27,28
+data List a = NilNil27,28
+            | Cons Cons28,29
+append append49,50
+append append50,51
+fold fold53,54
+fold fold54,55
+concat' concat'57,58
+concat' concat'58,59
+flatMap flatMap60,61
+flatMap flatMap61,62
+take' take'69,70
+take' take'70,71
+newtype ZipList' ZipList'73,74
+newtype ZipList' a = ZipList' ZipList'73,74
+genList genList100,101
+genList genList101,102
+genZipList genZipList107,108
+genZipList genZipList108,109
+data Sum' Sum'114,115
+data Sum' a b = First' First'114,115
+              | Second' Second'115,116
+data Validation Validation118,119
+data Validation e a = Error Error118,119
+                    | Success Success119,120
+genSum genSum135,136
+genSum genSum136,137
+applyIfBothSecond applyIfBothSecond155,156
+applyIfBothSecond applyIfBothSecond158,159
+applyMappendError applyMappendError160,161
+applyMappendError applyMappendError164,165
+genValidation genValidation176,177
+genValidation genValidation177,178
+
+./17_09.hs,652
+--pure --pure15,16
+--pure --pure27,28
+newtype Identity Identity40,41
+newtype Identity a = Identity Identity40,41
+instance instance43,44
+data Pair Pair63,64
+data Pair a = Pair Pair63,64
+data Two Two87,88
+data Two a b = Two Two87,88
+data Three Three111,112
+data Three a b c = Three Three111,112
+data Three' Three'135,136
+data Three' a b = Three' Three'135,136
+data Four Four159,160
+data Four a b c d = Four Four159,160
+data Four' Four'185,186
+data Four' a b = Four' Four'185,186
+stops, vowels vowels214,215
+stops,stops214,215
+stops stops215,216
+vowels vowels216,217
+combos combos218,219
+combos combos219,220
+
 ./Cipher.hs,182
 module Cipher Cipher22,23
 caeser caeser25,26
