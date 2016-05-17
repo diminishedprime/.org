@@ -1035,6 +1035,10 @@ vowels vowels216,217
 combos combos218,219
 combos combos219,220
 
+./18_02.hs,30
+bind bind4,5
+bind bind5,6
+
 ./Cipher.hs,182
 module Cipher Cipher22,23
 caeser caeser25,26

@@ -22,6 +22,7 @@
 + [[./such_great_heights.org][Such Great Heights]]
 ** Keaton Henson
 + [[./small_hands.org][Small Hands]]
++ [[./strawbear.org][Strawbear]]
 ** Ingrid Michaelson
 + [[./you_and_i.org][You And I]]
 ** Ke$ha

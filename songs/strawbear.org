@@ -1,0 +1,42 @@
++ [[../index.org][Home]]
++ [[./index.org][Songs]]
+
+* Strawbear
+** Keaton Henson
+#+BEGIN_SRC elisp
+
+  Intro
+  C Am7 Gsus4/E C x2
+
+  Please pick me up on my long walk back home
+  Give me something to eat, for I’m weak to my bones,
+  Hold me tight in your arms, give me glimmers of hope
+
+  Do not love me though
+  Do not love me though
+  Do not love me though
+
+  Let me lay in your bed, talk of things you don’t know
+  Take the clothes from my back, and make love to me slow
+  and you’re free to think of all you feel and let go
+
+  Do not tell me though
+  Do not tell me though
+  Do not tell me though
+
+  Introduce me to friends, make excuses for me
+  I will tug on your coat when I’m ready to leave
+  Please don’t let me stop you from thinking you are free
+
+  Don’t fall for me
+  Don’t fall for me
+  Do not fall for me
+
+  And when I get tired and eventually leave
+  I’ll get back on the road and I’ll leave you in peace.
+  And I won’t even look back as the tears hit your cheek
+
+  Please don’t look at me
+  Do not look at me
+  Don’t look at me
+#+END_SRC
