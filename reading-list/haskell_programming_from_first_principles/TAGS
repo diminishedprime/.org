@@ -1039,6 +1039,39 @@ combos combos219,220
 bind bind4,5
 bind bind5,6
 
+./18_04.hs,156
+instance instance9,10
+genSum genSum12,13
+genSum genSum13,14
+data Sum Sum21,22
+data Sum a b = First First21,22
+             | Second Second22,23
+
+./18_07.hs,600
+data Nope Nope13,14
+data Nope a = NopeDotJpgNopeDotJpg13,14
+instance instance16,17
+data PhhhbbtttEither PhhhbbtttEither34,35
+  Left Left35,36
+  | Right Right36,37
+newtype Identity Identity64,65
+newtype Identity a = Identity Identity64,65
+data List List90,91
+  NilNil91,92
+  | Cons Cons92,93
+takeList takeList99,100
+takeList takeList100,101
+append append115,116
+append append116,117
+fold fold119,120
+fold fold120,121
+concat' concat'123,124
+concat' concat'124,125
+flatMap flatMap126,127
+flatMap flatMap127,128
+genList genList132,133
+genList genList133,134
+
 ./Cipher.hs,182
 module Cipher Cipher22,23
 caeser caeser25,26

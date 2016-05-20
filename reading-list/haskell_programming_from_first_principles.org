@@ -236,14 +236,14 @@
     10. [X] Definitions
     11. [X] Follow-up Resources
     12. [X] Answers
-18. [-] Monad [33%]
+18. [-] Monad [66%]
     1. [X] Monad
     2. [X] [[./haskell_programming_from_first_principles/18_02.hs][Sorry -- Monad is not a burrito]]
     3. [X] Do syntax and monads
-    4. [ ] Examples of Monad use
-    5. [ ]
-    6. [ ]
-    7. [ ]
+    4. [X] [[./haskell_programming_from_first_principles/18_04.hs][Examples of Monad use]]
+    5. [X] Monad Laws
+    6. [X] Application and composition
+    7. [ ] [[./haskell_programming_from_first_principles/18_07.hs][Chapter Exercises]]
     8. [ ]
     9. [ ]
 19. [ ] Applying structure 738 [0%]

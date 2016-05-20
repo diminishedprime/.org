@@ -1,6 +1,6 @@
 Combinators
 1. λx.xxx
-This one is a combinator. None of the variables in the body are free.
+nThis one is a combinator. None of the variables in the body are free.
 2. λxy.zx
 This one is not a combinator. The z in the body is free.
 3. λxyz.xy(zx)
