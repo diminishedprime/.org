@@ -35,17 +35,21 @@ maximum' = foldr (\x acc -> Just $ case acc of
 
 -- 6. null :: (Foldable t) => t a -> Bool
 null' :: (Foldable t) => t a -> Bool
-null' a = case a of
-           mempty -> False
-           otherwise -> True
+null' = foldr (\_ _ -> False) True
 
 -- 7. length :: (Foldable t) => t a -> Int
+length' :: (Foldable t) => t a -> Int
+length' = foldr (\_ acc -> acc + 1) 0
 
 -- 8. Some say this is all Foldable amounts to.
---toList :: (Foldable t) => t a -> [a]
+toList' :: (Foldable t) => t a -> [a]
+toList' = foldr (\x acc -> x:acc) []
 
 -- 9. Hint: use foldMap.
-     -- | Combine the elements of a structure using a monoid.
---fold :: (Foldable t, Monoid m) => t m -> m
+-- Combine the elements of a structure using a monoid.
+fold' :: (Foldable t, Monoid m) => t m -> m
+fold' = foldMap id
+
 --10. Define foldMap in terms of foldr.
---foldMap :: (Foldable t, Monoid m) => (a -> m) -> t a -> m
+foldMap' :: (Foldable t, Monoid m) => (a -> m) -> t a -> m
+foldMap' f = foldr (mappend . f) mempty

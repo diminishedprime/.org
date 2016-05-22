@@ -1084,7 +1084,7 @@ meh meh165,166
 flipType flipType169,170
 flipType flipType170,171
 
-./20_05.hs,330
+./20_05.hs,437
 sum' sum'8,9
 sum' sum'9,10
 product' product'12,13
@@ -1097,9 +1097,29 @@ maximum' maximum'28,29
 maximum' maximum'29,30
 null' null'36,37
 null' null'37,38
---toList --toList44,45
---fold --fold48,49
---foldMap --foldMap50,51
+length' length'40,41
+length' length'41,42
+toList' toList'44,45
+toList' toList'45,46
+fold' fold'49,50
+fold' fold'50,51
+foldMap' foldMap'53,54
+foldMap' foldMap'54,55
+
+./20_06.hs,298
+data Constant Constant3,4
+  Constant Constant4,5
+instance instance6,7
+data Two Two10,11
+  Two Two11,12
+data Three Three17,18
+  Three Three18,19
+data Three' Three'24,25
+  Three' Three'25,26
+data Four' Four'31,32
+  Four' Four'32,33
+filterF filterF39,40
+filterF filterF41,42
 
 ./Cipher.hs,182
 module Cipher Cipher22,23
