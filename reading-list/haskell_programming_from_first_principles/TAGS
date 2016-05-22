@@ -1047,7 +1047,7 @@ data Sum Sum21,22
 data Sum a b = First First21,22
              | Second Second22,23
 
-./18_07.hs,600
+./18_07.hs,800
 data Nope Nope13,14
 data Nope a = NopeDotJpgNopeDotJpg13,14
 instance instance16,17
@@ -1071,6 +1071,35 @@ flatMap flatMap126,127
 flatMap flatMap127,128
 genList genList132,133
 genList genList133,134
+j j148,149
+j j149,150
+l1 l1152,153
+l1 l1153,154
+l2 l2156,157
+l2 l2157,158
+a a160,161
+a a161,162
+meh meh164,165
+meh meh165,166
+flipType flipType169,170
+flipType flipType170,171
+
+./20_05.hs,330
+sum' sum'8,9
+sum' sum'9,10
+product' product'12,13
+product' product'13,14
+elem' elem'16,17
+elem' elem'17,18
+minimum' minimum'20,21
+minimum' minimum'21,22
+maximum' maximum'28,29
+maximum' maximum'29,30
+null' null'36,37
+null' null'37,38
+--toList --toList44,45
+--fold --fold48,49
+--foldMap --foldMap50,51
 
 ./Cipher.hs,182
 module Cipher Cipher22,23

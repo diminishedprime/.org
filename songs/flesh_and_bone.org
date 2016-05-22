@@ -1,0 +1,83 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Song Index]]
+
+* Flesh and Bone
+** Keaton Henson
+#+BEGIN_SRC elisp
+Keaton Henson-Flesh and Bone
+ Capo 2
+      Em
+I am alone, so don't speak
+        C
+I find war, and I find peace
+           G                  D/F#
+I find no heat, no love in me
+         Em
+And I am low and unwell
+        C
+This is love, this is hell
+           G                      D/F#
+This sweet plague that follows me
+
+       C      G
+And my body's weak
+        D/F#              Em
+Feel my heart giving up on me
+      C           G           D/F#
+I'm worried it might just be
+       C       G
+And my body's weak
+        D/F#               Em
+Feel my lungs giving up on me
+       C         G           D/F#
+I'm worried it might just be
+                 Em       C      G
+something my soul needs
+
+
+And I see a war on the screen,
+And it is is cruel and unclean
+But I still worry more about you
+
+And I am rude and unkind
+Have no thought, and have no time
+Have no eyes, so no point of view
+
+And my body's weak,
+I feel my heart giving up on me,
+I'm worried it might just be
+My body's weak,
+feel my lungs giving up on me
+I'm worried it might just be
+something my soul needs
+something my soul needs
+something my soul needs
+
+ Am
+                         C
+And I am more than this frame,
+                        G
+I feel hurt and I feel shame
+                               D/F#
+I just wish you would feel the same
+
+And I am more than these bones
+I feel love, I feel alone
+I just wish you would come home
+
+
+
+My body's weak
+I feel my heart giving up on me
+I'm worried it might just be
+My body's weak,
+Feel my lungs giving up on me
+I'm worried it might just be
+something my soul needs
+something my soul needs
+something my soul needs
+Em            C        G
+is you, lying next to me.
+         Em         C      G
+and it's you, lying next to me.
+#+END_SRC

@@ -21,6 +21,9 @@
 ** The Postal Service
 + [[./such_great_heights.org][Such Great Heights]]
 ** Keaton Henson
++ [[./teach_me.org][Teach Me]]
++ [[./flesh_and_bone.org][Flesh and Bone]]
++ [[./charon.org][Charon]]
 + [[./small_hands.org][Small Hands]]
 + [[./strawbear.org][Strawbear]]
 ** Ingrid Michaelson
