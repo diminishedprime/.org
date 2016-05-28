@@ -7,6 +7,12 @@
 + [[./the_things_that_hide_away.org][The Things That Hide Away]]
 + [[./lillian.org][Lillan]]
 + [[./red_hands.org][Red Hands]]
+** Andrew McMahon
++ [[./cecilia_and_the_satellite.org][Cecilia and the Satellite]]
+** Hozier
++ [[./jackie_and_wilson.org][Jackie and Wilson]]
+** Regina Spektor
++ [[./eet.org][Eet]]
 ** The Antlers
 + [[./two.org][Two]]
 + [[./bear.org][Bear]]
@@ -31,3 +37,5 @@
 ** Ke$ha
 + [[./dancing_with_tears_in_my_eyes.org][Dancing With Tears In My Eyes]]
 + [[./your_love_is_my_drug.org][You Love Is My Drug]]
+** Shit I Wrote
++ [[./new.org][Stuff]]
