@@ -4,75 +4,28 @@
 * Two
 ** The Antlers
 #+BEGIN_SRC elisp
-Capo 7
+Capo 9
 
-  A
-e|-----2--------|
-B|-----3--------|
-G|-----2--------|
-D|-----0--------|
-A|-----0--------|
-E|-----X--------|
-  Asus2
-e|-----2--------|
-B|-----5--------|
-G|-----2--------|
-D|-----0--------|
-A|-----0--------|
-E|-----X--------|
-  Bm9
-e|-----2--------|
-B|-----3--------|
-G|-----0--------|
-D|-----0--------|
-A|-----2--------|
-E|-----X--------|
-  D/B
-e|-----2--------|
-B|-----5--------|
-G|-----0--------|
-D|-----0--------|
-A|-----2--------|
-E|-----X--------|
-
- A                                                 Asus2
-In the middle of the night I was sleeping sitting up,
- A                                                Asus2
-when a doctor came to tell me, "Enough is enough."
-
- Bm9                                                         D/B
-He brought me out into the hall (I could have sworn it was haunted),
- Bm9                                                         D/B
-and told me something that I didn't know that I wanted to hear:
- A                                                Asus2
-That there was nothing that I could do to save you,
- A                                                Asus2
-the choir's gonna sing, and this thing is gonna kill you.
- Bm9                                           D/B
-Something in my throat made my next words shake,
- Bm9                                           D/B
-and something in the wires made the lightbulbs break.
- A                                                           Asus2
-There was glass inside my feet and raining down from the ceiling,
- A                                                 Asus2
-it opened up the scars that had just finished healing.
-
-
-You get the idea.
+|---||---||---||---|
+|-1-||-3-||-1-||-3-|
+|-0-||-0-||-0-||-0-|
+|-2-||-2-||-3-||-3-|
+|-3-||-3-||-0-||-0-|
+|---||---||---||---|
 
 In the middle of the night I was sleeping sitting up,
 when a doctor came to tell me, "Enough is enough."
-
 He brought me out into the hall (I could have sworn it was haunted),
 and told me something that I didn't know that I wanted to hear:
 That there was nothing that I could do to save you,
 the choir's gonna sing, and this thing is gonna kill you.
 Something in my throat made my next words shake,
 and something in the wires made the lightbulbs break.
+
 There was glass inside my feet and raining down from the ceiling,
 it opened up the scars that had just finished healing.
 It tore apart the canyon running down your femur,
-(I thougth that it was beautiful, it made me a believer.)
+I thougth that it was beautiful, it made me a believer.
 And as it opened I could hear you howling from your room,
 but I hid out in the hall until the hurricane blew.
 When I reappered and tried to give you something for the pain,
@@ -83,24 +36,25 @@ You were just a little kid, and they cut your hair,
 then they stuck you in machines, you came so close to dying.
 They should have listened, they thought that you were lying.
 Daddy was an asshole, he fucked you up, built the gears in your head,
-now he greases them up. And no one paid attention when you just stopped eating.
-pounds!" and this all bears repeating.
+now he greases them up.
+And no one paid attention when you just stopped eating.
+"87 pounds!" and this all bears repeating.
 
 Tell me when you think that we became so unhappy,
 wearing silver rings with nobody clapping.
-When we moved here togehter we were so dissappointed,
+When we moved here together we were so dissappointed,
 sleeping out of tune with our dreams disjointed.
 It killed me to see you getting always rejected,
 but I didn't mind the things you threw, the phones I deflected.
 I didn't mind you blaming me for your mistakes,
 I just held you in the doorframe through all of the earthquakes.
+
 But you packed up your clothes in that bag every night,
 and I would try to grab your ankles (what a pitiful sight.)
 But after over a year, I stopped trying to stop you
 from stomping out that door, coming back like you always do.
 Well no one's gonna fix it for us, no one can.
 You say that, 'No one's gonna listen, and no one understands.'
-
 So there's no open doors and there's no way to get through,
 there's no other witnesses, just us two.
 
@@ -118,6 +72,7 @@ You were just a little kid, and they cut your hair,
 then they stuck you in machines, you came so close to dying.
 They should have listened, they thought that you were lying.
 Daddy was an asshole, he fucked you up, built the gears in your head,
-now he greases them up. And no one paid attention when you just stopped eating.
-pounds!" and this all bears repeating.
+now he greases them up.
+And no one paid attention when you just stopped eating.
+"87 pounds!" and this all bears repeating.
 #+END_SRC

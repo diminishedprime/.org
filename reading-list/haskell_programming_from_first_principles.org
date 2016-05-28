@@ -264,13 +264,13 @@
     6. [X]  [[./haskell_programming_from_first_principles/20_06.hs][Chapter Exercises]]
     7. [X]  Answers
     8. [X]  Follow-up resources
-21. [ ] Traversable [0%]
-    1. [ ]  Traversable
-    2. [ ]  The Traversable typeclass definition
-    3. [ ]  sequence A
-    4. [ ]
-    5. [ ]
-    6. [ ]
+21. [-] Traversable [38%]
+    1. [X] Traversable
+    2. [X] The Traversable typeclass definition
+    3. [X] sequence A
+    4. [X] traverse
+    5. [X] So what's traversable for?
+    6. [ ] Morse code revisited
     7. [ ]
     8. [ ]
     9. [ ]
