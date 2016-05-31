@@ -237,17 +237,43 @@
     11. [X] Follow-up Resources
     12. [X] Answers
 18. [X] Monad [100%]
-    1. [X] Monad
-    2. [X] [[./haskell_programming_from_first_principles/18_02.hs][Sorry -- Monad is not a burrito]]
-    3. [X] Do syntax and monads
-
-    7. [ ]
-    8. [ ]
-    9. [ ]
-    10. [ ]
-    11. [ ]
-    12. [ ]
-    13. [ ]
+     1. [X] Monad
+     2. [X] [[./haskell_programming_from_first_principles/18_02.hs][Sorry -- Monad is not a burrito]]
+     3. [X] Do syntax and monads
+     4. [X] [[./haskell_programming_from_first_principles/18_04.hs][Examples of Monad use]]
+     5. [X] Monad Laws
+     6. [X] Application and composition
+     7. [X] [[./haskell_programming_from_first_principles/18_07.hs][Chapter Exercises]]
+     8. [X] Definitions
+     9. [X] Follow up resources
+19. [X] Applying structure [100%]
+     1. [X]  Applied structure
+     2. [X]  Monoid
+     3. [X]  Functor
+     4. [X]  Applicative
+     5. [X]  Monad
+     6. [X]  An end-to-end example: URL shortener
+     7. [X]  That’s a wrap!
+     8. [X]  Follow-up resources
+20. [X] Foldable [100%]
+     1. [X]  Foldable
+     2. [X]  The Foldable class
+     3. [X]  Revenge of the monoids
+     4. [X]  Demonstrating Foldable instances
+     5. [X]  [[./haskell_programming_from_first_principles/20_05.hs][Some basic derived operations]]
+     6. [X]  [[./haskell_programming_from_first_principles/20_06.hs][Chapter Exercises]]
+     7. [X]  Answers
+     8. [X]  Follow-up resources
+21. [-] Traversable [38%]
+     1. [X] Traversable
+     2. [X] The Traversable typeclass definition
+     3. [X] sequence A
+     4. [X] traverse
+     5. [X] So what's traversable for?
+     6. [ ] Morse code revisited
+     7. [ ]
+     8. [ ]
+     9. [ ]
 22. [ ] Reader [0%]
     1. [ ]
     2. [ ]
