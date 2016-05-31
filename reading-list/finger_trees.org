@@ -1,0 +1,12 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Reading List]]
+
+* [[http://www.cs.ox.ac.uk/ralf.hinze/publications/FingerTrees.pdf][Finger Trees]]
+1. [X] Introduction
+2. [X] Preliminaries
+   1. [X] Monoids
+   2. [X] Right and Left reductions
+3. [-] Simple Sequences
+   1. [X] Finger Trees
+   2. [X] Deque Operations
+   3. [ ] Concatenation

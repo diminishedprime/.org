@@ -66,6 +66,7 @@
 + [[./worst_case_efficient_priority_queues.org][Brodal Queues]]
 + [[./will_byrd_thesis.org][Will Byrd Thesis]]
 + [ ] [[./the_art_of_the_propagator.org][The Art Of The Propagator]]
++ [[./finger_trees.org][Finger Trees: a simple, general-purpose data structure]]
 + Propositions as Types
 *** Web Posts
 + http://danluu.com/empirical-pl/
