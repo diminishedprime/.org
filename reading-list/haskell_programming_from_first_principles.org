@@ -264,7 +264,7 @@
     6. [X]  [[./haskell_programming_from_first_principles/20_06.hs][Chapter Exercises]]
     7. [X]  Answers
     8. [X]  Follow-up resources
-21. [-] Traversable [90%]
+21. [-] Traversable [91%]
     1. [X] Traversable
     2. [X] The Traversable typeclass definition
     3. [X] sequence A
@@ -275,7 +275,7 @@
     8. [X] Do all the things
     9. [X] Traversable instances
     10. [X] Traversable laws
-    11. [ ] Quality Control
+    11. [X] Quality Control
     12. [ ] [[./haskell_programming_from_first_principles/21_12.hs][Chapter Exercises]]
 22. [ ] Reader [0%]
     1. [ ]

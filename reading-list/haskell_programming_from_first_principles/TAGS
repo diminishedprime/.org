@@ -1121,6 +1121,26 @@ data Four' Four'31,32
 filterF filterF39,40
 filterF filterF41,42
 
+./21_12.hs,550
+newtype Identity Identity10,11
+newtype Identity a = Identity Identity10,11
+instance instance13,14
+newtype Constant Constant39,40
+newtype Constant a b = Constant Constant39,40
+newtype Constant a b = Constant { getConstant getConstant39,40
+data Optional Optional66,67
+data Optional a = NadaNada66,67
+  | Yep Yep67,68
+data List List99,100
+data List a = NilNil99,100
+  | Cons Cons100,101
+append append110,111
+append append111,112
+myFold myFold114,115
+myFold myFold115,116
+flatMap flatMap118,119
+flatMap flatMap119,120
+
 ./Cipher.hs,182
 module Cipher Cipher22,23
 caeser caeser25,26

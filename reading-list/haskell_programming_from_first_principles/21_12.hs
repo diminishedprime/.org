@@ -2,6 +2,9 @@ import Data.Traversable
 import Data.Foldable
 import Control.Applicative
 import Data.Monoid
+import Test.QuickCheck hiding (Success)
+import Test.QuickCheck.Checkers
+import Test.QuickCheck.Classes
 
 -- Identity
 -- Write a Traversable instance for Identity.
@@ -21,9 +24,21 @@ instance Foldable Identity where
 instance Traversable Identity where
    traverse f (Identity a) = Identity <$> f a
 
+instance (Arbitrary a) => Arbitrary (Identity a) where
+  arbitrary = genIdentity
+    where genIdentity = do
+            a <- arbitrary
+            return $ Identity a
+
+instance (Eq a) => EqProp (Identity a) where
+  (=-=) = eq
+
+-- quickBatch (traversable (undefined :: Identity (Int, Int, [Int])))
+
 
 -- Constant
 newtype Constant a b = Constant { getConstant :: a }
+  deriving (Eq, Show)
 
 instance Functor (Constant a) where
   fmap _ (Constant a) = Constant a
@@ -38,9 +53,20 @@ instance Foldable (Constant a) where
 instance Traversable (Constant a) where
   traverse _ (Constant a) = pure $ Constant a
 
+instance (Arbitrary a) => Arbitrary (Constant a b) where
+  arbitrary = genConstant
+    where genConstant = do
+            a <- arbitrary
+            return $ Constant a
+
+instance (Eq a) => EqProp (Constant a b) where
+  (=-=) = eq
+
+
 -- Maybe
 data Optional a = Nada
   | Yep a
+  deriving (Eq,Show)
 
 instance Functor Optional where
   fmap _ Nada = Nada
@@ -59,6 +85,16 @@ instance Foldable Optional where
 instance Traversable Optional where
   traverse _ Nada = pure Nada
   traverse f (Yep a) = Yep <$> f a
+
+instance (Arbitrary a) => Arbitrary (Optional a) where
+  arbitrary = frequency [(1, genOptional),
+                         (1, return Nada)]
+    where genOptional = do
+            a <- arbitrary
+            return $ Yep a
+
+instance (Eq a) => EqProp (Optional a) where
+  (=-=) = eq
 
 -- List
 data List a = Nil
