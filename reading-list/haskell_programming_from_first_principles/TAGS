@@ -1121,25 +1121,143 @@ data Four' Four'31,32
 filterF filterF39,40
 filterF filterF41,42
 
-./21_12.hs,550
+./21_12.hs,668
 newtype Identity Identity10,11
 newtype Identity a = Identity Identity10,11
 instance instance13,14
 newtype Constant Constant39,40
 newtype Constant a b = Constant Constant39,40
 newtype Constant a b = Constant { getConstant getConstant39,40
-data Optional Optional66,67
-data Optional a = NadaNada66,67
-  | Yep Yep67,68
-data List List99,100
-data List a = NilNil99,100
-  | Cons Cons100,101
-append append110,111
-append append111,112
-myFold myFold114,115
-myFold myFold115,116
-flatMap flatMap118,119
-flatMap flatMap119,120
+data Optional Optional67,68
+data Optional a = NadaNada67,68
+  | Yep Yep68,69
+data List List102,103
+data List a = NilNil102,103
+  | Cons Cons103,104
+append append114,115
+append append115,116
+myFold myFold118,119
+myFold myFold119,120
+flatMap flatMap122,123
+flatMap flatMap123,124
+genList genList143,144
+genList genList144,145
+data Three Three152,153
+data Three a b c = Three Three152,153
+
+./22_02.hs,394
+hurr hurr3,4
+durr durr4,5
+m m6,7
+m m7,8
+m' m'9,10
+m' m'10,11
+m2 m212,13
+m2 m213,14
+m3 m315,16
+m3 m316,17
+cap cap20,21
+cap cap21,22
+rev rev23,24
+rev rev24,25
+composed composed28,29
+composed composed29,30
+fmapped fmapped31,32
+fmapped fmapped32,33
+tupled tupled47,48
+tupled tupled48,49
+--tupled --tupled49,50
+tupled' tupled'51,52
+tupled' tupled'52,53
+
+./22_05.hs,114
+newtype Reader Reader7,8
+  Reader Reader8,9
+  Reader { runReader runReader8,9
+ask ask10,11
+ask ask11,12
+
+./22_06.hs,826
+newtype Reader Reader3,4
+  Reader Reader4,5
+  Reader { runReader runReader4,5
+myLiftA2 myLiftA28,9
+myLiftA2 myLiftA29,10
+asks asks12,13
+asks asks13,14
+instance instance24,25
+newtype HumanName HumanName61,62
+newtype HumanName = HumanName HumanName61,62
+newtype DogName DogName62,63
+newtype DogName = DogName DogName62,63
+newtype Address Address63,64
+newtype Address = Address Address63,64
+data Person Person65,66
+data Person = Person Person65,66
+data Person = Person { humanName humanName65,66
+data Person = Person { humanName :: HumanName , dogName dogName65,66
+                     , address address66,67
+data Dog Dog69,70
+data Dog = Dog Dog69,70
+data Dog = Dog { dogsName dogsName69,70
+               , dogsAddress dogsAddress70,71
+getDogR getDogR72,73
+getDogR getDogR73,74
+
+./22_07.hs,747
+newtype Reader Reader3,4
+  Reader Reader4,5
+  Reader { runReader runReader4,5
+instance instance6,7
+newtype HumanName HumanName32,33
+newtype HumanName = HumanName HumanName32,33
+newtype DogName DogName33,34
+newtype DogName = DogName DogName33,34
+newtype Address Address34,35
+newtype Address = Address Address34,35
+data Person Person36,37
+data Person = Person Person36,37
+data Person = Person { humanName humanName36,37
+data Person = Person { humanName :: HumanName , dogName dogName36,37
+                     , address address37,38
+data Dog Dog40,41
+data Dog = Dog Dog40,41
+data Dog = Dog { dogsName dogsName40,41
+               , dogsAddress dogsAddress41,42
+getDogRm getDogRm44,45
+getDogRm getDogRm45,46
+
+./22_11.hs,500
+x x20,21
+y y21,22
+z z22,23
+lookup lookup30,31
+lookup lookup31,32
+xs xs34,35
+xs xs35,36
+ys ys37,38
+ys ys38,39
+zs zs42,43
+z' z'44,45
+z' z'45,46
+x1 x152,53
+x1 x153,54
+x2 x255,56
+x2 x256,57
+x3 x358,59
+x3 x359,60
+uncurry uncurry72,73
+uncurry uncurry73,74
+summed summed78,79
+summed summed79,80
+bolt bolt84,85
+bolt bolt85,86
+fromMaybe fromMaybe90,91
+fromMaybe fromMaybe91,92
+main main103,104
+main main104,105
+sequA sequA138,139
+sequA sequA139,140
 
 ./Cipher.hs,182
 module Cipher Cipher22,23

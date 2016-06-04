@@ -62,6 +62,7 @@ instance (Arbitrary a) => Arbitrary (Constant a b) where
 instance (Eq a) => EqProp (Constant a b) where
   (=-=) = eq
 
+-- quickBatch (traversable (undefined :: Constant Int (Int, Int, [Int])))
 
 -- Maybe
 data Optional a = Nada
@@ -96,9 +97,12 @@ instance (Arbitrary a) => Arbitrary (Optional a) where
 instance (Eq a) => EqProp (Optional a) where
   (=-=) = eq
 
+-- quickBatch (traversable (undefined :: Optional (Int, Int, [Int])))
+
 -- List
 data List a = Nil
   | Cons a (List a)
+  deriving (Eq, Show)
 
 instance Functor List where
   fmap _ Nil = Nil
@@ -126,3 +130,25 @@ instance Foldable List where
 instance Traversable List where
   traverse _ Nil = pure Nil
   traverse f (Cons h t) = Cons <$> f h <*> traverse f t
+
+instance Eq a => EqProp (List a) where
+  xs =-= ys = takeList 10 xs `eq` takeList 10 ys
+    where takeList _ Nil = Nil
+          takeList n (Cons a as)
+            | n > 0 = Cons a (takeList (n-1) as)
+            | otherwise = Nil
+
+instance Arbitrary a => Arbitrary (List a) where
+  arbitrary = genList
+
+genList :: Arbitrary a => Gen (List a)
+genList = do
+  h <- arbitrary
+  t <- genList
+  frequency [(3, return $ Cons h t),
+             (1, return Nil)]
+
+
+-- Three
+data Three a b c = Three a b c
+  deriving (Show, Eq)

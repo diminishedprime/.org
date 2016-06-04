@@ -45,6 +45,8 @@
 + Java
   + Core Java Volume I
   + Core Java Volume II
++ Scala
+  + [[http://search.safaribooksonline.com/book/programming/scala/9781617290657][FP in Scala]]
 *** Science Books
 + DSP
    + [ ] [[./thinkdsp/think_dsp.org][Think DSP]]

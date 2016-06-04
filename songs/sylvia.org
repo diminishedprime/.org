@@ -1,3 +1,6 @@
++ [[../index.org][Home]]
++ [[./index.org][Songs]]
+
 * Syliva
 ** The Antlers
 #+BEGIN_SRC elisp

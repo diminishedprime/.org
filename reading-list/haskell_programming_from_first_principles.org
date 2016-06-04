@@ -264,7 +264,7 @@
     6. [X]  [[./haskell_programming_from_first_principles/20_06.hs][Chapter Exercises]]
     7. [X]  Answers
     8. [X]  Follow-up resources
-21. [-] Traversable [91%]
+21. [-] Traversable [84%]
     1. [X] Traversable
     2. [X] The Traversable typeclass definition
     3. [X] sequence A
@@ -277,18 +277,19 @@
     10. [X] Traversable laws
     11. [X] Quality Control
     12. [ ] [[./haskell_programming_from_first_principles/21_12.hs][Chapter Exercises]]
-22. [ ] Reader [0%]
-    1. [ ]
-    2. [ ]
-    3. [ ]
-    4. [ ]
-    5. [ ]
-    6. [ ]
-    7. [ ]
-    8. [ ]
-    9. [ ]
-    10. [ ]
-    11. [ ]
+    13. [ ] Follow-up Resources
+22. [-] Reader [83%]
+    1. [X] Reader
+    2. [X] [[./haskell_programming_from_first_principles/22_02.hs][A New Beginning]]
+    3. [X] This is Reader
+    4. [X] Breaking down the Functor of Functions
+    5. [X] [[./haskell_programming_from_first_principles/22_05.hs][But uh, Reader?]]
+    6. [X] [[./haskell_programming_from_first_principles/22_06.hs][Functions have an Applicative too]]
+    7. [X] [[./haskell_programming_from_first_principles/22_07.hs][The Monad of Functions]]
+    8. [X] Reader Monad by itself is kinda boring
+    9. [X] You can change what comes below, but not above
+    10. [X] You tend to see ReaderT, not Reader
+    11. [ ] [[./haskell_programming_from_first_principles/22_11.hs][Chapter Exercises]]
     12. [ ]
 23. [ ] State [0%]
     1. [ ]
