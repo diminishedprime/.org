@@ -23,6 +23,7 @@
   + More Programming Pearls
   + The Pragmatic Programmer
   + [[http://www-ps.informatik.uni-kiel.de/currywiki/_media/documentation/tutorial.pdf][Curry Programming Language]]
+  + [[https://www.manning.com/books/type-driven-development-with-idris][Type Driven Development with Idris]]
 + Haskell
   + [ ] [[./learn_you_a_haskell.org][Learn You A Haskell For Great Good]]
   + [ ] [[./cis194.org][CIS194]]
