@@ -29,21 +29,27 @@ z = [7, 8, 9]
 -- well as one that can be applied to a variable:
 
 lookup :: Eq a => a -> [(a, b)] -> Maybe b
-lookup = undefined
+lookup _ [] = Nothing
+lookup a ((a', b):xs) = case a' == a of
+                          True -> Just b
+                          False -> Main.lookup a xs
 -- zip x and y using 3 as the lookup key
 
 xs :: Maybe Integer
-xs = undefined
+xs = Main.lookup 3 $ zip x y
+
 -- zip y and z using 6 as the lookup key
 ys :: Maybe Integer
-ys = undefined
--- it's also nice to have one that
--- will return Nothing, like this one
--- zip x and y using 4 as the lookup key zs :: Maybe Integer
+ys = Main.lookup 6 $ zip y z
+
+-- it's also nice to have one that will return Nothing, like this one zip x and
+-- y using 4 as the lookup key
+zs :: Maybe Integer
 zs = Main.lookup 4 $ zip x y
+
 -- now zip x and z using a variable lookup key
 z' :: Integer -> Maybe Integer
-z' n = undefined
+z' n = Main.lookup n $ zip x z
 
 -- Now we want to add the ability to make a Maybe (,) of values using
 -- Applicative. Have x1 make a tuple of xs and ys, and x2 make a tuple of of ys
@@ -51,53 +57,39 @@ z' n = undefined
 -- of two applications of z' from above.
 
 x1 :: Maybe (Integer, Integer)
-x1 = undefined
+x1 = (,) <$> xs <*> ys
 
 x2 :: Maybe (Integer, Integer)
-x2 = undefined
+x2 = (,) <$> ys <*> zs
 
 x3 :: Integer -> (Maybe Integer, Maybe Integer)
-x3 = undefined
-
--- Your outputs from those should look like this:
--- *ReaderPractice> x1
--- Just (6,9)
--- *ReaderPractice> x2
--- Nothing
--- *ReaderPractice> x3 3
--- (Just 9,Just 9)
+x3 a = (z' a, z' a)
 
 -- Next, we’re going to make some helper functions. Let’s use uncurry to allow
 -- us to add the two values that are inside a tuple:
 
 uncurry :: (a -> b -> c) -> (a, b) -> c
-uncurry = undefined
+uncurry f (a, b) = f a b
+
 -- that first argument is a function
 
 -- in this case, we want it to be addition -- summed is just uncurry with
 -- addition as the first argument
 summed :: Num c => (c, c) -> c
-summed = undefined
+summed = Main.uncurry (+)
 
--- And now we’ll make a function similar to some we’ve seen before that li s a
+-- And now we’ll make a function similar to some we’ve seen before that lifts a
 -- boolean function over two partially-applied functions:
 
 bolt :: Integer -> Bool -- use &&, >3, <8
-bolt = undefined
+bolt = (&&) <$> (>3) <*> (<8)
 
 -- Finally, we’ll be using fromMaybe in the main exercise, so let’s look at
 -- that:
 
 fromMaybe :: a -> Maybe a -> a
-fromMaybe = undefined
-
--- You give it a default value and a Maybe value. If the Maybe value is a Just
--- a, it will return the 𝑎 value. If the Maybe value is a Nothing, it returns
--- the default value instead:
--- *ReaderPractice> fromMaybe 0 xs
--- 6
--- *ReaderPractice> fromMaybe 0 zs
--- 0
+fromMaybe a Nothing = a
+fromMaybe _ (Just a) = a
 
 -- Now we’ll cobble together a main function, so that in one function call we
 -- can execute several things at once.
@@ -110,6 +102,7 @@ main = do
   print $ fmap summed ((,) <$> xs <*> zs)
   print $ bolt 7
   print $ fmap bolt z
+  print $ sequenceA [(>3), (<8), even] 7
 
 -- When you run this in GHCi, your results should look like this:
 -- *ReaderPractice> main
@@ -138,27 +131,3 @@ main = do
 
 sequA :: Integral a => a -> [Bool]
 sequA m = sequenceA [(>3), (<8), even] m
-
---And henceforth let summed <$> ((,) <$> xs <*> ys) be known as s'.
-
--- OK, your turn. Within the main function above, write the following (you can
--- delete everything a er do now if you prefer — just remember to use print to
--- be able to print the results of what you’re adding):
-
--- 1. fold the boolean conjunction operator over the list of results of sequA (applied to some value).
-
--- 2. apply sequA to s'; you’ll need fromMaybe.
-
--- 3. apply bolt to ys; you’ll need fromMaybe.
-
--- 4. apply bolt to z'.
-
--- Rewriting Shawty
-
--- Remember the URL shortener? Instead of manually passing the database
--- connection rConn from the main function to the app function that generates a
--- Scotty app, use ReaderT to make the database connection available. We know
--- you haven’t seen the transformer variant yet and we’ll explain them soon, but
--- you should try to do the transformation mechanically. Research as necessary
--- using a search engine. Use this version of the app:
--- https://github.com/bitemyapp/shawty-prime/blob/master/app/Main.hs

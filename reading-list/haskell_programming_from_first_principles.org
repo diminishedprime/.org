@@ -1,7 +1,7 @@
 + [[../index.org][Main Index]]
 + [[./index.org][Reading List]]
 
-* Haskell Book [58%]
+* Haskell Book [61%]
 1. [X] All You Need Is Lambda [100%]
    1. [X] All You Need Is Lambda
    2. [X] What's A Function
@@ -278,7 +278,7 @@
     11. [X] Quality Control
     12. [ ] [[./haskell_programming_from_first_principles/21_12.hs][Chapter Exercises]]
     13. [ ] Follow-up Resources
-22. [-] Reader [83%]
+22. [X] Reader [100%]
     1. [X] Reader
     2. [X] [[./haskell_programming_from_first_principles/22_02.hs][A New Beginning]]
     3. [X] This is Reader
@@ -289,47 +289,47 @@
     8. [X] Reader Monad by itself is kinda boring
     9. [X] You can change what comes below, but not above
     10. [X] You tend to see ReaderT, not Reader
-    11. [ ] [[./haskell_programming_from_first_principles/22_11.hs][Chapter Exercises]]
-    12. [ ]
-23. [ ] State [0%]
-    1. [ ]
-    2. [ ]
-    3. [ ]
-    4. [ ]
-    5. [ ]
-    6. [ ]
-    7. [ ]
-    8. [ ]
-    9. [ ]
-24. [ ] Parser combinators 840 [0%]
-    1. [ ]  Parsercombinators ......................841
-    2. [ ]  Afewmorewordsofintroduction . . . . . . . . . . . . 842
-    3. [ ]  Understandingtheparsingprocess . . . . . . . . . . . . 842
-    4. [ ]  Parsingfractions........................852
-    5. [ ]  Haskell’sparsingecosystem.................857
-    6. [ ]  Alternative............................860
-    7. [ ]  Parsingconfigurationfiles..................868
-25. [ ] Composing types 900 [0%]
-    1. [ ]  Composingtypes .......................901
-    2. [ ]  Commonfunctionsastypes ................902
-    3. [ ]  Two little functors sittin’ in a tree,L-I-F-T-I-N-G . . . . . . . . . . . . . . . . . . . . . . . . . . 904
-    4. [ ]  Twinplicative ..........................906
-    5. [ ]  Twonad? .............................907
-    6. [ ]  Intermission:Exercises....................908
-    7. [ ]  Monadtransformers .....................909
-    8. [ ]  IdentityT............................. 911
-    9. [ ]  Findingapattern........................ 921
-    10. [ ]  Answers.............................. 923
+    11. [X] [[./haskell_programming_from_first_principles/22_11.hs][Chapter Exercises]]
+    12. [X] Follow-up Resources
+23. [-] State [55%]
+    1. [X] State
+    2. [X] What is State?
+    3. [X] Random Numbers
+    4. [X] The State Newtype
+    5. [X] [[./haskell_programming_from_first_principles/23_05.hs][Throw Down]]
+    6. [ ] [[./haskell_programming_from_first_principles/23_06.hs][Write State for yourself]]
+    7. [ ] Get a Coding Job with this one weird trick
+    8. [ ] Chapter Exercises
+    9. [ ] Follow-up Resources
+24. [-] Parser combinators [28%]
+    1. [X] Parser combinators
+    2. [X] A few more words of introduction
+    3. [ ] [[./haskell_programming_from_first_principles/24_03.hs][Understanding the parsing process]]
+    4. [ ] Parsing fractions
+    5. [ ] Haskell’s parsing ecosystem
+    6. [ ] Alternative
+    7. [ ] Parsing configuration files
+25. [ ] Composing types [0%]
+    1. [ ] Composing types
+    2. [ ] Common functions as types
+    3. [ ] Two little functors sittin’ in a tree, L-I-F-T-I-N-G
+    4. [ ] Twinplicative
+    5. [ ] Twonad?
+    6. [ ] Intermission:Exercises
+    7. [ ] Monad transformers
+    8. [ ] IdentityT
+    9. [ ] Finding a pattern
+    10. [ ] Answers
 26. [ ] Monad transformers 926 [0%]
-    1. [ ]  Monadtransformers .....................927
-    2. [ ]  MaybeT .
-    3. [ ]  EitherT .
-    4. [ ]  ReaderT
-    5. [ ]  StateT . .
-    6. [ ]  Typesyouprobablydon’twanttouse . . . . . . . . . . 937
-    7. [ ]  Recovering the ordinary type from the transformer . 938
-    8. [ ]  Lexicallyinnerisstructurallyouter. . . . . . . . . . . . 939
-    9. [ ]  MonadTrans...........................941
+    1. [ ] Monad transformers
+    2. [ ] MaybeT
+    3. [ ] EitherT
+    4. [ ] ReaderT
+    5. [ ] StateT
+    6. [ ] Types you probably don’t want to use
+    7. [ ] Recovering the ordinary type from the transformer
+    8. [ ] Lexically inner is structurally outer
+    9. [ ] MonadTrans...........................941
     10. [ ]  MonadIOakazoom-zoom .................952
     11. [ ]  Monadtransformersinuse .................954
     12. [ ]  Monadsdonotcommute ..................962

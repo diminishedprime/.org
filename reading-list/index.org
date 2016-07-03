@@ -11,6 +11,8 @@
   + [X] [[./the_seasoned_schemer.org][The Seasoned Schemer]]
   + [X] [[./the_reasoned_schemer.org][The Reasoned Schemer]]
 ** To Read
+*** Lisp
++ [ ] [[http://letoverlambda.com/index.cl/toc][Let Over Lambda]]
 *** Programming Books
 + General
   + [ ] [[./code_complete.org][Code Complete]]

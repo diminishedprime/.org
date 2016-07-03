@@ -1227,37 +1227,55 @@ data Dog = Dog { dogsName dogsName40,41
 getDogRm getDogRm44,45
 getDogRm getDogRm45,46
 
-./22_11.hs,500
+./22_11.hs,509
 x x20,21
 y y21,22
 z z22,23
 lookup lookup30,31
 lookup lookup31,32
-xs xs34,35
-xs xs35,36
-ys ys37,38
-ys ys38,39
-zs zs42,43
-z' z'44,45
-z' z'45,46
-x1 x152,53
-x1 x153,54
-x2 x255,56
-x2 x256,57
-x3 x358,59
-x3 x359,60
-uncurry uncurry72,73
-uncurry uncurry73,74
+xs xs37,38
+xs xs38,39
+ys ys41,42
+ys ys42,43
+zs zs46,47
+zs zs47,48
+z' z'50,51
+z' z'51,52
+x1 x158,59
+x1 x159,60
+x2 x261,62
+x2 x262,63
+x3 x364,65
+x3 x365,66
+uncurry uncurry70,71
+uncurry uncurry71,72
+summed summed77,78
 summed summed78,79
-summed summed79,80
+bolt bolt83,84
 bolt bolt84,85
-bolt bolt85,86
+fromMaybe fromMaybe89,90
 fromMaybe fromMaybe90,91
-fromMaybe fromMaybe91,92
-main main103,104
-main main104,105
-sequA sequA138,139
-sequA sequA139,140
+main main95,96
+main main96,97
+sequA sequA131,132
+sequA sequA132,133
+
+./23_05.hs,442
+rollsToGetTwenty rollsToGetTwenty2,3
+rollsToGetTwenty rollsToGetTwenty3,4
+rollsToGetN rollsToGetN12,13
+rollsToGetN rollsToGetN13,14
+data Die Die22,23
+  DieOneDieOne23,24
+  | DieTwoDieTwo24,25
+  | DieThreeDieThree25,26
+  | DieFourDieFour26,27
+  | DieFiveDieFive27,28
+  | DieSixDieSix28,29
+intToDie intToDie31,32
+intToDie intToDie32,33
+rollsCountLogged rollsCountLogged42,43
+rollsCountLogged rollsCountLogged43,44
 
 ./Cipher.hs,182
 module Cipher Cipher22,23

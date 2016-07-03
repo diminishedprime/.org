@@ -1,0 +1,2 @@
+* Ideas
++ [ ] Dependency injection is a simplified Monad.
