@@ -301,18 +301,18 @@
     7. [ ] Get a Coding Job with this one weird trick
     8. [ ] Chapter Exercises
     9. [ ] Follow-up Resources
-24. [-] Parser combinators [28%]
+24. [-] Parser combinators [42%]
     1. [X] Parser combinators
     2. [X] A few more words of introduction
-    3. [ ] [[./haskell_programming_from_first_principles/24_03.hs][Understanding the parsing process]]
-    4. [ ] Parsing fractions
+    3. [X] [[./haskell_programming_from_first_principles/24_03.hs][Understanding the parsing process]]
+    4. [ ] [[./haskell_programming_from_first_principles/24_04.hs][Parsing fractions]]
     5. [ ] Haskell’s parsing ecosystem
     6. [ ] Alternative
     7. [ ] Parsing configuration files
-25. [ ] Composing types [0%]
-    1. [ ] Composing types
-    2. [ ] Common functions as types
-    3. [ ] Two little functors sittin’ in a tree, L-I-F-T-I-N-G
+25. [-] Composing types [30%]
+    1. [X] Composing types
+    2. [X] Common functions as types
+    3. [X] Two little functors sittin’ in a tree, L-I-F-T-I-N-G
     4. [ ] Twinplicative
     5. [ ] Twonad?
     6. [ ] Intermission:Exercises

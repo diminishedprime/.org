@@ -48,7 +48,7 @@ What is the first of these numbers?
   (defn prime-factors
     [my-num]
     (let [possible-factors (take-while
-                            #(<= % (/ my-num 2)) primes)]
+                            #(<= % my-num) primes)]
       (prime-factors-helper my-num possible-factors [])))
 
   (defn distinct-prime-factors

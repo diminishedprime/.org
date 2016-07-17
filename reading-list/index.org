@@ -77,7 +77,6 @@
 + http://danluu.com/empirical-pl/
 
 * Purchase/Find
-  1. [[http://www.amazon.com/Lisp-Small-Pieces-Christian-Queinnec/dp/0521545668/ref=sr_1_1?s=books&ie=UTF8&qid=1454204111&sr=1-1&keywords=lisp+in+small+pieces][Lisp in Small Pieces]]
   2. [[http://www.amazon.com/Algebra-2nd-Michael-Artin/dp/0132413779][Michael Artin Algebra]]
   3. [[https://www.manning.com/books/type-driven-development-with-idris][Type Driven Development with Idris]]
   4. [[https://www.amazon.com/Expert-F-4-0-Don-Syme/dp/1484207416?ie=UTF8&keywords=expert%20f%23%204.0&linkCode=sl1&linkId=f696d9966865ec308f5b009e0456f017&qid=1464576992&ref_=as_li_ss_tl&sr=8-1&tag=fngeekery-20][Expert F#]]
@@ -96,3 +95,4 @@
   15. [[http://www.catonmat.net/blog/sed-book/][Sed One Liners Explained]]
   16. [[http://www.catonmat.net/blog/perl-book/][Pearl One Liners Explained]]
   17. [[https://www.nostarch.com/perloneliners][Pearl One-Liners]]
+  18. [[https://www.amazon.com/Let-Over-Lambda-Doug-Hoyte/dp/1435712757][Let over Lambda]]
