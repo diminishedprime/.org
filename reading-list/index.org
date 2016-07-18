@@ -11,6 +11,8 @@
   + [X] [[./the_seasoned_schemer.org][The Seasoned Schemer]]
   + [X] [[./the_reasoned_schemer.org][The Reasoned Schemer]]
 ** To Read
+*** ML
++ [ ] [[./the_little_mler.org][The Little MLer]]
 *** Lisp
 + [ ] [[http://letoverlambda.com/index.cl/toc][Let Over Lambda]]
 *** Programming Books
@@ -77,22 +79,22 @@
 + http://danluu.com/empirical-pl/
 
 * Purchase/Find
-  2. [[http://www.amazon.com/Algebra-2nd-Michael-Artin/dp/0132413779][Michael Artin Algebra]]
-  3. [[https://www.manning.com/books/type-driven-development-with-idris][Type Driven Development with Idris]]
-  4. [[https://www.amazon.com/Expert-F-4-0-Don-Syme/dp/1484207416?ie=UTF8&keywords=expert%20f%23%204.0&linkCode=sl1&linkId=f696d9966865ec308f5b009e0456f017&qid=1464576992&ref_=as_li_ss_tl&sr=8-1&tag=fngeekery-20][Expert F#]]
-  5. [[http://www.amazon.com/Little-Java-Few-Patterns/dp/0262561158/ref=sr_1_1?s=books&ie=UTF8&qid=1454204257&sr=1-1&keywords=a+little+java%2C+a+few+patterns][A Little Java, A Few Patterns]]
-  6. [[http://www.amazon.com/Purely-Functional-Structures-Chris-Okasaki/dp/0521663504/ref=sr_1_1?s=books&ie=UTF8&qid=1454204145&sr=1-1&keywords=purely+functional][Purely Functional Data Structures]]
-  7. [[http://www.amazon.com/Clause-Effect-Programming-Working-Programmer/dp/3540629718][Clause And Effect]]
-  8. [[http://www.amazon.com/Selected-Papers-Computer-Science-Lecture/dp/1881526917/ref=sr_1_1?s=books&ie=UTF8&qid=1454204201&sr=1-1&keywords=selected+papers+on+computer+science][Selected Papers on Computer Science]]
-  9. [[http://www.amazon.com/Concrete-Mathematics-Foundation-Computer-Science/dp/0201558025][Concrete Mathematics]]
-  10. [[http://www.amazon.com/Why-Programs-Fail-Second-Systematic/dp/0123745152/ref=sr_1_1?s=books&ie=UTF8&qid=1454203975&sr=1-1&keywords=Why+Programs+Fail][Why Programs Fail (Andreas Zeller)]]
-      + Chapters 6-7 11-14
-  11. [[http://www.amazon.com/New-Turing-Omnibus-Sixty-Six-Excursions/dp/0805071660/ref=sr_1_1?s=books&ie=UTF8&qid=1454204177&sr=1-1&keywords=the+new+turing+omnibus][The New Turing Omnibus]]
-  12. The Art of Computer Programming
+  1. [[http://www.amazon.com/Algebra-2nd-Michael-Artin/dp/0132413779][Michael Artin Algebra]]
+  2. [[https://www.manning.com/books/type-driven-development-with-idris][Type Driven Development with Idris]]
+  3. [[https://www.amazon.com/Expert-F-4-0-Don-Syme/dp/1484207416?ie=UTF8&keywords=expert%20f%23%204.0&linkCode=sl1&linkId=f696d9966865ec308f5b009e0456f017&qid=1464576992&ref_=as_li_ss_tl&sr=8-1&tag=fngeekery-20][Expert F#]]
+  4. [[http://www.amazon.com/Little-Java-Few-Patterns/dp/0262561158/ref=sr_1_1?s=books&ie=UTF8&qid=1454204257&sr=1-1&keywords=a+little+java%2C+a+few+patterns][A Little Java, A Few Patterns]]
+  5. [[http://www.amazon.com/Purely-Functional-Structures-Chris-Okasaki/dp/0521663504/ref=sr_1_1?s=books&ie=UTF8&qid=1454204145&sr=1-1&keywords=purely+functional][Purely Functional Data Structures]]
+  6. [[http://www.amazon.com/Clause-Effect-Programming-Working-Programmer/dp/3540629718][Clause And Effect]]
+  7. [[http://www.amazon.com/Selected-Papers-Computer-Science-Lecture/dp/1881526917/ref=sr_1_1?s=books&ie=UTF8&qid=1454204201&sr=1-1&keywords=selected+papers+on+computer+science][Selected Papers on Computer Science]]
+  8. [[http://www.amazon.com/Concrete-Mathematics-Foundation-Computer-Science/dp/0201558025][Concrete Mathematics]]
+  9. [[http://www.amazon.com/Why-Programs-Fail-Second-Systematic/dp/0123745152/ref=sr_1_1?s=books&ie=UTF8&qid=1454203975&sr=1-1&keywords=Why+Programs+Fail][Why Programs Fail (Andreas Zeller)]]
+     + Chapters 6-7 11-14
+  10. [[http://www.amazon.com/New-Turing-Omnibus-Sixty-Six-Excursions/dp/0805071660/ref=sr_1_1?s=books&ie=UTF8&qid=1454204177&sr=1-1&keywords=the+new+turing+omnibus][The New Turing Omnibus]]
+  11. The Art of Computer Programming
       + [[http://www.amazon.com/Art-Computer-Programming-Sorting-Searching/dp/0201896850/ref=sr_1_1?s=books&ie=UTF8&qid=1454203998&sr=1-1&keywords=Sorting+and+Searching][Book 2: Sorting and Searching]]
-  13. [[http://www.amazon.com/Literate-Programming-Center-Language-Information/dp/0937073806/ref=sr_1_1?s=books&ie=UTF8&qid=1454204274&sr=1-1&keywords=literate+programming][Literate Programming]]
-  14. [[http://www.catonmat.net/blog/awk-book/][Awk One Liners Explained]]
-  15. [[http://www.catonmat.net/blog/sed-book/][Sed One Liners Explained]]
-  16. [[http://www.catonmat.net/blog/perl-book/][Pearl One Liners Explained]]
-  17. [[https://www.nostarch.com/perloneliners][Pearl One-Liners]]
-  18. [[https://www.amazon.com/Let-Over-Lambda-Doug-Hoyte/dp/1435712757][Let over Lambda]]
+  12. [[http://www.amazon.com/Literate-Programming-Center-Language-Information/dp/0937073806/ref=sr_1_1?s=books&ie=UTF8&qid=1454204274&sr=1-1&keywords=literate+programming][Literate Programming]]
+  13. [[http://www.catonmat.net/blog/awk-book/][Awk One Liners Explained]]
+  14. [[http://www.catonmat.net/blog/sed-book/][Sed One Liners Explained]]
+  15. [[http://www.catonmat.net/blog/perl-book/][Pearl One Liners Explained]]
+  16. [[https://www.nostarch.com/perloneliners][Pearl One-Liners]]
+  17. [[https://www.amazon.com/Let-Over-Lambda-Doug-Hoyte/dp/1435712757][Let over Lambda]]

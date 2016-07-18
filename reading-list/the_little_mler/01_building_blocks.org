@@ -1,0 +1,38 @@
+[[../index.org][Reading List]]
+[[../the_little_mler.org][The Little MLer]]
+
+* Building Blocks
++ Defining A type
+#+BEGIN_SRC sml
+  (* this is a comment I suppose...*)
+  (* Also, I haven't figured out what I'm doing yet, so this code might be
+  absolute nonsense, future me*)
+
+  datatype seasoning = Salt | Pepper;
+
+  datatype num =
+           Zero
+           | One_more_than
+             of num;
+
+  (* I have no idea, if typing something like this makes any, sense... *)
+
+  One_more_than(
+      One_more_than(
+          Zero));
+
+  (* 'a or maybe `a, don't know yet. *)
+  datatype 'a open_faced_sandwich =
+           Bread of 'a
+         | Slice
+           of 'a open_faced_sandwich;
+
+  Bread(
+      One_more_than(
+          Zero)); (* This is a num open_faced_sandwich *)
+
+  (* The First Moral
+  Use datatype to describe types. When a type contains lots of values, the
+  datatype definition refers to itself. use 'a with datatype to define shapes.
+   ,*)
+#+END_SRC
