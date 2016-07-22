@@ -1,0 +1,37 @@
+[[../index.org][Reading List]]
+[[../the_little_mler.org][The Little MLer]]
+
+* Cons Is Still Magnificent
+#+BEGIN_SRC sml
+  datatype pizza =
+           Crust
+           | Cheese of pizza
+           | Onion of pizza
+           | Anchovy of pizza
+           | Sausage of pizza;
+
+  val favorite_pizza = Anchovy(Onion(Anchovy(Anchovy(Cheese(Crust)))));
+
+  fun remove_anchovy(Crust) = Crust
+    | remove_anchovy (Cheese(x)) = Cheese(remove_anchovy(x))
+    | remove_anchovy (Onion(x)) = Onion(remove_anchovy(x))
+    | remove_anchovy (Anchovy(x)) = remove_anchovy(x)
+    | remove_anchovy (Sausage(x)) = Sausage(remove_anchovy(x));
+  (remove_anchovy : pizza -> pizza);
+
+  val no_anchovys = remove_anchovy(favorite_pizza);
+
+  fun top_anchovy_with_cheese(Crust) = Crust
+    | top_anchovy_with_cheese (Cheese(x)) = Cheese(top_anchovy_with_cheese(x))
+    | top_anchovy_with_cheese (Onion(x)) = Onion(top_anchovy_with_cheese(x))
+    | top_anchovy_with_cheese (Anchovy(x)) = Cheese(Anchovy(top_anchovy_with_cheese(x)))
+    | top_anchovy_with_cheese (Sausage(x)) = Sausage(top_anchovy_with_cheese(x));
+  (top_anchovy_with_cheese : pizza -> pizza);
+
+  val with_cheese = top_anchovy_with_cheese(Onion(Anchovy(Cheese(Anchovy(Crust)))));
+
+  fun substitute_anchovy_for_cheese(x) = remove_anchovy(top_anchovy_with_cheese(x));
+
+  val cheese_instead_of_anchovy =
+      substitute_anchovy_for_cheese(Onion(Anchovy(Cheese(Anchovy(Crust)))));
+#+END_SRC
