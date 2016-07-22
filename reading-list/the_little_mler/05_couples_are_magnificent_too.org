@@ -1,0 +1,76 @@
+[[../index.org][Reading List]]
+[[../the_little_mler.org][The Little MLer]]
+
+* Couples Are Magnificent, Too
+#+BEGIN_SRC sml
+  datatype 'a pizza =
+           Bottom
+           | Topping of ('a * ('a pizza));
+
+  datatype fish =
+           Anchovy
+         | Lox
+         | Tuna;
+
+  val fish_pizza = Topping(Anchovy,
+                           Topping(Tuna,
+                                   (Topping(Anchovy,
+                                            (Topping(Tuna, Bottom))))));
+
+  fun rem_anchovy(Bottom) = Bottom
+    | rem_anchovy (Topping(Anchovy, p)) = rem_anchovy(p)
+    | rem_anchovy (Topping(t, p)) = Topping(t, rem_anchovy(p));
+
+  rem_anchovy(fish_pizza);
+
+  fun rem_tuna(Bottom) = Bottom
+    | rem_tuna (Topping(Tuna, p)) = rem_tuna(p)
+    | rem_tuna (Topping(t, p)) = Topping(t, rem_tuna(p));
+
+  rem_tuna(fish_pizza);
+
+  fun eq_fish(Anchovy,Anchovy) = true
+    | eq_fish (Lox,Lox) = true
+    | eq_fish (Tuna, Tuna) = true
+    | eq_fish (x, y) = false
+
+  fun rem_fish(x, Bottom) = Bottom
+    | rem_fish (x, Topping(t,p)) =
+      if eq_fish(t, x)
+      then rem_fish(x,p)
+      else Topping(t, rem_fish(x,p));
+
+  rem_fish(Tuna, fish_pizza);
+
+
+  fun eq_int(n:int, m:int) = (n = m);
+
+  fun rem_int(x, Bottom) = Bottom
+    | rem_int (x, Topping(t,p)) =
+      if eq_int(t, x)
+      then rem_int(x, p)
+      else Topping(t, rem_int(x, p));
+
+  fun subst_fish(n, a, Bottom) = Bottom
+    | subst_fish (n, a, Topping(t, p)) =
+      if eq_fish(t, a)
+      then Topping(n, subst_fish(n, a, p))
+      else Topping(t, subst_fish(n, a , p));
+
+  fun subst_int(n, a, Bottom) = Bottom
+    | subst_int (n, a, Topping(t, p)) =
+      if eq_int(t, a)
+      then Topping(n, subst_int(n, a, p))
+      else Topping(t, subst_int(n, a , p));
+
+  eq_int(17, 0);
+
+  datatype num =
+           Zero
+           | One_more_than of num;
+
+  fun eq_num(Zero, Zero) = true
+    | eq_num (One_more_than(n),
+              One_more_than(m)) = eq_num(n, m)
+    | eq_num (n, m) = false;
+#+END_SRC
