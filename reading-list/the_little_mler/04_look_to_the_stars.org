@@ -1,0 +1,52 @@
+[[../index.org][Reading List]]
+[[../the_little_mler.org][The Little MLer]]
+
+* Look to the Stars
+#+BEGIN_SRC sml
+  datatype meza =
+           Shrimp
+         | Calamari
+         | Escargots
+         | Hummus;
+
+  datatype main =
+           Steak
+         | Ravioli
+         | Chicken
+         | Eggplant;
+
+  datatype salad =
+           Green
+         | Cucumber
+         | Greek;
+
+  datatype dessert =
+           Sundae
+         | Mousse
+         | Torte;
+
+  val meal = (Calamari, Ravioli, Greek, Sundae);
+  val other_meal = (Hummus, Steak, Green, Torte);
+
+  fun add_a_steak(x) = (x, Steak);
+  (add_a_steak : 'a -> ('a * main));
+
+  add_a_steak(Hummus);
+  add_a_steak(Escargots);
+  add_a_steak(5);
+
+  fun eq_main(Steak, Steak) = true
+    | eq_main (Ravioli, Ravioli) = true
+    | eq_main (Chicken, Chicken) = true
+    | eq_main (Eggplant, Eggplant) = true
+    | eq_main (x, y) = false;
+
+  eq_main(Steak, Ravioli);
+  eq_main(Steak, Steak);
+
+  fun has_steak(a:meza, Steak, b:dessert) = true
+    | has_steak (a:meza, b, c:dessert) = false;
+  (has_steak : (meza * main * dessert) -> bool);
+
+  has_steak(Shrimp, Steak, Mousse);
+#+END_SRC
