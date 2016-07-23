@@ -1,0 +1,58 @@
+/*jshint esversion: 6 */
+
+var log = function(stuff_to_log) {
+    let stuff = (stuff_to_log === undefined ||
+                 stuff_to_log === null) ?
+            "You goofed" : stuff_to_log.toString(),
+        html_stuff = "<h1>" + stuff + "</h1>";
+    document.getElementsByTagName('body')[0].innerHTML = html_stuff;
+    return html_stuff;
+};
+
+var middle = function(my_array) {
+    let length = my_array.length,
+        middle = Math.floor(length / 2);
+    return middle;
+};
+
+var handle_single = function(comparison) {
+    return (comparison === 0) ? 0 : null;
+};
+
+var is_single_element = function(middle_index) {
+    return middle_index === 0;
+};
+
+var compare = function(element_1, element_2) {
+    return (element_1 < element_2) ? -1 :
+        (element_1 > element_2) ? 1 :
+        0;
+};
+
+var binary_search_helper = function(element, sorted_array) {
+    let middle_index = middle(sorted_array),
+        middle_element = sorted_array[middle_index],
+        comparison = compare(element, middle_element);
+    return (is_single_element(middle_index)) ?
+        handle_single(comparison) :
+        function() {
+            if (comparison < 0) {
+                return binary_search_helper(element,
+                                            sorted_array.slice(0, middle_index));
+            } else if (comparison === 0) {
+                return middle_index;
+            } else {
+                let new_left = middle_index + 1,
+                    right_index = binary_search_helper(element,
+                                                       sorted_array.slice(new_left));
+                return (right_index || right_index === 0) ? new_left + right_index :
+                    null;
+            }
+        }();
+};
+
+log(binary_search_helper(2, [1, 2, 3, 4]));
+log(binary_search_helper(3, [1, 2, 3]));
+log(binary_search_helper(3, [1, 1, 1, 6, 7]));
+// I did something weird here, but I'm not sure exactly what.
+log(binary_search_helper(3, [1, 2, 4, 5]));

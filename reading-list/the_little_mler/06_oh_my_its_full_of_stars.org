@@ -1,0 +1,95 @@
+[[../index.org][Reading List]]
+[[../the_little_mler.org][The Little MLer]]
+
+* Oh My, It's Full of Stars
+#+BEGIN_SRC sml
+  datatype fruit =
+           Peach
+         | Apple
+         | Pear
+         | Lemon
+         | Fig;
+
+  datatype tree =
+           Bud
+           | Flat of fruit * tree
+           | Split of tree * tree;
+
+  fun flat_only(Bud) = true
+    | flat_only (Flat(_, t)) = flat_only(t)
+    | flat_only (Split(_,_)) = false;
+
+  fun split_only(Bud) = true
+    | split_only(Flat(_,_)) = false
+    | split_only(Split(x,y)) = split_only(x) andalso split_only(y);
+
+  fun contains_fruit(Bud) = false
+    | contains_fruit(Flat(_, _)) = true
+    | contains_fruit(Split(x, y)) = contains_fruit(x) orelse contains_fruit(y);
+
+  fun shorter_contains_fruit(x) = not(split_only(x));
+
+  fun less_than(n:int, m:int) = (n < m);
+
+  fun larger_of(n, m)
+    = if less_than(n, m)
+      then m
+      else n;
+
+  fun height(Bud) = 0
+    | height (Flat(x, y)) = 1 + height(y)
+    | height (Split(x, y)) = 1 + larger_of(height(x), height (y));
+
+  height(Bud);
+
+  fun same_fruit(Peach, Peach) = true
+    | same_fruit (Apple, Apple) = true
+    | same_fruit (Pear, Pear) = true
+    | same_fruit (Lemon, Lemon) = true
+    | same_fruit (Fig, Fig) = true
+    | same_fruit (x, y) = false;
+
+  fun subst_in_tree(to, from, Bud) = Bud
+    | subst_in_tree(to, from, Flat(x, y)) = if same_fruit(from, x)
+                                            then Flat(to, subst_in_tree(to, from, y))
+                                            else Flat(x, subst_in_tree(to, from, y))
+    | subst_in_tree(to, from, Split(x, y)) = Split(subst_in_tree(to, from, x),
+                                                   subst_in_tree(to, from, y));
+
+  val fruit_tree = Split(Split(Flat(Fig,
+                                    Bud),
+                               Flat(Fig,
+                                    Bud)),
+                         Flat(Fig,
+                              Flat(Lemon,
+                                   Flat(Apple,
+                                        Bud))));
+
+  subst_in_tree(Apple, Fig, fruit_tree);
+
+  fun occurs(a, Bud) = 0
+    | occurs (a, Flat(f, t)) = if same_fruit(f,a)
+                               then 1 + occurs(a, t)
+                               else occurs(a, t)
+    | occurs (a, Split(s, t)) = occurs(a, s) +
+                                occurs(a, t);
+  occurs(Fig, fruit_tree);
+
+  datatype 'a slist =
+           Empty
+           | Scons of (('a sexp) * ('a slist))
+       and 'a sexp =
+           An_atom of 'a
+           | A_slist of ('a slist);
+
+  fun occurs_in_slist (a, Empty) = 0
+    | occurs_in_slist (a, Scons(s, y)) = occurs_in_sexp(a, s) +
+                                         occurs_in_slist(a, y)
+  and occurs_in_sexp(a, An_atom(b)) = if same_fruit(b, a)
+                                      then 1
+                                      else 0
+    | occurs_in_sexp (a, A_slist(y)) = occurs_in_slist(a, y);
+
+
+  (* stopped on page 84 *)
+#+END_SRC

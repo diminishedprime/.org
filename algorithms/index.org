@@ -1,0 +1,4 @@
+[[../index.org][Home]]
+
+* Algorithms
++ [[./binary_search.org][Binary Search]]
