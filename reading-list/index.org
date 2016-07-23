@@ -1,26 +1,28 @@
 [[../index.org][Main Index]]
 
 * Reading List/Digital Bookshelf
+** Priority
++ [ ] [[./the_little_mler.org][The Little MLer]]
++ [ ] [[./haskell_programming_from_first_principles.org][Haskell Book]]
++ [ ] [[./mastering_clojure_macros.org][Mastering Clojure Macros]]
+
 ** Reference
 *** Programming Books
 + Clojure
   + [X] [[./living_clojure.org][Living Clojure]]
   + [X] [[./the_joy_of_clojure.org][The Joy of Clojure]]
-+ Scheme
++ Little Books
   + [X] [[./the_little_schemer.org][The Little Schemer]]
   + [X] [[./the_seasoned_schemer.org][The Seasoned Schemer]]
   + [X] [[./the_reasoned_schemer.org][The Reasoned Schemer]]
 ** To Read
-*** ML
-+ [ ] [[./the_little_mler.org][The Little MLer]]
-*** Lisp
-+ [ ] [[http://letoverlambda.com/index.cl/toc][Let Over Lambda]]
+*** Little Books
++ [ ] [[http://www.amazon.com/Little-Java-Few-Patterns/dp/0262561158/ref=sr_1_1?s=books&ie=UTF8&qid=1454204257&sr=1-1&keywords=a+little+java%2C+a+few+patterns][A Little Java, A Few Patterns]]
 *** Programming Books
 + General
   + [ ] [[./code_complete.org][Code Complete]]
   + [ ] [[./mythical_man_month.org][Mythical Man Month]]
   + [ ] [[./to_mock_a_mockingbird.org][To Mock A MockingBird]]
-  + [ ] [[./mit_sicp.org][MIT SICP]]
   + [ ] [[./ai_a_modern_approach.org][AI A Modern Approach]]
   + Beautiful Code
   + [ ] [[./programming_pearls.org][Programming Pearls]]
@@ -30,9 +32,7 @@
 + Haskell
   + [ ] [[./learn_you_a_haskell.org][Learn You A Haskell For Great Good]]
   + [ ] [[./cis194.org][CIS194]]
-  + [ ] [[./haskell_programming_from_first_principles.org][Haskell Book]]
 + Clojure
-  + [ ] [[./mastering_clojure_macros.org][Mastering Clojure Macros]]
   + [ ] [[./clojurescript_up_and_running.org][ClojureScript: Up and Running]]
   + [ ] [[./clojure_applied.org][Clojure Applied]]
   + [ ] [[./clojure_cookbook.org][Clojure Cookbook]]
@@ -52,6 +52,9 @@
   + Core Java Volume II
 + Scala
   + [[http://search.safaribooksonline.com/book/programming/scala/9781617290657][FP in Scala]]
++ Lisp
+  + [ ] [[./mit_sicp.org][MIT SICP]]
+  + [ ] [[http://letoverlambda.com/index.cl/toc][Let Over Lambda]]
 *** Science Books
 + DSP
    + [ ] [[./thinkdsp/think_dsp.org][Think DSP]]
@@ -79,22 +82,22 @@
 + http://danluu.com/empirical-pl/
 
 * Purchase/Find
+  1. [[https://www.amazon.com/Little-Prover-MIT-Press/dp/0262527952/ref=sr_1_1?s=books&ie=UTF8&qid=1469304322&sr=1-1&keywords=the+little+prover][The Little Prover]]
   1. [[http://www.amazon.com/Algebra-2nd-Michael-Artin/dp/0132413779][Michael Artin Algebra]]
   2. [[https://www.manning.com/books/type-driven-development-with-idris][Type Driven Development with Idris]]
   3. [[https://www.amazon.com/Expert-F-4-0-Don-Syme/dp/1484207416?ie=UTF8&keywords=expert%20f%23%204.0&linkCode=sl1&linkId=f696d9966865ec308f5b009e0456f017&qid=1464576992&ref_=as_li_ss_tl&sr=8-1&tag=fngeekery-20][Expert F#]]
-  4. [[http://www.amazon.com/Little-Java-Few-Patterns/dp/0262561158/ref=sr_1_1?s=books&ie=UTF8&qid=1454204257&sr=1-1&keywords=a+little+java%2C+a+few+patterns][A Little Java, A Few Patterns]]
-  5. [[http://www.amazon.com/Purely-Functional-Structures-Chris-Okasaki/dp/0521663504/ref=sr_1_1?s=books&ie=UTF8&qid=1454204145&sr=1-1&keywords=purely+functional][Purely Functional Data Structures]]
-  6. [[http://www.amazon.com/Clause-Effect-Programming-Working-Programmer/dp/3540629718][Clause And Effect]]
-  7. [[http://www.amazon.com/Selected-Papers-Computer-Science-Lecture/dp/1881526917/ref=sr_1_1?s=books&ie=UTF8&qid=1454204201&sr=1-1&keywords=selected+papers+on+computer+science][Selected Papers on Computer Science]]
-  8. [[http://www.amazon.com/Concrete-Mathematics-Foundation-Computer-Science/dp/0201558025][Concrete Mathematics]]
-  9. [[http://www.amazon.com/Why-Programs-Fail-Second-Systematic/dp/0123745152/ref=sr_1_1?s=books&ie=UTF8&qid=1454203975&sr=1-1&keywords=Why+Programs+Fail][Why Programs Fail (Andreas Zeller)]]
+  4. [[http://www.amazon.com/Purely-Functional-Structures-Chris-Okasaki/dp/0521663504/ref=sr_1_1?s=books&ie=UTF8&qid=1454204145&sr=1-1&keywords=purely+functional][Purely Functional Data Structures]]
+  5. [[http://www.amazon.com/Clause-Effect-Programming-Working-Programmer/dp/3540629718][Clause And Effect]]
+  6. [[http://www.amazon.com/Selected-Papers-Computer-Science-Lecture/dp/1881526917/ref=sr_1_1?s=books&ie=UTF8&qid=1454204201&sr=1-1&keywords=selected+papers+on+computer+science][Selected Papers on Computer Science]]
+  7. [[http://www.amazon.com/Concrete-Mathematics-Foundation-Computer-Science/dp/0201558025][Concrete Mathematics]]
+  8. [[http://www.amazon.com/Why-Programs-Fail-Second-Systematic/dp/0123745152/ref=sr_1_1?s=books&ie=UTF8&qid=1454203975&sr=1-1&keywords=Why+Programs+Fail][Why Programs Fail (Andreas Zeller)]]
      + Chapters 6-7 11-14
-  10. [[http://www.amazon.com/New-Turing-Omnibus-Sixty-Six-Excursions/dp/0805071660/ref=sr_1_1?s=books&ie=UTF8&qid=1454204177&sr=1-1&keywords=the+new+turing+omnibus][The New Turing Omnibus]]
-  11. The Art of Computer Programming
+  9. [[http://www.amazon.com/New-Turing-Omnibus-Sixty-Six-Excursions/dp/0805071660/ref=sr_1_1?s=books&ie=UTF8&qid=1454204177&sr=1-1&keywords=the+new+turing+omnibus][The New Turing Omnibus]]
+  10. The Art of Computer Programming
       + [[http://www.amazon.com/Art-Computer-Programming-Sorting-Searching/dp/0201896850/ref=sr_1_1?s=books&ie=UTF8&qid=1454203998&sr=1-1&keywords=Sorting+and+Searching][Book 2: Sorting and Searching]]
-  12. [[http://www.amazon.com/Literate-Programming-Center-Language-Information/dp/0937073806/ref=sr_1_1?s=books&ie=UTF8&qid=1454204274&sr=1-1&keywords=literate+programming][Literate Programming]]
-  13. [[http://www.catonmat.net/blog/awk-book/][Awk One Liners Explained]]
-  14. [[http://www.catonmat.net/blog/sed-book/][Sed One Liners Explained]]
-  15. [[http://www.catonmat.net/blog/perl-book/][Pearl One Liners Explained]]
-  16. [[https://www.nostarch.com/perloneliners][Pearl One-Liners]]
-  17. [[https://www.amazon.com/Let-Over-Lambda-Doug-Hoyte/dp/1435712757][Let over Lambda]]
+  11. [[http://www.amazon.com/Literate-Programming-Center-Language-Information/dp/0937073806/ref=sr_1_1?s=books&ie=UTF8&qid=1454204274&sr=1-1&keywords=literate+programming][Literate Programming]]
+  12. [[http://www.catonmat.net/blog/awk-book/][Awk One Liners Explained]]
+  13. [[http://www.catonmat.net/blog/sed-book/][Sed One Liners Explained]]
+  14. [[http://www.catonmat.net/blog/perl-book/][Pearl One Liners Explained]]
+  15. [[https://www.nostarch.com/perloneliners][Pearl One-Liners]]
+  16. [[https://www.amazon.com/Let-Over-Lambda-Doug-Hoyte/dp/1435712757][Let over Lambda]]
