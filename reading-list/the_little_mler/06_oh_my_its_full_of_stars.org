@@ -73,7 +73,7 @@
                                else occurs(a, t)
     | occurs (a, Split(s, t)) = occurs(a, s) +
                                 occurs(a, t);
-  occurs(Fig, fruit_tree);
+  val how_many_in_tree = occurs(Fig, fruit_tree);
 
   datatype 'a slist =
            Empty
@@ -90,6 +90,19 @@
                                       else 0
     | occurs_in_sexp (a, A_slist(y)) = occurs_in_slist(a, y);
 
+  fun subst_in_slist (n,a, Empty) = Empty
+    | subst_in_slist (n, a, Scons(s, y)) = Scons(subst_in_sexp(n, a, s),
+                                                 subst_in_slist(n, a, y))
+  and subst_in_sexp (n, a, An_atom(a')) = if same_fruit(a', a)
+                                          then An_atom(n)
+                                          else An_atom(a')
+    | subst_in_sexp (n, a, A_slist(y)) = A_slist(subst_in_slist(n, a, y));
 
-  (* stopped on page 84 *)
+  fun rem_from_slist(a, Empty) = Empty
+    | rem_from_slist (a, Scons(An_atom(b), y)) = if same_fruit(a, b)
+                                                 then rem_from_slist(a, y)
+                                                 else Scons(An_atom(b),
+                                                            rem_from_slist(a, y))
+    | rem_from_slist (a, Scons(A_slist(x), y)) = Scons(A_slist(rem_from_slist(a, x)),
+                                                       rem_from_slist(a, y));
 #+END_SRC
