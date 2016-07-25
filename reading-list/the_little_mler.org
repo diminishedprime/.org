@@ -1,7 +1,7 @@
 + [[../index.org][Main Index]]
 + [[./index.org][Reading List]]
 
-* The Little MLer [70%]
+* The Little MLer [100%]
 1. [X] [[./the_little_mler/01_building_blocks.org][Building Blocks]]
 2. [X] [[./the_little_mler/02_matchmaker_matchmaker.org][Matchmaker, Matchmaker]]
 3. [X] [[./the_little_mler/03_cons_is_still_magnificent.org][Cons Is Still Magnificent]]
@@ -9,6 +9,6 @@
 5. [X] [[./the_little_mler/05_couples_are_magnificent_too.org][Couples Are Magnificent, Too]]
 6. [X] [[./the_little_mler/06_oh_my_its_full_of_stars.org][Oh My, It's Full of Stars]]
 7. [X] [[./the_little_mler/07_functions_are_people_too.org][Functions Are People, Too]]
-8. [ ] Bows and Arrows
-9. [ ] Oh No!
-10. [ ] Building on Blocks
+8. [X] [[./the_little_mler/08_bows_and_arrows.org][Bows and Arrows]]
+9. [X] [[./the_little_mler/09_oh_no.org][Oh No!]]
+10. [X] [[./the_little_mler/10_building_on_blocks.org][Building on Blocks]]

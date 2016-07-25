@@ -2,3 +2,7 @@
 
 * Algorithms
 + [[./binary_search.org][Binary Search]]
++ Selection Sort
++ Insertion Sort
++ Factorial
++ isPalindrome

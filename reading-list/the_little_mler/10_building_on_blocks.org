@@ -1,0 +1,140 @@
+[[../index.org][Reading List]]
+[[../the_little_mler.org][The Little MLer]]
+
+* Oh No!
+#+BEGIN_SRC sml
+  datatype num =
+           Zero
+           | One_more_than of num;
+
+  signature N_C_R =
+  sig
+      type number
+      exception Too_small
+      val conceal : int -> number
+      val succ : number -> number
+      val pred : number -> number
+      val is_zero : number -> bool
+      val reveal : number -> int
+  end;
+
+  functor NumberAsNum() :> N_C_R =
+  struct datatype num =
+                  Zero
+                  | One_more_than of num
+         type number = num
+         exception Too_small
+         fun conceal (n) = if eq_int(n, 0)
+                           then Zero
+                           else One_more_than(conceal(n - 1))
+         fun succ (n) = One_more_than(n)
+         fun pred (Zero) = raise Too_small
+           | pred (One_more_than(n)) = n
+         fun is_zero (Zero) = true
+           | is_zero (_) = false
+         fun reveal (n) = if is_zero(n)
+                          then 0
+                          else 1 + reveal(pred(n))
+  end;
+
+  functor NumberAsInt() :> N_C_R =
+  struct type number = int
+         exception Too_small
+         fun conceal (n) = n
+         fun succ (n) = n + 1
+         fun pred (n) = if eq_int(n, 0)
+                        then raise Too_small
+                        else n - 1
+         fun is_zero (n) = eq_int(n, 0)
+         fun reveal (n) = n
+  end;
+
+
+
+  signature PON =
+  sig
+      type number
+      val plus : (number * number) -> number
+  end;
+
+  functor P(structure a_N : NUMBERS_BY_PEANO) :>
+          PON where type number = a_N.number
+                                  =
+                                  struct type number = a_N.number
+                                         fun plus (n, m) = if a_N.is_zero(n)
+                                                           then m
+                                                           else a_N.succ(
+                                                                   plus(a_N.pred(n), m))
+                                  end;
+
+  structure IntStruct = NumberAsInt();
+  structure IntArith = P(structure a_N = IntStruct);
+  structure NumStruct = NumberAsNum();
+  structure NumArith = P(structure a_N = NumStruct);
+
+  NumStruct.reveal(NumStruct.succ(NumStruct.conceal(0)));
+
+  NumStruct.reveal(
+      NumArith.plus(
+          NumStruct.conceal(1),
+          NumStruct.conceal(2)));
+
+  IntStruct.reveal(
+      IntArith.plus(
+          IntStruct.conceal(1),
+          IntStruct.conceal(2)));
+
+  functor NumberAsInt2() :>
+          NUMBERS_BY_PEANO
+              where type number = int
+                                  =
+                                  struct
+                                  type number = int
+                                  exception Too_small
+                                  fun succ (n) = n + 1
+                                  fun pred (n) = if eq_int(n, 0)
+                                                 then raise Too_small
+                                                 else n - 1
+                                  fun is_zero (n) = eq_int(n, 0)
+                                  end;
+
+  structure IntStruct2 = NumberAsInt2();
+
+  structure IntArith2 = P(structure a_N = IntStruct2);
+
+  IntArith2.plus(1,2);
+
+  signature S =
+  sig
+      type number1
+      type number2
+      val similiar : (number1 * number2) -> bool
+  end;
+
+  functor Same(structure a_N : NUMBERS_BY_PEANO
+               structure b_N : NUMBERS_BY_PEANO)
+          :>
+          S where type number1 = a_N.number
+                                     where type number2 = b_N.number
+                                                          =
+                                                          struct
+                                                          type number1 = a_N.number
+                                                          type number2 = b_N.number
+                                                          fun sim(n, m)
+                                                                 if a_N.is_zero(n)
+                                                                 then b_N.is_zero(m)
+                                                                 else sum(a_N.pred(n),
+                                                                          b_N.pred(m))
+                                                          fun similiar (n, m)
+                                                            = ((sim (n, m)
+                                                                handle
+                                                                a_N.Too_small => false)
+                                                               handle
+                                                               b_N.Too_samll => false)
+                                                          end;
+
+
+  structure SimIntNum =
+  Same(structure a_N = IntStruct
+       structure b_N = NumStruct)
+#+END_SRC
