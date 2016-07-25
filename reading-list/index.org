@@ -2,7 +2,6 @@
 
 * Reading List/Digital Bookshelf
 ** Priority
-+ [ ] [[./the_little_mler.org][The Little MLer]]
 + [ ] [[./haskell_programming_from_first_principles.org][Haskell Book]]
 + [ ] [[./mastering_clojure_macros.org][Mastering Clojure Macros]]
 
@@ -15,6 +14,7 @@
   + [X] [[./the_little_schemer.org][The Little Schemer]]
   + [X] [[./the_seasoned_schemer.org][The Seasoned Schemer]]
   + [X] [[./the_reasoned_schemer.org][The Reasoned Schemer]]
+  + [X] [[./the_little_mler.org][The Little MLer]]
 ** To Read
 *** Little Books
 + [ ] [[http://www.amazon.com/Little-Java-Few-Patterns/dp/0262561158/ref=sr_1_1?s=books&ie=UTF8&qid=1454204257&sr=1-1&keywords=a+little+java%2C+a+few+patterns][A Little Java, A Few Patterns]]
