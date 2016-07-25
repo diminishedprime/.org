@@ -3,13 +3,13 @@
 * Reading List/Digital Bookshelf
 ** Priority
 + [ ] [[./haskell_programming_from_first_principles.org][Haskell Book]]
-+ [ ] [[./mastering_clojure_macros.org][Mastering Clojure Macros]]
 
 ** Reference
 *** Programming Books
 + Clojure
   + [X] [[./living_clojure.org][Living Clojure]]
   + [X] [[./the_joy_of_clojure.org][The Joy of Clojure]]
+  + [X] [[./mastering_clojure_macros.org][Mastering Clojure Macros]]
 + Little Books
   + [X] [[./the_little_schemer.org][The Little Schemer]]
   + [X] [[./the_seasoned_schemer.org][The Seasoned Schemer]]

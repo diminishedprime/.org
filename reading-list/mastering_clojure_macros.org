@@ -9,4 +9,4 @@
 5) [X] [[./mastering_clojure_macros/05_speed_up_your_systems.clj][Speed Up Your Systems]]
 6) [X] Build APIs that Say Just What They Mean
 7) [X] Bend Control Flow to Your Will
-8) [ ] [[./mastering_clojure_macros/08_implement_new_language_features.clj][Implement New Language Features]]
+8) [X] [[./mastering_clojure_macros/08_implement_new_language_features.clj][Implement New Language Features]]
