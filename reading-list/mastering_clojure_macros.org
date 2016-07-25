@@ -6,7 +6,7 @@
 2) [X] [[./mastering_clojure_macros/02_advance_your_macro_techniques.clj][Advance your Macro Techniques]]
 3) [X] [[./mastering_clojure_macros/03_use_your_powers_wisely.clj][Use Your Powers Wisely]]
 4) [X] [[./mastering_clojure_macros/04_evaluate_code_in_context.clj][Evaluate Code in Contex]]
-5) [ ] [[./mastering_clojure_macros/05_speed_up_your_systems.clj][Speed Up Your Systems]]
-6) [ ] [[./mastering_clojure_macros/06_build_apis_that_say_just_what_they_mean.clj][Build APIs that Say Just What They Mean]]
-7) [ ] [[./mastering_clojure_macros/07_bend_control_flow_to_your_will.clj][Bend Control Flow to Your Will]]
+5) [X] [[./mastering_clojure_macros/05_speed_up_your_systems.clj][Speed Up Your Systems]]
+6) [X] Build APIs that Say Just What They Mean
+7) [X] Bend Control Flow to Your Will
 8) [ ] [[./mastering_clojure_macros/08_implement_new_language_features.clj][Implement New Language Features]]
