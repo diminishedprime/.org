@@ -3,44 +3,46 @@
 * Reading List/Digital Bookshelf
 ** Priority
 + [ ] [[./haskell_programming_from_first_principles.org][Haskell Book]]
-
++ [ ] [[./mastering_regular_expressions.org][Mastering Regular Expressions]]
 ** Reference
 *** Programming Books
 + Clojure
   + [X] [[./living_clojure.org][Living Clojure]]
   + [X] [[./the_joy_of_clojure.org][The Joy of Clojure]]
-  + [X] [[./mastering_clojure_macros.org][Mastering Clojure Macros]]
+  + [X] 2016-07-25 [[./mastering_clojure_macros.org][Mastering Clojure Macros]]
+  + [X] 2016-07-25 [[./clojurescript_up_and_running.org][ClojureScript: Up and Running]]
 + Little Books
   + [X] [[./the_little_schemer.org][The Little Schemer]]
   + [X] [[./the_seasoned_schemer.org][The Seasoned Schemer]]
   + [X] [[./the_reasoned_schemer.org][The Reasoned Schemer]]
-  + [X] [[./the_little_mler.org][The Little MLer]]
+  + [X] 2016-07-24 [[./the_little_mler.org][The Little MLer]]
 ** To Read
 *** Little Books
-+ [ ] [[http://www.amazon.com/Little-Java-Few-Patterns/dp/0262561158/ref=sr_1_1?s=books&ie=UTF8&qid=1454204257&sr=1-1&keywords=a+little+java%2C+a+few+patterns][A Little Java, A Few Patterns]]
++ [[http://www.amazon.com/Little-Java-Few-Patterns/dp/0262561158/ref=sr_1_1?s=books&ie=UTF8&qid=1454204257&sr=1-1&keywords=a+little+java%2C+a+few+patterns][A Little Java, A Few Patterns]]
 *** Programming Books
 + General
   + [ ] [[./code_complete.org][Code Complete]]
-  + [ ] [[./mythical_man_month.org][Mythical Man Month]]
-  + [ ] [[./to_mock_a_mockingbird.org][To Mock A MockingBird]]
+  + [[./mythical_man_month.org][Mythical Man Month]]
+  + [[./to_mock_a_mockingbird.org][To Mock A MockingBird]]
   + [ ] [[./ai_a_modern_approach.org][AI A Modern Approach]]
-  + Beautiful Code
+  + [ ] Beautiful Code
   + [ ] [[./programming_pearls.org][Programming Pearls]]
   + More Programming Pearls
-  + The Pragmatic Programmer
+  + [ ] The Pragmatic Programmer
   + [[http://www-ps.informatik.uni-kiel.de/currywiki/_media/documentation/tutorial.pdf][Curry Programming Language]]
 + Haskell
   + [ ] [[./learn_you_a_haskell.org][Learn You A Haskell For Great Good]]
-  + [ ] [[./cis194.org][CIS194]]
 + Clojure
-  + [ ] [[./clojurescript_up_and_running.org][ClojureScript: Up and Running]]
   + [ ] [[./clojure_applied.org][Clojure Applied]]
   + [ ] [[./clojure_cookbook.org][Clojure Cookbook]]
-  + [ ] [[http://search.safaribooksonline.com/9781785283642/index_html][Clojure High Performance Programming]]
+  + [[http://search.safaribooksonline.com/9781785283642/index_html][Clojure High Performance Programming]]
+  + [[http://search.safaribooksonline.com/book/programming/clojure/9781784397180/clojure-for-data-science/index_html?query=((clojure))#snippet][Clojure for Data Science]]
+  + [[http://search.safaribooksonline.com/book/programming/clojure/9781457190018][Clojure for the Brave and True]]
+  + [[http://search.safaribooksonline.com/book/programming/clojure/9781783284351][Clojure for Machine Learning]]
 + Erlang
   + [ ] [[./learn_you_some_erlang.org][Learn You Some Erlang]]
 + RegExps
-  + [ ] [[./mastering_regular_expressions.org][Mastering Regular Expressions]]
+
 + Emacs
   + [ ] [[./mastering_emacs.org][Mastering Emacs]]
   + [ ] [[./org_mode_guide.org][Org Mode Guide]]
@@ -55,7 +57,7 @@
   + [[http://search.safaribooksonline.com/book/programming/scala/9781617290657][FP in Scala]]
 + Lisp
   + [ ] [[./mit_sicp.org][MIT SICP]]
-  + [ ] [[http://letoverlambda.com/index.cl/toc][Let Over Lambda]]
+  + [[http://letoverlambda.com/index.cl/toc][Let Over Lambda]]
 *** Science Books
 + DSP
    + [ ] [[./thinkdsp/think_dsp.org][Think DSP]]
@@ -72,7 +74,7 @@
 2. Artificial Intelligence, a modern approach. (pdf on desktop)
 *** Other?
 + [ ] [[./blender_for_dummies.org][Blender For Dummies]]
-+ [ ] enchiridion by Epic Taetus
++ enchiridion by Epic Taetus
 *** Academic Papers
 + [[./worst_case_efficient_priority_queues.org][Brodal Queues]]
 + [[./will_byrd_thesis.org][Will Byrd Thesis]]

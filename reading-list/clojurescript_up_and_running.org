@@ -1,67 +1,68 @@
 + [[../index.org][Main Index]]
 + [[./index.org][Reading List]]
 
-* [[http://search.safaribooksonline.com/book/programming/clojure/9781449327422][ClojureScript: Up And Running]] [52%]
-+ [X] Introduction: Why ClojureScript?
-  - [X] The Rise of Browser Applications
-  - [X] The Rise of JavaScript
-  - [X] The Need for a Better Language
-  - [X] Introducing ClojureScript
-+ [X] Hello World
-  - [X] Leiningen
-  - [X] Using lein-cljsbuild
-+ [X] The Compilation Process
-  - [X] Architecture
-  - [X] How to Compile
-  - [X] Compilation in Depth
-  - [X] Summary
-+ [X] ClojureScript Basics
-  - [X] ClojureScript versus Clojure
-  - [X] Expressions and Side Effects
-  - [X] Syntax and Data Structures
-  - [X] Special Forms and Definitions
-  - [X] Functions
-  - [X] Local Bindings
-  - [X] Closures
-  - [X] Flow Control
-  - [X] JavaScript Interop
-  - [X] Summary
-+ [X] Data and State
-  - [X] Primitives
-  - [X] Data Structures
-  - [X] Identity and State
-+ [X] Sequences
-  - [X] The Sequence Abstraction
-  - [X] Lazy Sequences
-  - [X] The Sequence API
-+ [-] Namespaces, Libraries, and Google Closure
-  - [X] Namespaces
-  - [ ] Advanced Compilation Mode
-  - [ ] Consuming Libraries
-  - [ ] Creating Libraries
-+ [ ] Macros
-  - [ ] Code as Data
-  - [ ] Writing Macros
-  - [ ] Using Macros
-  - [ ] When to Write Macros
-  - [ ] Summary
-+ [ ] Development Process and Workflow
-  - [ ] Installing ClojureScript
-  - [ ] The Built-In Tools
-  - [ ] The Browser REPL
-  - [ ] Additional lein-cljsbuild Features
-+ [ ] Integration with Clojure
-  - [ ] AJAX
-  - [ ] The Reader and Printer
-  - [ ] Example Client-Server Application
-  - [ ] Extending the Reader
-  - [ ] Sharing Code
-  - [ ] Summary
-+ [ ]  Libraries
-  - [ ] ClojureScript’s Standard Library
-  - [ ] Google Closure Library
-  - [ ] Domina
-  - [ ] Enfocus
-  - [ ] Jayq
-  - [ ] C2
-  - [ ] core.logic
+* [[http://search.safaribooksonline.com/book/programming/clojure/9781449327422][ClojureScript: Up And Running]] [100%]
+
+1. [X] Introduction: Why ClojureScript?
+   - [X] The Rise of Browser Applications
+   - [X] The Rise of JavaScript
+   - [X] The Need for a Better Language
+   - [X] Introducing ClojureScript
+2. [X] Hello World
+   - [X] Leiningen
+   - [X] Using lein-cljsbuild
+3. [X] The Compilation Process
+   - [X] Architecture
+   - [X] How to Compile
+   - [X] Compilation in Depth
+   - [X] Summary
+4. [X] ClojureScript Basics
+   - [X] ClojureScript versus Clojure
+   - [X] Expressions and Side Effects
+   - [X] Syntax and Data Structures
+   - [X] Special Forms and Definitions
+   - [X] Functions
+   - [X] Local Bindings
+   - [X] Closures
+   - [X] Flow Control
+   - [X] JavaScript Interop
+   - [X] Summary
+5. [X] Data and State
+   - [X] Primitives
+   - [X] Data Structures
+   - [X] Identity and State
+6. [X] Sequences
+   - [X] The Sequence Abstraction
+   - [X] Lazy Sequences
+   - [X] The Sequence API
+7. [X] Namespaces, Libraries, and Google Closure
+   - [X] Namespaces
+   - [X] Advanced Compilation Mode
+   - [X] Consuming Libraries
+   - [X] Creating Libraries
+8. [X] Macros
+   - [X] Code as Data
+   - [X] Writing Macros
+   - [X] Using Macros
+   - [X] When to Write Macros
+   - [X] Summary
+9. [X] Development Process and Workflow
+   - [X] Installing ClojureScript
+   - [X] The Built-In Tools
+   - [X] The Browser REPL
+   - [X] Additional lein-cljsbuild Features
+10. [X] Integration with Clojure
+    - [X] AJAX
+    - [X] The Reader and Printer
+    - [X] Example Client-Server Application
+    - [X] Extending the Reader
+    - [X] Sharing Code
+    - [X] Summary
+11. [X]  Libraries
+    - [X] ClojureScript’s Standard Library
+    - [X] Google Closure Library
+    - [X] Domina
+    - [X] Enfocus
+    - [X] Jayq
+    - [X] C2
+    - [X] core.logic
