@@ -1,8 +1,14 @@
 [[../index.org][Main Index]]
 [[./index.org][Reading List]]
 
-* [[./books/mastering_regular_expressions.pdf][Mastering Regular Expressions]] [0%]
-1. [ ] Introduction to Regular Expressions
+* [[./books/mastering_regular_expressions.pdf][Mastering Regular Expressions]] [14%]
+1. [X] Introduction to Regular Expressions
+   1. [X] Solving Real Problems
+   2. [X] Regular Expressions as a Language
+   3. [X] The Regular-Expression Frame of Mind
+   4. [X] Egrep Metacharacters
+   5. [X] Expanding the Foundation
+   6. [X] Personal Glimpses
 2. [ ] Extended Introductory Examples
 3. [ ] Overview of Regular Expression Features and Flavors
 4. [ ] The Mechanics of Expression Processing
