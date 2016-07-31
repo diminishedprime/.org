@@ -1,0 +1,15 @@
+[[../index.org][Main Index]]
+[[./index.org][Reading List]]
+
+* Lisp In Small Pieces
+1. [-] The Basics of Interpretation
+   1. [X] Evaluation
+   2. [X] Basic Evaluator
+   3. [X] Evaluating Atoms
+   4. [-] Evaluating Forms
+      1. [X] Quoting
+      2. [X] Alternatives
+      3. [X] Sequence
+      4. [X] Assignment
+      5. [ ] Abstraction
+      6. [ ] Functional Application

@@ -5,35 +5,14 @@
   1) Cracking The Oyster
   2) Aha! Algorithms
      1)
-	#+BEGIN_SRC clojure
-          (defn anagrams-of [word-list word]
-                   (letfn [(normalize [word]
-                             (sort word))
-                           (anagrams-of [[current-word & remaining-words] word matches]
-                             (if current-word
-                               (if (= (normalize word)
-                                      (normalize current-word))
-                                 (recur remaining-words word (conj matches current-word))
-                                 (recur remaining-words word matches))
-                               matches))]
-                     (anagrams-of word-list word [])))
+  #+BEGIN_SRC clojure
+    (ns woo
+      (:require [clojure.string :as str]))
 
-                 (def word-list
-                   (vec  (.split (slurp "/Users/mjhamrick/Desktop/word-list.txt") "\n")))
-                 (def processed-list
-                   (letfn [(normalize [word]
-                             (keyword (apply str (sort word))))
-                           (process [[current-word & remaining-words] maps]
-                             (if current-word
-                               (recur remaining-words (conj maps {(normalize current-word)
-                                                                  [current-word]}))
-                               maps))]
-                     (apply (partial merge-with concat) (process word-list []))))
+    (def dictionary
+      (str/split-lines (slurp "/usr/share/dict/words")))
 
-                 (defn anagrams-of-preproccessing [word]
-                   ((keyword (apply str (sort word))) processed-list ))
-
-                 (time (anagrams-of word-list "mat"))
-                 (time (anagrams-of-preproccessing "mat"))        
-	#+END_SRC
-
+    (defn anagrams-of [word]
+      (let [is-anagram? #(= (sort word) (sort %))]
+        (filter is-anagram? dictionary)))
+#+END_SRC

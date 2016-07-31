@@ -3,6 +3,6 @@
 * Algorithms
 + [[./binary_search.org][Binary Search]]
 + Selection Sort
-+ Insertion Sort
++ [[./insertion_sort.org][Insertion Sort]]
 + Factorial
 + isPalindrome

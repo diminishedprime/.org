@@ -1,5 +1,5 @@
 [[../index.org][Home]]
-[[./index.org][Algorithms]
+[[./index.org][Algorithms]]
 
 * Binary Search
 ** Haskell

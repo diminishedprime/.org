@@ -1,0 +1,28 @@
+[[../index.org][Home]]
+[[./index.org][Algorithms]]
+
+* Insertion Sort
+** Haskell
+#+BEGIN_SRC haskell
+  insert :: Ord a => a -> [a] -> [a]
+  insert x [] = [x]
+  insert x (y:ys) = if x < y
+                    then x:y:ys
+                    else y:(insert x ys)
+
+  insertionSort :: (Ord a, Foldable t) => t a -> [a]
+  insertionSort = foldl (flip insert) []
+#+END_SRC
+** Clojure
+#+BEGIN_SRC clojure
+  (defn insert-into-sorted [sorted-vec next-element]
+    (let [[left right] (split-with (partial > next-element) sorted-vec)]
+      (concat left [next-element] right)))
+
+  (defn insertion-sort [my-vec]
+    (reduce insert-into-sorted [] my-vec))
+
+  (insertion-sort [3 2 1])
+  (insertion-sort [1 2 3 4 5])
+  (insertion-sort [10 8 7 6 2 -10])
+#+END_SRC

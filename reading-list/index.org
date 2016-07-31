@@ -4,17 +4,18 @@
 ** Priority
 + [ ] [[./haskell_programming_from_first_principles.org][Haskell Book]]
 + [ ] [[./mastering_regular_expressions.org][Mastering Regular Expressions]]
++ [ ] [[./lisp_in_small_pieces.org][Lisp In Small Pieces]]
 ** Reference
 *** Programming Books
-+ Clojure
-  + [X] [[./living_clojure.org][Living Clojure]]
-  + [X] [[./the_joy_of_clojure.org][The Joy of Clojure]]
++   Clojure
+  + [X] 2015-09-23 [[./living_clojure.org][Living Clojure]]
+  + [X] 2015-10-19 [[./the_joy_of_clojure.org][The Joy of Clojure]]
   + [X] 2016-07-25 [[./mastering_clojure_macros.org][Mastering Clojure Macros]]
   + [X] 2016-07-25 [[./clojurescript_up_and_running.org][ClojureScript: Up and Running]]
 + Little Books
-  + [X] [[./the_little_schemer.org][The Little Schemer]]
-  + [X] [[./the_seasoned_schemer.org][The Seasoned Schemer]]
-  + [X] [[./the_reasoned_schemer.org][The Reasoned Schemer]]
+  + [X] 2016-02-14 [[./the_little_schemer.org][The Little Schemer]]
+  + [X] 2016-01-31 [[./the_seasoned_schemer.org][The Seasoned Schemer]]
+  + [X] 2016-02-27 [[./the_reasoned_schemer.org][The Reasoned Schemer]]
   + [X] 2016-07-24 [[./the_little_mler.org][The Little MLer]]
 ** To Read
 *** Little Books
