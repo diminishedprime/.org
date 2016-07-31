@@ -1,7 +1,7 @@
 [[../index.org][Main Index]]
 [[./index.org][Reading List]]
 
-* [[./books/mastering_regular_expressions.pdf][Mastering Regular Expressions]] [14%]
+* [[./books/mastering_regular_expressions.pdf][Mastering Regular Expressions]] [28%]
 1. [X] Introduction to Regular Expressions
    1. [X] Solving Real Problems
    2. [X] Regular Expressions as a Language
@@ -9,7 +9,109 @@
    4. [X] Egrep Metacharacters
    5. [X] Expanding the Foundation
    6. [X] Personal Glimpses
-2. [ ] Extended Introductory Examples
+2. [X] Extended Introductory Examples
+   1. [X] About the Examples
+      #+BEGIN_SRC perl
+        $celsius = 68;
+        $fahrenheit = ($celsius * 9 / 5) + 32; # Calculate Fahrenheit
+        return "$celsius C is $fahrenheit F.\n"; # Report both temperatures
+      #+END_SRC
+
+      #+RESULTS:
+      : 68 C is 154.4 F.
+   2. [X] Matching Text with Regular Expressions
+      #+BEGIN_SRC perl
+        $reply = "12345";
+        if ($reply =~ m/^[0-9]+$/) {
+            return true;
+        } else {
+            return false;
+        }
+      #+END_SRC
+
+      #+RESULTS:
+      : true
+
+      [[./mastering_regular_expressions/convert.pl][Celsius to Fahrenheit Converter]]
+   3. [X] Modifying Text with Regular Expressions
+      #+BEGIN_SRC perl
+        $var = "Jeff Fred";
+        $var =~ s/\bJeff\b/Jeffery/;
+        return $var;
+      #+END_SRC
+
+      #+RESULTS:
+      : Jeffery Fred
+
+      #+BEGIN_SRC sh
+        # To replace every instance of sysread with read in file 'file'
+
+        perl \
+            -p \
+            -i \
+            -e \
+            's/sysread/read/g' \
+            file
+
+        # the -p flag  makes the substitution be done in every line of the file.
+
+        # the -i flag makes the changes be written back to the file.
+
+        # the -e flag indicates that the entire program is what's in the string
+      #+END_SRC
+
+        #+BEGIN_SRC perl
+          # Lookahead
+          $var = "Jeffs";
+          $var =~ s/\bJeff(?=s\b)/Jeff'/g;
+          return $var
+        #+END_SRC
+
+        #+RESULTS:
+        : Jeff's
+
+        #+BEGIN_SRC perl
+          $var = "Jeffs";
+          $var =~ s/(?<=\bJeff)(?=s\b)/'/g;
+          return $var
+        #+END_SRC
+
+        #+RESULTS:
+        : Jeff's
+
+        #+BEGIN_SRC perl
+          # using lookbehind '(?<=)'
+          $pop = "1298444215 is a really big number\n";
+          $pop =~ s/(?<=\d)(?=(?:\d\d\d)+(?!\d))/,/g;
+          return $pop
+        #+END_SRC
+
+        #+RESULTS:
+        : 1,298,444,215 is a really big number
+
+        #+BEGIN_SRC perl
+          # without lookbehind
+          $pop = "1298444215 is a really big number\n";
+          $pop =~ s/(\d)(?=(\d\d\d)+(?!\d))/$1,/g;
+          return $pop
+        #+END_SRC
+
+        #+RESULTS:
+        : 1,298,444,215 is a really big number
+
+        [[./mastering_regular_expressions/htmlify.pl][Htmlify]]
+
+        #+BEGIN_SRC sh :results verbatim
+          cd $ORG_HOME/reading-list/mastering_regular_expressions
+          echo "Hello, how are you\nI'm a file with <'s and >'s. \nAlso, my email address is matthewjhamrick@gmail.com\n\nMy website is http://matt.com\!" | perl -w htmlify.pl
+        #+END_SRC
+
+        #+RESULTS:
+        : Hello, how are you
+        : I'm a file with &lt;'s and &gt;'s.
+        : Also, my email address is <a href="mailto:matthewjhamrick@gmail.com">matthewjhamrick@gmail.com</a>
+        : <p>
+        : My website is <a href="http://matt.com">http://matt.com</a>\!
 3. [ ] Overview of Regular Expression Features and Flavors
 4. [ ] The Mechanics of Expression Processing
 5. [ ] Crafting a Regular Expression
