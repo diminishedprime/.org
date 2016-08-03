@@ -1,0 +1,26 @@
+[[../index.org][Home]]
+[[./index.org][Algorithms]]
+
+* Quick Sort
+** Haskell
+#+BEGIN_SRC haskell
+  quickSort [] = []
+  quickSort [x] = [x]
+  quickSort (first:rest) = let smallerThanFirst = [a | a <- rest, a <= first]
+                               biggerThanFirst = [a | a <- rest, a > first]
+                           in  quickSort smallerThanFirst
+                               ++ [first] ++
+                               quickSort biggerThanFirst
+#+END_SRC
+** Clojure
+#+BEGIN_SRC clojure
+  (defn quick-sort [x]
+    (if (<= (count x) 1)
+      x
+      (let [[x & xs] x
+            right (filter (partial <= x) xs)
+            left (filter (partial > x) xs)]
+        (concat (quick-sort left)
+                [x]
+                (quick-sort right)))))
+#+END_SRC

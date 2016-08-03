@@ -6,10 +6,13 @@
    1. [X] Evaluation
    2. [X] Basic Evaluator
    3. [X] Evaluating Atoms
-   4. [-] Evaluating Forms
+   4. [X] Evaluating Forms
       1. [X] Quoting
       2. [X] Alternatives
       3. [X] Sequence
       4. [X] Assignment
-      5. [ ] Abstraction
-      6. [ ] Functional Application
+      5. [X] Abstraction
+      6. [X] Functional Application
+   5. [X] Representing the Environment
+   6. [ ] Representing functions
+      1. [ ] Dynamic and Lexical binding

@@ -1,8 +1,13 @@
 [[../index.org][Home]]
 
 * Algorithms
-+ [[./binary_search.org][Binary Search]]
-+ Selection Sort
-+ [[./insertion_sort.org][Insertion Sort]]
-+ Factorial
-+ isPalindrome
++ Sorting
+  + Selection Sort
+  + [[./quick_sort.org][Quick Sort]]
+  + [[./insertion_sort.org][Insertion Sort]]
+
++ Misc
+  + [[./binary_search.org][Binary Search]]
+  + Factorial
+  + isPalindrome
+  + [[./peak_finding.org][Peak Finding]]

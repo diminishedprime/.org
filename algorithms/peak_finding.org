@@ -1,0 +1,80 @@
+[[../index.org][Home]]
+[[./index.org][Algorithms]]
+
+* Peak Finding
++ An array [a|b|c|d|e|f|g|h|i] b is a peak iff b >= a && b >= c. Find a peak if
+  it exists.
+
+** Haskell
+#+BEGIN_SRC haskell
+#+END_SRC
+** Clojure
+#+BEGIN_SRC clojure
+  (defn last-vec
+    [my-vec]
+    (nth my-vec (dec (count my-vec))))
+
+  (defn left-of-idx
+    [idx my-vec]
+    (subvec my-vec 0 idx))
+
+  (defn right-of-idx
+    [idx my-vec]
+    (subvec my-vec (inc idx)))
+
+  (defn left-middle-right
+    [my-vec]
+    (let [half-way-idx (quot (count my-vec) 2)
+          half-way (nth my-vec half-way-idx)]
+      [(left-of-idx half-way-idx my-vec)
+       half-way
+       (right-of-idx half-way-idx my-vec)]))
+
+  (defn find-peak-1D
+    [my-vec]
+    (let [[left middle right] (left-middle-right my-vec)]
+      (cond
+        (and (seq left)
+             (< middle (last-vec left))) (find-peak-1D left)
+        (and (seq right)
+             (< middle (first right))) (find-peak-1D right)
+        :else middle)))
+
+  (defn find-peak-1D'
+    [my-vec]
+    (some (fn [[a b c]]
+            (if (and a b c)
+              (when (and (>= b a)
+                         (>= b c))
+                b)
+              (max a b))) (partition 3 1 nil my-vec)))
+
+  (let [huge-vec (vec (take 1000000 (iterate inc 0)))]
+    [(time (find-peak-1D huge-vec))
+     (time (find-peak-1D' huge-vec))])
+
+  ;;
+  (defn idx-of-max [my-vec]
+    (first
+     (reduce (fn [[ix x] [iy y]]
+               (if (>= x y) [ix x] [iy y]))
+             (map-indexed (fn [a b] [a b]) my-vec))))
+
+  (defn find-peak-2D
+    [my-vec-of-vecs]
+    (let [[left middle right] (left-middle-right my-vec-of-vecs)
+          idx (idx-of-max middle)]
+      (cond
+        (and (seq left)
+             (< (nth middle idx)
+                (nth (last-vec left) idx))) (find-peak-2D left)
+        (and (seq right)
+             (< (nth middle idx)
+                (nth (first right) idx))) (find-peak-2D right)
+        :else (nth middle idx))))
+
+  (find-peak-2D [[1 1 1 1 1]
+                 [1 1 1 1 1]
+                 [1 1 1 1 1]
+                 [1 1 1 1 1]])
+#+END_SRC
