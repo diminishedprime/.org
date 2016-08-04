@@ -1,0 +1,69 @@
+[[../index.org][Home]]
+[[./index.org][Algorithms]]
+
+* Document Distance
++ Given two documents, D1, and D2 calculate the distance between the two
+  documents.
++ A document is a sequence of words.
++ A word is a string of alphanumeric characters. No whitespace.
+
++ D1 = "the cat", D2 = "the dog"
+
++ In order to accomplish this we should
+  1. Split the document into words
+  2. compute the word frequencies
+  3. dot product the word frequencies
+
+** Haskell
+#+BEGIN_SRC haskell
+#+END_SRC
+** Clojure
+#+BEGIN_SRC clojure
+  (ns doc-distance
+    (:require [clojure.string :as str]))
+
+  (def document-1 "Hello, how are you today?")
+  (def document-2 "Hello, I am doing good. How are you doing?")
+
+  (defn split-document-into-words
+    [document]
+    (str/split document #"[^0-9a-zA-Z]+"))
+
+  (defn my-frequencies
+    [word-seq]
+    (frequencies word-seq))
+
+  (defn pipeline
+    [document]
+    (as-> document $
+      (split-document-into-words $)
+      (my-frequencies $)))
+
+  (defn dot-product-of-freqs
+    [freqs-1 freqs-2]
+    (reduce (fn [acc [word-from-1 count-from-1]]
+              (let [count-from-2 (get freqs-2 word-from-1 0)]
+                (+ (* count-from-1 count-from-2) acc))) 0 freqs-1))
+
+  (defn normalize-dot-product [dot-product word-seq-1 word-seq-2]
+    (/ dot-product
+       (+ (count word-seq-1)
+          (count word-seq-2))))
+
+  (defn document-distance
+    [document-1 document-2]
+    (let [doc-1-words (split-document-into-words document-1)
+          doc-1-freqs (my-frequencies doc-1-words)
+          doc-2-words (split-document-into-words document-2)
+          doc-2-freqs (my-frequencies doc-2-words)
+          dot-product (dot-product-of-freqs
+                       doc-1-freqs
+                       doc-2-freqs)]
+      (double (normalize-dot-product dot-product
+                                     doc-1-words
+                                     doc-2-words))))
+
+  (document-distance document-1 document-2)
+  (document-distance document-1 document-1)
+  (document-distance document-2 document-2)
+#+END_SRC

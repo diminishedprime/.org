@@ -15,14 +15,50 @@
 #+END_SRC
 ** Clojure
 #+BEGIN_SRC clojure
-  (defn insert-into-sorted [sorted-vec next-element]
-    (let [[left right] (split-with (partial > next-element) sorted-vec)]
-      (concat left [next-element] right)))
+  (defn print-sort
+    [sort-fn my-vec]
+    (println (str "Testing that: " my-vec " sorted is: " (vec (sort my-vec))))
+    (assert (= ((comp vec sort) my-vec) ((comp vec sort-fn) my-vec)))
+    (println "SUCCESS!\n"))
 
-  (defn insertion-sort [my-vec]
-    (reduce insert-into-sorted [] my-vec))
+  (defn test-sort
+    [sort-fn]
+    (print-sort sort-fn [1 2 3])
+    (print-sort sort-fn [1 2 3 4 5])
+    (print-sort sort-fn [7 8 6 2 -10 10]))
 
-  (insertion-sort [3 2 1])
-  (insertion-sort [1 2 3 4 5])
-  (insertion-sort [10 8 7 6 2 -10])
+  ;; Not sure if this actually has the right complexity due to the split-with.
+  (let [insert-into-sorted
+        (fn [sorted-vec next-element]
+          (let [[left right] (split-with (partial > next-element) sorted-vec)]
+            (concat left [next-element] right)))
+
+        insertion-sort
+        (fn  [my-vec]
+          (reduce insert-into-sorted [] my-vec))]
+    (test-sort insertion-sort))
+
+  ;; This should have the correct complexity.
+  (let [;; Swap left should only be called with an idx greater than 0.
+        swap-left (fn [vec idx]
+                    (let [left (nth vec (dec idx))
+                          right (nth vec idx)]
+                      (-> vec
+                          (assoc idx left)
+                          (assoc (dec idx) right))))
+
+        insert (fn [j coll]
+                 (cond
+                   (zero? j) coll
+                   (<= (nth coll j)
+                       (nth coll (dec j))) (recur (dec j) (swap-left coll j))
+                   :else (do (println "Nope") coll)))
+
+        insertion-sort
+        (fn [my-vec]
+          (reduce (fn [entire-vec idx]
+                    (insert idx entire-vec))
+                  my-vec
+                  (range (count my-vec))))]
+    (test-sort insertion-sort))
 #+END_SRC
