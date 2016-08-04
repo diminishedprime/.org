@@ -4,6 +4,7 @@
 + Sorting
   + Selection Sort
   + [[./quick_sort.org][Quick Sort]]
+  + [[./merge_sort.org][Merge Sort]]
   + [[./insertion_sort.org][Insertion Sort]]
 
 + Misc

@@ -1,0 +1,61 @@
+[[../index.org][Home]]
+[[./index.org][Algorithms]]
+
+* Merge Sort
+** Haskell
+#+BEGIN_SRC haskell
+#+END_SRC
+** Clojure
+#+BEGIN_SRC clojure
+  (defn print-sort
+    [sort-fn my-vec]
+    (println (str "Testing that: " my-vec " sorted is: " (vec (sort my-vec))))
+    (assert (= ((comp vec sort) my-vec) ((comp vec sort-fn) my-vec)))
+    (println "SUCCESS!\n"))
+
+  (defn test-sort
+    [sort-fn]
+    (print-sort sort-fn [1 2 3])
+    (print-sort sort-fn [1 2 3 4 5])
+    (print-sort sort-fn [7 8 6 2 -10 10]))
+
+  (let [vec-split-at
+        (fn [my-vec idx]
+          [(subvec my-vec 0 idx)
+           (subvec my-vec idx)])
+
+        vec-concat
+        (fn vc [vec-a vec-b]
+          (cond
+            (seq vec-b) (vc
+                         (conj vec-a (first vec-b))
+                         (subvec vec-b 1))
+            :else vec-a))
+
+        merge
+        (fn [sorted-vec-i sorted-vec-j]
+          ((fn helper [i j cat]
+             (cond
+               (= i (count sorted-vec-i)) (vec-concat cat
+                                                      (subvec sorted-vec-j j))
+               (= j (count sorted-vec-j)) (vec-concat cat
+                                                      (subvec sorted-vec-i i))
+               (< (nth sorted-vec-i i)
+                  (nth sorted-vec-j j)) (helper (inc i)
+                                                j
+                                                (conj cat (nth sorted-vec-i i)))
+               :else (helper i
+                             (inc j)
+                             (conj cat (nth sorted-vec-j j)))
+               )) 0 0 []))
+
+        merge-sort
+        (fn ms [my-vec]
+          (let [middle (quot (count my-vec) 2)
+                [left right] (vec-split-at my-vec middle)]
+            (cond
+              (< (count left) 1) right
+              (< (count right) 1) left
+              :else (merge (ms left) (ms right)))))]
+    (test-sort merge-sort))
+#+END_SRC
