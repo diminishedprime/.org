@@ -1,7 +1,7 @@
 [[../index.org][Main Index]]
 [[./index.org][Reading List]]
 
-* [[./books/mastering_regular_expressions.pdf][Mastering Regular Expressions]] [28%]
+* [[./books/mastering_regular_expressions.pdf][Mastering Regular Expressions]] [30%]
 1. [X] Introduction to Regular Expressions
    1. [X] Solving Real Problems
    2. [X] Regular Expressions as a Language
@@ -112,8 +112,16 @@
         : Also, my email address is <a href="mailto:matthewjhamrick@gmail.com">matthewjhamrick@gmail.com</a>
         : <p>
         : My website is <a href="http://matt.com">http://matt.com</a>\!
-3. [ ] Overview of Regular Expression Features and Flavors
+3. [X] Overview of Regular Expression Features and Flavors
+   1. [X] A Casual Stroll Across the Regex Landscape.
+   2. [X] Care and Handling of Regular Expressions
+   3. [X] Strings, Character Encodings, and Modes
+   4. [X] Common Metacharacters and Features
+   5. [X] Guide to the Advanced Chapters
 4. [ ] The Mechanics of Expression Processing
 5. [ ] Crafting a Regular Expression
-6. [ ] Tool-Specific Information
-7. [ ] Perl Regular Expressions
+6. [ ] Crafting an Efficient Expression
+7. [ ] Perl
+8. [ ] Java
+9. [ ] .NET
+10. [ ] PHP
