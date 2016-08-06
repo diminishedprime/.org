@@ -1,0 +1,41 @@
+[[../index.org][Home]]
+[[./index.org][Algorithms]]
+
+* Radix Sort
+** Clojure
+#+BEGIN_SRC clojure
+  (defn counting-sort
+    [k inputs key-fn]
+    (let [input-length (count inputs)
+          vec-repeat (fn [n x]
+                       (vec (repeat n x)))
+          add-item-to-count (fn [count-vec input]
+                              (assoc count-vec
+                                     (key-fn input)
+                                     (inc (nth count-vec (key-fn input)))))
+          starting-idxs (fn [[counts total] i]
+                          [(assoc counts i total)
+                           (+ total (nth counts i))])
+          place (fn [[output counts] x]
+                  [(assoc output (nth counts (key-fn x)) x)
+                   (add-item-to-count counts x)])]
+      (let [histogram (reduce add-item-to-count (vec-repeat k 0) inputs)
+            [counts] (reduce starting-idxs [histogram 0] (range k))
+            [output] (reduce place [(vec-repeat input-length 0) counts] inputs)]
+        output)))
+
+    (defn radix-sort
+      [inputs key-fn r]
+      (let [digits (count (str (apply max (map :key inputs))))
+            key-fns (map (fn [exp]
+                           (let [quot-amount (int (Math/pow r exp))
+                                 radix-er #(mod (quot % quot-amount) r)]
+                             (comp radix-er key-fn))) (range digits))]
+        (reduce (partial counting-sort r) inputs key-fns)))
+
+    (radix-sort [{:key 170} {:key 45}
+                 {:key 75} {:key 90}
+                 {:key 8020} {:key 201}
+                 {:key 24} {:key 66}] :key 10)
+
+#+END_SRC

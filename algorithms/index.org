@@ -8,6 +8,8 @@
   + [[./insertion_sort.org][Insertion Sort]]
   + [[./heap_sort.org][Heap Sort]]
   + [[./avl_sort.org][AVL Sort]]
+  + [[./counting_sort.org][Counting Sort]]
+  + [[./radix_sort.org][Radix Sort]]
 
 + Misc
   + [[./document_distance.org][Document Distance]]

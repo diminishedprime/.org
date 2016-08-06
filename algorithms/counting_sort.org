@@ -1,0 +1,32 @@
+[[../index.org][Home]]
+[[./index.org][Algorithms]]
+
+* Counting Sort
+** Clojure
+#+BEGIN_SRC clojure
+  (defn counting-sort
+    [k inputs key-fn]
+    (let [input-length (count inputs)
+          vec-repeat (fn [n x]
+                       (vec (repeat n x)))
+          add-item-to-count (fn [count-vec input]
+                              (assoc count-vec
+                                     (key-fn input)
+                                     (inc (nth count-vec (key-fn input)))))
+          starting-idxs (fn [[counts total] i]
+                          [(assoc counts i total)
+                           (+ total (nth counts i))])
+          place (fn [[output counts] x]
+                  [(assoc output (nth counts (key-fn x)) x)
+                   (add-item-to-count counts x)])]
+      (let [histogram (reduce add-item-to-count (vec-repeat k 0) inputs)
+            [counts] (reduce starting-idxs [histogram 0] (range k))
+            [output] (reduce place [(vec-repeat input-length 0) counts] inputs)]
+        output)))
+
+  (let [vals-to-sort (shuffle (map (fn [i] {:key i
+                                            :value i}) (range 10)))
+        k 18
+        key-fn :key]
+    (counting-sort k vals-to-sort key-fn))
+#+END_SRC
