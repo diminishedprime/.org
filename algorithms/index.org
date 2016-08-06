@@ -6,6 +6,8 @@
   + [[./quick_sort.org][Quick Sort]]
   + [[./merge_sort.org][Merge Sort]]
   + [[./insertion_sort.org][Insertion Sort]]
+  + [[./heap_sort.org][Heap Sort]]
+  + [[./avl_sort.org][AVL Sort]]
 
 + Misc
   + [[./document_distance.org][Document Distance]]

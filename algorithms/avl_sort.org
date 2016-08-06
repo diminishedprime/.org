@@ -1,0 +1,152 @@
+[[../index.org][Home]]
+[[./index.org][Algorithms]]
+
+* AVL Tree
+** Clojure
+#+BEGIN_SRC clojure
+  (ns avl-tree
+    (:require [clojure.test.check :as tc]
+              [clojure.test.check.properties :as prop]
+              [clojure.test.check.generators :as gen]
+              [clojure.walk :as w]))
+
+  (defn assert-qc [qc-results]
+    (assert (:result qc-results)))
+
+  (defrecord avl-tree [data height left right])
+
+  (defn get-height
+    ([tree]
+     (or (:height tree) -1))
+    ([tree & path]
+     (get-height
+      (get-in tree path))))
+
+  (defn tree-assoc
+    [tree left right]
+    (assoc tree
+           :left left
+           :right right
+           :height (inc (max (get-height left)
+                             (get-height right)))))
+
+  (defn balance-factor
+    ([tree]
+     (- (get-height (:right tree))
+        (get-height (:left tree))))
+    ([tree & path]
+     (balance-factor
+      (get-in tree path))))
+
+  (defn rr [tree]
+    (let [right-height (inc (max (get-height tree :right)
+                                 (get-height tree :left :right)))]
+      (assoc (:left tree)
+             :height (inc (max right-height
+                               (get-height tree :left :left)))
+             :right (assoc tree
+                           :height right-height
+                           :left (when (:left tree)
+                                   (get-in tree [:left :right]))))))
+
+  (defn lr [tree]
+    (let [left-height (inc (max (get-height tree :left)
+                                (get-height tree :right :left)))]
+      (assoc (:right tree)
+             :height (inc (max left-height
+                               (get-height tree :right :right)))
+             :left (assoc tree
+                          :height left-height
+                          :right (when (:right tree)
+                                   (get-in tree [:right :left]))))))
+
+  (defn balance [tree]
+    (let [bft (balance-factor tree)]
+      (if (#{-1 0 1} bft)
+        tree
+        (when tree
+          (case bft
+            2  (case (balance-factor tree :right)
+                 -1 (-> (update tree :right rr) lr)
+                 (lr tree))
+            -2 (case (balance-factor tree :left)
+                 1 (-> (update tree :left lr) rr)
+                 (rr tree)))))))
+
+  (defn avl-insert [tree val]
+    (if-let [tree-data (:data tree)]
+      (balance
+       (let [cmp (compare tree-data val)]
+         (cond
+           (neg? cmp) (tree-assoc tree
+                                  (avl-insert (:left tree) val)
+                                  (:right tree))
+           (pos? cmp) (tree-assoc tree
+                                  (:left tree)
+                                  (avl-insert (:right tree) val))
+           (zero? cmp) (assoc tree :data val))))
+      (map->avl-tree {:data val
+                      :height 0})))
+
+  (defn avl-create [my-seq]
+    (reduce avl-insert {} my-seq))
+
+  (defn in-order-coll
+    ([coll tree]
+     (in-order-coll coll tree :data))
+    ([coll tree fn_]
+     (if tree
+       (let [right-in-order (in-order-coll coll (:right tree) fn_)
+             with-data (if-let [res (fn_ tree)]
+                         (conj right-in-order res)
+                         right-in-order)
+             left-in-order (in-order-coll with-data (:left tree) fn_)]
+         left-in-order)
+       coll)))
+
+  (defn avl-sort [data]
+    (let [avl-tree (avl-create data)]
+      (in-order-coll [] avl-tree :data)))
+
+  (assert-qc
+   (tc/quick-check
+    1000
+    (prop/for-all [v (gen/vector-distinct
+                      gen/int)]
+                  (let [sorted (avl-sort v)]
+                    (and (= (count v)
+                            (count sorted))
+                         (= (sort v) sorted))))))
+
+  (defn avl-lookup
+    [tree val]
+    (when-let [td (:data tree)]
+      (let [cmp (compare td val)]
+        (cond
+          (pos? cmp) (avl-lookup (:right tree) val)
+          (neg? cmp) (avl-lookup (:left tree) val)
+          (zero? cmp) true))))
+
+  (assert-qc
+   (tc/quick-check
+    1000
+    (prop/for-all [v (gen/vector-distinct
+                      gen/int
+                      {:min-elements 1})]
+                  (let [avl-tree (avl-create v)
+                        rand-element (rand-nth v)]
+                    (avl-lookup avl-tree rand-element)))))
+
+  (defn balance-factors [avl-tree]
+    (in-order-coll [] avl-tree balance-factor))
+
+  (assert-qc
+   (tc/quick-check
+    1000
+    (prop/for-all [v (gen/vector-distinct
+                      gen/int)]
+                  (let [avl-tree (reduce avl-insert {} v)
+                        my-balance-factors (balance-factors avl-tree)]
+                    (every? #{0 -1 1} my-balance-factors)))))
+#+END_SRC
+q

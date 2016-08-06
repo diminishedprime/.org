@@ -1,0 +1,98 @@
+[[../index.org][Home]]
+[[./index.org][Algorithms]]
+
+* Insertion Sort
+** Haskell
+#+BEGIN_SRC haskell
+#+END_SRC
+** Clojure
+#+BEGIN_SRC clojure
+  (ns heaps)
+
+  (defn print-sort
+    [sort-fn my-vec]
+    (println (str "Testing that: " my-vec " sorted is: " (vec (sort my-vec))))
+    (assert (= ((comp vec sort) my-vec) ((comp vec sort-fn) my-vec)))
+    (println "SUCCESS!\n"))
+
+  (defn test-sort
+    [sort-fn]
+    (print-sort sort-fn [1 2 3])
+    (print-sort sort-fn [1 2 3 4 5])
+    (print-sort sort-fn [7 8 6 2 -10 10]))
+
+  (defn heap-nth [my-heap idx]
+    (nth my-heap (dec idx)))
+
+  (defn parent [my-heap idx]
+    (when-not (= idx 1) (quot idx 2)))
+
+  (defn heap-size [my-heap] (dec (count my-heap)))
+
+  (defn right [my-heap idx]
+    (let [my-heap-size (heap-size my-heap)
+          bound (inc (* 2 idx))]
+      (when (<= bound my-heap-size)
+        bound)))
+
+  (defn left [my-heap idx]
+    (let [my-heap-size (heap-size my-heap)
+          bound (* 2 idx)]
+      (when (<= bound my-heap-size)
+        bound)))
+
+  (defn swap-heap [my-vec i j]
+    (let [ith (heap-nth my-vec i)
+          jth (heap-nth my-vec j)]
+      (-> my-vec
+          (assoc (dec i) jth)
+          (assoc (dec j) ith))))
+
+  (defn heap-size
+    [my-vec]
+    (count my-vec))
+
+  (defn max-heapify
+    "Corrects a single violation of the heap property in a sub-tree's root."
+    [my-vec i]
+    (let [largest (if-let [l (left my-vec i)]
+                    (if (> (heap-nth my-vec l)
+                           (heap-nth my-vec i)) l i)
+                    i)
+          largest (if-let [r (right my-vec i)]
+                    (if (> (heap-nth my-vec r)
+                           (heap-nth my-vec largest))
+                      r
+                      largest)
+                    largest)]
+      (if (not= largest i)
+        (-> my-vec
+            (swap-heap i largest)
+            (max-heapify largest))
+        my-vec)))
+
+  (defn build-max-heap
+    "Produces a max-heap from an unordered vector."
+    [my-vec]
+    (let [my-heap-size (heap-size my-vec)
+          steps (range (quot my-heap-size 2) 0 -1)]
+      (reduce max-heapify my-vec steps)))
+
+  (defn heap-max [my-heap] (heap-nth my-heap 1))
+
+  (defn heap-sort
+    [my-vec]
+    (reverse
+     (let [max-heap (build-max-heap my-vec)]
+       ((fn h [acc max-heap]
+          (if (< 1 (count max-heap))
+            (let [heap-size (heap-size max-heap)
+                  max-element (heap-max max-heap)
+                  first-and-last-swapped (swap-heap max-heap 1 heap-size)
+                  drop-n (subvec first-and-last-swapped 0 (dec heap-size))
+                  fixed (max-heapify drop-n 1)]
+              (h (conj acc max-element) fixed))
+            (conj acc (first max-heap)))) [] max-heap))))
+
+  (test-sort heap-sort)
+#+END_SRC
