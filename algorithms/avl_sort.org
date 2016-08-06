@@ -149,4 +149,3 @@
                         my-balance-factors (balance-factors avl-tree)]
                     (every? #{0 -1 1} my-balance-factors)))))
 #+END_SRC
-q
