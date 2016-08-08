@@ -1,7 +1,7 @@
 [[../index.org][Main Index]]
 [[./index.org][Reading List]]
 
-* [[./books/mastering_regular_expressions.pdf][Mastering Regular Expressions]] [30%]
+* [[./books/mastering_regular_expressions.pdf][Mastering Regular Expressions]] [40%]
 1. [X] Introduction to Regular Expressions
    1. [X] Solving Real Problems
    2. [X] Regular Expressions as a Language
@@ -118,7 +118,13 @@
    3. [X] Strings, Character Encodings, and Modes
    4. [X] Common Metacharacters and Features
    5. [X] Guide to the Advanced Chapters
-4. [ ] The Mechanics of Expression Processing
+4. [X] The Mechanics of Expression Processing
+   1. [X] Start Your Engines!
+   2. [X] Match Basics
+   3. [X] Regex-Directed Versus Text-Directed
+   4. [X] Backtracking
+   5. [X] More About Greediness and Backtracking
+   6. [X] NFA, DFA, and POSIX
 5. [ ] Crafting a Regular Expression
 6. [ ] Crafting an Efficient Expression
 7. [ ] Perl
