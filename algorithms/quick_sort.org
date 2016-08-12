@@ -23,4 +23,28 @@
         (concat (quick-sort left)
                 [x]
                 (quick-sort right)))))
+
+  (defn quick-sort [[x & xs]]
+    (if-not (seq xs)
+      x
+      (concat (quick-sort (filter (partial > x) xs))
+              [x]
+              (quick-sort (filter (partial <= x) xs)))))
+
+  (quick-sort [1 2 1 0])
+
+  (defmacro x [cmp a as]
+    `(filter (partial ~cmp ~a) ~as))
+
+  (defmacro y [fn-name cmp a as]
+    `(concat (~fn-name (x ~cmp ~a ~as))
+             [~a]
+             (~fn-name (x (complement ~cmp) ~a ~as))))
+
+  (defn poop [[a & as]]
+    (if (or a (seq as))
+      (y poop > a as)
+      a))
+
+  (poop [3 2 1 0])
 #+END_SRC
