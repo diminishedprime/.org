@@ -3,6 +3,7 @@
 
 * Lisp In Small Pieces
 1. [-] The Basics of Interpretation
+   [[./lisp_in_small_pieces/01_the_basics_of_intrepretation.scm]]
    1. [X] Evaluation
    2. [X] Basic Evaluator
    3. [X] Evaluating Atoms
@@ -14,5 +15,18 @@
       5. [X] Abstraction
       6. [X] Functional Application
    5. [X] Representing the Environment
-   6. [ ] Representing functions
-      1. [ ] Dynamic and Lexical binding
+   6. [X] Representing functions
+      1. [X] Dynamic and Lexical binding
+      2. [X] Deep or Shallow Implementation
+   7. [X] Global Environment
+   8. [X] Starting The Interpreter
+   9. [X] Conclusions
+   10. [ ] Exercises
+2. [-] Lisp, 1, 2, ... ω
+   1. [X] Lisp₁
+   2. [X] Lisp₂
+      1. [X] Evaluating a Function Term
+      2. [X] Duality of the Two Worlds
+      3. [X] Using Lisp₂
+      4. [X] Enriching the Function Environment
+   3. [ ] Other Extensions
