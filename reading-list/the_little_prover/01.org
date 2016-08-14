@@ -1,0 +1,40 @@
+[[../index.org][Reading List]]
+[[../the_little_prover.org][The Little Prover]]
+
+* Old Games, New Rules
+#+BEGIN_SRC scheme
+  (load "j-bob-lang.scm")
+  (load "j-bob.scm")
+
+  (car (cons 'ham '(eggs))) ;; => ham
+
+  (atom '()) ;; => t
+
+  (atom (cons 'ham '(eggs))) ;; => nil
+
+  ;; (atom (cons a b))
+
+  (dethm atom/cons (x y)
+         (equal (atom (cons x y)) 'nil)) ;; => #<unspecified>
+
+  (dethm car/cons (x y)
+         (equal (car (cons x y)) x)) ;;=> #<unspecified>
+
+  (dethm cdr/cons (x y)
+         (equal (cdr (cons x y)) y)) ;;=> #<unspecified>
+
+  (dethm equal-same (x)
+         (equal (equal x x) 't)) ;;=> #<unspecified>
+
+  (dethm equal-swap (x y)
+         (equal (equal x y)
+                (equal y x))) ;;=> #<unspecified>
+
+  ;;;;;;;;;;;;;;
+  ;; Examples ;;
+  (defun chapter1.example1 ()
+    (J-Bob/step (prelude)
+                '(car (cons 'ham '(eggs)))
+                '(((1) (cons 'ham '(eggs)))
+                  (() (car 'ham eggs)))))
+#+END_SRC

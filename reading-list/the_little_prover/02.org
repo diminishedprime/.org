@@ -1,0 +1,72 @@
+[[../index.org][Reading List]]
+[[../the_little_prover.org][The Little Prover]]
+
+* Even Older Games
+#+BEGIN_SRC scheme
+  (load "j-bob-lang.scm") ;; => #<unspecified>
+  (load "j-bob.scm") ;; => #<unspecified>
+
+  (dethm if-true (x y)
+         (equal (if 't x y) x)) ;; => #<unspecified>
+
+  (dethm if-false (x y)
+         (equal (if 'nil x y) y)) ;; => #<unspecified>
+
+  (dethm if-same (x y)
+         (equal (if x y y) y)) ;; => #<unspecified>
+
+  (dethm equal-same (x)
+         (equal (equal x x) 't)) ;; => #<unspecified>
+
+  (dethm equal-swap (x y)
+         (equal (equal x y) (equal y x))) ;; => #<unspecified>
+
+  (dethm equal-if (x y)
+         (if (equal x y) (equal x y) 't)) ;; => #<unspecified>
+
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; The Law of Dethm (final) ;;
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;; For any theorem (dethm name (x₁ ... xn) bodyₓ), the variables x₁ ... xn in
+  ;; bodyₓ can be replaced with any corresponding expressions e₁ ... en. The
+  ;; result, bodyₑ, can be used to rewrite a focus as follows.
+
+  ;; 1. bodyₑ must contain the conclusion (equal p q) or (equal q p),
+
+  ;; 2. the conclusion must not be found in the question of any if or in the
+  ;; argument of any function application.
+
+  ;; 3. and if the conclusion can be found in an if answer (respectively else),
+  ;; then the focus must be found in an if answer (respectively else) with the
+  ;; same question.
+
+  ;; The Axioms of Cons (final)
+  (dethm atom/cons (x y)
+         (equal (atom (cons x y)) 'nil)) ;; => #<unspecified>
+
+  (dethm car/cons (x y)
+         (equal (car (cons x y)) x)) ;; => #<unspecified>
+
+  (dethm cdr/cons (x y)
+         (equal (cdr (cons x y)) y)) ;; => #<unspecified>
+
+  (dethm cons/car+cdr (x)
+         (if (atom x) 't (equal (cons (car x) (cdr x)) x))) ;; => #<unspecified>
+
+
+  ;; The Axioms of If (final)
+  (dethm if-true (x y)
+         (equal (if 't x y) x)) ;; => #<unspecified>
+
+  (dethm if-false (x y)
+         (equal (if 'nil x y) y)) ;; => #<unspecified>
+
+  (dethm if-same (x y)
+         (equal (if x y y) y)) ;; => #<unspecified>
+
+  (dethm if-nest-A (x y z)
+         (if x (equal (if x y z) y) 't)) ;; => #<unspecified>
+
+  (dethm if-nest-E (x y z)
+         (if x 't (equal (if x y z) z))) ;; => #<unspecified>
+#+END_SRC

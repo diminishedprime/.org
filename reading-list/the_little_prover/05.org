@@ -1,0 +1,8 @@
+[[../index.org][Reading List]]
+[[../the_little_prover.org][The Little Prover]]
+
+* Think It Over, And Over, And Over
+#+BEGIN_SRC scheme
+  (load "j-bob-lang.scm") ;; => #<unspecified>
+  (load "j-bob.scm") ;; => #<unspecified>
+#+END_SRC

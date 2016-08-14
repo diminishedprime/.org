@@ -42,13 +42,13 @@
 
   (define (extend env variables values)
     (cond ((pair? variables) (if (pair? values)
-                                 (cons (list (car variables) (car values))
+                                 (cons (cons (car variables) (car values))
                                        (extend env (cdr variables) (cdr values)))
                                  (wrong "Too few values" values)))
           ((null? variables) (if (null? values)
                                  env
                                  (wrong "Too many values" '())))
-          ((symbol? variables) (cons (list variables values) env))))
+          ((symbol? variables) (cons (cons variables values) env))))
 
   (define (make-function variables body env)
     (lambda values
@@ -82,3 +82,4 @@
 (evaluate '((lambda (a) (+ a 1)) 1) env) ;;=> 2
 (evaluate '(+ 2 1) env) ;; => 3
 (evaluate '(+ (+ 1 1) 2 3 4) env) ;; => 11
+(evaluate '(+ 1 2) env)

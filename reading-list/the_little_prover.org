@@ -1,0 +1,23 @@
+[[../index.org][Main Index]]
+[[./index.org][Reading List]]
+
+* The Little Prover
+1. [X] [[./the_little_prover/01.org][Old Games, New Rules]]
+2. [X] [[./the_little_prover/02.org][Even Older Games]]
+3. [ ] [[./the_little_prover/03.org][What's In A Name]]
+4. [ ] [[./the_little_prover/04.org][Part Of This Total Breakfast]]
+5. [ ] [[./the_little_prover/05.org][Think It Over, And Over, And Over]]
+6. [ ] [[./the_little_prover/06.org][Think It Through]]
+7. [ ] [[./the_little_prover/07.org][Oh My Stars!]]
+8. [ ] [[./the_little_prover/08.org][Learning The Rules]]
+9. [ ] [[./the_little_prover/09.org][Changing The Rules]]
+10. [ ] [[./the_little_prover/10.org][The Stars Are Aligned]]
+* Appendix
++ [ ] [[./the_little_prover/recess.org][Recess]]
++ [ ] The Proof Of The Pudding
++ [ ] The Little Assistant
++ [ ] Restless For More
+
+
+[[../index.org][Reading List]]
+[[../the_little_prover.org][The Little Prover]]

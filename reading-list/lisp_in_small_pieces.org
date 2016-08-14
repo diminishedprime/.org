@@ -29,4 +29,8 @@
       2. [X] Duality of the Two Worlds
       3. [X] Using Lisp₂
       4. [X] Enriching the Function Environment
-   3. [ ] Other Extensions
+   3. [X] Other Extensions
+   4. [X] Comparing Lisp₁ and Lisp₂
+   5. [ ] Name Spaces
+   [[./lisp_in_small_pieces/02_05_01.scm]]
+      1. [ ] Dynamic Variables
