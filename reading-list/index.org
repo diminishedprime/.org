@@ -1,10 +1,12 @@
 [[../index.org][Main Index]]
 
 * Reading List/Digital Bookshelf
-** Priority
+** Top of Queue
 + [ ] [[./haskell_programming_from_first_principles.org][Haskell Book]]
 + [ ] [[./mastering_regular_expressions.org][Mastering Regular Expressions]]
 + [ ] [[./lisp_in_small_pieces.org][Lisp In Small Pieces]]
++ [ ] [[./introduction_to_algorithms.org][Introduction To Algorithms]]
++ [ ] [[./the_little_prover.org][The Little Prover]]
 ** Reference
 *** Programming Books
 +   Clojure
@@ -20,7 +22,6 @@
 ** To Read
 *** Little Books
 + [[http://www.amazon.com/Little-Java-Few-Patterns/dp/0262561158/ref=sr_1_1?s=books&ie=UTF8&qid=1454204257&sr=1-1&keywords=a+little+java%2C+a+few+patterns][A Little Java, A Few Patterns]]
-+ [ ] [[./the_little_prover.org][The Little Prover]]
 *** Programming Books
 + General
   + [ ] [[./code_complete.org][Code Complete]]

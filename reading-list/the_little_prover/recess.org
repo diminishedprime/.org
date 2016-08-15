@@ -1,0 +1,27 @@
+[[../index.org][Reading List]]
+[[../the_little_prover.org][The Little Prover]]
+
+* Recess
+#+BEGIN_SRC scheme
+  (load "j-bob-lang.scm") ;; => #<unspecified>
+  (load "j-bob.scm") ;; => #<unspecified>
+
+  (J-Bob/step (prelude)
+              '(car (cons 'ham '(cheese)))
+              '())
+
+  (J-Bob/step (prelude)
+              '(car (cons 'ham '(cheese)))
+              '((() (car/cons 'ham '(cheese)))))
+
+  (J-Bob/step (prelude)
+              '(equal 'flapjack (atom (cons a b)))
+              '(((2) (atom/cons a b))
+                (() (equal 'flapjack 'nil))))
+
+  (J-Bob/step (prelude)
+              '(atom (cdr (cons (car (cons p q)) '())))
+              '(((1 1 1) (car/cons p q))
+                ((1) (cdr/cons p '()))
+                (() (atom '()))))
+#+END_SRC

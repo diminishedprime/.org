@@ -36,5 +36,82 @@
     (J-Bob/step (prelude)
                 '(car (cons 'ham '(eggs)))
                 '(((1) (cons 'ham '(eggs)))
-                  (() (car 'ham eggs)))))
+                  (() (car '(ham eggs)))))) ;; => #<unspecified>
+  (chapter1.example1) ;; => (quote ham)
+
+  (defun chapter1.example2 ()
+    (J-Bob/step (prelude)
+                '(atom '())
+                '((() (atom '()))))) ;; => #<unspecified>
+  (chapter1.example2) ;; => (quote t)
+
+  (defun chapter1.example3 ()
+    (J-Bob/step (prelude)
+                '(atom (cons 'ham '(eggs)))
+                '(((1) (cons 'ham '(eggs)))
+                  (() (atom '(ham eggs)))))) ;; => #<unspecified>
+  (chapter1.example3) ;; => (quote nil)
+
+  (defun chapter1.example4 ()
+    (J-Bob/step (prelude)
+                '(atom (cons a b))
+                '((() (atom/cons a b))))) ;; => #<unspecified>
+  (chapter1.example4) ;; => (quote nil)
+
+  (defun chapter1.example5 ()
+    (J-Bob/step (prelude)
+                '(equal 'flapjack (atom (cons a b)))
+                '(((2) (atom/cons a b))
+                  (() (equal 'flapjack 'nil))))) ;; => #<unspecified>
+  (chapter1.example5) ;; => (quote nil)
+
+  (defun chapter1.example6 ()
+    (J-Bob/step (prelude)
+                '(atom (cdr (cons (car (cons p q)) '())))
+                '(((1 1 1) (car/cons p q))
+                  ((1) (cdr/cons p '()))
+                  (() (atom '()))))) ;; => #<unspecified>
+  (chapter1.example6) ;; => (quote t)
+
+  (defun chapter1.example7 ()
+    (J-Bob/step (prelude)
+                '(atom (cdr (cons (car (cons p q)) '())))
+                '(((1) (cdr/cons (car (cons p q)) '()))
+                  (() (atom '()))))) ;; => #<unspecified>
+  (chapter1.example7) ;; => (quote t)
+
+  (defun chapter1.example8 ()
+    (J-Bob/step (prelude)
+                '(car (cons (equal (cons x y) (cons x y)) '(and crumpets)))
+                '(((1 1) (equal-same (cons x y)))
+                  ((1) (cons 't '(and crumpets)))
+                  (() (car '(t and crumpets)))))) ;; => #<unspecified>
+  (chapter1.example8) ;; => (quote t)
+
+  (defun chapter1.example9 ()
+    (J-Bob/step (prelude)
+                '(equal (cons x y) (cons 'bagels '(and lox)))
+                '((() (equal-swap (cons x y) (cons 'bagels '(and lox))))))) ;; => #<unspecified>
+  (chapter1.example9) ;; => (equal (cons (quote bagels) (quote (and lox))) (cons x y))
+
+  (defun chapter1.example10 ()
+    (J-Bob/step (prelude)
+                '(cons y (equal (car (cons (cdr x) (car y))) (equal (atom x) 'nil)))
+                '(((2 1) (car/cons (cdr x) (car y)))))) ;; => #<unspecified>
+  (chapter1.example10) ;; => (cons y (equal (cdr x) (equal (atom x) (quote nil))))
+
+  (defun chapter1.example11 ()
+    (J-Bob/step (prelude)
+                '(cons y (equal (car (cons (cdr x) (car y))) (equal (atom x) 'nil)))
+                '(((2 1) (car/cons (car (cons (cdr x) (car y))) '(oats)))
+                  ((2 2 2) (atom/cons (atom (cdr (cons a b))) (equal (cons a b) c)))
+                  ((2 2 2 1 1 1) (cdr/cons a b))
+                  ((2 2 2 1 2) (equal-swap (cons a b) c))))) ;; => #<unspecified>
+  (chapter1.example11) ;; => (cons y (equal (car (cons (car (cons (cdr x) (car y))) (quote (oats)))) (equal (atom x) (atom (cons (atom b) (equal c (cons a b)))))))
+
+  (defun chapter1.example12 ()
+    (J-Bob/step (prelude)
+                '(atom (car (cons (car a) (cdr b))))
+                '(((1) (car/cons (car a) (cdr b)))))) ;; => #<unspecified>
+  (chapter1.example12) ;; => (atom (car a))
 #+END_SRC
