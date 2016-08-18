@@ -4,7 +4,7 @@
 * The Little Prover
 1. [X] [[./the_little_prover/01.org][Old Games, New Rules]]
 2. [X] [[./the_little_prover/02.org][Even Older Games]]
-3. [ ] [[./the_little_prover/03.org][What's In A Name]]
+3. [X] [[./the_little_prover/03.org][What's In A Name]]
 4. [ ] [[./the_little_prover/04.org][Part Of This Total Breakfast]]
 5. [ ] [[./the_little_prover/05.org][Think It Over, And Over, And Over]]
 6. [ ] [[./the_little_prover/06.org][Think It Through]]
