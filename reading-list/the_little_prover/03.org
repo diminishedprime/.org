@@ -5,4 +5,208 @@
 #+BEGIN_SRC scheme
   (load "j-bob-lang.scm") ;; => #<unspecified>
   (load "j-bob.scm") ;; => #<unspecified>
+
+  (defun pair (x y)
+    (cons x (cons y '()))) ;; => #<unspecified>
+
+  (defun first-of (x)
+    (car x)) ;; => #<unspecified>
+
+  (defun second-of (x)
+    (car (cdr x))) ;; => #<unspecified>
+
+  (pair 'sharp 'cheddar) ;; => (sharp cheddar)
+  (first-of (pair 'baby 'swiss)) ;; => baby
+  (second-of (pair 'montery 'jack)) ;; => jack
+
+  (dethm first-of-pair (a b)
+         (equal (first-of (pair a b) a))) ;; => #<unspecified>
+
+  ;; The Law of Defun (initial)
+
+  ;; Given the non-recursive function (defun name (x1 ... xn) body), (name e1 ...
+  ;; en) = body where x1 is e1, ..., xn is en.
+
+  ;; => (equal (first-of (pair a b)) a)
+  ;; => law of defun
+  ;; => (equal (first-of (cons a (cons b '()))) a)
+  ;; => law of defun
+  ;; => (equal (car (cons a (cons b '()))) a)
+  ;; => car/cons
+  ;; => (equal a a)
+  ;; => equal-same
+  ;; => 't
+
+  (dethm second-of-poir (a b)
+         (equal (second-of (pair a b)) b)) ;; => #<unspecified>
+
+  ;; => (equal (second-of (pair a b)) b)
+  ;; => law of defun
+  ;; => (equal (car (cdr (pair a b))) b)
+  ;; => law of defun
+  ;; => (equal (car (cdr (cons a (cons b '())))) b)
+  ;; => cdr/cons
+  ;; => (equal (car (cons b '())) b)
+  ;; => car/cons
+  ;; => (equal b b)
+  ;; => equal-same
+  ;; 't
+
+  (defun in-pair? (xs)
+    (if (equal (first-of xs) '?)
+        't
+        (equal (second-of xs) '?))) ;; => #<unspecified>
+
+  (dethm in-first-of-pair (b)
+         (equal (in-pair? (pair '? b))'t)) ;; => #<unspecified>
+
+  ;; => (equal (in-pair? (pair '? b)) 't)
+  ;; => definition of pair
+  ;; => (equal (in-pair? (cons '? (cons b '()))) 't)
+  ;; => definition of in-pair?
+  ;; => (equal (if (equal (first-of (cons '? (cons b '())))
+  ;; =>                   '?)
+  ;; =>            't
+  ;; =>            (equal (second-of (cons '? (cons b '())))
+  ;; =>                   '?))
+  ;; =>        't)
+  ;; => definition of first-of
+  ;; => (equal (if (equal (car (cons '? (cons b '())))
+  ;; =>                   '?)
+  ;; =>            't
+  ;; =>            (equal (second-of (cons '? (cons b '())))
+  ;; =>                   '?))
+  ;; =>        't)
+  ;; => car/cons
+  ;; => (equal (if (equal '?
+  ;; =>                   '?)
+  ;; =>            't
+  ;; =>            (equal (second-of (cons '? (cons b '())))
+  ;; =>                   '?))
+  ;; =>        't)
+  ;; => equal-same
+  ;; => (equal (if 't
+  ;; =>            't
+  ;; =>            (equal (second-of (cons '? (cons b '())))
+  ;; =>                   '?))
+  ;; =>        't)
+  ;; => we can tell this is 't now.
+  ;; => first of pair is a theorum
+
+  (dethm in-second-of-pair (a)
+         (equal (in-pair? (pair a '?)) 't)) ;; => #<unspecified>
+
+  ;; (equal (in-pair? (pair a '?))
+  ;;        't)
+  ;; (equal (in-pair? (cons a (cons '? '())))
+  ;;        't)
+  ;; (equal (if (equal (first-of (cons a (cons '? '())))
+  ;;                   '?)
+  ;;            't
+  ;;            (equal (second-of (cons a (cons '? '())))
+  ;;                   '?))
+  ;;        't)
+  ;; (equal (if (equal 'a '?)
+  ;;            't
+  ;;            (equal (second-of (cons a (cons '? '())))
+  ;;                   '?))
+  ;;        't)
+  ;; (equal (if (equal 'a '?)
+  ;;            't
+  ;;            (equal (car (cdr (cons a (cons '? '()))))
+  ;;                   '?))
+  ;;        't)
+  ;; (equal (if (equal 'a '?)
+  ;;            't
+  ;;            (equal '? '?))
+  ;;        't)
+  ;; (equal (if (equal 'a '?)
+  ;;            't
+  ;;            't)
+  ;;        't)
+  ;; (equal 't 't)
+  ;; 't
+
+  ;; Insight: Skip Irrelevant Expressions
+
+  ;; Rewriting a claim to 't does not have to go in any particular order. Some
+  ;; parts of the expression might be skipped entirely. Fore example, if-same can
+  ;; simplify many if expressions to 't regardless of the if question.
+
+
+  ;; Chapter 3 Proofs!!!!
+
+  (defun defun.pair ()
+    (J-Bob/define (prelude)
+                  '(((defun pair (x y)
+                       (cons x (cons y '())))
+                     nil)))) ;; => #<unspecified>
+
+  (defun defun.first-of ()
+    (J-Bob/define (defun.pair)
+                  '(((defun first-of (x)
+                       (car x))
+                     nil)))) ;; => #<unspecified>
+
+  (defun defun.second-of ()
+    (J-Bob/define (defun.first-of)
+                  '(((defun second-of (x)
+                       (car (cdr x)))
+                     nil)))) ;; => #<unspecified>
+
+  (defun dethm.first-of-pair ()
+    (J-Bob/define (defun.second-of)
+                  '(((dethm first-of-pair (a b)
+                            (equal (first-of (pair a b)) a))
+                     nil
+                     ((1 1) (pair a b))
+                     ((1) (first-of (cons a (cons b '()))))
+                     ((1) (car/cons a (cons b '())))
+                     (() (equal-same a)))))) ;; => #<unspecified>
+
+  (defun dethm.second-of-pair ()
+    (J-Bob/define (dethm.first-of-pair)
+                  '(((dethm second-of-pair (a b)
+                            (equal (second-of (pair a b)) b))
+                     nil
+                     ((1) (second-of (pair a b)))
+                     ((1 1 1) (pair a b))
+                     ((1 1) (cdr/cons a (cons b '())))
+                     ((1) (car/cons b '()))
+                     (() (equal-same b)))))) ;; => #<unspecified>
+
+  (defun defun.in-pair? ()
+    (J-Bob/define (dethm.second-of-pair)
+                  '(((defun in-pair? (xs)
+                       (if (equal (first-of xs) '?) 't (equal (second-of xs) '?)))
+                     nil)))) ;; => #<unspecified>
+
+  (defun dethm.in-first-of-pair ()
+    (J-Bob/define (dethm.second-of-pair)
+                  '(((dethm in-first-of-pair (b)
+                            (equal (in-pair? (pair '? b)) 't))
+                     nil
+                     ((1 1) (pair '? b))
+                     ((1) (in-pair? (cons '? (cons b '()))))
+                     ((1 Q 1) (first-of (cons '? (cons b '()))))
+                     ((1 Q 1) (car/cons '? (cons b '())))
+                     ((1 Q) (equal-same '?))
+                     ((1) (if-true 't (equal (second-of (cons '? (cons b '()))))))
+                     (() (equal-same 't)))))) ;; => #<unspecified>
+
+  (defun dethm.in-second-of-pair ()
+    (J-Bob/define (dethm.in-first-of-pair)
+                  '(((dethm in-second-of-pair (a)
+                            (equal (in-pair? (pair a '?)) 't))
+                     nil
+                     ((1 1) (pair a '?))
+                     ((1) (in-pair? (cons a (cons '? '()))))
+                     ((1 Q 1) (first-of (cons a (cons '? '()))))
+                     ((1 Q 1) (car/cons a (cons '? '())))
+                     ((1 E 1) (second-of (cons a (cons '? '()))))
+                     ((1 E 1 1) (cdr/cons a (cons '? '())))
+                     ((1 E 1) (car/cons '? '()))
+                     ((1 E) (equal-same '?))
+                     ((1) (if-same (equal a '?) 't))
+                     (() (equal-same 't)))))) ;; => #<unspecified>
 #+END_SRC

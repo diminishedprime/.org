@@ -2,9 +2,20 @@
 [[./index.org][Reading List]]
 
 * Introduction To Algorithms
-11) [@11] [-] Hash Tables
+[[~/programming/books/introduction_to_algorithms.pdf][Book]]
+1) [ ]
+2) [ ]
+3) [ ]
+4) [ ]
+5) [ ]
+6) [ ]
+7) [ ]
+8) [ ]
+9) [ ]
+10) [ ]
+11) [X] Hash Tables
     1. [X] Direct-address tables
-    2. [ ] Hash tables
-    3. [ ] Hash functions
-    4. [ ] Open addressing
-    5. [ ] Perfect hashing
+    2. [X] Hash tables
+    3. [X] Hash functions
+    4. [X] Open addressing
+    5. [X] Perfect hashing
