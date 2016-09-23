@@ -68,3 +68,5 @@ username: mjhclojure
 63. [X] [[./063.org][Powerful Digit Counts]]
 64. [X] [[./064.org][Odd Period Square Roots]]
 65. [X] [[./065.org][Convergents of e]]
+66. [ ]
+67. [ ] [[./067.org][Maximum Path Sum II]]
