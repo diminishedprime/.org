@@ -1,0 +1,54 @@
+[[../index.org][Main Index]]
+[[./index.org][Reading List]]
+
+* [[http://search.safaribooksonline.com/book/programming/9781680500059/firstchapter][Seven Languages in Seven Weeks]]
+1. [X] Introduction
+2. [X] Ruby
+   + [X] Quick History
+   + [X] Day 1: Finding A Nanny
+     #+BEGIN_SRC ruby
+       # Print the string, Hello, world!
+       (puts "Hello, world!")
+
+       # For the string “Hello, Ruby,” find the index of the word “Ruby.”
+       ("Hello, Ruby,".index("Ruby"))
+
+       # Print your name ten times.
+       10.times do
+         puts "Your name"
+       end
+
+       # Print the string “This is sentence number 1,” where the number 1 changes from
+       # 1 to 10.
+       num = 1
+       11.times do |num|
+         puts "This is sentence number #{num}"
+         num = num + 1
+       end
+
+       #Run a Ruby program from a file.
+       # (This is sorta what I'm doing right now...)
+
+       # Bonus problem: If you’re feeling the need for a little more, write a program
+       # that picks a random number. Let a player guess the number, telling the player
+       # whether the guess is too low or too high.
+
+       #(Hint: rand(10) will generate a random number from 0 to 9, and gets will read a
+       #string from the keyboard that you can translate to an integer.)
+
+       def guessANumber
+         randomNum = rand(10)
+         guessedCorrectly = false
+         while !guessedCorrectly
+           puts "Try to guess the number!"
+           guess = gets
+           guessAsNumber = guess.to_i
+           if guessAsNumber == randomNum
+             puts "You guessed correctly!"
+             guessedCorrectly = true
+           else puts "Try again!"
+           end
+         end
+       end
+     #+END_SRC
+   + [ ] Day 2: Floating Down From The Sky
