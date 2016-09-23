@@ -20,18 +20,10 @@ the product abc.
           (* b b))
        (* c c)))
 
-  (def potential-triplets
-    (let [first-options (take 997 (rest (range)))]
-      (mapcat
-       (fn [first-num]
-         (let [second-options (filter #(< first-num %) first-options)]
-           (map (fn [second-num]
-                  (let [third-num (- 1000 first-num second-num)]
-                    (list first-num second-num third-num))) second-options))) first-options)))
-
-  (->> potential-triplets
-       (some (fn [[a b c]]
-               (when (pythagorean-triplet? a b c)
-                 [a b c])))
-       (reduce *)) ;; => 31875000
+  (time
+   (for [a (range 1 998)
+         b (range a 998)
+         :let [c (- 1000 a b)]
+         :when (pythagorean-triplet? a b c)]
+     (* a b c)))
 #+END_SRC
