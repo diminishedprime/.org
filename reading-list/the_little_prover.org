@@ -17,7 +17,7 @@
 + [ ] The Proof Of The Pudding
 + [ ] The Little Assistant
 + [ ] Restless For More
-
++ [ ] [[./the_little_prover/exercises.org][Exercises]]
 
 [[../index.org][Reading List]]
 [[../the_little_prover.org][The Little Prover]]

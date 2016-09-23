@@ -5,4 +5,59 @@
 #+BEGIN_SRC scheme
   (load "j-bob-lang.scm") ;; => #<unspecified>
   (load "j-bob.scm") ;; => #<unspecified>
+
+  (defun list0? (x)
+    (equal x '())) ;; => #<unspecified>
+
+  (list0? 'hello) ;; => nil
+  (list0? '()) ;; => t
+
+  (defun list1? (x)
+    (if (atom x)
+        'nil
+        (list0? (cdr x)))) ;; => #<unspecified>
+
+  (list1? 'hello) ;; => nil
+  (list1? '()) ;; => nil
+  (list1? '(1!)) ;; => t
+
+  (defun list2? (x)
+    (if (atom x)
+        'nil
+        (list1? (cdr x))))
+
+  (list2? 'hello) ;; => nil
+  (list2? '()) ;; => nil
+  (list2? '(1!)) ;; => nil
+  (list2? '(1! 2!)) ;; => t
+
+  (defun list? (x)
+    (if (atom x)
+        (equal x '())
+        (list? (cdr x)))) ;; => #<unspecified>
+
+  (dethm natp/size (x)
+         (equal (natp (size x)) 't)) ;; => #<unspecified>
+
+  (dethm size/car (x)
+         (if (atom x)
+             't
+             (equal (< (size (car x))
+                       (size x))
+                    't))) ;; => #<unspecified>
+
+  (dethm size/cdr (x)
+         (if (atom x)
+             't
+             (equal (< (size (cdr x))
+                       (size x))
+                    't))) ;; => #<unspecified>
+
+  (defun sub (x y)
+    (if (atom y)
+        (if (equal y '?)
+            x
+            y)
+        (cons (sub x (car y))
+              (sub x (cdr y))))) ;; => #<unspecified>
 #+END_SRC
