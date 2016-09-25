@@ -51,7 +51,7 @@
          end
        end
      #+END_SRC
-   + [ ] Day 2: Floating Down From The Sky
+   + [X] Day 2: Floating Down From The Sky
      #+BEGIN_SRC ruby
        def tell_the_truth(options={})
          if options[:profession] == :lawyer
@@ -116,7 +116,112 @@
            "object_#{self.object_id}.txt"
          end
          def to_f
-           File.open(filename, 'w') { |f| f.write(to_s)}
+           File.open(filename, 'w') {|f| f.write(to_s)}
+         end
+       end
+
+       class Person
+         include ToFile
+         attr_accessor :name
+         def initialize(name)
+           @name = name
+         end
+         def to_s
+           name
+         end
+       end
+
+       Person.new('matz').to_f
+
+       ### Problems
+
+       # Research
+
+       # Find out how to access files with and without code blocks. What is the benefit
+       # of the code block?
+
+       ## Looks like the code block will be run and then the file closed for you automatically.
+
+       # How would you translate a hash to an array? Can you translate arrays to
+       # hashes?
+
+       ## I would use some method of each, or each_key to go from hash -> array, going
+       ## from array to hash seems easy with .each_slice(2)
+
+       # Can you iterate through a hash?
+
+       ## Yes
+
+       # You can use Ruby arrays as stacks. What other common data structures do arrays
+       # support?
+
+       # queues, Lists
+
+       # Do
+
+       # Print the contents of an array of sixteen numbers, four numbers at a time,
+       #using just each. Now, do the same with each_slice in Enumerable.
+       numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+
+       # With only each
+       soFar = 0
+       currentGroup = []
+       numbers.each do |num|
+         currentGroup.push(num)
+         soFar = soFar + 1
+         if soFar == 4
+           puts currentGroup
+           puts ''
+           currentGroup = []
+           soFar = 0
+         end
+       end
+
+       # With each_slice
+       numbers.each_slice(4) do |numGroup|
+         puts numGroup
+         puts ''
+       end
+
+       # The Tree class was interesting, but it did not allow you to specify a new tree
+       # with a clean user interface. Let the initializer accept a nested structure of
+       # hashes. You should be able to specify a tree like this:
+       myTree = {'grandpa' => { 'dad' => {'child 1' => {},'child 2' => {} },'uncle' => {'child 3' => {},'child 4' => {} }}}
+
+       class Tree
+         attr_accessor :children, :node_name
+
+         def initialize(currentHash)
+           @children = []
+           currentHash.each_pair do |key, value|
+             @node_name = key
+             @children.push(Tree.new(value))
+           end
+         end
+
+         def visit_all(&block)
+           visit &block
+           children.each { |c| c.visit_all &block}
+         end
+
+         def visit(&block)
+           block.call self
+         end
+       end
+
+       # Write a simple grep that will print the lines of a file having any occurrences
+       # of a phrase anywhere in that line. You will need to do a simple regular
+       # expression match and read lines from a file. (This is surprisingly simple in
+       # Ruby.) If you want, include line numbers.
+
+       phrase = 'hi there'
+       currentLine = 0
+       File.open('file_name_here.extension', 'r') do |f1|
+         while line = f1.gets
+           currentLine = currentLine + 1
+           if line.match(phrase)
+             puts line
+           end
          end
        end
      #+END_SRC
