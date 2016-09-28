@@ -316,3 +316,9 @@
        # This should print "lions".
      #+END_SRC
    + [X] Wrapping Up Ruby
+3. [-] Io
+   + [X] Introducing Io
+   + [ ] Day 1: Skipping School, Hanging Out
+   + [ ] Day 2: The Sausage King
+   + [ ] Day 3: The Parade and Other Strange Places
+   + [ ] Wrapping Up Io
