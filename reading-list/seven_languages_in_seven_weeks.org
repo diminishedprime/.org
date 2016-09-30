@@ -11,7 +11,7 @@
    + [X] Wrapping Up Ruby
 3. [-] Io
    + [X] Introducing Io
-   + [ ] Day 1: Skipping School, Hanging Out
+   + [ ] [[./seven_languages_in_seven_weeks/io/day_1_skipping_school_hanging_out.io][Day 1: Skipping School, Hanging Out]]
    + [ ] Day 2: The Sausage King
    + [ ] Day 3: The Parade and Other Strange Places
    + [ ] Wrapping Up Io
