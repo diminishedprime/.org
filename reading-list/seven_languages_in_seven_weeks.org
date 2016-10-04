@@ -22,9 +22,9 @@
    + [ ] Day 3: Blowing Up Vegas
    + [ ] Wrapping Up Prolog
 5. [ ] Scala
-6. [-] Erlang
+6. [X] Erlang
    + [X] Introducing Erlang
    + [X] [[./seven_languages_in_seven_weeks/erlang/day_1.erl][Day 1: Appearing Human]]
    + [X] [[./seven_languages_in_seven_weeks/erlang/day_2.erl][Day 2: Changing Forms]]
-   + [ ] [[./seven_languages_in_seven_weeks/erlang/day_3.erl][Day 3: The Red Pill]]
-   + [ ] Wrapping Up Erlang
+   + [X] [[./seven_languages_in_seven_weeks/erlang/day_3.erl][Day 3: The Red Pill]]
+   + [X] Wrapping Up Erlang
