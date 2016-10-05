@@ -2,13 +2,7 @@
 -export([solve/0]).
 
 solve() ->
-    StartTime = erlang:timestamp(),
-
-    multiples(),
-
-    EndTime = erlang:timestamp(),
-    TotalTime = timer:now_diff(EndTime, StartTime),
-    io:format("It took: ~p microseconds~n", [TotalTime]).
+    my_timer:time_call(fun multiples/0).
 
 multiples() ->
     Range = lists:seq(1,1000),
