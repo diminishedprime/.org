@@ -23,3 +23,6 @@ four million, find the sum of the even-valued terms.
        (filter even?)
        (reduce +)) ;; => 4613732
 #+END_SRC
+
+*** Erlang
+[[./erlang/erl_002.erl]]
