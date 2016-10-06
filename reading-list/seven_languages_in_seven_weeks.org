@@ -15,12 +15,12 @@
    + [ ] [[./seven_languages_in_seven_weeks/io/day_2_the_sausage_king.io][Day 2: The Sausage King]]
    + [ ] [[./seven_languages_in_seven_weeks/io/day_3.io][Day 3: The Parade and Other Strange Places]]
    + [X] Wrapping Up Io
-4. [ ] Prolog
-   + [ ] About Prolog
-   + [ ] [[./seven_languages_in_seven_weeks/prolog/day_1.pl][Day 1: An Excellent Driver]]
-   + [ ] [[./seven_languages_in_seven_weeks/prolog/day_2.pl][Day 2: Fifteen Minutes to Wapner]]
-   + [ ] Day 3: Blowing Up Vegas
-   + [ ] Wrapping Up Prolog
+4. [X] Prolog
+   + [X] About Prolog
+   + [X] [[./seven_languages_in_seven_weeks/prolog/day_1.pl][Day 1: An Excellent Driver]]
+   + [X] [[./seven_languages_in_seven_weeks/prolog/day_2.pl][Day 2: Fifteen Minutes to Wapner]]
+   + [X] Day 3: Blowing Up Vegas
+   + [X] Wrapping Up Prolog
 5. [ ] Scala
 6. [X] Erlang
    + [X] Introducing Erlang
