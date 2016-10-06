@@ -18,7 +18,7 @@
 4. [ ] Prolog
    + [ ] About Prolog
    + [ ] [[./seven_languages_in_seven_weeks/prolog/day_1.pl][Day 1: An Excellent Driver]]
-   + [ ] Day 2: Fifteen Minutes to Wapner
+   + [ ] [[./seven_languages_in_seven_weeks/prolog/day_2.pl][Day 2: Fifteen Minutes to Wapner]]
    + [ ] Day 3: Blowing Up Vegas
    + [ ] Wrapping Up Prolog
 5. [ ] Scala
