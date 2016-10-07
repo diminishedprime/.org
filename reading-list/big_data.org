@@ -4,7 +4,7 @@
 * [[http://search.safaribooksonline.com/book/databases/business-intelligence/9781617290343][Big Data]]
 + [X] Chapter 1. A new paradigm for Big Data
 + [X] Chapter 2. Data model for Big Data
-+ [ ] Chapter 3. Data model for Big Data: Illustration
++ [X] Chapter 3. Data model for Big Data: Illustration
 + [ ] Chapter 4. Data storage on the batch layer
 + [ ] Chapter 5. Data storage on the batch layer: Illustration
 + [ ] Chapter 6. Batch layer
