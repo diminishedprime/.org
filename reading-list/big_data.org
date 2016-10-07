@@ -1,0 +1,22 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Reading List]]
+
+* [[http://search.safaribooksonline.com/book/databases/business-intelligence/9781617290343][Big Data]]
++ [X] Chapter 1. A new paradigm for Big Data
++ [ ] Chapter 2. Data model for Big Data
++ [ ] Chapter 3. Data model for Big Data: Illustration
++ [ ] Chapter 4. Data storage on the batch layer
++ [ ] Chapter 5. Data storage on the batch layer: Illustration
++ [ ] Chapter 6. Batch layer
++ [ ] Chapter 7. Batch layer: Illustration
++ [ ] Chapter 8. An example batch layer: Architecture and algorithms
++ [ ] Chapter 9. An example batch layer: Implementation
++ [ ] Chapter 10. Serving layer
++ [ ] Chapter 11. Serving layer: Illustration
++ [ ] Chapter 12. Realtime views
++ [ ] Chapter 13. Realtime views: Illustration
++ [ ] Chapter 14. Queuing and stream processing
++ [ ] Chapter 15. Queuing and stream processing: Illustration
++ [ ] Chapter 16. Micro-batch stream processing
++ [ ] Chapter 17. Micro-batch stream processing: Illustration
++ [ ] Chapter 18. Lambda Architecture in depth

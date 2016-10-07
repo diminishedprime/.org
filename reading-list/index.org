@@ -2,12 +2,14 @@
 
 * Reading List/Digital Bookshelf
 ** Top of Queue
++ [ ] [[./big_data.org][Big Data]]
++ [ ] [[http://search.safaribooksonline.com/book/operating-systems-and-server-administration/9781491909379][I heart Logs]]
 + [ ] [[./seven_languages_in_seven_weeks.org][Seven Languages In Seven Weeks]]
 + [ ] [[./haskell_programming_from_first_principles.org][Haskell Book]]
 + [ ] [[./mastering_regular_expressions.org][Mastering Regular Expressions]]
 + [ ] [[./lisp_in_small_pieces.org][Lisp In Small Pieces]]
-+ [ ] [[./introduction_to_algorithms.org][Introduction To Algorithms]]
 + [ ] [[./the_little_prover.org][The Little Prover]]
+
 ** Reference
 *** Programming Books
 +   Clojure
@@ -25,6 +27,7 @@
 + [[http://www.amazon.com/Little-Java-Few-Patterns/dp/0262561158/ref=sr_1_1?s=books&ie=UTF8&qid=1454204257&sr=1-1&keywords=a+little+java%2C+a+few+patterns][A Little Java, A Few Patterns]]
 *** Programming Books
 + General
+  + [ ] [[./introduction_to_algorithms.org][Introduction To Algorithms]]
   + [ ] [[./code_complete.org][Code Complete]]
   + [[./mythical_man_month.org][Mythical Man Month]]
   + [[./to_mock_a_mockingbird.org][To Mock A MockingBird]]
