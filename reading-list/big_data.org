@@ -5,7 +5,7 @@
 + [X] Chapter 1. A new paradigm for Big Data
 + [X] Chapter 2. Data model for Big Data
 + [X] Chapter 3. Data model for Big Data: Illustration
-+ [ ] Chapter 4. Data storage on the batch layer
++ [X] Chapter 4. Data storage on the batch layer
 + [ ] Chapter 5. Data storage on the batch layer: Illustration
 + [ ] Chapter 6. Batch layer
 + [ ] Chapter 7. Batch layer: Illustration
