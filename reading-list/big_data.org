@@ -7,7 +7,7 @@
 + [X] Chapter 3. Data model for Big Data: Illustration
 + [X] Chapter 4. Data storage on the batch layer
 + [X] Chapter 5. Data storage on the batch layer: Illustration
-+ [ ] Chapter 6. Batch layer
++ [X] Chapter 6. Batch layer
 + [ ] Chapter 7. Batch layer: Illustration
 + [ ] Chapter 8. An example batch layer: Architecture and algorithms
 + [ ] Chapter 9. An example batch layer: Implementation
