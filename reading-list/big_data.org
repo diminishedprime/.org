@@ -9,7 +9,7 @@
 + [X] Chapter 5. Data storage on the batch layer: Illustration
 + [X] Chapter 6. Batch layer
 + [X] Chapter 7. Batch layer: Illustration
-+ [ ] Chapter 8. An example batch layer: Architecture and algorithms
++ [X] Chapter 8. An example batch layer: Architecture and algorithms
 + [ ] Chapter 9. An example batch layer: Implementation
 + [ ] Chapter 10. Serving layer
 + [ ] Chapter 11. Serving layer: Illustration
