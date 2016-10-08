@@ -18,5 +18,5 @@
 + [X] Chapter 14. Queuing and stream processing
 + [X] Chapter 15. Queuing and stream processing: Illustration
 + [X] Chapter 16. Micro-batch stream processing
-+ [ ] Chapter 17. Micro-batch stream processing: Illustration
++ [X] Chapter 17. Micro-batch stream processing: Illustration
 + [ ] Chapter 18. Lambda Architecture in depth
