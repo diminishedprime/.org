@@ -15,7 +15,7 @@
 + [X] Chapter 11. Serving layer: Illustration
 + [X] Chapter 12. Realtime views
 + [X] Chapter 13. Realtime views: Illustration
-+ [ ] Chapter 14. Queuing and stream processing
++ [X] Chapter 14. Queuing and stream processing
 + [ ] Chapter 15. Queuing and stream processing: Illustration
 + [ ] Chapter 16. Micro-batch stream processing
 + [ ] Chapter 17. Micro-batch stream processing: Illustration
