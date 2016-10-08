@@ -13,7 +13,7 @@
 + [X] Chapter 9. An example batch layer: Implementation
 + [X] Chapter 10. Serving layer
 + [X] Chapter 11. Serving layer: Illustration
-+ [ ] Chapter 12. Realtime views
++ [X] Chapter 12. Realtime views
 + [ ] Chapter 13. Realtime views: Illustration
 + [ ] Chapter 14. Queuing and stream processing
 + [ ] Chapter 15. Queuing and stream processing: Illustration
