@@ -16,7 +16,7 @@
 + [X] Chapter 12. Realtime views
 + [X] Chapter 13. Realtime views: Illustration
 + [X] Chapter 14. Queuing and stream processing
-+ [ ] Chapter 15. Queuing and stream processing: Illustration
++ [X] Chapter 15. Queuing and stream processing: Illustration
 + [ ] Chapter 16. Micro-batch stream processing
 + [ ] Chapter 17. Micro-batch stream processing: Illustration
 + [ ] Chapter 18. Lambda Architecture in depth
