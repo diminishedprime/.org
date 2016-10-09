@@ -18,10 +18,15 @@
 4. [X] Prolog
    + [X] About Prolog
    + [X] [[./seven_languages_in_seven_weeks/prolog/day_1.pl][Day 1: An Excellent Driver]]
-   + [X] [[./seven_languages_in_seven_weeks/prolog/day_2.pl][Day 2: Fifteen Minutes to Wapner]]
+   + [X] [[./seven_languages_in_seven_weeks/prolog/day_2.pl][Day 2: Fifteen Minutes to Wapner]
    + [X] Day 3: Blowing Up Vegas
    + [X] Wrapping Up Prolog
-5. [ ] Scala
+5. [-] Scala
+   + [X] About Scala
+   + [X] Day 1: The Castle on the Hill
+   + [ ] Day 2: Clipping Bushes and other New Tricks
+   + [ ] Day 3: Cutting Through the Fluff
+   + [ ] Wrapping up Scala
 6. [X] Erlang
    + [X] Introducing Erlang
    + [X] [[./seven_languages_in_seven_weeks/erlang/day_1.erl][Day 1: Appearing Human]]
