@@ -24,7 +24,7 @@
 5. [-] Scala
    + [X] About Scala
    + [X] [[./seven_languages_in_seven_weeks/scala/day_1.scala][Day 1: The Castle on the Hill]]
-   + [ ] Day 2: Clipping Bushes and other New Tricks
+   + [X] [[./seven_languages_in_seven_weeks/scala/day_2.scala][Day 2: Clipping Bushes and other New Tricks]]
    + [ ] Day 3: Cutting Through the Fluff
    + [ ] Wrapping up Scala
 6. [X] Erlang
