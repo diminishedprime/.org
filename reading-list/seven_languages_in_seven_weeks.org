@@ -35,7 +35,7 @@
    + [X] Wrapping Up Erlang
 7. [-] Clojure
    + [X] Introducing Clojure
-   + [ ] Day 1: Training Luke
+   + [X] Day 1: Training Luke
    + [ ] Day 2: Yoda and the Force
    + [ ] Day 3: An Eye for Evil
    + [ ] Wrapping Up Clojure
