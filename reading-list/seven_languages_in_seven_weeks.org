@@ -36,7 +36,7 @@
 7. [-] Clojure
    + [X] Introducing Clojure
    + [X] Day 1: Training Luke
-   + [ ] Day 2: Yoda and the Force
+   + [X] Day 2: Yoda and the Force
    + [ ] Day 3: An Eye for Evil
    + [ ] Wrapping Up Clojure
 8. [ ] Haskell
