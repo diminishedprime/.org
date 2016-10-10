@@ -27,6 +27,7 @@
 + [[http://www.amazon.com/Little-Java-Few-Patterns/dp/0262561158/ref=sr_1_1?s=books&ie=UTF8&qid=1454204257&sr=1-1&keywords=a+little+java%2C+a+few+patterns][A Little Java, A Few Patterns]]
 *** Programming Books
 + General
+  + [ ] http://search.safaribooksonline.com/book/programming/0596006624
   + [ ] [[./introduction_to_algorithms.org][Introduction To Algorithms]]
   + [ ] [[./code_complete.org][Code Complete]]
   + [[./mythical_man_month.org][Mythical Man Month]]
