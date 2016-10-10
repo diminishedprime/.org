@@ -39,12 +39,12 @@
    + [X] Day 2: Yoda and the Force
    + [X] Day 3: An Eye for Evil
    + [X] Wrapping Up Clojure
-8. [-] Haskell
+8. [X] Haskell
    + [X] Introducing Haskell
    + [X] [[./seven_languages_in_seven_weeks/haskell/day_1.hs][Day 1: Logical]]
    + [X] [[./seven_languages_in_seven_weeks/haskell/day_2.hs][Day 2: Spock's Great Strength]]
    + [X] Day 3: The Mind Meld
-   + [ ] Wrapping Up Haskell
+   + [X] Wrapping Up Haskell
 9. [ ] Wrap-Up
    + [ ] Programming Models
    + [ ] Concurrency
