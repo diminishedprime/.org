@@ -10,8 +10,8 @@
 ** Reference
 *** Programming Books
 + General
-  + [X] [[./big_data.org][Big Data]]
-  + [X] [[./seven_languages_in_seven_weeks.org][Seven Languages In Seven Weeks]]
+  + [X] 2016-10-08 [[./big_data.org][Big Data]]
+  + [X] 2016-10-10 [[./seven_languages_in_seven_weeks.org][Seven Languages In Seven Weeks]]
 + Clojure
   + [X] 2015-09-23 [[./living_clojure.org][Living Clojure]]
   + [X] 2015-10-19 [[./the_joy_of_clojure.org][The Joy of Clojure]]
