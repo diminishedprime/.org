@@ -33,3 +33,20 @@
    + [X] [[./seven_languages_in_seven_weeks/erlang/day_2.erl][Day 2: Changing Forms]]
    + [X] [[./seven_languages_in_seven_weeks/erlang/day_3.erl][Day 3: The Red Pill]]
    + [X] Wrapping Up Erlang
+7. [ ] Clojure
+   + [ ] Introducing Clojure
+   + [ ] Day 1: Training Luke
+   + [ ] Day 2: Yoda and the Force
+   + [ ] Day 3: An Eye for Evil
+   + [ ] Wrapping Up Clojure
+8. [ ] Haskell
+   + [ ] Introducing Haskell
+   + [ ] Day 1:
+   + [ ] Day 2:
+   + [ ] Day 3:
+   + [ ] Wrapping Up Haskell
+9. [ ] Wrap-Up
+   + [ ] Programming Models
+   + [ ] Concurrency
+   + [ ] Programming Constructs
+   + [ ] Finding Your Voice
