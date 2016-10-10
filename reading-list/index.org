@@ -3,7 +3,6 @@
 * Reading List/Digital Bookshelf
 ** Top of Queue
 + [ ] [[http://search.safaribooksonline.com/book/operating-systems-and-server-administration/9781491909379][I heart Logs]]
-+ [ ] [[./seven_languages_in_seven_weeks.org][Seven Languages In Seven Weeks]]
 + [ ] [[./haskell_programming_from_first_principles.org][Haskell Book]]
 + [ ] [[./mastering_regular_expressions.org][Mastering Regular Expressions]]
 + [ ] [[./lisp_in_small_pieces.org][Lisp In Small Pieces]]
@@ -12,6 +11,7 @@
 *** Programming Books
 + General
   + [X] [[./big_data.org][Big Data]]
+  + [X] [[./seven_languages_in_seven_weeks.org][Seven Languages In Seven Weeks]]
 + Clojure
   + [X] 2015-09-23 [[./living_clojure.org][Living Clojure]]
   + [X] 2015-10-19 [[./the_joy_of_clojure.org][The Joy of Clojure]]
