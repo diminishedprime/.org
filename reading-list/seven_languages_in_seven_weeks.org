@@ -39,8 +39,8 @@
    + [X] Day 2: Yoda and the Force
    + [X] Day 3: An Eye for Evil
    + [X] Wrapping Up Clojure
-8. [ ] Haskell
-   + [ ] Introducing Haskell
+8. [-] Haskell
+   + [X] Introducing Haskell
    + [ ] Day 1:
    + [ ] Day 2:
    + [ ] Day 3:
