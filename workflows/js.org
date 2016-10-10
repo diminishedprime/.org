@@ -1,0 +1,7 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Workflow Index]]
+
+* Javascript Workflow
++ Node
+  + Nodemon to watch a file on the filesystem.
+  + Terminal open on one screen, editor on the other.

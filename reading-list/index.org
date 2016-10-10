@@ -8,7 +8,6 @@
 + [ ] [[./mastering_regular_expressions.org][Mastering Regular Expressions]]
 + [ ] [[./lisp_in_small_pieces.org][Lisp In Small Pieces]]
 + [ ] [[./the_little_prover.org][The Little Prover]]
-
 ** Reference
 *** Programming Books
 + General
@@ -91,6 +90,8 @@
 + [ ] [[./the_art_of_the_propagator.org][The Art Of The Propagator]]
 + [[./finger_trees.org][Finger Trees: a simple, general-purpose data structure]]
 + Propositions as Types
++ [[http://shaffner.us/cs/papers/tarpit.pdf][Out Of The Tarpit]]
++ [[http://cidrdb.org/cidr2015/Papers/CIDR15_Paper16.pdf][Immutability Changes Everything]]
 *** Web Posts
 + http://danluu.com/empirical-pl/
 

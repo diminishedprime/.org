@@ -9,3 +9,4 @@
 8. [[./conferences/index.org][Conferences]]
 9. [[./songs/index.org][Songs]]
 10. [[./algorithms/index.org][Algorithms]]
+11. [[./workflows/index.org][Workflows]]
