@@ -158,7 +158,7 @@
     2. [X] How I learned to stop worrying and love Nothing
     3. [X] Bleating either
     4. [X] Kinds, a thousand stars in your types
-    5. [X] [[./haskell_programming_from_first_principles/12_06.hs][Chapter Exercises]
+    5. [X] [[./haskell_programming_from_first_principles/12_06.hs][Chapter Exercises]]
     6. [X] Definitions
 13. [X] Building projects [100%]
     1. [X] Module

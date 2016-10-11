@@ -8,6 +8,22 @@
    + [X] Logs in Distributed Systems
    + [X] Changelog 101: Tables and Events Are Duel
    + [X] What's Next
-2. [ ]
-3. [ ]
-4. [ ]
+2. [ ] Data Integration
+   + [ ] Data Integration: Two Complications
+   + [ ] Log-Structured Data Flow
+   + [ ] My Experience at LinkedIn
+   + [ ] Relationship to ETL and the Data Warehouse
+   + [ ] ETL and Organizational Scalability
+   + [ ] Where Should We Put the Data Transformations
+   + [ ] Decoupling Systems
+   + [ ] Scaling a Log
+3. [ ] Logs and Real-Time Stream Processing
+   + [ ] Data Flow Graphs
+   + [ ] Logs and Stream Processing
+   + [ ] Reprocessing Data: The Lambda Architecture and an Alternative
+   + [ ] Stateful Real-Time Processing
+   + [ ] Log Compaction
+4. [ ] Building Data Systems with Logs
+   + [ ] Unbundling?
+   + [ ] The Place of the Log in System Architecture
+   + [ ] Conclusion
