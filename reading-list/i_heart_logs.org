@@ -1,0 +1,13 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Reading List]]
+
+* [[http://search.safaribooksonline.com/book/operating-systems-and-server-administration/9781491909379][I Heart Logs]]
+1. [X] Introduction
+   + [X] What is a Log?
+   + [X] Logs in Databases
+   + [X] Logs in Distributed Systems
+   + [X] Changelog 101: Tables and Events Are Duel
+   + [X] What's Next
+2. [ ]
+3. [ ]
+4. [ ]

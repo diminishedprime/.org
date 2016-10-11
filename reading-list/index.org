@@ -2,7 +2,7 @@
 
 * Reading List/Digital Bookshelf
 ** Top of Queue
-+ [ ] [[http://search.safaribooksonline.com/book/operating-systems-and-server-administration/9781491909379][I heart Logs]]
++ [ ] [[./i_heart_logs.org][I Heart Logs]]
 + [ ] [[./haskell_programming_from_first_principles.org][Haskell Book]]
 + [ ] [[./mastering_regular_expressions.org][Mastering Regular Expressions]]
 + [ ] [[./lisp_in_small_pieces.org][Lisp In Small Pieces]]
