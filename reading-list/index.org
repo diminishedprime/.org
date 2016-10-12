@@ -5,8 +5,7 @@
 + [ ] [[./i_heart_logs.org][I Heart Logs]]
 + [ ] [[./haskell_programming_from_first_principles.org][Haskell Book]]
 + [ ] [[./mastering_regular_expressions.org][Mastering Regular Expressions]]
-+ [ ] [[./lisp_in_small_pieces.org][Lisp In Small Pieces]]
-+ [ ] [[./the_little_prover.org][The Little Prover]]
++ [ ] [[./purely_functional_data_structures.org][Purely Functional Data Structures]]
 ** Reference
 *** Programming Books
 + General
@@ -24,7 +23,8 @@
   + [X] 2016-07-24 [[./the_little_mler.org][The Little MLer]]
 ** To Read
 *** Little Books
-+ [[http://www.amazon.com/Little-Java-Few-Patterns/dp/0262561158/ref=sr_1_1?s=books&ie=UTF8&qid=1454204257&sr=1-1&keywords=a+little+java%2C+a+few+patterns][A Little Java, A Few Patterns]]
++ [ ] [[http://www.amazon.com/Little-Java-Few-Patterns/dp/0262561158/ref=sr_1_1?s=books&ie=UTF8&qid=1454204257&sr=1-1&keywords=a+little+java%2C+a+few+patterns][A Little Java, A Few Patterns]]
++ [ ] [[./the_little_prover.org][The Little Prover]]
 *** Programming Books
 + General
   + [ ] http://search.safaribooksonline.com/book/programming/0596006624
@@ -50,21 +50,15 @@
   + [[http://search.safaribooksonline.com/book/web-design-and-development/9781785887635][Learning Clojurescript]]
 + Erlang
   + [ ] [[./learn_you_some_erlang.org][Learn You Some Erlang]]
-+ RegExps
-
 + Emacs
   + [ ] [[./mastering_emacs.org][Mastering Emacs]]
   + [ ] [[./org_mode_guide.org][Org Mode Guide]]
 + JavaScript
   + [ ] [[./functional_javascript.org][Functional Javascript]]
-+ C++
-  + Pratical C++ Programming
-+ Java
-  + Core Java Volume I
-  + Core Java Volume II
 + Scala
   + [[http://search.safaribooksonline.com/book/programming/scala/9781617290657][FP in Scala]]
 + Lisp
+  + [ ] [[./lisp_in_small_pieces.org][Lisp In Small Pieces]]
   + [ ] [[./mit_sicp.org][MIT SICP]]
   + [[http://letoverlambda.com/index.cl/toc][Let Over Lambda]]
   + land of lisp
@@ -101,7 +95,7 @@
   + [[http://www.amazon.com/Algebra-2nd-Michael-Artin/dp/0132413779][Michael Artin Algebra]]
   + [[https://www.manning.com/books/type-driven-development-with-idris][Type Driven Development with Idris]]
   + [[https://www.amazon.com/Expert-F-4-0-Don-Syme/dp/1484207416?ie=UTF8&keywords=expert%20f%23%204.0&linkCode=sl1&linkId=f696d9966865ec308f5b009e0456f017&qid=1464576992&ref_=as_li_ss_tl&sr=8-1&tag=fngeekery-20][Expert F#]]
-  + [[http://www.amazon.com/Purely-Functional-Structures-Chris-Okasaki/dp/0521663504/ref=sr_1_1?s=books&ie=UTF8&qid=1454204145&sr=1-1&keywords=purely+functional][Purely Functional Data Structures]]
+
   + [[http://www.amazon.com/Clause-Effect-Programming-Working-Programmer/dp/3540629718][Clause And Effect]]
   + [[http://www.amazon.com/Selected-Papers-Computer-Science-Lecture/dp/1881526917/ref=sr_1_1?s=books&ie=UTF8&qid=1454204201&sr=1-1&keywords=selected+papers+on+computer+science][Selected Papers on Computer Science]]
   + [[http://www.amazon.com/Concrete-Mathematics-Foundation-Computer-Science/dp/0201558025][Concrete Mathematics]]
