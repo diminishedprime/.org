@@ -17,13 +17,13 @@
    + [X] Where Should We Put the Data Transformations
    + [X] Decoupling Systems
    + [X] Scaling a Log
-3. [ ] Logs and Real-Time Stream Processing
-   + [ ] Data Flow Graphs
-   + [ ] Logs and Stream Processing
-   + [ ] Reprocessing Data: The Lambda Architecture and an Alternative
-   + [ ] Stateful Real-Time Processing
-   + [ ] Log Compaction
-4. [ ] Building Data Systems with Logs
-   + [ ] Unbundling?
-   + [ ] The Place of the Log in System Architecture
-   + [ ] Conclusion
+3. [X] Logs and Real-Time Stream Processing
+   + [X] Data Flow Graphs
+   + [X] Logs and Stream Processing
+   + [X] Reprocessing Data: The Lambda Architecture and an Alternative
+   + [X] Stateful Real-Time Processing
+   + [X] Log Compaction
+4. [X] Building Data Systems with Logs
+   + [X] Unbundling?
+   + [X] The Place of the Log in System Architecture
+   + [X] Conclusion
