@@ -1,0 +1,25 @@
++ [[../index.org][Main Index]]
++ [[./index.org][Reading List]]
+
+* [[http://search.safaribooksonline.com/book/programming/9781680500516][Seven More Languages In Seven Weeks]]
++ [X] Introduction
+  + [X] The Lay of the Land
+  + [X] Bruce Tate (Elixir, Elm)
+  + [X] Fred Daoud (Factor)
+  + [X] Ian Dees (Lua, Idris)
+  + [X] Jack Moffit (Julia, miniKaren)
+  + [X] Who Should Read This Book
+  + [X] A Final Change
+  + [X] Online Resources
++ [-] Chapter 1: Lua
+  + [X] [[./seven_more_languages_in_seven_weeks/lua/day_1.lua][Day 1: The Call to Adventure]]
+  + [ ] Day 2:
+  + [ ] Day 3:
+  + [ ] Wrapping Up Lua
++ [ ] Chapter 2: Factor
++ [ ] Chapter 3: Elm
++ [ ] Chapter 4: Elixir
++ [ ] Chapter 5: Julia
++ [ ] Chapter 6: miniKanren
++ [ ] Chapter 7: Idris
++ [ ] Chapter 8: Wrapping Up
