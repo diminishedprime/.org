@@ -2,7 +2,8 @@
 
 * Reading List/Digital Bookshelf
 ** Top of Queue
-+ [ ] [[./i_heart_logs.org][I Heart Logs]]
++ [ ] [[./i_heart_logs.org][I Heart Logs (Jay Kreps)]]
++ [ ] [[./seven_more_languages_in_seven_weeks.org][Seven More Languages In Seven Weeks]]
 + [ ] [[./haskell_programming_from_first_principles.org][Haskell Book]]
 + [ ] [[./mastering_regular_expressions.org][Mastering Regular Expressions]]
 + [ ] [[./purely_functional_data_structures.org][Purely Functional Data Structures]]

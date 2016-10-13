@@ -8,15 +8,15 @@
    + [X] Logs in Distributed Systems
    + [X] Changelog 101: Tables and Events Are Duel
    + [X] What's Next
-2. [ ] Data Integration
-   + [ ] Data Integration: Two Complications
-   + [ ] Log-Structured Data Flow
-   + [ ] My Experience at LinkedIn
-   + [ ] Relationship to ETL and the Data Warehouse
-   + [ ] ETL and Organizational Scalability
-   + [ ] Where Should We Put the Data Transformations
-   + [ ] Decoupling Systems
-   + [ ] Scaling a Log
+2. [X] Data Integration
+   + [X] Data Integration: Two Complications
+   + [X] Log-Structured Data Flow
+   + [X] My Experience at LinkedIn
+   + [X] Relationship to ETL and the Data Warehouse
+   + [X] ETL and Organizational Scalability
+   + [X] Where Should We Put the Data Transformations
+   + [X] Decoupling Systems
+   + [X] Scaling a Log
 3. [ ] Logs and Real-Time Stream Processing
    + [ ] Data Flow Graphs
    + [ ] Logs and Stream Processing
