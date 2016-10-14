@@ -13,8 +13,8 @@
   + [X] Online Resources
 + [-] Chapter 1: Lua
   + [X] [[./seven_more_languages_in_seven_weeks/lua/day_1.lua][Day 1: The Call to Adventure]]
-  + [ ] Day 2:
-  + [ ] Day 3:
+  + [X] [[./seven_more_languages_in_seven_weeks/lua/day_2.lua][Day 2: Tables all the Way Down]]
+  + [ ] Day 3: Lua and the World
   + [ ] Wrapping Up Lua
 + [ ] Chapter 2: Factor
 + [ ] Chapter 3: Elm
