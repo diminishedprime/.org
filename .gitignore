@@ -1,2 +1,5 @@
 .stack-work
 *.beam
+/elm-stuff/
+/reading-list/seven_more_languages_in_seven_weeks/elm/elm-stuff
+/reading-list/seven_more_languages_in_seven_weeks/elm/elm-package.json

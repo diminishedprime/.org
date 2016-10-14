@@ -17,7 +17,11 @@
   + [ ] Day 3: Lua and the World
   + [ ] Wrapping Up Lua
 + [ ] Chapter 2: Factor
-+ [ ] Chapter 3: Elm
++ [-] Chapter 3: Elm
+  + [X] [[./seven_more_languages_in_seven_weeks/elm/DayOne.elm][Day 1: Handling All The Basics]]
+  + [ ] Day 2:
+  + [ ] Day 3:
+  + [ ] Wrapping Up Elm
 + [ ] Chapter 4: Elixir
 + [ ] Chapter 5: Julia
 + [ ] Chapter 6: miniKanren
