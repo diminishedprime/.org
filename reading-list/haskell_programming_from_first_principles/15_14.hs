@@ -197,13 +197,128 @@ type AccumulateBothAssoc = AccumulateBoth String Ordering ->
                            AccumulateBoth String Ordering ->
                            Bool
 
+-- Monoid exercises
+
+-- Given a datatype, implement the Monoid instance. Add Monoid constraints to
+-- type variables where needed. For the datatypes you’ve already implemented
+-- Semigroup instances for, you just need to figure out what the identity value
+-- is.
+
+monoidLeftIdentity a = (a <> mempty) == a
+monoidRightIdentity a = (mempty <> a) == a
+
+-- 1. Again, validate all of your instances with QuickCheck. Example scaffold is
+-- provided for the Trivial type.
+
+instance Monoid Trivial where
+  mempty = Trivial
+  mappend = (<>)
+
+-- 2.
+instance (Monoid a, Semigroup a) => Monoid (Identity a) where
+  mempty = Identity mempty
+  mappend = (<>)
+
+-- 3.
+instance (Semigroup a, Semigroup b,
+          Monoid a, Monoid b) => Monoid (Two a b) where
+  mempty = Two mempty mempty
+  mappend = (<>)
+
+
+-- 4.
+instance Monoid BoolConj where
+  mempty = BoolConj True
+  mappend = (<>)
+
+-- 5. newtype BoolDisj = BoolDisj Bool
+instance Monoid BoolDisj where
+  mempty = BoolDisj False
+  mappend = (<>)
+
+-- 6. newtype Combine a b =
+instance (Semigroup b, Monoid b) => Monoid (Combine a b) where
+  mempty = Combine mempty
+  mappend = (<>)
+
+-- What it should do:
+--      Prelude> let f = Combine $ \n -> Sum (n + 1)
+--      Prelude> unCombine (mappend f mempty) $ 1
+--      Sum {getSum = 2}
+
+-- 7. Hint: We can do something that seems a little more specific and natural to functions now that the input and output types are the same.
+-- newtype Comp a = Comp (a -> a)
+instance (Semigroup a, Monoid a) => Monoid (Comp a) where
+  mempty = Comp id
+  mappend = (<>)
+
+-- 8. This next exercise will involve doing something that will feel a bit
+-- unnatural still and you may find it difficult. If you get it and you haven’t
+-- done much FP or Haskell before, get yourself a nice beverage. We’re going to
+-- toss you the instance declaration so you don’t churn on a missing Monoid
+-- constraint you didn’t know you needed.
+
+newtype Mem s a = Mem { runMem :: s -> (a,s) }
+
+instance Semigroup a => Semigroup (Mem s a) where
+  Mem {runMem = f} <> Mem {runMem = g} =
+    Mem $ \x -> let (a, s) = g x
+                    (a', s') = f s
+                in (a <> a', s')
+
+instance (Semigroup a, Monoid a) => Monoid (Mem s a) where
+  mempty = Mem $ \s -> (mempty, s)
+  mappend = (<>)
+
+
+f' = Mem $ \s -> ("hi", (s :: Int) + 1)
+main' = do
+  print $ runMem (f' <> mempty) 0
+  print $ runMem (mempty <> f') 0
+  print $ (runMem mempty 0 :: (String, Int))
+  print $ runMem (f' <> mempty) 0 == runMem f' 0
+  print $ runMem (mempty <> f') 0 == runMem f' 0
+
+-- A correct Monoid for Mem should, given the above code, get the following output:
+--      Prelude> main
+--      ("hi",1)
+--      ("hi",1)
+--      ("",0)
+-- True True
+
 main :: IO ()
 main = do
   quickCheck (semigroupAssoc :: TrivialAssoc)
   quickCheck (semigroupAssoc :: IdentityAssoc)
   quickCheck (semigroupAssoc :: TwoAssoc)
   quickCheck (semigroupAssoc :: BoolConjAssoc)
+  quickCheck (semigroupAssoc :: BoolDisjAssoc)
   quickCheck (semigroupAssoc :: OrAssoc)
   quickCheck (semigroupAssoc :: ValidationAssoc)
   quickCheck (semigroupAssoc :: AccumulateRightAssoc)
   quickCheck (semigroupAssoc :: AccumulateBothAssoc)
+
+  putStrLn "Monoid for Trivial"
+  quickCheck (semigroupAssoc :: TrivialAssoc)
+  quickCheck (monoidLeftIdentity :: Trivial -> Bool)
+  quickCheck (monoidRightIdentity :: Trivial -> Bool)
+
+  putStrLn "Monoid for Identity"
+  quickCheck (semigroupAssoc :: IdentityAssoc)
+  quickCheck (monoidLeftIdentity :: Identity String -> Bool)
+  quickCheck (monoidRightIdentity :: Identity String -> Bool)
+
+  putStrLn "Monoid for Two"
+  quickCheck (semigroupAssoc :: TwoAssoc)
+  quickCheck (monoidLeftIdentity :: Two String String -> Bool)
+  quickCheck (monoidRightIdentity :: Two String String -> Bool)
+
+  putStrLn "Monoid for BoolConj"
+  quickCheck (semigroupAssoc :: BoolConjAssoc)
+  quickCheck (monoidLeftIdentity :: BoolConj -> Bool)
+  quickCheck (monoidRightIdentity :: BoolConj -> Bool)
+
+  putStrLn "Monoid for BoolDisj"
+  quickCheck (semigroupAssoc :: BoolDisjAssoc)
+  quickCheck (monoidLeftIdentity :: BoolDisj -> Bool)
+  quickCheck (monoidRightIdentity :: BoolDisj -> Bool)
