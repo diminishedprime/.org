@@ -63,8 +63,7 @@ type TwoAssoc = Two String String -> Two String String -> Two String String -> B
 newtype BoolConj = BoolConj Bool deriving (Show, Eq)
 
 instance Semigroup BoolConj where
-  (BoolConj True) <> (BoolConj True) = BoolConj True
-  _ <> _ = BoolConj False
+  BoolConj a <> BoolConj a' = BoolConj (a && a')
 
 instance Arbitrary BoolConj where
   arbitrary = frequency [ (1, return $ BoolConj True)
@@ -72,8 +71,17 @@ instance Arbitrary BoolConj where
 
 type BoolConjAssoc = BoolConj -> BoolConj -> BoolConj -> Bool
 
--- 7. newtype BoolDisj = BoolDisj Bool
--- basically just the inverse of 6. Different logic for the <>
+-- 7.
+newtype BoolDisj = BoolDisj Bool deriving (Show, Eq)
+
+instance Semigroup BoolDisj where
+  BoolDisj a <> BoolDisj a' = BoolDisj (a || a')
+
+instance Arbitrary BoolDisj where
+  arbitrary = frequency [ (1, return $ BoolDisj True)
+                        , (1, return $ BoolDisj False)]
+
+type BoolDisjAssoc = BoolDisj -> BoolDisj -> BoolDisj -> Bool
 
 -- 8.
 data Or a b = Fst a
