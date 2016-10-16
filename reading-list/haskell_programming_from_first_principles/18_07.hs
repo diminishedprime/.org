@@ -18,7 +18,7 @@ instance Functor Nope where
   fmap _ _ = NopeDotJpg
 
 instance Applicative Nope where
-  pure = \x -> NopeDotJpg
+  pure _ = NopeDotJpg
   _ <*> _ = NopeDotJpg
 
 instance Monad Nope where
@@ -74,7 +74,7 @@ instance Applicative Identity where
 
 instance Monad Identity where
   return = pure
-  (>>=) (Identity a) f = f a
+  Identity a' >>= f = f a'
 
 instance (Arbitrary a) => Arbitrary (Identity a) where
   arbitrary = genIdentity
@@ -89,57 +89,59 @@ instance (Eq a) => EqProp (Identity a) where
 -- use the Functor that Monad requires, then see where the chips fall.
 
 data List a =
-  Nil
+    Nil
   | Cons a (List a)
   deriving (Eq, Show)
 
-instance Eq a => EqProp (List a) where
-  xs =-= ys = takeList 10 xs `eq` takeList 10 ys
+take' :: Int -> List a -> List a
+take' 0 _ = Nil
+take' _ Nil = Nil
+take' n (Cons x xs) = Cons x (take' (n - 1) xs)
 
--- | Take a prefix of up to @n@ elements from a 'List'.
-takeList :: Int -> List a -> List a
-takeList _ Nil = Nil
-takeList n (Cons a as)
-    | n > 0 = Cons a (takeList (n-1) as)
-    | otherwise = Nil
+instance Monoid (List a) where
+  mempty = Nil
+  mappend a Nil = a
+  mappend Nil a = a
+  mappend (Cons x xs) ys = Cons x $ xs `mappend` ys
 
 instance Functor List where
   fmap _ Nil = Nil
-  fmap f (Cons a b) = Cons (f a) (fmap f b)
+  fmap f (Cons a la) = Cons (f a) (fmap f la)
 
 instance Applicative List where
-  pure a = Cons a Nil
+  pure x = Cons x Nil
   Nil <*> _ = Nil
   _ <*> Nil = Nil
-  a <*> a' = flatMap (\f -> fmap f a') a
-
-append :: List a -> List a -> List a
-append Nil ys = ys
-append (Cons x xs) ys = Cons x $ xs `append` ys
-
-fold :: (a -> b -> b) -> b -> List a -> b
-fold _ b Nil = b
-fold f b (Cons h t) = f h (fold f b t)
-
-concat' :: List (List a) -> List a
-concat' = fold append Nil
--- write this one in terms of concat' and fmap
-flatMap :: (a -> List b) -> List a -> List b
-flatMap f as = fold append Nil $ fmap f as
-
-instance Arbitrary a => Arbitrary (List a) where
-  arbitrary = genList
-
-genList :: Arbitrary a => Gen (List a)
-genList = do
-  h <- arbitrary
-  t <- genList
-  frequency [(3, return $ Cons h t),
-             (1, return Nil)]
+  (Cons f fs) <*> as = (f <$> as) <> (fs <*> as)
 
 instance Monad List where
   return = pure
-  (>>=) ma f = flatMap f ma
+  Nil >>= _ = Nil
+  (Cons x xs) >>= f = f x <> (xs >>= f)
+
+instance Arbitrary a => Arbitrary (List a) where
+  -- this breaks
+  -- arbitrary = Cons <$> arbitrary <*> arbitrary
+  arbitrary = do
+    x <- arbitrary
+    y <- arbitrary
+    frequency [(1, return Nil),
+               (10, return (Cons x y))]
+
+instance Eq a => EqProp (List a) where
+  xs =-= ys = xs' `eq` ys'
+    where xs' = take' 3000 xs
+          ys' = take' 3000 ys
+
+main :: IO ()
+main = do putStrLn "Testing Nope"
+          quickBatch $ monad (undefined :: Nope (Int, Int, Int))
+          putStrLn "Testing PhhhbbtttEither"
+          quickBatch $ monad (undefined :: PhhhbbtttEither String (Int, Int, Int))
+          putStrLn "Testing Identity"
+          quickBatch $ monad (undefined :: Identity (Int, Int, Int))
+          putStrLn "Testing List"
+          quickBatch $ monad (undefined :: List (Int, String, Int))
 
 -- Write the following functions using the methods provided by Monad and
 -- Functor. Using stuff like identity and composition are fine, but it has to
@@ -151,11 +153,13 @@ j a = a >>= id
 
 -- 2.
 l1 :: Monad m => (a -> b) -> m a -> m b
-l1 f m1 = m1 >>= (return . f)
+l1 f m1 = f <$> m1
 
 --3.
 l2 :: Monad m => (a -> b -> c) -> m a -> m b -> m c
-l2 f m1 m2 = undefined
+l2 f m1 m2 = do m1' <- m1
+                m2' <- m2
+                return $ f m1' m2'
 
 -- 4.
 a :: Monad m => m a -> m (a -> b) -> m b
