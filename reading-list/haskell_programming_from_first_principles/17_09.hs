@@ -58,8 +58,6 @@ instance Arbitrary a => Arbitrary (Identity a) where
             a <- arbitrary
             return $ Identity a
 
---  quickBatch (applicative (undefined :: Identity (Int, Int, Int)))
-
 -- 2.
 data Pair a = Pair a a
   deriving (Show, Eq)
@@ -81,8 +79,6 @@ instance Arbitrary a => Arbitrary (Pair a) where
             a <- arbitrary
             a' <- arbitrary
             return $ Pair a a'
-
--- quickBatch (applicative (undefined :: Pair (Int, Int, Int)))
 
 -- 3. This should look familiar.
 data Two a b = Two a b
@@ -106,8 +102,6 @@ instance (Arbitrary a, Arbitrary b) => Arbitrary (Two a b) where
             b <- arbitrary
             return $ Two a b
 
--- quickBatch (applicative (undefined :: Two String (Int, Int, Int)))
-
 -- 4.
 data Three a b c = Three a b c
   deriving (Show, Eq)
@@ -129,8 +123,6 @@ instance (Arbitrary a, Arbitrary b, Arbitrary c) => Arbitrary (Three a b c) wher
             b <- arbitrary
             c <- arbitrary
             return $ Three a b c
-
--- quickBatch (applicative (undefined :: Three String String (Int, Int, Int)))
 
 -- 5.
 data Three' a b = Three' a b b
@@ -154,8 +146,6 @@ instance (Arbitrary a, Arbitrary b) => Arbitrary (Three' a b) where
             c <- arbitrary
             return $ Three' a b c
 
--- quickBatch (applicative (undefined :: Three' String (Int, Int, Int)))
-
 -- 6.
 data Four a b c d = Four a b c d
   deriving (Eq, Show)
@@ -178,8 +168,6 @@ instance (Arbitrary a, Arbitrary b, Arbitrary c, Arbitrary d) => Arbitrary (Four
             c <- arbitrary
             d <- arbitrary
             return $ Four a b c d
-
--- quickBatch (applicative (undefined :: Four String String [Int] (Int, Int, Int)))
 
 -- 7. data Four' a b = Four' a a
 
@@ -205,7 +193,14 @@ instance (Arbitrary a, Arbitrary b) => Arbitrary (Four' a b) where
             d <- arbitrary
             return $ Four' a b c d
 
--- quickBatch (applicative (undefined :: Four' String String [Int] (Int, Int, Int)))
+main :: IO ()
+main = do quickBatch (applicative (undefined :: Identity (Int, Int, Int)))
+          quickBatch (applicative (undefined :: Pair (Int, Int, Int)))
+          quickBatch (applicative (undefined :: Two String (Int, Int, Int)))
+          quickBatch (applicative (undefined :: Three String String (Int, Int, Int)))
+          quickBatch (applicative (undefined :: Three' String (Int, Int, Int)))
+          quickBatch (applicative (undefined :: Four String String [Int] (Int, Int, Int)))
+          quickBatch (applicative (undefined :: Four' [Int] (Int, Int, Int)))
 
 -- Combinations
 

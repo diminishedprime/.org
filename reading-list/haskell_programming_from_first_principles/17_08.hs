@@ -180,5 +180,13 @@ genValidation = do
   a <- arbitrary
   elements [Error e, Success a]
 
--- quickBatch (applicative (undefined :: Sum' String (String, String, String)))
--- quickBatch (applicative (undefined :: Validation String (String, String, String)))
+main :: IO ()
+main = let sum' = undefined :: Sum' String (String, String, String)
+           validation = undefined :: Validation String (String, String, String)
+           ziplist = undefined :: ZipList' (String, String, String)
+       in do putStrLn "Testing applicative for sum"
+             quickBatch (applicative sum')
+             putStrLn "Testing applicative for validation"
+             quickBatch (applicative validation)
+             putStrLn "Testing applicative for ZipList"
+             quickBatch (applicative ziplist)
