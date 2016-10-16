@@ -22,7 +22,8 @@ data BoolAndMaybeSomethingElse a =
 
 -- Yep, right kind.
 
--- 4. Use the kinds to guide you on this one, don’t get too hung up on the details.
+-- 4. Use the kinds to guide you on this one, don’t get too hung up on the
+-- details.
 newtype Mu f = InF { outF :: f (Mu f) }
 
 -- Yep, right kind (I think)
@@ -105,7 +106,8 @@ data Parappa f g a = DaWrappa (f a) (g a)
 instance (Functor f, Functor g) => Functor (Parappa f g) where
   fmap f (DaWrappa f' g') = DaWrappa (fmap f f') (fmap f g')
 
--- 7. Don’t ask for more typeclass instances than you need. You can let GHC tell you what to do.
+-- 7. Don’t ask for more typeclass instances than you need. You can let GHC tell
+-- you what to do.
 data IgnoreOne f g a b = IgnoringSomething (f a) (g b)
 
 instance (Functor f, Functor g) => Functor (IgnoreOne f g a) where

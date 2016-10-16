@@ -1,4 +1,4 @@
-+ [[../index.org][Home]]
+[[../index.org][Home]]
 
 * Songs
 ** The Dear Hunter

@@ -1,5 +1,5 @@
-+ [[../index.org][Main Index]]
-+ [[./index.org][Reading List]]
+[[../index.org][Main Index]]
+[[./index.org][Reading List]]
 
 * Haskell Book [64%]
 1. [X] All You Need Is Lambda [100%]
