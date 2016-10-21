@@ -1,0 +1,40 @@
+* Who am I?
++ Matt Hamrick
++ Millikin University graduate (Class of 2014)
++ Functional programming Evangelist
++ Devout member of the Church of Emacs
++ Occasional Runner
+
+* What have I done professionally?
++ Clojure/ClojureScript
++ Java/JavaScript
++ Developed interactive UIs to explain complex topics
++ Worked closely with business to deeply understand problems they are facing
++ Iterated towards a solution
+
+* What have I done outside of Work
++ [[https://diminishedprime.github.io/secret-agent-ui/][This Game!]]
++ [[./euler/index.org][A bunch of Project Euler Questions]]
++ Haskell, Prolog, Scheme, miniKanren, Datomic/Datascript
++ [[./reading-list/index.org][Read a whole lot]]
+
+* What do I like?
++ Solving Problems
++ Teaching
++ Exploring programming languages
+  + Haskell
+  + Clojure
+  + Clojurescript
++ Tech talks with live demos
++ Playing Guitar
++ Explaining concepts using a whiteboard
++ Emacs
++ Indie music
++ Lisp Books
++ My Cat
++ Seafood
++ Tetris
+
+* What am I Working on?
++ Big data architecture
++ learning Idris
