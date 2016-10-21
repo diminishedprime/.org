@@ -30,6 +30,7 @@
 + Explaining concepts using a whiteboard
 + Emacs
 + Indie music
++ Logic Programming
 + Lisp Books
 + My Cat
 + Seafood

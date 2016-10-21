@@ -1,42 +1,38 @@
--- Write Foldable instances for the following datatypes.
-
+import Data.Monoid
+-- -- Write Foldable instances for the following datatypes.
 -- 1.
-data Constant a b =
-  Constant a
+data Constant a b = Constant a
 
 instance Foldable (Constant a) where
-  foldr f b (Constant a) = b
+  foldr f acc (Constant a) = acc
 
 -- 2.
-data Two a b =
-  Two a b
+data Two a b = Two a b
 
 instance Foldable (Two a) where
-  foldr f b (Two a' b') = f b' b
+  foldr f acc (Two a b) = f b acc
 
---3.
-data Three a b c =
-  Three a b c
+-- 3.
+data Three a b c = Three a b c
 
 instance Foldable (Three a b) where
-  foldr f b (Three a' b' c') = f c' b
+  foldr f acc (Three a b c) = f c acc
 
---4.
-data Three' a b =
-  Three' a b b
+-- 4.
+data Three' a b = Three' a b b
 
 instance Foldable (Three' a) where
-  foldMap f (Three' a' b b') = mappend (f b') (f b')
+   foldMap f (Three' a b b') = f b <> f b'
 
---  5.
-data Four' a b =
-  Four' a b b b
+-- 5.
+data Four' a b = Four' a b b b
 
 instance Foldable (Four' a) where
-  foldMap f (Four' a x y z) = f x `mappend` f y `mappend` f z
+  foldMap f (Four' a b b' b'') = f b <> f b' <> f b''
 
---Thinking cap time. Write a filter function for Foldable types using
---foldMap.
-filterF :: (Applicative f, Foldable t, Monoid (f a)) =>
-           (a -> Bool) -> t a -> f a
-filterF f = foldMap (\a -> if f a then pure a else mempty)
+-- Thinking cap time. Write a filter function for Foldable types using foldMap.
+filterF :: (Applicative f, Foldable f, Monoid (f a)) =>
+           (a -> Bool) -> f a -> f a
+filterF f = foldMap (\x -> if f x -- (a -> Bool)
+                           then pure x
+                           else mempty)
