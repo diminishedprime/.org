@@ -1,4 +1,8 @@
 {-# LANGUAGE InstanceSigs #-}
+import Test.QuickCheck hiding (Success)
+import Test.QuickCheck.Checkers
+import Test.QuickCheck.Classes
+
 -- 1. Write liftA2 yourself. Think about it in terms of abstracting out the
 -- difference between getDogR and getDogR' if that helps.
 myLiftA2 :: Applicative f => (a -> b -> c) -> f a -> f b -> f c
@@ -6,8 +10,6 @@ myLiftA2 f a b= f <$> a <*> b
 
 
 -- 2. Write the following function. Again, it is simpler than it looks.
-newtype Reader r a = Reader { runReader :: r -> a }
-
 asks :: (r -> a) -> Reader r a
 asks f = Reader f
 
@@ -40,16 +42,18 @@ asks f = Reader f
 
 -- Make it so.
 
+newtype Reader r a = Reader { runReader :: r -> a }
+  deriving (Show)
+
 instance Functor (Reader r) where
-  fmap f (Reader ra) = Reader $ (f . ra)
+  fmap f (Reader ra) = Reader (f . ra)
 
 instance Applicative (Reader r) where
   pure :: a -> Reader r a
-  pure a = Reader $ (\r -> a)
+  pure a = Reader $ const a
 
   (<*>) :: Reader r (a -> b) -> Reader r a -> Reader r b
-  (<*>) (Reader rab) (Reader ra) = Reader $ \r -> rab r (ra r)
-
+  (<*>) (Reader rab) (Reader ra) = Reader (\r -> rab r (ra r))
 
 -- 4. Rewrite the above example that uses Dog and Person to use your Reader
 -- datatype you just implemented the Applicative for. You’ll need to change the
