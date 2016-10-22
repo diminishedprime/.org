@@ -1,7 +1,7 @@
 [[../index.org][Main Index]]
 [[./index.org][Reading List]]
 
-* Haskell Book [70%]
+* Haskell Book [67%]
 1. [X] All You Need Is Lambda [100%]
    1. [X] All You Need Is Lambda
    2. [X] What's A Function
@@ -279,19 +279,19 @@
     11. [X] Quality Control
     12. [X] [[./haskell_programming_from_first_principles/21_12.hs][Chapter Exercises]]
     13. [X] Follow-up Resources
-22. [X] Reader [100%]
+22. [-] Reader [50%]
     1. [X] Reader
     2. [X] [[./haskell_programming_from_first_principles/22_02.hs][A New Beginning]]
     3. [X] This is Reader
     4. [X] Breaking down the Functor of Functions
     5. [X] [[./haskell_programming_from_first_principles/22_05.hs][But uh, Reader?]]
     6. [X] [[./haskell_programming_from_first_principles/22_06.hs][Functions have an Applicative too]]
-    7. [X] [[./haskell_programming_from_first_principles/22_07.hs][The Monad of Functions]]
-    8. [X] Reader Monad by itself is kinda boring
-    9. [X] You can change what comes below, but not above
-    10. [X] You tend to see ReaderT, not Reader
-    11. [X] [[./haskell_programming_from_first_principles/22_11.hs][Chapter Exercises]]
-    12. [X] Follow-up Resources
+    7. [ ] [[./haskell_programming_from_first_principles/22_07.hs][The Monad of Functions]]
+    8. [ ] Reader Monad by itself is kinda boring
+    9. [ ] You can change what comes below, but not above
+    10. [ ] You tend to see ReaderT, not Reader
+    11. [ ] [[./haskell_programming_from_first_principles/22_11.hs][Chapter Exercises]]
+    12. [ ] Follow-up Resources
 23. [-] State [55%]
     1. [X] State
     2. [X] What is State?
