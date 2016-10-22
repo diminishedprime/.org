@@ -30,11 +30,11 @@ z = [7, 8, 9]
 
 lookup :: Eq a => a -> [(a, b)] -> Maybe b
 lookup _ [] = Nothing
-lookup a ((a', b):xs) = case a' == a of
-                          True -> Just b
-                          False -> Main.lookup a xs
--- zip x and y using 3 as the lookup key
+lookup a ((a', b):xs) = if a' == a
+                        then Just b
+                        else Main.lookup a xs
 
+-- zip x and y using 3 as the lookup key
 xs :: Maybe Integer
 xs = Main.lookup 3 $ zip x y
 
@@ -131,3 +131,22 @@ main = do
 
 sequA :: Integral a => a -> [Bool]
 sequA m = sequenceA [(>3), (<8), even] m
+
+s' = summed <$> ((,) <$> xs <*> ys)
+
+-- OK, your turn. Within the main function above, write the following (you can
+-- delete everything a er do now if you prefer — just remember to use print to
+-- be able to print the results of what you’re adding):
+
+-- 1. fold the boolean conjunction operator over the list of results of sequA
+-- (applied to some value).
+woo = foldl (&&) True $ sequA 3
+
+-- 2. apply sequA to s'; you’ll need fromMaybe.
+woo2 = sequA $ Main.fromMaybe 0 s'
+
+-- 3. apply bolt to ys; you’ll need fromMaybe.
+woo3 = bolt $ Main.fromMaybe 0 ys
+
+-- 4. apply bolt to z'.
+woo4 = bolt $ Main.fromMaybe 0 $ z' 3
