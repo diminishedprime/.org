@@ -292,14 +292,14 @@
     10. [X] You tend to see ReaderT, not Reader
     11. [X] [[./haskell_programming_from_first_principles/22_11.hs][Chapter Exercises]]
     12. [X] Follow-up Resources
-23. [-] State [66%]
+23. [-] State [77%]
     1. [X] State
     2. [X] What is State?
     3. [X] Random Numbers
     4. [X] The State Newtype
     5. [X] [[./haskell_programming_from_first_principles/23_05.hs][Throw Down]]
     6. [X] [[./haskell_programming_from_first_principles/23_06.hs][Write State for yourself]]
-    7. [ ] Get a Coding Job with this one weird trick
+    7. [X] [[./haskell_programming_from_first_principles/23_07.hs][Get a Coding Job with this one weird trick]]
     8. [ ] Chapter Exercises
     9. [ ] Follow-up Resources
 24. [-] Parser combinators [42%]
