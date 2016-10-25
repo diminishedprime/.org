@@ -316,11 +316,11 @@
     11. [ ] Chapter Exercises
     12. [ ] Definitions
     13. [ ] Follow-up
-25. [ ] Composing types [0%]
-    1. [ ] Composing types
-    2. [ ] Common functions as types
-    3. [ ] Two little functors sittin’ in a tree, L-I-F-T-I-N-G
-    4. [ ] Twinplicative
+25. [-] Composing types [30%]
+    1. [X] Composing types
+    2. [X] [[./haskell_programming_from_first_principles/25_02.hs][Common functions as types]]
+    3. [X] [[./haskell_programming_from_first_principles/25_03.hs][Two little functors sittin’ in a tree, L-I-F-T-I-N-G]]
+    4. [ ] [[./haskell_programming_from_first_principles/25_04.hs][Twinplicative]]
     5. [ ] Twonad?
     6. [ ] Intermission:Exercises
     7. [ ] Monad transformers
