@@ -302,14 +302,20 @@
     7. [X] [[./haskell_programming_from_first_principles/23_07.hs][Get a Coding Job with this one weird trick]]
     8. [X] [[./haskell_programming_from_first_principles/23_08.hs][Chapter Exercises]]
     9. [X] Follow-up Resources
-24. [-] Parser combinators [85%]
+24. [-] Parser combinators [53%]
     1. [X] Parser combinators
     2. [X] A few more words of introduction
     3. [X] [[./haskell_programming_from_first_principles/24_03.hs][Understanding the parsing process]]
     4. [X] [[./haskell_programming_from_first_principles/24_04.hs][Parsing fractions]]
     5. [X] Haskell’s parsing ecosystem
     6. [X] [[./haskell_programming_from_first_principles/24_06.hs][Alternative]]
-    7. [ ] Parsing configuration files
+    7. [X] [[./haskell_programming_from_first_principles/24_07.hs][Parsing configuration files]]
+    8. [ ] Character and Token Parsers
+    9. [ ] Polymorphic Parsers
+    10. [ ] Marshalling from an AST
+    11. [ ] Chapter Exercises
+    12. [ ] Definitions
+    13. [ ] Follow-up
 25. [ ] Composing types [0%]
     1. [ ] Composing types
     2. [ ] Common functions as types
