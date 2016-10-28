@@ -1,7 +1,7 @@
 [[../index.org][Main Index]]
 [[./index.org][Reading List]]
 
-* Haskell Book [74%]
+* Haskell Book [77%]
 1. [X] All You Need Is Lambda [100%]
    1. [X] All You Need Is Lambda
    2. [X] What's A Function
@@ -302,7 +302,7 @@
     7. [X] [[./haskell_programming_from_first_principles/23_07.hs][Get a Coding Job with this one weird trick]]
     8. [X] [[./haskell_programming_from_first_principles/23_08.hs][Chapter Exercises]]
     9. [X] Follow-up Resources
-24. [-] Parser combinators [76%]
+24. [X] Parser combinators [100%]
     1. [X] Parser combinators
     2. [X] A few more words of introduction
     3. [X] [[./haskell_programming_from_first_principles/24_03.hs][Understanding the parsing process]]
@@ -313,9 +313,9 @@
     8. [X] [[./haskell_programming_from_first_principles/24_08.hs][Character and Token Parsers]]
     9. [X] Polymorphic Parsers
     10. [X] Marshalling from an AST
-    11. [ ] Chapter Exercises
-    12. [ ] Definitions
-    13. [ ] Follow-up
+    11. [X] [[./haskell_programming_from_first_principles/24_11.hs][Chapter Exercises]]
+    12. [X] Definitions
+    13. [X] Follow-up
 25. [-] Composing types [30%]
     1. [X] Composing types
     2. [X] [[./haskell_programming_from_first_principles/25_02.hs][Common functions as types]]
