@@ -326,10 +326,10 @@
     7. [X] [[./haskell_programming_from_first_principles/25_07.hs][Monad transformers]]
     8. [X] IdentityT
     9. [X] Finding a pattern
-26. [ ] Monad transformers 926 [0%]
-    1. [ ] Monad transformers
-    2. [ ] MaybeT
-    3. [ ] EitherT
+26. [-] Monad transformers 926 [6%]
+    1. [X] Monad transformers
+    2. [ ] [[./haskell_programming_from_first_principles/26_02.hs][MaybeT]]
+    3. [ ] [[./haskell_programming_from_first_principles/26_03.hs][EitherT]]
     4. [ ] ReaderT
     5. [ ] StateT
     6. [ ] Types you probably don’t want to use
