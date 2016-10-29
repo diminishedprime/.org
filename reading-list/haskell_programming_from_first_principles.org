@@ -1,7 +1,7 @@
 [[../index.org][Main Index]]
 [[./index.org][Reading List]]
 
-* Haskell Book [77%]
+* Haskell Book [80%]
 1. [X] All You Need Is Lambda [100%]
    1. [X] All You Need Is Lambda
    2. [X] What's A Function
@@ -316,17 +316,16 @@
     11. [X] [[./haskell_programming_from_first_principles/24_11.hs][Chapter Exercises]]
     12. [X] Definitions
     13. [X] Follow-up
-25. [-] Composing types [60%]
+25. [X] Composing types [100%]
     1. [X] Composing types
     2. [X] [[./haskell_programming_from_first_principles/25_02.hs][Common functions as types]]
     3. [X] [[./haskell_programming_from_first_principles/25_03.hs][Two little functors sittin’ in a tree, L-I-F-T-I-N-G]]
     4. [X] [[./haskell_programming_from_first_principles/25_04.hs][Twinplicative]]
     5. [X] Twonad?
     6. [X] [[./haskell_programming_from_first_principles/25_06.hs][Exercises: Compose Instances]]
-    7. [ ] Monad transformers
-    8. [ ] IdentityT
-    9. [ ] Finding a pattern
-    10. [ ] Answers
+    7. [X] [[./haskell_programming_from_first_principles/25_07.hs][Monad transformers]]
+    8. [X] IdentityT
+    9. [X] Finding a pattern
 26. [ ] Monad transformers 926 [0%]
     1. [ ] Monad transformers
     2. [ ] MaybeT
@@ -336,14 +335,14 @@
     6. [ ] Types you probably don’t want to use
     7. [ ] Recovering the ordinary type from the transformer
     8. [ ] Lexically inner is structurally outer
-    9. [ ] MonadTrans...........................941
-    10. [ ]  MonadIOakazoom-zoom .................952
-    11. [ ]  Monadtransformersinuse .................954
-    12. [ ]  Monadsdonotcommute ..................962
-    13. [ ]  Transformifyouwantto ..................962
-    14. [ ]  ChapterExercises .......................963
-    15. [ ]  Answers.............................. 969
-    16. [ ]  Follow-upresources...................... 969
+    9. [ ] MonadTrans
+    10. [ ]  MonadIO aka zoom-zoom
+    11. [ ]  Monad transformers in use
+    12. [ ]  Monads do not commute
+    13. [ ]  Transform if you want to
+    14. [ ]  Chapter Exercises
+    15. [ ]  Answers
+    16. [ ]  Follow-up resources
 27. [ ] Non-strictness 970 [0%]
     1. [ ]  Laziness .............................971
     2. [ ]  ObservationalBottomTheory...............972

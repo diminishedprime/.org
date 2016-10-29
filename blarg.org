@@ -1,2 +1,6 @@
 * Ideas
++ [ ] What's a Functor
++ [ ] What is Folable
++ [ ] What is Traversable
++ [ ] What is Applicative
 + [ ] Dependency injection is a simplified Monad.
