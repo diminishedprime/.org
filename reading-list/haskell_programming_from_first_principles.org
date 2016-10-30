@@ -331,7 +331,7 @@
     2. [X] [[./haskell_programming_from_first_principles/26_02.hs][MaybeT]]
     3. [X] [[./haskell_programming_from_first_principles/26_03.hs][EitherT]]
     4. [X] [[./haskell_programming_from_first_principles/26_04.hs][ReaderT]]
-    5. [ ] StateT
+    5. [ ] [[./haskell_programming_from_first_principles/26_05.hs][StateT]]
     6. [ ] Types you probably don’t want to use
     7. [ ] Recovering the ordinary type from the transformer
     8. [ ] Lexically inner is structurally outer
