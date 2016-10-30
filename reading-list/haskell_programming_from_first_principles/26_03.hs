@@ -28,11 +28,11 @@ swapEither (Left a) = (Right a)
 swapEither (Right a) = (Left a)
 
 swapEitherT :: (Functor m) => EitherT e m a -> EitherT a m e
-swapEitherT ema = undefined
-
--- Hint: write swapEither first, then swapEitherT in terms of the former.
+swapEitherT (EitherT ema) = EitherT $ swapEither <$> ema
 
 -- 5. Write the transformer variant of the either catamorphism.
--- eitherT :: Monad m => (a -> m c) -> (b -> m c)
--- -> EitherT a m b
--- -> m c eitherT = undefined
+eitherT :: Monad m => (a -> m c) -> (b -> m c) -> EitherT a m b -> m c
+eitherT fa fb (EitherT amb) = do v <- amb
+                                 case v of
+                                   (Left a) -> fa a
+                                   (Right b) -> fb b
