@@ -23,7 +23,10 @@ instance (Functor m) => Functor (StateT s m) where
 
 instance (Monad m) => Applicative (StateT s m) where
   pure a = StateT $ \s -> return (a, s)
-  (StateT fab) <*> (StateT fa) = StateT $ \s -> undefined
+  (StateT fab) <*> (StateT fa) = StateT $ \s -> do (f, s') <- fab s
+                                                   (a, s'') <- fa s'
+                                                   return (f a, s'')
+
 
 -- Also note that the constraint on m is not Applicative as you expect, but
 -- rather Monad. This is because you can’t express the order-dependent
@@ -32,3 +35,11 @@ instance (Monad m) => Applicative (StateT s m) where
 -- the initial state to each computation in StateT rather than threading it
 -- through as you go. This is a general pattern contrasting Applicative and
 -- Monad and is worth contemplating.
+
+-- 3. The Monad instance should look fairly similar to the Monad instance you
+-- wrote for ReaderT.
+
+instance (Monad m) => Monad (StateT s m) where
+  return = pure
+  (StateT ma) >>= f = StateT $ \s -> do (a, s') <- ma s
+                                        (runStateT (f a)) s
