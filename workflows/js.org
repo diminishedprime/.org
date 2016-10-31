@@ -1,5 +1,5 @@
-+ [[../index.org][Main Index]]
-+ [[./index.org][Workflow Index]]
+[[../index.org][Main Index]]
+[[./index.org][Workflow Index]]
 
 * Javascript Workflow
 + Node

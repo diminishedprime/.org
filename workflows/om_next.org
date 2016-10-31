@@ -1,0 +1,159 @@
+[[../index.org][Main Index]]
+[[./index.org][Workflow Index]]
+
+* Om Next
+** New Project with Datascript
++ [ ] Set up directories and files
+  #+BEGIN_SRC sh
+    mkdir -p resources/public/css
+    mkdir -p script
+    mkdir -p src/dev
+
+    touch project.clj
+    touch resources/public/css/styles.css
+    touch resources/public/index.html
+    touch start && chmod +x start
+    touch script/figwheel.clj
+    touch figwheel.edn
+    touch src/dev/devcards.cljs
+  #+END_SRC
++ [ ] ./project.clj
+  #+BEGIN_SRC clojure
+    (defproject group/project-name "1"
+    :dependencies [[org.clojure/clojure "1.9.0-alpha11"]
+                   [org.clojure/clojurescript "1.9.229"]
+                   [org.omcljs/om "1.0.0-alpha45"]
+                   [datascript "0.15.2"]
+                   [devcards "0.2.1-7"]
+                   [figwheel-sidecar "0.5.7"]])
+  #+END_SRC
++ [ ] ./figwheel.edn
+  #+BEGIN_SRC clojure
+    {:http-server-root "public"
+     :server-port 3449
+     :open-file-command "emacsclient"
+     :builds [{:id "dev"
+               :source-paths ["src"]
+               :figwheel {:devcards true}
+               :compiler {:main dev.devcards
+                          :asset-path "js"
+                          :output-to "resources/public/js/main.js"
+                          :output-dir "resources/public/js"
+                          :source-map-timestamp true
+                          :verbose true}}]}
+
+  #+END_SRC
++ [ ] ./script/figwheel.clj
+  #+BEGIN_SRC clojure
+    (require '[figwheel-sidecar.system :as sys]
+             '[clojure.pprint :refer [pprint]]
+             '[com.stuartsierra.component :as component])
+
+    (def system
+      (component/system-map
+       :figwheel-system (sys/figwheel-system (sys/fetch-config))
+       :css-watcher (sys/css-watcher {:watch-paths ["resources/public/css"]})))
+
+    (alter-var-root #'system component/start)
+    (sys/cljs-repl (:figwheel-system system))
+  #+END_SRC
++ [ ] ./resources/public/index.html
+  #+BEGIN_SRC html
+    <!DOCTYPE html>
+    <html>
+      <head lang="en">
+        <meta charset="UTF-8">
+        <title>SITE TITLE</title>
+        <link rel="stylesheet" href="css/site.css">
+      </head>
+      <body>
+        <div id="app"></div>
+        <script src="js/main.js"></script>
+      </body>
+    </html>
+  #+END_SRC
++ [ ] ./start
+  #+BEGIN_SRC sh
+    lein run -m clojure.main script/figwheel.clj
+  #+END_SRC
++ [ ] ./src/dev/devcards.cljs
+  #+BEGIN_SRC clojure
+    (ns dev.devcards
+      (:require
+       [om.next :as om :refer-macros [defui]]
+       [om.dom :as dom]
+       [cljs.pprint :as pprint]
+       [datascript.core :as d])
+      (:require-macros
+       [devcards.core :as dc :refer [defcard]]))
+
+    (devcards.core/start-devcard-ui!)
+
+    (defmulti read om/dispatch)
+
+    (defmethod read :app/heading
+      [{:keys [state]} _ _]
+      {:value (d/q '[:find ?v .
+                     :where [?e :app/heading ?v]]
+                   (d/db state))})
+
+    (defmethod read :app/paragraph
+      [{:keys [state]} _ _]
+      {:value (d/q '[:find ?v .
+                     :where [?e :app/paragraph ?v]]
+                   (d/db state))})
+
+    (defmethod read :app/button-text
+      [{:keys [state]} _ _]
+      {:value (d/q '[:find ?v .
+                     :where [?e :app/button-text ?v]]
+                   (d/db state))})
+
+    (defmethod read :app/counter-value
+      [{:keys [state]} _ _]
+      {:value (d/q '[:find ?v .
+                     :where [?e :app/counter-value ?v]]
+                   (d/db state))})
+
+    (defmulti mutate om/dispatch)
+
+    (defmethod mutate 'app/increase-counter
+      [{:keys [state]} _ _]
+      {:action #(let [[app-id counter-val]
+                      (d/q '[:find [ ?a-id ?counter-val]
+                             :where [?a-id :app/counter-value ?counter-val]]
+                           (d/db state))]
+                  (d/transact! state
+                               [[:db/add app-id :app/counter-value (inc counter-val)]]))})
+
+    (defn reconciler-for-conn [conn]
+      (om/reconciler {:state conn
+                      :parser (om/parser {:read read
+                                          :mutate mutate})}))
+
+    (defui App
+      static om/IQuery
+      (query [this] [:app/heading :app/paragraph
+                     :app/button-text :app/counter-value])
+      Object
+      (render [this]
+              (let [{:keys [app/heading app/paragraph
+                            app/button-text app/counter-value]} (om/props this)]
+                (dom/div nil
+                         (dom/h1 nil heading)
+                         (dom/p nil paragraph)
+                         (dom/p nil counter-value)
+                         (dom/button #js {:onClick #(om/transact!
+                                                     this
+                                                     `[(app/increase-counter)])} button-text)))))
+
+    (defcard my-first-card
+      (let [conn (d/create-conn {})
+            _ (d/transact! conn [{:db/id 1
+                                  :app/heading "This is the heading!"
+                                  :app/paragraph "This is the paragraph text"
+                                  :app/button-text "Press me!"
+                                  :app/counter-value 0}])
+            reconciler (reconciler-for-conn conn)]
+        (dc/om-next-root App reconciler)))
+  #+END_SRC
