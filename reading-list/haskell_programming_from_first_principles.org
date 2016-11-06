@@ -1,7 +1,7 @@
 [[../index.org][Main Index]]
 [[./index.org][Reading List]]
 
-* Haskell Book [80%]
+* Haskell Book [83%]
 1. [X] All You Need Is Lambda [100%]
    1. [X] All You Need Is Lambda
    2. [X] What's A Function
@@ -326,14 +326,14 @@
     7. [X] [[./haskell_programming_from_first_principles/25_07.hs][Monad transformers]]
     8. [X] IdentityT
     9. [X] Finding a pattern
-26. [-] Monad transformers 926 [25%]
+26. [-] Monad transformers 926 [43%]
     1. [X] Monad transformers
     2. [X] [[./haskell_programming_from_first_principles/26_02.hs][MaybeT]]
     3. [X] [[./haskell_programming_from_first_principles/26_03.hs][EitherT]]
     4. [X] [[./haskell_programming_from_first_principles/26_04.hs][ReaderT]]
-    5. [ ] [[./haskell_programming_from_first_principles/26_05.hs][StateT]]
-    6. [ ] Types you probably don’t want to use
-    7. [ ] Recovering the ordinary type from the transformer
+    5. [X] [[./haskell_programming_from_first_principles/26_05.hs][StateT]]
+    6. [X] Types you probably don’t want to use
+    7. [X] Recovering the ordinary type from the transformer
     8. [ ] Lexically inner is structurally outer
     9. [ ] MonadTrans
     10. [ ]  MonadIO aka zoom-zoom
@@ -343,21 +343,21 @@
     14. [ ]  Chapter Exercises
     15. [ ]  Answers
     16. [ ]  Follow-up resources
-27. [ ] Non-strictness 970 [0%]
-    1. [ ]  Laziness .............................971
-    2. [ ]  ObservationalBottomTheory...............972
-    3. [ ]  Outsidein,insideout.....................972
-    4. [ ]  Whatdoestheotherwaylooklike? . . . . . . . . . . . . 975
-    5. [ ]  Callbyname,callbyneed..................986
-    6. [ ]  Non-strict evaluation changes what we can do . . . . . 987
-    7. [ ]  Thunk Life . . . . . . . . . . . . . . . . . . . . . . . . . . . . 988
-    8. [ ]  Sharing is caring . . . . . . . . . . . . . . . . . . . . . . . . 990
-    9. [ ]  Refutableandirrefutablepatterns . . . . . . . . . . . . 1002
-    10. [ ]  Bang-patterns . . . . . . . . . . . . . . . . . . . . . . . . . . 1004
-    11. [ ]  Strict and StrictData . . . . . . . . . . . . . . . . . . . . . . 1007
-    12. [ ]  Adding strictness . . . . . . . . . . . . . . . . . . . . . . . . 1008
-    13. [ ]  ChapterExercises .......................1012
-    14. [ ]  Follow-upresources...................... 1014
+27. [X] Non-strictness [100%]
+    1. [X]  Laziness
+    2. [X]  Observational Bottom Theory
+    3. [X]  Outside in, inside out
+    4. [X]  [[./haskell_programming_from_first_principles/27_04.hs][What does the other way look like?]]
+    5. [X]  Call by name, call by need
+    6. [X]  Non-strict evaluation changes what we can do
+    7. [X]  Thunk Life
+    8. [X]  Sharing is caring
+    9. [X]  Refutable and irrefutable patterns
+    10. [X]  Bang-patterns
+    11. [X]  Strict and Strict Data
+    12. [X]  Adding strictness
+    13. [X]  [[./haskell_programming_from_first_principles/27_13.hs][Chapter Exercises]]
+    14. [X]  Follow-up resources
 28. [ ] Basic libraries 1015 [0%]
     1. [ ]
     2. [ ]

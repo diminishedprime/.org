@@ -110,3 +110,6 @@
   + [[http://www.catonmat.net/blog/sed-book/][Sed One Liners Explained]]
   + [[http://www.catonmat.net/blog/perl-book/][Pearl One Liners Explained]]
   + [[https://www.nostarch.com/perloneliners][Pearl One-Liners]]
+
+* Pleasure
++ [ ] Creativity Inc.

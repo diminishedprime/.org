@@ -1,0 +1,58 @@
+#+BEGIN_SRC lisp
+
+  G                Am
+  I went walking again
+                  Em                        C                     G
+  I'll go out and forget to tell any of my friends where I'm going
+  G                          Am                 Em
+  I'm just drunk on the side of the road in a ditch when you find me –
+          C
+  I wanna go home, but I'm sick
+  G                            Am        Em          C
+  There's more whiskey than blood in my veins
+   Em
+  More tar than air in my lungs
+         C
+  The strung out call I make
+  G                         G#
+  Burned down on the edge of the highway
+   Em                                     C
+  "I'm sorry for asking, but please, come take me home"
+
+  G  Am  Em    C
+
+  G
+  I quit talking again
+  Am                        Em                  C
+  But I know you're still listening to see if I sleep or I pierce my skin
+  G                     Am
+  Needles to the worn out rags
+  Em                        C
+  The folds in my arms, the sickening black
+  G                     Am
+  And I haven't been taking my meds
+  Em                        C
+  Lock all the cabinets, send me to bed
+                  G                     Am
+  Cause I know you're still worried I'm gonna get scared
+  Em                                          C
+  Cause I'm alone again and I don't like the things I see
+
+  G                     Am
+  And I haven't been taking my meds
+  Em                        C
+  Lock all the cabinets, send me to bed
+                  G                     Am
+  Cause I know you're still worried I'm gonna get scared again
+  Em                                          C
+  And make my insides clean with your kitchen bleach
+  G                            Am                Em                                          C
+  But I've kissed enough bathroom sinks to make up for the lovers that never loved me
+  G                           Am
+  And I know my body is just dirty clothes;
+   Em                          C
+  I'm tired of washing my hands
+                 G
+  God, I wanna go home
+
+#+END_SRC
