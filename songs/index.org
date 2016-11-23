@@ -1,6 +1,12 @@
 [[../index.org][Home]]
 
 * Songs
+** John Daveys
++ [[./spent.org][Spent]]
+** Lake Street Dive
++ [[./sometimes_when_im_drunk.org][Sometimes When I Am Drunk]]
+** Julien Baker
++ [[./blacktop.org][Blacktop]]
 ** The Dear Hunter
 + [[./home.org][Home]]
 + [[./what_it_means_to_be_alone.org][What It Means to Be Alone]]

@@ -1,9 +1,9 @@
-+ [[../index.org][Home]]
-+ [[./index.org][Songs]]
+[[../index.org][Home]]
+[[./index.org][Songs]]
 
-* You And I
-** Ingrid Michaelnononetuhsnoehu
-#+BEGIN_SRC elisp
+* Ingrid Michaelson
+** You And I
+#+BEGIN_SRC sh
   [Intro]
   C
 

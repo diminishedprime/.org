@@ -1,0 +1,65 @@
+[[../index.org][Home]]
+[[./index.org][Songs]]
+
+* John Daveys
+** Spent
+#+BEGIN_SRC sh
+   amspC Em
+  F C
+  F C
+  G
+          C                            Em
+  I'm all spent like a crumpled dollar note
+         F                   C
+  in the hull of your old rowboat
+            F                          C
+  when it's tethered to the end of the dock
+              G
+  for a dozen years or so
+
+
+  My clothes wore out
+
+  all around the same time
+
+  feel like I've been nickled and dimed
+     F                      C
+  so darling if you'd be so kind find a needle and a
+  D                              G
+  thread and help me mend what's mine
+
+              F                          G
+  cause I got holes in the bottoms of my shoes
+   m    Em            Am
+  from chasing after you
+  F                   C
+  pieces of them left behind
+           D         G
+  down the 27 state lines
+
+  I'm all spent like the end of the season
+  tired for all the right reasons
+  the return on my exchange is much much more
+  than you could even ever believe in
+
+  I left little bits of my heart
+  scattered out among the ozarks
+  on the shores of many northern lakes
+  and Louisiana in the dark
+
+  cause I got holes in the bottoms of my shoes
+  from chasing after you
+  pieces of them left behind
+  down the 27 state lines
+
+  I swear I almost fell apart
+  from using up the sum of my parts
+  I'm all tired and I'm worn out
+  from chasing you down so many towns
+  but my dreams never seem to slow down
+
+  cause I got holes in the bottoms of my shoes
+  I'm tuckered out and bruised
+  but I swear one day I will catch up with you
+  <
+#+END_SRC

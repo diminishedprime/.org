@@ -1,55 +1,60 @@
-* Kettering
-** The Antlers
+[[../index.org][Home]]
+[[./index.org][Songs]]
 
-Chords:
-Am            x-0-2-2-1-0
-Am(add9)      x-2-0-2-1-0
-C             x-3-2-0-1-0
-Em            0-2-2-0-0-0
-Em7           0-2-0-0-0-0
+* The Antlers
+** Kettering
+#+BEGIN_SRC sh
+  Chords:
+  Am            x-0-2-2-1-0
+  Am(add9)      x-2-0-2-1-0
+  C             x-3-2-0-1-0
+  Em            0-2-2-0-0-0
+  Em7           0-2-0-0-0-0
 
 
-Strum Pattern (all downstrokes):
-1    &    2    &    3    &    4    &
-Am   Am   Am   Am   Am   Am   Am   Am(add9)
-C    C    C    C    C    C    C    C
-Em   Em   Em   Em   Em7  Em7  Em7  Em7
-Am   Am   Am   Am   Am   Am   Am   Am
+  Strum Pattern (all downstrokes):
+  1    &    2    &    3    &    4    &
+  Am   Am   Am   Am   Am   Am   Am   Am(add9)
+  C    C    C    C    C    C    C    C
+  Em   Em   Em   Em   Em7  Em7  Em7  Em7
+  Am   Am   Am   Am   Am   Am   Am   Am
 
-Intro:
-Am Am(add9) C Em Em7 Am x2
+  Intro:
+  Am Am(add9) C Em Em7 Am x2
 
-I wish that I had known in that first
-Minute we met the unpayable  debt
-That I owed you
+  I wish that I had known in that first
+  Minute we met the unpayable  debt
+  That I owed you
 
-'Cause you'd been abused by the
-Bone that refused you and you hired me
-To make up for that
+  'Cause you'd been abused by the
+  Bone that refused you and you hired me
+  To make up for that
 
-And walking in that room when you had
-Tubes in your arms those singing morphine alarms
-Out of tune
+  And walking in that room when you had
+  Tubes in your arms those singing morphine alarms
+  Out of tune
 
-They had you sleeping and eating and I
-Didn't believe them when they called you a hurricane
-Thunderclap
+  They had you sleeping and eating and I
+  Didn't believe them when they called you a hurricane
+  Thunderclap
 
-When I was checking vitals I
-Suggested a smile you didn't talk for a while
-You were freezing
+  When I was checking vitals I
+  Suggested a smile you didn't talk for a while
+  You were freezing
 
-You said you hated my tone it made you
-Feel so alone so you told me I had
-To be leaving
+  You said you hated my tone it made you
+  Feel so alone so you told me I had
+  To be leaving
 
-But something kept me standing by that
-Hospital bed I should have quit but instead
-I took care of you
+  But something kept me standing by that
+  Hospital bed I should have quit but instead
+  I took care of you
 
-You made me sleep and uneven and I
-Didn't believe them when they told me that there
-Was no saving you
+  You made me sleep and uneven and I
+  Didn't believe them when they told me that there
+  Was no saving you
 
-Outro:
-Am Am(add9) C Em Em7 Am (repeat/fade to finish)
+  Outro:
+  Am Am(add9) C Em Em7 Am (repeat/fade to finish)
+
+#+END_SRC

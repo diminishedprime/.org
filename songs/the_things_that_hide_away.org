@@ -1,47 +1,46 @@
-+ [[../index.org][Home]]
-+ [[./index.org][Songs]]
+[[../index.org][Home]]
+[[./index.org][Songs]]
 
-* The Things that Hide Away
-** The Dear Hunter
+* The Dear Hunter
+** The Things that Hide Away
+#+BEGIN_SRC sh
+  The Things that Hide Away
+  C - Em - G - Am7 - G/Am7
 
-#+BEGIN_SRC elisp
-The Things that Hide Away
-C - Em - G - Am7 - G/Am7
+  Waking up I felt that hesitation
+  Like I wasn't meant to wake up at all
+  Letting out a soft, cynical sigh
+  My god, it's just the answer
+  To the question I can't find
 
-Waking up I felt that hesitation
-Like I wasn't meant to wake up at all
-Letting out a soft, cynical sigh
-My god, it's just the answer
-To the question I can't find
+  C - Em - G - Am7 - G/Am7
 
-C - Em - G - Am7 - G/Am7
+  Marching on it's one foot then the other
+  Better than one foot then none at all
+  Biting off way more than I can chew
+  Like I sometimes do
+  I never know just when and where to start
 
-Marching on it's one foot then the other
-Better than one foot then none at all
-Biting off way more than I can chew
-Like I sometimes do
-I never know just when and where to start
+  Why are we here?
+  Why do we die?
+  Maybe we're just never meant to know why
+  Why are we here?
+  Why do we die?
+  Why, why, why?
 
-Why are we here?
-Why do we die?
-Maybe we're just never meant to know why
-Why are we here?
-Why do we die?
-Why, why, why?
+  Oohs
+  C - Em - G - Am7 - G/Am7
 
-Oohs
-C - Em - G - Am7 - G/Am7
+  Why are we here?
+  Why do we die?
+  Maybe we're just never meant to know why
+  Why are we here?
+  Why do we die?
+  Why, why, why?
 
-Why are we here?
-Why do we die?
-Maybe we're just never meant to know why
-Why are we here?
-Why do we die?
-Why, why, why?
+  Oohs
 
-Oohs
+  C - Em - G - Am - G
 
-C - Em - G - Am - G
-
-C
+  C
 #+END_SRC

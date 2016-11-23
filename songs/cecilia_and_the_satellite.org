@@ -1,70 +1,70 @@
-+ [[../index.org][Home]]
-+ [[./index.org][Songs]]
+[[../index.org][Home]]
+[[./index.org][Songs]]
 
-* Cecilia and the Satellite
-** Andrew McMahon
-#+BEGIN_SRC elisp
+* Andrew McMahon
+** Cecilia and the Satellite
+#+BEGIN_SRC sh
 
-Verse: F then C forever
+  Verse: F then C forever
 
-I've locked myself in a hotel room
-Then waited all night for the walls to move
-I've loved some girls that I barely knew
-I've made some friends, and I've lost some too
-Crashed my car, I was seventeen
-My mother in the seat riding next to me
-The things I've learned from a broken mirror
-How a face can change when a heart knows fear
+  I've locked myself in a hotel room
+  Then waited all night for the walls to move
+  I've loved some girls that I barely knew
+  I've made some friends, and I've lost some too
+  Crashed my car, I was seventeen
+  My mother in the seat riding next to me
+  The things I've learned from a broken mirror
+  How a face can change when a heart knows fear
 
-Dm
-For all the things my eyes have seen,
-F
-The best by far is you
+  Dm
+  For all the things my eyes have seen,
+  F
+  The best by far is you
 
-            C                Am
-If I could fly, then I would know
-                F                            C
-What life looks like from up above and down below
-              G                 Am
-I'd keep you safe, I'd keep you dry
-             F                          C
-Don't be afraid, Cecilia, I'm the satellite
+              C                Am
+  If I could fly, then I would know
+                  F                            C
+  What life looks like from up above and down below
+                G                 Am
+  I'd keep you safe, I'd keep you dry
+               F                          C
+  Don't be afraid, Cecilia, I'm the satellite
 
-And you're the sky
+  And you're the sky
 
-F C G Am
-Oh, Oh
+  F C G Am
+  Oh, Oh
 
-I've café crawled through Amsterdam
-Been around the world with a punk rock band
-And I've seen London, and I've played Japan
-I've been knocked down, I got up again
+  I've café crawled through Amsterdam
+  Been around the world with a punk rock band
+  And I've seen London, and I've played Japan
+  I've been knocked down, I got up again
 
-For all the places I have been,
-I'm no place without you
+  For all the places I have been,
+  I'm no place without you
 
-Chorus
+  Chorus
 
-F, C, G, Am
-Oh, Oh
-I'm the satellite
-And you're the sky
+  F, C, G, Am
+  Oh, Oh
+  I'm the satellite
+  And you're the sky
 
-F, C
+  F, C
 
-Dm
-For all the things my hands have held,
-F
-The best by far is you
+  Dm
+  For all the things my hands have held,
+  F
+  The best by far is you
 
-Chorus
+  Chorus
 
-Outro: F, C, G, Am
-And you're the sky
-And you're the sky
-I'm the satellite
-And you're the sky
-And you're the sky
+  Outro: F, C, G, Am
+  And you're the sky
+  And you're the sky
+  I'm the satellite
+  And you're the sky
+  And you're the sky
 
-F, C until end of song
+  F, C until end of song
 #+END_SRC

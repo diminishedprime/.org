@@ -1,9 +1,9 @@
-+ [[../index.org][Home]]
-+ [[./index.org][Songs]]
+[[../index.org][Home]]
+[[./index.org][Songs]]
 
-* Syliva
-** The Antlers
-#+BEGIN_SRC elisp
+* The Antlers
+** Syliva
+#+BEGIN_SRC sh
   Capo 2 (chords relative to the capo)
 
   Intro:

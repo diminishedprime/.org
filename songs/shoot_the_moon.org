@@ -1,58 +1,60 @@
-+ [[../index.org][Home]]
-+ [[./index.org][Songs]]
+[[../index.org][Home]]
+[[./index.org][Songs]]
 
-* Shoot The Moon
-** Norah Jones
+* Norah Jones
+** Shoot The Moon
+#+BEGIN_SRC sh
+  Intro: C   G/B  Am  C/G  F  C/E  F  G
 
-Intro: C   G/B  Am  C/G  F  C/E  F  G
-
-C           G/B     Am        C/G
-The summer days are gone too soon
- F            C/E     F         G
-You shoot the moon, miss completely
-C           G/B     Am        C/G
-And now you've left to face the gloom,
-F          C/E        F             G
-The empty room, that once smelled sweetly
- Am          G         Am/F#       F
-Of all the flowers you plucked if finally
- C    G/B     Am  G/B
-you knew the reason.
-Am       G     Am/F#    F
-Why you had to each be lonely.
-C       G/B     C   G
-Was it just the season.
-
-
-C       G/B     Am    C/G
-Now the fall is here again
-F            C/E     F         G
-You can't begin to give in, it's all over.
-C         G/B        Am       C/G
-When the snows come rolling through
-F              C/E  F             G
-you've rolling too with some new lover.
-Am          G      Am/F#       F
-Will you think of times you've told me
-     C    G/B     Am  G/B
-That you knew the reason
-Am      G     Am/F#    F
-Why we had to each be lonely.
-C       G/B     C   G
-Was it just the season.
+  C           G/B     Am        C/G
+  The summer days are gone too soon
+   F            C/E     F         G
+  You shoot the moon, miss completely
+  C           G/B     Am        C/G
+  And now you've left to face the gloom,
+  F          C/E        F             G
+  The empty room, that once smelled sweetly
+   Am          G         Am/F#       F
+  Of all the flowers you plucked if finally
+   C    G/B     Am  G/B
+  you knew the reason.
+  Am       G     Am/F#    F
+  Why you had to each be lonely.
+  C       G/B     C   G
+  Was it just the season.
 
 
-C   G/B  Am  C/G  F  C/E  F  G  X 2
+  C       G/B     Am    C/G
+  Now the fall is here again
+  F            C/E     F         G
+  You can't begin to give in, it's all over.
+  C         G/B        Am       C/G
+  When the snows come rolling through
+  F              C/E  F             G
+  you've rolling too with some new lover.
+  Am          G      Am/F#       F
+  Will you think of times you've told me
+       C    G/B     Am  G/B
+  That you knew the reason
+  Am      G     Am/F#    F
+  Why we had to each be lonely.
+  C       G/B     C   G
+  Was it just the season.
 
 
-Am          G      Am/F#       F
-Will you think of times you've told me
-     C    G/B     Am  G/B
-That you knew the reason
-Am      G     Am/F#    F
-Why we had to each be lonely.
-C       G/B     C   G
-Was it just the season.
+  C   G/B  Am  C/G  F  C/E  F  G  X 2
 
 
-C   G/B  Am  C/G  F  C/E  F  G ..
+  Am          G      Am/F#       F
+  Will you think of times you've told me
+       C    G/B     Am  G/B
+  That you knew the reason
+  Am      G     Am/F#    F
+  Why we had to each be lonely.
+  C       G/B     C   G
+  Was it just the season.
+
+
+  C   G/B  Am  C/G  F  C/E  F  G ..
+
+#+END_SRC

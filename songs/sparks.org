@@ -1,72 +1,80 @@
-Tuning:E,A,D,G,B,d    Capo=fret 6 (chords relative to capo)
+[[../index.org][Home]]
+[[./index.org][Songs]]
 
-Chords:
+* Coldplay
+** Sparks
+#+BEGIN_SRC sh
+  Tuning:E,A,D,G,B,d    Capo=fret 6 (chords relative to capo)
 
-Bbm7 = 022000
-Bbmmaj9 = x64000
-Bbm7/Db = x75000
-Db9 = x87000
-Gdim = x42000
-Gbmaj7 = x23000
-Dbmaj7 = x54000
-Bbm7 = x75000
-Ebmadd9 = 577500
-Db = 355400
+  Chords:
 
-
-Intro In this order = Bbm7  Bbm maj9  Bbm7/Db  Db9  Gdim  Gmaj7
-
-Verse chords = Dbmaj7  Bbm7  Ebmadd9  Db
-
-Did I drive you away
-I know what you'll say
-You'll say, "oh, sing one we know"
-But I promise you this
-I'll always look out for you
-That's what I'll do
-I say oh
-I say oh
-My heart is yours
-It's you that I hold on to
-That's what I do
-And I know I was wrong
-But I won't let you down
-Oh yeah, oh yeah, oh yeah, yeah I will, yes I will
-I said oh
-I cry oh
-Yeah I saw sparks
-Yeah I saw sparks
-And I saw sparks
-Yeah I saw sparks
-Sing it out
-La, la, la, la, oh...
-La, la, la, la, oh...
-La, la, la, la, oh...
-La, la, la, la, oh...
+  Bbm7 = 022000
+  Bbmmaj9 = x64000
+  Bbm7/Db = x75000
+  Db9 = x87000
+  Gdim = x42000
+  Gbmaj7 = x23000
+  Dbmaj7 = x54000
+  Bbm7 = x75000
+  Ebmadd9 = 577500
+  Db = 355400
 
 
-[Verse]
+  Intro In this order = Bbm7  Bbm maj9  Bbm7/Db  Db9  Gdim  Gmaj7
 
-Dbmaj7           Bbm7
-Did I drive you away
-Dbmaj7         Bbm7
-I know what you say
-              Ebmadd9
-You say ohhhh
-Dbmaj7                  Db
-Sing one you know
+  Verse chords = Dbmaj7  Bbm7  Ebmadd9  Db
+
+  Did I drive you away
+  I know what you'll say
+  You'll say, "oh, sing one we know"
+  But I promise you this
+  I'll always look out for you
+  That's what I'll do
+  I say oh
+  I say oh
+  My heart is yours
+  It's you that I hold on to
+  That's what I do
+  And I know I was wrong
+  But I won't let you down
+  Oh yeah, oh yeah, oh yeah, yeah I will, yes I will
+  I said oh
+  I cry oh
+  Yeah I saw sparks
+  Yeah I saw sparks
+  And I saw sparks
+  Yeah I saw sparks
+  Sing it out
+  La, la, la, la, oh...
+  La, la, la, la, oh...
+  La, la, la, la, oh...
+  La, la, la, la, oh...
 
 
-[Chorus]
+  [Verse]
 
-Bbm7     Bbm(maj9)          Bbm7/Db                  Db9        Gdim Gmaj7
-singing oooooooooooooooooooooooooooooooooooooooooooooooo
+  Dbmaj7           Bbm7
+  Did I drive you away
+  Dbmaj7         Bbm7
+  I know what you say
+  Ebmadd9
+  You say ohhhh
+  Dbmaj7                  Db
+  Sing one you know
 
 
-[Outro]
-          Dbmaj7             Bbm7
-Well I saw sparks
+  [Chorus]
 
-Repeat until end,  finish on Dbmaj7
+  Bbm7     Bbm(maj9)          Bbm7/Db                  Db9        Gdim Gmaj7
+  singing oooooooooooooooooooooooooooooooooooooooooooooooo
 
-These chords are 100% right listen to song for timing, enjoy.....
+
+  [Outro]
+  Dbmaj7             Bbm7
+  Well I saw sparks
+
+  Repeat until end,  finish on Dbmaj7
+
+  These chords are 100% right listen to song for timing, enjoy.....
+
+#+END_SRC

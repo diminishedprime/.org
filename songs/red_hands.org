@@ -1,78 +1,78 @@
-+ [[../index.org][Home]]
-+ [[./index.org][Songs]]
+[[../index.org][Home]]
+[[./index.org][Songs]]
 
-* Red Hands
-** The Antlers
+* The Dear Hunter
+** Red Hands
 #+BEGIN_SRC elisp
-Usually in C
-Intro:
-1, 3-, 1, 3-, 6-7, 6-, 5, 4
+  Usually in C
+  Intro:
+  1, 3-, 1, 3-, 6-7, 6-, 5, 4
 
 
-Verse:
+  Verse:
 
-Even if you never strayed from me
-I'd question your fidelity
-There'd always be a shroud of suspicion
-And my hearts a liability
-With your hands marooned so freshly red
-You'd wrap your lips around my neck
-Try and forced to love the thought of me
-Simple motions make me ill
+  Even if you never strayed from me
+  I'd question your fidelity
+  There'd always be a shroud of suspicion
+  And my hearts a liability
+  With your hands marooned so freshly red
+  You'd wrap your lips around my neck
+  Try and forced to love the thought of me
+  Simple motions make me ill
 
-Chorus:
-6-                             1
-Was it bitter when you tossed and turned
-         3-                                       5
-On an under covered mattress did it feel so good hope it felt so good
-6-                                 1
-Don't know what I'd do if you lost sleep over little old me
-            2-                     3-
-Its so much better, their all much better
-              4                           5                1
-Take off your sweater your shoes and your shirt and get to work
+  Chorus:
+  6-                             1
+  Was it bitter when you tossed and turned
+           3-                                       5
+  On an under covered mattress did it feel so good hope it felt so good
+  6-                                 1
+  Don't know what I'd do if you lost sleep over little old me
+              2-                     3-
+  Its so much better, their all much better
+                4                           5                1
+  Take off your sweater your shoes and your shirt and get to work
 
-BAHHH BAHHHH's:
-1, 5.
+  BAHHH BAHHHH's:
+  1, 5.
 
-Maybe this is just a work of art
-Scripted players in a play of lust
-Hope the endings well worth waiting for
-And everything you wished it be
+  Maybe this is just a work of art
+  Scripted players in a play of lust
+  Hope the endings well worth waiting for
+  And everything you wished it be
 
-Chorus: Same Pattern as last Chorus.
+  Chorus: Same Pattern as last Chorus.
 
-Was it bitter when you tossed and turned
-On an under covered mattress did it feel so good hope it felt so good
-Don't know what I'd do if you lost sleep over little old me
-Its so much better, you're all much better
-Take off your sweater your shoes and your shirt and get to work
+  Was it bitter when you tossed and turned
+  On an under covered mattress did it feel so good hope it felt so good
+  Don't know what I'd do if you lost sleep over little old me
+  Its so much better, you're all much better
+  Take off your sweater your shoes and your shirt and get to work
 
-BAHHHH BAHHHH's: Same
-Bridge:
+  BAHHHH BAHHHH's: Same
+  Bridge:
 
-4                     1      3-
-Oh my god what have I done
-4                       1            3-
-Now my darling put your clothes back on
-1         3-                   5
-Oh my god what have I done
-1                                 5                   3-
-Now my darling put your clothes back on
+  4                     1      3-
+  Oh my god what have I done
+  4                       1            3-
+  Now my darling put your clothes back on
+  1         3-                   5
+  Oh my god what have I done
+  1                                 5                   3-
+  Now my darling put your clothes back on
 
-Red Hands:
-              4
-cause you cant be caught red handed
-               1            3-
-If you're not red handed
-         4                                  1             3-
-My darling if I ever said those words to you
-               4     5          6                  2 7
-I was pulling out my heart so I could pin it to my sleeve
-            4                               1            3-
-A display for you to see Im on display
+  Red Hands:
+                4
+  cause you cant be caught red handed
+                 1            3-
+  If you're not red handed
+           4                                  1             3-
+  My darling if I ever said those words to you
+                 4     5          6                  2 7
+  I was pulling out my heart so I could pin it to my sleeve
+              4                               1            3-
+  A display for you to see Im on display
 
-Repeat through end.
+  Repeat through end.
 
-End on 1
+  End on 1
 #+END_SRC

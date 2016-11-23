@@ -1,46 +1,46 @@
-+ [[../index.org][Home]]
-+ [[./index.org][Songs]]
+[[../index.org][Home]]
+[[./index.org][Songs]]
 
-* Eet
-** Regina Spektor
-#+BEGIN_SRC elisp
-Capo 1
-           Am       G          C               F
-It’s like forgetting the words to your favorite song 
-         Am        G
-You can’t believe it 
-          C              F
-You were always singing along 
-         Am     G        C        F
-It was so easy and the words so sweet 
-        Am       G
-You can’t remember 
-            C          F
-You try to feel the beat  
+* Regina Spektor
+** Eet
+#+BEGIN_SRC sh
+  Capo 1
+             Am       G          C               F
+  It’s like forgetting the words to your favorite song 
+           Am        G
+  You can’t believe it 
+            C              F
+  You were always singing along 
+           Am     G        C        F
+  It was so easy and the words so sweet 
+          Am       G
+  You can’t remember 
+              C          F
+  You try to feel the beat  
 
-F       C    G
-Eeeeeeeeeee, eet, eet, eet 
-F       C    G
-Eeeeeeeeeee, eet, eet, eet 
+  F       C    G
+  Eeeeeeeeeee, eet, eet, eet 
+  F       C    G
+  Eeeeeeeeeee, eet, eet, eet 
 
-You spent half of your life trying to fall behind 
-You’re using your headphones to drown out your mind 
-It was so easy, and the words so sweet 
-You can’t remember 
-You try to move your feet 
+  You spent half of your life trying to fall behind 
+  You’re using your headphones to drown out your mind 
+  It was so easy, and the words so sweet 
+  You can’t remember 
+  You try to move your feet 
 
-Eeeeeeeeeee, eet, eet, eet 
-Eeeeeeeeeee, eet, eet, eet 
+  Eeeeeeeeeee, eet, eet, eet 
+  Eeeeeeeeeee, eet, eet, eet 
 
-Someone’s deciding whether or not to steal 
-He opens the window just to feel the chill 
-He hears that outside a small boy just starting to cry 
-‘Cause it’s his turn but his brother won’t let him try  
+  Someone’s deciding whether or not to steal 
+  He opens the window just to feel the chill 
+  He hears that outside a small boy just starting to cry 
+  ‘Cause it’s his turn but his brother won’t let him try  
 
-It’s like forgetting the words to your favorite song 
-You can’t believe it 
-You were always singing along 
-It was so easy and the words so sweet 
-You can’t remember 
-You try to feel the beat  
+  It’s like forgetting the words to your favorite song 
+  You can’t believe it 
+  You were always singing along 
+  It was so easy and the words so sweet 
+  You can’t remember 
+  You try to feel the beat  
 #+END_SRC

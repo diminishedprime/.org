@@ -1,10 +1,10 @@
-+ [[../index.org][Home]]
-+ [[./index.org][Songs]]
+[[../index.org][Home]]
+[[./index.org][Songs]]
 
 
-* Dancing With The Tears On My Eye
-** Ke$ha
-#+BEGIN_SRC elisp
+* Ke$ha
+** Dancing With The Tears On My Eye
+#+BEGIN_SRC sh
   Capo 2 in C
 
   Intro: Em--G-D-

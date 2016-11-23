@@ -1,67 +1,67 @@
-+ [[../index.org][Home]]
-+ [[./index.org][Songs]]
+[[../index.org][Home]]
+[[./index.org][Songs]]
 
-* SMALL HANDS
-** Keaton Henson
-#+BEGIN_SRC elisp
-  Capo 3
-  Intro - Am F C E x2
-          Am E F x2
+* Keaton Henson
+** Small Hands
+#+BEGIN_SRC sh
+   Capo 3
+   Intro - Am F C E x2
+           Am E F x2
 
-  Verse - Am F C E
-  Chorus - C Am F
-           C Em F
-           C Em F
+   Verse - Am F C E
+   Chorus - C Am F
+            C Em F
+            C Em F
 
-  Miss you terribly already,
-  Miss the space between your eyelids,
-  where I'd stare through awkward sentences
-  and avoid through awkward silence
+   Miss you terribly already,
+   Miss the space between your eyelids,
+   where I'd stare through awkward sentences
+   and avoid through awkward silence
 
-  Miss your teeth when they chatter,
-  when we smoked out in my garden
-  When we couldn't sleep for all the heat,
-  soft talk began to harden.
+   Miss your teeth when they chatter,
+   when we smoked out in my garden
+   When we couldn't sleep for all the heat,
+   soft talk began to harden.
 
-  Miss your small hands in the palm of mine
-  The fact they're good at making,
-  Miss your sitting up incessantly,
-  And the fact you're always waking in the ni------ght,
-  Ni---------ght.
+   Miss your small hands in the palm of mine
+   The fact they're good at making,
+   Miss your sitting up incessantly,
+   And the fact you're always waking in the ni------ght,
+   Ni---------ght.
 
-  And I,
-  I hope for your life
-  You forget about mine
-  Forget about mi-----------ne
+   And I,
+   I hope for your life
+   You forget about mine
+   Forget about mi-----------ne
 
-  Miss your teeth dug in my shoulder,
-  as we rolled in early morning,
-  Miss your arm dying beneath me,
-  as I lay there simply yawning
+   Miss your teeth dug in my shoulder,
+   as we rolled in early morning,
+   Miss your arm dying beneath me,
+   as I lay there simply yawning
 
-  Please forget me, you were right dear,
-  I am cold and self-involved,
-  And though I'll miss you, recent lover
-  I am weak and therefore fold
+   Please forget me, you were right dear,
+   I am cold and self-involved,
+   And though I'll miss you, recent lover
+   I am weak and therefore fold
 
-  Get distracted by my music,
-  think of nothing else but art
-  I'll write my loneliness in poems,
-  If I can just think how to start
+   Get distracted by my music,
+   think of nothing else but art
+   I'll write my loneliness in poems,
+   If I can just think how to start
 
-  Dot my i's with eyebrow pencils,
-  Close my eyelids, hide my eyes,
-  I'll be idle in my ideals,
-  think of nothing else but I.
-  I,         and I
+   Dot my i's with eyebrow pencils,
+   Close my eyelids, hide my eyes,
+   I'll be idle in my ideals,
+   think of nothing else but I.
+   I,         and I
 
-  And I,
-  I hope for your life
-  You can forget about mine
- Just forget about mi----------ne
-  Oh, mi----------ne.
-  Mi----------ne
+   And I,
+   I hope for your life
+   You can forget about mine
+  Just forget about mi----------ne
+   Oh, mi----------ne.
+   Mi----------ne
 
-  [End on A C]
+   [End on A C]
 
 #+END_SRC

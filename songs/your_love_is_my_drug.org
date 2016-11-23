@@ -1,10 +1,9 @@
-+ [[../index.org][Home]]
-+ [[./index.org][Songs]]
+[[../index.org][Home]]
+[[./index.org][Songs]]
 
-* Your Love Is My Drug
-** Kesha
-
-#+BEGIN_SRC elisp
+* Kesha
+** Your Love Is My Drug
+#+BEGIN_SRC sh
   C                      G           Am
   Maybe I need some rehab, or maybe just need some sleep
   Em         F              Em            F

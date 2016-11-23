@@ -1,10 +1,9 @@
-+ [[../index.org][Home]]
-+ [[./index.org][Songs]]
+[[../index.org][Home]]
+[[./index.org][Songs]]
 
-* Strawbear
-** Keaton Henson
-#+BEGIN_SRC elisp
-
+* Keaton Henson
+** Strawbear
+#+BEGIN_SRC sh
   Intro
   C Am7 Gsus4/E C x2
 

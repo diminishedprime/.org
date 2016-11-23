@@ -1,61 +1,61 @@
-+ [[../index.org][Home]]
-+ [[./index.org][Songs]]
+[[../index.org][Home]]
+[[./index.org][Songs]]
 
-* Home
-** The Dear Hunter
-#+BEGIN_SRC elisp
+* The Dear Hunter
+** Home
+#+BEGIN_SRC sh
 
-1                                                   4
-  With the good chance that we crash, let's say our grace (our grace)
-1                                            4
-  In your final breath believe, you're not alone.
+  1                                                   4
+    With the good chance that we crash, let's say our grace (our grace)
+  1                                            4
+    In your final breath believe, you're not alone.
 
 
 
-5
-Help will come,
-             4
-Yeah you can come back home.
-       5
-'Cause help is on the way,
-             4
-Yeah you can come back home.
-             1
-So come back home
-
-1                                            4
-  As your eyes begin to fade, your mind will wander (will wander)
-     1                                 6-
-This life is just a game we play, that we can never win.
+  5
+  Help will come,
                4
-But don't give up, no don't give up.
+  Yeah you can come back home.
+         5
+  'Cause help is on the way,
+               4
+  Yeah you can come back home.
+               1
+  So come back home
 
-5
-Help will come,
-             4
-Yeah you can come back home.
-       5
-'Cause help is on the way,
-             4
-Yeah you can come back home.
-             1
-So come back home
+  1                                            4
+    As your eyes begin to fade, your mind will wander (will wander)
+       1                                 6-
+  This life is just a game we play, that we can never win.
+                 4
+  But don't give up, no don't give up.
 
-1                                            4
-  Now in the end it's coming clear, you're not alone
-       1                             6-
-'Cause everyone you've ever loved is waiting here for you
-              4                 5
-So don't give up, no don't give up.
+  5
+  Help will come,
+               4
+  Yeah you can come back home.
+         5
+  'Cause help is on the way,
+               4
+  Yeah you can come back home.
+               1
+  So come back home
 
-             5
-Yeah, 'cause help will come,
-                       4
-Yeah you can come back home. (You can come back home yeah)
-       5
-'Cause help is on the way,
+  1                                            4
+    Now in the end it's coming clear, you're not alone
+         1                             6-
+  'Cause everyone you've ever loved is waiting here for you
+                4                 5
+  So don't give up, no don't give up.
+
+               5
+  Yeah, 'cause help will come,
                          4
-Yeah you can come back home. (You can come back home)
-             1
-So come back home
+  Yeah you can come back home. (You can come back home yeah)
+         5
+  'Cause help is on the way,
+                           4
+  Yeah you can come back home. (You can come back home)
+               1
+  So come back home
 #+END_SRC

@@ -1,120 +1,120 @@
-+ [[../index.org][Home]]
-+ [[./index.org][Songs]]
+[[../index.org][Home]]
+[[./index.org][Songs]]
 
 * Hozier
 ** Jackie and Wilson
-#+BEGIN_SRC elisp
+#+BEGIN_SRC sh
 
-Capo 1
-
-
-[Intro]
-
-C  Dm F  (C/E)
-C  Dm Em F (C/E)
+  Capo 1
 
 
-[Verse]
+  [Intro]
 
-C           Dm                          F            (C/E)
-So tired trying to see from behind the red in my eyes
-C                    Dm         Em         F         (C/E)
-No better version of me I could pretend to be tonight
-C                Dm  Em             F               (C/E)
-So deep in the swill with the most familiar of swine
-      Dm          F      C
-For reasons wretched and divine
-
-C          Dm                    F               (C/E)
-She blows out of nowhere roman candle of the wild
-C           Dm      Em         F           (C/E)
-Laughing her way through my feeble disguise
-C            Dm        Em             F         (C/E)
-No other version of me I would rather be tonight
-     Dm              F    C
-And lord she found me just in time
+  C  Dm F  (C/E)
+  C  Dm Em F (C/E)
 
 
-[Pre-Chorus]
+  [Verse]
 
-               Am      Em            F
-Cause with my mid-youth crisis all said and done
-               Dm                          Bb    Bm   C
-I need to be youthfully felt 'cause god I never felt young
+  C           Dm                          F            (C/E)
+  So tired trying to see from behind the red in my eyes
+  C                    Dm         Em         F         (C/E)
+  No better version of me I could pretend to be tonight
+  C                Dm  Em             F               (C/E)
+  So deep in the swill with the most familiar of swine
+        Dm          F      C
+  For reasons wretched and divine
 
-
-[Chorus]
-
-C         Dm                  F                                (C/E)
-She's gonna save me call me 'baby' run her hands through my hair
-C         Dm                    F                               (C/E)
-She'll know me crazy soothe me daily better yet she wouldn't care
-Am          Em              F                                 (C/E)
-We'll steal a Lexus be detectives ride 'round picking up clues
-C          Dm                       F
-We'll name our children Jackie and Wilson raise 'em on rhythm and blues
-
-
-[Verse]
-
-C             Dm                         F               (C/E)
-Lord it'd be great to find a place we could escape sometime
-C           Dm  Em     F                           (C/E)
-Me and my Isis growing black irises in the sunshine
-C                Dm  Em              F                 (C/E)
-Every version of me dead and buried in the yard outside
-Dm                 F        C
-Sit back and watch the world go by
+  C          Dm                    F               (C/E)
+  She blows out of nowhere roman candle of the wild
+  C           Dm      Em         F           (C/E)
+  Laughing her way through my feeble disguise
+  C            Dm        Em             F         (C/E)
+  No other version of me I would rather be tonight
+       Dm              F    C
+  And lord she found me just in time
 
 
-[Pre-Chorus]
+  [Pre-Chorus]
 
-      Am   Em              F
-Happy to lie back watch it burn and rust
-Dm                               Bb    Bm  C
-We tried the world good god it wasn't for us
-
-
-[Chorus]
-
-C         Dm                  F                                (C/E)
-She's gonna save me call me 'baby' run her hands through my hair
-C         Dm                    F                               (C/E)
-She'll know me crazy soothe me daily better yet she wouldn't care
-Am          Em              F                                 (C/E)
-We'll steal a Lexus be detectives ride 'round picking up clues
-C          Dm                       F
-We'll name our children Jackie and Wilson raise 'em on rhythm and blues
+                 Am      Em            F
+  Cause with my mid-youth crisis all said and done
+                 Dm                          Bb    Bm   C
+  I need to be youthfully felt 'cause god I never felt young
 
 
-[Instrumental]
+  [Chorus]
 
-Am   Em-F   Em-F   Em  C
-Am   Em-F   Em-F   Em  C
-Am   Em-F   Em-F   Em  C
-Dm   Bb Bm C
-
-
-[Verse]
-
-C            Dm                      F               (C/E)
-Cut clean from the dream that night let my mind reset
-C               Dm                   F           (C/E)
-Lookin' up from a cigarette and she's already left
-C                     Dm   Em                 F                          (C/E)
-I start diggin' up the yard for what's left of me and our little vignette
-Dm                      F  C
-For whatever poor soul is coming next
+  C         Dm                  F                                (C/E)
+  She's gonna save me call me 'baby' run her hands through my hair
+  C         Dm                    F                               (C/E)
+  She'll know me crazy soothe me daily better yet she wouldn't care
+  Am          Em              F                                 (C/E)
+  We'll steal a Lexus be detectives ride 'round picking up clues
+  C          Dm                       F
+  We'll name our children Jackie and Wilson raise 'em on rhythm and blues
 
 
-[Chorus]
+  [Verse]
 
-C         Dm                  F                                (C/E)
-She's gonna save me call me 'baby' run her hands through my hair
-C         Dm                    F                               (C/E)
-She'll know me crazy soothe me daily better yet she wouldn't care
-Am          Em              F                                 (C/E)
-We'll steal a Lexus be detectives ride 'round picking up clues
-C          Dm                       F
-We'll name our children Jackie and Wilson raise 'em on rhythm and blues
+  C             Dm                         F               (C/E)
+  Lord it'd be great to find a place we could escape sometime
+  C           Dm  Em     F                           (C/E)
+  Me and my Isis growing black irises in the sunshine
+  C                Dm  Em              F                 (C/E)
+  Every version of me dead and buried in the yard outside
+  Dm                 F        C
+  Sit back and watch the world go by
+
+
+  [Pre-Chorus]
+
+        Am   Em              F
+  Happy to lie back watch it burn and rust
+  Dm                               Bb    Bm  C
+  We tried the world good god it wasn't for us
+
+
+  [Chorus]
+
+  C         Dm                  F                                (C/E)
+  She's gonna save me call me 'baby' run her hands through my hair
+  C         Dm                    F                               (C/E)
+  She'll know me crazy soothe me daily better yet she wouldn't care
+  Am          Em              F                                 (C/E)
+  We'll steal a Lexus be detectives ride 'round picking up clues
+  C          Dm                       F
+  We'll name our children Jackie and Wilson raise 'em on rhythm and blues
+
+
+  [Instrumental]
+
+  Am   Em-F   Em-F   Em  C
+  Am   Em-F   Em-F   Em  C
+  Am   Em-F   Em-F   Em  C
+  Dm   Bb Bm C
+
+
+  [Verse]
+
+  C            Dm                      F               (C/E)
+  Cut clean from the dream that night let my mind reset
+  C               Dm                   F           (C/E)
+  Lookin' up from a cigarette and she's already left
+  C                     Dm   Em                 F                          (C/E)
+  I start diggin' up the yard for what's left of me and our little vignette
+  Dm                      F  C
+  For whatever poor soul is coming next
+
+
+  [Chorus]
+
+  C         Dm                  F                                (C/E)
+  She's gonna save me call me 'baby' run her hands through my hair
+  C         Dm                    F                               (C/E)
+  She'll know me crazy soothe me daily better yet she wouldn't care
+  Am          Em              F                                 (C/E)
+  We'll steal a Lexus be detectives ride 'round picking up clues
+  C          Dm                       F
+  We'll name our children Jackie and Wilson raise 'em on rhythm and blues
 #+END_SRC

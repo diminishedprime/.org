@@ -1,9 +1,9 @@
-+ [[../index.org][Main Index]]
-+ [[./index.org][Song Index]]
+[[../index.org][Main Index]]
+[[./index.org][Song Index]]
 
-* Charon
-** Keaton Henson
-#+BEGIN_SRC elisp
+* Keaton Henson
+** Charon
+#+BEGIN_SRC sh
   Capo 5
 
   hopefully this is easy enough to follow. Once you have the picking pattern down it's
