@@ -4,9 +4,10 @@
 * Sufjan Stevens
 ** All Of Me Wants All Of You
 #+BEGIN_SRC fundamental
-  Capo 7
+  Original - Capo 7
 
-  Am   C   D   G   Em   D   C   D
+  Am   C   D   G
+  Em   D   C   D
 
   Am                 C      D          G
   Shall we beat this or celebrate it?
@@ -17,10 +18,10 @@
   Em          D       C     D
   Manelich, I feel so used
 
-
   Shall we beat this or celebrate it?
   You’re not the one to talk things through
   You checked your texts while I masturbated
+  [mon uh lick]
   Manelich, I feel so used
 
   Found myself on Spencer’s Butte
@@ -33,10 +34,8 @@
   But in this light you look like Poseidon
   I’m just a ghost you walk right through
 
-  Saw myself on Spencer’s Butte (All of me wants all of you)
-  Landscape changed my point of view (All of me wants all of you)
-  Revelation may come true (All of me wants all of you)
-  Now all of me thinks less of you (All of me wants all of you)
-
-  (All of me wants all of you)
+  Saw myself on Spencer’s Butte
+  Landscape changed my point of view
+  Revelation may come true
+  Now all of me thinks less of you
 #+END_SRC

@@ -1,17 +1,10 @@
-[[../index.org][Main Index]]
-[[./index.org][Song Index]]
+[[../index.org][Main]]
+[[./index.org][Songs]]
 
 * Keaton Henson
 ** Charon
 #+BEGIN_SRC fundamental
   Capo 5
-
-  hopefully this is easy enough to follow. Once you have the picking pattern down it's
-  just a case of putting the chords over it really...
-
-
-  Intro: (played twice, only play the open E at the start of the Bm first time round, then
-                 just play another 2 on the A string for the rest of the song)
 
   Bm
   e|-----------------------------------------------------------------|
@@ -55,16 +48,6 @@
   E|----------------------------------|
 
   Verse:  (same as intro)
-
-  And It seems as though
-  I'm on my own
-  And time transcends, oh!
-
-  And it seems I speak
-  like waters leak
-  And I'm losing friends, oh!
-
-
   End of Verse:
 
   Em

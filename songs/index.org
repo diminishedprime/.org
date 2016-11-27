@@ -10,6 +10,7 @@
 ** Lake Street Dive
 + [[./sometimes_when_im_drunk.org][Sometimes When I Am Drunk]]
 ** Julien Baker
++ [[./brittle_boned.org][Brittle Boned]]
 + [[./blacktop.org][Blacktop]]
 ** The Dear Hunter
 + [[./home.org][Home]]
@@ -52,5 +53,7 @@
 + [[./new.org.gpg][Stuff]]
 ** Paper Kites
 + [[./bloom.org][Bloom]]
+** Ghostmice
++ [[./how_it_sounds.org][How It Sounds]]
 ** Sufjan Stevens
 + [[./all_of_me_wants_all_of_you.org][All Of Me Wants All Of You]]

@@ -1,0 +1,36 @@
+[[../index.org][Home]]
+[[./index.org][Songs]]
+
+* Ghost Mice
+** How It Sounds
+#+BEGIN_SRC fundamental
+  F C G Am x fiveEVer
+
+  Everyone's hoping you can hold off the attack
+  They keep telling you that you should just relax
+  But if they knew how that sounded to you
+  They would know that it's something you can't do
+
+  Everybody's telling you everything's gonna be OK
+  They keep saying tomorrow's another day
+  But if they knew how that sounded to you
+  They would know why you know that that's not true
+  They would know why you know that that's not true
+
+  Everyone's saying it's not as bad as it seems
+  They keep talking but you don't know what they mean
+  And if they knew how that sounded to you
+  They'd be alone at home and locked inside their rooms
+
+  Everyone's telling you the reasons you should live
+  They keep saying that you got so much to give
+  But if they knew how that sounded to you
+  It would break their hearts in two
+  It would break their hearts in two
+
+  But they don't know, they don't know, they don't know
+  So they'll keep talking and wasting their breath
+  They don't know how to save your sorry soul
+  So they'll keep talking till there's no words left
+  They'll keep talking till there's no words left
+#+END_SRC
