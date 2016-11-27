@@ -358,8 +358,8 @@
     12. [X]  Adding strictness
     13. [X]  [[./haskell_programming_from_first_principles/27_13.hs][Chapter Exercises]]
     14. [X]  Follow-up resources
-28. [ ] Basic libraries 1015 [0%]
-    1. [ ]
+28. [ ] Basic libraries [0%]
+    1. [ ] Basic Libraries and Data Structures
     2. [ ]
     3. [ ]
     4. [ ]

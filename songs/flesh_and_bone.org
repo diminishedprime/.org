@@ -3,7 +3,7 @@
 
 * Keaton Henson
 ** Flesh and Bone
-#+BEGIN_SRC sh
+#+BEGIN_SRC fundamental
 
   Capo 2
         Em

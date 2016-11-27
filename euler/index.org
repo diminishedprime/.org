@@ -70,3 +70,8 @@ username: mjhclojure
 65. [X] [[./065.org][Convergents of e]]
 66. [ ]
 67. [ ] [[./067.org][Maximum Path Sum II]]
+68. [ ]
+69. [ ]
+70. [ ]
+71. [ ]
+72. [ ] [[./072.org][Counting Fractions]]

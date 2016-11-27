@@ -3,7 +3,7 @@
 
 * Keaton Henson
 ** Small Hands
-#+BEGIN_SRC sh
+#+BEGIN_SRC fundamental
    Capo 3
    Intro - Am F C E x2
            Am E F x2

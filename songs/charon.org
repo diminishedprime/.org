@@ -3,7 +3,7 @@
 
 * Keaton Henson
 ** Charon
-#+BEGIN_SRC sh
+#+BEGIN_SRC fundamental
   Capo 5
 
   hopefully this is easy enough to follow. Once you have the picking pattern down it's

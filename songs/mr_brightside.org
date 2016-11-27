@@ -1,0 +1,165 @@
+[[../index.org][Home]]
+[[./index.org][Songs]]
+
+* The Killers
+** Mr Brightside
+#+BEGIN_SRC fundamental
+
+  [Intro/Verse] (play 5 times, because the first is without vocals):
+
+  eb:----------00--------------00--------------00-------------00-------|
+  Bb:-----3-------3--------3------3--------3------3-------3------3-----|
+  Gb:------------------------------------------------------------------|
+  Db:---4---4--------0---4---4-------0---4---4------4---4---4-------0--|
+  Ab:-5----------------4-----------------------------------------------|
+  Eb:----------------------------------3--------------3----------------|
+
+
+  [Pre-Chorus]  starts on the "chest now" part:
+
+  eb:--------0-0-------------0-0-------------0-0--------------0-0-----|
+  Bb:-----3------3--------3------3-------3-------3--------3-------3---|
+  Gb:-----------------------------------------------------------------|
+  Db:---0---0------0----0---0------0---0---0-------0----0---0-------0-|
+  Ab:-2---------------2--------------0----------------0---------------|
+  Eb:-----------------------------------------------------------------|
+
+  eb|-------0-0--------------0-0-------------0-0--------------0-0------|
+  Bb|----3------3--------3-------3-------3-------3--------3-------3----|
+  Gb|------------------------------------------------------------------|
+  Db|--0---0-------0---0---0-------0---0---0-------0----0---0-------0--|
+  Ab|------------------------------------------------------------------|
+  Eb|-3--------------3---------------3----------------3----------------|
+
+
+  [Chorus]
+
+  Part 1(play 2 times):
+  eb:-----------------------------------------------------------------------|
+  Bb:-----------------------------------------------------------------------|
+  Gb:--11--11--11--11----12--12--12--12---14--14--14--14---9---7---6---7----|
+  Db:----12--12--12--12----12--12--12--12---12--12--12--12---7---7---7---7--|
+  Ab:-----------------------------------------------------------------------|
+  Eb:-----------------------------------------------------------------------|
+
+  Part 2 (play 2 times):
+
+  eb:---------------------------------------------------------------------|
+  Bb:-10----10----10---12----12----12---15----15----15--------------------|
+  Gb:---11----11----11---12----12----12---14----14----14--9---7---6---7---|
+  Db:-----12----12---------12----12---------12----12--------7---7---7---7-|
+  Ab:---------------------------------------------------------------------|
+  Eb:---------------------------------------------------------------------|
+
+  [Interlude 2]  ( played twice after the second chorus):
+
+  eb:---------------------------------------------------------------|
+  Bb:---------------------------------------------------------------|
+  Gb:-11--11--12--14--12--14--12--11--11--11--12--11---9--7--6--7---|
+  Db:---12--12--12--12--12--12--12--12--12--12--12--12---7--7--7--7-|
+  Db:---------------------------------------------------------------|
+  Ab:---------------------------------------------------------------|
+  Eb:---------------------------------------------------------------|
+
+  [Ending]   (First 3 times are the same as the
+  part 1 of the chorus:
+
+  eb:-----------------------------------------------------------------------|
+  Bb:-----------------------------------------------------------------------|
+  Gb:--11--11--11--11---12--12--12--12---14--14--14--14---9---7---6---7-----|
+  Db:----12--12--12--12---12--12--12--12---12--12--12--12---7---7---7---7---|x3
+  Ab:-----------------------------------------------------------------------|
+  Eb:-----------------------------------------------------------------------|
+
+  And then( the 4th time):
+
+  eb:-----------------------------------------------------------------------|
+  Bb:-----------------------------------------------------------------------|
+  Gb:--11--11--11--11--12--12--12--12--14--14--14--14---9---7---6-----------|
+  Db:----12--12--12--12--12--12--12--12--12--12--12--12---7---7-------------|
+  Ab:-----------------------------------------------------------------------|
+  Eb:-----------------------------------------------------------------------|
+
+
+  The order of parts is:
+  verse         x5
+  Pre-chorus    x2
+  Chorus part 1 x2
+  Chorus part 2 x2
+  Interlude 1   x2
+  Verse         x4
+  Pre-chorus    x2
+  Chorus part 1 x2
+  Chorus part 2 x2
+  Interlude 2   x2
+  Ending
+
+  [Verse 1]
+  I'm coming out of my cage
+  And I've been doing just fine
+  Gotta gotta be down because I want it all
+  It started out with a kiss
+  How did it end up like this
+  It was only a kiss, it was only a kiss
+
+  Now I'm falling asleep
+  And she's calling a cab
+  While he's having a smoke and she's taking a drag
+  Now they're going to bed
+  And my stomach is sick
+  And it's all in my head, but she's touching his
+
+  [Pre-Chorus]
+  Chest now
+  He takes off her dress now
+  Let me go
+  I just can't look its killing me
+  And taking control
+
+  [Chorus]
+  Jealousy, turning saints into the sea
+  Swimming through sick lullabies
+  Choking on your alibis
+  But it's just the price I pay
+  Destiny is calling me
+  Open up my eager eyes
+  Cause I'm Mr. Brightside
+
+  [Verse 2]
+  I'm coming out of my cage
+  And I've been doing just fine
+  Gotta gotta be down because I want it all
+  It started out with a kiss
+  How did it end up like this
+  It was only a kiss, it was only a kiss
+
+  Now I'm falling asleep
+  And she's calling a cab
+  While he's having a smoke and she's taking a drag
+  Now they're going to bed
+  And my stomach is sick
+  And it's all in my head, but she's touching his
+
+  [Pre-Chorus]
+  Chest now
+  He takes off her dress now
+  Let me go
+  I just can't look its killing me
+  And taking control
+
+  [Chorus]
+  Jealousy, turning saints into the sea
+  Swimming through sick lullabies
+  Choking on your alibis
+  But it's just the price I pay
+  Destiny is calling me
+  Open up my eager eyes
+  Cause I'm Mr. Brightside
+
+  [Outro]
+  I never
+  I never
+  I never
+  I never
+
+#+END_SRC

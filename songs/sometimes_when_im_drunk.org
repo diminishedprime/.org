@@ -3,7 +3,7 @@
 
 * Lake Street Dive
 ** Sometimes When I am Drunk (and you are wearing my favorite shirt)
-#+BEGIN_SRC sh
+#+BEGIN_SRC fundamental
   you're so generous with
   time and money I
   almost I wish I loved you instead of him

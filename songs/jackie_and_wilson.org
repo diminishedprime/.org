@@ -3,7 +3,7 @@
 
 * Hozier
 ** Jackie and Wilson
-#+BEGIN_SRC sh
+#+BEGIN_SRC fundamental
 
   Capo 1
 

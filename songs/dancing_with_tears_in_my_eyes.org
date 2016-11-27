@@ -4,7 +4,7 @@
 
 * Ke$ha
 ** Dancing With The Tears On My Eye
-#+BEGIN_SRC sh
+#+BEGIN_SRC fundamental
   Capo 2 in C
 
   Intro: Em--G-D-

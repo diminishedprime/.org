@@ -3,7 +3,7 @@
 
 * The Antlers
 ** Kettering
-#+BEGIN_SRC sh
+#+BEGIN_SRC fundamental
   Chords:
   Am            x-0-2-2-1-0
   Am(add9)      x-2-0-2-1-0

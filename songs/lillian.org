@@ -3,7 +3,7 @@
 
 * The Dear Hunter
 ** Lillian
-#+BEGIN_SRC elisp
+#+BEGIN_SRC fundamental
   Verse:
 
   Em      D        Am       B(bass)

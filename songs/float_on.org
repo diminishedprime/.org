@@ -1,0 +1,77 @@
+[[../index.org][Home]]
+[[./index.org][Songs]]
+
+* Modest Mouse
+** Float On
+#+BEGIN_SRC fundamental
+  [Intro/Verse]
+
+  Guitar 1                                                                    5x
+  e|---6---6r-6-6-6-6-66-6--6r-6-6-6-6-66-6---6r--6-6-6-6-66-6-6r-6-6-6-6-66--||
+  B|---6h7-7r-7-7-7-7-77-6--6r-6-6-6-6-66-6h7-7r--7-7-7-7-76-6-6r-6-6-6-6-66-.||
+  G|---6---6r-6-6-6-6-66-6--6r-6-6-6-6-66-6h8-8r--8-8-8-8-86-6-6r-6-6-6-6-66--||
+  D|---------------------------------------------------------8-8r-8-8-8-8-88--||
+  A|-------------------------------------------------------------------------.||
+  E|--------------------------------------------------------------------------||
+
+  [Chorus]
+
+  Guitar 1
+  e|------6-------6-------6-------6-------6-------6---------6----6------------||
+  B|----7---7---6---7---6---6---6---6---7---7---7---7-----6---6----6---------.||
+  G|--6-------6-------6-------6-------8-------8---------6------6--------------||
+  D|--------------------------------------------------8-----------------------||
+  A|-------------------------------------------------------------------------.||
+  E|--------------------------------------------------------------------------||
+
+  [Verse]
+
+  Guitar 1                                                                    4x
+  e|---6---6r-6-6-6-6-66-6--6r-6-6-6-6-66-6---6r--6-6-6-6-66-6-6r-6-6-6-6-66--||
+  B|---6h7-7r-7-7-7-7-77-6--6r-6-6-6-6-66-6h7-7r--7-7-7-7-76-6-6r-6-6-6-6-66-.||
+  G|---6---6r-6-6-6-6-66-6--6r-6-6-6-6-66-6h8-8r--8-8-8-8-86-6-6r-6-6-6-6-66--||
+  D|---------------------------------------------------------8-8r-8-8-8-8-88--||
+  A|-------------------------------------------------------------------------.||
+  E|--------------------------------------------------------------------------||
+
+  And there you have it, hope you like it!
+
+  I backed my car into a cop car the other day
+  Well he just drove off sometimes life's OK
+  I ran my mouth off a bit too much oh what did I say
+  Well you just laughed it off it was all OK
+
+  And we'll all float on OK
+  And we'll all float on OK
+  And we'll all float on OK
+  And we'll all float on any way
+
+  Well, a fake Jamaican took every last dime with that scam
+  It was worth it just to learn from sleight of hand
+  Bad news comes don't you worry even when it lands
+  Good news will work its way to all them plans
+  We both got fired on exactly the same day
+  Well we'll float on good news is on the way
+
+  And we'll all float on OK
+  And we'll all float on OK
+  And we'll all float on OK
+  And we'll all float on alright
+  Already we'll all float on
+  Now don't you worry we'll all float on alright
+  Already we'll all float on alright
+  Don't worry we'll all float on
+
+  (alright already)
+  And we'll all float on alright
+  Already we'll all float on alright
+  Don't worry even if things end up a bit too heavy
+  We'll all float on alright
+  Already we'll all float on alright
+  Already we'll all float on OK
+  Don't worry we'll all float on
+  Even if things get heavy we'll all float on alright
+  Already we'll all float on alright
+  Don't you worry we'll all float on alright
+  All float on
+#+END_SRC

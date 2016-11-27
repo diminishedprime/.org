@@ -3,7 +3,7 @@
 
 * Ingrid Michaelson
 ** You And I
-#+BEGIN_SRC sh
+#+BEGIN_SRC fundamental
   [Intro]
   C
 

@@ -1,6 +1,10 @@
 [[../index.org][Home]]
 
 * Songs
+** Modest Mouse
++ [[./float_on.org][Float On]]
+** The Killers
++ [[./mr_brightside.org][Mr. Brightside]]
 ** John Daveys
 + [[./spent.org][Spent]]
 ** Lake Street Dive
@@ -39,9 +43,14 @@
 + [[./small_hands.org][Small Hands]]
 + [[./strawbear.org][Strawbear]]
 ** Ingrid Michaelson
++ [[./keep_breathing.org][Keep Breathing]]
 + [[./you_and_i.org][You And I]]
 ** Ke$ha
 + [[./dancing_with_tears_in_my_eyes.org][Dancing With Tears In My Eyes]]
-+ [[./your_love_is_my_drug.org][Yosu Love Is My Drug]]
++ [[./your_love_is_my_drug.org][Your Love Is My Drug]]
 ** Shit I Wrote
 + [[./new.org.gpg][Stuff]]
+** Paper Kites
++ [[./bloom.org][Bloom]]
+** Sufjan Stevens
++ [[./all_of_me_wants_all_of_you.org][All Of Me Wants All Of You]]

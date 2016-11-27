@@ -3,7 +3,7 @@
 
 * The Dear Hunter
 ** The Things that Hide Away
-#+BEGIN_SRC sh
+#+BEGIN_SRC fundamental
   The Things that Hide Away
   C - Em - G - Am7 - G/Am7
 

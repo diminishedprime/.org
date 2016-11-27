@@ -4,7 +4,7 @@
 * The Dear Hunter
 ** What It Means to Be Alone
 
-#+BEGIN_SRC sh
+#+BEGIN_SRC fundamental
   Capo 1
 
   E            F#m

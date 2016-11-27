@@ -3,7 +3,7 @@
 
 * The Antlers
 ** Two
-#+BEGIN_SRC sh
+#+BEGIN_SRC fundamental
   Capo 9
 
   |---||---||---||---|

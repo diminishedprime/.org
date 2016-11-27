@@ -3,7 +3,7 @@
 
 * Julien Baker
 ** Blacktop
-#+BEGIN_SRC sh
+#+BEGIN_SRC fundamental
 
   Do you think that there's a way I could ever get too far
   That you'd ask me where I'd been

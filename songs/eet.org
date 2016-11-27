@@ -3,7 +3,7 @@
 
 * Regina Spektor
 ** Eet
-#+BEGIN_SRC sh
+#+BEGIN_SRC fundamental
   Capo 1
              Am       G          C               F
   It’s like forgetting the words to your favorite song 

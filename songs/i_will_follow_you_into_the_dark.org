@@ -3,7 +3,7 @@
 
 * Death Cab For Cutie
 ** I Will Follow You Into The Dark
-#+BEGIN_SRC sh
+#+BEGIN_SRC fundamental
   [Intro]
 
   Am  C  F  C  G/B

@@ -5,7 +5,6 @@
 *** Problem 51
 By replacing the 1st digit of the 2-digit number *3, it turns out that six of
 the nine possible values: 13, 23, 43, 53, 73, and 83, are all prime.
-
 By replacing the 3rd and 4th digits of 56**3 with the same digit, this 5-digit
 number is the first example having seven primes among the ten generated numbers,
 yielding the family: 56003, 56113, 56333, 56443, 56663, 56773, and 56993.
@@ -43,24 +42,49 @@ adjacent digits) with the same digit, is part of an eight prime value family.
           (recur n)))
       (boolean (get @primes-set n))))
 
-  (require '[clojure.math.combinatorics :as combo])
+  (defn mask-with-n [num mask n]
+    (let [digits (map (fn [char mask-val]
+                        (cond
+                          (= mask-val 1) char
+                          :else (first (str n))))
+                      (str num)
+                      mask)]
+      (BigInteger. (apply str digits))))
 
-  (defn apply-mask [original mask n]
-    (apply str (map (fn [o-char m-char]
-                      (if (= m-char 1) n o-char)) (str original) mask)))
+  (mask-with-n 56003, [0 0 1 1 0] 3)
 
-  (defn masked-n [original mask]
-    (= 1 (count (set (remove nil?
-                             (map (fn [o-char m-char]
-                                    (when (= m-char 1) o-char)) (str original) mask))))))
+  (mask-with-n 56003, [1 1 1 1 0] 3)
 
-  (defn any-mask? [original]
-    (some (partial masked-n original) (combo/permutations [0 0 0 1 1 1])))
+  (defn mask-0-9 [num mask]
+    (->> (map #(mask-with-n num mask %) (range 10))
+         (filter #(= (count mask) (count (str %))))))
+
+  (defn primes-for-mask [starting-num mask]
+    (filter prime? (mask-0-9 starting-num mask)))
+
+  (def possible-pattens
+    [[ 1, 1, 0, 0, 0, 1 ]
+     [ 1, 0, 1, 0, 0, 1 ]
+     [ 1, 0, 0, 1, 0, 1 ]
+     [ 1, 0, 0, 0, 1, 1 ]
+     [ 0, 1, 1, 0, 0, 1 ]
+     [ 0, 1, 0, 1, 0, 1 ]
+     [ 0, 1, 0, 0, 1, 1 ]
+     [ 0, 0, 1, 1, 0, 1 ]
+     [ 0, 0, 1, 0, 1, 1 ]
+     [ 0, 0, 0, 1, 1, 1 ]])
+
+  (defn all-prime-masks [starting-num]
+    (map #(primes-for-mask starting-num %) possible-pattens))
+
+  (primes-for-mask 56003 [0 0 1 1 0])
+
+  (filter #(= (count %) 8) (all-prime-masks 123323))
 
   (->> (gen-primes)
        (drop-while #(< % 100000))
        (take-while #(< % 1000000))
-       (filter any-mask?)
-       )
-
+       (mapcat all-prime-masks)
+       (filter #(= (count %) 8))
+       ffirst)
 #+END_SRC

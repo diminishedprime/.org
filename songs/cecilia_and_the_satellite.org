@@ -3,7 +3,7 @@
 
 * Andrew McMahon
 ** Cecilia and the Satellite
-#+BEGIN_SRC sh
+#+BEGIN_SRC fundamental
 
   Verse: F then C forever
 

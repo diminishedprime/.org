@@ -3,7 +3,7 @@
 
 * Norah Jones
 ** Shoot The Moon
-#+BEGIN_SRC sh
+#+BEGIN_SRC fundamental
   Intro: C   G/B  Am  C/G  F  C/E  F  G
 
   C           G/B     Am        C/G

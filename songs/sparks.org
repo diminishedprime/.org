@@ -3,7 +3,7 @@
 
 * Coldplay
 ** Sparks
-#+BEGIN_SRC sh
+#+BEGIN_SRC fundamental
   Tuning:E,A,D,G,B,d    Capo=fret 6 (chords relative to capo)
 
   Chords:

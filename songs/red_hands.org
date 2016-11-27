@@ -3,7 +3,7 @@
 
 * The Dear Hunter
 ** Red Hands
-#+BEGIN_SRC elisp
+#+BEGIN_SRC fundamental
   Usually in C
   Intro:
   1, 3-, 1, 3-, 6-7, 6-, 5, 4

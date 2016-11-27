@@ -3,7 +3,7 @@
 
 * Kesha
 ** Your Love Is My Drug
-#+BEGIN_SRC sh
+#+BEGIN_SRC fundamental
   C                      G           Am
   Maybe I need some rehab, or maybe just need some sleep
   Em         F              Em            F

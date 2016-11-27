@@ -3,7 +3,7 @@
 
 * Iron And Wine
 ** Such Great Heights
-#+BEGIN_SRC sh
+#+BEGIN_SRC fundamental
   Standard tuning, capo on 6th fret.
 
   MAIN RIFF...

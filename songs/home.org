@@ -3,7 +3,7 @@
 
 * The Dear Hunter
 ** Home
-#+BEGIN_SRC sh
+#+BEGIN_SRC fundamental
 
   1                                                   4
     With the good chance that we crash, let's say our grace (our grace)

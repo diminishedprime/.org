@@ -3,7 +3,7 @@
 
 * John Daveys
 ** Spent
-#+BEGIN_SRC sh
+#+BEGIN_SRC fundamental
    amspC Em
   F C
   F C
