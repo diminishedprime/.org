@@ -7,7 +7,7 @@
 + [ ] [[./haskell_programming_from_first_principles.org][Haskell Book]]
 + [ ] [[./mastering_regular_expressions.org][Mastering Regular Expressions]]
 + [ ] [[./purely_functional_data_structures.org][Purely Functional Data Structures]]
-** Reference
+** Completed
 *** Programming Books
 + General
   + [X] 2016-10-13 [[./i_heart_logs.org][I Heart Logs (Jay Kreps)]]
@@ -31,7 +31,7 @@
 + [ ] [[./the_little_prover.org][The Little Prover]]
 *** Programming Books
 + General
-  + [ ] http://search.safaribooksonline.com/book/programming/0596006624
+  + [ ] [[http://search.safaribooksonline.com/book/programming/0596006624][Hackers And Painters]]
   + [ ] [[./introduction_to_algorithms.org][Introduction To Algorithms]]
   + [ ] [[./code_complete.org][Code Complete]]
   + [[./mythical_man_month.org][Mythical Man Month]]
