@@ -1,0 +1,108 @@
+[[../index.org][Main Index]]
+[[./index.org][Reading List]]
+
+* [[http://search.safaribooksonline.com/book/software-engineering-and-development/project-management/9781783983865][Mastering Apache Maven 3]]
++ [X] 1. Apache Maven Quick Start
+  + [X] A quick introduction
+  + [X] Installing Apache Maven
+  + [X] Configuring the heap size
+  + [X] Monitoring the build
+  + [X] Remote debugging
+  + [X] Convention over configuration
+  + [X] IDE integration
+  + [X] Troubleshooting
+  + [X] Summary
++ [X] 2. Demystifying Project Object Model
+  + [X] Project Object Model
+  + [X] The POM hierarchy
+  + [X] Super POM
+  + [X] POM extending and overriding
+  + [X] Maven coordinates
+  + [X] Parent POM file
+  + [X] Managing POM dependencies
+  + [X] Summary
++ [X] 3. Maven Configuration
+  + [X] Maven Wagon
+  + [X] Proxy authentication
+  + [X] Secured repositories
+  + [X] Encrypting credentials in settings.xml
+  + [X] Source Control Management systems
+  + [X] Local repository location
+  + [X] Mirrored repositories
+  + [X] Deploying artifacts
+  + [X] Enabling Maven logging
+  + [X] Summary
++ [X] 4. Build Lifecycles
+  + [X] Standard lifecycles in maven
+  + [X] lifecycle bindings
+  + [X] building a custom lifecycle
+  + [X] lifecycle extensions
+  + [X] summary
++ [X] 5. maven plugins
+  + [X] common Maven plugins
+  + [X] Plugin discovery and execution
+  + [X] Plexus
+  + [X] Maven and Dependency Injection
+  + [X] Developing custom plugins
+  + [X] Summary
++ [X] 6. Maven Assemblies
+  + [X] The assembly plugin
+  + [X] The assembly descriptor
+  + [X] Artifact/resource filtering 
+  + [X] Assembly help
+  + [X] A runnable, standalone Maven project
+  + [X] Summary
++ [X] 7. Maven Archetypes
+  + [X] Archetype quickstart
+  + [X] The batch mode
+  + [X] Archetype catalogues
+  + [X] The archetype plugin goals
+  + [X] Maven plugins with the archetype plugin
+  + [X] Java EE web applications with the archetype plugin
+  + [X] Android mobile applications with the archetype plugin
+  + [X] EJB archives with the archetype plugin
+  + [X] JIRA plugins with the archetype plugin
+  + [X] Spring MVC applications with the archetype plugin
+  + [X] Building a custom archetype
+  + [X] Summary
++ [X] 8. Maven Repository Management
+  + [X] Maven repositories
+  + [X] The update policy
+  + [X] Multiple repositories
+  + [X] The Maven repository manager
+  + [X] Creating a proxy repository
+  + [X] Creating a virtual repository
+  + [X] Blocking selected artifacts
+  + [X] Inclusive and exclusive routing
+  + [X] Scheduled tasks
+  + [X] Artifact indexing
+  + [X] Nexus plugins
+  + [X] A repository metadata model
+  + [X] Summary
++ [X] 9. Best Practices
+  + [X] Dependency management
+  + [X] Defining a parent module
+  + [X] POM properties
+  + [X] Avoiding repetitive groupId and version tags and inherit from the parent POM
+  + [X] Following naming conventions
+  + [X] Maven profiles
+  + [X] Think twice before you write your own plugin
+  + [X] The Maven release plugin
+  + [X] The Maven enforcer plugin
+  + [X] Avoid using un-versioned plugins
+  + [X] Using exclusive and inclusive routes
+  + [X] Avoid having both release and snapshot repositories in the same group repository
+  + [X] Avoid having both proxy and hosted repositories in the same group repository
+  + [X] Minimizing the number of repositories
+  + [X] Using mirrorOf instead of changing repository URLs
+  + [X] Descriptive parent POM files
+  + [X] Documentation is your friend
+  + [X] Avoid overriding the default directory structure
+  + [X] Using SNAPSHOT versioning during development
+  + [X] Get rid of unused dependencies
+  + [X] Avoid keeping credentials in application POM files
+  + [X] Avoid using deprecated references
+  + [X] Avoid repetition – use archetypes
+  + [X] Avoid using maven.test.skip
+  + [X] Share resources – avoid duplicates
+  + [X] Summary

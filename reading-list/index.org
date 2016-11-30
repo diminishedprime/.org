@@ -2,6 +2,7 @@
 
 * Reading List/Digital Bookshelf
 ** Top of Queue
++ [ ] [[http://aosabook.org/en/index.html][The Architecture of Open Source Applications]]
 + [ ] [[./seven_more_languages_in_seven_weeks.org][Seven More Languages In Seven Weeks]]
 + [ ] [[./haskell_programming_from_first_principles.org][Haskell Book]]
 + [ ] [[./mastering_regular_expressions.org][Mastering Regular Expressions]]
@@ -17,6 +18,8 @@
   + [X] 2015-10-19 [[./the_joy_of_clojure.org][The Joy of Clojure]]
   + [X] 2016-07-25 [[./mastering_clojure_macros.org][Mastering Clojure Macros]]
   + [X] 2016-07-25 [[./clojurescript_up_and_running.org][ClojureScript: Up and Running]]
++ Java etc
+  + [ ] 2016-11-30 [[./mastering_apache_maven_3.org][Mastering Apache Maven 3]]
 + Little Books
   + [X] 2016-02-14 [[./the_little_schemer.org][The Little Schemer]]
   + [X] 2016-01-31 [[./the_seasoned_schemer.org][The Seasoned Schemer]]
