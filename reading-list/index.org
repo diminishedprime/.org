@@ -2,33 +2,36 @@
 
 * Reading List/Digital Bookshelf
 ** Top of Queue
++ [ ] [[http://aosabook.org/en/index.html][The Architecture of Open Source Applications]]
 + [ ] [[./seven_more_languages_in_seven_weeks.org][Seven More Languages In Seven Weeks]]
 + [ ] [[./haskell_programming_from_first_principles.org][Haskell Book]]
 + [ ] [[./mastering_regular_expressions.org][Mastering Regular Expressions]]
 + [ ] [[./purely_functional_data_structures.org][Purely Functional Data Structures]]
-** Reference
+** Completed
 *** Programming Books
 + General
-  + [X] 2016-10-13 [[./i_heart_logs.org][I Heart Logs (Jay Kreps)]]
-  + [X] 2016-10-08 [[./big_data.org][Big Data]]
-  + [X] 2016-10-10 [[./seven_languages_in_seven_weeks.org][Seven Languages In Seven Weeks]]
+  + 2016-10-13 [[./i_heart_logs.org][I Heart Logs (Jay Kreps)]]
+  + 2016-10-08 [[./big_data.org][Big Data]]
+  + 2016-10-10 [[./seven_languages_in_seven_weeks.org][Seven Languages In Seven Weeks]]
 + Clojure
-  + [X] 2015-09-23 [[./living_clojure.org][Living Clojure]]
-  + [X] 2015-10-19 [[./the_joy_of_clojure.org][The Joy of Clojure]]
-  + [X] 2016-07-25 [[./mastering_clojure_macros.org][Mastering Clojure Macros]]
-  + [X] 2016-07-25 [[./clojurescript_up_and_running.org][ClojureScript: Up and Running]]
+  + 2015-09-23 [[./living_clojure.org][Living Clojure]]
+  + 2015-10-19 [[./the_joy_of_clojure.org][The Joy of Clojure]]
+  + 2016-07-25 [[./mastering_clojure_macros.org][Mastering Clojure Macros]]
+  + 2016-07-25 [[./clojurescript_up_and_running.org][ClojureScript: Up and Running]]
++ Java etc
+  + 2016-11-30 [[./mastering_apache_maven_3.org][Mastering Apache Maven 3]]
 + Little Books
-  + [X] 2016-02-14 [[./the_little_schemer.org][The Little Schemer]]
-  + [X] 2016-01-31 [[./the_seasoned_schemer.org][The Seasoned Schemer]]
-  + [X] 2016-02-27 [[./the_reasoned_schemer.org][The Reasoned Schemer]]
-  + [X] 2016-07-24 [[./the_little_mler.org][The Little MLer]]
+  + 2016-02-14 [[./the_little_schemer.org][The Little Schemer]]
+  + 2016-01-31 [[./the_seasoned_schemer.org][The Seasoned Schemer]]
+  + 2016-02-27 [[./the_reasoned_schemer.org][The Reasoned Schemer]]
+  + 2016-07-24 [[./the_little_mler.org][The Little MLer]]
 ** To Read
 *** Little Books
 + [ ] [[http://www.amazon.com/Little-Java-Few-Patterns/dp/0262561158/ref=sr_1_1?s=books&ie=UTF8&qid=1454204257&sr=1-1&keywords=a+little+java%2C+a+few+patterns][A Little Java, A Few Patterns]]
 + [ ] [[./the_little_prover.org][The Little Prover]]
 *** Programming Books
 + General
-  + [ ] http://search.safaribooksonline.com/book/programming/0596006624
+  + [ ] [[http://search.safaribooksonline.com/book/programming/0596006624][Hackers And Painters]]
   + [ ] [[./introduction_to_algorithms.org][Introduction To Algorithms]]
   + [ ] [[./code_complete.org][Code Complete]]
   + [[./mythical_man_month.org][Mythical Man Month]]
@@ -96,7 +99,6 @@
   + [[http://www.amazon.com/Algebra-2nd-Michael-Artin/dp/0132413779][Michael Artin Algebra]]
   + [[https://www.manning.com/books/type-driven-development-with-idris][Type Driven Development with Idris]]
   + [[https://www.amazon.com/Expert-F-4-0-Don-Syme/dp/1484207416?ie=UTF8&keywords=expert%20f%23%204.0&linkCode=sl1&linkId=f696d9966865ec308f5b009e0456f017&qid=1464576992&ref_=as_li_ss_tl&sr=8-1&tag=fngeekery-20][Expert F#]]
-
   + [[http://www.amazon.com/Clause-Effect-Programming-Working-Programmer/dp/3540629718][Clause And Effect]]
   + [[http://www.amazon.com/Selected-Papers-Computer-Science-Lecture/dp/1881526917/ref=sr_1_1?s=books&ie=UTF8&qid=1454204201&sr=1-1&keywords=selected+papers+on+computer+science][Selected Papers on Computer Science]]
   + [[http://www.amazon.com/Concrete-Mathematics-Foundation-Computer-Science/dp/0201558025][Concrete Mathematics]]
