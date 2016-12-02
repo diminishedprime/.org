@@ -1,41 +1,86 @@
 * Who am I?
-+ Matt Hamrick
+** Matt Hamrick
 + Millikin University graduate (Class of 2014)
++ Software Engineer
 + Functional programming Evangelist
-+ Devout member of the Church of Emacs
++ Member of the Church of Emacs (Vim is okay, too)
 + Occasional Runner
++ Regular Guitar Player
++ Constant Reader
 
-* What have I done professionally?
-+ Clojure/ClojureScript
-+ Java/JavaScript
-+ Developed interactive UIs to explain complex topics
-+ Worked closely with business to deeply understand problems they are facing
-+ Iterated towards a solution
+* Executive Overview
+I'm a life-long learner who is deeply interested and invested in personal
+development. I love working on, and completing, challenging problems. I'm
+passionate about education and mentorship and enjoy teaching people new things.
+I spend much of my time mastering new programming languages and seeing how their
+novel concepts can improve previous work. I'm careful in ensuring that my
+job-title, ego, age, gender or orientation don't interfere in the finding the
+best solution to a problem. To accomplish this, I make a habit of talking to
+(and listening to) others and making sure to acknowledge, improve, and
+eventually fix, held biases. I work extremely hard, and do my best to accomplish
+the most I can with the resources I'm provided.
 
-* What have I done outside of Work
+* Work History
+** June 2014 - Present
++ From 2014, to late 2015, I worked on the front-end of a Spring app that was
+  delivered to production. On this project, I learned skills related to mocking
+  frameworks, testing methodologies, Data-driven UIs, and Java reflection.
++ From Late 2015 to today, I've been working on a Clojure DSL to clearly express
+  business intent. Much of the work on this project has entailed researching and
+  prototyping with new technologies. I've worked on (in no particular order)
+  Spark, Scala, Zeppelin, Clojure and Clojurescript, Dynamic Soap Client
+  Generation, EmberJs, React, Graph Computing, and Big Data. I've been able to
+  round out my back-end skills that weren't as present from my previous project.
+  I've worked closely with business using an iterate-and-demo approach that has
+  helped me to deeply understand their problems.
+** May 2013 - August 2013
++ During the summer of 2013, I worked as an intern at State Farm. While I was
+  there, I worked on Spring, Java, and JavaScript technologies as a part of a
+  modernization effort. I also participated in a speech program focusing on
+  professional communication. The program culminated with an innovation project
+  which required collaboration and out of the box thinking. My team's idea made
+  it to the final round and we were afforded the opportunity to present directly
+  to executive Leadership.
+
+* Technical Skills
++ Clojure/ClojureScript (10/10)
++ Java (9/10)
++ JavaScript (9/10)
++ Haskell (8/10)
++ Scheme (8/10)
++ Datomic (8/10)
++ Scala (6/10)
++ Python (6/10)
+
+* Checkbox things I know
+Restful Apis, CQRS, BDD, TDD, Generative Testing, Agile, Lambda Architecture,
+Mockito, Functional Programming, BigData, MapReduce, Kafka, Spark, SOLID,
+Event-based architectures, Logic Programming, Custom DSLs, HTML, CSS, JS,
+Prolog, and that Monads aren't burritos.
+
+* What have I done outside of Work?
+I've been focusing on Haskell in order to further my knowledge of functional
+programming areas that I've missed through my professional Clojure Development.
+Specifically, I've been working on understanding the costs and benefits static
+typing provides as it pertains to systems design and program correctness. I've
+also been working on learning Big data architectures and how they can be
+leveraged in a legacy enterprise. I've also worked on the following:
 + [[https://diminishedprime.github.io/secret-agent-ui/][This Game!]]
++ [[https://github.com/diminishedprime/anagrams][This Simple Clojure Library]]
 + [[./euler/index.org][A bunch of Project Euler Questions]]
-+ Haskell, Prolog, Scheme, miniKanren, Datomic/Datascript
-+ [[./reading-list/index.org][Read a whole lot]]
++ [[./reading-list/index.org][A lot of reading]]
 
 * What do I like?
 + Solving Problems
 + Teaching
-+ Exploring programming languages
-  + Haskell
-  + Clojure
-  + Clojurescript
++ Mentoring
++ Exploring programming languages (such as Haskell, Idris, Clojure, Erlang)
 + Tech talks with live demos
 + Playing Guitar
-+ Explaining concepts using a whiteboard
++ Whiteboarding
 + Emacs
-+ Indie music
-+ Logic Programming
-+ Lisp Books
-+ My Cat
++ Thick Lisp Books
++ Peter, the Cat
 + Seafood
 + Tetris
-
-* What am I Working on?
-+ Big data architecture
-+ learning Idris
++ Function composition
