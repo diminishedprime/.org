@@ -14,11 +14,11 @@ development. I love working on, and completing, challenging problems. I'm
 passionate about education and mentorship and enjoy teaching people new things.
 I spend much of my time mastering new programming languages and seeing how their
 novel concepts can improve previous work. I'm careful in ensuring that my
-job-title, ego, age, gender or orientation don't interfere in the finding the
-best solution to a problem. To accomplish this, I make a habit of talking to
-(and listening to) others and making sure to acknowledge, improve, and
-eventually fix, held biases. I work extremely hard, and do my best to accomplish
-the most I can with the resources I'm provided.
+job-title, ego, age, gender or orientation don't interfere in finding the best
+solution to a problem. To accomplish this, I make a habit of talking (and
+listening) to others and making sure to acknowledge, improve, and eventually
+fix, held biases. I work extremely hard, and do my best to accomplish the most I
+can with the resources I'm provided.
 
 * Work History
 ** June 2014 - Present
