@@ -51,35 +51,23 @@ can with the resources I'm provided.
 + Scala (6/10)
 + Python (6/10)
 
-* Checkbox things I know
-Restful Apis, CQRS, BDD, TDD, Generative Testing, Agile, Lambda Architecture,
-Mockito, Functional Programming, BigData, MapReduce, Kafka, Spark, SOLID,
-Event-based architectures, Logic Programming, Custom DSLs, HTML, CSS, JS,
-Prolog, and that Monads aren't burritos.
+* Ask Me About
+Generative Testing, Lambda Architecture, Functional Programming, BDD, TDD,
+Kafka, SOLID Principles, Event-based Architecture, Logic Programming, DSLs, Type
+Systems, Seven Languages in Seven Weeks, The Little Schemer
 
 * What have I done outside of Work?
-I've been focusing on Haskell in order to further my knowledge of functional
-programming areas that I've missed through my professional Clojure Development.
-Specifically, I've been working on understanding the costs and benefits static
-typing provides as it pertains to systems design and program correctness. I've
-also been working on learning Big data architectures and how they can be
-leveraged in a legacy enterprise. I've also worked on the following:
-+ [[https://diminishedprime.github.io/secret-agent-ui/][This Game!]]
-+ [[https://github.com/diminishedprime/anagrams][This Simple Clojure Library]]
-+ [[./euler/index.org][A bunch of Project Euler Questions]]
-+ [[./reading-list/index.org][A lot of reading]]
++ [[https://diminishedprime.github.io/secret-agent-ui/][A Web-based Clone of a Board Game!]]
++ [[https://github.com/diminishedprime/anagrams][A Simple Clojure Library for finding Anagrams]]
++ [[./euler/index.org][Many Project Euler Questions]]
++ [[./reading-list/index.org][Technical Reading]]
 
-* What do I like?
+* What do I Like?
 + Solving Problems
 + Teaching
 + Mentoring
 + Exploring programming languages (such as Haskell, Idris, Clojure, Erlang)
-+ Tech talks with live demos
++ Successful live demos
 + Playing Guitar
-+ Whiteboarding
-+ Emacs
 + Thick Lisp Books
 + Peter, the Cat
-+ Seafood
-+ Tetris
-+ Function composition
