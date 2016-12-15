@@ -12,8 +12,8 @@
 I'm a life-long learner who is deeply interested and invested in personal
 development. I love working on, and completing, challenging problems. I'm
 passionate about education and mentorship and enjoy teaching people new things.
-I spend much of my time mastering new programming languages and seeing how their
-novel concepts can improve previous work. I'm careful in ensuring that my
+I spend much of my free time learning new programming languages and seeing how
+their novel concepts can improve previous work. I'm careful in ensuring that my
 job-title, ego, age, gender or orientation don't interfere in finding the best
 solution to a problem. To accomplish this, I make a habit of talking (and
 listening) to others and making sure to acknowledge, improve, and eventually
@@ -47,8 +47,7 @@ can with the resources I'm provided.
 + Java (9/10)
 + JavaScript (9/10)
 + Haskell (8/10)
-+ Scheme (8/10)
-+ Datomic (8/10)
++ Scheme (7/10)
 + Scala (6/10)
 + Python (6/10)
 
