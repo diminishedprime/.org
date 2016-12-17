@@ -40,7 +40,7 @@ public class HashTable<K, V> {
     }
 
     public HashTable (int initialSize) {
-        this.table = new LinkedList[initialSize];
+        this.table = new LinkedList[initialSize * 2];
         this.threshold = initialSize;
     }
 
