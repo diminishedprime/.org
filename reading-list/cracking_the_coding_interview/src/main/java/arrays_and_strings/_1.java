@@ -11,6 +11,39 @@ public class _1 {
     // Is Unique: Implement an algorithm to determine if a string has all unique characters.
     // What if you cannot use additional data structures? Hints: #44, #7 7 7, #732
 
+    // Using a booleanArray assuming a fixed number of characters
+    static boolean allUniqueCharactersWithFixedChar(String check) {
+        if (check.length() > 128) {
+            return false;
+        }
+        // assuming only ascii counts
+        boolean[] seenYet = new boolean[128];
+
+        for (int i = 0; i < check.length(); i++) {
+            char currentChar = check.charAt(i);
+            if (seenYet[currentChar]) {
+                return false;
+            } else {
+                seenYet[currentChar] = true;
+            }
+        }
+        return true;
+    }
+
+    // Using a bitArray
+    static boolean allUniqueCharactersWithBitArray(String check) {
+        int checker = 0;
+        for (int i = 0; i < check.length(); i++) {
+            int val = check.charAt(i) - 'a';
+            if ((checker & (1 << val)) > 0) {
+                return false;
+            } else {
+                checker |= (1 << val);
+            }
+        }
+        return true;
+    }
+
     // Using a hashmap
     static boolean allUniqueCharactersWithSet(String check) {
         Set<String> charactersSoFar = new HashSet<>();

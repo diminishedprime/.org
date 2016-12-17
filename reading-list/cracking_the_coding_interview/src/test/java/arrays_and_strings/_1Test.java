@@ -10,6 +10,23 @@ import static org.junit.Assert.assertTrue;
  * Created by mjhamrick on 12/14/16.
  */
 public class _1Test {
+
+    @Test
+    public void allUniqueCharactersWithBitArray() {
+        assertTrue(_1.allUniqueCharactersWithBitArray("ab"));
+        assertTrue(_1.allUniqueCharactersWithBitArray("abcdefghijklmno"));
+        assertFalse(_1.allUniqueCharactersWithBitArray("aaa"));
+        assertTrue(_1.allUniqueCharactersWithBitArray(""));
+    }
+
+    @Test
+    public void allUniqueCharactersWithBooleanArray() {
+        assertTrue(_1.allUniqueCharactersWithFixedChar("ab"));
+        assertTrue(_1.allUniqueCharactersWithFixedChar("abcdefghijklmno"));
+        assertFalse(_1.allUniqueCharactersWithFixedChar("aaa"));
+        assertTrue(_1.allUniqueCharactersWithFixedChar(""));
+    }
+
     @Test
     public void allUniqueCharactersWithSetTest() {
         assertTrue(_1.allUniqueCharactersWithSet("ab"));

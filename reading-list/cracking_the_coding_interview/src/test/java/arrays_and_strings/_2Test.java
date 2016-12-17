@@ -14,6 +14,14 @@ public class _2Test {
     String shuffled = "natexsnatxoentaxosentiaxrcexa,.crixra,.tbiatoeaisoetuxasrc,.xtiarc,duantoearxircabeliaxoercuxanoteuxaenoub";
 
     @Test
+    public void isPermutationWithFixedCharacterSet() {
+        assertTrue(_2.isPermutationWithFixedCharset("abc", "cba"));
+        assertFalse(_2.isPermutationWithFixedCharset("aa", "a"));
+        assertTrue(_2.isPermutationWithFixedCharset("", ""));
+        assertTrue(_2.isPermutationWithFixedCharset("cde", "cde"));
+    }
+
+    @Test
     public void isPermutationWithSorting() {
         assertTrue(_2.isPermutationWithSorting("abc", "cba"));
         assertFalse(_2.isPermutationWithSorting("aa", "a"));

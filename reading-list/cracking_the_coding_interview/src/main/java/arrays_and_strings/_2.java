@@ -11,6 +11,9 @@ public class _2 {
     // Hints: #7, #84, #722, #737
 
     public static boolean isPermutationWithSorting(String a, String b) {
+        if (a.length() != b.length()) {
+            return false;
+        }
         String newA = sortString(a);
         String newB = sortString(b);
         return newA.equals(newB);
@@ -20,6 +23,27 @@ public class _2 {
         char[] asArray = check.toCharArray();
         Arrays.sort(asArray);
         return String.valueOf(asArray);
+    }
+
+    public static boolean isPermutationWithFixedCharset(String a, String b) {
+        if (a.length() != b.length()) {
+            return false;
+        }
+
+        // assuming ascii
+        int[] characterCounts = new int[128];
+        for (int i = 0; i < a.length(); i++) {
+            char myChar = a.charAt(i);
+            characterCounts[i]++;
+        }
+        for (int i = 0; i < b.length(); i++) {
+            char myChar = a.charAt(i);
+            characterCounts[i]--;
+            if (characterCounts[i] < 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static boolean isPermutationWithoutSorting(String a, String b) {
