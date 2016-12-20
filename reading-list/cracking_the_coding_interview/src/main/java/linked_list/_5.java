@@ -1,5 +1,7 @@
 package linked_list;
 
+import java.util.LinkedList;
+
 /**
  * Created by mjhamrick on 12/20/16.
  */
@@ -15,6 +17,32 @@ public class _5 {
     //  Suppose the digits are stored in forward order. Repeat the above problem. EXAMPLE
     //  lnput:(6 -> 1 -> 7) + (2 -> 9 -> 5).That is,617 + 295. Output:9 -> 1 -> 2.Thatis,912.
     //  Hints: #7, #30, #71, #95, #109
+
+    public static MyList<Integer> sumLists(MyList<Integer> a, MyList<Integer> b, int carry) {
+        if (a == null && b == null && carry == 0) {
+            return null;
+        } else {
+
+            MyList<Integer> result = MyList.of(0, null);
+            int sum = carry;
+            if (a != null) {
+                sum += a.data;
+            }
+            if (b != null) {
+                sum += b.data;
+            }
+            result.data = sum % 10;
+
+            if (a != null || b != null) {
+                MyList<Integer> more = sumLists(
+                        a != null ? a.next : a,
+                        b != null ? b.next : b,
+                        sum / 10);
+                result.setNext(more);
+            }
+            return result;
+        }
+    }
 
     public static MyList<Integer> sum(MyList<Integer> a, MyList<Integer> b) {
         MyList<Integer> sumHead = null;
@@ -35,7 +63,7 @@ public class _5 {
             a = a.next;
             b = b.next;
         }
-        // if there are a's left, append them all
+        // append extra characters.
         MyList<Integer> rest = (a != null)
                 ? sum(a, MyList.of(carry, null)) : (b != null)
                 ? sum(b, MyList.of(carry, null)) : (carry != 0)

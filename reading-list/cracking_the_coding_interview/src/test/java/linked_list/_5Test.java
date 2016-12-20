@@ -11,6 +11,17 @@ import static org.junit.Assert.assertEquals;
 public class _5Test {
 
     @Test
+    public void test13() {
+        MyList<Integer> a =        listOf(7, 1, 6);
+        MyList<Integer> b =        listOf(5, 9, 2);
+        MyList<Integer> expected = listOf(2, 1, 9);
+        MyList<Integer> sum = _5.sumLists(a, b, 0);
+
+        assertEquals(expected, sum);
+
+    }
+
+    @Test
     public void test() {
 
         //  Input:(7-> 1 -> 6) + (5 -> 9 -> 2).Thatis,617 + 295. Output:2 -> 1 -> 9.Thatis,912.
