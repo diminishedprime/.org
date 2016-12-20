@@ -2,3 +2,34 @@
 [[./index.org][Reading List]]
 
 * Cracking The Coding Interview
++ [X]  I. The interview Process
++ [X] II. Behind the Scenes
++ [X] III. Special Situations
++ [X] IV. Before The Interview
++ [X] V. Behavioral Questionss
++ [X] VI. Big O
++ [-] VII. Technical Questions
+  1. [X] [[./cracking_the_coding_interview/src/main/java/arrays_and_strings/_1.java][Arrays and Strings]]
+  2. [ ] [[./cracking_the_coding_interview/src/main/java/linked_list/_1.java][Linked List]]
+  3. [ ]
+  4. [ ]
+  5. [ ]
+  6. [ ]
+  7. [ ]
+  8. [ ]
+  9. [ ]
+  10. [ ]
+  11. [ ]
+  12. [ ]
+  13. [ ]
+  14. [ ]
+  15. [ ]
+  16. [ ]
+  17. [ ]
++ [ ] VIII. The Offer and Beyond
++ [ ] IX. Interview Questions
++ [ ] X. Solutions
++ [ ] XI. Advanced Topics
++ [ ] XII. Code Library
++ [ ] XIII. Hints
++ [ ] XIV. About the Author

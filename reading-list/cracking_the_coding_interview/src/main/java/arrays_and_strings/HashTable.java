@@ -78,7 +78,7 @@ public class HashTable<K, V> {
         for (int i = 0; i < list.size(); i++) {
             Node<K, V> nodeAtI = list.get(i);
             if (nodeAtI.getKey().equals(node.getKey())) {
-                // same key, replace with new value
+                // same key, replace with new data
                 list.set(i, node);
                 return;
             }
