@@ -35,8 +35,8 @@ public class _5 {
 
             if (a != null || b != null) {
                 MyList<Integer> more = sumLists(
-                        a != null ? a.next : a,
-                        b != null ? b.next : b,
+                        a != null ? a.next : null,
+                        b != null ? b.next : null,
                         sum / 10);
                 result.setNext(more);
             }

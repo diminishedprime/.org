@@ -61,4 +61,19 @@ public class MyList<T> {
     public void setNext(MyList<T> next) {
         this.next = next;
     }
+
+    public int length() {
+        return 1 + ((this.next != null) ? this.next.length() : 0);
+    }
+
+    public static <T> Object[] toArray(MyList<T> list) {
+        Object[] array = new Object[list.length()];
+        int index = 0;
+        while (list != null) {
+            array[index] = list.data;
+            list = list.next;
+            index++;
+        }
+        return array;
+    }
 }

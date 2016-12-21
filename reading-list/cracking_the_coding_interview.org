@@ -10,7 +10,7 @@
 + [X] VI. Big O
 + [-] VII. Technical Questions
   1. [X] [[./cracking_the_coding_interview/src/main/java/arrays_and_strings/_1.java][Arrays and Strings]]
-  2. [ ] [[./cracking_the_coding_interview/src/main/java/linked_list/_1.java][Linked List]]
+  2. [X] [[./cracking_the_coding_interview/src/main/java/linked_list/_1.java][Linked List]]
   3. [ ]
   4. [ ]
   5. [ ]
