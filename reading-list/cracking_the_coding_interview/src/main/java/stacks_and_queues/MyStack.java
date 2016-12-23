@@ -9,12 +9,35 @@ import java.util.EmptyStackException;
  */
 public class MyStack<T> {
 
+    @Override
+    public String toString() {
+        return "MyStack{" +
+                "top=" + top +
+                '}';
+    }
+
+    public int size() {
+        return (top == null) ? 0 : top.size;
+    }
+
     private static class StackNode<T> {
+
+        @Override
+        public String toString() {
+            return "StackNode{" +
+                    "data=" + data +
+                    ", next=" + next +
+                    ", size=" + size +
+                    '}';
+        }
+
         private T data;
         private StackNode<T> next;
+        private int size;
 
-        public StackNode(T data) {
+        public StackNode(T data, int size) {
             this.data = data;
+            this.size = size;
         }
     }
 
@@ -28,7 +51,9 @@ public class MyStack<T> {
     }
 
     public void push(T item) {
-        StackNode<T> t = new StackNode<T>(item);
+        int size = (top == null) ? 1 : top.size + 1;
+
+        StackNode<T> t = new StackNode<T>(item, size);
         t.next = top;
         top = t;
     }

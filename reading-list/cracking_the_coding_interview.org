@@ -11,7 +11,7 @@
 + [-] VII. Technical Questions
   1. [X] [[./cracking_the_coding_interview/src/main/java/arrays_and_strings/_1.java][Arrays and Strings]]
   2. [X] [[./cracking_the_coding_interview/src/main/java/linked_list/_1.java][Linked List]]
-  3. [ ]
+  3. [ ] [[./cracking_the_coding_interview/src/main/java/stacks_and_queues/_1.java][Stacks And Queues]]
   4. [ ]
   5. [ ]
   6. [ ]
