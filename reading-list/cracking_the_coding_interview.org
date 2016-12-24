@@ -32,8 +32,8 @@
      1. [X] [[./cracking_the_coding_interview/src/main/java/stacks_and_queues/_1.java][Problem 1]]
      2. [X] [[./cracking_the_coding_interview/src/main/java/stacks_and_queues/_2.java][Problem 2]]
      3. [ ] [[./cracking_the_coding_interview/src/main/java/stacks_and_queues/_3.java][Problem 3]]
-     4. [ ] [[./cracking_the_coding_interview/src/main/java/stacks_and_queues/_4.java][Problem 4]]
-     5. [ ] [[./cracking_the_coding_interview/src/main/java/stacks_and_queues/_5.java][Problem 5]]
+     4. [X] [[./cracking_the_coding_interview/src/main/java/stacks_and_queues/_4.java][Problem 4]]
+     5. [X] [[./cracking_the_coding_interview/src/main/java/stacks_and_queues/_5.java][Problem 5]]
      6. [ ] [[./cracking_the_coding_interview/src/main/java/stacks_and_queues/_6.java][Problem 6]]
   4. [ ] Trees And Graphs
   5. [ ] Bit Manipulation

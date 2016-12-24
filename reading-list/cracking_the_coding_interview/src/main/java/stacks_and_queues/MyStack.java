@@ -11,9 +11,7 @@ public class MyStack<T> {
 
     @Override
     public String toString() {
-        return "MyStack{" +
-                "top=" + top +
-                '}';
+        return "{" + top + '}';
     }
 
     public int size() {
@@ -24,11 +22,7 @@ public class MyStack<T> {
 
         @Override
         public String toString() {
-            return "StackNode{" +
-                    "data=" + data +
-                    ", next=" + next +
-                    ", size=" + size +
-                    '}';
+            return data + ((next != null) ? ("," + next) : "");
         }
 
         private T data;

@@ -26,18 +26,4 @@ public class BitArrayTest {
         assertFalse(myBitArary.getBit(1234567));
 
     }
-    @Test
-    public void primeSieve() {
-        BitArray myArray = new BitArray(100);
-
-        myArray.setBit(2);
-
-        Iterator<Boolean> iterator = myArray.getIterator();
-        while (iterator.hasNext()) {
-            Boolean val = iterator.next();
-            System.out.println(val);
-        }
-
-    }
-
 }
