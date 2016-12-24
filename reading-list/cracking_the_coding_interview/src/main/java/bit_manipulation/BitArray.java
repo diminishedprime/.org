@@ -58,7 +58,7 @@ class BitArray {
         }
     }
 
-    private static int clearBit(int data, int index) {
+    public static int clearBit(int data, int index) {
         // shift 1 over by the index amount, and then flip every bit, this will
         // take us from something like
         // 00001
@@ -72,14 +72,14 @@ class BitArray {
         return data & mask;
     }
 
-    private static int setBit(int data, int index) {
+    public static int setBit(int data, int index) {
         int shifted = (1 << index);
         // or will keep the values the same everywhere, but turn them on where
         // there is a 1 in shifted.
         return data | shifted;
     }
 
-    private static boolean getBit(int data, int index) {
+    public static boolean getBit(int data, int index) {
         // shift 1 over by the index amount this will take us from something like
         // 000001
         // to

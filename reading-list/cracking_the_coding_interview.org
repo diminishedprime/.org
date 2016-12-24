@@ -2,30 +2,53 @@
 [[./index.org][Reading List]]
 
 * Cracking The Coding Interview
-+ [X]  I. The interview Process
++ [X] I. The interview Process
 + [X] II. Behind the Scenes
 + [X] III. Special Situations
 + [X] IV. Before The Interview
 + [X] V. Behavioral Questionss
 + [X] VI. Big O
 + [-] VII. Technical Questions
-  1. [X] [[./cracking_the_coding_interview/src/main/java/arrays_and_strings/_1.java][Arrays and Strings]]
-  2. [X] [[./cracking_the_coding_interview/src/main/java/linked_list/_1.java][Linked List]]
-  3. [ ] [[./cracking_the_coding_interview/src/main/java/stacks_and_queues/_1.java][Stacks And Queues]]
-  4. [ ]
-  5. [ ]
-  6. [ ]
-  7. [ ]
-  8. [ ]
-  9. [ ]
-  10. [ ]
-  11. [ ]
-  12. [ ]
-  13. [ ]
-  14. [ ]
-  15. [ ]
-  16. [ ]
-  17. [ ]
+  1. [X] Arrays and Strings
+     1. [X] [[./cracking_the_coding_interview/src/main/java/arrays_and_strings/_1.java][problem 1]]
+     2. [X] [[./cracking_the_coding_interview/src/main/java/arrays_and_strings/_2.java][problem 2]]
+     3. [X] [[./cracking_the_coding_interview/src/main/java/arrays_and_strings/_3.java][problem 3]]
+     4. [X] [[./cracking_the_coding_interview/src/main/java/arrays_and_strings/_4.java][problem 4]]
+     5. [X] [[./cracking_the_coding_interview/src/main/java/arrays_and_strings/_5.java][problem 5]]
+     6. [X] [[./cracking_the_coding_interview/src/main/java/arrays_and_strings/_6.java][problem 6]]
+     7. [X] [[./cracking_the_coding_interview/src/main/java/arrays_and_strings/_7.java][problem 7]]
+     8. [X] [[./cracking_the_coding_interview/src/main/java/arrays_and_strings/_8.java][problem 8]]
+     9. [X] [[./cracking_the_coding_interview/src/main/java/arrays_and_strings/_9.java][problem 9]]
+  2. [X] Linked Lists
+     1. [X] [[./cracking_the_coding_interview/src/main/java/linked_list/_1.java][Problem 1]]
+     2. [X] [[./cracking_the_coding_interview/src/main/java/linked_list/_2.java][Problem 2]]
+     3. [X] [[./cracking_the_coding_interview/src/main/java/linked_list/_3.java][Problem 3]]
+     4. [X] [[./cracking_the_coding_interview/src/main/java/linked_list/_4.java][Problem 4]]
+     5. [X] [[./cracking_the_coding_interview/src/main/java/linked_list/_5.java][Problem 5]]
+     6. [X] [[./cracking_the_coding_interview/src/main/java/linked_list/_6.java][Problem 6]]
+     7. [X] [[./cracking_the_coding_interview/src/main/java/linked_list/_7.java][Problem 7]]
+     8. [X] [[./cracking_the_coding_interview/src/main/java/linked_list/_8.java][Problem 8]]
+  3. [-] Stacks And Queues
+     1. [X] [[./cracking_the_coding_interview/src/main/java/stacks_and_queues/_1.java][Problem 1]]
+     2. [X] [[./cracking_the_coding_interview/src/main/java/stacks_and_queues/_2.java][Problem 2]]
+     3. [ ] [[./cracking_the_coding_interview/src/main/java/stacks_and_queues/_3.java][Problem 3]]
+     4. [ ] [[./cracking_the_coding_interview/src/main/java/stacks_and_queues/_4.java][Problem 4]]
+     5. [ ] [[./cracking_the_coding_interview/src/main/java/stacks_and_queues/_5.java][Problem 5]]
+     6. [ ] [[./cracking_the_coding_interview/src/main/java/stacks_and_queues/_6.java][Problem 6]]
+  4. [ ] Trees And Graphs
+  5. [ ] Bit Manipulation
+  6. [ ] Math and Logic Puzzles
+  7. [ ] Object Oriented Design
+  8. [ ] Recursion and Dynamic Programming
+  9. [ ] System Design and Scalability
+  10. [ ] Sorting and Searching
+  11. [ ] Testing
+  12. [ ] C and C++
+  13. [ ] Java
+  14. [ ] Databases
+  15. [ ] Threads and Locks
+  16. [ ] Moderate
+  17. [ ] Hard
 + [ ] VIII. The Offer and Beyond
 + [ ] IX. Interview Questions
 + [ ] X. Solutions
