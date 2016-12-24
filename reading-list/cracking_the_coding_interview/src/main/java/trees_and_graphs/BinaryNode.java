@@ -9,9 +9,10 @@ import java.util.function.Function;
  */
 public class BinaryNode<T> {
 
-    private T data;
-    private BinaryNode<T> left;
-    private BinaryNode<T> right;
+    public T data;
+    public int height;
+    public BinaryNode<T> left;
+    public BinaryNode<T> right;
 
     private void print(StringBuilder out, String prefix, boolean isTail) {
         out.append(prefix + (isTail ? "└── " : "├── ") + data + "\n");
@@ -52,12 +53,24 @@ public class BinaryNode<T> {
         this.left = left;
         this.data = data;
         this.right = right;
+        this.height = Math.max(
+                (left != null) ? left.height : 0,
+                (right != null) ? right.height :0
+        ) + 1;
     }
 
     public boolean isLeaf() {
         return left != null && right != null;
     }
 
+
+    public <K> BinaryNode<K> inOrderTraversalNodes(Function<BinaryNode<T>, K> visitFn) {
+        BinaryNode<K> newNode = new BinaryNode<K>();
+        newNode.left = (left != null) ? left.inOrderTraversalNodes(visitFn) : null;
+        newNode.data = (data != null) ? visitFn.apply(this) : null;
+        newNode.right = (right != null) ? right.inOrderTraversalNodes(visitFn) : null;
+        return newNode;
+    }
 
     public <K> BinaryNode<K> inOrderTraversal(Function<T, K> visitFn) {
         BinaryNode<K> newNode = new BinaryNode<K>();
