@@ -13,6 +13,7 @@ public class BinaryNode<T> {
     public int height;
     public BinaryNode<T> left;
     public BinaryNode<T> right;
+    public BinaryNode<T> parent;
 
     private void print(StringBuilder out, String prefix, boolean isTail) {
         out.append(prefix + (isTail ? "└── " : "├── ") + data + "\n");
@@ -57,6 +58,8 @@ public class BinaryNode<T> {
                 (left != null) ? left.height : 0,
                 (right != null) ? right.height :0
         ) + 1;
+        if (left != null) left.parent = this;
+        if (right != null) right.parent = this;
     }
 
     public boolean isLeaf() {
