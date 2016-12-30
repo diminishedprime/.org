@@ -42,7 +42,7 @@
      4. [X] [[./cracking_the_coding_interview/src/main/java/trees_and_graphs/_4.java][Problem 4]]
      5. [X] [[./cracking_the_coding_interview/src/main/java/trees_and_graphs/_5.java][Problem 5]]
      6. [X] [[./cracking_the_coding_interview/src/main/java/trees_and_graphs/_6.java][Problem 6]]
-     7. [ ] [[./cracking_the_coding_interview/src/main/java/trees_and_graphs/_7.java][Problem 7]]
+     7. [X] [[./cracking_the_coding_interview/src/main/java/trees_and_graphs/_7.java][Problem 7]]
      8. [ ] [[./cracking_the_coding_interview/src/main/java/trees_and_graphs/_8.java][Problem 8]]
      9. [ ] [[./cracking_the_coding_interview/src/main/java/trees_and_graphs/_9.java][Problem 9]]
      10. [ ] [[./cracking_the_coding_interview/src/main/java/trees_and_graphs/_10.java][Problem 10]]
@@ -53,7 +53,15 @@
   7. [ ] Object Oriented Design
   8. [ ] Recursion and Dynamic Programming
   9. [ ] System Design and Scalability
-  10. [ ] Sorting and Searching
+  10. [-] Sorting and Searching
+      1. [X] [[./cracking_the_coding_interview/src/main/java/sorting_and_searching/_1.java][Problem 1]]
+      2. [ ]
+      3. [ ]
+      4. [X] [[./cracking_the_coding_interview/src/main/java/sorting_and_searching/_4.java][Problem 4]]
+      5. [ ]
+      6. [ ]
+      7. [ ]
+      8. [ ]
   11. [ ] Testing
   12. [ ] C and C++
   13. [ ] Java
