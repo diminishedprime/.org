@@ -1,10 +1,6 @@
 package sorting_and_searching;
 
-import jdk.nashorn.internal.runtime.regexp.joni.SearchAlgorithm;
-
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.LinkedList;
 
 /**
  * Created by mjhamrick on 12/29/16.
