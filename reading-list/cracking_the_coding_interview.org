@@ -64,7 +64,76 @@
       8. [ ]
   11. [ ] Testing
   12. [ ] C and C++
-  13. [ ] Java
+  13. [X] Java
+      1. [X] Private Constructor: In terms of inheritance, what is the effect of
+         keeping a constructor private? Hints: #404
+         + If a constructor is private, subclasses cannot invoke it directly,
+           unless they are inner classes.
+      2. [X] Return from Finally: In Java, does the finally block get executed
+         if we insert a return statement inside the try block of a
+         try-catch-finally? Hints: #409
+         + Yes, it will run unless its thread dies before it can run, or if the
+           virtual machine exists before the try catch is finished.
+      3. [X] Final, etc.: What is the difference between final, finally, and
+         finalize? Hints: #412
+         + Final can be used in a few places. On a method, it ensures that a
+           subclass cannot override it. On a field, it ensures that once a value
+           is set, it cannot be modified. In a method argument, it ensures that
+           the value cannot be modified.
+         + Finally is used as on optional last block of a try-catch-finally
+           block. The finally block can be used to close up any resources, or
+           other behavior that you want to ensure happens in excptional
+           scenarios.
+         + finalize is a method on the Object class. If ovverriden, it will be
+           called once the jvm has decided to garbage collect the object.
+      4. [X] Generics vs. Templates: Explain the difference between templates in
+         C++ and generics in Java. Hints: #416, #425
+         + From what I know of Templates in C++, they generate code that will
+           exist at runtime for each type, whereas java erases the type
+           information and simply applies the correct casts as necessary. Static
+           variables are shared accross all generics for this reason, this is
+           not the case in C++. C++ will have a different static variable for
+           each type.
+      5. [X] TreeMap, HashMap, LinkedHashMap: Explain the differences between
+         TreeMap, HashMap, and LinkedHashMap. Provide an example of when each
+         one would be best. Hints: #420, #424, #430, #454
+         + HashMap gives O(1) lookup and insertion.
+         + TreeMap gives O(log(n)) lookup and insertion, but the keys are
+           ordered. Keys must be Comparable for this reason.
+         + LinkedHashMap gives O(1) lookup and insertion, but keys are ordered
+           by their insertion order.
+      6. [X] Object Reflection: Explain what object reflection is in Java and
+         why it is useful. Hints :#435
+         + Reflection is a mechanism in which you can do metaprogramming Java.
+           It is the mechanism through which Annotations work, and it makes a
+           way in which code can be completely generically invoked.
+      7. [X] Lambda Expressions: There is a class Country that has methods
+         getContinent() and getPopulation(). Write a function int
+         getPopulation(List<Country> countries, String continent) that computes
+         the total population of a given continent, given a list of all
+         countries and the name of a continent. Hints:#448, #467, #464
+           #+BEGIN_SRC java
+             Stream<Country> northAmerica =
+                 countries
+                 .stream()
+                 .filter(country -> {return country.getContintent().equals(content);})
+                 .map(c -> c.getPopulation())
+                 .reduce(0, (a, b) -> a + b)
+           #+END_SRC
+      8. [X] Lambda Random: Using Lambda expressions, write a function
+         List<Integer> getRandomSubset(List<Integer> list) that returns a random
+         subset of arbitrary size. All subsets (including the empty set) should
+         be equally likely to be chosen. Hints: #443, #450, #457
+         #+BEGIN_SRC java
+           List<Integer> getRandomSubset(List<Integer> list) {
+               Random random = new Random();
+               List<Integer> = subset = list
+                   .stream()
+                   .filter(k -> {return random.nextBoolean();})
+                   .collect(Collectors.toList());
+               return subset;
+           }
+         #+END_SRC
   14. [ ] Databases
   15. [ ] Threads and Locks
   16. [ ] Moderate
