@@ -45,7 +45,7 @@
      7. [X] [[./cracking_the_coding_interview/src/main/java/trees_and_graphs/_7.java][Problem 7]]
      8. [ ] [[./cracking_the_coding_interview/src/main/java/trees_and_graphs/_8.java][Problem 8]]
      9. [ ] [[./cracking_the_coding_interview/src/main/java/trees_and_graphs/_9.java][Problem 9]]
-     10. [ ] [[./cracking_the_coding_interview/src/main/java/trees_and_graphs/_10.java][Problem 10]]
+     10. [X] [[./cracking_the_coding_interview/src/main/java/trees_and_graphs/_10.java][Problem 10]]
      11. [X] [[./cracking_the_coding_interview/src/main/java/trees_and_graphs/_11.java][Problem 11]]
      12. [X] [[./cracking_the_coding_interview/src/main/java/trees_and_graphs/_12.java][Problem 12]]
   5. [ ] Bit Manipulation
