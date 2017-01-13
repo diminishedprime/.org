@@ -44,7 +44,7 @@
      6. [X] [[./cracking_the_coding_interview/src/main/java/trees_and_graphs/_6.java][Problem 6]]
      7. [X] [[./cracking_the_coding_interview/src/main/java/trees_and_graphs/_7.java][Problem 7]]
      8. [ ] [[./cracking_the_coding_interview/src/main/java/trees_and_graphs/_8.java][Problem 8]]
-     9. [ ] [[./cracking_the_coding_interview/src/main/java/trees_and_graphs/_9.java][Problem 9]]
+     9. [X] [[./cracking_the_coding_interview/src/main/java/trees_and_graphs/_9.java][Problem 9]]
      10. [X] [[./cracking_the_coding_interview/src/main/java/trees_and_graphs/_10.java][Problem 10]]
      11. [X] [[./cracking_the_coding_interview/src/main/java/trees_and_graphs/_11.java][Problem 11]]
      12. [X] [[./cracking_the_coding_interview/src/main/java/trees_and_graphs/_12.java][Problem 12]]

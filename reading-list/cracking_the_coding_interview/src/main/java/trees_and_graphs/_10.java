@@ -18,8 +18,6 @@ public class _10 {
         getOrderedString(t2, s2);
 
         return s1.indexOf(s2.toString()) != -1;
-
-        return false;
     }
 
     private static void getOrderedString(BinaryNode<Integer> node, StringBuilder sb) {
