@@ -6,6 +6,10 @@
 
 * Various Helpful Commands
 + Pull on all repos under the pwd.
-  #+BEGIN_SRC sh
-    find . -name .git -type d -execdir git pull -v ';'
-  #+END_SRC
+  ~find . -name .git -type d -execdir git pull -v ';'~
++ Set a git remote to a new url
+  ~git remote set-url origin new-url-here~
++ Set up a symlink for nonexist file
+  ~ln -s source/file symlink/file~
++ Update a symlink
+  ~ln -sf source/file symlink/file~
