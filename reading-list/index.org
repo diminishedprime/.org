@@ -2,6 +2,7 @@
 
 * Reading List/Digital Bookshelf
 ** Top of Queue
++ [ ] [[http://search.safaribooksonline.com/9781783553310/ch01_html#X2ludGVybmFsX0h0bWxWaWV3P3htbGlkPTk3ODE3ODM1NTMzMTAlMkZjaDAyX2h0bWwmcXVlcnk9][Mastering Julia]]
 + [ ] [[./cracking_the_coding_interview.org][Cracking The Coding Interview]]
 + [ ] [[http://aosabook.org/en/index.html][The Architecture of Open Source Applications]]
 + [ ] [[./seven_more_languages_in_seven_weeks.org][Seven More Languages In Seven Weeks]]
