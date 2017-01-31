@@ -2,7 +2,6 @@
 
 * Reading List/Digital Bookshelf
 ** Top of Queue
-+ [ ] [[./apache_kafka.org][Apache Kafka]]
 + [ ] [[http://search.safaribooksonline.com/9781783553310/ch01_html#X2ludGVybmFsX0h0bWxWaWV3P3htbGlkPTk3ODE3ODM1NTMzMTAlMkZjaDAyX2h0bWwmcXVlcnk9][Mastering Julia]]
 + [ ] [[./cracking_the_coding_interview.org][Cracking The Coding Interview]]
 + [ ] [[http://aosabook.org/en/index.html][The Architecture of Open Source Applications]]
@@ -13,6 +12,7 @@
 ** Completed
 *** Programming Books
 + General
+  + 2017-01-31 [[./apache_kafka.org][Apache Kafka]]
   + 2016-10-13 [[./i_heart_logs.org][I Heart Logs (Jay Kreps)]]
   + 2016-10-08 [[./big_data.org][Big Data]]
   + 2016-10-10 [[./seven_languages_in_seven_weeks.org][Seven Languages In Seven Weeks]]

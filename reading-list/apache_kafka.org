@@ -9,4 +9,4 @@
 5. [X] Writing Producers
 6. [X] Writing Consumers
 7. [X] Kafka Integrations
-8. [ ] Kafka Tools
+8. [X] Kafka Tools
