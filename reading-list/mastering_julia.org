@@ -1,0 +1,14 @@
+[[../index.org][Main Index]]
+[[./index.org][Reading List]]
+
+* Mastering Julia
+1. [X] The Julia Environment
+2. [ ] Developing in Julia
+3. [ ] Types and Dispatch
+4. [ ] Interoperability
+5. [ ] orking with Data
+6. [ ] Scientific Programming
+7. [ ] Graphics
+8. [ ] Databases
+9. [ ] Networking
+10. [ ] Working with Julia
