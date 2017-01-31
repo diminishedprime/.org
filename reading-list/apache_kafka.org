@@ -8,5 +8,5 @@
 4. [X] Kafka Design
 5. [X] Writing Producers
 6. [X] Writing Consumers
-7. [ ] Kafka Integrations
+7. [X] Kafka Integrations
 8. [ ] Kafka Tools
