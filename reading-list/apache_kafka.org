@@ -7,6 +7,6 @@
 3. [X] Setting up the Kafka Cluster
 4. [X] Kafka Design
 5. [X] Writing Producers
-6. [ ] Writing Consumers
+6. [X] Writing Consumers
 7. [ ] Kafka Integrations
 8. [ ] Kafka Tools
