@@ -1,0 +1,12 @@
+[[../index.org][Main Index]]
+[[./index.org][Reading List]]
+
+* Apache Kafka
+1. [X] Introducing Kafka
+2. [X] Installing Kafka
+3. [X] Setting up the Kafka Cluster
+4. [X] Kafka Design
+5. [X] Writing Producers
+6. [ ] Writing Consumers
+7. [ ] Kafka Integrations
+8. [ ] Kafka Tools
