@@ -1,3 +1,9 @@
+data Shape = Triangle
+           | Square
+           | Pentagon
+           | Hexagon
+  deriving Show
+
 -- Defining the `Points` typeclass
 class Points a where
   numPoints :: a -> Int

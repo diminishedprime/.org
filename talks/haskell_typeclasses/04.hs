@@ -2,6 +2,7 @@ import Control.Applicative
 
 -- Recursive Types
 data List a = Cons a (List a) | Null
+  deriving Show
 
 exList = Cons 3 (Cons 4 (Cons 5 (Cons 6 Null)))
 

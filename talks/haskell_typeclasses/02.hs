@@ -5,8 +5,9 @@ data Color = Red
            | Orange
            | Pink
            | GreenWhichIsNotACreativeColor
+  deriving Show
 
-data Person = Person String String Color
+data Person = Person String String Color deriving Show
 
 myFunctionThatTalksToADatabase :: String -> String
 myFunctionThatTalksToADatabase _ = undefined

@@ -1,4 +1,8 @@
-type Color = Red | Blue | Orange | Pink | GreenWhichIsNotACreativeColor
+data Color = Red
+           | Blue
+           | Orange
+           | Pink
+           | GreenWhichIsNotACreativeColor
 
 isMyFavoriteColor :: Color -> Bool
 isMyFavoriteColor color = case color of

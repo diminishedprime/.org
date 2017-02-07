@@ -9,7 +9,8 @@ shapeToString :: Shape -> String
 shapeToString Triangle = "Triangle!"
 shapeToString Square = "Square!"
 shapeToString Pentagon = "Pentagon!"
--- shapeToString Hexagon = "Hexagon :("
+-- Comment one out to show that you must be exhaustive
+shapeToString Hexagon = "Hexagon :("
 
 
 -- Product Type
@@ -21,6 +22,7 @@ metaShapeToString (MetaShape shape str) = shapeToString shape ++ " " ++ str
 
 -- Recursive Types
 data List a = Cons a (List a) | Null
+  deriving Show
 
 exList = Cons 3 (Cons 4 (Cons 5 (Cons 6 Null)))
 
