@@ -2,12 +2,14 @@
 
 * Reading List/Digital Bookshelf
 ** Top of Queue
++ [ ] [[./the_cpp_programming_language.org][The C++ Programming Language]]
 + [ ] [[./mastering_julia.org][Mastering Julia]]
 + [ ] [[./cracking_the_coding_interview.org][Cracking The Coding Interview]]
++ [ ] [[./mastering_regular_expressions.org][Mastering Regular Expressions]]
+** Come Back To
 + [ ] [[http://aosabook.org/en/index.html][The Architecture of Open Source Applications]]
 + [ ] [[./seven_more_languages_in_seven_weeks.org][Seven More Languages In Seven Weeks]]
 + [ ] [[./haskell_programming_from_first_principles.org][Haskell Book]]
-+ [ ] [[./mastering_regular_expressions.org][Mastering Regular Expressions]]
 + [ ] [[./purely_functional_data_structures.org][Purely Functional Data Structures]]
 ** Completed
 *** Programming Books
