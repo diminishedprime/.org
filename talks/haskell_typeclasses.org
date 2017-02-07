@@ -1,7 +1,7 @@
 [[../index.org][Main Index]]
 [[../talks.org][Talks]]
 
-* Haskell Types
+* Haskell Types & Etc.
 ** Types in General
 + What are they for
 + What can they do
@@ -10,10 +10,16 @@
 + No null (basically)
 + Everything has a value
 + Recursive Types
-+ [[./haskell_typeclasses/01.hs][Example]
-** Encoding Error
-+ write an example showing alternative and maybe with a function that fakes
-  going to the internet
++ [[./haskell_typeclasses/01.hs][Example]]
+** Pattern Matching
++ Similiar to Erlang, Prolog
++ Does binding & destructuring
++ [[./haskell_typeclasses/03.hs][Example]]
+** Accepting Error
++ Types allow you to be specific about what can happen.
++ String vs Database String
++ What does Null mean?
++ [[./haskell_typeclasses/02.hs][Example]]
 ** Typeclasses
 + Similar to Java Interface or C++ header
 + Adhoc polymorphism

@@ -18,21 +18,17 @@ data MetadataShape = MetaShape Shape String
 -- Function using a Product type
 metaShapeToString (MetaShape shape str) = shapeToString shape ++ " " ++ str
 
--- Defining the `Points` typeclass
-class Points a where
-  numPoints :: a -> Int
 
--- Defining the `Sides` typeclass
-class (Points a) => Sides a where
-  numSides :: a -> Int
-  numSides a = numPoints a
+-- Recursive Types
+data List a = Cons a (List a) | Null
 
--- Making Shape an instance of the Points typeclass
-instance Points Shape where
-  numPoints Triangle = 3
-  numPoints Square = 4
-  numPoints Pentagon = 5
-  numPoints Hexagon = 6
+exList = Cons 3 (Cons 4 (Cons 5 (Cons 6 Null)))
 
--- Making Shape an instance of the Points typeclass
-instance Sides Shape
+-- mapping function for our recursive type
+listMap ::  (a -> b) -> List a -> List b
+listMap f Null = Null
+listMap f (Cons a b) = Cons (f a) (listMap f b)
+
+increment x = x + 1
+
+exAnswer = listMap increment exList
