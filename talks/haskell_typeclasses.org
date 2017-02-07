@@ -1,0 +1,25 @@
+[[../index.org][Main Index]]
+[[../talks.org][Talks]]
+
+* Haskell Types
+** Types in General
++ What are they for
++ What can they do
++ What can't they do
+** Haskell Types
++ No null (basically)
++ Everything has a value
++ Recursive Types
++ [[./haskell_typeclasses/01.hs][Example]
+** Encoding Error
++ write an example showing alternative and maybe with a function that fakes
+  going to the internet
+** Typeclasses
++ Similar to Java Interface or C++ header
++ Adhoc polymorphism
++ Sorting with typeclasses
++ [[./haskell_typeclasses/sorting_with_typeclasses.hs][Example]]
+** Dependent Types
++ Idris
++ Encoding values into types
++ Clojure Spec

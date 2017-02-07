@@ -1,0 +1,4 @@
+[[./index.org][Main Index]]
+
+* Talks
++ [[./talks/haskell_typeclasses.org][Haskell Typeclasses]]
