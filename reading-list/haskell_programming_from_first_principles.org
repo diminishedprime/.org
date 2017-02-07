@@ -263,7 +263,7 @@
     4. [X]  Demonstrating Foldable instances
     5. [X]  [[./haskell_programming_from_first_principles/20_05.hs][Some basic derived operations]]
     6. [X]  [[./haskell_programming_from_first_principles/20_06.hs][Chapter Exercises]]
-    7. [X]  Answers
+    7. [X]
     8. [X]  Follow-up resources
 21. [X] Traversable [100%]
     1. [X] Traversable
