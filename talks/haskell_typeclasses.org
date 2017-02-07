@@ -25,6 +25,9 @@
 + Adhoc polymorphism
 + Sorting with typeclasses
 + [[./haskell_typeclasses/sorting_with_typeclasses.hs][Example]]
+** Functors
++ a typeclass for applying a function over "structure"
++ [[./haskell_typeclasses/04.hs][Example]]
 ** Dependent Types
 + Idris
 + Encoding values into types
