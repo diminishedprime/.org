@@ -4,7 +4,7 @@
 + [[./js.org][Javascript Workflow]]
 + [[./om_next.org][Om Next Workflow]]
 
-* Various Helpful Commands
+* Commands
 + Pull on all repos under the pwd.
   #+BEGIN_SRC sh
     find . -name .git -type d -execdir git pull -v ';'
@@ -20,4 +20,20 @@
 + Update a symlink
   #+BEGIN_SRC sh
     ln -sf source/file symlink/file
+  #+END_SRC
++ Add github ssh key to server
+  #+BEGIN_SRC sh
+    cat ~/.ssh/id_rsa.pub | ssh user@hostname 'cat >> .ssh/authorized_keys'
+  #+END_SRC
++ cd into dir that executable resides in
+  #+BEGIN_SRC sh
+    cd $(dirname $(which executable_name))
+  #+END_SRC
++ find all files under the current directory that matches a pattern
+  #+BEGIN_SRC sh
+    find . -name "*.el"
+  #+END_SRC
++ Run a simple local http server
+  #+BEGIN_SRC sh
+    python -m SimpleHTTPServer 8000
   #+END_SRC
