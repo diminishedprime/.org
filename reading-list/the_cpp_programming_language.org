@@ -31,9 +31,11 @@
      7. [X] Modularity (06:54 mins)
      8. [X] Postscript (01:09 mins)
      9. [X] Advice (01:09 mins)
-  3. [ ] A Tour of C++: Abstraction Mechanisms (01:09 mins)
-     1. [ ] Introduction (01:09 mins)
-     2. [ ] Classes (13:48 mins)
+  3. [-] A Tour of C++: Abstraction Mechanisms (01:09 mins)
+     1. [X] Introduction (01:09 mins)
+     2. [X] Classes (13:48 mins)
+        + [[./the_cpp_programming_language/03/03_vector_with_destructor.cpp][Vector With Destructor]]
+        + [[./the_cpp_programming_language/03/03_abstract_class.cpp][Abstract Class]]
      3. [ ] Copy and Move (06:54 mins)
      4. [ ] Templates (06:54 mins)
      5. [ ] Advice (03:27 mins)
