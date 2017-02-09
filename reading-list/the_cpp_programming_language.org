@@ -9,23 +9,28 @@
      4. [ ] History (11:30 mins)
      5. [ ] Advice (01:09 mins)
      6. [ ] References (05:45 mins)
-  2. [-] A Tour of C++: The Basics (01:09 mins)
+  2. [X] A Tour of C++: The Basics (01:09 mins)
      1. [X] Introduction (01:09 mins)
      2. [X] The Basics (10:21 mins)
         + Note, complile the following code with clang++
           #+BEGIN_SRC sh
-            clang++ 02_hello.cpp
-            ./a.out
+            clang++ 02_hello.cpp -o 02_hello.out
+            ./02_hello.out
           #+END_SRC
         + [[./the_cpp_programming_language/02/02_hello.cpp][Hello]]
         + [[./the_cpp_programming_language/02/02_square.cpp][Square]]
-     3. [ ] User-Defined Types (04:36 mins)
-     4. [ ] Modularity (06:54 mins)
-     5. [ ] Postscript (01:09 mins)
-     6. [ ] Advice (01:09 mins)r-Defined Types (04:36 mins)
-     7. [ ] Modularity (06:54 mins)
-     8. [ ] Postscript (01:09 mins)
-     9. [ ] Advice (01:09 mins)
+     3. [X] User-Defined Types (04:36 mins)
+        + [[./the_cpp_programming_language/02/03_simple_vector.cpp][Simple Vector]]
+        + [[./the_cpp_programming_language/02/03_simple_vector_class.cpp][Simple Vector Class]]
+        + [[./the_cpp_programming_language/02/03_vector.h][Vector Header File]]
+        + [[./the_cpp_programming_language/02/03_vector_impl.cpp][Vector Impl]]
+        + [[./the_cpp_programming_language/02/03_using_vector_impl.cpp][Using Vector Impl]]
+     4. [X] Modularity (06:54 mins)
+     5. [X] Postscript (01:09 mins)
+     6. [X] Advice (01:09 mins)r-Defined Types (04:36 mins)
+     7. [X] Modularity (06:54 mins)
+     8. [X] Postscript (01:09 mins)
+     9. [X] Advice (01:09 mins)
   3. [ ] A Tour of C++: Abstraction Mechanisms (01:09 mins)
      1. [ ] Introduction (01:09 mins)
      2. [ ] Classes (13:48 mins)
