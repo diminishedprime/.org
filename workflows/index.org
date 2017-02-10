@@ -37,3 +37,7 @@
   #+BEGIN_SRC sh
     python -m SimpleHTTPServer 8000
   #+END_SRC
++ Rename files that match a glob in the current directory
+  #+BEGIN_SRC sh
+    rename -n 's/ed-style/regex/' *.mp4
+  #+END_SRC
