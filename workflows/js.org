@@ -1,7 +1,154 @@
 [[../index.org][Main Index]]
 [[./index.org][Workflow Index]]
 
-* Javascript Workflow
-+ Node
-  + Nodemon to watch a file on the filesystem.
-  + Terminal open on one screen, editor on the other.
+* Express Server
+  1) Create project in git
+  2) npm-init in folder
+  3) install dev dependencies
+     #+BEGIN_SRC sh
+       npm install --save-dev \
+           eslint \
+           tape \
+           blue-tape \
+           popsicle \
+           standard
+     #+END_SRC
+  4) install dependencies
+     #+BEGIN_SRC sh
+       npm install --save \
+           express \
+           convict \
+           body-parser \
+           bluebird
+     #+END_SRC
+  5) set up config for ports/etc in lib/settings.js using convict
+     #+BEGIN_SRC javascript
+       var convict = require("convict")
+
+       var web = convict({
+         port: {
+           doc: "The port on which to run the web server.",
+           default: 3200
+         }
+       })
+
+       module.exports = {
+         web : web.getProperties()
+       }
+     #+END_SRC
+  6) set up routes in a lib/define-all-routes.js
+     #+BEGIN_SRC javascript
+       var Promise = require("bluebird")
+
+       var createHello = (request) => Promise.resolve("hello, world")
+
+       module.exports = function(app) {
+         addRoute(app, "post", "/hello", createHello)
+       }
+
+       var handleResult = function(response) {
+         return (result) => response.send(result)
+       }
+
+       var handleError = function(response) {
+         return (err) => response
+           .status(err.status || 500)
+           .send(err.message || "We're sorry. Something went wrong.")
+       }
+
+       var addRoute = function(app, verb, path, handler){
+         app[verb](path, function(request, response){
+           handler(request)
+             .then(handleResult(response))
+             .catch(handleError(response))
+         })
+       }
+     #+END_SRC
+  7) set up a server start/stop in lib/start-server.js
+     #+BEGIN_SRC javascript
+       var Promise = require("bluebird")
+       var bodyParser = require("body-parser")
+       var defineAllRoutes = require("./define-all-routes.js")
+       var express = require("express")
+       var {web} = require("./settings.js")
+
+       var handler = function(app) {
+         return function(resolve, reject) {
+           var server = app.listen(web.port, function(err) {
+             if (err) {
+               reject(err)
+             } else {
+               resolve(server)
+             }
+           })
+         }
+       }
+
+       module.exports = function() {
+         var app = express()
+
+         app.use(bodyParser.json())
+         app.use(bodyParser.urlencoded({extended: true}))
+
+         defineAllRoutes(app)
+
+         return new Promise(handler(app))
+       }
+     #+END_SRC
+  8) lib/app.js for the entrypoint
+     #+BEGIN_SRC javascript
+       var startServer = require("./start-server.js")
+
+       startServer().then(function (server) {
+         console.log(`hello-api REST api listening on port ${server.address().port}`)
+       })
+     #+END_SRC
+  9) test under test-int/routes/post-hello-test.js
+     #+BEGIN_SRC javascript
+       var test = require("blue-tape")
+       var popsicle = require("popsicle")
+       var {web} = require("../../lib/settings.js")
+       var startServer = require("../../lib/start-server.js")
+
+       test("POST /hello", (tape) => {
+         return startServer().then((server) => {
+           var newHello = {}
+
+           var postHello = () => popsicle.request({
+             method: "post",
+             url: `http://localhost:${web.port}/hello`,
+             body: newHello
+           })
+
+           var assertResponse = (response) => {
+             server.close()
+             var actual = response.body
+             var expected = "hello, world"
+             tape.deepEquals(actual, expected)
+           }
+
+           return postHello()
+             .then(assertResponse)
+         })
+       })
+     #+END_SRC
+  10) set up a script to run the tests under package.json
+      #+BEGIN_SRC javascript
+        "scripts": {
+          "lint": "eslint . --ignore-path .gitignore && echo ESLINT OK",
+          "int-test": "tape test-int/**/*-test.js"
+        }
+      #+END_SRC
+  11) set up .eslintrc.js
+      #+BEGIN_SRC javascript
+        module.exports = {
+          extends: "standard",
+          rules: {
+            "eqeqeq": "off",
+            "no-else-return": "off",
+            "no-plusplus": "off",
+            "no-use-before-define": "off",
+            "no-console": "off"
+          }
+        }
+      #+END_SRC

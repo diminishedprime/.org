@@ -41,3 +41,7 @@
   #+BEGIN_SRC sh
     rename -n 's/ed-style/regex/' *.mp4
   #+END_SRC
++ POST with curl
+#+BEGIN_SRC sh
+  curl --data "{data : 'goes here'}" localhost:post/endpoint
+#+END_SRC
