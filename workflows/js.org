@@ -152,3 +152,287 @@
           }
         }
       #+END_SRC
+* Add Postgres to Express App
+  1) add necessary deps db-migrate
+     #+BEGIN_SRC sh
+       npm install --save-dev db-migrate db-migrate-pg
+     #+END_SRC
+  2) add pg
+     #+BEGIN_SRC sh
+       npm install --save pg
+     #+END_SRC
+  3) add scripts to package.json
+     #+BEGIN_SRC javascript
+       {
+         "pg-create-db": "createdb --username=hello_api --owner=hello_api hello_api",
+         "pg-cluster-init": "initdb /usr/local/var/postgres/db/default",
+         "pg-create-user": "createuser hello_api --createdb;",
+         "pg-init": "npm run pg-stop || true; npm run pg-start; npm run pg-create-user; npm run pg-create-db; db-migrate up",
+         "pg-migrate": "db-migrate down && db-migrate up",
+         "pg-reset": "npm run pg-stop; npm run pg-start; dropdb --if-exists --echo hello_api; dropuser --if-exists hello_api",
+         "pg-start": "pg_ctl start -w",
+         "pg-stop": "pg_ctl stop"
+       }
+     #+END_SRC
+  4) Create a database config file for db-migrate
+     #+BEGIN_SRC javascript
+       {
+         "dev": {
+           "driver": "pg",
+           "host": "localhost",
+           "database": "hello_api",
+           "user": "hello_api"
+         }
+       }
+
+     #+END_SRC
+  5) create a template for the migration
+     #+BEGIN_SRC sh
+       node node_modules/db-migrate/bin/db-migrate create create-hello-table
+     #+END_SRC
+  6) add in functionality for exports.up and exports.down
+     #+BEGIN_SRC javascript
+       var dbm;
+       var type;
+       var seed;
+
+       /**
+        ,* We receive the dbmigrate dependency from dbmigrate initially.
+        ,* This enables us to not have to rely on NODE_PATH.
+        ,*/
+       let tableName = 'hello'
+
+       exports.setup = function(options, seedLink) {
+         dbm = options.dbmigrate;
+         type = dbm.dataType;
+         seed = seedLink;
+       }
+
+       exports.up = function(db) {
+         let config = {
+           id: {
+             type: "string",
+             primaryKey: true
+           },
+           data: "jsonb"
+         }
+         return db.createTable(tableName, config)
+       }
+
+       exports.down = function(db) {
+         return db.dropTable(tableName)
+       }
+
+       exports._meta = {
+         "version": 1
+       }
+     #+END_SRC
+  7) run the pg-init script that we put into package.json earlier
+     #+BEGIN_SRC sh
+       npm run pg-init
+     #+END_SRC
+  8) add the following code
+     + lib/start-server.js This is where we make sure to call pool.shutDown()
+       #+BEGIN_SRC javascript
+         let Promise = require("bluebird")
+         let bodyParser = require("body-parser")
+         let defineAllRoutes = require("./define-all-routes.js")
+         let express = require("express")
+         let {web} = require("./settings.js")
+         let pool = require("./db/pool.js")
+
+         let addCleanup = function(server) {
+           let _oldClose = server.close
+           server.close = function() {
+             pool.shutDown()
+             _oldClose.apply(this)
+           }
+         }
+
+         let handler = function(app) {
+           return function(resolve, reject) {
+             let server = app.listen(web.port, function(err) {
+               if (err) {
+                 reject(err)
+               } else {
+                 addCleanup(server)
+                 resolve(server)
+               }
+             })
+           }
+         }
+
+         module.exports = function() {
+           let app = express()
+
+           app.use(bodyParser.json())
+           app.use(bodyParser.urlencoded({extended: true}))
+
+           defineAllRoutes(app)
+
+           return new Promise(handler(app))
+         }
+
+       #+END_SRC
+     + lib/settings.js
+       #+BEGIN_SRC javascript
+         let convict = require("convict")
+
+         let web = convict({
+           port: {
+             doc: "The port on which to run the web server.",
+             default: 3200
+           }
+         })
+
+         let pg = convict({
+           user: {
+             doc: "The database system user.",
+             default: "hello_api"
+           },
+           database: {
+             doc: "The name of the hello-api database.",
+             default: "hello_api"
+           },
+           max: {
+             doc: "The maximum number of connections in the pg pool.",
+             default: 10
+           },
+           host: {
+             doc: "Postgres host pulled from environment letiable.",
+             default: "localhost",
+             env: "HELLO_API_DATA_PG_HOST"
+           },
+           port: {
+             doc: "Postgres host pulled from environment letiable.",
+             default: "5432",
+             env: "HELLO_API_DATA_PG_PORT"
+           }
+         })
+
+         module.exports = {
+           web : web.getProperties(),
+           pg : pg.getProperties()
+         }
+
+       #+END_SRC
+     + lib/db/stringify-for-sql.js
+       #+BEGIN_SRC javascript
+         module.exports = (value) => `$$${JSON.stringify(value)}$$`
+       #+END_SRC
+     + lib/db/get-connection.js
+       #+BEGIN_SRC javascript
+         let Bluebird = require("bluebird"),
+             getPool = require("./pool.js").getPool
+
+         // Get a promise for a connection from the connection pool
+         // When done with your client, call `client.returnToPool()` to give it back
+         module.exports = function(){
+           return new Bluebird(function(resolve, reject){
+             getPool().connect(function(err, client, done){
+               if (err){
+                 return reject(err)
+               }
+               let pclient = Bluebird.promisifyAll(client)
+               pclient.returnToPool = done
+               return resolve(pclient)
+             })
+           })
+         }
+
+       #+END_SRC
+     + lib/db/pool.js
+       #+BEGIN_SRC javascript
+         let pg = require("pg"),
+             settings = require("../settings.js")
+
+         let _pool
+
+         let getPool = function(){
+           if (!_pool) {
+             _pool = new pg.Pool(settings.pg)
+           }
+           return _pool
+         }
+
+         let shutDown = function(){
+           if (_pool) {
+             let pool = _pool
+             _pool = null
+             console.log("ending pool")
+             pool.end()
+           }
+         }
+
+         module.exports = {
+           getPool,
+           shutDown
+         }
+       #+END_SRC
+     + lib/db/run-query
+       #+begin_src javascript
+         let getConnection = require("./get-connection.js")
+
+         module.exports = function(query){
+           return getConnection().then(function(client){
+             return client.query(query).then(function(result){
+               client.returnToPool()
+               return result
+             })
+           })
+         }
+
+       #+end_src
+     + lib/db/get-hello.js
+       #+BEGIN_SRC javascript
+         let runQuery = require("./run-query.js"),
+             Promise = require("bluebird")
+
+         let dbQuery = function (id) {
+           let query = `SELECT data, id
+                        FROM hello
+                        WHERE id = $$${id}$$;`
+           return runQuery(query)
+         }
+
+         let parseData = (queryResponse) => Promise.resolve(queryResponse.rows[0].data)
+
+         module.exports = (id) => dbQuery(id).then(parseData)
+
+       #+END_SRC
+     + lib/db/insert-hello.js
+       #+begin_src javascript
+         let runQuery = require("./run-query.js"),
+             stringifyForSQL = require("./stringify-for-sql.js")
+
+         module.exports = function(hello) {
+           let helloString = stringifyForSQL(hello),
+               id = hello.id,
+               query = `INSERT INTO hello (id, data)
+                        VALUES ('${id}', ${helloString})`
+           return runQuery(query)
+         }
+       #+END_SRC
+     + test-int/db/insert-hello-test.js
+       #+BEGIN_SRC javascript
+         let test = require("blue-tape"),
+             getHello = require("../../lib/db/get-hello.js"),
+             insertHello = require("../../lib/db/insert-hello.js")
+
+         test("insertHelloTest", function(t){
+           let expected = {
+             data : {
+               json: "data"
+             }
+           }
+
+           let insertAndReturnId = () => insertHello(expected),
+               getById = (id) => getHello(id),
+               assert = (actual) => t.deepEquals(actual, expected)
+
+           return insertAndReturnId()
+             .then(getById)
+             .then(assert)
+         })
+
+       #+END_SRC
