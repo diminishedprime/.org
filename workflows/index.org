@@ -47,5 +47,5 @@
 #+END_SRC
 + Replace all occurences of foo with bar in all files recursively under the current directory
 #+BEGIN_SRC sh
-  find . -type f -exec sed -i 's/foo/bar/g' {} +
+  find . -type f -exec sed -i '' -e 's/var/let/g' {} +
 #+END_SRC
