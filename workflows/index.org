@@ -42,10 +42,10 @@
     rename -n 's/ed-style/regex/' *.mp4
   #+END_SRC
 + POST with curl
-#+BEGIN_SRC sh
-  curl --data "{data : 'goes here'}" localhost:post/endpoint
-#+END_SRC
+  #+BEGIN_SRC sh
+    curl --data "{data : 'goes here'}" localhost:post/endpoint
+  #+END_SRC
 + Replace all occurences of foo with bar in all files recursively under the current directory
-#+BEGIN_SRC sh
-  find . -type f -exec sed -i '' -e 's/var/let/g' {} +
-#+END_SRC
+  #+BEGIN_SRC sh
+    find . -type f -exec sed -i '' -e 's/var/let/g' {} +
+  #+END_SRC

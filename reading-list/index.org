@@ -82,6 +82,8 @@
 + [[http://math.mit.edu/~dspivak/teaching/sp13/CT4S--static.pdf][Category Theory For Scientists]]
 + [[http://www.amazon.com/Algebra-2nd-Michael-Artin/dp/0132413779][Michael Artin Algebra]]
 *** Machine Learning
+    + [ ] [[./an_introduction_to_statistical_learning.org][An Introduction to Statistical Learning]]
+
 1. Learning From Data
    + Lectures for this are available online.
 2. Artificial Intelligence, a modern approach. (pdf on desktop)
