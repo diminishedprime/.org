@@ -22,6 +22,51 @@
       4. [X] Loading Data
       5. [X] Additional Graphical and Numerical Summaries
    4. [ ] Exercises
+      + Conceptual
+        1.
+           + (a)
+           + (b)
+           + (c) a flexible model would be better in this instance becasue an
+             inflexible model will have trouble with non-linear models. It needs
+             more degrees of freedom in order to get a small MSE.
+           + (d) a more flexible model will be better here since more flexible
+             models produce less bias. Since the MSE is the sum of bias and
+             variance, and bias is lower with more degrees of freedom, a more
+             flexible model will be better.
+        2.
+           + (a) Regression. inference.
+           + (b) Classification. prediction.
+           + (c) Regression. prediction.
+        3.
+           + (a) I sketched this on a piece of
+           + (b)
+             + Bias - as we move towards a more flexible model, bias decreses
+               first sharply, then less sharply.
+             + Variance - Depending on the model variance can either decrese
+               with a more flexible model or increase. This depends on whether
+               or not the true model is linear or not.
+             + Training Error - more flexible models produce less training error
+               since they tend to fit to the data well.
+             + Test Error - more flexible models produce more test error since
+               they tend to get fit to the training data.
+             + Bayes error - Bayes error is sort of a "golden standard" of how
+               good the MSE can be.
+        4.
+           + (a)
+             1. sorting fish by types as predicted by size and color. The
+                response is the type of fish, and the predictors is size &
+                color. For this, the goal is prediction.
+             2. image to text classification. The response could be the correct
+                letter, and the predictors could be the shape, width, and length
+                of the letter stroke. The goal would be predicition
+             3. signature verification. The response could be whether or not a
+                document was signed by person X. The predictors could be the
+                same as 2, but the goal in this case would probably be
+                inference.
+           + (b)
+             1.
+           + (c)
+
 
 3 Linear Regression 59
 3.1 Simple Linear Regression . . . . . . . . . . . . . . . . . . . 61
