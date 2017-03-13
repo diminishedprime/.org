@@ -8,9 +8,9 @@
    1. [X] What Is Statistical Learning?
       1. [X] Why Estimate f?
       2. [X] How Do We Estimate f?
-      3. [X]  The Trade-Off Between Prediction Accuracy and Model Interpretability
-      4. [X]  Supervised Versus Unsupervised Learning
-      5. [X]  Regression Versus Classification Problems
+      3. [X] The Trade-Off Between Prediction Accuracy and Model Interpretability
+      4. [X] Supervised Versus Unsupervised Learning
+      5. [X] Regression Versus Classification Problems
    2. [ ] Assessing Model Accuracy
 
 2.2.1 Measuring the Quality of Fit . . . . . . . . . . . . . 29
