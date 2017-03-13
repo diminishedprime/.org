@@ -4,7 +4,7 @@
 * [[http://www-bcf.usc.edu/~gareth/ISL/ISLR%20Sixth%20Printing.pdf][An Introduction to Statistical Learning]]
 
 1. [X] Introduction
-2. [-] Statistical Learning
+2. [X] Statistical Learning
    1. [X] What Is Statistical Learning?
       1. [X] Why Estimate f?
       2. [X] How Do We Estimate f?
@@ -21,11 +21,15 @@
       3. [X] Indexing Data
       4. [X] Loading Data
       5. [X] Additional Graphical and Numerical Summaries
-   4. [ ] Exercises
-      + Conceptual
-        1.
-           + (a)
-           + (b)
+   4. [X] Exercises
+      + [X] Conceptual
+        1. [X]
+           + (a) a more flexible method will fit the data closer and since there
+             is a large sample size, there is less of a risk of over fitting the
+             data.
+           + (b) a less flexible method would be preferred since a flexible
+             method would over fit the data due to the small number of
+             observations.
            + (c) a flexible model would be better in this instance becasue an
              inflexible model will have trouble with non-linear models. It needs
              more degrees of freedom in order to get a small MSE.
@@ -33,12 +37,12 @@
              models produce less bias. Since the MSE is the sum of bias and
              variance, and bias is lower with more degrees of freedom, a more
              flexible model will be better.
-        2.
+        2. [X]
            + (a) Regression. inference.
            + (b) Classification. prediction.
            + (c) Regression. prediction.
-        3.
-           + (a) I sketched this on a piece of
+        3. [X]
+           + (a) I sketched this on a piece of paper
            + (b)
              + Bias - as we move towards a more flexible model, bias decreses
                first sharply, then less sharply.
@@ -51,7 +55,7 @@
                they tend to get fit to the training data.
              + Bayes error - Bayes error is sort of a "golden standard" of how
                good the MSE can be.
-        4.
+        4. [X]
            + (a)
              1. sorting fish by types as predicted by size and color. The
                 response is the type of fish, and the predictors is size &
@@ -64,8 +68,78 @@
                 same as 2, but the goal in this case would probably be
                 inference.
            + (b)
-             1.
+             1. predicting the length of a cat given parents measurements. The
+                response is the length of the cat, and the predictors are the
+                parents length. For this the goal could be either predicition or
+                inference.
+             2. mpg of a car. The reposne is the mpg, and the predictors could
+                be number of cylnders, acceleration, top speed, etc. The goal in
+                this case would be predicition.
+             3. tuition for a university for a given future year. The response
+                would be tuition, the predictors could be # of students &
+                faculity salaries. This goal would be predicition.
            + (c)
+             1. Detecting how a marketing campaign effects different markets.
+             2. Detecting how a feature change in an app impacts different
+                markets.
+             3. Netflix movie recommendations. Recommend movies to groups that
+                watch similiar movies .
+        5. [X] A flexible approach to regression or classification can have less
+           MSE in scenerios where the real model is verny non-linear. A less
+           flexible approach tends to be simplier and can be useful for
+           inferring how a change in one variable can impact another.
+        6. [X] A parametric learning approach assumes a functional form. A
+           non-parametric approach does not assume a functional form for f so it
+           is more flexible in general ,but also requires a large number of
+           observations.
+        7. [X]
+           1. (a)
+              | Obs | X1 | X2 | X3 | Distance | Y     |
+              |-----+----+----+----+----------+-------|
+              |   1 |  0 |  3 |  0 | 3        | Red   |
+              |   2 |  2 |  0 |  0 | 2        | Red   |
+              |   3 |  0 |  1 |  3 | sqrt(10) | Red   |
+              |   4 |  0 |  1 |  2 | sqrt(5)  | Green |
+              |   5 | -1 |  0 |  1 | sqrt(2)  | Green |
+              |   6 |  1 |  1 |  1 | sqrt(3)  | Red   |
+           2. (b) green. Observarion 5 is the clossent neighbor for K=1.
+           3. (c) red. Observatinos 32, 5 and 6 are the closest neighbors for K
+              = 3. 2 Is Red, 5 is Green, and 6 is Red which gives us 2/3rds Red.
+           4. (d) Small. A small K would be flixible for a non-linear decision
+              boundary wheras a large K would try to fit a more linear boundary
+              because it takes more points into consideration.
+      + [X] Applied
+        8. [@8] [X]
+           1. (a) okay
+           2. (b) okay
+           3. (c) okay
+        9. [X]
+           + (a) Quantitative => (mpg, displacement, horsepower, weight,
+             acceleration, year) Qualitative => (origin, name, cylinders)
+           + (b) sapply(Auto[, 1:7], range)
+           + (c) sapply(Auto[, 1:7], mean)
+           + (d) sapply(Auto[, 1:7], sd)
+           + (e) okay
+           + (f) Yes. weight horsepower and dispacement seem to all have a
+             linear relationship with mpg. As each of these increse, mpg
+             decreases.
+        10. [X]
+            + (a) 14 columns and 506 rows. The rows represent the number of
+              observations and the columns represent the number of things
+              measured or categorized for each observation.
+            + (b) okay
+            + (c) plot(Boston$age, Boston$crim) Areas with older homes tend to have more crime.
+            + (d) Some have particilarly high crime rates. This can be viewed
+              with hist(Boston$crim[Boston$crim>1], breaks=25)
+            + (e) 35. nrow(subset(Boston, chas == 1))
+            + (f) 19.05 median(Boston$ptratio)
+            + (g) > t(subset(Boston, medv == min(Boston$medv))) &
+              summary(Boston) With these two commands we can find which quartile
+              each measurement is in and come to the conclusion that this place
+              isn't awesome, but isn't terrible either.
+            + (h) nrow(subset(Boston, rm > 7)) = 64. nrow(subset(Boston, rm >
+              8)) = 18. These areas have a relatively lower crime rate comparing
+              to the range, and a lower lstast also comparing to range.
 
 
 3 Linear Regression 59
