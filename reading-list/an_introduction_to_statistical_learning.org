@@ -11,12 +11,12 @@
       3. [X] The Trade-Off Between Prediction Accuracy and Model Interpretability
       4. [X] Supervised Versus Unsupervised Learning
       5. [X] Regression Versus Classification Problems
-   2. [-] Assessing Model Accuracy
+   2. [X] Assessing Model Accuracy
       1. [X] Measuring the Quality of Fit
       2. [X] The Bias-Variance Trade-Off
-      3. [ ] The Classification Setting
+      3. [X] The Classification Setting
+   3. [ ] Lab: Introduction to R
 
-2.3 Lab: Introduction to R . . . . . . . . . . . . . . . . . . . . . 42
 2.3.1 Basic Commands . . . . . . . . . . . . . . . . . . . . 42
 2.3.2 Graphics . . . . . . . . . . . . . . . . . . . . . . . . 45
 2.3.3 Indexing Data . . . . . . . . . . . . . . . . . . . . . 47
