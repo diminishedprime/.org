@@ -15,16 +15,14 @@
       1. [X] Measuring the Quality of Fit
       2. [X] The Bias-Variance Trade-Off
       3. [X] The Classification Setting
-   3. [-] Lab: Introduction to R
+   3. [X] Lab: Introduction to R
       1. [X] Basic Commands
       2. [X] Graphics
       3. [X] Indexing Data
       4. [X] Loading Data
-      5. [ ] Additional Graphical and Numerical Summaries
+      5. [X] Additional Graphical and Numerical Summaries
+   4. [ ] Exercises
 
-2.4 Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . 52
-ix
-x Contents
 3 Linear Regression 59
 3.1 Simple Linear Regression . . . . . . . . . . . . . . . . . . . 61
 3.1.1 Estimating the Coefficients . . . . . . . . . . . . . . 61
