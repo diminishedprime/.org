@@ -17,11 +17,11 @@
       3. [X] The Classification Setting
    3. [-] Lab: Introduction to R
       1. [X] Basic Commands
-      2. [ ] Graphics
+      2. [X] Graphics
+      3. [X] Indexing Data
+      4. [ ] Loading Data
+      5. [ ] Additional Graphical and Numerical Summaries
 
-2.3.3 Indexing Data . . . . . . . . . . . . . . . . . . . . . 47
-2.3.4 Loading Data . . . . . . . . . . . . . . . . . . . . . . 48
-2.3.5 Additional Graphical and Numerical Summaries . . 49
 2.4 Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . 52
 ix
 x Contents
