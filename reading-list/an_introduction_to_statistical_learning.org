@@ -19,7 +19,7 @@
       1. [X] Basic Commands
       2. [X] Graphics
       3. [X] Indexing Data
-      4. [ ] Loading Data
+      4. [X] Loading Data
       5. [ ] Additional Graphical and Numerical Summaries
 
 2.4 Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . 52
