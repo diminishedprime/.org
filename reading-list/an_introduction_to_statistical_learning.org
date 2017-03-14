@@ -140,11 +140,11 @@
             + (h) nrow(subset(Boston, rm > 7)) = 64. nrow(subset(Boston, rm >
               8)) = 18. These areas have a relatively lower crime rate comparing
               to the range, and a lower lstast also comparing to range.
-3. [ ] Linear Regression
-   1. [ ] Simple Linear Regression
-      1. [ ] Estimating the Coefficients
-      2. [ ] Assessing the Accuracy of the Coefficient Estimates
-      3. [ ] Assessing the Accuracy of the Model
+3. [-] Linear Regression
+   1. [X] Simple Linear Regression
+      1. [X] Estimating the Coefficients
+      2. [X] Assessing the Accuracy of the Coefficient Estimates
+      3. [X] Assessing the Accuracy of the Model
    2. [ ] Multiple Linear Regression
       1. [ ] Estimating the Regression Coefficients
       2. [ ] Some Important Questions
