@@ -140,33 +140,30 @@
             + (h) nrow(subset(Boston, rm > 7)) = 64. nrow(subset(Boston, rm >
               8)) = 18. These areas have a relatively lower crime rate comparing
               to the range, and a lower lstast also comparing to range.
+3. [ ] Linear Regression
+   1. [ ] Simple Linear Regression
+      1. [ ] Estimating the Coefficients
+      2. [ ] Assessing the Accuracy of the Coefficient Estimates
+      3. [ ] Assessing the Accuracy of the Model
+   2. [ ] Multiple Linear Regression
+      1. [ ] Estimating the Regression Coefficients
+      2. [ ] Some Important Questions
+   3. [ ] Other Considerations in the Regression Model
+      1. [ ] Qualitative Predictors
+      2. [ ] Extensions of the Linear Model
+      3. [ ] Potential Problems
+   4. [ ] The Marketing Plan
+   5. [ ] Comparison of Linear Regression with K-Nearest Neighbors
+   6. [ ] Lab: Linear Regression
+      1. [ ] Libraries
+      2. [ ] Simple Linear Regression
+      3. [ ] Multiple Linear Regression
+      4. [ ] Interaction Terms
+      5. [ ] Non-linear Transformations of the Predictors
+      6. [ ] Qualitative Predictors
+      7. [ ] Writing Functions
+   7. [ ] Exercises
 
-
-3 Linear Regression 59
-3.1 Simple Linear Regression . . . . . . . . . . . . . . . . . . . 61
-3.1.1 Estimating the Coefficients . . . . . . . . . . . . . . 61
-3.1.2 Assessing the Accuracy of the Coefficient
-Estimates . . . . . . . . . . . . . . . . . . . . . . . . 63
-3.1.3 Assessing the Accuracy of the Model . . . . . . . . . 68
-3.2 Multiple Linear Regression . . . . . . . . . . . . . . . . . . 71
-3.2.1 Estimating the Regression Coefficients . . . . . . . . 72
-3.2.2 Some Important Questions . . . . . . . . . . . . . . 75
-3.3 Other Considerations in the Regression Model . . . . . . . . 82
-3.3.1 Qualitative Predictors . . . . . . . . . . . . . . . . . 82
-3.3.2 Extensions of the Linear Model . . . . . . . . . . . . 86
-3.3.3 Potential Problems . . . . . . . . . . . . . . . . . . . 92
-3.4 The Marketing Plan . . . . . . . . . . . . . . . . . . . . . . 102
-3.5 Comparison of Linear Regression with K-Nearest
-Neighbors . . . . . . . . . . . . . . . . . . . . . . . . . . . . 104
-3.6 Lab: Linear Regression . . . . . . . . . . . . . . . . . . . . . 109
-3.6.1 Libraries . . . . . . . . . . . . . . . . . . . . . . . . . 109
-3.6.2 Simple Linear Regression . . . . . . . . . . . . . . . 110
-3.6.3 Multiple Linear Regression . . . . . . . . . . . . . . 113
-3.6.4 Interaction Terms . . . . . . . . . . . . . . . . . . . 115
-3.6.5 Non-linear Transformations of the Predictors . . . . 115
-3.6.6 Qualitative Predictors . . . . . . . . . . . . . . . . . 117
-3.6.7 Writing Functions . . . . . . . . . . . . . . . . . . . 119
-3.7 Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . 120
 4 Classification 127
 4.1 An Overview of Classification . . . . . . . . . . . . . . . . . 128
 4.2 Why Not Linear Regression? . . . . . . . . . . . . . . . . . 129
