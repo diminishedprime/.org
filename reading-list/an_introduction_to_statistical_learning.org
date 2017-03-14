@@ -145,9 +145,9 @@
       1. [X] Estimating the Coefficients
       2. [X] Assessing the Accuracy of the Coefficient Estimates
       3. [X] Assessing the Accuracy of the Model
-   2. [ ] Multiple Linear Regression
-      1. [ ] Estimating the Regression Coefficients
-      2. [ ] Some Important Questions
+   2. [X] Multiple Linear Regression
+      1. [X] Estimating the Regression Coefficients
+      2. [X] Some Important Questions
    3. [ ] Other Considerations in the Regression Model
       1. [ ] Qualitative Predictors
       2. [ ] Extensions of the Linear Model
