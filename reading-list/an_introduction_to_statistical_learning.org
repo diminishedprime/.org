@@ -148,18 +148,18 @@
    2. [X] Multiple Linear Regression
       1. [X] Estimating the Regression Coefficients
       2. [X] Some Important Questions
-   3. [ ] Other Considerations in the Regression Model
-      1. [ ] Qualitative Predictors
-      2. [ ] Extensions of the Linear Model
-      3. [ ] Potential Problems
-   4. [ ] The Marketing Plan
-   5. [ ] Comparison of Linear Regression with K-Nearest Neighbors
-   6. [ ] Lab: Linear Regression
-      1. [ ] Libraries
-      2. [ ] Simple Linear Regression
-      3. [ ] Multiple Linear Regression
-      4. [ ] Interaction Terms
-      5. [ ] Non-linear Transformations of the Predictors
+   3. [X] Other Considerations in the Regression Model
+      1. [X] Qualitative Predictors
+      2. [X] Extensions of the Linear Model
+      3. [X] Potential Problems
+   4. [X] The Marketing Plan
+   5. [X] Comparison of Linear Regression with K-Nearest Neighbors
+   6. [-] Lab: Linear Regression
+      1. [X] Libraries
+      2. [X] Simple Linear Regression
+      3. [X] Multiple Linear Regression
+      4. [X] Interaction Terms
+      5. [X] Non-linear Transformations of the Predictors
       6. [ ] Qualitative Predictors
       7. [ ] Writing Functions
    7. [ ] Exercises
