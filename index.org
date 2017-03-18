@@ -12,3 +12,5 @@
 11. [[./songs/index.org][Songs]]
 12. [[./algorithms/index.org][Algorithms]]
 13. [[./workflows/index.org][Workflows]]
+14. [[./quotes.org][Quotes]]
+15. [[./dumb.jpg.org][Dumb.jpg]]
