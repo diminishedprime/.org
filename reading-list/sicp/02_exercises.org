@@ -1,7 +1,7 @@
 + [[../index.org][Reading Index]]
 + [[../mit_sicp.org][SICP]]
 
-* TODO Chapter 2 Exercises [100%]
+* TODO Chapter 2 Exercises [92%]
 1. [X] Exercise 2.1
    #+BEGIN_SRC scheme
      ;; Define a better version of make-rat that handles both positive and negative
@@ -2685,3 +2685,117 @@
                (lookup given-key (left-branch set-of-records)))
               (else (lookup given-key (right-branch set-of-records)))))
     #+END_SRC
+67. [ ]
+68. [ ]
+69. [ ]
+70. [ ]
+71. [ ]
+72. [ ]
+73. [X]
+    + (a) The operations that were specific to the different derivation
+      techniques were pulled out into a table. The program now just looks up the
+      different techniques and dispatches to the correct entry in the table. We
+      can't assimilate /number?/ and /same-variable?/ because they are built-in
+      primitives.
+    + (b)
+      #+BEGIN_SRC scheme
+        (define (install-sum-package)
+          (define (make-sum a1 a2) (cons a1 a2))
+          (define (addend s) (cadr s))
+          (define (augend s) (caddr s))
+          (define (deriv-sum s)
+            (make-sum (deriv (addend s)) (deriv (augend s))))
+
+          (define (tag x) (attach-tag '+ x))
+          (put 'deriv '(+) deriv-sum)
+          (put 'make-sum '+
+               (lambda (x y) (tag (make-sum x y))))
+          'done)
+
+        (define (make-sum x y)
+          ((get 'make-sum '+) x y))
+
+        (define (install-product-package)
+          (define (make-product m1 m2) (cons m1 m2))
+          (define (multiplier p) (cadr p))
+          (define (multiplicand p) (caddr p))
+          (define (deriv-product p)
+            (make-sum
+             (make-product (multiplier exp)
+                           (deriv (multiplicand exp) var))
+             (make-product (deriv (multiplier exp) var)
+                           (multiplicand exp))))
+
+          (define (tag x) (attach-tag '* x))
+          (put 'deriv '(*) deriv-product)
+          (put 'make-product '*
+               (lambda (x y) (tag (make-product x y))))
+          'done)
+
+        (define (make-product x y)
+          ((get 'make-product '*) x y))
+
+        (define (deriv x) (apply-generic 'deriv x))
+      #+END_SRC
+    + (c)
+      #+BEGIN_SRC scheme
+        (define (exponentation-deriv expr var)
+          (make-product (exponent expr)
+                        (make-product
+                         (make-exponentiation (base expr)
+                                              (make-sum (exponent expr) -1))
+                         (deriv (base expr) var))))
+        (define (exponent expr)
+          (cadr expr))
+        (define (base expr)
+          (car expr))
+        (define (make-exponentiation base exponent)
+          (cond ((=number? exponent 0) 1)
+                ((=number? exponent 1) base)
+                ((=number? base 1) 1)
+                (else (list '** base exponent))))
+
+        (put 'deriv '** exponentiation-deriv)
+      #+END_SRC
+    + (d) change the order of arguments for "put"
+74. [X]
+    + (a)
+      #+BEGIN_SRC scheme
+        (define (get-record division employee-name)
+          ((get division 'record) employee-name))
+      #+END_SRC
+    + (b)
+     #+BEGIN_SRC scheme
+       (define (get-salary division record)
+         ((get division 'salary) record))
+     #+END_SRC
+    + (c)
+     #+BEGIN_SRC scheme
+       (define (find-employee-record employee-name division-list)
+         (if (null? division-list)
+             #f
+             (or (get-record (car division-list) employee-name)
+                 (find-employee-record employee-name (cdr division-list)))))
+     #+END_SRC
+    + (d) the new company needs to install its 'record and 'salary generic
+      procedures into the lookup table using its name as the first key.
+75. [X]
+    #+BEGIN_SRC scheme
+      (define (make-from-mag-ang r a)
+        (define (dispatch op)
+          (cond ((eq? op 'real-part) (* r (cos a)))
+                ((eq? op 'imag-part) (* r (sin a)))
+                ((eq? op 'magnitude) r)
+                ((eq? op 'angle) a)
+                (else (error "Unkown op --- MAKE-FROM-MAG-ANG" op))))
+        dispatch)
+      ((make-from-mag-ang 3 90) 'real-part)
+      ((make-from-mag-ang 3 90) 'magnitude)
+    #+END_SRC
+76. [X] For generic operations with explicit dispatch, adding new operations is
+    easy. For message passing, adding new types can be done without changing
+    existing code, but adding new operations requires changing all the old code.
+    Data directed programming allows new types *and* new operations to be added
+    without changing existing code: To add a new type I just fill out a new
+    column in the table of operations, to add a new operation I fill out a new
+    row.
