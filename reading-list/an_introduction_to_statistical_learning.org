@@ -163,31 +163,15 @@
       6. [ ] Qualitative Predictors
       7. [ ] Writing Functions
    7. [ ] Exercises
+4. Classification 127
+   1. [X] An Overview of Classification
+   2. [ ] Why Not Linear Regression?
+   3. [ ] Logistic Regression
+   4. [ ] Linear Discriminant Analysis
+   5. [ ] A Comparison of Classification Methods
+   6. [ ] Lab: Logistic Regression, LDA, QDA, and KNN
+   7. [ ] Exercises
 
-4 Classification 127
-4.1 An Overview of Classification . . . . . . . . . . . . . . . . . 128
-4.2 Why Not Linear Regression? . . . . . . . . . . . . . . . . . 129
-4.3 Logistic Regression . . . . . . . . . . . . . . . . . . . . . . . 130
-4.3.1 The Logistic Model . . . . . . . . . . . . . . . . . . . 131
-4.3.2 Estimating the Regression Coefficients . . . . . . . . 133
-4.3.3 Making Predictions . . . . . . . . . . . . . . . . . . . 134
-4.3.4 Multiple Logistic Regression . . . . . . . . . . . . . . 135
-4.3.5 Logistic Regression for >2 Response Classes . . . . . 137
-4.4 Linear Discriminant Analysis . . . . . . . . . . . . . . . . . 138
-4.4.1 Using Bayes’ Theorem for Classification . . . . . . . 138
-4.4.2 Linear Discriminant Analysis for p = 1 . . . . . . . . 139
-4.4.3 Linear Discriminant Analysis for p >1 . . . . . . . . 142
-4.4.4 Quadratic Discriminant Analysis . . . . . . . . . . . 149
-4.5 A Comparison of Classification Methods . . . . . . . . . . . 151
-4.6 Lab: Logistic Regression, LDA, QDA, and KNN . . . . . . 154
-4.6.1 The Stock Market Data . . . . . . . . . . . . . . . . 154
-4.6.2 Logistic Regression . . . . . . . . . . . . . . . . . . . 156
-4.6.3 Linear Discriminant Analysis . . . . . . . . . . . . . 161
-Contents xi
-4.6.4 Quadratic Discriminant Analysis . . . . . . . . . . . 163
-4.6.5 K-Nearest Neighbors . . . . . . . . . . . . . . . . . . 163
-4.6.6 An Application to Caravan Insurance Data . . . . . 165
-4.7 Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . 168
 5 Resampling Methods 175
 5.1 Cross-Validation . . . . . . . . . . . . . . . . . . . . . . . . 176
 5.1.1 The Validation Set Approach . . . . . . . . . . . . . 176

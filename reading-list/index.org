@@ -83,7 +83,7 @@
 + [[http://www.amazon.com/Algebra-2nd-Michael-Artin/dp/0132413779][Michael Artin Algebra]]
 *** Machine Learning
     + [ ] [[./an_introduction_to_statistical_learning.org][An Introduction to Statistical Learning]]
-
+    + [ ] [[http://colah.github.io/posts/2017-03-Distill/][this blog]]
 1. Learning From Data
    + Lectures for this are available online.
 2. Artificial Intelligence, a modern approach. (pdf on desktop)
