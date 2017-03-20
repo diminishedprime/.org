@@ -165,7 +165,7 @@
    7. [ ] Exercises
 4. Classification 127
    1. [X] An Overview of Classification
-   2. [ ] Why Not Linear Regression?
+   2. [X] Why Not Linear Regression?
    3. [ ] Logistic Regression
    4. [ ] Linear Discriminant Analysis
    5. [ ] A Comparison of Classification Methods
