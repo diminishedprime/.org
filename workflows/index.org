@@ -9,6 +9,10 @@
   #+BEGIN_SRC sh
     find . -name .git -type d -execdir git pull -v ';'
   #+END_SRC
++ Add a new remote to a git repo
+  #+BEGIN_SRC sh
+    git remote add origin url
+  #+END_SRC
 + Set a git remote to a new url
   #+BEGIN_SRC sh
     git remote set-url origin new-url-here
