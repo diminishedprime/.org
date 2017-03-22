@@ -154,14 +154,14 @@
       3. [X] Potential Problems
    4. [X] The Marketing Plan
    5. [X] Comparison of Linear Regression with K-Nearest Neighbors
-   6. [-] Lab: Linear Regression
+   6. [X] Lab: Linear Regression
       1. [X] Libraries
       2. [X] Simple Linear Regression
       3. [X] Multiple Linear Regression
       4. [X] Interaction Terms
       5. [X] Non-linear Transformations of the Predictors
-      6. [ ] Qualitative Predictors
-      7. [ ] Writing Functions
+      6. [X] Qualitative Predictors
+      7. [X] Writing Functions
    7. [ ] Exercises
 4. Classification 127
    1. [X] An Overview of Classification
