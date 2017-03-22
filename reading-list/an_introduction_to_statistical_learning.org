@@ -162,7 +162,76 @@
       5. [X] Non-linear Transformations of the Predictors
       6. [X] Qualitative Predictors
       7. [X] Writing Functions
-   7. [ ] Exercises
+   7. [-] Exercises
+      + [-] Conceptual
+        1. [X] The null hypotheses associated with table 3.4's p-values are that
+           the advertising budgets of TV, radio, and newspaper do not have an
+           effect on sales. Based on the very small p values for TV and radio,
+           we can reject the null hypotheses for them. We cannot, however reject
+           the null hypothesis for newspaper since it has a very small p value.
+           We can conclude from this that the newspaper advertising budget does
+           not affect sales.
+        2. [X] KNN classifier method is (duh) used to solve classification
+           problems, whereas the KNN regression method is used to solve
+           regression problems. The KNN classifier aims to estimate the
+           conditional probability that a measurement belongs to a specific
+           class. KNN regression aims to solve regression problems (quantative)
+           by identifiying the neighborhood, and then estimating f(x₀) as the
+           average of all the training responses in the neighborhood.
+        3. [X] The regression line ends up being:
+           #+BEGIN_SRC text
+             # Regression Line
+             y = 50 + 20(GPA) + 0.07(IQ) + 35(Gender) + 0.01(GPA * IQ) - 10(GPA*Gender)
+
+             # For Males
+             y = 50 + 20(GPA) + 0.07(IQ) + 0.01(GPA * IQ)
+
+             # For Females
+             y = 85 + 10(GPA) + 0.07(IQ) + 0.01(GPA * IQ)
+           #+END_SRC
+           + [X] (a) iii.
+           + [X] (b)
+             #+BEGIN_SRC text
+               y = 85 + 10(GPA) + 0.07(IQ) + 0.01(GPA * IQ)
+               y = 85 + 10(4.0) + 0.07(110) + 0.01(4.0 * 110)
+               y = 85 + 40 + 7.7 + 4.4
+               y = 137.1
+             #+END_SRC
+           + [X] (c) False. The size of the cooeficiant isn't important. If we
+             want to say that the interaction effect is not statistically
+             signficiant we need to test the null hypothesis H₀: 𝛽₄ = 0 and look
+             ath the p-value or the F statistic.
+        4. [X]
+           + [X] (a) Since the true relationship between x & y is linear, it's
+             fair to expect that the least squars line would be close to the
+             true regression line, so the RSS for the linear regression may be
+             lower than for the cubic regression. however, if the test data has
+             a small number of observations, or has many outliers, the cubic
+             regression RSS may be lower. This is largely dependent on the
+             actual data.
+           + [X] (b) Again, it's hard to draw a hard conclusion without actually
+             being able to see the data, but since the actual fit is linear, we
+             wouldn't expect the training data to overfit the linear model. It
+             is much more likely, however that the cubic regression would
+             overfit to the training data. If this happens, it is likely that
+             the cubic regression would have worse RSS.
+           + [X] (c) If the relationship is not linear, the cubic model will fit
+             better because it is a more flexible model.
+           + [X] (d) There is not enough information to know.
+        5. [ ] ???
+        6. [X] with a bit of algebraic voodoo we can show that avg(y) will equal
+           avg(x)
+        7. [X] More algebraic voodoo and we're done.
+      + [ ] Applied
+        8. [@8] [ ]
+        9. [ ]
+        10. [ ]
+        11. [ ]
+        12. [ ]
+        13. [ ]
+        14. [ ]
+        15. [ ]
+
 4. Classification 127
    1. [X] An Overview of Classification
    2. [X] Why Not Linear Regression?
