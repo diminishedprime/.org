@@ -163,7 +163,7 @@
       6. [X] Qualitative Predictors
       7. [X] Writing Functions
    7. [-] Exercises [[https://rpubs.com/ppaquay/65559][Solutions]]
-      + [-] Conceptual
+      + [X] Conceptual
         1. [X] The null hypotheses associated with table 3.4's p-values are that
            the advertising budgets of TV, radio, and newspaper do not have an
            effect on sales. Based on the very small p values for TV and radio,
@@ -218,13 +218,47 @@
            + [X] (c) If the relationship is not linear, the cubic model will fit
              better because it is a more flexible model.
            + [X] (d) There is not enough information to know.
-        5. [ ] ???
+        5. [X] Do some math voodoo and this will come out.
         6. [X] with a bit of algebraic voodoo we can show that avg(y) will equal
            avg(x)
         7. [X] More algebraic voodoo and we're done.
-      + [ ] Applied
-        8. [@8] [ ]
-        9. [ ]
+      + [-] Applied
+        8. [@8] [X]
+           + [X] (a)
+             + [X] (i) Since the p-value for the F-statistic is extremely close
+               to zero, we can reject the null hypothesis that there is not a
+               relationship between mpg and horsepower
+             + [X] (ii) The relationship is fairly strong. Accord to the R²
+               value of 0.605, about 60% of the variablility in mpg can be
+               explained using horsepower.
+             + [X] (iii) The relationship between the response and the predictor
+               is negative. That means that according to this model, the more
+               horespower an automobilty has, the lower it's fuel efficiency is.
+             + [X] (iv)
+               |             |      fit |      lwr |      upr |
+               | confidence  | 24.46708 | 23.97308 | 24.96108 |
+               | predicition | 24.46708 |  14.8094 | 34.12476 |
+           + [X] (b) okay
+           + [X] (c) The residuals vs fitted plot suggests that there is
+             non-linearity in the data. The residuals vs Leverage suggests that
+             there are a few outliers and a few high leverage points.
+        9. [X]
+           + [X] (a) okay =pairs(Auto)=
+           + [X] (b) okay =cor(Auto[1:8])=
+           + [X] (c) okay =fit <- lm(mpg ~ . - name, data=Auto)=
+             + [X] (i) yes, based on the R² of 0.82 & the p-value for the
+               f-statistic, there much of the variablility in mpg can be
+               explained by the variables..
+             + [X] (ii) displacement, weight, year, and origin.
+             + [X] (iii) the cooepiciant of 0.75 means that according to this
+               model, mpg goes about by about 0.75 mpg per year.
+           + [X] (d) The plot of residiuals versus fitted values indicates the
+             precious of mild non-linearity in the data. There are a few
+             outliers, and one high-leverage point.
+           + [X] (e) displacement and weight seem to have an interaction-effect.
+             cylinders and displacement do not.
+           + [X] (f) if we apply a log transformation to the =mpg ~ horsepower=
+             plot, it appears to give us the most linear results with the gihest R²
         10. [ ]
         11. [ ]
         12. [ ]
