@@ -162,7 +162,7 @@
       5. [X] Non-linear Transformations of the Predictors
       6. [X] Qualitative Predictors
       7. [X] Writing Functions
-   7. [-] Exercises
+   7. [-] Exercises [[https://rpubs.com/ppaquay/65559][Solutions]]
       + [-] Conceptual
         1. [X] The null hypotheses associated with table 3.4's p-values are that
            the advertising budgets of TV, radio, and newspaper do not have an

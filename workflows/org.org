@@ -1,0 +1,12 @@
+[[../index.org][Main Index]]
+[[./index.org][Workflow Index]]
+
+* Org
+  + Inline (non-executable code blocks)
+    #+BEGIN_SRC org
+      =code stuff can go in here=
+    #+END_SRC
+  + Inline (executable) code blocks
+    #+BEGIN_SRC org
+      src_elisp[]{(print "hi")}
+    #+END_SRC
