@@ -1,9 +1,9 @@
 * Who am I?
 ** Matt Hamrick
 + Millikin University graduate (Class of 2014)
-+ Software Engineer
-+ Functional programming Evangelist
-+ Member of the Church of Emacs (Vim is okay, too)
++ Software Programmer
++ Functional programmer
++ Emacs user
 + Occasional Runner
 + Regular Guitar Player
 + Constant Reader
@@ -14,7 +14,7 @@ development. I love working on, and completing, challenging problems. I'm
 passionate about education and mentorship and enjoy teaching people new things.
 I spend much of my free time learning new programming languages and seeing how
 their novel concepts can improve previous work. I'm careful in ensuring that my
-job-title, ego, age, gender or orientation don't interfere in finding the best
+title, ego, age, gender or orientation don't interfere in finding the best
 solution to a problem. To accomplish this, I make a habit of talking (and
 listening) to others and making sure to acknowledge, improve, and eventually
 fix, held biases. I work extremely hard, and do my best to accomplish the most I
@@ -22,24 +22,31 @@ can with the resources I'm provided.
 
 * Work History
 ** June 2014 - Present
-+ From 2014, to late 2015, I worked on the front-end of a Spring app that was
-  delivered to production. On this project, I learned skills related to mocking
-  frameworks, testing methodologies, Data-driven UIs, and Java reflection.
-+ From Late 2015 to today, I've been working on a Clojure DSL to clearly express
-  business intent. Much of the work on this project has entailed researching and
-  prototyping with new technologies. I've worked on (in no particular order)
++ Since early 2017, I've been working in Research & Development. In this role,
+  I've been able to research new technologies and find where their application
+  can improve business processes. In order to showcase where improvements or
+  innovations can be made, I've created small prototypes & MVPs show how the new
+  work aligns with the current and future vision of the company.
++ From Late 2015 to early 2017, I've worked on a Clojure business rule DSL. I
+  spent a lot of time prototyping with exciting technologies. A few of note are:
   Spark, Scala, Zeppelin, Clojure and Clojurescript, Dynamic Soap Client
-  Generation, EmberJs, React, Graph Computing, and Big Data. I've been able to
-  round out my back-end skills that weren't as present from my previous project.
-  I've worked closely with business using an iterate-and-demo approach that has
-  helped me to deeply understand their problems.
-** May 2013 - August 2013
-+ During the summer of 2013, I worked as an intern at State Farm. While I was
-  there, I worked on Spring, Java, and JavaScript technologies as a part of a
+  Generation, EmberJs, React, Graph Computing, and Big Data. While working with
+  these technologies, I was able to round out my full-stack skills. I also
+  worked closely with business partners utilizing an iterate-and-demo approach.
+  This helped me deeply understand their problems, and ensure that my solutions
+  were as applicable as possible.
++ From 2014, to late 2015, I worked on the front-end of a Java Spring app that
+  was delivered to production. On this project, I learned about mocking
+  frameworks, different testing methodologies, Data-driven UIs, and Java
+  reflection.
+
+** 2013 Internship
++ During the summer of 2013, I worked as an intern at State Farm. While there, I
+  worked on Spring, Java, and JavaScript technologies as a part of a
   modernization effort. I also participated in a speech program focusing on
   professional communication. The program culminated with an innovation project
-  which required collaboration and out of the box thinking. My team's idea made
-  it to the final round and we were afforded the opportunity to present directly
+  that focused on collaboration and out of the box thinking. My team's
+  innovation idea made it to the final round and we presented the idea directly
   to executive Leadership.
 
 * Technical Skills
@@ -52,9 +59,9 @@ can with the resources I'm provided.
 + Python (6/10)
 
 * Ask Me About
-Generative Testing, Lambda Architecture, Functional Programming, BDD, TDD,
-Kafka, SOLID Principles, Event-based Architecture, Logic Programming, DSLs, Type
-Systems, Seven Languages in Seven Weeks, The Little Schemer
+Functional Programming, Generative Testing, Systems Architecture, TDD, Immutable
+Message Logs, SOLID Principles, Event-sourcing, Logic Programming, Type Systems,
+Seven Languages in Seven Weeks, The Little Schemer, Peter (the cat)
 
 * What have I done outside of Work?
 + [[https://diminishedprime.github.io/secret-agent-ui/][A Web-based Clone of a Board Game!]]
@@ -63,11 +70,10 @@ Systems, Seven Languages in Seven Weeks, The Little Schemer
 + [[./reading-list/index.org][Technical Reading]]
 
 * What do I Like?
-+ Solving Problems
++ Solving difficult problems
 + Teaching
 + Mentoring
-+ Exploring programming languages (such as Haskell, Idris, Clojure, Erlang)
++ Programming languages
 + Successful live demos
 + Playing Guitar
-+ Thick Lisp Books
-+ Peter, the Cat
++ Peter (the Cat)
