@@ -9,7 +9,6 @@ instance Applicative m => Applicative (MaybeT m) where
 
 instance Monad m => Monad (MaybeT m) where
   return = pure
-  (MaybeT m) >>= f = MaybeT $ do val <- m
-                                 case val of
-                                   Nothing -> return Nothing
-                                   Just a -> runMaybeT $ f a
+  (MaybeT m) >>= f = MaybeT $ m >>= (\x -> case x of
+                                            Nothing -> return Nothing
+                                            Just a -> runMaybeT $ f a)
