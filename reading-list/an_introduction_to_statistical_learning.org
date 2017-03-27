@@ -283,7 +283,22 @@
               | Carseats$USYes |  0.69151957 |  1.70776632 |
             + [X] (h) there are a few high leverage points and a decent number
               of outliers.
-        11. [ ]
+        11. [X]
+            + [X] (a) 𝛃=1.9939, standardError=0.1065, t=18.73, and p=2e-16.
+              These results tell us that for every increase of 1 in x, y
+              increases by 1.9939. The small p value tells us we can reject the
+              null hypotheses that there is not a linear relationship between x
+              and y.
+            + [X] (b) 𝛃=0.39111, standardError=0.2089, t=18.73, and p=2e-16.
+              These results tell us that for every increase of 1 in y, x
+              increases by 0.39111. The small p value tells us we can reject the
+              null hypotheses that there is not a linear relationship between x
+              and y.
+            + [X] (c) a is the same formula as b, but in regards to x instead of
+              y. I.e =y=1.9939x + e ~ x=0.39111(y - e)=
+            + [X] (d) sure...
+            + [X] (e) also sure...
+            + [X] (f) also also sure...
         12. [ ]
         13. [ ]
         14. [ ]
