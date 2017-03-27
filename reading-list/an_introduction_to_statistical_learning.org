@@ -299,7 +299,13 @@
             + [X] (d) sure...
             + [X] (e) also sure...
             + [X] (f) also also sure...
-        12. [ ]
+        12. [X]
+            + [X] (a) the coefficient estimates for regression of y onto x and
+              x onto y are the same only if the sum of squares of x and y are
+              the same. This is because the sum of squares is what's divided off
+              of the sum of products of x and y.
+            + [X] (b) =set.seed(1)= =x <- 1:100= =y <- 2 * x + rnorm(100, sd=0.1)=
+            + [X] (c) =set.seed(1)= =x <- 1:100= =y <- 100:1=
         13. [ ]
         14. [ ]
         15. [ ]
