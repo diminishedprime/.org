@@ -2,6 +2,7 @@
 
 * Reading List/Digital Bookshelf
 ** Top of Queue
++ [ ] [[./hackers_and_painters.org][Hackers And Painters]]
 + [ ] [[./the_cpp_programming_language.org][The C++ Programming Language]]
 + [ ] [[./mastering_julia.org][Mastering Julia]]
 + [ ] [[./cracking_the_coding_interview.org][Cracking The Coding Interview]]

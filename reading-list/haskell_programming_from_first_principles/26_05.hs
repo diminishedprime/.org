@@ -13,9 +13,11 @@ newtype StateT s m a = StateT { runStateT :: s -> m (a,s) }
 
 -- Monad m => s -> m (a, s)
 
+mapFirstTuple :: (a -> b) -> (a, s) -> (b, s)
+mapFirstTuple f (a, s) = (f a, s)
+
 instance (Functor m) => Functor (StateT s m) where
-  fmap f (StateT smas) = StateT $ \s ->
-                                    (\(a, s') -> (f a, s')) <$> (smas s)
+  fmap f (StateT smas) = StateT $ \s -> (mapFirstTuple f) <$> (smas s)
 
 
 -- 2. As with Functor, you can’t cheat and re-use an underlying Applicative
@@ -42,4 +44,4 @@ instance (Monad m) => Applicative (StateT s m) where
 instance (Monad m) => Monad (StateT s m) where
   return = pure
   (StateT ma) >>= f = StateT $ \s -> do (a, s') <- ma s
-                                        (runStateT (f a)) s
+                                        (runStateT (f a)) s'
