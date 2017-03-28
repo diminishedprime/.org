@@ -325,7 +325,27 @@
             + [X] (j) The centers would all be approximately the same, however
               with more noise, there would be a larger confidence interval, and
               with less noise, there would be a smaller one.
-        14. [ ]
+        14. [X]
+            + [X] (a) =y=2 + 2*x1 + 0.3*x2 + e= the regression coefficients are
+              2, 2, and 0.3 respectively.
+            + [X] (b) =cor(x1, x2)= which is 0.83. The variables seem very
+              highly correlated.
+            + [X] (c) based on these results, we cannot reject the null
+              hypothesis for b1 and b2 since they are larger than 0.5.
+              |             | Estimate | Std. Error | T value | p            |
+              |-------------+----------+------------+---------+--------------|
+              | (Intercept) |   2.1305 |     0.2319 |   9.188 | 7.61e-15 *** |
+              | x1          |   1.4396 |     0.7212 |   1.996 | 0.0487 *     |
+              | x2          |   1.0097 |     1.1337 |   0.891 | 0.3754       |
+            + [X] (d) if we just use x1, we get a much smaller p-value. for just
+              x1 we can reject the null hypothesis.
+            + [X] (e) if we just use x2, we get a much smaller p-value. for just
+              x2 we can reject the null hypothesis.
+            + [X] (f) No these results do not contradict eachother. The reason
+              that they work well by themselves, but not together is because
+              they are strongly correlated.
+            + [X] (g) depending on which model you run, the extra point is
+              either an outlier, a or a high-leverage point.
         15. [ ]
 
 4. Classification 127
