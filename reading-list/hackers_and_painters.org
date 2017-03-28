@@ -16,14 +16,18 @@
    :LOGBOOK:
    CLOCK: [2017-03-28 Tue 06:58]--[2017-03-28 Tue 07:05] =>  0:07
    :END:
-** 5. The Other Road Ahead
-** 6. How to Make Wealth
-** 7. Mind the Gap
-** 8. A Plan for Spam
-** 9. Taste for Makers
-** 10. Programming Languages Explained
-** 11. The Hundred-Year Language
-** 12. Beating the Averages
-** 13. Revenge of the Nerds
-** 14. The Dream Language
-** 15. Design and Research
+** TODO 5. The Other Road Ahead
+** TODO 6. How to Make Wealth
+** TODO 7. Mind the Gap
+** TODO 8. A Plan for Spam
+** TODO 9. Taste for Makers
+** DONE 10. Programming Languages Explained
+   CLOSED: [2017-03-28 Tue 09:30]
+   :LOGBOOK:
+   CLOCK: [2017-03-28 Tue 09:21]--[2017-03-28 Tue 09:30] =>  0:09
+   :END:
+** TODO 11. The Hundred-Year Language
+** TODO 12. Beating the Averages
+** TODO 13. Revenge of the Nerds
+** TODO 14. The Dream Language
+** TODO 15. Design and Research

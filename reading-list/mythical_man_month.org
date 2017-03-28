@@ -1,0 +1,24 @@
+[[../index.org][Main Index]]
+[[./index.org][Reading List]]
+
+* The Mythical Man Month
+** TODO Chapter 1. The Tar Pit
+** TODO Chapter 2. The Mythical Man-Month
+** TODO Chapter 3. The Surgical Team
+** TODO Chapter 4. Aristocracy, Democracy, and System Design
+** TODO Chapter 5. The Second-System Effect
+** TODO Chapter 6. Passing the Word
+** TODO Chapter 7. Why Did the Tower of Babel Fail?
+** TODO Chapter 8. Calling the Shot
+** TODO Chapter 9. Ten Pounds in a Five-Pound Sack
+** TODO Chapter 10. The Documentary Hypothesis
+** TODO Chapter 11. Plan to Throw One Away
+** TODO Chapter 12. Sharp Tools
+** TODO Chapter 13. The Whole and the Parts
+** TODO Chapter 14. Hatching a Catastrophe
+** TODO Chapter 15. The Other Face
+** TODO Chapter 16. No Silver Bullet—Essence and Accident in Software Engineering
+** TODO Chapter 17. "No Silver Bullet" Refined
+** TODO Chapter 18. Propositions of The Mythical Man-Month: True or False?
+** TODO Chapter 19. The Mythical Man-Month after 20 Years
+** TODO Epilogue. Fifty Years of Wonder, Excitement, and Joy

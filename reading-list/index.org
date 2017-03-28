@@ -37,10 +37,9 @@
 + [ ] [[./the_little_prover.org][The Little Prover]]
 *** Programming Books
 + General
-  + [ ] [[http://search.safaribooksonline.com/book/programming/0596006624][Hackers And Painters]]
   + [ ] [[./introduction_to_algorithms.org][Introduction To Algorithms]]
   + [ ] [[./code_complete.org][Code Complete]]
-  + [[./mythical_man_month.org][Mythical Man Month]]
+  + [ ] [[./mythical_man_month.org][The Mythical Man Month]]
   + [[./to_mock_a_mockingbird.org][To Mock A MockingBird]]
   + [ ] [[./ai_a_modern_approach.org][AI A Modern Approach]]
   + [ ] Beautiful Code
