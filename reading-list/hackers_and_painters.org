@@ -26,7 +26,11 @@
    :LOGBOOK:
    CLOCK: [2017-03-28 Tue 09:21]--[2017-03-28 Tue 09:30] =>  0:09
    :END:
-** TODO 11. The Hundred-Year Language
+** DONE 11. The Hundred-Year Language
+   CLOSED: [2017-03-28 Tue 10:37]
+   :LOGBOOK:
+   CLOCK: [2017-03-28 Tue 10:22]--[2017-03-28 Tue 10:37] =>  0:15
+   :END:
 ** TODO 12. Beating the Averages
 ** TODO 13. Revenge of the Nerds
 ** TODO 14. The Dream Language
