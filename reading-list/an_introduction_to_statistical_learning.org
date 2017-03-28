@@ -306,7 +306,25 @@
               of the sum of products of x and y.
             + [X] (b) =set.seed(1)= =x <- 1:100= =y <- 2 * x + rnorm(100, sd=0.1)=
             + [X] (c) =set.seed(1)= =x <- 1:100= =y <- 100:1=
-        13. [ ]
+        13. [X]
+            + [X] (a) =x <- rnorm(100, mean=0, std=0.1)=
+            + [X] (b) =eps <- rnorm(100, mean=0, std=0.25)=
+            + [X] (c) =y <- -1.0 + 0.5 * x + eps= length is 100?, B₀ is -1 and B₁ is 0.5
+            + [X] (d) the plot looks fairly linear, with added noise from eps.
+            + [X] (e) The model is =y = -1.02 + 0.514x=. For this model, there
+              is a very low p-value and a high f-statistic.
+            + [X] (f) =abline(myLm)= =abline(-1, 0.5, col="blue")=
+              =legend("topleft", c("Least Square", "Regression"), col=c("Black",
+              "Blue"), lty=c(1,1))=
+            + [X] (g) the coefficient for x^2 is not significant because it has
+              a p-value of .117, which is higher than the 0.05 number we strive
+              for. Because of this, we cannot reject the null hypothesis that
+              there is no relationship between y and x^2.
+            + [X] (h) no, that's dumb.
+            + [X] (i) also no.
+            + [X] (j) The centers would all be approximately the same, however
+              with more noise, there would be a larger confidence interval, and
+              with less noise, there would be a smaller one.
         14. [ ]
         15. [ ]
 
