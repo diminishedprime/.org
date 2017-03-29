@@ -2,8 +2,16 @@
 [[./index.org][Reading List]]
 
 * The Mythical Man Month
-** TODO Chapter 1. The Tar Pit
-** TODO Chapter 2. The Mythical Man-Month
+** DONE Chapter 1. The Tar Pit
+   CLOSED: [2017-03-28 Tue 11:57]
+   :LOGBOOK:
+   CLOCK: [2017-03-28 Tue 11:49]--[2017-03-28 Tue 11:57] =>  0:08
+   :END:
+** DONE Chapter 2. The Mythical Man-Month
+   CLOSED: [2017-03-28 Tue 13:18]
+   :LOGBOOK:
+   CLOCK: [2017-03-28 Tue 13:07]--[2017-03-28 Tue 13:18] =>  0:11
+   :END:
 ** TODO Chapter 3. The Surgical Team
 ** TODO Chapter 4. Aristocracy, Democracy, and System Design
 ** TODO Chapter 5. The Second-System Effect
