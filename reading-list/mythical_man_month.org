@@ -7,6 +7,20 @@
    :LOGBOOK:
    CLOCK: [2017-03-28 Tue 11:49]--[2017-03-28 Tue 11:57] =>  0:08
    :END:
+*** Why Do we program?
+    1. Sheer joy of making things
+    2. Making things that are useful to other people
+    3. fascination of making complex puzzle-like objects an dseeing them work
+       together in subtle ways.
+    4. Joy of always learning.
+    5. Joy of working in a tractable medium.
+*** But What sucks about it?
+    1. You must perform perfectly
+    2. (usually) other people set your direction
+    3. Grand concepts are fun, but nitty-gritty details are usually not.
+    4. Debugging has a linear convergence or worse, so it seems to drag on.
+    5. Your product will /feel/ obsolete before completion due to a competitior
+       touting the "next big thing"
 ** DONE Chapter 2. The Mythical Man-Month
    CLOSED: [2017-03-28 Tue 13:18]
    :LOGBOOK:
