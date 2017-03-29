@@ -82,7 +82,27 @@
          does seem like this is one of the things that SAFe tries to address
          through getting features ready ahead of time. (Don't take that sentence
          as a personal endorsement of SAFe in any way)
-** TODO Chapter 5. The Second-System Effect
+** DONE Chapter 5. The Second-System Effect
+   CLOSED: [2017-03-29 Wed 08:42]
+   :LOGBOOK:
+   CLOCK: [2017-03-29 Wed 08:35]--[2017-03-29 Wed 08:42] =>  0:07
+   :END:
+*** Suggesting cheaper implementations
+    + keep in mind that the builder has the incentive and responsibility for
+      implementation. Architecture suggestions are not commands.
+    + Have an implementation in mind for any design you suggest, but don't let
+      this color what you think is right.
+      + If you know what sucess means, /any/ implementation that hits that
+        metric is right.
+    + Make suggestions are improvements to implementation in private.
+      + I feel like this helps to keep your position from unduely influencing
+        direction. If improvements are made in a public forum, it is difficult
+        for someone who is "under you" to speak up.
+    + Forgo credit for suggested improvements
+      + If an implementor comes up with a better implementation/design than what
+        you have in mind, that is a good thing. Be prepared to praise this
+        outcome, not fight it.
+
 ** TODO Chapter 6. Passing the Word
 ** TODO Chapter 7. Why Did the Tower of Babel Fail?
 ** TODO Chapter 8. Calling the Shot
