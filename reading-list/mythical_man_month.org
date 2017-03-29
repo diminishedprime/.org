@@ -26,6 +26,19 @@
    :LOGBOOK:
    CLOCK: [2017-03-28 Tue 13:07]--[2017-03-28 Tue 13:18] =>  0:11
    :END:
+*** Why is everything always late in software?
+    1. We have poor techniques of estimating -- that assume thing things will go
+       well.
+    2. Our estimating techniques confuse effort with progress. This hides the
+       assumption that people and months are interchangable. (they're not)
+    3. Since we're uncertain of our estimates, it's hard to be stubborn about
+       saying "it's ready when it's ready"
+    4. Progress is poorly measured.
+    5. When things start to slip, the common response is to add more people to
+       the project. This makes the problem worse since it's similiar to dousing
+       a fire with gasoline.
+*** Brook's Law
+    Adding manpower to a late software project makes it later
 ** TODO Chapter 3. The Surgical Team
 ** TODO Chapter 4. Aristocracy, Democracy, and System Design
 ** TODO Chapter 5. The Second-System Effect
