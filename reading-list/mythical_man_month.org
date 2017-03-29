@@ -103,7 +103,11 @@
         you have in mind, that is a good thing. Be prepared to praise this
         outcome, not fight it.
 
-** TODO Chapter 6. Passing the Word
+** DONE Chapter 6. Passing the Word
+   CLOSED: [2017-03-29 Wed 14:45]
+   :LOGBOOK:
+   CLOCK: [2017-03-29 Wed 14:34]--[2017-03-29 Wed 14:45] =>  0:11
+   :END:
 ** TODO Chapter 7. Why Did the Tower of Babel Fail?
 ** TODO Chapter 8. Calling the Shot
 ** TODO Chapter 9. Ten Pounds in a Five-Pound Sack
