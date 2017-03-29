@@ -140,7 +140,7 @@
             + (h) nrow(subset(Boston, rm > 7)) = 64. nrow(subset(Boston, rm >
               8)) = 18. These areas have a relatively lower crime rate comparing
               to the range, and a lower lstast also comparing to range.
-3. [-] Linear Regression
+3. [X] Linear Regression
    1. [X] Simple Linear Regression
       1. [X] Estimating the Coefficients
       2. [X] Assessing the Accuracy of the Coefficient Estimates
@@ -162,7 +162,7 @@
       5. [X] Non-linear Transformations of the Predictors
       6. [X] Qualitative Predictors
       7. [X] Writing Functions
-   7. [-] Exercises [[https://rpubs.com/ppaquay/65559][Solutions]]
+   7. [X] Exercises [[https://rpubs.com/ppaquay/65559][Solutions]]
       + [X] Conceptual
         1. [X] The null hypotheses associated with table 3.4's p-values are that
            the advertising budgets of TV, radio, and newspaper do not have an
@@ -222,7 +222,7 @@
         6. [X] with a bit of algebraic voodoo we can show that avg(y) will equal
            avg(x)
         7. [X] More algebraic voodoo and we're done.
-      + [-] Applied
+      + [X] Applied
         8. [@8] [X]
            + [X] (a)
              + [X] (i) Since the p-value for the F-statistic is extremely close
@@ -346,9 +346,20 @@
               they are strongly correlated.
             + [X] (g) depending on which model you run, the extra point is
               either an outlier, a or a high-leverage point.
-        15. [ ]
-
-4. Classification 127
+        15. [X]
+            + [X] (a) The only data point that has a p value of greater than
+              0.05 is chas. So we reject the null hypothesis for all the
+              predictors except chas.
+            + [X] (b) for all at the same time, we reject the null hypthesis for
+              only zn, dis, rad, black, and medv.
+            + [X] (c) Since there is a decent amount of correlation between the
+              predictors, it makes sense that for the simple regression they
+              would mostly have low p-values, but for multiple regression, some
+              would have high values.
+            + [X] (d) indus, nox, age, dis, ptration, and medv have p-values
+              that suggest that a cubic fit is good. The other ones have poor
+              cubic fits.
+4. [ ] Classification 127
    1. [X] An Overview of Classification
    2. [X] Why Not Linear Regression?
    3. [ ] Logistic Regression
