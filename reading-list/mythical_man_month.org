@@ -10,7 +10,7 @@
 *** Why Do we program?
     1. Sheer joy of making things
     2. Making things that are useful to other people
-    3. fascination of making complex puzzle-like objects an dseeing them work
+    3. fascination of making complex puzzle-like objects an seeing them work
        together in subtle ways.
     4. Joy of always learning.
     5. Joy of working in a tractable medium.
@@ -19,7 +19,7 @@
     2. (usually) other people set your direction
     3. Grand concepts are fun, but nitty-gritty details are usually not.
     4. Debugging has a linear convergence or worse, so it seems to drag on.
-    5. Your product will /feel/ obsolete before completion due to a competitior
+    5. Your product will /feel/ obsolete before completion due to a competitor
        touting the "next big thing"
 ** DONE Chapter 2. The Mythical Man-Month
    CLOSED: [2017-03-28 Tue 13:18]
@@ -30,17 +30,58 @@
     1. We have poor techniques of estimating -- that assume thing things will go
        well.
     2. Our estimating techniques confuse effort with progress. This hides the
-       assumption that people and months are interchangable. (they're not)
+       assumption that people and months are interchangeable. (they're not)
     3. Since we're uncertain of our estimates, it's hard to be stubborn about
        saying "it's ready when it's ready"
     4. Progress is poorly measured.
     5. When things start to slip, the common response is to add more people to
-       the project. This makes the problem worse since it's similiar to dousing
+       the project. This makes the problem worse since it's similar to dousing
        a fire with gasoline.
 *** Brook's Law
     Adding manpower to a late software project makes it later
-** TODO Chapter 3. The Surgical Team
-** TODO Chapter 4. Aristocracy, Democracy, and System Design
+** DONE Chapter 3. The Surgical Team
+   CLOSED: [2017-03-29 Wed 07:08]
+   :LOGBOOK:
+   CLOCK: [2017-03-29 Wed 07:00]--[2017-03-29 Wed 07:08] =>  0:08
+   :END:
+** DONE Chapter 4. Aristocracy, Democracy, and System Design
+   CLOSED: [2017-03-29 Wed 07:24]
+   :LOGBOOK:
+   CLOCK: [2017-03-29 Wed 07:10]--[2017-03-29 Wed 07:24] =>  0:14
+   :END:
+*** Conceptual Integrity
+    "As the guidebook tells, this integrity was achieved by the self-abnegation
+    of eight generations of builders, each of whom sacrificed some of his ideas
+    so that the whole might be of pure design. The result proclaims not only the
+    glory of God, but also His power to salvage fallen men from their pride."
+    + Simply put, conceptual integrity can be achieved through an aristorcatic
+      design process.
+*** Concerns with Aristocracy in Development
+    1. The specs will be too rich in function, and won't reflect practical
+       considerations.
+    2. The architects will get all the creative fun and the implementors will
+       just be code monkeys
+    3. The implementors won't have anything to do while they wait for the specs
+       from the  architects.
+*** Reponse to concerns
+    1. See next chapter?
+    2. Implementation is also a creative endeavor.
+       + I'm not sure if I buy this as a good response to the concern, but it
+         might have to do with what I view as architecture and implementor
+         activities. If architecture really is doing mostly logical stuff, then
+         there is a lot of creative work left for implementation, but I don't
+         see that being the case very often. It seems like often architecture
+         will also heavily involve physical design which limits what an
+         implementor actually has domain over.
+    3. This can be fixed with timing and phasing. First, some implementation can
+       be done in parallel with the spec work. More importantly, you don't have
+       to start a project with a bajillion implementors. You can pull them on
+       once the work is actually ready to be done.
+       + This seems to be more valid that the second concern, though once you
+         have already hired the implementors, they will be sitting idly by. It
+         does seem like this is one of the things that SAFe tries to address
+         through getting features ready ahead of time. (Don't take that sentence
+         as a personal endorsement of SAFe in any way)
 ** TODO Chapter 5. The Second-System Effect
 ** TODO Chapter 6. Passing the Word
 ** TODO Chapter 7. Why Did the Tower of Babel Fail?
