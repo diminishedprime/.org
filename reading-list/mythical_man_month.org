@@ -113,7 +113,11 @@
    :LOGBOOK:
    CLOCK: [2017-03-30 Thu 10:33]--[2017-03-30 Thu 10:46] =>  0:13
    :END:
-** TODO Chapter 8. Calling the Shot
+** DONE Chapter 8. Calling the Shot
+   CLOSED: [2017-03-30 Thu 10:55]
+   :LOGBOOK:
+   CLOCK: [2017-03-30 Thu 10:49]--[2017-03-30 Thu 10:55] =>  0:06
+   :END:
 ** TODO Chapter 9. Ten Pounds in a Five-Pound Sack
 ** TODO Chapter 10. The Documentary Hypothesis
 ** TODO Chapter 11. Plan to Throw One Away
