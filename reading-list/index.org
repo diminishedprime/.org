@@ -128,3 +128,13 @@
 + [ ] Atonement
 + [ ] Pride & Prejudice
 + [ ] As I lay dying
+
+* Good/Interesting Talks
+  + [[https://www.youtube.com/watch?v=GRr4xeMn1uU][Greg Young - Stop Over-Engineering]] Talk focuses on the fact that often, you
+    can solve 99% of your use cases with a very simple model that pulls in human
+    interaction when necessary. Before adding additional complexity into your
+    software, you should first do a Cost-Benefit analysis to see if it's worth
+    the cost. This applies to both Brown/Greenfield projects. For brownfield,
+    you can use existing data to figure out what can solve most of your cases.
+    For greenfield, you have to get the software into the hands of the business
+    users asap so you can /start/ collecting data.
