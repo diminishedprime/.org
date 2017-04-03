@@ -136,8 +136,24 @@
     organization chart will initially reflect the first system design, which is
     almost surely not the right one. If the system design is to be free to
     change, the organization must be prepared to change."
-** TODO Chapter 11. Plan to Throw One Away
-** TODO Chapter 12. Sharp Tools
+** DONE Chapter 11. Plan to Throw One Away
+   CLOSED: [2017-03-30 Thu 11:19]
+   :LOGBOOK:
+   CLOCK: [2017-03-30 Thu 11:08]--[2017-03-30 Thu 11:19] =>  0:11
+   :END:
+*** Plan The Organization for Change
+    + Reluctance to document designs isn't due to time pressure, or lazsiness,
+      it's due to the fact that it's asking someone to defend ideas that are (at
+      best) tentative.
+      + If you want people to be more willing to document designs, there needs
+        to be understanding when something tentative is being documented. Not
+        sure how this can actually happen, but the status quo leads to badly
+        documented garbage.
+** DONE Chapter 12. Sharp Tools
+   CLOSED: [2017-03-30 Thu 13:31]
+   :LOGBOOK:
+   CLOCK: [2017-03-30 Thu 13:22]--[2017-03-30 Thu 13:31] =>  0:09
+   :END:
 ** TODO Chapter 13. The Whole and the Parts
 ** TODO Chapter 14. Hatching a Catastrophe
 ** TODO Chapter 15. The Other Face
