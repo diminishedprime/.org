@@ -359,11 +359,11 @@
             + [X] (d) indus, nox, age, dis, ptration, and medv have p-values
               that suggest that a cubic fit is good. The other ones have poor
               cubic fits.
-4. [ ] Classification 127
+4. [-] Classification 127
    1. [X] An Overview of Classification
    2. [X] Why Not Linear Regression?
-   3. [ ] Logistic Regression
-   4. [ ] Linear Discriminant Analysis
+   3. [X] Logistic Regression
+   4. [X] Linear Discriminant Analysis
    5. [ ] A Comparison of Classification Methods
    6. [ ] Lab: Logistic Regression, LDA, QDA, and KNN
    7. [ ] Exercises

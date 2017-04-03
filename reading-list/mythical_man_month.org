@@ -154,7 +154,14 @@
    :LOGBOOK:
    CLOCK: [2017-03-30 Thu 13:22]--[2017-03-30 Thu 13:31] =>  0:09
    :END:
-** TODO Chapter 13. The Whole and the Parts
+** DONE Chapter 13. The Whole and the Parts
+   CLOSED: [2017-04-03 Mon 08:14]
+   :LOGBOOK:
+   CLOCK: [2017-04-03 Mon 08:01]--[2017-04-03 Mon 08:14] =>  0:13
+   :END:
+*** Testing the specification
+    "They won't tell you they don't understand it; they will happily invent
+    their way through the gaps and obscurities."
 ** TODO Chapter 14. Hatching a Catastrophe
 ** TODO Chapter 15. The Other Face
 ** TODO Chapter 16. No Silver Bullet—Essence and Accident in Software Engineering
