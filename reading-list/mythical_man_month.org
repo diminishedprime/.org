@@ -167,7 +167,21 @@
    :LOGBOOK:
    CLOCK: [2017-04-04 Tue 12:44]--[2017-04-04 Tue 12:52] =>  0:08
    :END:
-** TODO Chapter 15. The Other Face
+** DONE Chapter 15. The Other Face
+   CLOSED: [2017-04-04 Tue 13:07]
+   :LOGBOOK:
+   CLOCK: [2017-04-04 Tue 12:54]--[2017-04-04 Tue 13:07] =>  0:13
+   :END:
+*** What Documentation is Required?
+    + Purpose
+    + Environment
+    + Domain and range
+    + Functions realized and algorithms used
+    + IO formats, precise and complete
+    + Operating Instructions
+    + Options
+    + Running Time
+    + Accuracy and Checking
 ** TODO Chapter 16. No Silver Bullet—Essence and Accident in Software Engineering
 ** TODO Chapter 17. "No Silver Bullet" Refined
 ** TODO Chapter 18. Propositions of The Mythical Man-Month: True or False?
