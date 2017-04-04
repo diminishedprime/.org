@@ -162,7 +162,11 @@
 *** Testing the specification
     "They won't tell you they don't understand it; they will happily invent
     their way through the gaps and obscurities."
-** TODO Chapter 14. Hatching a Catastrophe
+** DONE Chapter 14. Hatching a Catastrophe
+   CLOSED: [2017-04-04 Tue 12:52]
+   :LOGBOOK:
+   CLOCK: [2017-04-04 Tue 12:44]--[2017-04-04 Tue 12:52] =>  0:08
+   :END:
 ** TODO Chapter 15. The Other Face
 ** TODO Chapter 16. No Silver Bullet—Essence and Accident in Software Engineering
 ** TODO Chapter 17. "No Silver Bullet" Refined
