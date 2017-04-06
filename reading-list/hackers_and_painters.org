@@ -16,7 +16,8 @@
    :LOGBOOK:
    CLOCK: [2017-03-28 Tue 06:58]--[2017-03-28 Tue 07:05] =>  0:07
    :END:
-** TODO 5. The Other Road Ahead
+** DONE 5. The Other Road Ahead
+   CLOSED: [2017-04-06 Thu 13:30]
 ** TODO 6. How to Make Wealth
 ** TODO 7. Mind the Gap
 ** TODO 8. A Plan for Spam

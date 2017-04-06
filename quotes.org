@@ -3,3 +3,5 @@
 + It is really quite impossible to say anything with absolute precision, unless
   that thing is so abstracted from the real world as to not represent any real
   thing. - Richard Feynman
++ "What big companies do instead of implementing features is plan them." - Paul
+  Graham, Hackers & Painters
