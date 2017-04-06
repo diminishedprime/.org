@@ -35,4 +35,8 @@
 ** TODO 12. Beating the Averages
 ** TODO 13. Revenge of the Nerds
 ** TODO 14. The Dream Language
-** TODO 15. Design and Research
+** DONE 15. Design and Research
+   CLOSED: [2017-04-06 Thu 13:39]
+   :LOGBOOK:
+   CLOCK: [2017-04-06 Thu 13:32]--[2017-04-06 Thu 13:39] =>  0:07
+   :END:
