@@ -1,6 +1,7 @@
 + [[../index.org][Main Index]]
 
 * Workflows
++ [[./git.org][Git Workflow]]
 + [[./js.org][Javascript Workflow]]
 + [[./om_next.org][Om Next Workflow]]
 + [[./org.org][Org features etc]]

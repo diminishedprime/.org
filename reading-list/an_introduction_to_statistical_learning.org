@@ -365,7 +365,7 @@
    3. [X] Logistic Regression
    4. [X] Linear Discriminant Analysis
    5. [X] A Comparison of Classification Methods
-   6. [ ] Lab: Logistic Regression, LDA, QDA, and KNN
+   6. [X] Lab: Logistic Regression, LDA, QDA, and KNN
    7. [ ] Exercises
 
 5 Resampling Methods 175

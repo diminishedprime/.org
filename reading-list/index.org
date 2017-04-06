@@ -1,5 +1,8 @@
 [[../index.org][Main Index]]
 
+* TEMP Online Tutorials
+  + [[http://viewsourcecode.org/snaptoken/kilo/][Build Your Own Text Editor]]
+
 * Reading List/Digital Bookshelf
 ** Top of Queue
 + [ ] [[./hackers_and_painters.org][Hackers And Painters]]

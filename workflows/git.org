@@ -1,0 +1,10 @@
+[[../index.org][Home]]
+[[./index.org][Workflows]]
+
+* Git Workflow
+** TODO - Figure out the state of your local repo
+** TODO - Commit changes
+** TODO - Create new branch
+** TODO - Switch to existing remote branch
+** TODO - Merge and resolve conflicts
+** TODO - Simple Rebase
