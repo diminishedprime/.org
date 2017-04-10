@@ -9,3 +9,5 @@
 /reading-list/cracking_the_coding_interview/src/main/java/.DS_Store
 *.out
 *.o
+/*.hi
+*.hi
