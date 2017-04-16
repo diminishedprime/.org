@@ -3,3 +3,4 @@
 
 + [X] Chapter 1: First Steps: Compiling and Running
 + [X] Chapter 2: Parsing
++ [X] Chapter 3: Evaluation, Part 1
