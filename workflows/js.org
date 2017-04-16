@@ -436,3 +436,49 @@
          })
 
        #+END_SRC
+* React App
+  1. =create-react-app project-name=
+  2. =npm add -S ramda redux react-redux=
+  3. =npm add -D eslint eslint-plugin-react tape babel-tape-runner=
+  4. =.eslintrc.js=
+     #+BEGIN_SRC json
+       module.exports = {
+         "env": {
+           "browser": true,
+           "es6": true,
+         },
+         "extends": "eslint:recommended",
+         "parserOptions": {
+           "ecmaFeatures": {
+             "experimentalObjectRestSpread": true,
+             "jsx": true
+           },
+           "sourceType": "module"
+         },
+         "plugins": [
+           "react"
+         ],
+         "rules": {
+           "indent": ["error", 2, {
+             "VariableDeclarator": {
+               "var": 2,
+               "let": 2,
+               "const": 3
+             }
+           }],
+           "linebreak-style": [
+             "error",
+             "unix"
+           ],
+           "quotes": [
+             "error",
+             "single"
+           ],
+           "semi": [
+             "error",
+             "never"
+           ]
+         }
+       };
+
+     #+END_SRC
