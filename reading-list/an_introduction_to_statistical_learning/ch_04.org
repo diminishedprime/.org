@@ -55,7 +55,7 @@
         + [X] (b) this one is a bit simplier since we can just plug it into the
           original formula. We get =0.16/(1-0.16)=0.19= for the odds
    + [-] Applied
-     10. [@10] [-]
+     10. [@10] [X]
          + [X] (a) The only pattern seems to be that volume increases over time.
            #+BEGIN_SRC R
              library(ISLR)
@@ -121,12 +121,71 @@
              | Down     |    9 |  5 |
              | Up       |   34 | 56 |
              |----------+------+----|
+         + [X] (e)
+           #+BEGIN_SRC R
+             library(ISLR)
+             attach(Weekly)
+             train <- (Year < 2009)
+             Weekly.20092010 <- Weekly[!train, ]
+             Direction.20092010 <- Direction[!train]
+             fit.lda <- lda(Direction ~ Lag2, data = Weekly, subset = train)
+             summary(fit.lda)
 
-         + [ ] (e)
-         + [ ] (f)
-         + [ ] (g)
-         + [ ] (h)
-         + [ ] (i)
+             probs <- predict(fit.lda, Weekly.20092010, type="response")
+             pred.glm <- rep("Down", length(probs))
+             pred.glm[probs > 0.5] <- "Up"
+             table(pred.glm, Direction.20092010)
+           #+END_SRC
+             |----------+------+----|
+             | pred.glm | Down | Up |
+             |----------+------+----|
+             | Down     |    9 |  5 |
+             | Up       |   34 | 56 |
+             |----------+------+----|
+         + [X] (f)
+           #+BEGIN_SRC R
+             library(ISLR)
+             attach(Weekly)
+             train <- (Year < 2009)
+             Weekly.20092010 <- Weekly[!train, ]
+             Direction.20092010 <- Direction[!train]
+             fit.qda <- qda(Direction ~ Lag2, data = Weekly, subset = train)
+             summary(fit.qda)
+
+             probs <- predict(fit.qda, Weekly.20092010, type="response")
+             pred.glm <- rep("Down", length(probs))
+             pred.glm[probs > 0.5] <- "Up"
+             table(pred.glm, Direction.20092010)
+           #+END_SRC
+             |----------+------+----|
+             | pred.glm | Down | Up |
+             |----------+------+----|
+             | Down     |    0 |  0 |
+             | Up       |   43 | 61 |
+             |----------+------+----|
+         + [X] (g)
+           #+BEGIN_SRC R
+             library(ISLR)
+             library(class)
+             attach(Weekly)
+
+             train <- (Year < 2009)
+             train.X <- as.matrix(Lag2[train])
+             test.X <- as.matrix(Lag2[!train])
+             train.Direction <- Direction[train]
+             set.seed(1)
+             pred.knn <- knn(train.X, test.X, train.Direction, k = 1)
+             table(pred.knn, Direction.20092010)
+           #+END_SRC
+             |----------+------+----|
+             | pred.knn | Down | Up |
+             |----------+------+----|
+             | Down     |   21 | 30 |
+             | Up       |   22 | 31 |
+             |----------+------+----|
+         + [X] (h) Comparing the error rates, lda & logistic regression have the
+           best rates, followed by QDA and KNN
+         + [X] (i) That sounds exhausting. How about no?
      11. [ ]
      12. [ ]
      13. [ ]
