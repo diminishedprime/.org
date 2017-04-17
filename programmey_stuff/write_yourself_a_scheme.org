@@ -6,3 +6,4 @@
 + [X] Chapter 3: Evaluation, Part 1
 + [X] Chapter 4: Error Checking & Exceptions
 + [X] Chapter 5: Evaluation, Part 2
++ [X] Chapter 6: Building A Repl
