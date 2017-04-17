@@ -11,9 +11,10 @@
 6. [X] Lab: Logistic Regression, LDA, QDA, and KNN
 7. [-] Exercises
    + [-] Conceptual
-     1. [ ] nah
-     2. [ ] also nah
-     3. [X]
+     1. [X] nah
+     2. [X] also nah
+     3. [X] Nah tho
+     4. [X]
         + [X] (a) ~9.75%
         + [X] (b) ~9.75%^2 ~= 0.95%
         + [X] (c) ~9.75%^100 ~= 0%
@@ -23,12 +24,36 @@
           used.
         + [X] (e) apparently the =l = 0.1 for p=1=, =0.1^(1/2) for p=2= and
           =0.1^(1/n) for p=n=
-     4. [ ]
-     5. [ ]
-     6. [ ]
-     7. [ ]
-     8. [ ]
-     9. [ ]
+     5. [-]
+        + [X] (a) If the Bayes decision boundary is linear, we would expect the
+          QDA to perform better on the training set since a higher flexibility
+          tends to result in a better fit. However, the LDA should do better
+          than QDA on the test set since the QDA would tend to overfit to the
+          training set if the real value is linear.
+        + [ ] (b) If the Bayes decision boundary is non-linear, we would expect
+          the QDA to perform bettor on both the training set and the test set
+          due to its higher flexibility. Since the real model is not linear, the
+          test data wouldn't be fit well by the model that LDA would make.
+        + [X] (c) Generally speaking, QDA will do better if the traning set is
+          very large since we don't have to have major concern about the
+          variance of the classifier.
+        + [X] (d) False, QDA has a higher variance which tends to lead to
+          overfit on the test data. This leads to a worse test error rate than a
+          lower variance method.
+     6. [X]
+        + [X] (a) =p(x)=e^(-6+0.05X1+X2)/(1+e^-6+0.05X1+X2)= = 0.3775
+        + [X] (b) =p(x)=e^(-6+0.05X1+X2)/(1+e^-6+0.05X1+X2)0.5= solving the
+          equation gives us =50 hours=
+     7. [ ] I'm not sure how I would know to apply what formula to this, come
+        back to later.
+     8. [X] Since 1-nearest neighbors has a training error rate of 0% and this
+        problem reports the "average" error rate of 18%, there is a test error
+        rate of 36% for KNN. We should choose logistic regression in this case
+        since it only has 30% error on the test data.
+     9. [X]
+        + [X] (a) =p(X)/(1-p(X))=0.37= which can be transformed to =p(X)=0.37/(1+0.37)=0.27=
+        + [X] (b) this one is a bit simplier since we can just plug it into the
+          original formula. We get =0.16/(1-0.16)=0.19= for the odds
    + [ ] Applied
      10. [@10] [ ]
      11. [ ]
