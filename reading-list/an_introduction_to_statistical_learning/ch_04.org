@@ -1,0 +1,40 @@
+[[../index.org][Main Index]]
+[[./index.org][Reading List]]
+[[../an_introduction_to_statistical_learning.org][Book]]
+
+* Classification
+1. [X] An Overview of Classification
+2. [X] Why Not Linear Regression?
+3. [X] Logistic Regression
+4. [X] Linear Discriminant Analysis
+5. [X] A Comparison of Classification Methods
+6. [X] Lab: Logistic Regression, LDA, QDA, and KNN
+7. [-] Exercises
+   + [-] Conceptual
+     1. [ ] nah
+     2. [ ] also nah
+     3. [X]
+        + [X] (a) ~9.75%
+        + [X] (b) ~9.75%^2 ~= 0.95%
+        + [X] (c) ~9.75%^100 ~= 0%
+        + [X] (d) the fraction of observations that will be used to make the
+          prediction grows exponentially by the number of features. This
+          means that there will be less and less observations that can be
+          used.
+        + [X] (e) apparently the =l = 0.1 for p=1=, =0.1^(1/2) for p=2= and
+          =0.1^(1/n) for p=n=
+     4. [ ]
+     5. [ ]
+     6. [ ]
+     7. [ ]
+     8. [ ]
+     9. [ ]
+   + [ ] Applied
+     10. [@10] [ ]
+     11. [ ]
+     12. [ ]
+     13. [ ]
+     14. [ ]
+     15. [ ]
+     16. [ ]
+     17. [ ]

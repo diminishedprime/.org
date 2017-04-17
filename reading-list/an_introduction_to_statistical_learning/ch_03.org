@@ -1,0 +1,221 @@
+[[../index.org][Main Index]]
+[[./index.org][Reading List]]
+[[../an_introduction_to_statistical_learning.org][Book]]
+
+* Linear Regression
+1. [X] Simple Linear Regression
+   1. [X] Estimating the Coefficients
+   2. [X] Assessing the Accuracy of the Coefficient Estimates
+   3. [X] Assessing the Accuracy of the Model
+2. [X] Multiple Linear Regression
+   1. [X] Estimating the Regression Coefficients
+   2. [X] Some Important Questions
+3. [X] Other Considerations in the Regression Model
+   1. [X] Qualitative Predictors
+   2. [X] Extensions of the Linear Model
+   3. [X] Potential Problems
+4. [X] The Marketing Plan
+5. [X] Comparison of Linear Regression with K-Nearest Neighbors
+6. [X] Lab: Linear Regression
+   1. [X] Libraries
+   2. [X] Simple Linear Regression
+   3. [X] Multiple Linear Regression
+   4. [X] Interaction Terms
+   5. [X] Non-linear Transformations of the Predictors
+   6. [X] Qualitative Predictors
+   7. [X] Writing Functions
+7. [X] Exercises [[https://rpubs.com/ppaquay/65559][Solutions]]
+   + [X] Conceptual
+     1. [X] The null hypotheses associated with table 3.4's p-values are that
+        the advertising budgets of TV, radio, and newspaper do not have an
+        effect on sales. Based on the very small p values for TV and radio,
+        we can reject the null hypotheses for them. We cannot, however reject
+        the null hypothesis for newspaper since it has a very small p value.
+        We can conclude from this that the newspaper advertising budget does
+        not affect sales.
+     2. [X] KNN classifier method is (duh) used to solve classification
+        problems, whereas the KNN regression method is used to solve
+        regression problems. The KNN classifier aims to estimate the
+        conditional probability that a measurement belongs to a specific
+        class. KNN regression aims to solve regression problems (quantitative)
+        by identifiying the neighborhood, and then estimating f(x₀) as the
+        average of all the training responses in the neighborhood.
+     3. [X] The regression line ends up being:
+        #+BEGIN_SRC text
+          # Regression Line
+          y = 50 + 20(GPA) + 0.07(IQ) + 35(Gender) + 0.01(GPA * IQ) - 10(GPA*Gender)
+           # For Males
+          y = 50 + 20(GPA) + 0.07(IQ) + 0.01(GPA * IQ)
+           # For Females
+          y = 85 + 10(GPA) + 0.07(IQ) + 0.01(GPA * IQ)
+        #+END_SRC
+        + [X] (a) iii.
+        + [X] (b)
+          #+BEGIN_SRC text
+            y = 85 + 10(GPA) + 0.07(IQ) + 0.01(GPA * IQ)
+            y = 85 + 10(4.0) + 0.07(110) + 0.01(4.0 * 110)
+            y = 85 + 40 + 7.7 + 4.4
+            y = 137.1
+          #+END_SRC
+        + [X] (c) False. The size of the cooeficiant isn't important. If we
+          want to say that the interaction effect is not statistically
+          signficiant we need to test the null hypothesis H₀: 𝛽₄ = 0 and look
+          ath the p-value or the F statistic.
+     4. [X]
+        + [X] (a) Since the true relationship between x & y is linear, it's
+          fair to expect that the least squars line would be close to the
+          true regression line, so the RSS for the linear regression may be
+          lower than for the cubic regression. however, if the test data has
+          a small number of observations, or has many outliers, the cubic
+          regression RSS may be lower. This is largely dependent on the
+          actual data.
+        + [X] (b) Again, it's hard to draw a hard conclusion without actually
+          being able to see the data, but since the actual fit is linear, we
+          wouldn't expect the training data to overfit the linear model. It
+          is much more likely, however that the cubic regression would
+          overfit to the training data. If this happens, it is likely that
+          the cubic regression would have worse RSS.
+        + [X] (c) If the relationship is not linear, the cubic model will fit
+          better because it is a more flexible model.
+        + [X] (d) There is not enough information to know.
+     5. [X] Do some math voodoo and this will come out.
+     6. [X] with a bit of algebraic voodoo we can show that avg(y) will equal
+        avg(x)
+     7. [X] More algebraic voodoo and we're done.
+   + [X] Applied
+     8. [@8] [X]
+        + [X] (a)
+          + [X] (i) Since the p-value for the F-statistic is extremely close
+            to zero, we can reject the null hypothesis that there is not a
+            relationship between mpg and horsepower
+          + [X] (ii) The relationship is fairly strong. Accord to the R²
+            value of 0.605, about 60% of the variablility in mpg can be
+            explained using horsepower.
+          + [X] (iii) The relationship between the response and the predictor
+            is negative. That means that according to this model, the more
+            horespower an automobilty has, the lower it's fuel efficiency is.
+          + [X] (iv)
+            |             |      fit |      lwr |      upr |
+            | confidence  | 24.46708 | 23.97308 | 24.96108 |
+            | predicition | 24.46708 |  14.8094 | 34.12476 |
+        + [X] (b) okay
+        + [X] (c) The residuals vs fitted plot suggests that there is
+          non-linearity in the data. The residuals vs Leverage suggests that
+          there are a few outliers and a few high leverage points.
+     9. [X]
+        + [X] (a) okay =pairs(Auto)=
+        + [X] (b) okay =cor(Auto[1:8])=
+        + [X] (c) okay =fit <- lm(mpg ~ . - name, data=Auto)=
+          + [X] (i) yes, based on the R² of 0.82 & the p-value for the
+            f-statistic, there much of the variablility in mpg can be
+            explained by the variables..
+          + [X] (ii) displacement, weight, year, and origin.
+          + [X] (iii) the cooepiciant of 0.75 means that according to this
+            model, mpg goes about by about 0.75 mpg per year.
+        + [X] (d) The plot of residiuals versus fitted values indicates the
+          precious of mild non-linearity in the data. There are a few
+          outliers, and one high-leverage point.
+        + [X] (e) displacement and weight seem to have an interaction-effect.
+          cylinders and displacement do not.
+        + [X] (f) if we apply a log transformation to the =mpg ~ horsepower=
+          plot, it appears to give us the most linear results with the gihest R²
+     10. [X]
+         + [X] (a) okay
+         + [X] (b) For price, for every increase of 1 dollar, is a decrease
+           of 54.4 units in sales. For Urban, on average the unit sales are
+           21.9 more than rural areas. For US, on average the unit sales are
+           1200.5 more than non-us.
+         + [X] (c) =Sales = 13.043 + -0.54(Price) + -0.21(Urban) + 1.20(US) +
+           error= for this formula, urban = 1 if the place is urban and 0 if
+           not and us = 1 if the store is in the us and 0 if not.
+         + [X] (d) Price and US, they both have p scores under 0.05 so we
+           reject their null hypothesis that they have no effect on sales.
+         + [X] (e) okay
+         + [X] (f) the model for a fits the data fairly well, but the model
+           for e fits it even better. The relative F-statistic for e is ~20
+           more. However, neither model explains that much (R²=.2335 and
+           .2354 respectively) of the variation in price.
+         + [X] (g)
+           |                |       2.5 % |      97.5 % |
+           |----------------+-------------+-------------|
+           | (Intercept)    | 11.79032020 | 14.27126531 |
+           | Carseats$Price | -0.06475984 | -0.04419543 |
+           | Carseats$USYes |  0.69151957 |  1.70776632 |
+         + [X] (h) there are a few high leverage points and a decent number
+           of outliers.
+     11. [X]
+         + [X] (a) 𝛃=1.9939, standardError=0.1065, t=18.73, and p=2e-16.
+           These results tell us that for every increase of 1 in x, y
+           increases by 1.9939. The small p value tells us we can reject the
+           null hypotheses that there is not a linear relationship between x
+           and y.
+         + [X] (b) 𝛃=0.39111, standardError=0.2089, t=18.73, and p=2e-16.
+           These results tell us that for every increase of 1 in y, x
+           increases by 0.39111. The small p value tells us we can reject the
+           null hypotheses that there is not a linear relationship between x
+           and y.
+         + [X] (c) a is the same formula as b, but in regards to x instead of
+           y. I.e =y=1.9939x + e ~ x=0.39111(y - e)=
+         + [X] (d) sure...
+         + [X] (e) also sure...
+         + [X] (f) also also sure...
+     12. [X]
+         + [X] (a) the coefficient estimates for regression of y onto x and
+           x onto y are the same only if the sum of squares of x and y are
+           the same. This is because the sum of squares is what's divided off
+           of the sum of products of x and y.
+         + [X] (b) =set.seed(1)= =x <- 1:100= =y <- 2 * x + rnorm(100, sd=0.1)=
+         + [X] (c) =set.seed(1)= =x <- 1:100= =y <- 100:1=
+     13. [X]
+         + [X] (a) =x <- rnorm(100, mean=0, std=0.1)=
+         + [X] (b) =eps <- rnorm(100, mean=0, std=0.25)=
+         + [X] (c) =y <- -1.0 + 0.5 * x + eps= length is 100?, B₀ is -1 and B₁ is 0.5
+         + [X] (d) the plot looks fairly linear, with added noise from eps.
+         + [X] (e) The model is =y = -1.02 + 0.514x=. For this model, there
+           is a very low p-value and a high f-statistic.
+         + [X] (f) =abline(myLm)= =abline(-1, 0.5, col="blue")=
+           =legend("topleft", c("Least Square", "Regression"), col=c("Black",
+           "Blue"), lty=c(1,1))=
+         + [X] (g) the coefficient for x^2 is not significant because it has
+           a p-value of .117, which is higher than the 0.05 number we strive
+           for. Because of this, we cannot reject the null hypothesis that
+           there is no relationship between y and x^2.
+         + [X] (h) no, that's dumb.
+         + [X] (i) also no.
+         + [X] (j) The centers would all be approximately the same, however
+           with more noise, there would be a larger confidence interval, and
+           with less noise, there would be a smaller one.
+     14. [X]
+         + [X] (a) =y=2 + 2*x1 + 0.3*x2 + e= the regression coefficients are
+           2, 2, and 0.3 respectively.
+         + [X] (b) =cor(x1, x2)= which is 0.83. The variables seem very
+           highly correlated.
+         + [X] (c) based on these results, we cannot reject the null
+           hypothesis for b1 and b2 since they are larger than 0.5.
+           |             | Estimate | Std. Error | T value | p            |
+           |-------------+----------+------------+---------+--------------|
+           | (Intercept) |   2.1305 |     0.2319 |   9.188 | 7.61e-15 *** |
+           | x1          |   1.4396 |     0.7212 |   1.996 | 0.0487 *     |
+           | x2          |   1.0097 |     1.1337 |   0.891 | 0.3754       |
+         + [X] (d) if we just use x1, we get a much smaller p-value. for just
+           x1 we can reject the null hypothesis.
+         + [X] (e) if we just use x2, we get a much smaller p-value. for just
+           x2 we can reject the null hypothesis.
+         + [X] (f) No these results do not contradict eachother. The reason
+           that they work well by themselves, but not together is because
+           they are strongly correlated.
+         + [X] (g) depending on which model you run, the extra point is
+           either an outlier, a or a high-leverage point.
+     15. [X]
+         + [X] (a) The only data point that has a p value of greater than
+           0.05 is chas. So we reject the null hypothesis for all the
+           predictors except chas.
+         + [X] (b) for all at the same time, we reject the null hypthesis for
+           only zn, dis, rad, black, and medv.
+         + [X] (c) Since there is a decent amount of correlation between the
+           predictors, it makes sense that for the simple regression they
+           would mostly have low p-values, but for multiple regression, some
+           would have high values.
+         + [X] (d) indus, nox, age, dis, ptration, and medv have p-values
+           that suggest that a cubic fit is good. The other ones have poor
+           cubic fits.
