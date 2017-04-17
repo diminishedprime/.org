@@ -54,8 +54,58 @@
         + [X] (a) =p(X)/(1-p(X))=0.37= which can be transformed to =p(X)=0.37/(1+0.37)=0.27=
         + [X] (b) this one is a bit simplier since we can just plug it into the
           original formula. We get =0.16/(1-0.16)=0.19= for the odds
-   + [ ] Applied
-     10. [@10] [ ]
+   + [-] Applied
+     10. [@10] [-]
+         + [X] (a) The only pattern seems to be that volume increases over time.
+           #+BEGIN_SRC R
+             library(ISLR)
+             summary(Weekly)
+           #+END_SRC
+         + [X] (b) Technically, Lag 2 is statistically significant, but it's
+           probably just random chance and not actually statistically
+           significant.
+           #+BEGIN_SRC R
+             library(ISLR)
+             attach(Weekly)
+             fit.glm <- glm(Direction ~ Lag1 + Lag2 + Lag3 + Lag4 + Lag5 + Volume, data = Weekly, family=binomial)
+             summary(fit.glm)
+             cor(Weekly[, -9])
+             plot(Volume, Year)
+           #+END_SRC
+         + [X] (c)
+           #+BEGIN_SRC R
+             library(ISLR)
+             attach(Weekly)
+             fit.glm <- glm(Direction ~ Lag1 + Lag2 + Lag3 + Lag4 + Lag5 + Volume, data = Weekly, family=binomial)
+             probs <- predict(fit.glm, type = "response")
+             ## Uses "rep" or "replicate" to create a vector that has "Down" the length of
+             ## probs times.
+             pred.glm <- rep("Down", length(probs))
+             ## this changes the pred.glm Downs to Up if the matching prob index has a value
+             ## of greater than 0.5
+             pred.glm[probs > 0.5] <- "Up"
+             table(pred.glm, Direction)
+           #+END_SRC
+           |----------+------+-----|
+           | pred.glm | Down |  Up |
+           |----------+------+-----|
+           | Down     |   54 |  48 |
+           | Up       |  430 | 557 |
+           |----------+------+-----|
+           The confusion matrix tells us that 54 of the predict downs actually
+           went down and 557 of the predicted ups went up. In total the model is
+           correct =(/ (+ 54 557) (+ 54 430 48 557.0))= => 0.56 of the time.
+           This means that the training error rate is =(- 1 0.56)= => 0.44 of
+           the time. We could also say that for weeks that the market went up,
+           the model is right =(/ 557 (+ 557.0 48))= => 0.92 of the time.
+           However, when the market actually went down, the model is only right
+           =(/ 54 (+ 54 430.0))= => 0.11 of the time.
+         + [ ] (d)
+         + [ ] (e)
+         + [ ] (f)
+         + [ ] (g)
+         + [ ] (h)
+         + [ ] (i)
      11. [ ]
      12. [ ]
      13. [ ]
