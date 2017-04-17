@@ -100,7 +100,28 @@
            the model is right =(/ 557 (+ 557.0 48))= => 0.92 of the time.
            However, when the market actually went down, the model is only right
            =(/ 54 (+ 54 430.0))= => 0.11 of the time.
-         + [ ] (d)
+         + [X] (d)
+           #+BEGIN_SRC R
+             library(ISLR)
+             attach(Weekly)
+             train <- (Year < 2009)
+             Weekly.20092010 <- Weekly[!train, ]
+             Direction.20092010 <- Direction[!train]
+             fit.glm <- glm(Direction ~ Lag2, data = Weekly, family = binomial, subset = train)
+             summary(fit.glm)
+
+             probs <- predict(fit.glm, Weekly.20092010, type="response")
+             pred.glm <- rep("Down", length(probs))
+             pred.glm[probs > 0.5] <- "Up"
+             table(pred.glm, Direction.20092010)
+           #+END_SRC
+             |----------+------+----|
+             | pred.glm | Down | Up |
+             |----------+------+----|
+             | Down     |    9 |  5 |
+             | Up       |   34 | 56 |
+             |----------+------+----|
+
          + [ ] (e)
          + [ ] (f)
          + [ ] (g)
