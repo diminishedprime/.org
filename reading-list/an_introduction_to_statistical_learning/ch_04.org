@@ -186,7 +186,143 @@
          + [X] (h) Comparing the error rates, lda & logistic regression have the
            best rates, followed by QDA and KNN
          + [X] (i) That sounds exhausting. How about no?
-     11. [ ]
+     11. [X]
+         + [X] (a)
+           #+BEGIN_SRC R
+             library(ISLR)
+             attach(Auto)
+
+             mpg01 <- rep(0, length(mpg))
+             mpg01[mpg > median(mpg)] <- 1
+             Auto <- data.frame(Auto, mpg01)
+           #+END_SRC
+         + [X] (b)
+           #+BEGIN_SRC R
+             library(ISLR)
+             attach(Auto)
+
+             mpg01 <- rep(0, length(mpg))
+             mpg01[mpg > median(mpg)] <- 1
+             Auto <- data.frame(Auto, mpg01)
+             cor(Auto[, -9])
+             pairs(Auto)
+           #+END_SRC
+         + [X] (c)
+           #+BEGIN_SRC R
+             library(ISLR)
+             attach(Auto)
+
+             mpg01 <- rep(0, length(mpg))
+             mpg01[mpg > median(mpg)] <- 1
+             Auto <- data.frame(Auto, mpg01)
+
+             train <- (year %% 2 == 0)
+             Auto.train <- Auto[train, ]
+             Auto.test <- Auto[!train, ]
+             mpg01.test <- mpg01[!train]
+           #+END_SRC
+         + [X] (d) There is a test error of =0.1263736=
+           #+BEGIN_SRC R
+             library(ISLR)
+             library(MASS)
+             attach(Auto)
+
+             mpg01 <- rep(0, length(mpg))
+             mpg01[mpg > median(mpg)] <- 1
+             Auto <- data.frame(Auto, mpg01)
+
+             train <- (year %% 2 == 0)
+             Auto.train <- Auto[train, ]
+             Auto.test <- Auto[!train, ]
+             mpg01.test <- mpg01[!train]
+
+             fit.lda <- lda(mpg01 ~ cylinders + weight + displacement + horsepower, data = Auto, subset = train)
+             fit.lda
+
+             pred.lda <- predict(fit.lda, Auto.test)
+             table(pred.lda$class, mpg01.test)
+             mean(pred.lda$class != mpg01.test)
+           #+END_SRC
+         + [X] (e) There is a test error of =0.1318681=
+           #+BEGIN_SRC R
+             library(ISLR)
+             library(MASS)
+             attach(Auto)
+
+             mpg01 <- rep(0, length(mpg))
+             mpg01[mpg > median(mpg)] <- 1
+             Auto <- data.frame(Auto, mpg01)
+
+             train <- (year %% 2 == 0)
+             Auto.train <- Auto[train, ]
+             Auto.test <- Auto[!train, ]
+             mpg01.test <- mpg01[!train]
+
+             fit.qda <- qda(mpg01 ~ cylinders + weight + displacement + horsepower, data = Auto, subset = train)
+             fit.qda
+
+             pred.qda <- predict(fit.qda, Auto.test)
+             table(pred.qda$class, mpg01.test)
+             mean(pred.qda$class != mpg01.test)
+
+           #+END_SRC
+         + [X] (f) There is a test error of =0.1208791=
+           #+BEGIN_SRC R
+             library(ISLR)
+             library(MASS)
+             attach(Auto)
+
+             mpg01 <- rep(0, length(mpg))
+             mpg01[mpg > median(mpg)] <- 1
+             Auto <- data.frame(Auto, mpg01)
+
+             train <- (year %% 2 == 0)
+             Auto.train <- Auto[train, ]
+             Auto.test <- Auto[!train, ]
+             mpg01.test <- mpg01[!train]
+
+             fit.glm <- glm(mpg01 ~ cylinders + weight + displacement + horsepower, data = Auto, family = binomial, subset = train)
+             summary(fit.glm)
+
+             probs <- predict(fit.glm, Auto.test, type = "response")
+             pred.glm <- rep(0, length(probs))
+             pred.glm[probs > 0.5] <- 1
+             table(pred.glm, mpg01.test)
+
+             mean(pred.glm != mpg01.test)
+           #+END_SRC
+         + [X] (g) for k=1 there is an error rate of =0.1538462= for k=10 it is
+           =0.1648352= and for k=100 it is =0.1428571=
+           #+BEGIN_SRC R
+             library(ISLR)
+             library(class)
+             library(MASS)
+             attach(Auto)
+
+
+             mpg01 <- rep(0, length(mpg))
+             mpg01[mpg > median(mpg)] <- 1
+             Auto <- data.frame(Auto, mpg01)
+
+             train <- (year %% 2 == 0)
+             train.X <- cbind(cylinders, weight, displacement, horsepower)[train, ]
+             test.X <- cbind(cylinders, weight, displacement, horsepower)[!train, ]
+             train.mpg01 <- mpg01[train]
+             set.seed(1)
+
+             pred.knn <- knn(train.X, test.X, train.mpg01, k = 1)
+             table(pred.knn, mpg01.test)
+             mean(pred.knn != mpg01.test)
+
+
+             pred.knn <- knn(train.X, test.X, train.mpg01, k = 10)
+             table(pred.knn, mpg01.test)
+             mean(pred.knn != mpg01.test)
+
+             pred.knn <- knn(train.X, test.X, train.mpg01, k = 100)
+             table(pred.knn, mpg01.test)
+             mean(pred.knn != mpg01.test)
+           #+END_SRC
      12. [ ]
      13. [ ]
      14. [ ]
