@@ -8,3 +8,4 @@
 + [X] Chapter 5: Evaluation, Part 2
 + [X] Chapter 6: Building A Repl
 + [X] Chapter 7: Adding Variables and Assignment
++ [X] Chapter 8: Defining Scheme Functions
