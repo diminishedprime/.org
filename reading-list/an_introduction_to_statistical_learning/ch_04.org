@@ -323,9 +323,70 @@
              table(pred.knn, mpg01.test)
              mean(pred.knn != mpg01.test)
            #+END_SRC
-     12. [ ]
+     12. [X]
+         + [X] (a) =8=
+           #+BEGIN_SRC R
+             Power = function() {
+                 print(2^3)
+             }
+             Power()
+           #+END_SRC
+         + [X] (b) =6561=
+           #+BEGIN_SRC R
+             Power2 = function(x, a) {
+                 print(x^a)
+             }
+             Power2(3, 8)
+           #+END_SRC
+         + [X] (c) =1000= =2.2518e+15= =2248091=
+           #+BEGIN_SRC R
+             Power2 = function(x, a) {
+                 print(x^a)
+             }
+             Power2(10 , 3)
+             Power2(8  , 17)
+             Power2(131, 3)
+           #+END_SRC
+         + [X] (d) =8=
+           #+BEGIN_SRC R
+             Power3 = function(x, a) {
+                 result <- x ^ a
+                 return(result)
+             }
+             Power3(2, 3)
+           #+END_SRC
+         + [X] (e)
+           #+BEGIN_SRC R
+             Power3 = function(x, a) {
+                 result <- x ^ a
+                 return(result)
+             }
+
+             x <- 1:10
+
+             plot(x,
+                  Power3(x, 2),
+                  log = "xy",
+                  xlab = "Log of x",
+                  ylab = "Log of x^2",
+                  main = "Log of x^2 vs Log of x")
+           #+END_SRC
+         + [X] (f)
+           #+BEGIN_SRC R
+             Power3 = function(x, a) {
+                 result <- x ^ a
+                 return(result)
+             }
+
+             PlotPower = function(r, power) {
+                 p <- plot (r,
+                            Power3(x, power),
+                            log = "xy",
+                            xlab = "Log of x",
+                            ylab = "Log of x^2",
+                            main = "Log of x^2 vs Log of x")
+                 return(p)
+             }
+             PlotPower(1:10, 3)
+           #+END_SRC
      13. [ ]
-     14. [ ]
-     15. [ ]
-     16. [ ]
-     17. [ ]
