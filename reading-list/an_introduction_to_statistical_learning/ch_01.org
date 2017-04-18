@@ -1,0 +1,8 @@
+[[../index.org][Main Index]]
+[[./index.org][Reading List]]
+[[../an_introduction_to_statistical_learning.org][Book]]
+
+* Introduction
+** Lectures
+   + [X] [[https://www.youtube.com/watch?v=2wLfFB_6SKI][Opening Remarks & Examples]]
+   + [X] [[https://www.youtube.com/watch?v=LvaTokhYnDw][Supervised & Unsupervised Learning]]

@@ -1,9 +1,11 @@
 [[../index.org][Main Index]]
 [[./index.org][Reading List]]
 
+[[https://www.r-bloggers.com/in-depth-introduction-to-machine-learning-in-15-hours-of-expert-videos/]]
+
 * [[http://www-bcf.usc.edu/~gareth/ISL/ISLR%20Sixth%20Printing.pdf][An Introduction to Statistical Learning]]
 
-1. [X] Introduction
+1. [X] [[./an_introduction_to_statistical_learning/ch_01.org][Introduction]]
 2. [X] [[./an_introduction_to_statistical_learning/ch_02.org][Statistical Learning]]
 3. [X] [[./an_introduction_to_statistical_learning/ch_03.org][Linear Regression]]
 4. [X] [[./an_introduction_to_statistical_learning/ch_04.org][Classification]]
