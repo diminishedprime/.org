@@ -4,9 +4,9 @@
 
 * Linear Regression
 ** Lectures
-   + [ ] [[https://www.youtube.com/playlist?list=PL5-da3qGB5IBSSCPANhTgrw82ws7w_or9][Playlist]]
-     + [ ] [[https://www.youtube.com/watch?v=PsE9UqoWtS4][Simple Linear Regression and Confidence Intervals (13:01)]]
-     + [ ] [[https://www.youtube.com/watch?v=J6AdoiNUyWI][Hypothesis Testing (8:24)]]
+   + [-] [[https://www.youtube.com/playlist?list=PL5-da3qGB5IBSSCPANhTgrw82ws7w_or9][Playlist]]
+     + [X] [[https://www.youtube.com/watch?v=PsE9UqoWtS4][Simple Linear Regression and Confidence Intervals (13:01)]]
+     + [X] [[https://www.youtube.com/watch?v=J6AdoiNUyWI][Hypothesis Testing (8:24)]]
      + [ ] [[https://www.youtube.com/watch?v=1hbCJyM9ccs][Multiple Linear Regression and Interpreting Regression Coefficients (15:38)]]
      + [ ] [[https://www.youtube.com/watch?v=3T6RXmIHbJ4][Model Selection and Qualitative Predictors (14:51)]]
      + [ ] [[https://www.youtube.com/watch?v=IFzVxLv0TKQ][Interactions and Nonlinearity (14:16)]]
