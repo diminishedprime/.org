@@ -4,5 +4,6 @@
 
 * Introduction
 ** Lectures
-   + [X] [[https://www.youtube.com/watch?v=2wLfFB_6SKI][Opening Remarks & Examples]]
-   + [X] [[https://www.youtube.com/watch?v=LvaTokhYnDw][Supervised & Unsupervised Learning]]
+   + [X] [[https://www.youtube.com/playlist?list=PL5-da3qGB5ICcUhueCyu25slvsGp8IDTa][Playlist]]
+     + [X] [[https://www.youtube.com/watch?v=2wLfFB_6SKI][Opening Remarks & Examples]]
+     + [X] [[https://www.youtube.com/watch?v=LvaTokhYnDw][Supervised & Unsupervised Learning]]
