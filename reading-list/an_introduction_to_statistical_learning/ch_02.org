@@ -3,6 +3,14 @@
 [[../an_introduction_to_statistical_learning.org][Book]]
 
 * Statistical Learning
+** Lectures
+   + [X] [[https://www.youtube.com/playlist?list=PL5-da3qGB5IBSSCPANhTgrw82ws7w_or9][Playlist]]
+     + [X] [[https://www.youtube.com/watch?v=WjyuiK5taS8][Statistical Learning & Regression]]
+     + [X] [[https://www.youtube.com/watch?v=UvxHOkYQl8g][Curse of Dimensionality and Parametric Models]]
+     + [X] [[https://www.youtube.com/watch?v=VusKAosxxyk][Assessing Model Accuracy and Bias-Variance Trade-off]]
+     + [X] [[https://www.youtube.com/watch?v=vVj2itVNku4][Classification Problems and K-Nearest Neighbors]]
+     + [X] [[https://www.youtube.com/watch?v=jwBgGS_4RQA][Lab: Introduction to R]]
+** Reading List
 1. [X] What Is Statistical Learning?
    1. [X] Why Estimate f?
    2. [X] How Do We Estimate f?
