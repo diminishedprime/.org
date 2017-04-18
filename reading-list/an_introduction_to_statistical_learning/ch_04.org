@@ -1,5 +1,5 @@
 [[../index.org][Main Index]]
-[[./index.org][Reading List]]
+[[../index.org][Reading List]]
 [[../an_introduction_to_statistical_learning.org][Book]]
 
 * Classification
@@ -9,8 +9,8 @@
 4. [X] Linear Discriminant Analysis
 5. [X] A Comparison of Classification Methods
 6. [X] Lab: Logistic Regression, LDA, QDA, and KNN
-7. [-] Exercises
-   + [-] Conceptual
+7. [X] Exercises
+   + [X] Conceptual
      1. [X] nah
      2. [X] also nah
      3. [X] Nah tho
@@ -24,13 +24,13 @@
           used.
         + [X] (e) apparently the =l = 0.1 for p=1=, =0.1^(1/2) for p=2= and
           =0.1^(1/n) for p=n=
-     5. [-]
+     5. [X]
         + [X] (a) If the Bayes decision boundary is linear, we would expect the
           QDA to perform better on the training set since a higher flexibility
           tends to result in a better fit. However, the LDA should do better
           than QDA on the test set since the QDA would tend to overfit to the
           training set if the real value is linear.
-        + [ ] (b) If the Bayes decision boundary is non-linear, we would expect
+        + [X] (b) If the Bayes decision boundary is non-linear, we would expect
           the QDA to perform bettor on both the training set and the test set
           due to its higher flexibility. Since the real model is not linear, the
           test data wouldn't be fit well by the model that LDA would make.
@@ -44,8 +44,7 @@
         + [X] (a) =p(x)=e^(-6+0.05X1+X2)/(1+e^-6+0.05X1+X2)= = 0.3775
         + [X] (b) =p(x)=e^(-6+0.05X1+X2)/(1+e^-6+0.05X1+X2)0.5= solving the
           equation gives us =50 hours=
-     7. [ ] I'm not sure how I would know to apply what formula to this, come
-        back to later.
+     7. [X] nah
      8. [X] Since 1-nearest neighbors has a training error rate of 0% and this
         problem reports the "average" error rate of 18%, there is a test error
         rate of 36% for KNN. We should choose logistic regression in this case
@@ -54,7 +53,7 @@
         + [X] (a) =p(X)/(1-p(X))=0.37= which can be transformed to =p(X)=0.37/(1+0.37)=0.27=
         + [X] (b) this one is a bit simplier since we can just plug it into the
           original formula. We get =0.16/(1-0.16)=0.19= for the odds
-   + [-] Applied
+   + [X] Applied
      10. [@10] [X]
          + [X] (a) The only pattern seems to be that volume increases over time.
            #+BEGIN_SRC R
@@ -389,4 +388,67 @@
              }
              PlotPower(1:10, 3)
            #+END_SRC
-     13. [ ]
+     13. [X]
+         #+BEGIN_SRC R
+           library(MASS)
+           attach(Boston)
+           crim01 <- rep(0, length(crim))
+           crim01[crim > median(crim)] <- 1
+           Boston <- data.frame(Boston, crim01)
+
+           train <- 1:(length(crim) / 2)
+           test <- (length(crim) / 2 + 1):length(crim)
+           Boston.train <- Boston[train, ]
+           Boston.test <- Boston[test, ]
+           crim01.test <- crim01[test]
+
+           fit.glm <- glm(crim01 ~ . - crim01 - crim, data = Boston, family = binomial, subset = train)
+
+           probs <- predict(fit.glm, Boston.test, type = "response")
+           pred.glm <- rep(0, length(probs))
+           pred.glm[probs > 0.5] <- 1
+           table(pred.glm, crim01.test)
+           mean(pred.glm != crim01.test)
+           ## 0.1818182
+
+
+           fit.glm <- glm(crim01 ~ . - crim01 - crim - chas - nox, data = Boston, family = binomial, subset = train)
+           probs <- predict(fit.glm, Boston.test, type = "response")
+           pred.glm <- rep(0, length(probs))
+           pred.glm[probs > 0.5] <- 1
+           table(pred.glm, crim01.test)
+           mean(pred.glm != crim01.test)
+           ## 0.1581028
+
+
+           fit.lda <- lda(crim01 ~ . - crim01 - crim, data = Boston, subset = train)
+           pred.lda <- predict(fit.lda, Boston.test)
+           table(pred.lda$class, crim01.test)
+           mean(pred.lda$class != crim01.test)
+           ## 0.1343874
+
+           fit.lda <- lda(crim01 ~ . - crim01 - crim - chas - nox, data = Boston, subset = train)
+           pred.lda <- predict(fit.lda, Boston.test)
+           table(pred.lda$class, crim01.test)
+           mean(pred.lda$class != crim01.test)
+           ## 0.1501976
+
+           train.X <- cbind(zn, indus, chas, nox, rm, age, dis, rad, tax, ptratio, black, lstat, medv)[train, ]
+           test.X <- cbind(zn, indus, chas, nox, rm, age, dis, rad, tax, ptratio, black, lstat, medv)[test, ]
+           train.crim01 <- crim01[train]
+           set.seed(1)
+           pred.knn <- knn(train.X, test.X, train.crim01, k = 1)
+           table(pred.knn, crim01.test)
+           mean(pred.knn != crim01.test)
+           ## 0.458498
+
+           pred.knn <- knn(train.X, test.X, train.crim01, k = 10)
+           table(pred.knn, crim01.test)
+           mean(pred.knn != crim01.test)
+           ## 0.1185771
+
+           pred.knn <- knn(train.X, test.X, train.crim01, k = 100)
+           table(pred.knn, crim01.test)
+           mean(pred.knn != crim01.test)
+           ## 0.4901186
+         #+END_SRC
