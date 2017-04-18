@@ -1,0 +1,18 @@
+[[../index.org][Main Index]]
+[[../index.org][Reading List]]
+[[../an_introduction_to_statistical_learning.org][Book]]
+
+* Resampling Methods
+1. [ ] Cross-Validation
+   1. [ ] The Validation Set Approach
+   2. [ ] Leave-One-Out Cross-Validation
+   3. [ ] k-Fold Cross-Validation
+   4. [ ] Bias-Variance Trade-Off for k-Fold Cross-Validation
+   5. [ ] Cross-Validation on Classification Problems
+2. [ ] The Bootstrap
+3. [ ] Lab: Cross-Validation and the Bootstrap
+   1. [ ] The Validation Set Approach
+   2. [ ] Leave-One-Out Cross-Validation
+   3. [ ] k-Fold Cross-Validation
+   4. [ ] The Bootstrap
+4. [ ] Exercises

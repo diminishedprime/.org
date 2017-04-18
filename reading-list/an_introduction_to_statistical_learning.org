@@ -6,23 +6,9 @@
 1. [X] Introduction
 2. [X] [[./an_introduction_to_statistical_learning/ch_02.org][Statistical Learning]]
 3. [X] [[./an_introduction_to_statistical_learning/ch_03.org][Linear Regression]]
-4. [ ] [[./an_introduction_to_statistical_learning/ch_04.org][Classification]]
+4. [X] [[./an_introduction_to_statistical_learning/ch_04.org][Classification]]
+5. [ ] [[./an_introduction_to_statistical_learning/ch_05.org][Resampling Methods]]
 
-5 Resampling Methods 175
-5.1 Cross-Validation . . . . . . . . . . . . . . . . . . . . . . . . 176
-5.1.1 The Validation Set Approach . . . . . . . . . . . . . 176
-5.1.2 Leave-One-Out Cross-Validation . . . . . . . . . . . 178
-5.1.3 k-Fold Cross-Validation . . . . . . . . . . . . . . . . 181
-5.1.4 Bias-Variance Trade-Off for k-Fold
-Cross-Validation . . . . . . . . . . . . . . . . . . . . 183
-5.1.5 Cross-Validation on Classification Problems . . . . . 184
-5.2 The Bootstrap . . . . . . . . . . . . . . . . . . . . . . . . . 187
-5.3 Lab: Cross-Validation and the Bootstrap . . . . . . . . . . . 190
-5.3.1 The Validation Set Approach . . . . . . . . . . . . . 191
-5.3.2 Leave-One-Out Cross-Validation . . . . . . . . . . . 192
-5.3.3 k-Fold Cross-Validation . . . . . . . . . . . . . . . . 193
-5.3.4 The Bootstrap . . . . . . . . . . . . . . . . . . . . . 194
-5.4 Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . 197
 6 Linear Model Selection and Regularization 203
 6.1 Subset Selection . . . . . . . . . . . . . . . . . . . . . . . . 205
 6.1.1 Best Subset Selection . . . . . . . . . . . . . . . . . 205
