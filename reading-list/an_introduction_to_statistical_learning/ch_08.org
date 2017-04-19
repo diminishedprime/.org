@@ -1,0 +1,30 @@
+[[../index.org][Main Index]]
+[[../index.org][Reading List]]
+[[../an_introduction_to_statistical_learning.org][Book]]
+
+* Linear Model Selection and Regularization
+** Lectures
+   + [ ] Playlist
+     + [ ] [[https://www.youtube.com/watch?v=6ENTbK3yQUQ][Decision Trees]]
+     + [ ] [[https://www.youtube.com/watch?v=GfPR7Xhdokc][Pruning a Decision Tree]]
+     + [ ] [[https://www.youtube.com/watch?v=hPEJoITBbQ4][Classification Trees and Comparison with Linear Models]]
+     + [ ] [[https://www.youtube.com/watch?v=lq_xzBRIWm4][Bootstrap Aggregation (Bagging) and Random Forests]]
+     + [ ] [[https://www.youtube.com/watch?v=U3MdBNysk9w][Boosting and Variable Importance]]
+     + [ ] [[https://www.youtube.com/watch?v=0wZUXtvAtDc][Lab: Decision Trees]]
+     + [ ] [[https://www.youtube.com/watch?v=IY7oWGXb77o][Lab: Random Forests and Boosting]]
+** Reading List
+1. [ ] The Basics of Decision Trees
+   1. [ ] Regression Trees
+   2. [ ] Classification Trees
+   3. [ ] Trees Versus Linear Models
+   4. [ ] Advantages and Disadvantages of Trees
+2. [ ] Bagging, Random Forests, Boosting
+   1. [ ] Bagging
+   2. [ ] Random Forests
+   3. [ ] Boosting
+3. [ ] Lab: Decision Trees
+   1. [ ] Fitting Classification Trees
+   2. [ ] Fitting Regression Trees
+   3. [ ] Bagging and Random Forests
+   4. [ ] Boosting
+4. [ ] Exercises

@@ -1,0 +1,49 @@
+[[../index.org][Main Index]]
+[[../index.org][Reading List]]
+[[../an_introduction_to_statistical_learning.org][Book]]
+
+* Linear Model Selection and Regularization
+** Lectures
+   + [ ] Playlist
+     + [ ] [[https://www.youtube.com/watch?v=91si52nk3LA][Linear Model Selection and Best Subset Selection]]
+     + [ ] [[https://www.youtube.com/watch?v=nLpJd_iKmrE][Forward Stepwise Selection]]
+     + [ ] [[https://www.youtube.com/watch?v=NJhMSpI2Uj8][Backward Stepwise Selection]]
+     + [ ] [[https://www.youtube.com/watch?v=LkifE44myLc][Estimating Test Error Using Mallow’s Cp, AIC, BIC, Adjusted R-squared]]
+     + [ ] [[https://www.youtube.com/watch?v=3p9JNaJCOb4][Estimating Test Error Using Cross-Validation]]
+     + [ ] [[https://www.youtube.com/watch?v=cSKzqb0EKS0][Shrinkage Methods and Ridge Regression]]
+     + [ ] [[https://www.youtube.com/watch?v=A5I1G1MfUmA][The Lasso]]
+     + [ ] [[https://www.youtube.com/watch?v=xMKVUstjXBE][Tuning Parameter Selection for Ridge Regression and Lasso]]
+     + [ ] [[https://www.youtube.com/watch?v=QlyROnAjnEk][Dimension Reduction]]
+     + [ ] [[https://www.youtube.com/watch?v=eYxwWGJcOfw][Principal Components Regression and Partial Least Squares]]
+     + [ ] [[https://www.youtube.com/watch?v=3kwdDGnV8MM][Lab: Best Subset Selection]]
+     + [ ] [[https://www.youtube.com/watch?v=mv-vdysZIb4][Lab: Forward Stepwise Selection and Model Selection Using Validation Set]]
+     + [ ] [[https://www.youtube.com/watch?v=F8MMHCCoALU][Lab: Model Selection Using Cross-Validation]]
+     + [ ] [[https://www.youtube.com/watch?v=1REe3qSotx8][Lab: Ridge Regression and Lasso]]
+** Reading List
+1. [ ] Subset Selection
+   1. [ ] Best Subset Selection
+   2. [ ] Stepwise Selection
+   3. [ ] Choosing the Optimal Model
+2. [ ] Shrinkage Methods
+   1. [ ] Ridge Regression
+   2. [ ] The Lasso
+   3. [ ] Selecting the Tuning Parameter
+3. [ ] Dimension Reduction Methods
+   1. [ ] Principal Components Regression
+   2. [ ] Partial Least Squares
+4. [ ] Considerations in High Dimensions
+   1. [ ] High-Dimensional Data
+   2. [ ] What Goes Wrong in High Dimensions?
+   3. [ ] Regression in High Dimensions
+   4. [ ] Interpreting Results in High Dimensions
+5. [ ] Lab 1: Subset Selection Methods
+   1. [ ] Best Subset Selection
+   2. [ ] Forward and Backward Stepwise Selection
+   3. [ ] Choosing Among Models Using the Validation
+6. [ ] Lab 2: Ridge Regression and the Lasso
+   1. [ ] Ridge Regression
+   2. [ ] The Lasso
+7. [ ] Lab 3: PCR and PLS Regression
+   1. [ ] Principal Components Regression
+   2. [ ] Partial Least Squares
+8. [ ] Exercises

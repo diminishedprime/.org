@@ -1,0 +1,35 @@
+[[../index.org][Main Index]]
+[[../index.org][Reading List]]
+[[../an_introduction_to_statistical_learning.org][Book]]
+
+* Linear Model Selection and Regularization
+** Lectures
+   + [ ] Playlists
+     + [ ] [[https://www.youtube.com/watch?v=ipyxSYXgzjQ][Unsupervised Learning and Principal Components Analysis]]
+     + [ ] [[https://www.youtube.com/watch?v=dbuSGWCgdzw][Exploring Principal Components Analysis and Proportion of Variance Explained]]
+     + [ ] [[https://www.youtube.com/watch?v=aIybuNt9ps4][K-means Clustering]]
+     + [ ] [[https://www.youtube.com/watch?v=Tuuc9Y06tAc][Hierarchical Clustering]]
+     + [ ] [[https://www.youtube.com/watch?v=yUJcTpWNY_o][Breast Cancer Example of Hierarchical Clustering]]
+     + [ ] [[https://www.youtube.com/watch?v=lFHISDj_4EQ][Lab: Principal Components Analysis]]
+     + [ ] [[https://www.youtube.com/watch?v=YDubYJsZ9iM][Lab: K-means Clustering]]
+     + [ ] [[https://www.youtube.com/watch?v=4u3zvtfqb7w][Lab: Hierarchical Clustering]]
+** Reading List
+1. [ ] The Challenge of Unsupervised Learning
+2. [ ] Principal Components Analysis
+   1. [ ] What Are Principal Components?
+   2. [ ] Another Interpretation of Principal Components
+   3. [ ] More on PCA
+   4. [ ] Other Uses for Principal Components
+3. [ ] Clustering Methods
+   1. [ ] K-Means Clustering
+   2. [ ] Hierarchical Clustering
+   3. [ ] Practical Issues in Clustering
+4. [ ] Lab 1: Principal Components Analysis
+xiv Contents
+5. [ ] Lab 2: Clustering
+   1. [ ] K-Means Clustering
+   2. [ ] Hierarchical Clustering
+6. [ ] Lab 3: NCI60 Data Example
+   1. [ ] PCA on the NCI60 Data
+   2. [ ] Clustering the Observations of the NCI60 Data
+7. [ ] Exercises

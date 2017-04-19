@@ -3,6 +3,16 @@
 [[../an_introduction_to_statistical_learning.org][Book]]
 
 * Resampling Methods
+** Lectures
+   + [ ] Playlist
+     + [ ] [[https://www.youtube.com/watch?v=_2ij6eaaSl0][Estimating Prediction Error and Validation Set Approach]]
+     + [ ] [[https://www.youtube.com/watch?v=nZAM5OXrktY][K-fold Cross-Validation]]
+     + [ ] [[https://www.youtube.com/watch?v=S06JpVoNaA0][Cross-Validation: The Right and Wrong Ways]]
+     + [ ] [[https://www.youtube.com/watch?v=p4BYWX7PTBM][The Bootstrap]]
+     + [ ] [[https://www.youtube.com/watch?v=BzHz0J9a6k0][More on the Bootstrap]]
+     + [ ] [[https://www.youtube.com/watch?v=6dSXlqHAoMk][Lab: Cross-Validation]]
+     + [ ] [[https://www.youtube.com/watch?v=YVSmsWoBKnA][Lab: The Bootstrap]]
+** Reading List
 1. [ ] Cross-Validation
    1. [ ] The Validation Set Approach
    2. [ ] Leave-One-Out Cross-Validation

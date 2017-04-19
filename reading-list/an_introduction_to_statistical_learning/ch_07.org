@@ -1,0 +1,36 @@
+[[../index.org][Main Index]]
+[[../index.org][Reading List]]
+[[../an_introduction_to_statistical_learning.org][Book]]
+
+* Linear Model Selection and Regularization
+** Lectures
+   + [ ] Playlist
+     + [ ] [[https://www.youtube.com/watch?v=gtXQXA7qF3c][Polynomial Regression and Step Functions]]
+     + [ ] [[https://www.youtube.com/watch?v=7ZIqzTNB8lk][Piecewise Polynomials and Splines]]
+     + [ ] [[https://www.youtube.com/watch?v=mxXHJa1DsWQ][Smoothing Splines]]
+     + [ ] [[https://www.youtube.com/watch?v=N2hBXqPiegQ][Local Regression and Generalized Additive Models]]
+     + [ ] [[https://www.youtube.com/watch?v=uQBnDGu6TYU][Lab: Polynomials]]
+     + [ ] [[https://www.youtube.com/watch?v=DCn83aXXuHc][Lab: Splines and Generalized Additive Models]]
+** Reading List
+1. [ ] Polynomial Regression
+2. [ ] Step Functions
+3. [ ] Basis Functions
+4. [ ] Regression Splines
+   1. [ ] Piecewise Polynomials
+   2. [ ] Constraints and Splines
+   3. [ ] The Spline Basis Representation
+   4. [ ] Choosing the Number and Locations
+of the Knots
+   5. [ ] Comparison to Polynomial Regression
+5. [ ] Smoothing Splines
+   1. [ ] An Overview of Smoothing Splines
+   2. [ ] Choosing the Smoothing Parameter λ
+6. [ ] Local Regression
+7. [ ] Generalized Additive Models
+   1. [ ] GAMs for Regression Problems
+   2. [ ] GAMs for Classification Problems
+8. [ ] Lab: Non-linear Modeling
+   1. [ ] Polynomial Regression and Step Functions
+   2. [ ] Splines
+   3. [ ] GAMs
+9. [ ] Exercises

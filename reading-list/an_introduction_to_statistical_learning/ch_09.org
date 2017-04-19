@@ -1,0 +1,38 @@
+[[../index.org][Main Index]]
+[[../index.org][Reading List]]
+[[../an_introduction_to_statistical_learning.org][Book]]
+
+* Linear Model Selection and Regularization
+** Lectures
+   + [ ] Playlist
+     + [ ] [[https://www.youtube.com/watch?v=QpbynqiTCsY][Maximal Margin Classifier]]
+     + [ ] [[https://www.youtube.com/watch?v=xKsTsGE7KpI][Support Vector Classifier]]
+     + [ ] [[https://www.youtube.com/watch?v=dm32QvCW7wE][Kernels and Support Vector Machines]]
+     + [ ] [[https://www.youtube.com/watch?v=mI18GD4_ysE][Example and Comparison with Logistic Regression]]
+     + [ ] [[https://www.youtube.com/watch?v=qhyyufR0930][Lab: Support Vector Machine for Classification]]
+     + [ ] [[https://www.youtube.com/watch?v=L3n2VF7yKkk][Lab: Nonlinear Support Vector Machine]]
+** Reading List
+1. [ ] Maximal Margin Classifier
+   1. [ ] What Is a Hyperplane?
+   2. [ ] Classification Using a Separating Hyperplane
+   3. [ ] The Maximal Margin Classifier
+   4. [ ] Construction of the Maximal Margin Classifier
+   5. [ ] The Non-separable Case
+2. [ ] Support Vector Classifiers
+   1. [ ] Overview of the Support Vector Classifier
+   2. [ ] Details of the Support Vector Classifier
+3. [ ] Support Vector Machines
+   1. [ ] Classification with Non-linear DecisionBoundaries
+   2. [ ] The Support Vector Machine
+   3. [ ] An Application to the Heart Disease Data
+4. [ ] SVMs with More than Two Classes
+   1. [ ] One-Versus-One Classification
+   2. [ ] One-Versus-All Classification
+5. [ ] Relationship to Logistic Regression
+6. [ ] Lab: Support Vector Machines
+   1. [ ] Support Vector Classifier
+   2. [ ] Support Vector Machine
+   3. [ ] ROC Curves
+   4. [ ] SVM with Multiple Classes
+   5. [ ] Application to Gene Expression Data
+7. [ ] Exercises

@@ -10,120 +10,14 @@
 3. [X] [[./an_introduction_to_statistical_learning/ch_03.org][Linear Regression]]
 4. [X] [[./an_introduction_to_statistical_learning/ch_04.org][Classification]]
 5. [ ] [[./an_introduction_to_statistical_learning/ch_05.org][Resampling Methods]]
+6. [ ] [[./an_introduction_to_statistical_learning/ch_06.org][Linear Model Selection and Regularization]]
+7. [ ] [[./an_introduction_to_statistical_learning/ch_07.org][Moving Beyond Linearity]]
+8. [ ] [[./an_introduction_to_statistical_learning/ch_08.org][Tree-Based Methods]]
+9. [ ] [[./an_introduction_to_statistical_learning/ch_09.org][Support Vector Machines]]
+10. [ ] [[./an_introduction_to_statistical_learning/ch_10.org][Unsupervised Learning]]
 
-6 Linear Model Selection and Regularization 203
-6.1 Subset Selection . . . . . . . . . . . . . . . . . . . . . . . . 205
-6.1.1 Best Subset Selection . . . . . . . . . . . . . . . . . 205
-6.1.2 Stepwise Selection . . . . . . . . . . . . . . . . . . . 207
-6.1.3 Choosing the Optimal Model . . . . . . . . . . . . . 210
-6.2 Shrinkage Methods . . . . . . . . . . . . . . . . . . . . . . . 214
-6.2.1 Ridge Regression . . . . . . . . . . . . . . . . . . . . 215
-6.2.2 The Lasso . . . . . . . . . . . . . . . . . . . . . . . . 219
-6.2.3 Selecting the Tuning Parameter . . . . . . . . . . . . 227
-6.3 Dimension Reduction Methods . . . . . . . . . . . . . . . . 228
-6.3.1 Principal Components Regression . . . . . . . . . . . 230
-6.3.2 Partial Least Squares . . . . . . . . . . . . . . . . . 237
-6.4 Considerations in High Dimensions . . . . . . . . . . . . . . 238
-6.4.1 High-Dimensional Data . . . . . . . . . . . . . . . . 238
-6.4.2 What Goes Wrong in High Dimensions? . . . . . . . 239
-6.4.3 Regression in High Dimensions . . . . . . . . . . . . 241
-6.4.4 Interpreting Results in High Dimensions . . . . . . . 243
-6.5 Lab 1: Subset Selection Methods . . . . . . . . . . . . . . . 244
-6.5.1 Best Subset Selection . . . . . . . . . . . . . . . . . 244
-6.5.2 Forward and Backward Stepwise Selection . . . . . . 247
-6.5.3 Choosing Among Models Using the Validation
-Set Approach and Cross-Validation . . . . . . . . . . 248
-xii Contents
-6.6 Lab 2: Ridge Regression and the Lasso . . . . . . . . . . . . 251
-6.6.1 Ridge Regression . . . . . . . . . . . . . . . . . . . . 251
-6.6.2 The Lasso . . . . . . . . . . . . . . . . . . . . . . . . 255
-6.7 Lab 3: PCR and PLS Regression . . . . . . . . . . . . . . . 256
-6.7.1 Principal Components Regression . . . . . . . . . . . 256
-6.7.2 Partial Least Squares . . . . . . . . . . . . . . . . . 258
-6.8 Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . 259
-7 Moving Beyond Linearity 265
-7.1 Polynomial Regression . . . . . . . . . . . . . . . . . . . . . 266
-7.2 Step Functions . . . . . . . . . . . . . . . . . . . . . . . . . 268
-7.3 Basis Functions . . . . . . . . . . . . . . . . . . . . . . . . . 270
-7.4 Regression Splines . . . . . . . . . . . . . . . . . . . . . . . 271
-7.4.1 Piecewise Polynomials . . . . . . . . . . . . . . . . . 271
-7.4.2 Constraints and Splines . . . . . . . . . . . . . . . . 271
-7.4.3 The Spline Basis Representation . . . . . . . . . . . 273
-7.4.4 Choosing the Number and Locations
-of the Knots . . . . . . . . . . . . . . . . . . . . . . 274
-7.4.5 Comparison to Polynomial Regression . . . . . . . . 276
-7.5 Smoothing Splines . . . . . . . . . . . . . . . . . . . . . . . 277
-7.5.1 An Overview of Smoothing Splines . . . . . . . . . . 277
-7.5.2 Choosing the Smoothing Parameter λ . . . . . . . . 278
-7.6 Local Regression . . . . . . . . . . . . . . . . . . . . . . . . 280
-7.7 Generalized Additive Models . . . . . . . . . . . . . . . . . 282
-7.7.1 GAMs for Regression Problems . . . . . . . . . . . . 283
-7.7.2 GAMs for Classification Problems . . . . . . . . . . 286
-7.8 Lab: Non-linear Modeling . . . . . . . . . . . . . . . . . . . 287
-7.8.1 Polynomial Regression and Step Functions . . . . . 288
-7.8.2 Splines . . . . . . . . . . . . . . . . . . . . . . . . . . 293
-7.8.3 GAMs . . . . . . . . . . . . . . . . . . . . . . . . . . 294
-7.9 Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . 297
-8 Tree-Based Methods 303
-8.1 The Basics of Decision Trees . . . . . . . . . . . . . . . . . 303
-8.1.1 Regression Trees . . . . . . . . . . . . . . . . . . . . 304
-8.1.2 Classification Trees . . . . . . . . . . . . . . . . . . . 311
-8.1.3 Trees Versus Linear Models . . . . . . . . . . . . . . 314
-8.1.4 Advantages and Disadvantages of Trees . . . . . . . 315
-8.2 Bagging, Random Forests, Boosting . . . . . . . . . . . . . 316
-8.2.1 Bagging . . . . . . . . . . . . . . . . . . . . . . . . . 316
-8.2.2 Random Forests . . . . . . . . . . . . . . . . . . . . 319
-8.2.3 Boosting . . . . . . . . . . . . . . . . . . . . . . . . . 321
-8.3 Lab: Decision Trees . . . . . . . . . . . . . . . . . . . . . . . 323
-8.3.1 Fitting Classification Trees . . . . . . . . . . . . . . 323
-8.3.2 Fitting Regression Trees . . . . . . . . . . . . . . . . 327
-Contents xiii
-8.3.3 Bagging and Random Forests . . . . . . . . . . . . . 328
-8.3.4 Boosting . . . . . . . . . . . . . . . . . . . . . . . . . 330
-8.4 Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . 332
-9 Support Vector Machines 337
-9.1 Maximal Margin Classifier . . . . . . . . . . . . . . . . . . . 338
-9.1.1 What Is a Hyperplane? . . . . . . . . . . . . . . . . 338
-9.1.2 Classification Using a Separating Hyperplane . . . . 339
-9.1.3 The Maximal Margin Classifier . . . . . . . . . . . . 341
-9.1.4 Construction of the Maximal Margin Classifier . . . 342
-9.1.5 The Non-separable Case . . . . . . . . . . . . . . . . 343
-9.2 Support Vector Classifiers . . . . . . . . . . . . . . . . . . . 344
-9.2.1 Overview of the Support Vector Classifier . . . . . . 344
-9.2.2 Details of the Support Vector Classifier . . . . . . . 345
-9.3 Support Vector Machines . . . . . . . . . . . . . . . . . . . 349
-9.3.1 Classification with Non-linear Decision
-Boundaries . . . . . . . . . . . . . . . . . . . . . . . 349
-9.3.2 The Support Vector Machine . . . . . . . . . . . . . 350
-9.3.3 An Application to the Heart Disease Data . . . . . . 354
-9.4 SVMs with More than Two Classes . . . . . . . . . . . . . . 355
-9.4.1 One-Versus-One Classification . . . . . . . . . . . . . 355
-9.4.2 One-Versus-All Classification . . . . . . . . . . . . . 356
-9.5 Relationship to Logistic Regression . . . . . . . . . . . . . . 356
-9.6 Lab: Support Vector Machines . . . . . . . . . . . . . . . . 359
-9.6.1 Support Vector Classifier . . . . . . . . . . . . . . . 359
-9.6.2 Support Vector Machine . . . . . . . . . . . . . . . . 363
-9.6.3 ROC Curves . . . . . . . . . . . . . . . . . . . . . . 365
-9.6.4 SVM with Multiple Classes . . . . . . . . . . . . . . 366
-9.6.5 Application to Gene Expression Data . . . . . . . . 366
-9.7 Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . 368
-10 Unsupervised Learning 373
-10.1 The Challenge of Unsupervised Learning . . . . . . . . . . . 373
-10.2 Principal Components Analysis . . . . . . . . . . . . . . . . 374
-10.2.1 What Are Principal Components? . . . . . . . . . . 375
-10.2.2 Another Interpretation of Principal Components . . 379
-10.2.3 More on PCA . . . . . . . . . . . . . . . . . . . . . . 380
-10.2.4 Other Uses for Principal Components . . . . . . . . 385
-10.3 Clustering Methods . . . . . . . . . . . . . . . . . . . . . . . 385
-10.3.1 K-Means Clustering . . . . . . . . . . . . . . . . . . 386
-10.3.2 Hierarchical Clustering . . . . . . . . . . . . . . . . . 390
-10.3.3 Practical Issues in Clustering . . . . . . . . . . . . . 399
-10.4 Lab 1: Principal Components Analysis . . . . . . . . . . . . 401
-xiv Contents
-10.5 Lab 2: Clustering . . . . . . . . . . . . . . . . . . . . . . . . 404
-10.5.1 K-Means Clustering . . . . . . . . . . . . . . . . . . 404
-10.5.2 Hierarchical Clustering . . . . . . . . . . . . . . . . . 406
-10.6 Lab 3: NCI60 Data Example . . . . . . . . . . . . . . . . . 407
-10.6.1 PCA on the NCI60 Data . . . . . . . . . . . . . . . 408
-10.6.2 Clustering the Observations of the NCI60 Data . . . 410
-10.7 Exercises . . . . . . . . . . . . . . . . . . . . . . . . . . . . 413
+** Interviews
++ [ ] [[https://www.youtube.com/watch?v=jk9S3RTAl38][Interview with John Chambers]]
++ [ ] [[https://www.youtube.com/watch?v=6l9V1sINzhE][Interview with Bradley Efron]]
++ [ ] [[https://www.youtube.com/watch?v=79tR7BvYE6w][Interview with Jerome Friedman]]
++ [ ] [[https://www.youtube.com/watch?v=MEMGOlJxxz0][Interviews with statistics graduate students]]
