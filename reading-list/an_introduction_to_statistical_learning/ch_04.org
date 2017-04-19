@@ -3,6 +3,20 @@
 [[../an_introduction_to_statistical_learning.org][Book]]
 
 * Classification
+** Lectures
+   + [ ] [[https://www.youtube.com/playlist?list=PL5-da3qGB5IC4vaDba5ClatUmFppXLAhE][Playlist]]
+     + [ ] [[https://www.youtube.com/watch?v=sqq21-VIa1c][Introduction to Classification]]
+     + [ ] [[https://www.youtube.com/watch?v=31Q5FGRnxt4][Logistic Regression and Maximum Likelihood]]
+     + [ ] [[https://www.youtube.com/watch?v=MpX8rVv_u4E][Multivariate Logistic Regression and Confounding]]
+     + [ ] [[https://www.youtube.com/watch?v=GavRXXEHGqU][Case-Control Sampling and Multiclass Logistic Regression]]
+     + [ ] [[https://www.youtube.com/watch?v=RfrGiG1Hm3M][Linear Discriminant Analysis and Bayes Theorem]]
+     + [ ] [[https://www.youtube.com/watch?v=QG0pVJXT6EU][Univariate Linear Discriminant Analysis]]
+     + [ ] [[https://www.youtube.com/watch?v=X4VDZDp2vqw][Multivariate Linear Discriminant Analysis and ROC Curves]]
+     + [ ] [[https://www.youtube.com/watch?v=6FiNGTYAOAA][Quadratic Discriminant Analysis and Naive Bayes]]
+     + [ ] [[https://www.youtube.com/watch?v=TxvEVc8YNlU][Lab: Logistic Regression]]
+     + [ ] [[https://www.youtube.com/watch?v=2cl7JiPzkBY][Lab: Linear Discriminant Analysis]]
+     + [ ] [[https://www.youtube.com/watch?v=9TVVF7CS3F4][Lab: K-Nearest Neighbors]]
+** Reading List
 1. [X] An Overview of Classification
 2. [X] Why Not Linear Regression?
 3. [X] Logistic Regression
