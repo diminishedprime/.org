@@ -1,6 +1,8 @@
 [[../index.org][Home]]
 
 * Songs
+** Sorority Noise
++ [[./artschool_wannabe.org][Artschool Wannabe]]
 ** Modest Mouse
 + [[./float_on.org][Float On]]
 ** The Killers
