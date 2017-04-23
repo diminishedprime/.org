@@ -1,4 +1,5 @@
-+ [[../index.org][Main Index]]
+[[../../index.org][Main Index]]
+[[../index.org][Programmey Stuff]]
 
 username: mjhclojure
 

@@ -1,6 +1,7 @@
-[[./index.org][Home]]
+[[../index.org][Home]]
 
-+ [[./algorithms/index.org][Algorithms]
++ [[./euler/index.org][Project Euler]]
++ [[./algorithms/index.org][Algorithms]]
 + [[./programmey_stuff/programming_ideas.org][Programming Ideas]]
 + [[./programmey_stuff/write_yourself_a_scheme.org][Write Yourself A Scheme]]
 + [[./programmey_stuff/build_your_own_text_editor.org][Build Your Own Text Editor]]

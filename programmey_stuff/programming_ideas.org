@@ -1,4 +1,4 @@
-+ [[./index.org][Main Index]]
++ [[../index.org][Main Index]]
 
 * Programming Ideas
 1) Text completion using a custom dictionary.
