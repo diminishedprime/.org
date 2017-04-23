@@ -1,4 +1,4 @@
 [[../index.org][Home]]
-[[../programmey_stuff.org][Programmey Stuff]]
+[[./index.org][Programmey Stuff]]
 
 * [[http://viewsourcecode.org/snaptoken/kilo/][Build Your Own Text Editor]]
