@@ -1,3 +1,4 @@
 [[./index.org][Home]]
 
 + [[./programmey_stuff/write_yourself_a_scheme.org][Write Yourself A Scheme]]
++ [[./programmey_stuff/build_your_own_text_editor.org][Build Your Own Text Editor]]
