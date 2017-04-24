@@ -4,7 +4,7 @@
 
 * Resampling Methods
 ** Lectures
-   + [ ] Playlist
+   + [ ] [[https://www.youtube.com/playlist?list=PL5-da3qGB5IA6E6ZNXu7dp89_uv8yocmf][Playlist]]
      + [ ] [[https://www.youtube.com/watch?v=_2ij6eaaSl0][Estimating Prediction Error and Validation Set Approach]]
      + [ ] [[https://www.youtube.com/watch?v=nZAM5OXrktY][K-fold Cross-Validation]]
      + [ ] [[https://www.youtube.com/watch?v=S06JpVoNaA0][Cross-Validation: The Right and Wrong Ways]]
@@ -13,12 +13,12 @@
      + [ ] [[https://www.youtube.com/watch?v=6dSXlqHAoMk][Lab: Cross-Validation]]
      + [ ] [[https://www.youtube.com/watch?v=YVSmsWoBKnA][Lab: The Bootstrap]]
 ** Reading List
-1. [ ] Cross-Validation
-   1. [ ] The Validation Set Approach
-   2. [ ] Leave-One-Out Cross-Validation
-   3. [ ] k-Fold Cross-Validation
-   4. [ ] Bias-Variance Trade-Off for k-Fold Cross-Validation
-   5. [ ] Cross-Validation on Classification Problems
+1. [X] Cross-Validation
+   1. [X] The Validation Set Approach
+   2. [X] Leave-One-Out Cross-Validation
+   3. [X] k-Fold Cross-Validation
+   4. [X] Bias-Variance Trade-Off for k-Fold Cross-Validation
+   5. [X] Cross-Validation on Classification Problems
 2. [ ] The Bootstrap
 3. [ ] Lab: Cross-Validation and the Bootstrap
    1. [ ] The Validation Set Approach
