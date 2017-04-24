@@ -4,18 +4,18 @@
 
 * Classification
 ** Lectures
-   + [-] [[https://www.youtube.com/playlist?list=PL5-da3qGB5IC4vaDba5ClatUmFppXLAhE][Playlist]]
+   + [X] [[https://www.youtube.com/playlist?list=PL5-da3qGB5IC4vaDba5ClatUmFppXLAhE][Playlist]]
      + [X] [[https://www.youtube.com/watch?v=sqq21-VIa1c][Introduction to Classification]]
      + [X] [[https://www.youtube.com/watch?v=31Q5FGRnxt4][Logistic Regression and Maximum Likelihood]]
-     + [ ] [[https://www.youtube.com/watch?v=MpX8rVv_u4E][Multivariate Logistic Regression and Confounding]]
-     + [ ] [[https://www.youtube.com/watch?v=GavRXXEHGqU][Case-Control Sampling and Multiclass Logistic Regression]]
-     + [ ] [[https://www.youtube.com/watch?v=RfrGiG1Hm3M][Linear Discriminant Analysis and Bayes Theorem]]
-     + [ ] [[https://www.youtube.com/watch?v=QG0pVJXT6EU][Univariate Linear Discriminant Analysis]]
-     + [ ] [[https://www.youtube.com/watch?v=X4VDZDp2vqw][Multivariate Linear Discriminant Analysis and ROC Curves]]
-     + [ ] [[https://www.youtube.com/watch?v=6FiNGTYAOAA][Quadratic Discriminant Analysis and Naive Bayes]]
-     + [ ] [[https://www.youtube.com/watch?v=TxvEVc8YNlU][Lab: Logistic Regression]]
-     + [ ] [[https://www.youtube.com/watch?v=2cl7JiPzkBY][Lab: Linear Discriminant Analysis]]
-     + [ ] [[https://www.youtube.com/watch?v=9TVVF7CS3F4][Lab: K-Nearest Neighbors]]
+     + [X] [[https://www.youtube.com/watch?v=MpX8rVv_u4E][Multivariate Logistic Regression and Confounding]]
+     + [X] [[https://www.youtube.com/watch?v=GavRXXEHGqU][Case-Control Sampling and Multiclass Logistic Regression]]
+     + [X] [[https://www.youtube.com/watch?v=RfrGiG1Hm3M][Linear Discriminant Analysis and Bayes Theorem]]
+     + [X] [[https://www.youtube.com/watch?v=QG0pVJXT6EU][Univariate Linear Discriminant Analysis]]
+     + [X] [[https://www.youtube.com/watch?v=X4VDZDp2vqw][Multivariate Linear Discriminant Analysis and ROC Curves]]
+     + [X] [[https://www.youtube.com/watch?v=6FiNGTYAOAA][Quadratic Discriminant Analysis and Naive Bayes]]
+     + [X] [[https://www.youtube.com/watch?v=TxvEVc8YNlU][Lab: Logistic Regression]]
+     + [X] [[https://www.youtube.com/watch?v=2cl7JiPzkBY][Lab: Linear Discriminant Analysis]]
+     + [X] [[https://www.youtube.com/watch?v=9TVVF7CS3F4][Lab: K-Nearest Neighbors]]
 ** Reading List
 1. [X] An Overview of Classification
 2. [X] Why Not Linear Regression?
@@ -37,7 +37,9 @@
           means that there will be less and less observations that can be
           used.
         + [X] (e) apparently the =l = 0.1 for p=1=, =0.1^(1/2) for p=2= and
-          =0.1^(1/n) for p=n=
+          =0.1^(1/n) f2. [ ] Clustering the Observations of the NCI60 Data
+7. [ ] Exercises
+or p=n=
      5. [X]
         + [X] (a) If the Bayes decision boundary is linear, we would expect the
           QDA to perform better on the training set since a higher flexibility
