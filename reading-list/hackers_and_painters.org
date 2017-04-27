@@ -18,7 +18,7 @@
    :END:
 ** DONE 5. The Other Road Ahead
    CLOSED: [2017-04-06 Thu 13:30]
-** TODO 6. How to Make Wealth
+** DONE 6. How to Make Wealth
 ** TODO 7. Mind the Gap
 ** TODO 8. A Plan for Spam
 ** TODO 9. Taste for Makers
