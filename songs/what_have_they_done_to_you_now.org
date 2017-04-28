@@ -5,9 +5,7 @@
 ** What Have They Done To You Now
    #+BEGIN_SRC text
      C       Am        Gm
-
      C       Am        Gm
-
 
      C         Am              Gm
      If you're gonna fool around

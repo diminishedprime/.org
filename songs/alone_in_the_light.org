@@ -4,6 +4,7 @@
 * Kim Tillman
 ** Alone In The Light
    #+BEGIN_SRC text
+     C Am G
      I am a tree
      Blossoming with apologies
      And sometimes I can't breathe
