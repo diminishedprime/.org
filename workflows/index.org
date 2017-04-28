@@ -6,6 +6,14 @@
 + [[./om_next.org][Om Next Workflow]]
 + [[./org.org][Org features etc]]
 * Commands
++ Open a gui file browser from command line
+  #+BEGIN_SRC sh
+    xdg-open . &
+  #+END_SRC
++ Connect to remote file system from the xdg thingy
+  #+BEGIN_SRC sh
+    sftp://root@servername/directory
+  #+END_SRC
 + Pull on all repos under the pwd.
   #+BEGIN_SRC sh
     find . -name .git -type d -execdir git pull -v ';'

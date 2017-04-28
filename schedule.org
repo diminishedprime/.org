@@ -1,0 +1,55 @@
+[[./index.org][Main Index]]
+
+|-------+---------------+-----------+----------+-----------+----------+----------+----------|
+|       | Sunday        | Monday    | Tuesday  | Wednesday | Thursday | Friday   | Saturday |
+|-------+---------------+-----------+----------+-----------+----------+----------+----------|
+|  0:00 |               | sleep     | sleep    | sleep     | sleep    |          |          |
+|  0:30 |               | sleep     | sleep    | sleep     | sleep    |          |          |
+|  1:00 |               | sleep     | sleep    | sleep     | sleep    |          |          |
+|  1:30 |               | sleep     | sleep    | sleep     | sleep    |          |          |
+|  2:00 |               | sleep     | sleep    | sleep     | sleep    |          |          |
+|  2:30 |               | sleep     | sleep    | sleep     | sleep    |          |          |
+|  3:00 |               | sleep     | sleep    | sleep     | sleep    |          |          |
+|  3:30 |               | sleep     | sleep    | sleep     | sleep    |          |          |
+|  4:00 |               | sleep     | sleep    | sleep     | sleep    |          |          |
+|  4:30 |               | sleep     | sleep    | sleep     | sleep    |          |          |
+|  5:00 |               | prepare   | prepare  | prepare   | prepare  |          |          |
+|  5:30 |               | prepare   | prepare  | prepare   | prepare  |          |          |
+|  6:00 |               | work      | work     | work      | work     |          |          |
+|  6:30 |               | work      | work     | work      | work     |          |          |
+|  7:00 |               | work      | work     | work      | work     |          |          |
+|  7:30 |               | work      | work     | work      | work     |          |          |
+|  8:00 |               | work      | work     | work      | work     |          |          |
+|  8:30 |               | work      | work     | work      | work     |          |          |
+|  9:00 |               | work      | work     | work      | work     |          |          |
+|  9:30 | start laundry | work      | work     | work      | work     |          |          |
+| 10:00 | exercise      | work      | work     | work      | work     | exercise | exercise |
+| 10:30 | exercise      | work      | work     | work      | work     | exercise | exercise |
+| 11:00 | exercise      | work      | work     | work      | work     | exercise | exercise |
+| 11:30 |               | work      | work     | work      | work     |          |          |
+| 12:00 |               | work      | work     | work      | work     |          |          |
+| 12:30 |               | work      | work     | work      | work     |          |          |
+| 13:00 |               | work      | work     | work      | work     |          |          |
+| 13:30 |               | work      | work     | work      | work     |          |          |
+| 14:00 |               | work      | work     | work      | work     |          |          |
+| 14:30 |               | work      | work     | work      | work     |          |          |
+| 15:00 |               | work      | work     | work      | work     |          |          |
+| 15:30 |               | work      | work     | work      | work     |          |          |
+| 16:00 |               | work      | work     | work      | work     |          |          |
+| 16:30 |               | cat stuff |          |           |          |          |          |
+| 17:00 |               | exercise  | exercise |           | exercise |          |          |
+| 17:30 |               | exercise  | exercise |           | exercise |          |          |
+| 18:00 |               |           |          |           |          |          |          |
+| 18:30 |               |           |          |           |          |          |          |
+| 19:00 |               |           |          |           |          |          |          |
+| 19:30 |               |           |          |           |          |          |          |
+| 20:00 |               |           |          |           |          |          |          |
+| 20:30 |               |           |          |           |          |          |          |
+| 21:00 |               |           |          |           |          |          |          |
+| 21:30 |               |           |          |           |          |          |          |
+| 22:00 | sleep         | sleep     | sleep    | sleep     |          |          |          |
+| 22:30 | sleep         | sleep     | sleep    | sleep     |          |          |          |
+| 23:00 | sleep         | sleep     | sleep    | sleep     |          |          |          |
+| 23:30 | sleep         | sleep     | sleep    | sleep     |          |          |          |
+| 24:00 | sleep         | sleep     | sleep    | sleep     |          |          |          |
+|-------+---------------+-----------+----------+-----------+----------+----------+----------|

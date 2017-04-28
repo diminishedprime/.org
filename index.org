@@ -12,3 +12,4 @@
 + [[./quotes.org][Quotes]]
 + [[./dumb.jpg.org][Dumb.jpg]]
 + [[./programmey_stuff/index.org][Programmey Stuff]]
++ [[./schedule.org][Schedule]]
