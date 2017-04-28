@@ -2,20 +2,28 @@
 [[./index.org][Songs]]
 
 * Sorority Noise
-** Artschool Wannabe
+** TODO Artschool Wannabe
 #+BEGIN_SRC fundamental
+  C         E       Am       F
   wiping my eyes of sleep
   drinking yesterday morning's coffee
   slam my head against the wall
   put the same black jeans on
   wear a hat so you can't see my hair
 
+  G                      F
   maybe I won't die this time
   maybe I'll be fine this time
+
+                             C
   maybe i'm my own greatest fear
+                           Em
   maybe i'm too scared to admit that
+                              F
   i might not be as dark as i think
+                    Dm
   maybe i'm not the person
+                         C
   that i never wanted to be
   maybe i'm my own greatest fear
   maybe i'm too scared to admit that

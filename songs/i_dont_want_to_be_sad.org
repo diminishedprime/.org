@@ -1,0 +1,32 @@
+[[../index.org][Home]]
+[[./index.org][Songs]]
+
+* Human Kitten
+** I Don't Want To Be Sad
+   #+BEGIN_SRC text
+     Am, G, F, (C, G, Am)
+     Im always so lonely, frustrated and angry
+     And I never know if its my fault
+     Or if its just my brain working fucking wrong
+
+     I have got problems that I cannot withhold
+     Cause I have got diseases that I cannot control
+
+     G, F, C, G
+     My feelings are at the mercy of my chemical imbalances
+     Im trapped inside the torture of living with bipolar disorder
+
+     Ill always hate myself more than I hate anyone else
+     Ill always hate myself more than I hate anyone else
+     Cause I know that I have earned it
+     From years and years of treating myself like shit
+
+     Am, G, (C, G, Am)
+     And I want to believe that its not my fault
+     Am, G, (C, G, F)
+     And I want to believe I can live a fulfilling life
+     G
+     But I might not
+     C
+     I might not
+   #+END_SRC

@@ -1,0 +1,77 @@
+[[../index.org][Home]]
+[[./index.org][Songs]]
+
+* Daniel Knox
+** What Have They Done To You Now
+   #+BEGIN_SRC text
+     C       Am        Gm
+
+     C       Am        Gm
+
+
+     C         Am              Gm
+     If you're gonna fool around
+     C             Am              Gm
+     Why don't you keep it out of town
+     C     Am      E          F
+     Don't give me all the details
+        C           F
+     I don't wanna know
+        C           Fm
+     I don't wanna know
+     C              Am           Gm
+     What have they done to you now?
+
+
+     C           Am                 Gm
+     Guess you'd better keep your pants on
+     C               Am              Gm
+     There's no more tables left to dance on
+     C  Am     E         F
+     I used to carry you home
+     C         F
+     I don't anymore
+     C        Fm
+     Won't anymore
+     C              Am           Gm
+     What have they done to you now?
+
+
+     C       Am        Gm
+
+     Dm    G
+     Old familiar
+     Dm          G
+     Friends to fill your
+     C          F
+     Heart with grief
+         C   F
+     And agony
+
+
+     C       Am        Gm
+
+     C       Am        Gm
+
+
+     C        Am             Gm
+     A little friendly conversation
+     C      Am        Gm
+     Character assassination
+     C Am         E       F
+     I just don't care anymore and
+     C             F
+     I don't wanna know
+     C             Fm
+     I don't wanna know
+     C              Am          Gm
+     What have they done to you now?
+
+
+     C       Am        Gm
+
+     C       Am        Gm
+
+     C
+
+   #+END_SRC

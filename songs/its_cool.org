@@ -1,0 +1,25 @@
+[[../index.org][Home]]
+[[./index.org][Songs]]
+
+* Human Kitten
+** It's Cool
+   #+BEGIN_SRC text
+     I don’t want to be right, I want to be happy
+     I don’t want to be sad, I wanna be sappy
+     I wanna cry to romantic comedies
+     I want to watch stupid action movies
+
+     And if there is a god upstairs, well I bet he likes us
+     Cause we’re good, we’re good, it’s cool, it’s cool
+     I say to myself as I stuff my face with food
+     Stuff my face with food
+     Stuff my face with food
+
+     And there is always so much conflict, I don’t get it
+     I guess I just don’t really hate everything as much as you do, I’m sorry dude
+     You’re consumed with getting the last word and proving yourself true
+     That’s not happiness, that’s just pleasure, please don’t confuse the two
+     Don’t confuse the two
+     Please don’t confuse the two
+     Please don't confuse the two
+   #+END_SRC

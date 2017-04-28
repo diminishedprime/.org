@@ -1,0 +1,43 @@
+[[../index.org][Home]]
+[[./index.org][Songs]]
+
+* CryWank
+** I Am Shit
+   #+BEGIN_SRC text
+     [Intro 1]
+     F#  A  E  D  (x2)
+
+     [Verse]
+     F#                          A
+     Language is scary when over-analysed,
+     E                           D
+     Every word that I say seems far too contrived.
+     F#                             A
+     What are your intentions? I’m ashamed by mine.
+              E                      D
+     When I'm thinking too much I realise I'm unkind.
+        F#                       A
+     Pretend that I’m nicer than I’ll ever be,
+         E                          D
+     I'm selfish and deluded, enjoy my hypocrisy.
+        F#                               A
+     Complain that I’m bored, when being bored is a privilege.
+     E                                  D
+     Act like I’m suffering, there’s no suffering in this.
+     F#                         A
+     First world problems, they breed in my head.
+         E                             D
+     Ethical contradictions between my actions and what I’ve said.
+              F#                       A
+     I should just shut my mouth as evidence piles against me,
+              E                             D
+     that I’m so much worse than I think, exposed as a phoney.
+     F#         A
+     I am shit, I am shit
+     E                   D
+     nurr-nurr nurr-nurr fucking dick.
+     F#         A
+     I am shit, I am shit
+     E                    D    D
+     nurr-nurr nurr-nurr  nurr-nurr
+   #+END_SRC

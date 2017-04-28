@@ -1,6 +1,23 @@
 [[../index.org][Home]]
 
++ [[./what_have_they_done_to_you_now.org][What Have They Done To You Now]]
++ [[./alone_in_the_light.org][Alone In The Light]]
++ [[./artschool_wannabe.org][Artschool Wannabe]]
++ [[./i_am_shit.org][I Am Shit]]
++ [[./i_dont_want_to_be_sad.org][I Don't Want To Be Sad]]
++ [[./its_cool.org][It's Cool]]
++ [[./spent.org][Spent]]
+
 * Songs
+** CryWank
++ [[./i_am_shit.org][I Am Shit]]
+** Human Kitten
++ [[./i_dont_want_to_be_sad.org][I Don't Want To Be Sad]]
++ [[./its_cool.org][It's Cool]]
+** Daniel Knox
++ [[./what_have_they_done_to_you_now.org][What Have They Done To You Now]]
+** Kim Tillman
++ [[./alone_in_the_light.org][Alone In The Light]]
 ** Sorority Noise
 + [[./artschool_wannabe.org][Artschool Wannabe]]
 ** Modest Mouse

@@ -1,0 +1,44 @@
+[[../index.org][Home]]
+[[./index.org][Songs]]
+
+* Kim Tillman
+** Alone In The Light
+   #+BEGIN_SRC text
+     I am a tree
+     Blossoming with apologies
+     And sometimes I can't breathe
+     Into the wind against my face
+
+     I am afraid
+     Of the attention that I'm paid
+     And sometimes I can't sing
+     Although I'm sitting on your stage
+
+     It's a travesty
+     You won't sing with me
+     Because I'm all alone
+     Alone in the light
+
+     It's a travesty
+     You won't sing with me
+     Because I'm all alone
+     Alone in the light
+
+     I am a fraud
+     All alone with my God
+     Though I pray and I pray
+     I've got nothing to say
+
+     Though I pray and I pray
+     I've got nothing to say
+
+     It's a travesty
+     You won't sing with me
+     Because I'm all alone
+     Alone in the light
+
+     It's a travesty
+     You won't sing with me
+     Because I'm all alone
+     Alone in the light
+   #+END_SRC
