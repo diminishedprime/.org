@@ -4,14 +4,14 @@
 
 * Resampling Methods
 ** Lectures
-   + [-] [[https://www.youtube.com/playlist?list=PL5-da3qGB5IA6E6ZNXu7dp89_uv8yocmf][Playlist]]
+   + [X] [[https://www.youtube.com/playlist?list=PL5-da3qGB5IA6E6ZNXu7dp89_uv8yocmf][Playlist]]
      + [X] [[https://www.youtube.com/watch?v=_2ij6eaaSl0][Estimating Prediction Error and Validation Set Approach]]
      + [X] [[https://www.youtube.com/watch?v=nZAM5OXrktY][K-fold Cross-Validation]]
      + [X] [[https://www.youtube.com/watch?v=S06JpVoNaA0][Cross-Validation: The Right and Wrong Ways]]
      + [X] [[https://www.youtube.com/watch?v=p4BYWX7PTBM][The Bootstrap]]
      + [X] [[https://www.youtube.com/watch?v=BzHz0J9a6k0][More on the Bootstrap]]
-     + [ ] [[https://www.youtube.com/watch?v=6dSXlqHAoMk][Lab: Cross-Validation]]
-     + [ ] [[https://www.youtube.com/watch?v=YVSmsWoBKnA][Lab: The Bootstrap]]
+     + [X] [[https://www.youtube.com/watch?v=6dSXlqHAoMk][Lab: Cross-Validation]]
+     + [X] [[https://www.youtube.com/watch?v=YVSmsWoBKnA][Lab: The Bootstrap]]
 ** Reading List
 1. [X] Cross-Validation
    1. [X] The Validation Set Approach
