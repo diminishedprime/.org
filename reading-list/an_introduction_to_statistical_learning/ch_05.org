@@ -192,8 +192,67 @@
         In this case, we perform sampling with replacement B times and then find
         the corresponding estimates and the standard deviation of those B
         estimates by using equation (5.8).
-   + [ ] Applied
-     5. [@5] [ ]
+   + [-] Applied
+     5. [@5] [X]
+        #+BEGIN_SRC R
+          ## a
+          library(ISLR)
+          attach(Default)
+          set.seed(1)
+          fit.glm <- glm(default ~ income + balance, data = Default, family = "binomial")
+          summary(fit.glm)
+
+          ## b
+          #### i
+          train <- sample(dim(Default)[1], dim(Default)[1] / 2)
+          #### ii
+          fit.glm <- glm(default ~ income + balance,
+                         data = Default,
+                         family = "binomial",
+                         subset = train)
+          summary(fit.glm)
+          #### iii
+          probs <- predict(fit.glm, newdata = Default[-train, ], type = "response")
+          pred.glm <- rep("No", length(probs))
+          pred.glm[probs > 0.5] <- "Yes"
+
+          mean(pred.glm != Default[-train, ]$default)
+
+          train <- sample(dim(Default)[1], dim(Default)[1] / 2)
+          fit.glm <- glm(default ~ income + balance, data = Default, family = "binomial", subset = train)
+          probs <- predict(fit.glm, newdata = Default[-train, ], type = "response")
+          pred.glm <- rep("No", length(probs))
+          pred.glm[probs > 0.5] <- "Yes"
+          mean(pred.glm != Default[-train, ]$default)
+
+          train <- sample(dim(Default)[1], dim(Default)[1] / 2)
+          fit.glm <- glm(default ~ income + balance, data = Default, family = "binomial", subset = train)
+          probs <- predict(fit.glm, newdata = Default[-train, ], type = "response")
+          pred.glm <- rep("No", length(probs))
+          pred.glm[probs > 0.5] <- "Yes"
+          mean(pred.glm != Default[-train, ]$default)
+
+          train <- sample(dim(Default)[1], dim(Default)[1] / 2)
+          fit.glm <- glm(default ~ income + balance, data = Default, family = "binomial", subset = train)
+          probs <- predict(fit.glm, newdata = Default[-train, ], type = "response")
+          pred.glm <- rep("No", length(probs))
+          pred.glm[probs > 0.5] <- "Yes"
+          mean(pred.glm != Default[-train, ]$default)
+
+          ## We see that the validation estimate of the test error rate can be variable,
+          ## depending on precisely which observations are included in the training set
+          ## and which observations are included in the validation set.
+
+          ## d
+          train <- sample(dim(Default)[1], dim(Default)[1] / 2)
+          fit.glm <- glm(default ~ income + balance + student, data = Default, family = "binomial", subset = train)
+          pred.glm <- rep("No", length(probs))
+          probs <- predict(fit.glm, newdata = Default[-train, ], type = "response")
+          pred.glm[probs > 0.5] <- "Yes"
+          mean(pred.glm != Default[-train, ]$default)
+          ## It doesn't appear that adding the dummy variable leads to a reduction in the
+          ## validation set estimate of the test error rate.
+        #+END_SRC
      6. [ ]
      7. [ ]
      8. [ ]
