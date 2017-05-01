@@ -124,4 +124,77 @@
 
         summary(lm(mpg~horsepower+I(horsepower^2), data=Auto))$coef
       #+END_SRC
-4. [ ] Exercises
+4. [-] Exercises
+   + [X] Conceptual
+     1. [X] nope
+     2. [X]
+        + [X] (a) =1-1/n=
+        + [X] (b) =1-1/n=
+        + [X] (c) Since each observation is independent (duplicates are
+          allowed), we just use basic statistics to say that each chance is
+          equal and we are doing it n times.
+        + [X] (d) ((lambda (n) (- 1 (expt (- 1.0 (/ 1.0 n)) n))) 5) => 0.6723199999999999
+        + [X] (e) ((lambda (n) (- 1 (expt (- 1.0 (/ 1.0 n)) n))) 100) => 0.6339676587267709
+        + [X] (f) ((lambda (n) (- 1 (expt (- 1.0 (/ 1.0 n)) n))) 10000) => 0.6321389535670295
+        + [X] (g)
+          #+BEGIN_SRC R
+            x <- 1:100000
+            plot(x, 1 - (1 - 1/x)^x)
+          #+END_SRC
+        + [X] (h)
+          #+BEGIN_SRC R
+            store <- rep(NA, 10000)
+            for (i in 1:10000) {
+                store[i] = sum(sample(1:100, rep=T)==4)>0
+            }
+            mean(store)
+
+            # We know from calculus that the limit(1+x/n)^n = e^x which tells us that 1 -
+            # 1/e ~= 632 as n goes to infinity.
+          #+END_SRC
+     3. [X]
+        + [X] (a) k-foldcross-validation is implemented by taking the n
+          observations and randomly splitting them into k non-overlapping groups
+          of length ~= n/k. These groups act as a valadition set, and the
+          remainder (length(n-n/k)) acts as a training set. The test error is
+          then estimated by averaging the k resulting MSE estimates.
+        + [X] (b)
+          + [X] i. The validation set approach has two main drowbacks compared
+            to k-fold cross-validation. The first is that the validation
+            estimate of the test error rate can be highly variable (depending on
+            precisely which observations are included in the training set and
+            which observations are included in the validation set). The second
+            drawback is that only a subset of the observations are used to fit
+            the model. Since statistical methods tend to perform worse when
+            trained on fewer observatinos, this suggests that the validation set
+            error rate may tend to overestimate the test error rate for the
+            model fit on the entire data set.
+          + [X] ii. The LOOCV cross-validation approach is a special case of
+            k-fold cross-validation in which k=n. This approach has two
+            drawbacks compared to k-fold cross-validation. First, it requires
+            fitting the potentially computationaly expensive model n times
+            compared to k-fold cross-validation which requires the model to be
+            fitted only k times. Second, the LOOCV cross-validation approach may
+            give approximately unbiased estimates of the test error, since each
+            training set contains n−1 observations; however, this approach has
+            higher variance than k-fold cross-validation (since we are averaging
+            the outputs of n fitted models trained on an almost identical set of
+            observations, these outputs are highly correlated, and the mean of
+            highly correlated quantities has higher variance than less
+            correlated ones). So, there is a bias-variance trade-off associated
+            with the choice of k in k-fold cross-validation; typically using k=5
+            or k=10 yield test error rate estimates that suffer neither from
+            excessively high bias nor from very high variance.
+     4. [X] We may estimate the standard deviation of our prediction by using
+        the bootstrap method. In this case, rather than obtaining new
+        independant data sets from the population and fitting our model on those
+        data sets, we obtain repeated random samples from the original data set.
+        In this case, we perform sampling with replacement B times and then find
+        the corresponding estimates and the standard deviation of those B
+        estimates by using equation (5.8).
+   + [ ] Applied
+     5. [@5] [ ]
+     6. [ ]
+     7. [ ]
+     8. [ ]
+     9. [ ]
