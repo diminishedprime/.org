@@ -253,7 +253,44 @@
           ## It doesn't appear that adding the dummy variable leads to a reduction in the
           ## validation set estimate of the test error rate.
         #+END_SRC
-     6. [ ]
+     6. [X]
+        #+BEGIN_SRC R
+          ## a
+          set.seed(1)
+          attach(Default)
+          fit.glm <- glm(default ~ income + balance
+                      ,  data = Default
+                      , family = "binomial"
+                        )
+          summary(fit.glm)
+
+          ### BO: 4.348e-01
+          ### B1: 4.985e-06
+          ### B2: 2.274e-04
+
+          ## b
+          boot.fn <- function(data, index) {
+              fit <- glm(default ~ income + balance
+                       , data = data
+                       , family = "binomial"
+                       , subset = index
+                         )
+              return (coef(fit))
+          }
+
+          ## c
+          library(boot)
+          boot(Default, boot.fn, 1000)
+
+          ### BO: 4.239273e-01
+          ### B1: 4.582525e-06
+          ### B2: 2.267955e-04
+
+          ## d
+
+          ### The estimated standard errors obtained by the two methods are pretty close
+          ### to one another.
+        #+END_SRC
      7. [ ]
      8. [ ]
      9. [ ]
