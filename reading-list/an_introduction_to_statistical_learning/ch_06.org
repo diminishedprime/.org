@@ -20,10 +20,10 @@
      + [ ] [[https://www.youtube.com/watch?v=F8MMHCCoALU][Lab: Model Selection Using Cross-Validation]]
      + [ ] [[https://www.youtube.com/watch?v=1REe3qSotx8][Lab: Ridge Regression and Lasso]]
 ** Reading List
-1. [ ] Subset Selection
-   1. [ ] Best Subset Selection
-   2. [ ] Stepwise Selection
-   3. [ ] Choosing the Optimal Model
+1. [X] Subset Selection
+   1. [X] Best Subset Selection
+   2. [X] Stepwise Selection
+   3. [X] Choosing the Optimal Model
 2. [ ] Shrinkage Methods
    1. [ ] Ridge Regression
    2. [ ] The Lasso
