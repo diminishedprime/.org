@@ -124,7 +124,7 @@
 
         summary(lm(mpg~horsepower+I(horsepower^2), data=Auto))$coef
       #+END_SRC
-4. [-] Exercises
+4. [X] Exercises
    + [X] Conceptual
      1. [X] nope
      2. [X]
@@ -192,7 +192,7 @@
         In this case, we perform sampling with replacement B times and then find
         the corresponding estimates and the standard deviation of those B
         estimates by using equation (5.8).
-   + [-] Applied
+   + [X] Applied
      5. [@5] [X]
         #+BEGIN_SRC R
           ## a
@@ -291,6 +291,262 @@
           ### The estimated standard errors obtained by the two methods are pretty close
           ### to one another.
         #+END_SRC
-     7. [ ]
-     8. [ ]
-     9. [ ]
+     7. [X]
+        #+BEGIN_SRC R
+          ## a
+          library(ISLR)
+          set.seed(1)
+          attach(Weekly)
+          fit.glm <- glm(Direction ~ Lag1 + Lag2
+                       , data = Weekly
+                       , family = "binomial"
+                         )
+          summary(fit.glm)
+          ### Deviance Residuals:
+          ### Min      1Q  Median      3Q     Max
+          ### -1.623  -1.261   1.001   1.083   1.506
+          ###
+          ### Coefficients:
+          ### Estimate Std. Error z value Pr(>|z|)
+          ### (Intercept)  0.22122    0.06147   3.599 0.000319 ***
+          ### Lag1        -0.03872    0.02622  -1.477 0.139672
+          ### Lag2         0.06025    0.02655   2.270 0.023232 *
+          ### ---
+          ### Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+          ###
+          ### (Dispersion parameter for binomial family taken to be 1)
+          ###
+          ### Null deviance: 1496.2  on 1088  degrees of freedom
+          ### Residual deviance: 1488.2  on 1086  degrees of freedom
+          ### AIC: 1494.2
+          ###
+          ### Number of Fisher Scoring iterations: 4
+
+
+          ## b
+          fit.glm.1 <- glm(Direction ~ Lag1 + Lag2
+                         , data = Weekly[-1,]
+                         , family = "binomial"
+                         )
+          summary(fit.glm.1)
+          ### Deviance Residuals:
+          ### Min       1Q   Median       3Q      Max
+          ### -1.6258  -1.2617   0.9999   1.0819   1.5071
+          ###
+          ### Coefficients:
+          ### Estimate Std. Error z value Pr(>|z|)
+          ### (Intercept)  0.22324    0.06150   3.630 0.000283 ***
+          ### Lag1        -0.03843    0.02622  -1.466 0.142683
+          ### Lag2         0.06085    0.02656   2.291 0.021971 *
+          ### ---
+          ### Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+          ###
+          ### (Dispersion parameter for binomial family taken to be 1)
+          ###
+          ### Null deviance: 1494.6  on 1087  degrees of freedom
+          ### Residual deviance: 1486.5  on 1085  degrees of freedom
+          ### AIC: 1492.5
+          ###
+          ### Number of Fisher Scoring iterations: 4
+
+
+          ## c
+          predict.glm(fit.glm.1
+                    , Weekly[1, ]
+                    , type = "response"
+                      ) > 0.5
+          ### TRUE
+
+          ### We may conclude that the prediction for the first observation is "Up". This
+          ### observation was not correctly classified as the true direction is "Down"
+
+          ## d
+          error <- rep(0, dim(Weekly)[1])
+          for (i in 1:dim(Weekly)[1]) {
+              fit.glm <- glm(Direction ~ Lag1 + Lag2
+                           , data = Weekly[-i, ]
+                           , family = "binomial")
+              pred.up <- predict.glm(fit.glm
+                                   , Weekly[i, ]
+                                   , type = "response") > 0.5
+              true.up <- Weekly[i, ]$Direction == "Up"
+              if (pred.up != true.up) {
+                  error[i] <- 1
+              }
+          }
+          error
+
+          ## e
+          mean(error)
+
+          ### 0.4499541
+
+          ### The LOOCV estimate for the test error rate is 44.99%
+        #+END_SRC
+     8. [X]
+        #+BEGIN_SRC R
+          ## a
+          set.seed(1)
+          y <- rnorm(100)
+          x <- rnorm(100)
+          y <- x - 2*x^2 + rnorm(100)
+
+          ### n is 100
+          ### p is 2
+
+          ## b
+          plot(x, y)
+
+          ## The data suggests a curved (looks a lot like a parabola) relationship.
+
+          ## c
+          library(boot)
+          set.seed(1)
+          Data <- data.frame(x, y)
+          fit.glm.1 <- glm(y ~ x)
+          cv.glm(Data, fit.glm.1)$delta[1]
+
+          fit.glm.2 <- glm(y ~ poly(x, 2))
+          cv.glm(Data, fit.glm.2)$delta[1]
+
+          fit.glm.3 <- glm(y ~ poly(x, 3))
+          cv.glm(Data, fit.glm.3)$delta[1]
+
+          fit.glm.4 <- glm(y ~ poly(x, 4))
+          cv.glm(Data, fit.glm.4)$delta[1]
+
+          ## d
+          library(boot)
+          set.seed(2)
+          Data <- data.frame(x, y)
+          fit.glm.1 <- glm(y ~ x)
+          cv.glm(Data, fit.glm.1)$delta[1]
+
+          fit.glm.2 <- glm(y ~ poly(x, 2))
+          cv.glm(Data, fit.glm.2)$delta[1]
+
+          fit.glm.3 <- glm(y ~ poly(x, 3))
+          cv.glm(Data, fit.glm.3)$delta[1]
+
+          fit.glm.4 <- glm(y ~ poly(x, 4))
+          cv.glm(Data, fit.glm.4)$delta[1]
+
+          ### The results were identical in c and d because LOOCV evaluates n folds of a
+          ### single observation.
+
+          ## e
+          ### We see that the LOOCV estimate for the test MSE is minimum for fit.glm.2.
+          ### This is not surprising for a bunch of reasons, not least of all being the
+          ### picture we saw in b show a quadratic relationship.
+
+          ## f
+          summary(fit.glm.4)
+
+          ### Deviance Residuals:
+          ### Min       1Q   Median       3Q      Max
+          ### -2.8914  -0.5244   0.0749   0.5932   2.7796
+          ###
+          ### Coefficients:
+          ### Estimate Std. Error t value Pr(>|t|)
+          ### (Intercept)  -1.8277     0.1041 -17.549   <2e-16 ***
+          ### poly(x, 4)1   2.3164     1.0415   2.224   0.0285 *
+          ### poly(x, 4)2 -21.0586     1.0415 -20.220   <2e-16 ***
+          ### poly(x, 4)3  -0.3048     1.0415  -0.293   0.7704
+          ### poly(x, 4)4  -0.4926     1.0415  -0.473   0.6373
+          ### ---
+          ### Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+          ###
+          ### (Dispersion parameter for gaussian family taken to be 1.084654)
+          ###
+          ### Null deviance: 552.21  on 99  degrees of freedom
+          ### Residual deviance: 103.04  on 95  degrees of freedom
+          ### AIC: 298.78
+          ###
+          ### Number of Fisher Scoring iterations: 2
+
+          ### These results show that the linear and quadratic terms are statistically
+          ### significant while the cubic and 4th degree terms are not. This does agree
+          ### with our cross-validation results which had a minimum for the quadratic
+          ### model.
+        #+END_SRC
+     9. [X]
+        #+BEGIN_SRC R
+          ## a
+          library(MASS)
+          attach(Boston)
+          mu.hat <- mean(medv)
+          mu.hat ## => 22.53281
+
+          ## b
+          se.hat <- sd(medv) / sqrt(length(medv))
+          se.hat ## => 0.4088611
+
+          ## c
+          set.seed(1)
+          boot.fn <- function(data, index) {
+              mu <- mean(data[index])
+              return (mu)
+          }
+          boot(medv, boot.fn, 1000)
+          ### Bootstrap Statistics :
+          ### original      bias         std. error
+          ### t1* 22.53281  0.008517589  0.4119374
+
+          ### The bootstrap estimated standard error of mu.hat of 0.4119 is very close the
+          ### the estimate of 0.4088 found in b.
+
+          ## d
+          t.test(medv)
+
+          ### One Sample t-test
+          ###
+          ### data:  medv
+          ### t = 55.111, df = 505, p-value < 2.2e-16
+          ### alternative hypothesis: true mean is not equal to 0
+          ### 95 percent confidence interval:
+          ### 21.72953 23.33608
+          ### sample estimates:
+          ### mean of x
+          ### 22.53281
+
+          CI.mu.hat <- c(22.53 -2 * 0.4119, 22.53 + 2 * 0.4119)
+          CI.mu.hat ## => 21.7062 23.3538
+
+          ### The bootstrap confidence interval is very close to the one provided by the
+          ### t.test() function.
+
+          ## e
+          med.hat <- median(medv)
+          med.hat ## => 21.2
+
+          ## f
+          boot.fn <- function(data, index) {
+              mu <- median(data[index])
+              return (mu)
+          }
+          boot(medv, boot.fn, 1000)
+          ### Bootstrap Statistics :
+          ### original     bias      std. error
+          ### t1*     21.2 -0.0098   0.3874004
+
+          ### We get an estimated median value fo 21.2 which is equal to the value
+          ### obtained in e, with a standard error of 0.3874 which is relatively small
+          ### compared to the median value.
+
+          ## g
+          percent.hat <- quantile(medv, c(0.1))
+          percent.hat ## => 12.75
+
+          boot.fn <- function(data, index) {
+              mu <- quantile(data[index], c(0.1))
+              return (mu)
+          }
+          boot(medv, boot.fn, 1000)
+          ### Bootstrap Statistics :
+          ### original      bias      std. error
+          ### t1*    12.75  0.00515   0.5113487
+
+          ## We get an estimated tenth percentile value of 12.75 which is again equal to
+          ## the value obtained in g, whith a standard error of 0.5113 which is relatively
+          ## small compared to percentile value.
+        #+END_SRC

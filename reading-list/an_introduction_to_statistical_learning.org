@@ -9,7 +9,7 @@
 2. [X] [[./an_introduction_to_statistical_learning/ch_02.org][Statistical Learning]]
 3. [X] [[./an_introduction_to_statistical_learning/ch_03.org][Linear Regression]]
 4. [X] [[./an_introduction_to_statistical_learning/ch_04.org][Classification]]
-5. [ ] [[./an_introduction_to_statistical_learning/ch_05.org][Resampling Methods]]
+5. [X] [[./an_introduction_to_statistical_learning/ch_05.org][Resampling Methods]]
 6. [ ] [[./an_introduction_to_statistical_learning/ch_06.org][Linear Model Selection and Regularization]]
 7. [ ] [[./an_introduction_to_statistical_learning/ch_07.org][Moving Beyond Linearity]]
 8. [ ] [[./an_introduction_to_statistical_learning/ch_08.org][Tree-Based Methods]]
