@@ -24,9 +24,9 @@
    1. [X] Best Subset Selection
    2. [X] Stepwise Selection
    3. [X] Choosing the Optimal Model
-2. [ ] Shrinkage Methods
-   1. [ ] Ridge Regression
-   2. [ ] The Lasso
+2. [-] Shrinkage Methods
+   1. [X] Ridge Regression
+   2. [X] The Lasso
    3. [ ] Selecting the Tuning Parameter
 3. [ ] Dimension Reduction Methods
    1. [ ] Principal Components Regression
