@@ -4,14 +4,14 @@
 
 * Linear Model Selection and Regularization
 ** Lectures
-   + [ ] Playlist
-     + [ ] [[https://www.youtube.com/watch?v=91si52nk3LA][Linear Model Selection and Best Subset Selection]]
-     + [ ] [[https://www.youtube.com/watch?v=nLpJd_iKmrE][Forward Stepwise Selection]]
-     + [ ] [[https://www.youtube.com/watch?v=NJhMSpI2Uj8][Backward Stepwise Selection]]
-     + [ ] [[https://www.youtube.com/watch?v=LkifE44myLc][Estimating Test Error Using Mallow’s Cp, AIC, BIC, Adjusted R-squared]]
-     + [ ] [[https://www.youtube.com/watch?v=3p9JNaJCOb4][Estimating Test Error Using Cross-Validation]]
-     + [ ] [[https://www.youtube.com/watch?v=cSKzqb0EKS0][Shrinkage Methods and Ridge Regression]]
-     + [ ] [[https://www.youtube.com/watch?v=A5I1G1MfUmA][The Lasso]]
+   + [-] [[https://www.youtube.com/playlist?list=PL5-da3qGB5IB-Xdpj_uXJpLGiRfv9UVXI][Playlist]]
+     + [X] [[https://www.youtube.com/watch?v=91si52nk3LA][Linear Model Selection and Best Subset Selection]]
+     + [X] [[https://www.youtube.com/watch?v=nLpJd_iKmrE][Forward Stepwise Selection]]
+     + [X] [[https://www.youtube.com/watch?v=NJhMSpI2Uj8][Backward Stepwise Selection]]
+     + [X] [[https://www.youtube.com/watch?v=LkifE44myLc][Estimating Test Error Using Mallow’s Cp, AIC, BIC, Adjusted R-squared]]
+     + [X] [[https://www.youtube.com/watch?v=3p9JNaJCOb4][Estimating Test Error Using Cross-Validation]]
+     + [X] [[https://www.youtube.com/watch?v=cSKzqb0EKS0][Shrinkage Methods and Ridge Regression]]
+     + [X] [[https://www.youtube.com/watch?v=A5I1G1MfUmA][The Lasso]]
      + [ ] [[https://www.youtube.com/watch?v=xMKVUstjXBE][Tuning Parameter Selection for Ridge Regression and Lasso]]
      + [ ] [[https://www.youtube.com/watch?v=QlyROnAjnEk][Dimension Reduction]]
      + [ ] [[https://www.youtube.com/watch?v=eYxwWGJcOfw][Principal Components Regression and Partial Least Squares]]
@@ -24,10 +24,10 @@
    1. [X] Best Subset Selection
    2. [X] Stepwise Selection
    3. [X] Choosing the Optimal Model
-2. [-] Shrinkage Methods
+2. [X] Shrinkage Methods
    1. [X] Ridge Regression
    2. [X] The Lasso
-   3. [ ] Selecting the Tuning Parameter
+   3. [X] Selecting the Tuning Parameter
 3. [ ] Dimension Reduction Methods
    1. [ ] Principal Components Regression
    2. [ ] Partial Least Squares
