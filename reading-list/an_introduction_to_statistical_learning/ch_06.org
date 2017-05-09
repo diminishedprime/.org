@@ -4,7 +4,7 @@
 
 * Linear Model Selection and Regularization
 ** Lectures
-   + [-] [[https://www.youtube.com/playlist?list=PL5-da3qGB5IB-Xdpj_uXJpLGiRfv9UVXI][Playlist]]
+   + [X] [[https://www.youtube.com/playlist?list=PL5-da3qGB5IB-Xdpj_uXJpLGiRfv9UVXI][Playlist]]
      + [X] [[https://www.youtube.com/watch?v=91si52nk3LA][Linear Model Selection and Best Subset Selection]]
      + [X] [[https://www.youtube.com/watch?v=nLpJd_iKmrE][Forward Stepwise Selection]]
      + [X] [[https://www.youtube.com/watch?v=NJhMSpI2Uj8][Backward Stepwise Selection]]
@@ -12,13 +12,13 @@
      + [X] [[https://www.youtube.com/watch?v=3p9JNaJCOb4][Estimating Test Error Using Cross-Validation]]
      + [X] [[https://www.youtube.com/watch?v=cSKzqb0EKS0][Shrinkage Methods and Ridge Regression]]
      + [X] [[https://www.youtube.com/watch?v=A5I1G1MfUmA][The Lasso]]
-     + [ ] [[https://www.youtube.com/watch?v=xMKVUstjXBE][Tuning Parameter Selection for Ridge Regression and Lasso]]
-     + [ ] [[https://www.youtube.com/watch?v=QlyROnAjnEk][Dimension Reduction]]
-     + [ ] [[https://www.youtube.com/watch?v=eYxwWGJcOfw][Principal Components Regression and Partial Least Squares]]
-     + [ ] [[https://www.youtube.com/watch?v=3kwdDGnV8MM][Lab: Best Subset Selection]]
-     + [ ] [[https://www.youtube.com/watch?v=mv-vdysZIb4][Lab: Forward Stepwise Selection and Model Selection Using Validation Set]]
-     + [ ] [[https://www.youtube.com/watch?v=F8MMHCCoALU][Lab: Model Selection Using Cross-Validation]]
-     + [ ] [[https://www.youtube.com/watch?v=1REe3qSotx8][Lab: Ridge Regression and Lasso]]
+     + [X] [[https://www.youtube.com/watch?v=xMKVUstjXBE][Tuning Parameter Selection for Ridge Regression and Lasso]]
+     + [X] [[https://www.youtube.com/watch?v=QlyROnAjnEk][Dimension Reduction]]
+     + [X] [[https://www.youtube.com/watch?v=eYxwWGJcOfw][Principal Components Regression and Partial Least Squares]]
+     + [X] [[https://www.youtube.com/watch?v=3kwdDGnV8MM][Lab: Best Subset Selection]]
+     + [X] [[https://www.youtube.com/watch?v=mv-vdysZIb4][Lab: Forward Stepwise Selection and Model Selection Using Validation Set]]
+     + [X] [[https://www.youtube.com/watch?v=F8MMHCCoALU][Lab: Model Selection Using Cross-Validation]]
+     + [X] [[https://www.youtube.com/watch?v=1REe3qSotx8][Lab: Ridge Regression and Lasso]]
 ** Reading List
 1. [X] Subset Selection
    1. [X] Best Subset Selection
