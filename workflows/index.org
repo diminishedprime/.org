@@ -56,7 +56,10 @@
   #+END_SRC
 + POST with curl
   #+BEGIN_SRC sh
-    curl --data "{data : 'goes here'}" localhost:post/endpoint
+    curl -X POST \
+         -H "Content-Type:application/json" \
+         -d '{"topic":"topicName"}' \
+         localhost:3031/addTopic
   #+END_SRC
 + Replace all occurences of foo with bar in all files recursively under the current directory
   #+BEGIN_SRC sh

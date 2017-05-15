@@ -1,0 +1,6 @@
+[[../index.org][Home]]
+[[./index.org][Programmey Stuff]]
+
+
+* Kaggle
++ [[./kaggle/titanic/titanic.org][Titanic]]

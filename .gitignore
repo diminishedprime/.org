@@ -13,3 +13,5 @@
 *.hi
 /programmey_stuff/write_yourself_a_scheme/ch_02/hello
 /programmey_stuff/sfml/tree/tree
+/programmey_stuff/kaggle/titanic/.ipynb_checkpoints/titanic.py-checkpoint.ipynb
+.ipynb_checkpoints/
