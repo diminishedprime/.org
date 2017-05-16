@@ -1,0 +1,41 @@
+[[./index.org][Machine Learning]]
+
+* [[https://www.coursera.org/learn/machine-learning/home/week/ (3)][Week 3]]
+** Classification and Representation
+   + [ ] Classification (8 min)
+   + [ ] Classification (2 min)
+   + [ ] Hypothesis Representation (7 min)
+   + [ ] Hypothesis Representation (3 min)
+   + [ ] Decision Boundary (14 min)
+   + [ ] Decision Boundary (3 min)
+
+** Logistic Regression Model
+   + [ ] Cost Function (10 min)
+   + [ ] Cost Function (3 min)
+   + [ ] Simplified Cost Function and Gradient Descent (10 min)
+   + [ ] Simplified Cost Function and Gradient Descent (3 min)
+   + [ ] Advanced Optimization (14 min)
+   + [ ] Advanced Optimization (3 min)
+
+** Multiclass Classification
+   + [ ] Multiclass Classification: One-vs-all (6 min)
+   + [ ] Multiclass Classification: One-vs-all (3 min)
+
+** Review
+   + [ ] Lecture Slides (10 min)
+   + [ ] Quiz: Logistic Regression (5) questions
+
+** Solving the Problem of Overfitting
+   + [ ] The Problem of Overfitting (9 min)
+   + [ ] The Problem of Overfitting (3 min)
+   + [ ] Cost Function (10 min)
+   + [ ] Cost Function (3 min)
+   + [ ] Regularized Linear Regression (10 min)
+   + [ ] Regularized Linear Regression (3 min)
+   + [ ] Regularized Logistic Regression (8 min)
+   + [ ] Regularized Logistic Regression (3 min)
+
+** Review
+   + [ ] Lecture Slides (10 min)
+   + [ ] Quiz: Regularization (5) questions
+   + [ ] Programming Assignment: Logistic Regression (3h)
