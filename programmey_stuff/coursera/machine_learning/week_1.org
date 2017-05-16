@@ -1,0 +1,60 @@
+[[./index.org][Machine Learning]]
+
+* [[https://www.coursera.org/learn/machine-learning/home/week/1][Week 1]]
+** Welcome
+   + [X] Welcome To Machine Learning (1 min)
+   + [X] Machine Learning Honor Code (8 min)
+
+** Introduction
+   + [X] Welcome (6 min)
+   + [X] What is Machine Learning? (7 min)
+   + [X] What is Machine Learning? (5 min)
+   + [X] How to Use Discussion Forums (4 min)
+   + [X] Supervised Learning (12 min)
+   + [X] Supervised Learning (4 min)
+   + [X] Unsupervised Learning (14 min)
+   + [X] Unsupervised Learning (3 min)
+   + [X] Who are Mentors? (3 min)
+   + [X] Get to Know Your Classmates (8 min)
+   + [X] Frequently Asked Questions (11 min)
+
+** Review
+   + [X] Lecture Slides (20 min)
+   + [X] Quiz: (Introduction)
+
+** Other Materials
+   + [X] Machine Learning Course Wiki (6 min)
+
+** Model and Cost Function
+   + [X] Model Representation (8 min)
+   + [X] Model Representation (3 min)
+   + [X] Cost Function (8 min)
+   + [X] Cost Function (3 min)
+   + [X] Cost Function - Intuition I (11 min)
+   + [X] Cost Function - Intuition I (4 min)
+   + [X] Cost Function - Intuition II (8 min)
+   + [X] Cost Function - Intuition II (3 min)
+
+** Parameter Learning
+   + [X] Gradient Descent (11 min)
+   + [X] Gradient Descent (3 min)
+   + [X] Gradient Descent Intuition (11 min)
+   + [X] Gradient Descent Intuition (3 min)
+   + [X] Gradient Descent For Linear Regression (10 min)
+   + [X] Gradient Descent For Linear Regression (6 min)
+
+** Review
+   + [X] Lecture Slides (20 min)
+   + [X] Quiz: (Linear Regression with One Variable)
+
+** Linear Algebra Review
+   + [X] Matrices and Vectors (8 min)
+   + [X] Addition and Scalar Multiplication (6 min)
+   + [X] Matrix Vector Multiplication (13 min)
+   + [X] Matrix Matrix Multiplication (11 min)
+   + [X] Matrix Multiplication Properties (9 min)
+   + [X] Inverse and Transpose (11 min)
+
+** Review
+   + [X] Lecture Slides (10 min)
+   + [X] Practice Quiz: (Linear Algebra)

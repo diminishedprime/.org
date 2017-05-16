@@ -1,0 +1,5 @@
+[[../index.org][Home]]
+[[./index.org][Programmey Stuff]]
+
+* Coursera
++ [[./coursera/machine_learning/index.org][Machine Learning]]

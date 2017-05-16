@@ -1,0 +1,16 @@
+[[../../../index.org][Home]]
+[[../../index.org][Programmey Stuff]]
+[[../../coursera.org][Coursera]]
+
+* Machine Learning
++ [X] [[./week_1.org][Week 1]]
++ [ ] [[./week_2.org][Week 2]]
++ [ ] [[./week_3.org][Week 3]]
++ [ ] [[./week_4.org][Week 4]]
++ [ ] [[./week_5.org][Week 5]]
++ [ ] [[./week_6.org][Week 6]]
++ [ ] [[./week_7.org][Week 7]]
++ [ ] [[./week_8.org][Week 8]]
++ [ ] [[./week_9.org][Week 9]]
++ [ ] [[./week_10.org][Week 10]]
++ [ ] [[./week_11.org][Week 11]]

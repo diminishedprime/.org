@@ -7,3 +7,4 @@
 + [[./build_your_own_text_editor.org][Build Your Own Text Editor]]
 + [[./sfml.org][SFML]]
 + [[./kaggle.org][Kaggle]]
++ [[./coursera.org][Coursera]]
