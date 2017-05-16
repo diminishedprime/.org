@@ -1,0 +1,26 @@
+[[./index.org][Machine Learning]]
+
+* [[https://www.coursera.org/learn/machine-learning/home/week/ (5)][Week 5]]
+** Cost Function and Backpropagation
+   + [ ] Cost Function (6 min)
+   + [ ] Cost Function (4 min)
+   + [ ] Backpropagation Algorithm (11 min)
+   + [ ] Backpropagation Algorithm (10 min)
+   + [ ] Backpropagation Intuition (12 min)
+   + [ ] Backpropagation Intuition (4 min)
+
+** Backpropagation in Practice
+   + [ ] Implementation Note: Unrolling Parameters (7 min)
+   + [ ] Implementation Note: Unrolling Parameters (3 min)
+   + [ ] Gradient Checking (11 min)
+   + [ ] Gradient Checking (3 min)
+   + [ ] Random Initialization (6 min)
+   + [ ] Random Initialization (3 min)
+   + [ ] Putting It Together (13 min)
+   + [ ] Putting It Together (4 min)
+
+** Application of Neural Networks
+   + [ ] Autonomous Driving (6 min)
+
+** Review
+   + [ ] Lecture Slides (10 min)
