@@ -1,0 +1,16 @@
+[[./index.org][Machine Learning]]
+
+* [[https://www.coursera.org/learn/machine-learning/home/week/ (10)][Week 10]]
+** Gradient Descent with Large Datasets
+   + [ ] Learning With Large Datasets (5 min)
+   + [ ] Stochastic Gradient Descent (13 min)
+   + [ ] Mini-Batch Gradient Descent (6 min)
+   + [ ] Stochastic Gradient Descent Convergence (11 min)
+
+** Advanced Topics
+   + [ ] Online Learning (12 min)
+   + [ ] Map Reduce and Data Parallelism (14 min)
+
+** Review
+   + [ ] Lecture Slides (10 min)
+   + [ ] Quiz: Large Scale Machine Learning (5 questions)
