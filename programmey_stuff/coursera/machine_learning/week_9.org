@@ -1,0 +1,37 @@
+[[./index.org][Machine Learning]]
+
+* [[https://www.coursera.org/learn/machine-learning/home/week/ (9)][Week 9]]
+** Density Estimation
+   + [ ] Problem Motivation (7 min)
+   + [ ] Gaussian Distribution (10 min)
+   + [ ] Algorithm (12 min)
+
+** Building an Anomaly Detection System
+   + [ ] Developing and Evaluating an Anomaly Detection System (13 min)
+   + [ ] Anomaly Detection vs. Supervised Learning (7 min)
+   + [ ] Choosing What Features to Use (12 min)
+
+** Multivariate Gaussian Distribution (Optional)
+   + [ ] Multivariate Gaussian Distribution (13 min)
+   + [ ] Anomaly Detection using the Multivariate Gaussian Distribution (14 min)
+
+** Review
+   + [ ] Lecture Slides (10 min)
+   + [ ] Quiz: Anomaly Detection (5 questions)
+
+** Predicting Movie Ratings
+   + [ ] Problem Formulation (7 min)
+   + [ ] Content Based Recommendations (14 min)
+
+** Collaborative Filtering
+   + [ ] Collaborative Filtering (10 min)
+   + [ ] Collaborative Filtering Algorithm (8 min)
+
+** Low Rank Matrix Factorization
+   + [ ] Vectorization: Low Rank Matrix Factorization (8 min)
+   + [ ] Implementational Detail: Mean Normalization (8 min)
+
+** Review
+   + [ ] Lecture Slides (10 min)
+   + [ ] Quiz: Recommender Systems (5 questions)
+   + [ ] Programming Assignment: Anomaly Detection and Recommender Systems (3h)
