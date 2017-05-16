@@ -1,0 +1,19 @@
+[[./index.org][Machine Learning]]
+
+* [[https://www.coursera.org/learn/machine-learning/home/week/ (7)][Week 7]]
+** Large Margin Classification
+   + [ ] Optimization Objective (14 min)
+   + [ ] Large Margin Intuition (10 min)
+   + [ ] Mathematics Behind Large Margin Classification (19 min)
+
+** Kernels
+   + [ ] Kernels I (15 min)
+   + [ ] Kernels II (15 min)
+
+** SVMs in Practice
+   + [ ] Using An SVM (21 min)
+
+** Review
+   + [ ] Lecture Slides (10 min)
+   + [ ] Quiz: Support Vector Machines (5 questions)
+   + [ ] Programming Assignment: Support Vector Machines (3h)
