@@ -23,29 +23,29 @@
    + [X] Feaures and Polynomial Regression (3 min)
 
 ** Computing Parameters Analytically
-   + [ ] Normal Equation (16 min)
-   + [ ] Normal Equation (3 min)
-   + [ ] Normal Equation Noninvertibility (5 min)
-   + [ ] Normal Equation Noninvertibility (2 min)
+   + [X] Normal Equation (16 min)
+   + [X] Normal Equation (3 min)
+   + [X] Normal Equation Noninvertibility (5 min)
+   + [X] Normal Equation Noninvertibility (2 min)
 
 ** Submitting Programming Assignments
-   + [ ] Working on and Submitting Programming Assignments (3 min)
-   + [ ] Programming tips from Mentors (10 min)
+   + [X] Working on and Submitting Programming Assignments (3 min)
+   + [X] Programming tips from Mentors (10 min)
 
 ** Review
-   + [ ] Lecture Slides (20 min)
-   + [ ] Quiz: Linear Regression with Multiple Variables5 questions
+   + [X] Lecture Slides (20 min)
+   + [X] Quiz: Linear Regression with Multiple Variables (5 questions)
 
 ** Octave/Matlab Tutorial
-   + [ ] Basic Operations (13 min)
-   + [ ] Moving Data Around (16 min)
-   + [ ] Computing on Data (13 min)
-   + [ ] Plotting Data (9 min)
-   + [ ] Control Statements: for, while, if statement (12 min)
-   + [ ] Vectorization (13 min)
+   + [X] Basic Operations (13 min)
+   + [X] Moving Data Around (16 min)
+   + [X] Computing on Data (13 min)
+   + [X] Plotting Data (9 min)
+   + [X] Control Statements: for, while, if statement (12 min)
+   + [X] Vectorization (13 min)
 
 ** Review
-   + [ ] Lecture Slides (10 min)
-   + [ ] Octave Exercise - Matrix Inverse Vector Products (10 min)
+   + [X] Lecture Slides (10 min)
+   + [X] Octave Exercise - Matrix Inverse Vector Products (10 min)
    + [ ] Quiz: Octave/Matlab Tutorial (5 questions)
    + [ ] Programming Assignment: Linear Regression (3h)
