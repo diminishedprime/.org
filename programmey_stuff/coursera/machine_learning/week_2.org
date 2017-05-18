@@ -2,25 +2,25 @@
 
 * [[https://www.coursera.org/learn/machine-learning/home/week/2][Week 2]]
 ** Environment Setup Instructions
-   + [ ] Setting Up Your Programming Assignment Environment (8 min)
-   + [ ] Installing MATLAB (3 min)
-   + [ ] Installing Octave on Windows (3 min)
-   + [ ] Installing Octave on Mac OS X (10.10 Yosemite and 10.9 Mavericks and Later) (10 min)
-   + [ ] Installing Octave on Mac OS X (10.8 Mountain Lion and Earlier) (3 min)
-   + [ ] Installing Octave on GNU/Linux (7 min)
-   + [ ] More Octave/MATLAB resources (10 min)
+   + [X] Setting Up Your Programming Assignment Environment (8 min)
+   + [X] Installing MATLAB (3 min)
+   + [X] Installing Octave on Windows (3 min)
+   + [X] Installing Octave on Mac OS X (10.10 Yosemite and 10.9 Mavericks and Later) (10 min)
+   + [X] Installing Octave on Mac OS X (10.8 Mountain Lion and Earlier) (3 min)
+   + [X] Installing Octave on GNU/Linux (7 min)
+   + [X] More Octave/MATLAB resources (10 min)
 
 ** Multivariate Linear Regression
-   + [ ] Multiple Features (8 min)
-   + [ ] Multiple Features (3 min)
-   + [ ] Gradient Descent for Multiple Variables (5 min)
-   + [ ] Gradient Descent For Multiple Variables (2 min)
-   + [ ] Gradient Descent in Practice I - Feature Scaling (8 min)
-   + [ ] Gradient Descent in Practice I - Feature Scaling (3 min)
-   + [ ] Gradient Descent in Practice II - Learning Rate (8 min)
-   + [ ] Gradient Descent in Practice II - Learning Rate (4 min)
-   + [ ] Features and Polynomial Regression (7 min)
-   + [ ] Features and Polynomial Regression (3 min)
+   + [X] Multiple Features (8 min)
+   + [X] Multiple Features (3 min)
+   + [X] Gradient Descent for Multiple Variables (5 min)
+   + [X] Gradient Descent For Multiple Variables (2 min)
+   + [X] Gradient Descent in Practice I - Feature Scaling (8 min)
+   + [X] Gradient Descent in Practice I - Feature Scaling (3 min)
+   + [X] Gradient Descent in Practice II - Learning Rate (8 min)
+   + [X] Gradient Descent in Practice II - Learning Rate (4 min)
+   + [X] Features and Polynomial Regression (7 min)
+   + [X] Feaures and Polynomial Regression (3 min)
 
 ** Computing Parameters Analytically
    + [ ] Normal Equation (16 min)
