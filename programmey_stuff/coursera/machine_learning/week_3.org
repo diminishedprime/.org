@@ -2,12 +2,12 @@
 
 * [[https://www.coursera.org/learn/machine-learning/home/week/ (3)][Week 3]]
 ** Classification and Representation
-   + [ ] Classification (8 min)
-   + [ ] Classification (2 min)
-   + [ ] Hypothesis Representation (7 min)
-   + [ ] Hypothesis Representation (3 min)
-   + [ ] Decision Boundary (14 min)
-   + [ ] Decision Boundary (3 min)
+   + [X] Classification (8 min)
+   + [X] Classification (2 min)
+   + [X] Hypothesis Representation (7 min)
+   + [X] Hypothesis Representation (3 min)
+   + [X] Decision Boundary (14 min)
+   + [X] Decision Boundary (3 min)
 
 ** Logistic Regression Model
    + [ ] Cost Function (10 min)
