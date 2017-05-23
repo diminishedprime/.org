@@ -15,3 +15,5 @@
 /programmey_stuff/sfml/tree/tree
 /programmey_stuff/kaggle/titanic/.ipynb_checkpoints/titanic.py-checkpoint.ipynb
 .ipynb_checkpoints/
+/token.mat
+**/token.mat
