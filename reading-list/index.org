@@ -130,6 +130,8 @@
 + [ ] As I lay dying
 
 * Good/Interesting Talks
+  + [[https://www.infoq.com/presentations/Simple-Made-Easy][Rich Hickey - Simple Made Easy]]
+  + [[https://www.infoq.com/presentations/Value-Values][The Value Of Values]]
   + [[https://www.youtube.com/watch?v=GRr4xeMn1uU][Greg Young - Stop Over-Engineering]] Talk focuses on the fact that often, you
     can solve 99% of your use cases with a very simple model that pulls in human
     interaction when necessary. Before adding additional complexity into your

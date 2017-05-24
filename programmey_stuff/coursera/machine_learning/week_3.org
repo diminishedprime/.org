@@ -18,24 +18,24 @@
    + [X] Advanced Optimization (3 min)
 
 ** Multiclass Classification
-   + [ ] Multiclass Classification: One-vs-all (6 min)
-   + [ ] Multiclass Classification: One-vs-all (3 min)
+   + [X] Multiclass Classification: One-vs-all (6 min)
+   + [X] Multiclass Classification: One-vs-all (3 min)
 
 ** Review
-   + [ ] Lecture Slides (10 min)
-   + [ ] Quiz: Logistic Regression (5) questions
+   + [X] Lecture Slides (10 min)
+   + [X] Quiz: Logistic Regression (5) questions
 
 ** Solving the Problem of Overfitting
-   + [ ] The Problem of Overfitting (9 min)
-   + [ ] The Problem of Overfitting (3 min)
-   + [ ] Cost Function (10 min)
-   + [ ] Cost Function (3 min)
-   + [ ] Regularized Linear Regression (10 min)
-   + [ ] Regularized Linear Regression (3 min)
-   + [ ] Regularized Logistic Regression (8 min)
-   + [ ] Regularized Logistic Regression (3 min)
+   + [X] The Problem of Overfitting (9 min)
+   + [X] The Problem of Overfitting (3 min)
+   + [X] Cost Function (10 min)
+   + [X] Cost Function (3 min)
+   + [X] Regularized Linear Regression (10 min)
+   + [X] Regularized Linear Regression (3 min)
+   + [X] Regularized Logistic Regression (8 min)
+   + [X] Regularized Logistic Regression (3 min)
 
 ** Review
-   + [ ] Lecture Slides (10 min)
-   + [ ] Quiz: Regularization (5) questions
-   + [ ] Programming Assignment: Logistic Regression (3h)
+   + [X] Lecture Slides (10 min)
+   + [X] Quiz: Regularization (5) questions
+   + [X] Programming Assignment: Logistic Regression (3h)

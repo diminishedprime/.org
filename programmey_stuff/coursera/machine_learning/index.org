@@ -4,8 +4,8 @@
 
 * Machine Learning
 + [X] [[./week_1.org][Week 1]]
-+ [ ] [[./week_2.org][Week 2]]
-+ [ ] [[./week_3.org][Week 3]]
++ [X] [[./week_2.org][Week 2]]
++ [X] [[./week_3.org][Week 3]]
 + [ ] [[./week_4.org][Week 4]]
 + [ ] [[./week_5.org][Week 5]]
 + [ ] [[./week_6.org][Week 6]]
