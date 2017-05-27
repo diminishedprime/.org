@@ -2,24 +2,24 @@
 
 * [[https://www.coursera.org/learn/machine-learning/home/week/ (4)][Week 4]]
 ** Motivations
-   + [ ] Non-linear Hypotheses (9 min)
-   + [ ] Neurons and the Brain (7 min)
+   + [X] Non-linear Hypotheses (9 min)
+   + [X] Neurons and the Brain (7 min)
 
 ** Neural Networks
-   + [ ] Model Representation I (12 min)
-   + [ ] Model Representation I (6 min)
-   + [ ] Model Representation II (11 min)
-   + [ ] Model Representation II (6 min)
+   + [X] Model Representation I (12 min)
+   + [X] Model Representation I (6 min)
+   + [X] Model Representation II (11 min)
+   + [X] Model Representation II (6 min)
 
 ** Applications
-   + [ ] Examples and Intuitions I (7 min)
-   + [ ] Examples and Intuitions I (2 min)
-   + [ ] Examples and Intuitions II (10 min)
-   + [ ] Examples and Intuitions II (3 min)
-   + [ ] Multiclass Classification (3 min)
-   + [ ] Multiclass Classification (3 min)
+   + [X] Examples and Intuitions I (7 min)
+   + [X] Examples and Intuitions I (2 min)
+   + [X] Examples and Intuitions II (10 min)
+   + [X] Examples and Intuitions II (3 min)
+   + [X] Multiclass Classification (3 min)
+   + [X] Multiclass Classification (3 min)
 
 ** Review
-   + [ ] Lecture Slides (10 min)
-   + [ ] Quiz: Neural Networks: Representation (5 questions)
+   + [X] Lecture Slides (10 min)
+   + [X] Quiz: Neural Networks: Representation (5 questions)
    + [ ] Programming Assignment: Multi-class Classification and Neural Networks (3h)
