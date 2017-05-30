@@ -6,7 +6,7 @@
 + [X] [[./week_1.org][Week 1]]
 + [X] [[./week_2.org][Week 2]]
 + [X] [[./week_3.org][Week 3]]
-+ [ ] [[./week_4.org][Week 4]]
++ [X] [[./week_4.org][Week 4]]
 + [ ] [[./week_5.org][Week 5]]
 + [ ] [[./week_6.org][Week 6]]
 + [ ] [[./week_7.org][Week 7]]

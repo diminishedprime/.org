@@ -22,4 +22,4 @@
 ** Review
    + [X] Lecture Slides (10 min)
    + [X] Quiz: Neural Networks: Representation (5 questions)
-   + [ ] Programming Assignment: Multi-class Classification and Neural Networks (3h)
+   + [X] Programming Assignment: Multi-class Classification and Neural Networks (3h)
