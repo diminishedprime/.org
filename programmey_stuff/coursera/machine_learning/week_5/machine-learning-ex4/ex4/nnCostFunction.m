@@ -25,20 +25,43 @@ function [J grad] = nnCostFunction(nn_params, ...
                                 % Setup some useful variables
   m = size(X, 1);
 
-                         % You need to return the following variables correctly
+                          % You need to return the following variables correctly
   J = 0;
   Theta1_grad = zeros(size(Theta1));
   Theta2_grad = zeros(size(Theta2));
 
-      % ====================== YOUR CODE HERE ======================
-      % Instructions: You should complete the code by working through the
-      %               following parts.
-      %
-      % Part 1: Feedforward the neural network and return the cost in the
-      %         variable J. After implementing Part 1, you can verify that your
-      %         cost function computation is correct by verifying the cost
-      %         computed in ex4.m
-      %
+       % ====================== YOUR CODE HERE ======================
+       % Instructions: You should complete the code by working through the
+       %               following parts.
+       %
+       % Part 1: Feedforward the neural network and return the cost in the
+       %         variable J. After implementing Part 1, you can verify that your
+       %         cost function computation is correct by verifying the cost
+       %         computed in ex4.m
+       %
+
+  a1 = [ones(m, 1) X];
+  z2 = a1 * Theta1';
+  a2 = [ones(size(z2,1), 1) sigmoid(z2)];
+  z3 = a2 * Theta2';
+  a3 = sigmoid(z3);
+  hThetaX = a3;
+
+  yVec = zeros(m, num_labels);
+
+  %% Iterate through all m training examples
+  for i = 1:m
+    %% y is a scalar, so setting the yVec value for entry i to 1 on the index fo
+    %% tha actual value for y is right.
+    yVec(i,y(i)) = 1;
+  end;
+
+  doubleSum = sum(sum(-yVec .* log(hThetaX) - (1 - yVec) .* log(1 - hThetaX)));
+  regularization = (lambda/(2*m)) * (sum(sum(Theta1(:,2:end).^2))
+                                     + sum(sum(Theta2(:,2:end).^2)));
+
+  J = (1 / m) * doubleSum + regularization;
+
       % Part 2: Implement the backpropagation algorithm to compute the gradients
 %         Theta1_grad and Theta2_grad. You should return the partial derivatives of
 %         the cost function with respect to Theta1 and Theta2 in Theta1_grad and
@@ -54,28 +77,36 @@ function [J grad] = nnCostFunction(nn_params, ...
 %               over the training examples if you are implementing it for the
 %               first time.
 %
-% Part 3: Implement regularization with the cost function and gradients.
-%
-%         Hint: You can implement this around the code for
-%               backpropagation. That is, you can compute the gradients for
-%               the regularization separately and then add them to Theta1_grad
-%               and Theta2_grad from Part 2.
-%
+
+  delta1 = zeros(size(Theta1));
+  delta2 = zeros(size(Theta2));
+
+  for t=1:m
+    h1t = hThetaX(t, :)';
+    a1t = a1(t, :)';
+    a2t = a2(t, :)';
+    yVect = yVec(t, :)';
+
+    d3t = h1t - yVect;
+    z2t = [1;Theta1*a1t];
+    d2t = Theta2' * d3t .* sigmoidGradient(z2t);
+
+    delta1 = delta1 + d2t(2:end) * a1t';
+    delta2 = delta2 + d3t * a2t';
+  end;
+
+  Theta1_grad = (1/m) * delta1 + (lambda / m) * [zeros(size(Theta1, 1), 1) Theta1(:, 2:end)];
+  Theta2_grad = (1/m) * delta2 + (lambda / m) * [zeros(size(Theta2, 1), 1) Theta2(:, 2:end)];
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+  % Part 3: Implement regularization with the cost function and gradients.
+  %
+  %         Hint: You can implement this around the code for
+  %               backpropagation. That is, you can compute the gradients for
+  %               the regularization separately and then add them to Theta1_grad
+  %               and Theta2_grad from Part 2.
+  %
 
 
 

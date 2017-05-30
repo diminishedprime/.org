@@ -25,4 +25,4 @@
 ** Review
    + [X] Lecture Slides (10 min)
    + [X] Quiz: Neural Networks: Learning (5 questions)
-   + [ ] Programming ASsigment: Neural Network Learning
+   + [X] Programming Assigment: Neural Network Learning
