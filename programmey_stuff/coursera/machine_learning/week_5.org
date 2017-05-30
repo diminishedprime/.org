@@ -1,6 +1,6 @@
 [[./index.org][Machine Learning]]
 
-* [[https://www.coursera.org/learn/machine-learning/home/week/ (5)][Week 5]]
+* [[https://www.coursera.org/learn/machine-learning/home/week/5][Week 5]]
 ** Cost Function and Backpropagation
    + [ ] Cost Function (6 min)
    + [ ] Cost Function (4 min)
