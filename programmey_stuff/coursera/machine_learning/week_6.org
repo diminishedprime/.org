@@ -2,25 +2,25 @@
 
 * [[https://www.coursera.org/learn/machine-learning/home/week/ (6)][Week 6]]
 ** Evaluating a Learning Algorithm
-   + [ ] Deciding What to Try Next (5 min)
-   + [ ] Evaluating a Hypothesis (7 min)
-   + [ ] Evaluating a Hypothesis (4 min)
-   + [ ] Model Selection and Train/Validation/Test Sets (12 min)
-   + [ ] Model Selection and Train/Validation/Test Sets (3 min)
+   + [X] Deciding What to Try Next (5 min)
+   + [X] Evaluating a Hypothesis (7 min)
+   + [X] Evaluating a Hypothesis (4 min)
+   + [X] Model Selection and Train/Validation/Test Sets (12 min)
+   + [X] Model Selection and Train/Validation/Test Sets (3 min)
 
 ** Bias vs. Variance
-   + [ ] Diagnosing Bias vs. Variance (7 min)
-   + [ ] Diagnosing Bias vs. Variance (3 min)
-   + [ ] Regularization and Bias/Variance (11 min)
-   + [ ] Regularization and Bias/Variance (3 min)
-   + [ ] Learning Curves (11 min)
-   + [ ] Learning Curves (3 min)
-   + [ ] Deciding What to Do Next Revisited (6 min)
-   + [ ] Deciding What to do Next Revisited (3 min)
+   + [X] Diagnosing Bias vs. Variance (7 min)
+   + [X] Diagnosing Bias vs. Variance (3 min)
+   + [X] Regularization and Bias/Variance (11 min)
+   + [X] Regularization and Bias/Variance (3 min)
+   + [X] Learning Curves (11 min)
+   + [X] Learning Curves (3 min)
+   + [X] Deciding What to Do Next Revisited (6 min)
+   + [X] Deciding What to do Next Revisited (3 min)
 
 ** Review
-   + [ ] Lecture Slides (10 min)
-   + [ ] Quiz: Advice for Applying Machine Learning (5 questions)
+   + [X] Lecture Slides (10 min)
+   + [X] Quiz: Advice for Applying Machine Learning (5 questions)
    + [ ] Programming Assignment: Regularized Linear Regression and Bias/Variance (3h)
 
 ** Building a Spam Classifier
