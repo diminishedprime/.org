@@ -2,30 +2,30 @@
 
 * [[https://www.coursera.org/learn/machine-learning/home/week/8][Week 8]]
 ** Clustering
-   + [ ] Unsupervised Learning: Introduction (3 min)
-   + [ ] K-Means Algorithm (12 min)
-   + [ ] Optimization Objective (7 min)
-   + [ ] Random Initialization (7 min)
-   + [ ] Choosing the Number of Clusters (8 min)
+   + [X] Unsupervised Learning: Introduction (3 min)
+   + [X] K-Means Algorithm (12 min)
+   + [X] Optimization Objective (7 min)
+   + [X] Random Initialization (7 min)
+   + [X] Choosing the Number of Clusters (8 min)
 
 ** Review
-   + [ ] Lecture Slides (10 min)
-   + [ ] Quiz: Unsupervised Learning (5 questions)
+   + [X] Lecture Slides (10 min)
+   + [X] Quiz: Unsupervised Learning (5 questions)
 
 ** Motivation
-   + [ ] Motivation I: Data Compression (10 min)
-   + [ ] Motivation II: Visualization (5 min)
+   + [X] Motivation I: Data Compression (10 min)
+   + [X] Motivation II: Visualization (5 min)
 
 ** Principal Component Analysis
-   + [ ] Principal Component Analysis Problem Formulation (9 min)
-   + [ ] Principal Component Analysis Algorithm (15 min)
+   + [X] Principal Component Analysis Problem Formulation (9 min)
+   + [X] Principal Component Analysis Algorithm (15 min)
 
 ** Applying PCA
-   + [ ] Reconstruction from Compressed Representation (3 min)
-   + [ ] Choosing the Number of Principal Components (10 min)
-   + [ ] Advice for Applying PCA (12 min)
+   + [X] Reconstruction from Compressed Representation (3 min)
+   + [X] Choosing the Number of Principal Components (10 min)
+   + [X] Advice for Applying PCA (12 min)
 
 ** Review
-   + [ ] Lecture Slides (10 min)
-   + [ ] Quiz: Principal Component Analysis (5 questions)
+   + [X] Lecture Slides (10 min)
+   + [X] Quiz: Principal Component Analysis (5 questions)
    + [ ] Programming Assignment: K-Means Clustering and PCA (3h)
