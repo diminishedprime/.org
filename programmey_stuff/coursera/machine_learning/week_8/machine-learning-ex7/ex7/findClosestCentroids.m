@@ -20,12 +20,17 @@ function idx = findClosestCentroids(X, centroids)
      %
      % Note: You can use a for-loop over the examples to compute this.
      %
-
-
-
-
-
-
+  for i=1:size(X,1)
+    idx(i) = 1;
+    closestDistance = norm(X(i,:) - centroids(1,:));
+    for k=2:K
+      distance = norm(X(i,:) - centroids(k,:));
+      if (distance < closestDistance)
+        closestDistance = distance;
+        idx(i) = k;
+      end;
+    end;
+  end;
 
                  % =============================================================
 

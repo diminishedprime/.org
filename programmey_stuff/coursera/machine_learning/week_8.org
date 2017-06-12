@@ -28,4 +28,4 @@
 ** Review
    + [X] Lecture Slides (10 min)
    + [X] Quiz: Principal Component Analysis (5 questions)
-   + [ ] Programming Assignment: K-Means Clustering and PCA (3h)
+   + [X] Programming Assignment: K-Means Clustering and PCA (3h)

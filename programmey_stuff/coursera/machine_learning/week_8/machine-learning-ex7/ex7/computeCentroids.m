@@ -26,8 +26,10 @@ function centroids = computeCentroids(X, idx, K)
       % Note: You can use a for-loop over the centroids to compute this.
       %
 
-
-
+  for k=1:K
+    k_idxs = find(idx==k);
+    centroids(k,:) = sum(X(k_idxs, :), 1) / length(k_idxs);
+  end
 
 
 
