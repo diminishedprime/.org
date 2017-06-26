@@ -1,0 +1,70 @@
+[[../index.org][Home]]
+[[./index.org][Songs]]
+
+* The Punch Brothers
+** Heart In A Cage
+#+BEGIN_SRC text
+
+  Oh the heart beats in its cage
+  Intro: Em G Em G Em G Em G Em
+
+
+
+  Verse 1:
+
+  Em                                C        G
+  Well I don't feel better when I'm fucking around
+  Em                                C            G
+  And I don't write better when I'm stuck in the ground, so don't
+  Em                           C            G
+  Teach me a lesson cause I've already learned
+  Em                                  C             G
+  Yeah the sun will be shining and my children will burn
+
+         Em    C              G
+  Oh the heart beats in its cage
+
+
+  Verse 2:
+
+  Em                                C              G
+  I don't want what you want I don't feel what you feel
+         Em                        C         G
+  See I'm stuck in a city but I belong in a field
+             Em                      C           G
+  Yeah I got left, left, left, left, left, left, left,
+           Em                              C       G
+  Now it's three in the morning and you're eating alone
+
+         Em    C              G
+  Oh the heart beats in its cage
+
+
+  Bridge:
+
+  Em              A                   D        C#
+  All our friends, they're laughing at us
+  Em                A           D       C#
+  All the ones you love you mistrust
+  Em         A            D          C#
+  Help me I'm not quite myself
+  Em             A      D           C#
+  Look around there's no one else left
+
+
+  Verse 3:
+
+  Em                         C                  G
+  I went to the concert and I fought through the crowd
+         Em                      C                 G
+  Guess I got too excited when I thought you were around
+           Em                      C           G
+  Oh I get left, left, left, left, left, left, left
+          Em                              C          G
+  And I'm sorry you were thinking I would steal your fire
+
+         Em    C              G
+  Oh the heart beats in its cage
+          Em    C              G
+  Yes the heart beats in its cage......
+#+END_SRC
