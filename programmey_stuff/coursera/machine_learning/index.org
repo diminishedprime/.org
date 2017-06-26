@@ -12,5 +12,5 @@
 + [X] [[./week_7.org][Week 7]]
 + [X] [[./week_8.org][Week 8]]
 + [X] [[./week_9.org][Week 9]]
-+ [ ] [[./week_10.org][Week 10]]
-+ [ ] [[./week_11.org][Week 11]]
++ [X] [[./week_10.org][Week 10]]
++ [X] [[./week_11.org][Week 11]]

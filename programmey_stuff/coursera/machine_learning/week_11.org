@@ -2,14 +2,14 @@
 
 * [[https://www.coursera.org/learn/machine-learning/home/week/ (11)][Week 11]]
 ** Photo OCR
-   + [ ] Problem Description and Pipeline (7 min)
-   + [ ] Sliding Windows (14 min)
-   + [ ] Getting Lots of Data and Artificial Data (16 min)
-   + [ ] Ceiling Analysis: What Part of the Pipeline to Work on Next (13 min)
+   + [X] Problem Description and Pipeline (7 min)
+   + [X] Sliding Windows (14 min)
+   + [X] Getting Lots of Data and Artificial Data (16 min)
+   + [X] Ceiling Analysis: What Part of the Pipeline to Work on Next (13 min)
 
 ** Review
-   + [ ] Lecture Slides (10 min)
-   + [ ] Quiz: Application: Photo OCR (5 questions)
+   + [X] Lecture Slides (10 min)
+   + [X] Quiz: Application: Photo OCR (5 questions)
 
 ** Conclusion
-   + [ ] Summary and Thank You (4 min)
+   + [X] Summary and Thank You (4 min)
