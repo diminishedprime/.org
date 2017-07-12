@@ -156,6 +156,8 @@ from sklearn.linear_model import LogisticRegression
 logistic = LogisticRegression()
 
 from sklearn.ensemble import VotingClassifier
+# soft voting vs hard
+# soft lets you play around more with the cutoff lines.
 vote = VotingClassifier(estimators=[
     ('nn', nn),
     ('svc', svc),
@@ -177,6 +179,7 @@ from sklearn.model_selection import GridSearchCV
 grid_search_cv = GridSearchCV(
     pipe,
     param_grid=parameters,
+    verbose=1,
     n_jobs=4,
     )
 
@@ -185,6 +188,13 @@ y = scrubbedData_y
 grid_search_cv.fit(X, y)
 from sklearn.metrics import classification_report
 print(classification_report(y, grid_search_cv.predict(X)))
+# look into graphing the grid_search_cv.predictProba
+# check the different thresholds or the thing under this instead.
+
+# look into writing your own scoring method for randomizedSearchCV, scoring hyperparameter. It's probably using recall, etc by default,
+# but you can pass it a custom one instead, with this we could do something closer to having it pick the best threshold on the scorer, etc.
+# Custom scorer scikitlearn
+
 # grid_search_cv.get_params()
 
 test_for_submit = clean_input_data('test.csv')
@@ -197,3 +207,18 @@ submission = pd.DataFrame({ "PassengerId": clean_input_data('test.csv')["Passeng
 
 submission.to_csv( "submission.csv"
                  , index=False)
+
+# Feature union?
+# http://zacstewart.com/2014/08/05/pipelines-of-featureunions-of-pipelines.html
+
+# rfe - recursive feature elimination
+# automatic detection of colinearity
+
+# not scikitlearn - boruta, can be used for feature selection.
+
+# selectFromModel.
+
+# Start looking into spark. PySpark might be a good step as well.
+
+# Dominio data labs
+# cloud and in house solution.
