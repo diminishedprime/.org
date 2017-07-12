@@ -212,7 +212,7 @@ submission.to_csv( "submission.csv"
 # http://zacstewart.com/2014/08/05/pipelines-of-featureunions-of-pipelines.html
 
 # rfe - recursive feature elimination
-# automatic detection of colinearity
+# automatic detection of colinearity, might be a better way to do feature detection.
 
 # not scikitlearn - boruta, can be used for feature selection.
 
