@@ -182,8 +182,40 @@
     + Options
     + Running Time
     + Accuracy and Checking
-** TODO Chapter 16. No Silver Bullet—Essence and Accident in Software Engineering
-** TODO Chapter 17. "No Silver Bullet" Refined
-** TODO Chapter 18. Propositions of The Mythical Man-Month: True or False?
-** TODO Chapter 19. The Mythical Man-Month after 20 Years
-** TODO Epilogue. Fifty Years of Wonder, Excitement, and Joy
+** DONE Chapter 16. No Silver Bullet—Essence and Accident in Software Engineering
+   CLOSED: [2017-07-17 Mon 07:50]
+*** Abstract
+    + All software construction involves essential tasks, the fashioning of the
+      complex conceptual structures that compose the abstract software entity,
+      and accidental tasks, the representation of these abstract entities in
+      programming languages and the mapping of these onto machine languages
+      within space and speed constraints.
+*** Hopes for the Silver
+    + In the pitiful, multipage, connection-boxed form to which the flow chart
+      has today been elaborated, it has proved to be essentially useless as a
+      design tool—programmers draw flow charts after, not before, writing the
+      programs they describe.
+    + More seriously, even perfect program verification can only establish that
+      a program meets its specification. The hardest part of the software task
+      is arriving at a complete and consistent specification, and much of the
+      essence of building a program is in fact the debugging of the
+      specification.
+    + I would go a step further and assert that it is really impossible for
+      clients, even those working with software engineers, to specify
+      completely, precisely, and correctly the exact requirements of a modern
+      software product before having built and tried some versions of the
+      product they are specifying.
+    + My first proposal is that each software organization must determine and
+      proclaim that great designers are as important to its success as great
+      managers are, and that they can be expected to be similarly nurtured and
+      rewarded. Not only salary, but the perquisites of recognition—office size,
+      furnishings, personal technical equipment, travel funds, staff
+      support—must be fully equivalent.
+** DONE Chapter 17. "No Silver Bullet" Refined
+   CLOSED: [2017-07-17 Mon 08:12]
+** DONE Chapter 18. Propositions of The Mythical Man-Month: True or False?
+   CLOSED: [2017-07-17 Mon 08:22]
+** DONE Chapter 19. The Mythical Man-Month after 20 Years
+   CLOSED: [2017-07-17 Mon 09:36]
+** DONE Epilogue. Fifty Years of Wonder, Excitement, and Joy
+   CLOSED: [2017-07-17 Mon 09:37]
