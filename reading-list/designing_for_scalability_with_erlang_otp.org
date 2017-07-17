@@ -1,0 +1,4 @@
+* Designing For Scalability With Erlang/Otp
+1. [X]
+2. [ ] Introducing Erlang
+   1. [[./designing_for_scalability_with_erlang_otp/02/ex1.erl][Ex 1]]

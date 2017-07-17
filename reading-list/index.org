@@ -2,6 +2,7 @@
 
 * Reading List/Digital Bookshelf
 ** Top of Queue
++ [ ] [[./designing_for_scalability_with_erlang_otp.org][Designing For Scalability With Erlang/OPT]]
 + [ ] [[./hackers_and_painters.org][Hackers And Painters]]
 + [ ] [[./the_cpp_programming_language.org][The C++ Programming Language]]
 + [ ] [[./mastering_julia.org][Mastering Julia]]
