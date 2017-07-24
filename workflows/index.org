@@ -65,3 +65,7 @@
   #+BEGIN_SRC sh
     find . -type f -exec sed -i '' -e 's/var/let/g' {} +
   #+END_SRC
++ View disk space usage
+  #+BEGIN_SRC sh
+    ncdu
+  #+END_SRC
