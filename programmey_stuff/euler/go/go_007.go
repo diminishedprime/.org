@@ -80,7 +80,5 @@ var primes Primes = Primes{
 }
 
 func main() {
-	currentFactors := primes.primeFactors(12345)
-	currentFactors = primes.primeFactors(12345)
-	fmt.Println(currentFactors)
+	fmt.Println(primes.nthPrime(10001))
 }
