@@ -47,3 +47,5 @@ Find the largest palindrome made from the product of two 3-digit numbers.
          (filter (partial m-product-of-n-digit-numbers? num-digits))
          first)) ;; => 906609
 #+END_SRC
+*** Go
+[[./go/go_004.go]]
