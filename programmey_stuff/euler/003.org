@@ -42,3 +42,5 @@ What is the largest prime factor of the number 600851475143 ?
 
   (apply max (prime-factors 600851475143)) ;; => 6857
 #+END_SRC
+*** Go
+[[./go/go_003.go]]
