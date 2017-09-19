@@ -59,3 +59,5 @@ numbers from 1 to 20?
 
           (map prime-factors (rest (range 20))))) ;; => 232792560N
 #+END_SRC
+*** Go
+[[./go/go_005.go]]
