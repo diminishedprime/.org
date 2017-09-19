@@ -2,6 +2,7 @@
 [[../index.org][Programmey Stuff]]
 
 username: mjhclojure
+username: mjhgo
 
 * Project Euler
 1. [X] [[./001.org][Multiples of 3 and 5]]

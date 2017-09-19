@@ -26,3 +26,5 @@ four million, find the sum of the even-valued terms.
 
 *** Erlang
 [[./erlang/erl_002.erl]]
+*** Go
+[[./go/go_002.go]]
