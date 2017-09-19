@@ -27,3 +27,5 @@ natural numbers and the square of the sum.
 
 
 #+END_SRC
+*** Go
+[[./go/go_006.go]]
